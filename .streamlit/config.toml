@@ -1,0 +1,7 @@
+[theme]
+# Same blue as the charts' "buff" / first series, so controls and data read as one system.
+primaryColor = "#2a78d6"
+
+[client]
+# Navigation lives in the sidebar radio, not Streamlit's multipage menu.
+showSidebarNavigation = false

@@ -1,0 +1,13 @@
+pandas>=2.0
+numpy>=1.26
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+scikit-learn>=1.4
+scipy>=1.11
+statsmodels>=0.14
+plotly>=5.21
+streamlit>=1.37
+Pillow>=10.0
+# pandas' Styler.background_gradient (heat-shaded tables) needs matplotlib
+matplotlib>=3.8

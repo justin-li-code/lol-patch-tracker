@@ -1,0 +1,553 @@
+game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,bans,first_pick,stage_group
+75588-1,75588,first_stand,2026 First Stand,FINALS,2026-03-22,16.5,26.5,G2 Esports,1,Yunara|Jarvan IV|Nami|Aurora|Yorick,Orianna|Ryze|Varus|Ahri|LeBlanc,0.0,Finals
+75588-1,75588,first_stand,2026 First Stand,FINALS,2026-03-22,16.5,26.5,Bilibili Gaming,0,Lulu|Sivir|Poppy|Gnar|Annie,Karma|Rumble|Ashe|Yasuo|Renekton,1.0,Finals
+75588-2,75588,first_stand,2026 First Stand,FINALS,2026-03-22,16.5,26.5,G2 Esports,0,Bard|Dr. Mundo|Corki|LeBlanc|Zaahen,Orianna|Ryze|Varus|Mel|Ambessa,0.0,Finals
+75588-2,75588,first_stand,2026 First Stand,FINALS,2026-03-22,16.5,26.5,Bilibili Gaming,1,Pantheon|Ezreal|Shen|Gwen|Galio,Karma|Ashe|Rumble|Renekton|Jax,1.0,Finals
+75588-3,75588,first_stand,2026 First Stand,FINALS,2026-03-22,16.5,26.5,G2 Esports,0,Varus|Sion|Karma|Aatrox|Anivia,Ambessa|Nautilus|Rumble|Akali|Syndra,1.0,Finals
+75588-3,75588,first_stand,2026 First Stand,FINALS,2026-03-22,16.5,26.5,Bilibili Gaming,1,Ashe|Xin Zhao|Seraphine|Mel|Jax,Orianna|Ryze|Vi|Nocturne|Azir,0.0,Finals
+75588-4,75588,first_stand,2026 First Stand,FINALS,2026-03-22,16.5,26.5,G2 Esports,0,KSante|Rakan|Kaisa|Viktor|Wukong,Ambessa|Caitlyn|Neeko|Ahri|Syndra,1.0,Finals
+75588-4,75588,first_stand,2026 First Stand,FINALS,2026-03-22,16.5,26.5,Bilibili Gaming,1,Vi|Xayah|Alistar|Camille|Cassiopeia,Orianna|Ryze|Rumble|Maokai|Akali,0.0,Finals
+75585-1,75585,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,JD Gaming,0,Varus|Jarvan IV|Ambessa|Alistar|Viktor,Pantheon|Xin Zhao|Poppy|Ezreal|Yunara,0.0,Semifinals
+75585-1,75585,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,Bilibili Gaming,1,Orianna|Nocturne|Gnar|Corki|Bard,Karma|Rumble|Seraphine|Galio|Ryze,1.0,Semifinals
+75585-2,75585,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,JD Gaming,0,Vi|Renekton|Ahri|Caitlyn|Lux,Seraphine|Pantheon|Lulu|Xin Zhao|Annie,1.0,Semifinals
+75585-2,75585,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,Bilibili Gaming,1,Yunara|Neeko|Sion|Poppy|Mel,Rumble|Karma|Ryze|Rakan|Kalista,0.0,Semifinals
+75585-3,75585,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,JD Gaming,0,Seraphine|Olaf|Senna|Tryndamere|Hwei,Gwen|Pantheon|Lulu|LeBlanc|Akali,1.0,Semifinals
+75585-3,75585,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,Bilibili Gaming,1,Xin Zhao|Ashe|Yorick|Anivia|Aurora,Rumble|Karma|Ryze|Jax|Twisted Fate,0.0,Semifinals
+75580-1,75580,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,G2 Esports,1,Miss Fortune|Pantheon|Nautilus|Aurora|Sion,Orianna|Ryze|Varus|Mel|Sylas,0.0,Semifinals
+75580-1,75580,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,Gen.G,0,Seraphine|Xin Zhao|Ashe|Renekton|Galio,Karma|Jarvan IV|Rumble|Gnar|Ahri,1.0,Semifinals
+75580-2,75580,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,G2 Esports,1,Varus|Zaahen|Braum|KSante|Viktor,Orianna|Ryze|Rumble|Ambessa|Gnar,0.0,Semifinals
+75580-2,75580,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,Gen.G,0,Vi|Sivir|Alistar|Ahri|Vayne,Karma|Bard|Caitlyn|Jarvan IV|Jax,1.0,Semifinals
+75580-3,75580,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,G2 Esports,1,Lulu|Jarvan IV|Shen|KogMaw|Akali,Orianna|Ryze|Rumble|Nocturne|Wukong,0.0,Semifinals
+75580-3,75580,first_stand,2026 First Stand,SEMIFINALS,2026-03-21,16.5,26.5,Gen.G,0,Yunara|Neeko|Ambessa|Gwen|Azir,Karma|Bard|Caitlyn|Aphelios|Syndra,1.0,Semifinals
+75576-1,75576,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,JD Gaming,1,Orianna|Karma|Xin Zhao|Yunara|Renekton,Pantheon|Rumble|Ryze|Bard|Rakan,1.0,Groups
+75576-1,75576,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,LYON,0,Varus|Nocturne|Galio|Neeko|Gnar,Jarvan IV|Ezreal|Vi|Sivir|Jhin,0.0,Groups
+75576-2,75576,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,JD Gaming,0,Rumble|Wukong|Annie|Jhin|Alistar,Pantheon|Poppy|Jarvan IV|Akali|Aurora,1.0,Groups
+75576-2,75576,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,LYON,1,KSante|Corki|Nami|Viktor|Malphite,Seraphine|Ryze|Vi|Nautilus|Rakan,0.0,Groups
+75576-3,75576,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,JD Gaming,1,Vi|Zaahen|Ahri|Xayah|Rakan,Poppy|Lulu|Pantheon|Viego|Maokai,1.0,Groups
+75576-3,75576,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,LYON,0,Ambessa|Ryze|Ezreal|Aurora|Leona,Seraphine|Jarvan IV|Jax|Kaisa|Sivir,0.0,Groups
+75576-4,75576,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,JD Gaming,1,Sion|Jinx|Thresh|Poppy|Mel,Trundle|Maokai|Pantheon|Viego|Dr. Mundo,1.0,Groups
+75576-4,75576,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,LYON,0,Aatrox|Aphelios|Nautilus|Sejuani|Azir,Seraphine|Lulu|Jarvan IV|Twisted Fate|Akali,0.0,Groups
+75571-1,75571,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,BNK FearX,0,Vi|Neeko|Ahri|Yunara|Gnar,Orianna|Ryze|Varus|Annie|Sylas,0.0,Groups
+75571-1,75571,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,G2 Esports,1,Seraphine|Ashe|Xin Zhao|KSante|LeBlanc,Karma|Rumble|Ambessa|Kaisa|Ezreal,1.0,Groups
+75571-2,75571,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,BNK FearX,0,Rumble|Nocturne|Mel|Kaisa|Rakan,Varus|Nautilus|Ambessa|Akali|Galio,1.0,Groups
+75571-2,75571,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,G2 Esports,1,Ornn|Nami|Corki|Azir|Jarvan IV,Orianna|Ryze|Karma|Ezreal|Lucian,0.0,Groups
+75571-3,75571,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,BNK FearX,0,Varus|Maokai|Jayce|Poppy|Syndra,Ambessa|Ziggs|Bard|Aurora|Annie,1.0,Groups
+75571-3,75571,first_stand,2026 First Stand,GROUPS.DAY5,2026-03-20,16.5,26.5,G2 Esports,1,Sivir|Alistar|Sion|Pantheon|Zoe,Orianna|Ryze|Karma|Gwen|Braum,0.0,Groups
+75568-1,75568,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,JD Gaming,1,Vi|Ezreal|Karma|Rumble|Twisted Fate,Ambessa|Jarvan IV|Ryze|Varus|Sivir,1.0,Groups
+75568-1,75568,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,LOUD,0,Nocturne|Aurora|Sion|Ashe|Seraphine,Orianna|Xin Zhao|Pantheon|RekSai|Ahri,0.0,Groups
+75568-2,75568,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,JD Gaming,1,Xin Zhao|Yunara|Neeko|Renekton|Ahri,Orianna|Ryze|Nami|Gnar|Akali,0.0,Groups
+75568-2,75568,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,LOUD,0,Lulu|Zeri|Aatrox|KSante|Syndra,Jarvan IV|Pantheon|Nautilus|LeBlanc|Annie,1.0,Groups
+75568-3,75568,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,JD Gaming,1,Corki|Nami|Jax|Poppy|Hwei,Orianna|Ryze|Qiyana|Galio|Trundle,0.0,Groups
+75568-3,75568,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,LOUD,0,Ambessa|Kalista|Renata Glasc|Viego|Annie,Jarvan IV|Pantheon|Varus|Dr. Mundo|LeBlanc,1.0,Groups
+75563-1,75563,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,LYON,0,Ashe|Xin Zhao|Lulu|Sylas|KSante,Ryze|Varus|Nocturne|Ezreal|Jhin,0.0,Groups
+75563-1,75563,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,Gen.G,1,Orianna|Seraphine|Jarvan IV|Renekton|Miss Fortune,Karma|Pantheon|Rumble|Akali|Gnar,1.0,Groups
+75563-2,75563,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,LYON,0,Aurora|Yunara|Ahri|Viego|Nautilus,Ryze|Rumble|Pantheon|Nami|Alistar,0.0,Groups
+75563-2,75563,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,Gen.G,1,Vi|Ambessa|Galio|Rakan|Corki,Karma|Varus|Neeko|Poppy|Wukong,1.0,Groups
+75563-3,75563,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,LYON,0,Nami|Wukong|Lucian|LeBlanc|Irelia,Ryze|Rumble|Bard|Twisted Fate|Viktor,0.0,Groups
+75563-3,75563,first_stand,2026 First Stand,GROUPS.DAY4,2026-03-19,16.5,26.5,Gen.G,1,Neeko|Pantheon|Caitlyn|Jayce|Mel,Karma|Varus|Annie|Akali|Sion,1.0,Groups
+75560-1,75560,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,Team Secret Whales,0,Vi|Varus|Rakan|Ahri|Gwen,Ashe|Lulu|Rumble|KSante|Mel,1.0,Groups
+75560-1,75560,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,BNK FearX,1,Xin Zhao|Karma|Ezreal|Renekton|Annie,Orianna|Ryze|Nautilus|Volibear|Gnar,0.0,Groups
+75560-2,75560,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,Team Secret Whales,0,Galio|Nautilus|Volibear|Corki|Naafiri,Ashe|Lulu|Rumble|Braum|Kaisa,0.0,Groups
+75560-2,75560,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,BNK FearX,1,Orianna|Nocturne|Ambessa|Kalista|Renata Glasc,Akali|Jarvan IV|Ryze|Xayah|Yunara,1.0,Groups
+75560-3,75560,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,Team Secret Whales,0,Ornn|Jarvan IV|LeBlanc|Aphelios|Thresh,Ashe|Lulu|Ryze|Bard|Lucian,0.0,Groups
+75560-3,75560,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,BNK FearX,1,Rumble|Pantheon|Aurora|Yunara|Milio,Akali|Neeko|Jax|Alistar|Leona,1.0,Groups
+75555-1,75555,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,Bilibili Gaming,1,Ashe|Xin Zhao|Ambessa|Shen|Galio,Orianna|Rumble|Ryze|Renekton|Jax,0.0,Groups
+75555-1,75555,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,G2 Esports,0,Vi|Senna|Nautilus|Poppy|Annie,Varus|Karma|Jarvan IV|Seraphine|Alistar,1.0,Groups
+75555-2,75555,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,Bilibili Gaming,1,Sivir|Alistar|Gnar|Pantheon|Syndra,Orianna|Rumble|Ryze|Sylas|Yasuo,0.0,Groups
+75555-2,75555,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,G2 Esports,0,Varus|Neeko|Dr. Mundo|Aurora|Sion,Karma|Bard|Jarvan IV|Ahri|LeBlanc,1.0,Groups
+75555-3,75555,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,Bilibili Gaming,1,Lulu|Yunara|Renekton|Wukong|Akali,Karma|Bard|Jarvan IV|Maokai|Twisted Fate,1.0,Groups
+75555-3,75555,first_stand,2026 First Stand,GROUPS.DAY3,2026-03-18,16.5,26.5,G2 Esports,0,Caitlyn|Milio|KSante|Trundle|Ahri,Orianna|Ryze|Rumble|Nocturne|Kindred,0.0,Groups
+75550-1,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LYON,1,Yunara|Pantheon|Lulu|Ahri|Gnar,Orianna|Aurora|Ashe|Cassiopeia|Annie,0.0,Groups
+75550-1,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LOUD,0,Jarvan IV|Ezreal|Neeko|Mel|Renekton,Vi|Karma|Varus|Rumble|Ryze,1.0,Groups
+75550-2,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LYON,0,Ashe|Cassiopeia|Seraphine|Dr. Mundo|Vayne,Orianna|Vi|Ambessa|Malphite|Qiyana,0.0,Groups
+75550-2,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LOUD,1,Ryze|Kalista|Renata Glasc|Sion|Aatrox,Varus|Nocturne|Xin Zhao|Zaahen|Trundle,1.0,Groups
+75550-3,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LYON,1,Lucian|Wukong|Braum|LeBlanc|Garen,Orianna|Vi|Ambessa|Rakan|Karma,0.0,Groups
+75550-3,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LOUD,0,Aurora|Qiyana|KSante|Sivir|Alistar,Varus|Nami|Nocturne|Azir|Annie,1.0,Groups
+75550-4,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LYON,0,Rumble|Jhin|Jayce|Maokai|Poppy,Orianna|Vi|Ambessa|Kaisa|Rakan,0.0,Groups
+75550-4,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LOUD,1,Nocturne|Ornn|Akali|Miss Fortune|Leona,Varus|Nami|Azir|Galio|Karma,1.0,Groups
+75550-5,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LYON,1,Corki|Xin Zhao|Rakan|Jax|Viktor,Vi|Nautilus|Karma|Trundle|Malphite,1.0,Groups
+75550-5,75550,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,LOUD,0,Ambessa|Nami|Caitlyn|Zaahen|Vex,Varus|Orianna|Azir|Annie|Kennen,0.0,Groups
+75545-1,75545,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,JD Gaming,0,Seraphine|Xin Zhao|Ezreal|Aurora|Ornn,Orianna|Ryze|Varus|Sivir|Jhin,0.0,Groups
+75545-1,75545,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,Gen.G,1,Rumble|Pantheon|Bard|Caitlyn|Twisted Fate,Karma|Jarvan IV|Vi|Galio|KSante,1.0,Groups
+75545-2,75545,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,JD Gaming,0,Lulu|Jarvan IV|Jinx|Renekton|Veigar,Nocturne|Varus|Ambessa|Nautilus|Neeko,1.0,Groups
+75545-2,75545,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,Gen.G,1,Vi|Yunara|Ahri|Rakan|Gnar,Orianna|Ryze|Karma|Mel|Annie,0.0,Groups
+75545-3,75545,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,JD Gaming,0,Annie|Corki|Nami|Maokai|Zaahen,Varus|Neeko|Galio|Nautilus|Renata Glasc,1.0,Groups
+75545-3,75545,first_stand,2026 First Stand,GROUPS.DAY2,2026-03-17,16.5,26.5,Gen.G,1,Ambessa|Hwei|Nocturne|Alistar|Jhin,Orianna|Karma|Ryze|Wukong|Jax,0.0,Groups
+75437-1,75437,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,Team Secret Whales,0,Jarvan IV|Ornn|Aurora|Corki|Rakan,Orianna|KSante|Ryze|Neeko|Nami,0.0,Groups
+75437-1,75437,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,G2 Esports,1,Rumble|Vi|Ahri|Ezreal|Bard,Akali|Nautilus|Varus|Kaisa|Yunara,1.0,Groups
+75437-2,75437,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,Team Secret Whales,0,Akali|Nautilus|Miss Fortune|Olaf|Naafiri,Varus|Pantheon|Neeko|Xin Zhao|Zaahen,1.0,Groups
+75437-2,75437,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,G2 Esports,1,Ashe|Galio|Braum|Aatrox|Kled,Orianna|Ryze|Nocturne|Renekton|Trundle,0.0,Groups
+75437-3,75437,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,Team Secret Whales,0,Dr. Mundo|Aphelios|Thresh|Sylas|Jax,Neeko|Zaahen|Nami|Taliyah|KSante,1.0,Groups
+75437-3,75437,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,G2 Esports,1,Yunara|Lulu|Trundle|Azir|Shen,Orianna|Ryze|Varus|Renekton|Annie,0.0,Groups
+75432-1,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,BNK FearX,0,Taliyah|Vi|Ambessa|Neeko|Kaisa,Orianna|Poppy|Xin Zhao|Bard|Renekton,0.0,Groups
+75432-1,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,Bilibili Gaming,1,Ryze|Jarvan IV|Varus|Alistar|Jax,Azir|Karma|Rumble|Ezreal|Yunara,1.0,Groups
+75432-2,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,BNK FearX,1,Karma|Renekton|Jinx|Naafiri|Annie,Nautilus|Gnar|Xin Zhao|Bard|Leona,1.0,Groups
+75432-2,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,Bilibili Gaming,0,Ezreal|Pantheon|Sion|Nami|Aurora,Orianna|Rumble|Ashe|Trundle|Azir,0.0,Groups
+75432-3,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,BNK FearX,1,Ashe|Nocturne|Seraphine|KSante|Mel,Orianna|Xin Zhao|Qiyana|Nautilus|Bard,0.0,Groups
+75432-3,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,Bilibili Gaming,0,Rumble|Wukong|Ahri|Zeri|Yuumi,Yunara|Twisted Fate|Gwen|Galio|Akali,1.0,Groups
+75432-4,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,BNK FearX,0,Yunara|Gnar|Renata Glasc|Trundle|Galio,Orianna|Xin Zhao|Qiyana|Syndra|Kindred,0.0,Groups
+75432-4,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,Bilibili Gaming,1,Lulu|Sivir|Yorick|LeBlanc|Maokai,Twisted Fate|Lucian|Gwen|Dr. Mundo|Viktor,1.0,Groups
+75432-5,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,BNK FearX,0,Kennen|Lee Sin|Zoe|Rakan|Jhin,Akali|Xin Zhao|Syndra|Elise|Bard,1.0,Groups
+75432-5,75432,first_stand,2026 First Stand,GROUPS.DAY1,2026-03-16,16.5,26.5,Bilibili Gaming,1,Jayce|Caitlyn|Poppy|Morgana|Camille,Orianna|Twisted Fate|Lucian|Aphelios|Nautilus,0.0,Groups
+79840-1,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Bilibili Gaming,0,Bard|Ezreal|Renekton|Naafiri|Viktor,Jayce|Vi|Gnar|Lucian|Ziggs,0.0,Finals
+79840-1,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Hanwha Life Esports,1,Orianna|Lee Sin|Ambessa|Caitlyn|Karma,Camille|Vayne|Syndra|Poppy|Jarvan IV,1.0,Finals
+79840-2,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Bilibili Gaming,1,Jarvan IV|Cassiopeia|Shen|Rumble|Lucian,Poppy|Vayne|Vi|Annie|Akali,1.0,Finals
+79840-2,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Hanwha Life Esports,0,Camille|Ziggs|Qiyana|Ahri|Yorick,Jayce|Ryze|Gnar|Syndra|Lissandra,0.0,Finals
+79840-3,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Bilibili Gaming,1,Varus|Nocturne|Annie|Alistar|Jax,Gnar|Jayce|Vi|Anivia|Trundle,0.0,Finals
+79840-3,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Hanwha Life Esports,0,Ryze|Xayah|Rakan|Xin Zhao|Olaf,Vayne|Syndra|Pantheon|Seraphine|Lulu,1.0,Finals
+79840-4,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Bilibili Gaming,0,Mel|KSante|Kindred|Skarner|Taliyah,Gnar|Jayce|Vi|Aurora|Anivia,0.0,Finals
+79840-4,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Hanwha Life Esports,1,Seraphine|Trundle|Ashe|Swain|Twisted Fate,Vayne|Syndra|Pantheon|Pyke|Sylas,1.0,Finals
+79840-5,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Bilibili Gaming,0,Vi|Aurora|Aatrox|Miss Fortune|Neeko,Vayne|Kalista|Anivia|Yone|Zaahen,1.0,Finals
+79840-5,79840,msi,MSI 2026,FINALS,2026-07-12,16.13,26.13,Hanwha Life Esports,1,Lulu|Yunara|Pantheon|Sylas|Dr. Mundo,Jayce|Syndra|Gnar|Nautilus|Rell,0.0,Finals
+79792-1,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,LYON,0,Ryze|Qiyana|Poppy|Jhin|Ambessa,Jayce|Vi|Cassiopeia|Gnar|Annie,0.0,Swiss R4
+79792-1,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,Hanwha Life Esports,1,Jarvan IV|Ziggs|Camille|Syndra|Sion,Lee Sin|Akali|Orianna|Ezreal|Vayne,1.0,Swiss R4
+79792-2,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,LYON,1,Ezreal|Lee Sin|Akali|Alistar|Gragas,Jayce|Vi|Gnar|Nautilus|Rell,0.0,Swiss R4
+79792-2,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,Hanwha Life Esports,0,Nocturne|Orianna|Miss Fortune|Rakan|Anivia,Varus|Bard|Vayne|Karma|Renekton,1.0,Swiss R4
+79792-3,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,LYON,1,Lucian|Milio|Viktor|Skarner|Gwen,Jayce|Gnar|Bard|Ahri|Cassiopeia,0.0,Swiss R4
+79792-3,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,Hanwha Life Esports,0,Vi|KogMaw|Lulu|Rumble|Yone,Varus|Vayne|Nautilus|Trundle|KSante,1.0,Swiss R4
+79792-4,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,LYON,0,Jayce|Mel|Pyke|Annie|Pantheon,Yorick|Vayne|Bard|KSante|Ahri,1.0,Swiss R4
+79792-4,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,Hanwha Life Esports,1,Caitlyn|Karma|Naafiri|Aurora|Swain,Cassiopeia|Trundle|Nautilus|Lissandra|Sylas,0.0,Swiss R4
+79792-5,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,LYON,0,Renata Glasc|Shen|Sylas|Xayah|Xin Zhao,Gnar|Seraphine|Cassiopeia|Trundle|Wukong,0.0,Swiss R4
+79792-5,79792,msi,MSI 2026,ROUND4,2026-07-11,16.13,26.13,Hanwha Life Esports,1,Kalista|Ahri|Blitzcrank|Nidalee|Aatrox,Vayne|Varus|Bard|Sivir|Olaf,1.0,Swiss R4
+79776-1,79776,msi,MSI 2026,ROUND3,2026-07-10,16.13,26.13,G2 Esports,0,Jarvan IV|Anivia|Orianna|Ashe|Seraphine,Akali|Nocturne|Jayce|Gnar|KSante,1.0,Swiss R3
+79776-1,79776,msi,MSI 2026,ROUND3,2026-07-10,16.13,26.13,LYON,1,Ezreal|Xin Zhao|Karma|Sylas|Renekton,Poppy|Naafiri|Skarner|Bard|Nautilus,0.0,Swiss R3
+79776-2,79776,msi,MSI 2026,ROUND3,2026-07-10,16.13,26.13,G2 Esports,0,Ziggs|Nautilus|Cassiopeia|Pantheon|Yasuo,Jayce|Nocturne|Rumble|Syndra|Akali,0.0,Swiss R3
+79776-2,79776,msi,MSI 2026,ROUND3,2026-07-10,16.13,26.13,LYON,1,Varus|Leona|Lee Sin|Gnar|Viktor,Vi|Ryze|Twisted Fate|Vayne|Poppy,1.0,Swiss R3
+79776-3,79776,msi,MSI 2026,ROUND3,2026-07-10,16.13,26.13,G2 Esports,0,Jayce|Wukong|Syndra|Yunara|Lulu,Nocturne|Camille|Rumble|KSante|Qiyana,1.0,Swiss R3
+79776-3,79776,msi,MSI 2026,ROUND3,2026-07-10,16.13,26.13,LYON,1,Ryze|Bard|Caitlyn|Trundle|Olaf,Vi|Skarner|Poppy|Lucian|Rakan,0.0,Swiss R3
+79751-1,79751,msi,MSI 2026,ROUND4,2026-07-09,16.13,26.13,Bilibili Gaming,1,Cassiopeia|Jarvan IV|Gnar|Shen|Akali,Vi|Jayce|Orianna|Vayne|Ambessa,0.0,Swiss R4
+79751-1,79751,msi,MSI 2026,ROUND4,2026-07-09,16.13,26.13,Hanwha Life Esports,0,Naafiri|Ziggs|Rell|Rumble|Yone,Poppy|Bard|Camille|Nautilus|Lucian,1.0,Swiss R4
+79751-2,79751,msi,MSI 2026,ROUND4,2026-07-09,16.13,26.13,Bilibili Gaming,1,Ryze|Lee Sin|Ambessa|Leona|Taliyah,Jayce|Orianna|Vi|Renekton|Vayne,0.0,Swiss R4
+79751-2,79751,msi,MSI 2026,ROUND4,2026-07-09,16.13,26.13,Hanwha Life Esports,0,Camille|Wukong|Annie|Jax|Jhin,Poppy|Bard|Syndra|Alistar|Nautilus,1.0,Swiss R4
+79751-3,79751,msi,MSI 2026,ROUND4,2026-07-09,16.13,26.13,Bilibili Gaming,0,Skarner|Mel|Renekton|Rakan|Xayah,Jayce|Orianna|Vi|Vayne|Nocturne,0.0,Swiss R4
+79751-3,79751,msi,MSI 2026,ROUND4,2026-07-09,16.13,26.13,Hanwha Life Esports,1,Viktor|Lucian|Milio|Trundle|Dr. Mundo,Syndra|Bard|Qiyana|Caitlyn|Lulu,1.0,Swiss R4
+79751-4,79751,msi,MSI 2026,ROUND4,2026-07-09,16.13,26.13,Bilibili Gaming,1,Orianna|Pantheon|Ezreal|Neeko|KSante,Poppy|Caitlyn|Jayce|Ahri|Vayne,1.0,Swiss R4
+79751-4,79751,msi,MSI 2026,ROUND4,2026-07-09,16.13,26.13,Hanwha Life Esports,0,Vi|Varus|Nautilus|Aurora|Zaahen,Syndra|Bard|Nocturne|Alistar|Karma,0.0,Swiss R4
+79746-1,79746,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,G2 Esports,1,Jarvan IV|Ezreal|Leona|Anivia|Vayne,Jayce|Vi|Orianna|Gnar|Ambessa,0.0,Swiss R2
+79746-1,79746,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,T1,0,Nocturne|Camille|Ziggs|Renekton|Cassiopeia,Poppy|Nautilus|Akali|Syndra|Rumble,1.0,Swiss R2
+79746-2,79746,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,G2 Esports,1,Bard|Syndra|Pantheon|Lucian|Chogath,Orianna|Jayce|Vi|Ambessa|Poppy,0.0,Swiss R2
+79746-2,79746,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,T1,0,Ryze|Pyke|Mel|Yorick|Naafiri,Akali|Nautilus|Sivir|Yone|Gnar,1.0,Swiss R2
+79746-3,79746,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,G2 Esports,0,Varus|Skarner|Yasuo|Aurora|Renata Glasc,Vi|Jayce|Orianna|Caitlyn|Karma,0.0,Swiss R2
+79746-3,79746,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,T1,1,Lee Sin|Sylas|Gnar|Xayah|Rakan,Poppy|Seraphine|Akali|Nautilus|Lulu,1.0,Swiss R2
+79746-4,79746,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,G2 Esports,1,Ashe|Karma|Xin Zhao|Viktor|Kled,Jayce|Vi|Orianna|Akali|Annie,0.0,Swiss R2
+79746-4,79746,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,T1,0,Caitlyn|Lux|Wukong|Olaf|Galio,Poppy|Seraphine|Nautilus|Warwick|KSante,1.0,Swiss R2
+79741-1,79741,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,LYON,1,Ezreal|Alistar|Trundle|Renekton|Taliyah,Ryze|Poppy|Vi|Yorick|Gnar,1.0,Swiss R2
+79741-1,79741,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,Team Secret Whales,0,Nautilus|Lee Sin|Sylas|Kaisa|Volibear,Cassiopeia|Rumble|Ziggs|LeBlanc|Jayce,0.0,Swiss R2
+79741-2,79741,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,LYON,1,Varus|Viktor|Jarvan IV|Camille|Gnar,Ryze|Akali|Vi|Yorick|Olaf,1.0,Swiss R2
+79741-2,79741,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,Team Secret Whales,0,Xin Zhao|Sivir|Orianna|Bard|Jax,Cassiopeia|Rumble|Nocturne|Ashe|Jayce,0.0,Swiss R2
+79741-3,79741,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,LYON,1,Nocturne|Ziggs|Jayce|Ahri|Rell,Vi|Yorick|Olaf|Akali|Twisted Fate,1.0,Swiss R2
+79741-3,79741,msi,MSI 2026,ROUND2,2026-07-08,16.13,26.13,Team Secret Whales,0,Caitlyn|Elise|Sion|Naafiri|Vex,Cassiopeia|Ryze|Mel|Shen|Syndra,0.0,Swiss R2
+79701-1,79701,msi,MSI 2026,ROUND2,2026-07-06,16.13,26.13,Bilibili Gaming,1,Jayce|Ryze|Camille|Mel|Jarvan IV,Nocturne|Vi|Orianna|Syndra|Annie,1.0,Swiss R2
+79701-1,79701,msi,MSI 2026,ROUND2,2026-07-06,16.13,26.13,LYON,0,Lee Sin|KSante|Shen|Taliyah|Tristana,Poppy|Ziggs|Cassiopeia|Ezreal|Skarner,0.0,Swiss R2
+79701-2,79701,msi,MSI 2026,ROUND2,2026-07-06,16.13,26.13,Bilibili Gaming,1,Orianna|Ashe|Seraphine|Gnar|Naafiri,Varus|Vi|Akali|Nautilus|Lucian,1.0,Swiss R2
+79701-2,79701,msi,MSI 2026,ROUND2,2026-07-06,16.13,26.13,LYON,0,Viktor|Skarner|Ambessa|Ziggs|Pyke,Bard|Ezreal|Nocturne|Renekton|Vayne,0.0,Swiss R2
+79701-3,79701,msi,MSI 2026,ROUND2,2026-07-06,16.13,26.13,Bilibili Gaming,1,Ezreal|Bard|Renekton|Vi|Ahri,Varus|Rumble|Akali|Miss Fortune|Dr. Mundo,0.0,Swiss R2
+79701-3,79701,msi,MSI 2026,ROUND2,2026-07-06,16.13,26.13,LYON,0,Nocturne|Nautilus|Cassiopeia|Sivir|Zaahen,Vayne|Twisted Fate|Poppy|LeBlanc|Wukong,1.0,Swiss R2
+79691-1,79691,msi,MSI 2026,ROUND1,2026-07-06,16.13,26.13,T1,1,Orianna|Jayce|Camille|Syndra|Trundle,Akali|Poppy|Vi|Rumble|Jhin,1.0,Swiss R1
+79691-1,79691,msi,MSI 2026,ROUND1,2026-07-06,16.13,26.13,FURIA,0,Cassiopeia|Lee Sin|Rell|Sion|Ryze,Nocturne|Bard|Ziggs|Naafiri|Wukong,0.0,Swiss R1
+79691-2,79691,msi,MSI 2026,ROUND1,2026-07-06,16.13,26.13,T1,1,Jarvan IV|Rumble|Annie|Caitlyn|Lux,Vi|Poppy|Naafiri|Akali|Ambessa,0.0,Swiss R1
+79691-2,79691,msi,MSI 2026,ROUND1,2026-07-06,16.13,26.13,FURIA,0,Bard|Ezreal|Aatrox|Ahri|Ornn,Nocturne|Nautilus|Pyke|Lucian|Jhin,1.0,Swiss R1
+79691-3,79691,msi,MSI 2026,ROUND1,2026-07-06,16.13,26.13,T1,1,Vi|Varus|Taliyah|Kalista|Renata Glasc,Poppy|Sivir|Ambessa|Akali|Yone,1.0,Swiss R1
+79691-3,79691,msi,MSI 2026,ROUND1,2026-07-06,16.13,26.13,FURIA,0,Senna|Gnar|Nasus|Aurora|Seraphine,Nocturne|Ziggs|Mel|Vayne|Neeko,0.0,Swiss R1
+79696-1,79696,msi,MSI 2026,ROUND2,2026-07-05,16.13,26.13,Hanwha Life Esports,1,Vi|Ziggs|Camille|Ambessa|Yone,Poppy|Bard|Varus|Rell|Renekton,1.0,Swiss R2
+79696-1,79696,msi,MSI 2026,ROUND2,2026-07-05,16.13,26.13,G2 Esports,0,Seraphine|Xin Zhao|Ryze|Nautilus|Warwick,Orianna|Jayce|Trundle|Cassiopeia|Rumble,0.0,Swiss R2
+79696-2,79696,msi,MSI 2026,ROUND2,2026-07-05,16.13,26.13,Hanwha Life Esports,1,Jarvan IV|Lucian|Milio|Anivia|Sylas,Poppy|Bard|Varus|Annie|Aatrox,1.0,Swiss R2
+79696-2,79696,msi,MSI 2026,ROUND2,2026-07-05,16.13,26.13,G2 Esports,0,Lee Sin|Yunara|Lulu|Syndra|Yasuo,Orianna|Jayce|Rumble|Akali|Viktor,0.0,Swiss R2
+79696-3,79696,msi,MSI 2026,ROUND2,2026-07-05,16.13,26.13,Hanwha Life Esports,1,Bard|Caitlyn|Naafiri|Rumble|LeBlanc,Poppy|Varus|Rakan|Annie|Ahri,1.0,Swiss R2
+79696-3,79696,msi,MSI 2026,ROUND2,2026-07-05,16.13,26.13,G2 Esports,0,Ezreal|Karma|Wukong|Cassiopeia|Twisted Fate,Orianna|Jayce|Nocturne|Akali|Viktor,0.0,Swiss R2
+79686-1,79686,msi,MSI 2026,ROUND1,2026-07-05,16.13,26.13,Team Secret Whales,1,Ryze|Nautilus|Lee Sin|Senna|Olaf,Cassiopeia|Varus|Rumble|Shen|Camille,0.0,Swiss R1
+79686-1,79686,msi,MSI 2026,ROUND1,2026-07-05,16.13,26.13,Top Esports,0,Jarvan IV|Ziggs|Jayce|Rell|Yone,Poppy|Ezreal|Orianna|Kaisa|Sivir,1.0,Swiss R1
+79686-2,79686,msi,MSI 2026,ROUND1,2026-07-05,16.13,26.13,Team Secret Whales,0,Bard|Aurora|Naafiri|Miss Fortune|Ornn,Cassiopeia|Varus|Orianna|Kaisa|Camille,0.0,Swiss R1
+79686-2,79686,msi,MSI 2026,ROUND1,2026-07-05,16.13,26.13,Top Esports,1,Vi|Rumble|Ahri|Yunara|Lulu,Poppy|Ezreal|Akali|Jhin|Caitlyn,1.0,Swiss R1
+79686-3,79686,msi,MSI 2026,ROUND1,2026-07-05,16.13,26.13,Team Secret Whales,1,Ezreal|Karma|Xin Zhao|Sylas|Sett,Orianna|Cassiopeia|Varus|Annie|Ambessa,0.0,Swiss R1
+79686-3,79686,msi,MSI 2026,ROUND1,2026-07-05,16.13,26.13,Top Esports,0,Wukong|Ashe|Seraphine|Sion|Hwei,Akali|Camille|Poppy|Volibear|Shen,1.0,Swiss R1
+79686-4,79686,msi,MSI 2026,ROUND1,2026-07-05,16.13,26.13,Team Secret Whales,1,Caitlyn|Elise|Dr. Mundo|Yorick|Viktor,Cassiopeia|Varus|Orianna|Annie|Camille,0.0,Swiss R1
+79686-4,79686,msi,MSI 2026,ROUND1,2026-07-05,16.13,26.13,Top Esports,0,Gnar|Mel|Qiyana|Pyke|Syndra,Poppy|Volibear|Akali|Vayne|Malphite,1.0,Swiss R1
+79618-1,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,T1,1,Cassiopeia|Vi|Yorick|Nautilus|Jhin,Orianna|Camille|Syndra|Jarvan IV|Trundle,0.0,Swiss R1
+79618-1,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,Bilibili Gaming,0,Jayce|Ziggs|Poppy|Viktor|Shen,Nocturne|Vayne|Bard|Karma|Akali,1.0,Swiss R1
+79618-2,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,T1,0,Camille|Lee Sin|Ambessa|Galio|Kaisa,Annie|Vayne|Nocturne|Jarvan IV|Ahri,1.0,Swiss R1
+79618-2,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,Bilibili Gaming,1,Bard|Ezreal|Renekton|Naafiri|Swain,Orianna|Gnar|Ryze|Mel|Lissandra,0.0,Swiss R1
+79618-3,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,T1,0,Zaahen|Wukong|Annie|Senna|Leona,Orianna|Gnar|Rumble|Varus|Seraphine,,Swiss R1
+79618-3,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,Bilibili Gaming,1,Jax|Qiyana|Ryze|VelKoz|Alistar,Nocturne|Vayne|Xin Zhao|Lucian|Lulu,,Swiss R1
+79618-4,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,T1,1,Jarvan IV|Mel|Pyke|KSante|Ahri,Varus|Vayne|Nocturne|Akali|Sylas,1.0,Swiss R1
+79618-4,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,Bilibili Gaming,0,Caitlyn|Skarner|Elise|Aurora|Gwen,Orianna|Gnar|Rumble|Twisted Fate|Olaf,0.0,Swiss R1
+79618-5,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,T1,0,Trundle|Gnar|Taliyah|Lulu|Yunara,Yone|Orianna|Varus|Xin Zhao|Pantheon,0.0,Swiss R1
+79618-5,79618,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,Bilibili Gaming,1,Rumble|Seraphine|Ashe|Syndra|Kindred,Nocturne|Lucian|Vayne|Zeri|Blitzcrank,1.0,Swiss R1
+79613-1,79613,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,FURIA,0,Karma|Jhin|Sion|Naafiri|Ryze,Nocturne|Nautilus|Camille|Trundle|Cassiopeia,1.0,Swiss R1
+79613-1,79613,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,LYON,1,Jayce|Ezreal|Neeko|Jarvan IV|Syndra,Seraphine|Bard|KSante|Lee Sin|Annie,0.0,Swiss R1
+79613-2,79613,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,FURIA,0,Cassiopeia|Rell|Vi|Aurora|Ambessa,Nocturne|Caitlyn|Poppy|Annie|Ahri,0.0,Swiss R1
+79613-2,79613,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,LYON,1,Camille|Ziggs|Wukong|Galio|Gnar,Twisted Fate|Akali|Orianna|Rumble|Sivir,1.0,Swiss R1
+79613-3,79613,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,FURIA,0,Lucian|Milio|Xin Zhao|Sylas|Olaf,Nocturne|Nautilus|Akali|Alistar|Rakan,0.0,Swiss R1
+79613-3,79613,msi,MSI 2026,ROUND1,2026-07-04,16.13,26.13,LYON,1,Varus|Viktor|Lee Sin|KogMaw|Lulu,Bard|Poppy|Twisted Fate|Jax|Gragas,1.0,Swiss R1
+79608-1,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Top Esports,1,Varus|Nautilus|Ambessa|Naafiri|Cassiopeia,Bard|Camille|Anivia|Pantheon|Xin Zhao,1.0,Swiss R1
+79608-1,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,G2 Esports,0,Rumble|Ashe|Braum|Olaf|LeBlanc,Orianna|Vi|Jarvan IV|Nocturne|Trundle,0.0,Swiss R1
+79608-2,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Top Esports,1,Jarvan IV|Aurora|Renekton|Ezreal|Neeko,Bard|Camille|Ryze|Poppy|Vi,1.0,Swiss R1
+79608-2,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,G2 Esports,0,Yunara|Lulu|Ahri|KSante|Xin Zhao,Orianna|Jayce|Karma|Caitlyn|Lucian,0.0,Swiss R1
+79608-3,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Top Esports,0,Ryze|Wukong|Sion|Aphelios|Thresh,Bard|Camille|Anivia|Trundle|Vi,1.0,Swiss R1
+79608-3,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,G2 Esports,1,Xayah|Rakan|Kled|Skarner|Syndra,Jayce|Caitlyn|Orianna|Lucian|Kalista,0.0,Swiss R1
+79608-4,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Top Esports,0,Nocturne|Jhin|Karma|Hwei|Tristana,Orianna|Bard|Jayce|Taliyah|Annie,0.0,Swiss R1
+79608-4,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,G2 Esports,1,Vi|Lucian|Milio|Gnar|Twisted Fate,Akali|Caitlyn|Yorick|Vayne|Sylas,1.0,Swiss R1
+79608-5,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Top Esports,0,Pantheon|Ziggs|Yone|Maokai|Ornn,Orianna|Alistar|Jayce|Trundle|Dr. Mundo,0.0,Swiss R1
+79608-5,79608,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,G2 Esports,1,Anivia|Poppy|Sivir|Mel|Rell,Akali|Caitlyn|Yorick|Aatrox|Leona,1.0,Swiss R1
+79603-1,79603,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Hanwha Life Esports,1,Jayce|Ziggs|Cassiopeia|Skarner|Shen,Orianna|Vi|Nautilus|Bard|Yorick,0.0,Swiss R1
+79603-1,79603,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Team Secret Whales,0,Lee Sin|Ezreal|Ryze|Rell|Sion,Poppy|Camille|Rumble|Trundle|Jarvan IV,1.0,Swiss R1
+79603-2,79603,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Hanwha Life Esports,1,Camille|Qiyana|Mel|Ambessa|Ahri,Varus|Poppy|Nautilus|Renekton|Jax,1.0,Swiss R1
+79603-2,79603,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Team Secret Whales,0,Jarvan IV|Elise|Jhin|Aurora|Volibear,Rumble|Gnar|Orianna|KSante|Kennen,0.0,Swiss R1
+79603-3,79603,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Hanwha Life Esports,1,Bard|Miss Fortune|Nocturne|Dr. Mundo|Viktor,Varus|Nautilus|Akali|Xin Zhao|Sylas,1.0,Swiss R1
+79603-3,79603,msi,MSI 2026,ROUND1,2026-07-03,16.13,26.13,Team Secret Whales,0,Caitlyn|Karma|Renekton|Naafiri|Hwei,Rumble|Gnar|Orianna|Vayne|KSante,0.0,Swiss R1
+79574-1,79574,msi,MSI 2026,PLAY-IN.DAY4,2026-07-01,16.13,26.13,T1,1,Bard|Xin Zhao|Ezreal|Taliyah|Ambessa,Senna|Vi|Lee Sin|Sivir|Renekton,1.0,Play-In
+79574-1,79574,msi,MSI 2026,PLAY-IN.DAY4,2026-07-01,16.13,26.13,Team Liquid,0,Rell|Jarvan IV|Ryze|Kaisa|Gnar,Camille|Orianna|Jayce|Cassiopeia|Anivia,0.0,Play-In
+79574-2,79574,msi,MSI 2026,PLAY-IN.DAY4,2026-07-01,16.13,26.13,T1,1,Jayce|Lee Sin|Lissandra|Lucian|Milio,Senna|Poppy|Akali|Nautilus|Jhin,1.0,Play-In
+79574-2,79574,msi,MSI 2026,PLAY-IN.DAY4,2026-07-01,16.13,26.13,Team Liquid,0,Nocturne|Rumble|Sylas|Varus|Alistar,Camille|Orianna|Cassiopeia|Ziggs|Kalista,0.0,Play-In
+79574-3,79574,msi,MSI 2026,PLAY-IN.DAY4,2026-07-01,16.13,26.13,T1,1,Vi|Cassiopeia|Zaahen|Zeri|Lulu,Senna|Poppy|Akali|Ziggs|Mel,1.0,Play-In
+79574-3,79574,msi,MSI 2026,PLAY-IN.DAY4,2026-07-01,16.13,26.13,Team Liquid,0,Naafiri|Renekton|Galio|Xayah|Rakan,Camille|Orianna|Annie|Kalista|Nautilus,0.0,Play-In
+79542-1,79542,msi,MSI 2026,PLAY-IN.DAY3,2026-06-30,16.13,26.13,Team Liquid,1,Orianna|Nocturne|Rell|Tristana|Gnar,Anivia|Vi|Cassiopeia|Ezreal|Jayce,1.0,Play-In
+79542-1,79542,msi,MSI 2026,PLAY-IN.DAY3,2026-06-30,16.13,26.13,Karmine Corp,0,Ryze|Camille|Wukong|Ziggs|Vayne,Akali|Rumble|Poppy|Renekton|Kaisa,0.0,Play-In
+79542-2,79542,msi,MSI 2026,PLAY-IN.DAY3,2026-06-30,16.13,26.13,Team Liquid,1,Lee Sin|Mel|Ornn|Pantheon|Yasuo,Vi|Cassiopeia|Bard|Naafiri|RekSai,0.0,Play-In
+79542-2,79542,msi,MSI 2026,PLAY-IN.DAY3,2026-06-30,16.13,26.13,Karmine Corp,0,Seraphine|Rumble|Ezreal|Anivia|Jarvan IV,Akali|Poppy|Nautilus|Yone|Syndra,1.0,Play-In
+79542-3,79542,msi,MSI 2026,PLAY-IN.DAY3,2026-06-30,16.13,26.13,Team Liquid,1,Nautilus|Renekton|Senna|Olaf|Ahri,Vi|Cassiopeia|Jayce|Viktor|Syndra,1.0,Play-In
+79542-3,79542,msi,MSI 2026,PLAY-IN.DAY3,2026-06-30,16.13,26.13,Karmine Corp,0,Varus|Alistar|Sion|Taliyah|Qiyana,Naafiri|Akali|Bard|Trundle|Sylas,0.0,Play-In
+79539-1,79539,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Team Liquid,1,Bard|Xin Zhao|Akali|Ornn|Varus,Nautilus|Vi|Lee Sin|Camille|Pyke,0.0,Play-In
+79539-1,79539,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Deep Cross Gaming,0,Jarvan IV|Rumble|Cassiopeia|Rakan|Jhin,Naafiri|Poppy|Nocturne|Ezreal|Caitlyn,1.0,Play-In
+79539-2,79539,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Team Liquid,1,Ryze|Ziggs|Rell|Pantheon|Twisted Fate,Jayce|Vi|Nocturne|Syndra|Ahri,1.0,Play-In
+79539-2,79539,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Deep Cross Gaming,0,Nautilus|Senna|Gnar|Taliyah|Olaf,Naafiri|Lee Sin|Orianna|Vayne|Yasuo,0.0,Play-In
+79539-3,79539,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Team Liquid,1,Viktor|Lucian|Renekton|Shyvana|Renata Glasc,Vi|Lee Sin|Nocturne|Vayne|Ezreal,0.0,Play-In
+79539-3,79539,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Deep Cross Gaming,0,Orianna|Wukong|Camille|Jax|Kalista,Naafiri|Poppy|Jayce|Braum|Milio,1.0,Play-In
+79534-1,79534,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,T1,1,Jayce|Nocturne|Mel|Pyke|Akali,Rumble|Vi|Jarvan IV|Wukong|Xin Zhao,0.0,Play-In
+79534-1,79534,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Karmine Corp,0,Orianna|Ashe|Seraphine|Sion|Naafiri,Varus|Bard|Lee Sin|Camille|Nautilus,1.0,Play-In
+79534-2,79534,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,T1,1,Bard|Wukong|Caitlyn|Syndra|Gragas,Rumble|Vi|Ziggs|Jarvan IV|Gnar,0.0,Play-In
+79534-2,79534,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Karmine Corp,0,Cassiopeia|Camille|Ezreal|Qiyana|Renekton,Varus|Lee Sin|Poppy|Galio|Vayne,1.0,Play-In
+79534-3,79534,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,T1,1,Ryze|Jarvan IV|Yorick|Lucian|Milio,Rumble|Vi|Nautilus|Lulu|Rakan,0.0,Play-In
+79534-3,79534,msi,MSI 2026,PLAY-IN.DAY2,2026-06-29,16.13,26.13,Karmine Corp,0,Varus|Xin Zhao|Annie|Neeko|Gnar,Lee Sin|Vayne|Anivia|Ziggs|Jhin,1.0,Play-In
+79531-1,79531,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Deep Cross Gaming,0,Lee Sin|Camille|Galio|Ambessa|Ezreal,Poppy|Nocturne|Jayce|Rakan|Lucian,0.0,Play-In
+79531-1,79531,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Karmine Corp,1,Rumble|Naafiri|Orianna|Caitlyn|Bard,Varus|Vi|Nautilus|Jhin|Ziggs,1.0,Play-In
+79531-2,79531,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Deep Cross Gaming,0,Jarvan IV|Nautilus|Senna|LeBlanc|Jax,Poppy|Lucian|Ashe|Kalista|Kennen,1.0,Play-In
+79531-2,79531,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Karmine Corp,1,Vi|Cassiopeia|Rell|Zeri|Gnar,Varus|Ahri|Taliyah|Jayce|Anivia,0.0,Play-In
+79531-3,79531,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Deep Cross Gaming,0,Ryze|Qiyana|Sion|Jhin|Pyke,Lucian|Poppy|Anivia|Nasus|Yone,1.0,Play-In
+79531-3,79531,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Karmine Corp,1,Lulu|Taliyah|Yunara|Renekton|Wukong,Ashe|Nocturne|Varus|Neeko|Karma,0.0,Play-In
+79526-1,79526,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,T1,1,Orianna|Mel|Camille|Xin Zhao|Gnar,Naafiri|Rakan|Nocturne|Lee Sin|Jarvan IV,1.0,Play-In
+79526-1,79526,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Team Liquid,0,Bard|Caitlyn|Akali|Wukong|Yasuo,Jayce|Cassiopeia|Varus|Vi|Poppy,0.0,Play-In
+79526-2,79526,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,T1,1,Ryze|Kalista|Renata Glasc|Vi|Ambessa,Naafiri|Rakan|Yone|Varus|Renekton,1.0,Play-In
+79526-2,79526,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Team Liquid,0,Nautilus|Senna|Taliyah|Rumble|Poppy,Ziggs|Cassiopeia|Jayce|Sion|Nocturne,0.0,Play-In
+79526-3,79526,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,T1,1,Lee Sin|Renekton|Annie|Zeri|Yuumi,Naafiri|Yone|Yorick|Vayne|Kaisa,1.0,Play-In
+79526-3,79526,msi,MSI 2026,PLAY-IN.DAY1,2026-06-28,16.13,26.13,Team Liquid,0,Neeko|Nocturne|Galio|Varus|Zaahen,Karma|Cassiopeia|Jayce|Lulu|Xayah,0.0,Play-In
+80050-1,80050,ewc,Esports World Cup 2026,FINALS,2026-07-19,16.13,26.13,Karmine Corp,0,Camille|Lee Sin|Ziggs|Vayne|Galio,Poppy|Olaf|Nocturne|Jax|Cassiopeia,1.0,Finals
+80050-1,80050,ewc,Esports World Cup 2026,FINALS,2026-07-19,16.13,26.13,Dplus KIA,1,Viktor|Shen|Skarner|Kaisa|Tristana,Orianna|Jayce|Vi|Anivia|Syndra,0.0,Finals
+80050-2,80050,ewc,Esports World Cup 2026,FINALS,2026-07-19,16.13,26.13,Karmine Corp,0,Bard|Anivia|Ezreal|Naafiri|Olaf,Orianna|Vi|LeBlanc|Lucian|Nautilus,0.0,Finals
+80050-2,80050,ewc,Esports World Cup 2026,FINALS,2026-07-19,16.13,26.13,Dplus KIA,1,Cassiopeia|Jarvan IV|Gnar|Caitlyn|Lux,Poppy|Jayce|Syndra|Xin Zhao|Qiyana,1.0,Finals
+80050-3,80050,ewc,Esports World Cup 2026,FINALS,2026-07-19,16.13,26.13,Karmine Corp,0,Rumble|Wukong|Annie|Xayah|Rell,Syndra|Poppy|Ambessa|Lucian|Lulu,1.0,Finals
+80050-3,80050,ewc,Esports World Cup 2026,FINALS,2026-07-19,16.13,26.13,Dplus KIA,1,Ryze|KSante|Xin Zhao|Rakan|Sivir,Orianna|Vi|Jayce|Varus|Seraphine,0.0,Finals
+80047-1,80047,ewc,Esports World Cup 2026,3RD.PALCE,2026-07-19,16.13,26.13,Gen.G,1,Viktor|Skarner|Vayne|Shen|Anivia,Vi|Jayce|Orianna|Bard|Taliyah,0.0,3rd Place
+80047-1,80047,ewc,Esports World Cup 2026,3RD.PALCE,2026-07-19,16.13,26.13,T1,0,Lee Sin|Ambessa|Cassiopeia|Camille|Sylas,Poppy|Renekton|Nocturne|Nautilus|Ezreal,1.0,3rd Place
+80047-2,80047,ewc,Esports World Cup 2026,3RD.PALCE,2026-07-19,16.13,26.13,Gen.G,0,Ezreal|Jarvan IV|Karma|Mel|Gwen,Vi|Jayce|Orianna|Naafiri|Xin Zhao,0.0,3rd Place
+80047-2,80047,ewc,Esports World Cup 2026,3RD.PALCE,2026-07-19,16.13,26.13,T1,1,Bard|Ryze|Caitlyn|Wukong|KSante,Poppy|Gnar|Nocturne|Twisted Fate|Varus,1.0,3rd Place
+80047-3,80047,ewc,Esports World Cup 2026,3RD.PALCE,2026-07-19,16.13,26.13,Gen.G,1,Varus|Pantheon|Galio|Seraphine|Alistar,Nocturne|Vi|Olaf|Lucian|Poppy,1.0,3rd Place
+80047-3,80047,ewc,Esports World Cup 2026,3RD.PALCE,2026-07-19,16.13,26.13,T1,0,Orianna|Xin Zhao|Yorick|Syndra|Pyke,Jayce|Ziggs|Trundle|Nautilus|Lulu,0.0,3rd Place
+79968-1,79968,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Gen.G,0,Cassiopeia|Naafiri|Shen|Jhin|Bard,Viktor|Poppy|Syndra|Ahri|Ziggs,1.0,Semifinals
+79968-1,79968,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Dplus KIA,1,Vi|Taliyah|Ambessa|Ezreal|Karma,Orianna|Nocturne|Jayce|Renekton|Vayne,0.0,Semifinals
+79968-2,79968,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Gen.G,1,Ziggs|Camille|Jayce|Skarner|Akali,Viktor|Orianna|Jarvan IV|Olaf|Sivir,0.0,Semifinals
+79968-2,79968,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Dplus KIA,0,Lee Sin|Leona|Syndra|Miss Fortune|KSante,Nocturne|Galio|Poppy|Sylas|Ryze,1.0,Semifinals
+79968-3,79968,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Gen.G,0,Rumble|Xin Zhao|Sylas|Senna|Nautilus,Viktor|Orianna|Ryze|Yorick|Wukong,0.0,Semifinals
+79968-3,79968,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Dplus KIA,1,Annie|Lucian|Milio|Aatrox|Jarvan IV,Nocturne|Galio|Anivia|Rakan|Lulu,1.0,Semifinals
+79965-1,79965,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Karmine Corp,0,Ziggs|Lee Sin|Shen|Shyvana|Viktor,Orianna|Nocturne|Vi|Sylas|Skarner,0.0,Semifinals
+79965-1,79965,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,T1,1,Jayce|Syndra|Camille|Xin Zhao|Taliyah,Poppy|Renekton|Ezreal|Akali|Cassiopeia,1.0,Semifinals
+79965-2,79965,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Karmine Corp,1,Anivia|Bard|Ezreal|Rumble|Qiyana,Nocturne|Vi|Orianna|Pyke|Lucian,0.0,Semifinals
+79965-2,79965,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,T1,0,Cassiopeia|Jarvan IV|Ambessa|Sivir|Neeko,Poppy|Renekton|Akali|Vayne|Gnar,1.0,Semifinals
+79965-3,79965,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,Karmine Corp,1,Gnar|Wukong|Annie|Lucian|Milio,Nocturne|Vi|Orianna|Pyke|Caitlyn,0.0,Semifinals
+79965-3,79965,ewc,Esports World Cup 2026,SEMIFINALS,2026-07-18,16.13,26.13,T1,0,Ryze|Olaf|Pantheon|Xayah|Rakan,Seraphine|Poppy|Vayne|Nautilus|Lulu,1.0,Semifinals
+79962-1,79962,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Dplus KIA,1,Lee Sin|Cassiopeia|KSante|Nautilus|Kaisa,Orianna|Nocturne|Poppy|Trundle|Skarner,0.0,Quarterfinals
+79962-1,79962,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Bilibili Gaming,0,Jayce|Ziggs|Camille|Viktor|Jarvan IV,Vi|Olaf|Syndra|Leona|Akali,1.0,Quarterfinals
+79962-2,79962,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Dplus KIA,0,Ryze|Karma|Jhin|Tristana|Poppy,Orianna|Nocturne|Syndra|Annie|Taliyah,0.0,Quarterfinals
+79962-2,79962,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Bilibili Gaming,1,Gnar|Ezreal|Seraphine|Naafiri|Twisted Fate,Vi|Vayne|Bard|Ambessa|Rumble,1.0,Quarterfinals
+79962-3,79962,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Dplus KIA,1,Syndra|Lucian|Milio|Xin Zhao|Aurora,Nocturne|Vayne|Renekton|LeBlanc|Akali,1.0,Quarterfinals
+79962-3,79962,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Bilibili Gaming,0,Rumble|Bard|Caitlyn|Pantheon|Sylas,Vi|Orianna|Ambessa|Ornn|Trundle,0.0,Quarterfinals
+79959-1,79959,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Gen.G,1,Galio|Jarvan IV|Shen|Seraphine|Olaf,Vi|Poppy|Ezreal|Naafiri|Nocturne,0.0,Quarterfinals
+79959-1,79959,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,JD Gaming,0,Orianna|Ziggs|Camille|Jayce|Trundle,Syndra|Bard|Lee Sin|Kaisa|Vayne,1.0,Quarterfinals
+79959-2,79959,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Gen.G,1,Anivia|Ezreal|Ambessa|Wukong|Neeko,Poppy|Vi|Cassiopeia|Jhin|Lucian,0.0,Quarterfinals
+79959-2,79959,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,JD Gaming,0,Ryze|Nocturne|Rumble|Xayah|Rakan,Bard|Syndra|Lee Sin|Karma|Alistar,1.0,Quarterfinals
+79956-1,79956,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Karmine Corp,1,Jayce|Viktor|Naafiri|Rell|Syndra,Orianna|Nocturne|Vi|Akali|Bard,0.0,Quarterfinals
+79956-1,79956,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Anyone s Legend,0,Jarvan IV|Varus|Shen|Cassiopeia|Nautilus,Poppy|Ziggs|Ezreal|Camille|Leona,1.0,Quarterfinals
+79956-2,79956,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Karmine Corp,1,Lee Sin|Rumble|Anivia|Alistar|Zeri,Orianna|Nocturne|Vi|Ambessa|Pantheon,0.0,Quarterfinals
+79956-2,79956,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Anyone s Legend,0,Ezreal|Ryze|Leona|Ornn|Qiyana,Gnar|Poppy|Ziggs|Caitlyn|Sivir,1.0,Quarterfinals
+79953-1,79953,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,T1,1,Vi|Cassiopeia|Renekton|Bard|Ezreal,Jayce|Gnar|Nocturne|Ziggs|Camille,0.0,Quarterfinals
+79953-1,79953,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Hanwha Life Esports,0,Orianna|Ambessa|Jarvan IV|Caitlyn|Karma,Poppy|Vayne|Syndra|Akali|Shen,1.0,Quarterfinals
+79953-2,79953,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,T1,1,Jayce|Poppy|Taliyah|Akali|Xin Zhao,Vayne|Ziggs|Ryze|Varus|Nautilus,1.0,Quarterfinals
+79953-2,79953,ewc,Esports World Cup 2026,QUARTERFINALS,2026-07-17,16.13,26.13,Hanwha Life Esports,0,Lee Sin|Syndra|Swain|Shen|Jhin,Nocturne|Gnar|Camille|Sylas|Lucian,0.0,Quarterfinals
+79938-1,79938,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,GAM Esports,0,Camille|Lee Sin|Syndra|Varus|Ziggs,Nocturne|Jayce|Rumble|Taliyah|Shen,0.0,Groups
+79938-1,79938,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,T1,1,Orianna|Vi|Gnar|Cassiopeia|Leona,Vayne|Poppy|Akali|Ambessa|Olaf,1.0,Groups
+79938-2,79938,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,GAM Esports,0,Nocturne|Ahri|Nautilus|Zaahen|Lucian,Rumble|Taliyah|Bard|Vayne|Ashe,1.0,Groups
+79938-2,79938,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,T1,1,Jarvan IV|Seraphine|Sylas|Renekton|Alistar,Jayce|Ryze|Annie|Mel|Olaf,0.0,Groups
+79935-1,79935,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Karmine Corp,1,Orianna|Ezreal|Leona|Qiyana|Rumble,Lee Sin|Bard|Skarner|Viktor|Akali,1.0,Groups
+79935-1,79935,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Sentinels,0,Camille|Ziggs|Naafiri|Sylas|Ornn,Jayce|Vi|Nocturne|Poppy|Wukong,0.0,Groups
+79935-2,79935,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Karmine Corp,1,Jayce|Cassiopeia|Xin Zhao|Pyke|Kaisa,Bard|Lee Sin|Viktor|Nautilus|Mel,0.0,Groups
+79935-2,79935,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Sentinels,0,Jarvan IV|Anivia|Yorick|Jhin|Blitzcrank,Nocturne|Poppy|Vi|Lucian|Caitlyn,1.0,Groups
+79932-1,79932,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,JD Gaming,1,Orianna|Jarvan IV|Ezreal|Ambessa|Leona,Vayne|Cassiopeia|Camille|Milio|Renekton,1.0,Groups
+79932-1,79932,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Los Grandes,0,Nocturne|Syndra|Lucian|Rell|Tryndamere,Jayce|Lee Sin|Poppy|Karma|Alistar,0.0,Groups
+79932-2,79932,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,JD Gaming,1,Ryze|Poppy|Rumble|Jhin|Alistar,Vayne|Camille|Cassiopeia|Nautilus|Ahri,1.0,Groups
+79932-2,79932,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Los Grandes,0,Taliyah|Vi|Gnar|Varus|Neeko,Jayce|Lee Sin|Naafiri|Xayah|Sivir,0.0,Groups
+79929-1,79929,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Dplus KIA,1,Vi|Viktor|Camille|Taliyah|Olaf,Nocturne|Poppy|Vayne|Renekton|Cassiopeia,1.0,Groups
+79929-1,79929,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,G2 Esports,0,Ziggs|Nasus|Leona|Ryze|Gnar,Lee Sin|Jarvan IV|Orianna|Syndra|Ambessa,0.0,Groups
+79929-2,79929,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Dplus KIA,1,Syndra|Xin Zhao|Rell|Jayce|Zoe,Nocturne|Orianna|Anivia|Akali|LeBlanc,0.0,Groups
+79929-2,79929,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,G2 Esports,0,Jarvan IV|Lucian|Nautilus|Rumble|Sylas,Lee Sin|Poppy|Bard|Yorick|Cassiopeia,1.0,Groups
+79928-1,79928,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,JD Gaming,0,Naafiri|Syndra|Ambessa|Shen|Twisted Fate,Orianna|Jayce|Lee Sin|Bard|Alistar,0.0,Groups
+79928-1,79928,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Hanwha Life Esports,1,Jarvan IV|Gnar|Akali|Ziggs|Camille,Poppy|Vayne|Vi|Kaisa|Annie,1.0,Groups
+79927-1,79927,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Anyone s Legend,1,Jarvan IV|Varus|Orianna|Shen|Leona,Nocturne|Ziggs|Syndra|Akali|Gnar,0.0,Groups
+79927-1,79927,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,G2 Esports,0,Ezreal|Anivia|Lee Sin|Camille|Ahri,Poppy|Vi|Bard|Nautilus|Braum,1.0,Groups
+79926-1,79926,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,T1,0,Syndra|Jarvan IV|Shen|Sion|Sivir,Jayce|Orianna|Gnar|Gwen|Ambessa,0.0,Groups
+79926-1,79926,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Bilibili Gaming,1,Cassiopeia|Poppy|Camille|KSante|Ezreal,Vi|Vayne|Lee Sin|Akali|Dr. Mundo,1.0,Groups
+79925-1,79925,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Gen.G,1,Lee Sin|Orianna|Ziggs|Ambessa|Camille,Poppy|Vi|Nocturne|Rumble|Renekton,1.0,Groups
+79925-1,79925,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-16,16.13,26.13,Sentinels,0,Skarner|Caitlyn|Bard|Viktor|Shen,Syndra|Ezreal|Jayce|Pyke|Nautilus,0.0,Groups
+79922-1,79922,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,LYON,0,Nocturne|Jayce|Ziggs|Alistar|Viktor,Varus|Poppy|Leona|Olaf|KSante,1.0,Groups
+79922-1,79922,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Los Grandes,1,Cassiopeia|Vi|Camille|Vayne|Taliyah,Lee Sin|Orianna|Ezreal|Shen|Nautilus,0.0,Groups
+79922-2,79922,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,LYON,0,Ryze|Gnar|Qiyana|Nautilus|Jhin,Poppy|Varus|Orianna|Lulu|Sivir,1.0,Groups
+79922-2,79922,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Los Grandes,1,Syndra|Jarvan IV|Twisted Fate|Rell|Anivia,Lee Sin|Ezreal|Naafiri|Lucian|Bard,0.0,Groups
+79919-1,79919,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,FURIA,0,Syndra|Ziggs|Leona|Skarner|Ambessa,Jarvan IV|Cassiopeia|Gnar|Jayce|Renekton,1.0,Groups
+79919-1,79919,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Dplus KIA,1,Viktor|Camille|Lee Sin|Ahri|KSante,Orianna|Poppy|Vi|Naafiri|Xin Zhao,0.0,Groups
+79919-2,79919,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,FURIA,0,Bard|Galio|Vi|Yorick|Ezreal,Jarvan IV|Mel|Nautilus|Renata Glasc|Xayah,0.0,Groups
+79919-2,79919,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Dplus KIA,1,Orianna|Naafiri|Jayce|Shen|Taliyah,Akali|Poppy|Cassiopeia|Caitlyn|Olaf,1.0,Groups
+79916-1,79916,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,GAM Esports,0,Nocturne|Camille|Orianna|Jhin|Rumble,Poppy|Akali|Yone|Karma|Shen,1.0,Groups
+79916-1,79916,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Movistar KOI,1,Ezreal|Lee Sin|Galio|Leona|Ambessa,Jayce|Jarvan IV|Cassiopeia|Vayne|Ziggs,0.0,Groups
+79916-2,79916,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,GAM Esports,1,Syndra|Naafiri|Nautilus|Sivir|Olaf,Cassiopeia|Vi|Jayce|Renata Glasc|Braum,0.0,Groups
+79916-2,79916,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Movistar KOI,0,Ryze|Poppy|Varus|Rell|Gnar,Jarvan IV|Bard|Yorick|Vayne|Ziggs,1.0,Groups
+79916-3,79916,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,GAM Esports,1,Wukong|Ahri|Rakan|Ziggs|Zaahen,Jayce|Vi|Anivia|Caitlyn|Miss Fortune,0.0,Groups
+79916-3,79916,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Movistar KOI,0,Jarvan IV|Lissandra|Neeko|Kaisa|Renekton,Yorick|Cassiopeia|Bard|Vayne|Xayah,1.0,Groups
+79913-1,79913,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Karmine Corp,1,Gnar|Vi|Akali|Ziggs|Leona,Nocturne|Poppy|Ryze|Dr. Mundo|Galio,,Groups
+79913-1,79913,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Team Secret Whales,0,Urgot|Jarvan IV|Cassiopeia|Sivir|Camille,Jayce|Lee Sin|Ezreal|Ahri|Syndra,,Groups
+79913-2,79913,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Karmine Corp,0,Renekton|Trundle|Orianna|Jhin|Rell,Nocturne|Olaf|Lee Sin|Dr. Mundo|Shen,,Groups
+79913-2,79913,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Team Secret Whales,1,Volibear|Naafiri|Viktor|Kaisa|Nautilus,Ezreal|Jayce|Rumble|Caitlyn|Seraphine,,Groups
+79913-3,79913,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Karmine Corp,1,Vayne|Wukong|Syndra|Mel|Pyke,Lee Sin|Ryze|Nocturne|Olaf|Galio,,Groups
+79913-3,79913,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Team Secret Whales,0,Udyr|Xin Zhao|Sylas|Caitlyn|Elise,Poppy|Rumble|Ezreal|Jayce|Ambessa,,Groups
+79775-1,79775,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,JD Gaming,1,Orianna|Poppy|Jayce|Pyke|Kaisa,Ezreal|Akali|Lee Sin|Olaf|Viktor,1.0,Groups
+79775-1,79775,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,LYON,0,Ziggs|Jarvan IV|Bard|Anivia|Caitlyn,Vi|Nocturne|Naafiri|Nautilus|Camille,0.0,Groups
+79774-1,79774,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Los Grandes,0,Jarvan IV|Cassiopeia|Nautilus|Ziggs|Tristana,Camille|Lee Sin|Akali|LeBlanc|Annie,1.0,Groups
+79774-1,79774,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Hanwha Life Esports,1,Syndra|Naafiri|Alistar|Gnar|Seraphine,Jayce|Vi|Orianna|Vayne|Renekton,0.0,Groups
+79773-1,79773,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,FURIA,0,Camille|Lee Sin|Jhin|Ambessa|Akali,Anivia|Vi|Pantheon|Shen|Kled,1.0,Groups
+79773-1,79773,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,G2 Esports,1,Syndra|Leona|Naafiri|Gnar|Galio,Poppy|Jarvan IV|Cassiopeia|Rumble|Vayne,0.0,Groups
+79772-1,79772,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Dplus KIA,0,Jayce|Syndra|Xin Zhao|Jhin|Trundle,Orianna|Nocturne|Poppy|Olaf|Yorick,0.0,Groups
+79772-1,79772,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Anyone s Legend,1,Cassiopeia|Vi|Ezreal|Leona|Shen,Viktor|Jarvan IV|Ziggs|Camille|Bard,1.0,Groups
+79771-1,79771,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Bilibili Gaming,1,Cassiopeia|Nautilus|Ambessa|Lee Sin|Akali,Orianna|Varus|Nocturne|Renekton|Shyvana,0.0,Groups
+79771-1,79771,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Movistar KOI,0,Bard|Ezreal|Vi|Vex|Anivia,Syndra|Camille|Jayce|Naafiri|Poppy,1.0,Groups
+79770-1,79770,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,GAM Esports,0,Cassiopeia|Naafiri|Vayne|Jhin|Pyke,Nocturne|Jayce|Bard|Lucian|Syndra,0.0,Groups
+79770-1,79770,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,T1,1,Orianna|Gnar|Vi|Taliyah|Shen,Akali|Camille|Jarvan IV|Alistar|Nautilus,1.0,Groups
+79769-1,79769,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Sentinels,1,Lee Sin|Jhin|Rumble|Orianna|Blitzcrank,Nautilus|Poppy|Vi|Xin Zhao|Jarvan IV,1.0,Groups
+79769-1,79769,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Team Secret Whales,0,Ezreal|Karma|Ryze|Wukong|KSante,Caitlyn|Camille|Bard|Cassiopeia|Anivia,0.0,Groups
+79768-1,79768,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Gen.G,1,Syndra|Lee Sin|Ambessa|Leona|Jhin,Jayce|Vi|Ziggs|Renekton|Vayne,0.0,Groups
+79768-1,79768,ewc,Esports World Cup 2026,GROUPSTAGE,2026-07-15,16.13,26.13,Karmine Corp,0,Camille|Naafiri|Cassiopeia|Gnar|Ezreal,Nocturne|Poppy|Orianna|Shen|Pantheon,1.0,Groups
+83618-1,83618,demacia,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,16.18,26.18,Team WE,0,Lucian|Milio|Rumble|Jarvan IV|Syndra,Cassiopeia|Vi|Nocturne|KSante|Yorick,0.0,Finals
+83618-1,83618,demacia,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,16.18,26.18,BNK FearX,1,Lee Sin|Yunara|Lulu|Ryze|Jayce,Poppy|Pantheon|Qiyana|Skarner|Wukong,1.0,Finals
+83618-2,83618,demacia,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,16.18,26.18,Team WE,0,Nocturne|Locke|Yorick|Corki|Shen,Kalista|Ezreal|Twisted Fate|Alistar|Nautilus,1.0,Finals
+83618-2,83618,demacia,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,16.18,26.18,BNK FearX,1,Orianna|Qiyana|Renekton|Camille|Kaisa,Cassiopeia|Vi|Akali|Caitlyn|Seraphine,0.0,Finals
+83618-3,83618,demacia,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,16.18,26.18,Team WE,1,Karma|Ezreal|KSante|LeBlanc|Wukong,Kalista|Olaf|Gnar|Ambessa|Twisted Fate,1.0,Finals
+83618-3,83618,demacia,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,16.18,26.18,BNK FearX,0,Caitlyn|Bard|Pantheon|Akali|Dr. Mundo,Cassiopeia|Vi|Naafiri|Skarner|Trundle,0.0,Finals
+83618-4,83618,demacia,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,16.18,26.18,Team WE,0,Viktor|Maokai|Nasus|Jhin|Rell,Cassiopeia|Vi|Olaf|Sylas|Skarner,0.0,Finals
+83618-4,83618,demacia,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,16.18,26.18,BNK FearX,1,Varus|Ashe|Seraphine|Nidalee|Galio,Naafiri|Trundle|Jax|Kalista|Nautilus,1.0,Finals
+83608-1,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,Team WE,1,Rumble|Jayce|Ryze|Sivir|Karma,Cassiopeia|Vi|Nocturne|Alistar|Seraphine,,Semifinals
+83608-1,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,HANJIN BRION,0,KSante|Lee Sin|Syndra|Ezreal|Neeko,Qiyana|Lucian|Jarvan IV|Skarner|Wukong,,Semifinals
+83608-2,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,Team WE,1,Renekton|Naafiri|Akali|Caitlyn|Bard,Cassiopeia|Vi|Nocturne|Ornn|Annie,,Semifinals
+83608-2,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,HANJIN BRION,0,Gnar|Jarvan IV|Orianna|Lucian|Milio,Qiyana|Lulu|Kalista|Skarner|Locke,,Semifinals
+83608-3,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,Team WE,0,Trundle|Poppy|Viktor|Jhin|Seraphine,Cassiopeia|Vi|Nocturne|Annie|Ahri,,Semifinals
+83608-3,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,HANJIN BRION,1,Olaf|Wukong|Locke|Kalista|Renata Glasc,Qiyana|Lulu|Ashe|Alistar|Maokai,,Semifinals
+83608-4,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,Team WE,0,Sion|Qiyana|LeBlanc|Jinx|Nautilus,Nocturne|Annie|Gwen|Pantheon|Ambessa,,Semifinals
+83608-4,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,HANJIN BRION,1,Aatrox|Malphite|Ahri|Xayah|Rakan,Cassiopeia|Vi|Lulu|Sylas|Lissandra,,Semifinals
+83608-5,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,Team WE,1,Zaahen|Nocturne|Annie|Smolder|Alistar,Jax|Sylas|Yone|Galio|Aurora,,Semifinals
+83608-5,83608,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,16.18,26.18,HANJIN BRION,0,Ambessa|Chogath|Anivia|Corki|Shen,Cassiopeia|Vi|Lulu|Kaisa|Vayne,,Semifinals
+83603-1,83603,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-14,16.18,26.18,BNK FearX,1,Lee Sin|Yunara|Lulu|Rumble|Ahri,Nocturne|Pantheon|Syndra|KSante|Karma,1.0,Semifinals
+83603-1,83603,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-14,16.18,26.18,KT Rolster,0,Ryze|Skarner|Ezreal|Seraphine|Yorick,Cassiopeia|Qiyana|Vi|Anivia|Orianna,0.0,Semifinals
+83603-2,83603,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-14,16.18,26.18,BNK FearX,0,Kalista|Renata Glasc|Jarvan IV|Renekton|Sylas,Cassiopeia|Vi|Jayce|Syndra|Olaf,0.0,Semifinals
+83603-2,83603,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-14,16.18,26.18,KT Rolster,1,Nocturne|Xayah|Rakan|Gnar|Taliyah,Lucian|Poppy|Pantheon|Trundle|Orianna,1.0,Semifinals
+83603-3,83603,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-14,16.18,26.18,BNK FearX,1,Jayce|Jhin|Camille|KSante|Locke,Syndra|Pantheon|Lucian|Naafiri|Leona,1.0,Semifinals
+83603-3,83603,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-14,16.18,26.18,KT Rolster,0,Olaf|Orianna|Corki|Nautilus|Wukong,Cassiopeia|Qiyana|Vi|Galio|Akali,0.0,Semifinals
+83603-4,83603,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-14,16.18,26.18,BNK FearX,1,Vi|Ziggs|Shen|Viktor|Nidalee,Varus|Syndra|Maokai|Jax|Akali,1.0,Semifinals
+83603-4,83603,demacia,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-14,16.18,26.18,KT Rolster,0,Caitlyn|Bard|Pantheon|Lissandra|Kennen,Cassiopeia|Qiyana|Lucian|Ambessa|Twisted Fate,0.0,Semifinals
+83578-1,83578,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,HANJIN BRION,0,Vi|Yunara|Lulu|Rumble|Locke,Skarner|Karma|Olaf|Ryze|KSante,1.0,Quarterfinals
+83578-1,83578,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,LGD Gaming,1,Lucian|Milio|Qiyana|Syndra|Ornn,Cassiopeia|Nocturne|Lee Sin|Jayce|Akali,0.0,Quarterfinals
+83578-2,83578,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,HANJIN BRION,1,Lee Sin|Orianna|Varus|Ezreal|Leona,Olaf|Skarner|Karma|Jax|Viktor,1.0,Quarterfinals
+83578-2,83578,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,LGD Gaming,0,Seraphine|Ashe|Jarvan IV|Ryze|Yorick,Cassiopeia|Nocturne|Jayce|Nautilus|Kalista,0.0,Quarterfinals
+83578-3,83578,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,HANJIN BRION,1,Viktor|Kalista|Renata Glasc|Trundle|Kennen,Olaf|Karma|Akali|Neeko|Lux,1.0,Quarterfinals
+83578-3,83578,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,LGD Gaming,0,Yone|Maokai|Caitlyn|Bard|Aatrox,Cassiopeia|Jayce|Nocturne|Pantheon|Skarner,0.0,Quarterfinals
+83578-4,83578,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,HANJIN BRION,1,Wukong|KSante|Ahri|Corki|Neeko,Olaf|Karma|Naafiri|Sylas|Lissandra,1.0,Quarterfinals
+83578-4,83578,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,LGD Gaming,0,Jayce|Jhin|Poppy|Rell|Akali,Cassiopeia|Nocturne|Pantheon|Rakan|Thresh,0.0,Quarterfinals
+83573-1,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,Team WE,0,Jhin|Rumble|Ryze|Bard|Naafiri,Cassiopeia|Vi|Nocturne|Jarvan IV|Syndra,0.0,Quarterfinals
+83573-1,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,FlyQuest,1,Ezreal|Karma|KSante|Orianna|Wukong,Locke|Qiyana|Lucian|Nautilus|Skarner,1.0,Quarterfinals
+83573-2,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,Team WE,1,Vi|Lucian|Milio|Renekton|Viktor,Nocturne|Olaf|Syndra|Lee Sin|Gwen,1.0,Quarterfinals
+83573-2,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,FlyQuest,0,Kalista|Renata Glasc|Annie|Ambessa|Ornn,Qiyana|Locke|Cassiopeia|Ahri|Akali,0.0,Quarterfinals
+83573-3,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,Team WE,1,Ashe|Jarvan IV|Alistar|Sion|Akali,Cassiopeia|Nocturne|Syndra|Lee Sin|Sylas,0.0,Quarterfinals
+83573-3,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,FlyQuest,0,Jayce|Nautilus|Ziggs|Tristana|Ivern,Qiyana|Olaf|Skarner|Galio|Ahri,1.0,Quarterfinals
+83573-4,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,Team WE,0,Lulu|Aphelios|Yorick|Ahri|Gragas,Olaf|Syndra|Nocturne|Jax|Locke,1.0,Quarterfinals
+83573-4,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,FlyQuest,1,Varus|Rell|Lee Sin|Hwei|Sylas,Qiyana|Cassiopeia|Caitlyn|Skarner|Xin Zhao,0.0,Quarterfinals
+83573-5,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,Team WE,1,Corki|Maokai|Jax|Camille|LeBlanc,Cassiopeia|Nocturne|Syndra|Kennen|Gnar,0.0,Quarterfinals
+83573-5,83573,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-13,16.18,26.18,FlyQuest,0,Caitlyn|Neeko|Aurora|Shyvana|Aatrox,Qiyana|Olaf|Locke|Miss Fortune|Jinx,1.0,Quarterfinals
+83568-1,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,BNK FearX,1,Pantheon|Rumble|Locke|Renata Glasc|Kalista,Cassiopeia|Vi|Qiyana|Caitlyn|Ezreal,0.0,Quarterfinals
+83568-1,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,JD Gaming,0,Nocturne|Orianna|KSante|Xayah|Rakan,Lee Sin|Jarvan IV|Lulu|Lucian|Nautilus,1.0,Quarterfinals
+83568-2,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,BNK FearX,0,Xin Zhao|Jayce|Syndra|Camille|Jhin,Cassiopeia|Vi|Qiyana|Olaf|Akali,0.0,Quarterfinals
+83568-2,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,JD Gaming,1,Jarvan IV|Lucian|Milio|Sion|Viktor,Lee Sin|Ezreal|Poppy|Lulu|Caitlyn,1.0,Quarterfinals
+83568-3,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,BNK FearX,1,Lee Sin|Caitlyn|Bard|Anivia|Shen,Poppy|Olaf|Ryze|Ahri|Gnar,1.0,Quarterfinals
+83568-3,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,JD Gaming,0,Ashe|Seraphine|Skarner|Renekton|Taliyah,Cassiopeia|Vi|Ezreal|LeBlanc|Annie,0.0,Quarterfinals
+83568-4,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,BNK FearX,0,Yunara|Karma|Poppy|Yorick|Mel,Cassiopeia|Vi|Qiyana|Annie|Ambessa,0.0,Quarterfinals
+83568-4,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,JD Gaming,1,Lulu|Naafiri|Tristana|Jax|Twisted Fate,Ezreal|Ryze|Olaf|Ahri|Azir,1.0,Quarterfinals
+83568-5,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,BNK FearX,1,Olaf|Nidalee|Ryze|Ezreal|Leona,Varus|Ambessa|Gnar|Sivir|Kled,1.0,Quarterfinals
+83568-5,83568,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,JD Gaming,0,Trundle|Akali|Alistar|Viego|Kaisa,Cassiopeia|Vi|Qiyana|Neeko|Thresh,0.0,Quarterfinals
+83563-1,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,Team Vitality,1,Qiyana|Rumble|Orianna|Xayah|Rakan,Lee Sin|Nocturne|Ezreal|Lulu|Seraphine,1.0,Quarterfinals
+83563-1,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,KT Rolster,0,Ryze|Pantheon|KSante|Renata Glasc|Kalista,Cassiopeia|Vi|Syndra|Lucian|Jhin,0.0,Quarterfinals
+83563-2,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,Team Vitality,1,Syndra|Lee Sin|Ambessa|Ziggs|Alistar,Nocturne|Olaf|Akali|Karma|Taliyah,1.0,Quarterfinals
+83563-2,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,KT Rolster,0,Ezreal|Jarvan IV|Renekton|Viktor|Seraphine,Cassiopeia|Vi|Lucian|Bard|Lulu,0.0,Quarterfinals
+83563-3,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,Team Vitality,0,Ahri|Wukong|Camille|Kaisa|Nautilus,Cassiopeia|Nocturne|Annie|Lulu|Karma,0.0,Quarterfinals
+83563-3,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,KT Rolster,1,Vi|Olaf|Taliyah|Miss Fortune|Leona,Lucian|Sivir|Poppy|Bard|Trundle,1.0,Quarterfinals
+83563-4,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,Team Vitality,0,Caitlyn|Karma|Trundle|Hwei|Chogath,Cassiopeia|Nocturne|Jayce|Akali|Twisted Fate,0.0,Quarterfinals
+83563-4,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,KT Rolster,1,Lulu|Yunara|Skarner|Locke|Yorick,Lucian|Naafiri|Bard|Varus|Annie,1.0,Quarterfinals
+83563-5,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,Team Vitality,0,Varus|Aphelios|Blitzcrank|Akali|Aatrox,Shen|Jhin|Nocturne|Zoe|Twisted Fate,1.0,Quarterfinals
+83563-5,83563,demacia,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,16.18,26.18,KT Rolster,1,Corki|Xin Zhao|Jax|Maokai|Vex,Cassiopeia|Jayce|Lucian|Annie|Naafiri,0.0,Quarterfinals
+83540-1,83540,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,JD Gaming,0,Ashe|Seraphine|Qiyana|Galio|Locke,Nocturne|Cassiopeia|Vi|Lucian|Lulu,0.0,Round 4
+83540-1,83540,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,Natus Vincere,1,Ryze|Jarvan IV|Rumble|Jhin|Nautilus,Syndra|Ezreal|Olaf|KSante|Ornn,1.0,Round 4
+83540-2,83540,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,JD Gaming,1,Orianna|Yunara|Lulu|Renekton|Lee Sin,Ezreal|Syndra|Viktor|Skarner|Gnar,1.0,Round 4
+83540-2,83540,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,Natus Vincere,0,Lucian|Milio|Akali|Xin Zhao|Olaf,Nocturne|Vi|Cassiopeia|Trundle|Wukong,0.0,Round 4
+83540-3,83540,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,JD Gaming,1,Nocturne|Xayah|Rakan|Jax|Taliyah,Ezreal|Syndra|Vi|Trundle|Skarner,1.0,Round 4
+83540-3,83540,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,Natus Vincere,0,Kalista|Renata Glasc|Viktor|Ambessa|Sejuani,Caitlyn|Jayce|Cassiopeia|Ahri|Sylas,0.0,Round 4
+83537-1,83537,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,RED Canids,0,Orianna|Wukong|Rumble|Rakan|Xayah,Cassiopeia|Ezreal|Kalista|KSante|Galio,0.0,Round 4
+83537-1,83537,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,FlyQuest,1,Nocturne|Yunara|Lulu|Syndra|Ornn,Olaf|Lee Sin|Jarvan IV|Jhin|Caitlyn,1.0,Round 4
+83537-2,83537,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,RED Canids,0,Olaf|Ashe|Seraphine|Naafiri|Aurora,Ezreal|Kalista|Kled|Ambessa|Annie,1.0,Round 4
+83537-2,83537,demacia,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,16.18,26.18,FlyQuest,1,Lucian|Milio|Jarvan IV|Ryze|KSante,Lee Sin|Vi|Cassiopeia|Xin Zhao|Qiyana,0.0,Round 4
+83534-1,83534,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,Shopify Rebellion,0,Rumble|Xin Zhao|Ryze|Lucian|Milio,Cassiopeia|Nocturne|Ezreal|Syndra|KSante,0.0,Round 3RR
+83534-1,83534,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,FlyQuest,1,Vi|Kalista|Renata Glasc|Ambessa|Galio,Olaf|Qiyana|Naafiri|Xayah|Lulu,1.0,Round 3RR
+83534-2,83534,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,Shopify Rebellion,1,Wukong|Olaf|Sylas|Mel|Rakan,Ezreal|Syndra|Jayce|Jarvan IV|Orianna,1.0,Round 3RR
+83534-2,83534,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,FlyQuest,0,Ashe|Seraphine|Kled|Hwei|Chogath,Nocturne|Cassiopeia|Qiyana|Lulu|Nautilus,0.0,Round 3RR
+83534-3,83534,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,Shopify Rebellion,0,Naafiri|Nautilus|Miss Fortune|Gnar|Anivia,Jayce|Syndra|Ezreal|Viktor|Twisted Fate,1.0,Round 3RR
+83534-3,83534,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,FlyQuest,1,Lulu|Shyvana|Yunara|Annie|Tristana,Nocturne|Cassiopeia|Qiyana|Orianna|Locke,0.0,Round 3RR
+83531-1,83531,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,GAM Esports,0,Lucian|Milio|Viktor|Jarvan IV|Jayce,Cassiopeia|Vi|Nocturne|Lee Sin|Xin Zhao,0.0,Round 3RR
+83531-1,83531,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,Shopify Rebellion,1,Ryze|Yunara|Lulu|Naafiri|Gnar,Rumble|Syndra|Qiyana|Olaf|Wukong,1.0,Round 3RR
+83531-2,83531,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,GAM Esports,0,Syndra|Pantheon|Sivir|Bard|Jax,Vi|Nocturne|Rumble|Alistar|Nautilus,0.0,Round 3RR
+83531-2,83531,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,Shopify Rebellion,1,Cassiopeia|Olaf|Ezreal|Amumu|Wukong,Qiyana|Lee Sin|KSante|Karma|Seraphine,1.0,Round 3RR
+83528-1,83528,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,FlyQuest,1,Ezreal|KSante|Karma|Orianna|Wukong,Olaf|Qiyana|Syndra|Naafiri|Jarvan IV,1.0,Round 3RR
+83528-1,83528,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,GAM Esports,0,Jhin|Rumble|Nautilus|Pantheon|Akali,Vi|Nocturne|Cassiopeia|Xin Zhao|Lee Sin,0.0,Round 3RR
+83528-2,83528,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,FlyQuest,1,Kalista|Renata Glasc|Kled|Twisted Fate|Chogath,Nocturne|Cassiopeia|Xayah|Caitlyn|Lucian,0.0,Round 3RR
+83528-2,83528,demacia,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,16.18,26.18,GAM Esports,0,Qiyana|Ryze|Olaf|Ashe|Seraphine,Vi|Syndra|Lee Sin|Viktor|Anivia,1.0,Round 3RR
+83526-1,83526,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,JD Gaming,0,Ryze|Nautilus|Kaisa|Naafiri|Rumble,Locke|Akali|Vi|Anivia|Galio,1.0,Round 3
+83526-1,83526,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,LGD Gaming,1,Karma|Lee Sin|Sivir|Syndra|Ornn,Qiyana|Cassiopeia|Nocturne|Jarvan IV|Pantheon,0.0,Round 3
+83526-2,83526,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,JD Gaming,0,Vi|Yunara|Lulu|Viktor|KSante,Locke|Akali|Olaf|Gnar|Galio,1.0,Round 3
+83526-2,83526,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,LGD Gaming,1,Lucian|Milio|Poppy|Orianna|Varus,Qiyana|Cassiopeia|Nocturne|Twisted Fate|Renekton,0.0,Round 3
+83523-1,83523,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,RED Canids,0,Cassiopeia|Ezreal|Karma|Sion|Sejuani,Vi|Rumble|Lucian|Nautilus|Jhin,0.0,Round 3
+83523-1,83523,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,Team Vitality,1,Qiyana|Syndra|Jayce|Caitlyn|Bard,Nocturne|Lee Sin|Olaf|Jarvan IV|KSante,1.0,Round 3
+83523-2,83523,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,RED Canids,0,Jarvan IV|Yunara|Lulu|Olaf|Orianna,Rumble|Pantheon|Akali|Ambessa|Camille,1.0,Round 3
+83523-2,83523,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,Team Vitality,1,Lucian|Milio|Wukong|Viktor|Vayne,Vi|Nocturne|Lee Sin|KSante|Ryze,0.0,Round 3
+83520-1,83520,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,HANJIN BRION,0,Karma|Jhin|Jarvan IV|Locke|Ambessa,Vi|Nocturne|Cassiopeia|Naafiri|Lee Sin,0.0,Round 3
+83520-1,83520,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,Natus Vincere,1,Ezreal|Seraphine|Ryze|Rumble|Skarner,Jayce|Olaf|Syndra|Orianna|Anivia,1.0,Round 3
+83520-2,83520,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,HANJIN BRION,1,Orianna|Yunara|Lulu|Olaf|Xin Zhao,Syndra|Qiyana|Pantheon|Sejuani|KSante,1.0,Round 3
+83520-2,83520,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,Natus Vincere,0,Lucian|Milio|Viktor|Wukong|Jax,Cassiopeia|Vi|Nocturne|Jayce|Maokai,0.0,Round 3
+83520-3,83520,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,HANJIN BRION,1,Kalista|Renata Glasc|Sylas|Lee Sin|Gwen,Nocturne|Vi|Caitlyn|Poppy|Qiyana,0.0,Round 3
+83520-3,83520,demacia,Demacia Cup Global Invitational 2026,ROUND3,2026-10-06,16.18,26.18,Natus Vincere,0,Syndra|Miss Fortune|Neeko|KSante|Zaahen,Jayce|Akali|Varus|Sejuani|Gnar,1.0,Round 3
+83468-1,83468,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,JD Gaming,1,Naafiri|Ryze|Rumble|Lucian|Milio,Cassiopeia|Vi|Nocturne|Galio|KSante,0.0,Round 2
+83468-1,83468,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,Shopify Rebellion,0,Jarvan IV|Yunara|Lulu|Ornn|Locke,Qiyana|Lee Sin|Ezreal|Nautilus|Caitlyn,1.0,Round 2
+83468-2,83468,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,JD Gaming,1,Kalista|Renata Glasc|Akali|Renekton|Skarner,Cassiopeia|Nocturne|Vi|Poppy|Wukong,0.0,Round 2
+83468-2,83468,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,Shopify Rebellion,0,Orianna|Xayah|Rakan|Zaahen|Pantheon,Ezreal|Qiyana|Seraphine|Lee Sin|Gnar,1.0,Round 2
+83465-1,83465,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,FlyQuest,0,Kalista|Renata Glasc|Vi|KSante|Akali,Nocturne|Yunara|Qiyana|Naafiri|Poppy,0.0,Round 2
+83465-1,83465,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,Natus Vincere,1,Rumble|Lucian|Milio|Syndra|Wukong,Olaf|Cassiopeia|Ezreal|Ambessa|Locke,1.0,Round 2
+83465-2,83465,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,FlyQuest,0,Lee Sin|Ryze|Jayce|Mel|Pyke,Olaf|Qiyana|Naafiri|Anivia|Skarner,1.0,Round 2
+83465-2,83465,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,Natus Vincere,1,Ashe|Seraphine|Yorick|Orianna|Xin Zhao,Cassiopeia|Nocturne|Ezreal|Lulu|Nautilus,0.0,Round 2
+83462-1,83462,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,Team Vitality,1,Vi|Syndra|Ambessa|Kalista|Renata Glasc,Nocturne|Jarvan IV|Lulu|Seraphine|Karma,1.0,Round 2
+83462-1,83462,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,GAM Esports,0,Ryze|Lee Sin|Olaf|Bard|Jhin,Rumble|Cassiopeia|Qiyana|Lucian|Ezreal,0.0,Round 2
+83462-2,83462,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,Team Vitality,1,Rumble|Pantheon|Sylas|Xayah|Blitzcrank,Cassiopeia|Seraphine|Jarvan IV|Karma|Lulu,0.0,Round 2
+83462-2,83462,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,16.18,26.18,GAM Esports,0,Qiyana|Galio|Ahri|Aphelios|Thresh,Nocturne|Lucian|KSante|Alistar|Poppy,1.0,Round 2
+83459-1,83459,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,Team WE,1,Ezreal|Skarner|Viktor|Rumble|Alistar,Cassiopeia|Nocturne|Vi|Jhin|Caitlyn,0.0,Round 2
+83459-1,83459,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,HANJIN BRION,0,Lee Sin|Karma|Ryze|Sivir|Olaf,Qiyana|Lucian|Pantheon|Nautilus|KSante,1.0,Round 2
+83459-2,83459,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,Team WE,0,Yunara|Lulu|Akali|Sejuani|Yorick,Cassiopeia|Nocturne|Vi|Twisted Fate|Galio,0.0,Round 2
+83459-2,83459,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,HANJIN BRION,1,Jarvan IV|Ashe|Seraphine|Jayce|Ahri,Qiyana|Lucian|Pantheon|Wukong|Xin Zhao,1.0,Round 2
+83459-3,83459,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,Team WE,1,Jhin|Naafiri|Bard|Locke|Ornn,Cassiopeia|Vi|Nocturne|Nautilus|Camille,0.0,Round 2
+83459-3,83459,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,HANJIN BRION,0,Pantheon|Orianna|Varus|Renekton|Elise,Qiyana|Lucian|Kalista|Syndra|Galio,1.0,Round 2
+83456-1,83456,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,KT Rolster,1,Ryze|Skarner|Olaf|Yunara|Lulu,Cassiopeia|Vi|Nocturne|Trundle|Syndra,0.0,Round 2
+83456-1,83456,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,RED Canids,0,Lee Sin|Lucian|Milio|Annie|Ambessa,Ezreal|Jarvan IV|Pantheon|Seraphine|Nautilus,1.0,Round 2
+83456-2,83456,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,KT Rolster,1,Syndra|Qiyana|Galio|Jhin|Alistar,Cassiopeia|Vi|Nocturne|Renata Glasc|Bard,0.0,Round 2
+83456-2,83456,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,RED Canids,0,Orianna|Wukong|Rumble|Rakan|Corki,Jarvan IV|Seraphine|Ezreal|Nautilus|Leona,1.0,Round 2
+83453-1,83453,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,BNK FearX,1,Cassiopeia|Yunara|Lulu|Jayce|Poppy,Nocturne|Syndra|Ezreal|Qiyana|Olaf,1.0,Round 2
+83453-1,83453,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,LGD Gaming,0,Lucian|Milio|Akali|Pantheon|Yorick,Vi|Lee Sin|Caitlyn|Wukong|Jarvan IV,0.0,Round 2
+83453-2,83453,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,BNK FearX,0,Lee Sin|Olaf|Ryze|Caitlyn|Bard,Nocturne|Syndra|Ezreal|Ambessa|Camille,1.0,Round 2
+83453-2,83453,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,LGD Gaming,1,Karma|Skarner|Locke|Jax|Aphelios,Vi|Jarvan IV|Seraphine|Nautilus|Thresh,0.0,Round 2
+83453-3,83453,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,BNK FearX,1,Qiyana|Jhin|Camille|Rumble|Sylas,Nocturne|Syndra|Kalista|Nautilus|Alistar,1.0,Round 2
+83453-3,83453,demacia,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,16.18,26.18,LGD Gaming,0,Orianna|Shyvana|Corki|Rell|Ambessa,Vi|Jarvan IV|Seraphine|Galio|Annie,0.0,Round 2
+83452-1,83452,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,JD Gaming,0,Ezreal|Karma|Twisted Fate|Pantheon|Yorick,Cassiopeia|Vi|Lucian|Jhin|Kaisa,0.0,Round 1
+83452-1,83452,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,HANJIN BRION,1,Lee Sin|Nautilus|Ryze|Miss Fortune|Jayce,Qiyana|Nocturne|Lulu|Jarvan IV|Olaf,1.0,Round 1
+83451-1,83451,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,Team WE,1,Lucian|Milio|Qiyana|Ahri|Galio,Cassiopeia|Vi|Karma|Pantheon|Poppy,0.0,Round 1
+83451-1,83451,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,GAM Esports,0,Ryze|Yunara|Lulu|Rumble|Jarvan IV,Nocturne|Lee Sin|Syndra|Annie|Twisted Fate,1.0,Round 1
+83450-1,83450,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,BNK FearX,1,Olaf|Vi|Cassiopeia|Caitlyn|Bard,Nocturne|Syndra|Rumble|Pantheon|Qiyana,,Round 1
+83450-1,83450,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,Team Vitality,0,KSante|Naafiri|Anivia|Yunara|Lulu,Lee Sin|Seraphine|Lucian|Karma|Neeko,,Round 1
+83449-1,83449,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,KT Rolster,1,Qiyana|KSante|Ryze|Jhin|Leona,Cassiopeia|Vi|Jarvan IV|Lucian|Kalista,0.0,Round 1
+83449-1,83449,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,Shopify Rebellion,0,Rumble|Pantheon|Orianna|Varus|Nautilus,Olaf|Nocturne|Ezreal|Seraphine|Caitlyn,1.0,Round 1
+83448-1,83448,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,FlyQuest,0,Rumble|Senna|Nautilus|Ryze|Trundle,Olaf|Ezreal|Lee Sin|Akali|Pantheon,1.0,Round 1
+83448-1,83448,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,LGD Gaming,1,Lucian|Milio|KSante|Shyvana|Anivia,Cassiopeia|Nocturne|Jarvan IV|Vi|Qiyana,0.0,Round 1
+83447-1,83447,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,RED Canids,1,Jarvan IV|Cassiopeia|KSante|Lucian|Milio,Seraphine|Olaf|Syndra|Nautilus|Caitlyn,1.0,Round 1
+83447-1,83447,demacia,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,16.18,26.18,Natus Vincere,0,Rumble|Qiyana|Viktor|Yunara|Lulu,Vi|Nocturne|Lee Sin|Ezreal|Bard,0.0,Round 1
+83635-1,83635,worlds,Worlds 2026 Play-In,ROUND3,2026-10-18,16.20,26.20,Karmine Corp,1,Lee Sin|Jayce|Cassiopeia|Zeri|Yuumi,Nocturne|Olaf|Ezreal|Viktor|KSante,1.0,Play-In
+83635-1,83635,worlds,Worlds 2026 Play-In,ROUND3,2026-10-18,16.20,26.20,MVK Esports,0,Ashe|Seraphine|Jarvan IV|Yorick|Akali,Syndra|Rumble|Vi|Nautilus|Jhin,0.0,Play-In
+83635-2,83635,worlds,Worlds 2026 Play-In,ROUND3,2026-10-18,16.20,26.20,Karmine Corp,1,Qiyana|Galio|Ryze|Lulu|Yunara,Olaf|Vi|Nocturne|KogMaw|Yone,0.0,Play-In
+83635-2,83635,worlds,Worlds 2026 Play-In,ROUND3,2026-10-18,16.20,26.20,MVK Esports,0,Rumble|Lucian|Milio|Malphite|Hwei,Syndra|Renata Glasc|Nautilus|Caitlyn|Jhin,1.0,Play-In
+83635-3,83635,worlds,Worlds 2026 Play-In,ROUND3,2026-10-18,16.20,26.20,Karmine Corp,1,Viktor|Ezreal|Leona|Naafiri|Zaahen,Olaf|Vi|Nocturne|Rakan|Wukong,0.0,Play-In
+83635-3,83635,worlds,Worlds 2026 Play-In,ROUND3,2026-10-18,16.20,26.20,MVK Esports,0,Camille|Locke|Twitch|Yone|Aatrox,Renata Glasc|Syndra|Jax|Renekton|Trundle,1.0,Play-In
+83631-1,83631,worlds,Worlds 2026 Play-In,ROUND2,2026-10-17,16.20,26.20,MVK Esports,1,Zaahen|Jarvan IV|Cassiopeia|Ezreal|Lulu,Karma|Vi|Olaf|Akali|Jax,,Play-In
+83631-1,83631,worlds,Worlds 2026 Play-In,ROUND2,2026-10-17,16.20,26.20,FURIA,0,Camille|Sejuani|Syndra|Lucian|Milio,Nocturne|Pyke|Lee Sin|Jayce|Renekton,,Play-In
+83631-2,83631,worlds,Worlds 2026 Play-In,ROUND2,2026-10-17,16.20,26.20,MVK Esports,1,Vi|KogMaw|Jhin|Gnar|Bard,Akali|Renata Glasc|Olaf|Locke|Jax,1.0,Play-In
+83631-2,83631,worlds,Worlds 2026 Play-In,ROUND2,2026-10-17,16.20,26.20,FURIA,0,Xayah|Rakan|Nasus|Viktor|Ambessa,Nocturne|Caitlyn|Seraphine|Neeko|Rumble,0.0,Play-In
+83631-3,83631,worlds,Worlds 2026 Play-In,ROUND2,2026-10-17,16.20,26.20,MVK Esports,0,Ziggs|Jayce|Mel|Leona|KSante,Renata Glasc|Olaf|Pantheon|Jax|Naafiri,0.0,Play-In
+83631-3,83631,worlds,Worlds 2026 Play-In,ROUND2,2026-10-17,16.20,26.20,FURIA,1,Seraphine|Miss Fortune|Twisted Fate|Rumble|Skarner,Nocturne|Pyke|Lee Sin|Nautilus|Maokai,1.0,Play-In
+83631-4,83631,worlds,Worlds 2026 Play-In,ROUND2,2026-10-17,16.20,26.20,MVK Esports,1,Olaf|Corki|Shen|Wukong|Ryze,Renata Glasc|Akali|Trundle|Kaisa|Sylas,1.0,Play-In
+83631-4,83631,worlds,Worlds 2026 Play-In,ROUND2,2026-10-17,16.20,26.20,FURIA,0,Jax|Pantheon|Alistar|Sivir|Taliyah,Nocturne|Lee Sin|Karma|Zyra|Maokai,0.0,Play-In
+83628-1,83628,worlds,Worlds 2026 Play-In,ROUND2,2026-10-16,16.20,26.20,Karmine Corp,1,Vi|Syndra|Nautilus|Jayce|Draven,Nocturne|Olaf|Lee Sin|Yone|Yunara,1.0,Play-In
+83628-1,83628,worlds,Worlds 2026 Play-In,ROUND2,2026-10-16,16.20,26.20,MVK Esports,0,Tristana|Lulu|Maokai|KSante|Ambessa,Rumble|Seraphine|Cassiopeia|Gnar|Ezreal,0.0,Play-In
+83628-2,83628,worlds,Worlds 2026 Play-In,ROUND2,2026-10-16,16.20,26.20,Karmine Corp,1,Ashe|Seraphine|Galio|Lee Sin|Ahri,Olaf|Nocturne|Cassiopeia|Wukong|Yone,0.0,Play-In
+83628-2,83628,worlds,Worlds 2026 Play-In,ROUND2,2026-10-16,16.20,26.20,MVK Esports,0,Rumble|Ezreal|Pyke|Qiyana|Twisted Fate,Pantheon|Karma|Orianna|Ryze|Jax,1.0,Play-In
+83628-3,83628,worlds,Worlds 2026 Play-In,ROUND2,2026-10-16,16.20,26.20,Karmine Corp,1,Jarvan IV|Xayah|Rakan|Viktor|Kennen,Nocturne|Camille|Olaf|Vayne|Taliyah,1.0,Play-In
+83628-3,83628,worlds,Worlds 2026 Play-In,ROUND2,2026-10-16,16.20,26.20,MVK Esports,0,Wukong|Lucian|Milio|KogMaw|Yorick,Orianna|Caitlyn|Gnar|Cassiopeia|Renekton,0.0,Play-In
+83623-1,83623,worlds,Worlds 2026 Play-In,ROUND1,2026-10-16,16.20,26.20,FURIA,0,Kalista|Renata Glasc|Ambessa|Jarvan IV|Ahri,Nocturne|Cassiopeia|Karma|Xin Zhao|Maokai,0.0,Play-In
+83623-1,83623,worlds,Worlds 2026 Play-In,ROUND1,2026-10-16,16.20,26.20,Cloud9,1,Rumble|Lucian|Milio|Qiyana|Syndra,Seraphine|Skarner|KSante|Vi|Akali,1.0,Play-In
+83623-2,83623,worlds,Worlds 2026 Play-In,ROUND1,2026-10-16,16.20,26.20,FURIA,1,Lulu|Olaf|Yunara|Sejuani|Akali,Maokai|Nocturne|Vi|Camille|Twisted Fate,1.0,Play-In
+83623-2,83623,worlds,Worlds 2026 Play-In,ROUND1,2026-10-16,16.20,26.20,Cloud9,0,Caitlyn|Bard|Lee Sin|KSante|Sylas,Seraphine|Ezreal|Pantheon|Skarner|Gnar,0.0,Play-In
+83623-3,83623,worlds,Worlds 2026 Play-In,ROUND1,2026-10-16,16.20,26.20,FURIA,1,Sivir|Karma|Chogath|Viktor|Volibear,Nocturne|Cassiopeia|Locke|Seraphine|Gnar,0.0,Play-In
+83623-3,83623,worlds,Worlds 2026 Play-In,ROUND1,2026-10-16,16.20,26.20,Cloud9,0,Ezreal|Naafiri|Orianna|Renekton|Alistar,Ashe|Xayah|Jayce|Vayne|Varus,1.0,Play-In
+83623-4,83623,worlds,Worlds 2026 Play-In,ROUND1,2026-10-16,16.20,26.20,FURIA,1,Vi|Miss Fortune|Rell|Jax|Twisted Fate,Nocturne|Yone|Jayce|Xin Zhao|Gnar,1.0,Play-In
+83623-4,83623,worlds,Worlds 2026 Play-In,ROUND1,2026-10-16,16.20,26.20,Cloud9,0,Ziggs|Nautilus|Locke|Trundle|Aatrox,Seraphine|Galio|Skarner|Aurora|Cassiopeia,0.0,Play-In
+83598-1,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Karmine Corp,0,Rumble|Lee Sin|Nautilus|Syndra|Miss Fortune,Vi|KSante|Skarner|Orianna|Sylas,0.0,Play-In
+83598-1,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Cloud9,1,Karma|Ezreal|Gnar|Locke|Xin Zhao,Seraphine|Nocturne|Qiyana|Jhin|Akali,1.0,Play-In
+83598-2,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Karmine Corp,1,Jayce|Vi|Cassiopeia|Varus|VelKoz,Nocturne|KSante|Lulu|Olaf|Jarvan IV,,Play-In
+83598-2,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Cloud9,0,Camille|Wukong|Akali|Kalista|Renata Glasc,Seraphine|Caitlyn|Qiyana|Lucian|Rakan,,Play-In
+83598-3,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Karmine Corp,0,Lucian|Nami|Naafiri|Anivia|Kled,Orianna|Lulu|Qiyana|KSante|Aurora,0.0,Play-In
+83598-3,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Cloud9,1,Jarvan IV|Jhin|Alistar|Annie|Olaf,Seraphine|Caitlyn|Viktor|Vayne|Sylas,1.0,Play-In
+83598-4,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Karmine Corp,1,Qiyana|Orianna|Renekton|Xayah|Rakan,Nocturne|KSante|Pantheon|Vayne|Skarner,1.0,Play-In
+83598-4,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Cloud9,0,Yunara|Lulu|Sylas|Zaahen|Sejuani,Seraphine|Caitlyn|Viktor|Aphelios|Draven,0.0,Play-In
+83598-5,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Karmine Corp,1,Ambessa|Kaisa|Rell|Ahri|Trundle,Nocturne|Maokai|Pantheon|Poppy|Kindred,1.0,Play-In
+83598-5,83598,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,Cloud9,0,KSante|Ziggs|Yone|Shen|Lillia,Seraphine|Caitlyn|Vayne|LeBlanc|KhaZix,0.0,Play-In
+83593-1,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Olaf|Ashe|Seraphine|Cassiopeia|Vi,Ezreal|Pantheon|Akali|Sylas|Locke,1.0,Play-In
+83593-1,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Yunara|Lulu|Trundle|Jax|Galio,Pyke|Nocturne|Jarvan IV|Maokai|Lee Sin,0.0,Play-In
+83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Lucian|Milio|Lee Sin|Rumble|Viktor,Ezreal|Renata Glasc|Akali|Pantheon|Ambessa,1.0,Play-In
+83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
+83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
+83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83653-1,83653,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Team Liquid,0,Ezreal|Jarvan IV|Karma|Locke|KSante,Cassiopeia|Vi|Nocturne|Ziggs|Gnar,1.0,Swiss R2
+83653-1,83653,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Bilibili Gaming,1,Lee Sin|Orianna|Camille|Jhin|Nautilus,Renata Glasc|Qiyana|Galio|Syndra|Olaf,0.0,Swiss R2
+83652-1,83652,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Dplus KIA,1,Kalista|Renata Glasc|Jarvan IV|Viktor|KSante,Nocturne|Locke|Rumble|Akali|Taliyah,0.0,Swiss R2
+83652-1,83652,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,T1,0,Vi|Neeko|Caitlyn|Anivia|Jayce,Syndra|Cassiopeia|Qiyana|Orianna|Olaf,1.0,Swiss R2
+83651-1,83651,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Hanwha Life Esports,0,Jhin|Pantheon|Alistar|Ambessa|Taliyah,Vi|Cassiopeia|Kalista|Anivia|Poppy,0.0,Swiss R2
+83651-1,83651,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Gen.G,1,Qiyana|Rumble|Ezreal|Syndra|Leona,Jayce|Nocturne|Galio|Locke|Akali,1.0,Swiss R2
+83650-1,83650,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Team Secret Whales,0,Qiyana|Ezreal|Locke|Alistar|Shen,Syndra|Rumble|Jayce|Lulu|Renata Glasc,0.0,Swiss R2
+83650-1,83650,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Invictus Gaming,1,Nocturne|Orianna|KSante|Ashe|Seraphine,Olaf|Galio|Vi|Nautilus|Volibear,1.0,Swiss R2
+83649-1,83649,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Karmine Corp,0,Lee Sin|Rumble|Cassiopeia|Renata Glasc|Kalista,Ezreal|Nocturne|KSante|Seraphine|Caitlyn,0.0,Swiss R2
+83649-1,83649,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,LYON,1,Wukong|Galio|Syndra|Yunara|Lulu,Jayce|Vi|Qiyana|Jhin|Olaf,1.0,Swiss R2
+83648-1,83648,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Los Grandes,0,Nocturne|Jayce|Orianna|Kalista|Renata Glasc,Olaf|Jarvan IV|Galio|Akali|LeBlanc,1.0,Swiss R2
+83648-1,83648,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,G2 Esports,1,Ezreal|Karma|KSante|Locke|Lee Sin,Vi|Seraphine|Syndra|Nautilus|Sivir,0.0,Swiss R2
+83647-1,83647,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Movistar KOI,1,Cassiopeia|Kalista|Renata Glasc|Trundle|Qiyana,Lucian|Rumble|Nocturne|Aphelios|Caitlyn,1.0,Swiss R2
+83647-1,83647,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,CTBC Flying Oyster,0,Akali|Lee Sin|Olaf|Lulu|Tristana,Ezreal|Vi|Anivia|Skarner|KSante,0.0,Swiss R2
+83646-1,83646,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Top Esports,1,Nocturne|Renata Glasc|Kalista|Locke|Ambessa,Olaf|Qiyana|Cassiopeia|Jhin|Ashe,0.0,Swiss R2
+83646-1,83646,worlds,Worlds 2026 Main Event,ROUND2,2026-10-24,16.20,26.20,Anyone s Legend,0,Orianna|Jarvan IV|Rumble|Lucian|Milio,Akali|Ezreal|Vi|Ornn|Yone,1.0,Swiss R2
+83645-1,83645,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Movistar KOI,1,Jarvan IV|Ezreal|Karma|Sylas|Renekton,Vi|Rumble|Cassiopeia|Lee Sin|Skarner,0.0,Swiss R1
+83645-1,83645,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Bilibili Gaming,0,Seraphine|Ashe|Akali|Pantheon|Ambessa,Galio|Nocturne|Qiyana|Twisted Fate|Olaf,1.0,Swiss R1
+83644-1,83644,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,LYON,1,Ezreal|Nocturne|Alistar|Anivia|KSante,Vi|Qiyana|Cassiopeia|Jhin|Corki,0.0,Swiss R1
+83644-1,83644,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Team Secret Whales,0,Ryze|Lee Sin|Nautilus|Kaisa|Rumble,Syndra|Renata Glasc|Olaf|Orianna|Galio,1.0,Swiss R1
+83643-1,83643,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Los Grandes,0,Syndra|Pantheon|KSante|Tristana|Rakan,Bard|Vi|Qiyana|Locke|Akali,0.0,Swiss R1
+83643-1,83643,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,T1,1,Lee Sin|Jhin|Jayce|Alistar|LeBlanc,Nocturne|Cassiopeia|Poppy|Kalista|Nautilus,1.0,Swiss R1
+83642-1,83642,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Top Esports,0,Orianna|Lee Sin|Alistar|Ezreal|KSante,Olaf|Vi|Jayce|Nautilus|Bard,0.0,Swiss R1
+83642-1,83642,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Hanwha Life Esports,1,Nocturne|Locke|Jhin|Shen|Ambessa,Cassiopeia|Qiyana|Akali|Corki|Renekton,1.0,Swiss R1
+83641-1,83641,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Dplus KIA,1,Vi|Syndra|Olaf|Ziggs|Poppy,Locke|Nocturne|Draven|Kled|Orianna,1.0,Swiss R1
+83641-1,83641,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,G2 Esports,0,Kalista|Renata Glasc|Jarvan IV|Viktor|KSante,Lucian|Karma|Caitlyn|Lulu|Seraphine,0.0,Swiss R1
+83640-1,83640,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Karmine Corp,1,Jarvan IV|Orianna|Jax|Renata Glasc|Kalista,Vi|Qiyana|Cassiopeia|Seraphine|Nautilus,0.0,Swiss R1
+83640-1,83640,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Anyone s Legend,0,Nocturne|Olaf|Akali|Miss Fortune|Neeko,Jayce|Rumble|Syndra|Ezreal|Lulu,1.0,Swiss R1
+83639-1,83639,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Team Liquid,0,Lee Sin|Galio|Syndra|Jhin|Rakan,Akali|Vi|Cassiopeia|Ashe|Draven,1.0,Swiss R1
+83639-1,83639,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,CTBC Flying Oyster,1,Rumble|Qiyana|Viktor|Alistar|Aphelios,Orianna|Ezreal|Renata Glasc|Nautilus|Lulu,0.0,Swiss R1
+83638-1,83638,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Invictus Gaming,0,Jarvan IV|Rumble|Aurora|Jhin|Alistar,Vi|Lee Sin|Cassiopeia|Renata Glasc|Lucian,0.0,Swiss R1
+83638-1,83638,worlds,Worlds 2026 Main Event,ROUND1,2026-10-23,16.20,26.20,Gen.G,1,Qiyana|Ornn|Akali|Corki|Nautilus,Nocturne|Syndra|Galio|Lulu|Ezreal,1.0,Swiss R1

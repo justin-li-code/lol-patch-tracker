@@ -1,0 +1,292 @@
+{
+  "first_stand": {
+    "title": "First Stand 2026",
+    "patch": "26.5",
+    "live": false,
+    "stages": {
+      "Finals": 4,
+      "Groups": 35,
+      "Semifinals": 6
+    },
+    "frozen": {
+      "games": 45,
+      "all": {
+        "n": 109,
+        "mae_model": 0.08598959755236914,
+        "mae_baseline": 0.08842289209261685,
+        "direction_acc": 0.5,
+        "n_moved": 56
+      },
+      "changed": {
+        "n": 14,
+        "mae_model": 0.09679782221872094,
+        "mae_baseline": 0.10884353741496597,
+        "direction_acc": 0.7142857142857143,
+        "n_moved": 7
+      },
+      "spearman_model": 0.7251515473439457,
+      "spearman_baseline": 0.750593043292374,
+      "top10_model": 7,
+      "top10_baseline": 7,
+      "base_patch": "26.4",
+      "forecast_created": "2026-10-24 11:00 UTC"
+    },
+    "current": {
+      "games": 45,
+      "all": {
+        "n": 113,
+        "mae_model": 0.0794649244818293,
+        "mae_baseline": 0.07777777777777777,
+        "direction_acc": 0.5294117647058824,
+        "n_moved": 51
+      },
+      "changed": {
+        "n": 14,
+        "mae_model": 0.09033771743329888,
+        "mae_baseline": 0.09166666666666666,
+        "direction_acc": 0.8,
+        "n_moved": 5
+      },
+      "spearman_model": 0.7673229989654041,
+      "spearman_baseline": 0.8010637365222716,
+      "top10_model": 6,
+      "top10_baseline": 7,
+      "base_patch": "26.4",
+      "forecast_created": "2026-10-25 01:56 UTC"
+    }
+  },
+  "msi": {
+    "title": "MSI 2026",
+    "patch": "26.13",
+    "live": false,
+    "stages": {
+      "Finals": 5,
+      "Play-In": 18,
+      "Swiss R1": 23,
+      "Swiss R2": 13,
+      "Swiss R3": 3,
+      "Swiss R4": 9
+    },
+    "frozen": {
+      "games": 71,
+      "all": {
+        "n": 113,
+        "mae_model": 0.08108393575163388,
+        "mae_baseline": 0.08540829729911119,
+        "direction_acc": 0.6190476190476191,
+        "n_moved": 63
+      },
+      "changed": {
+        "n": 31,
+        "mae_model": 0.07919742070575322,
+        "mae_baseline": 0.09329092836589428,
+        "direction_acc": 0.9411764705882353,
+        "n_moved": 17
+      },
+      "spearman_model": 0.7942146961431407,
+      "spearman_baseline": 0.7845136158110099,
+      "top10_model": 6,
+      "top10_baseline": 6,
+      "base_patch": "26.11",
+      "forecast_created": "2026-10-24 11:00 UTC"
+    },
+    "current": {
+      "games": 71,
+      "all": {
+        "n": 113,
+        "mae_model": 0.07753001240402252,
+        "mae_baseline": 0.0783971571926789,
+        "direction_acc": 0.5166666666666667,
+        "n_moved": 60
+      },
+      "changed": {
+        "n": 31,
+        "mae_model": 0.07682940077450265,
+        "mae_baseline": 0.08512173610925514,
+        "direction_acc": 0.9375,
+        "n_moved": 16
+      },
+      "spearman_model": 0.805432953674117,
+      "spearman_baseline": 0.8037182077119465,
+      "top10_model": 6,
+      "top10_baseline": 6,
+      "base_patch": "26.11",
+      "forecast_created": "2026-10-25 01:56 UTC"
+    }
+  },
+  "ewc": {
+    "title": "Esports World Cup 2026",
+    "patch": "26.13",
+    "live": false,
+    "stages": {
+      "3rd Place": 3,
+      "Finals": 3,
+      "Groups": 30,
+      "Quarterfinals": 9,
+      "Semifinals": 6
+    },
+    "frozen": {
+      "games": 51,
+      "all": {
+        "n": 109,
+        "mae_model": 0.11777245868633072,
+        "mae_baseline": 0.11961199440961987,
+        "direction_acc": 0.5217391304347826,
+        "n_moved": 69
+      },
+      "changed": {
+        "n": 31,
+        "mae_model": 0.13136355856197615,
+        "mae_baseline": 0.13924974456283754,
+        "direction_acc": 0.7368421052631579,
+        "n_moved": 19
+      },
+      "spearman_model": 0.675250828183602,
+      "spearman_baseline": 0.6631365601203906,
+      "top10_model": 5,
+      "top10_baseline": 5,
+      "base_patch": "26.11",
+      "forecast_created": "2026-10-24 11:00 UTC"
+    },
+    "current": {
+      "games": 51,
+      "all": {
+        "n": 110,
+        "mae_model": 0.11774699627957132,
+        "mae_baseline": 0.11657754010695186,
+        "direction_acc": 0.5,
+        "n_moved": 66
+      },
+      "changed": {
+        "n": 31,
+        "mae_model": 0.13683843857204409,
+        "mae_baseline": 0.1385199240986717,
+        "direction_acc": 0.7222222222222222,
+        "n_moved": 18
+      },
+      "spearman_model": 0.690138699656363,
+      "spearman_baseline": 0.6813002896164831,
+      "top10_model": 5,
+      "top10_baseline": 5,
+      "base_patch": "26.11",
+      "forecast_created": "2026-10-25 01:56 UTC"
+    }
+  },
+  "demacia": {
+    "title": "Demacia Cup 2026",
+    "patch": "26.18",
+    "live": false,
+    "stages": {
+      "Finals": 4,
+      "Quarterfinals": 19,
+      "Round 1": 6,
+      "Round 2": 14,
+      "Round 3": 7,
+      "Round 3RR": 7,
+      "Round 4": 5,
+      "Semifinals": 9
+    },
+    "frozen": {
+      "games": 71,
+      "all": {
+        "n": 119,
+        "mae_model": 0.05143127887481826,
+        "mae_baseline": 0.04589122260137723,
+        "direction_acc": 0.40540540540540543,
+        "n_moved": 37
+      },
+      "changed": {
+        "n": 11,
+        "mae_model": 0.0643969656106691,
+        "mae_baseline": 0.0403714730882557,
+        "direction_acc": 0.5,
+        "n_moved": 2
+      },
+      "spearman_model": 0.923384051868529,
+      "spearman_baseline": 0.9263377861000857,
+      "top10_model": 6,
+      "top10_baseline": 6,
+      "base_patch": "26.17",
+      "forecast_created": "2026-10-24 10:50 UTC"
+    },
+    "current": {
+      "games": 71,
+      "all": {
+        "n": 122,
+        "mae_model": 0.04893971199549069,
+        "mae_baseline": 0.04355229739090279,
+        "direction_acc": 0.38461538461538464,
+        "n_moved": 39
+      },
+      "changed": {
+        "n": 11,
+        "mae_model": 0.06119838931385189,
+        "mae_baseline": 0.03624863660074927,
+        "direction_acc": 0.5,
+        "n_moved": 2
+      },
+      "spearman_model": 0.9318989928781254,
+      "spearman_baseline": 0.9321449629237124,
+      "top10_model": 6,
+      "top10_baseline": 6,
+      "base_patch": "26.17",
+      "forecast_created": "2026-10-25 01:56 UTC"
+    }
+  },
+  "worlds": {
+    "title": "Worlds 2026",
+    "patch": "26.20",
+    "live": true,
+    "stages": {
+      "Play-In": 22,
+      "Swiss R1": 8,
+      "Swiss R2": 8
+    },
+    "frozen": {
+      "games": 38,
+      "all": {
+        "n": 124,
+        "mae_model": 0.061943301651432595,
+        "mae_baseline": 0.05687094728659971,
+        "direction_acc": 0.4888888888888889,
+        "n_moved": 45
+      },
+      "changed": {
+        "n": 40,
+        "mae_model": 0.06555392373023679,
+        "mae_baseline": 0.05883005707038682,
+        "direction_acc": 0.5833333333333334,
+        "n_moved": 12
+      },
+      "spearman_model": 0.8665157209426695,
+      "spearman_baseline": 0.8678543590928279,
+      "top10_model": 6,
+      "top10_baseline": 6,
+      "base_patch": "26.17",
+      "forecast_created": "2026-10-24 10:49 UTC"
+    },
+    "current": {
+      "games": 38,
+      "all": {
+        "n": 127,
+        "mae_model": 0.060338182215100955,
+        "mae_baseline": 0.0573437092293288,
+        "direction_acc": 0.52,
+        "n_moved": 50
+      },
+      "changed": {
+        "n": 40,
+        "mae_model": 0.06266217101619491,
+        "mae_baseline": 0.05890594541910332,
+        "direction_acc": 0.6,
+        "n_moved": 15
+      },
+      "spearman_model": 0.8822247435194653,
+      "spearman_baseline": 0.8833737305119579,
+      "top10_model": 6,
+      "top10_baseline": 6,
+      "base_patch": "26.17",
+      "forecast_created": "2026-10-25 01:56 UTC"
+    }
+  }
+}

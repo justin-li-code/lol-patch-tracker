@@ -1,0 +1,407 @@
+{
+  "meta_draft": {
+    "games": 1593,
+    "win_rate_more_meta": 0.4872611464968153,
+    "n_more_meta": 1570,
+    "adjusted_win_prob_plus10pp": 0.49258148675302105,
+    "adjusted_ci": [
+      0.47207142195803037,
+      0.5131165530223379
+    ],
+    "p_value": 0.47895304789096926,
+    "strength_coef": 3.4609355388156553,
+    "by_bucket": [
+      {
+        "bucket": "much less meta",
+        "win_rate": 0.515015015015015,
+        "n": 666
+      },
+      {
+        "bucket": "less meta",
+        "win_rate": 0.5235008103727715,
+        "n": 617
+      },
+      {
+        "bucket": "even",
+        "win_rate": 0.499194847020934,
+        "n": 621
+      },
+      {
+        "bucket": "more meta",
+        "win_rate": 0.4773462783171521,
+        "n": 618
+      },
+      {
+        "bucket": "much more meta",
+        "win_rate": 0.48493975903614456,
+        "n": 664
+      }
+    ]
+  },
+  "comfort": {
+    "teams": 50,
+    "comfort_picks": 10756,
+    "other_picks": 10284,
+    "win_rate_comfort": 0.5034399404983265,
+    "win_rate_other": 0.49640217814080123,
+    "within_team_diff": -0.018540636904248228,
+    "ci": [
+      -0.04119835078012021,
+      0.0025026254002430853
+    ],
+    "per_team": [
+      {
+        "team": "Anyone s Legend",
+        "diff": 0.010876031828660593,
+        "n_comfort": 452,
+        "n_other": 238
+      },
+      {
+        "team": "BNK FearX",
+        "diff": -0.07539963776675329,
+        "n_comfort": 306,
+        "n_other": 249
+      },
+      {
+        "team": "Bilibili Gaming",
+        "diff": 0.03623188405797095,
+        "n_comfort": 460,
+        "n_other": 240
+      },
+      {
+        "team": "Cloud9",
+        "diff": -0.11380100629593526,
+        "n_comfort": 187,
+        "n_other": 203
+      },
+      {
+        "team": "DN SOOPers",
+        "diff": -0.09051269864230949,
+        "n_comfort": 223,
+        "n_other": 217
+      },
+      {
+        "team": "Dignitas",
+        "diff": -0.0464516129032258,
+        "n_comfort": 50,
+        "n_other": 155
+      },
+      {
+        "team": "Disguised",
+        "diff": -0.24112554112554113,
+        "n_comfort": 70,
+        "n_other": 165
+      },
+      {
+        "team": "Dplus KIA",
+        "diff": -0.03576102161454797,
+        "n_comfort": 356,
+        "n_other": 249
+      },
+      {
+        "team": "EDward Gaming",
+        "diff": -0.23736193712829226,
+        "n_comfort": 176,
+        "n_other": 214
+      },
+      {
+        "team": "FURIA",
+        "diff": 0.0692137320044297,
+        "n_comfort": 215,
+        "n_other": 210
+      },
+      {
+        "team": "Fluxo W7M",
+        "diff": -0.015151515151515138,
+        "n_comfort": 110,
+        "n_other": 165
+      },
+      {
+        "team": "FlyQuest",
+        "diff": 0.015616693248272195,
+        "n_comfort": 152,
+        "n_other": 198
+      },
+      {
+        "team": "Fnatic",
+        "diff": 0.06397306397306396,
+        "n_comfort": 135,
+        "n_other": 165
+      },
+      {
+        "team": "G2 Esports",
+        "diff": 0.10018987597462925,
+        "n_comfort": 223,
+        "n_other": 222
+      },
+      {
+        "team": "GIANTX",
+        "diff": -0.02230275996654585,
+        "n_comfort": 204,
+        "n_other": 211
+      },
+      {
+        "team": "Gen.G",
+        "diff": -0.11692123201211824,
+        "n_comfort": 272,
+        "n_other": 233
+      },
+      {
+        "team": "HANJIN BRION",
+        "diff": 0.08629697354181437,
+        "n_comfort": 254,
+        "n_other": 211
+      },
+      {
+        "team": "Hanwha Life Esports",
+        "diff": 0.056301107887101076,
+        "n_comfort": 272,
+        "n_other": 223
+      },
+      {
+        "team": "Invictus Gaming",
+        "diff": 0.07938089544307164,
+        "n_comfort": 386,
+        "n_other": 234
+      },
+      {
+        "team": "JD Gaming",
+        "diff": -0.08307120867353773,
+        "n_comfort": 482,
+        "n_other": 248
+      },
+      {
+        "team": "KT Rolster",
+        "diff": -0.03322884012539179,
+        "n_comfort": 290,
+        "n_other": 220
+      },
+      {
+        "team": "Karmine Corp",
+        "diff": 0.005012455191688359,
+        "n_comfort": 302,
+        "n_other": 218
+      },
+      {
+        "team": "Kiwoom DRX",
+        "diff": 0.01329405001437195,
+        "n_comfort": 284,
+        "n_other": 196
+      },
+      {
+        "team": "LGD Gaming",
+        "diff": 0.03233714077087574,
+        "n_comfort": 249,
+        "n_other": 231
+      },
+      {
+        "team": "LNG Esports",
+        "diff": -0.21176470588235297,
+        "n_comfort": 90,
+        "n_other": 170
+      },
+      {
+        "team": "LOUD",
+        "diff": -0.11387163561076596,
+        "n_comfort": 168,
+        "n_other": 207
+      },
+      {
+        "team": "LYON",
+        "diff": -0.007539427497898821,
+        "n_comfort": 179,
+        "n_other": 226
+      },
+      {
+        "team": "Leviatan",
+        "diff": -0.24591796097172441,
+        "n_comfort": 93,
+        "n_other": 162
+      },
+      {
+        "team": "Los Grandes",
+        "diff": 0.09410695742471442,
+        "n_comfort": 214,
+        "n_other": 216
+      },
+      {
+        "team": "Movistar KOI",
+        "diff": 0.01666666666666672,
+        "n_comfort": 260,
+        "n_other": 210
+      },
+      {
+        "team": "Natus Vincere",
+        "diff": -0.07154258351385251,
+        "n_comfort": 179,
+        "n_other": 196
+      },
+      {
+        "team": "Ninjas in Pyjamas",
+        "diff": -0.026693360026693425,
+        "n_comfort": 243,
+        "n_other": 222
+      },
+      {
+        "team": "Nongshim RedForce",
+        "diff": -0.019975681778704235,
+        "n_comfort": 228,
+        "n_other": 202
+      },
+      {
+        "team": "Oh My God",
+        "diff": -0.14021540337329808,
+        "n_comfort": 37,
+        "n_other": 133
+      },
+      {
+        "team": "RED Canids",
+        "diff": -0.10715449804432858,
+        "n_comfort": 177,
+        "n_other": 208
+      },
+      {
+        "team": "SK Gaming",
+        "diff": 0.015441224784808472,
+        "n_comfort": 89,
+        "n_other": 171
+      },
+      {
+        "team": "Sentinels",
+        "diff": -0.01703477443609025,
+        "n_comfort": 133,
+        "n_other": 192
+      },
+      {
+        "team": "Shifters",
+        "diff": -0.10065016254063514,
+        "n_comfort": 93,
+        "n_other": 172
+      },
+      {
+        "team": "Shopify Rebellion",
+        "diff": 0.09887005649717512,
+        "n_comfort": 118,
+        "n_other": 177
+      },
+      {
+        "team": "T1",
+        "diff": -0.058508474576271174,
+        "n_comfort": 295,
+        "n_other": 250
+      },
+      {
+        "team": "Team Heretics",
+        "diff": -0.0542857142857143,
+        "n_comfort": 100,
+        "n_other": 175
+      },
+      {
+        "team": "Team Liquid",
+        "diff": 0.07768093974990531,
+        "n_comfort": 182,
+        "n_other": 203
+      },
+      {
+        "team": "Team Vitality",
+        "diff": -0.057646614105195004,
+        "n_comfort": 188,
+        "n_other": 197
+      },
+      {
+        "team": "Team WE",
+        "diff": -0.02532953728001297,
+        "n_comfort": 431,
+        "n_other": 229
+      },
+      {
+        "team": "ThunderTalk Gaming",
+        "diff": 0.016463414634146356,
+        "n_comfort": 205,
+        "n_other": 200
+      },
+      {
+        "team": "Top Esports",
+        "diff": 0.08949880668257759,
+        "n_comfort": 419,
+        "n_other": 236
+      },
+      {
+        "team": "Ultra Prime",
+        "diff": 0.1968864468864469,
+        "n_comfort": 21,
+        "n_other": 104
+      },
+      {
+        "team": "Vivo Keyd Stars",
+        "diff": -0.05633255633255635,
+        "n_comfort": 117,
+        "n_other": 198
+      },
+      {
+        "team": "Weibo Gaming",
+        "diff": -0.027151581559483717,
+        "n_comfort": 271,
+        "n_other": 229
+      },
+      {
+        "team": "paiN Gaming",
+        "diff": 0.05379665379665377,
+        "n_comfort": 105,
+        "n_other": 185
+      }
+    ]
+  },
+  "region_favorites": {
+    "regions": [
+      {
+        "region": "CBLOL",
+        "n_favorite": 27,
+        "n_other": 183,
+        "win_rate_favorite": 0.25925925925925924,
+        "win_rate_other": 0.20765027322404372,
+        "diff": 0.05160898603521552
+      },
+      {
+        "region": "LCK",
+        "n_favorite": 80,
+        "n_other": 550,
+        "win_rate_favorite": 0.7375,
+        "win_rate_other": 0.6745454545454546,
+        "diff": 0.06295454545454549
+      },
+      {
+        "region": "LCS",
+        "n_favorite": 54,
+        "n_other": 336,
+        "win_rate_favorite": 0.48148148148148145,
+        "win_rate_other": 0.44345238095238093,
+        "diff": 0.038029100529100524
+      },
+      {
+        "region": "LEC",
+        "n_favorite": 88,
+        "n_other": 402,
+        "win_rate_favorite": 0.4659090909090909,
+        "win_rate_other": 0.5447761194029851,
+        "diff": -0.07886702849389421
+      },
+      {
+        "region": "LPL",
+        "n_favorite": 56,
+        "n_other": 474,
+        "win_rate_favorite": 0.5178571428571429,
+        "win_rate_other": 0.5506329113924051,
+        "diff": -0.032775768535262206
+      }
+    ],
+    "within_region_diff": 0.0001714710958801547,
+    "ci": [
+      -0.059803751258583955,
+      0.06026457962477166
+    ],
+    "favorite_lift": 0.05,
+    "favorite_picks": 305,
+    "total_picks": 2250
+  }
+}

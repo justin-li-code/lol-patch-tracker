@@ -349,6 +349,11 @@ def game_detail(g, mx: dict):
 
     # Players first, no click needed; # ranks all ten players in the game by rating.
     rt = rt.assign(game_rank=rt.rating.rank(ascending=False, method="min").astype(int))
+    # Each player's record on their champion before this game (earlier days, like "# of Games").
+    hist = mx["ratings"]
+    hist = hist[hist.date < g.date].groupby(["player", "champion"]).result.agg(["sum", "count"])
+    rt["champ_record"] = [f"{int(hist.loc[(pl, ch), 'sum'])}–{int(hist.loc[(pl, ch), 'count'] - hist.loc[(pl, ch), 'sum'])}"
+                          if (pl, ch) in hist.index else "—" for pl, ch in zip(rt.player, rt.champion)]
     for tm in (blue, red):
         st.markdown(f"**{tm.team}**" + (" · won" if tm.result else ""))
         p = rt[rt.team == tm.team].copy()
@@ -356,7 +361,7 @@ def game_detail(g, mx: dict):
         p = p.sort_values("order")
         t = pd.DataFrame({
             "#": p.game_rank, "Role": p.role.str.title(), "Player": p.player, "Champion": p.champion,
-            "Games on it": p.champ_games,
+            "# of Games": p.champ_games, "Record on Champ": p.champ_record,
             "K / D / A": [f"{int(k)} / {int(d_)} / {int(a)}" for k, d_, a in zip(p.Kills, p.Deaths, p.Assists)],
             "CS/min": p.CSM, "Damage share": p["DMG%"] / 100,
             "Vision/min": p.VSPM, "Gold diff @15": p["GD@15"], "Expected": p.expected_rating, "Rating": p.rating,
@@ -370,8 +375,10 @@ def game_detail(g, mx: dict):
                          "Expected": st.column_config.NumberColumn(
                              "Expected", help="Pre-game expectation from the player's form, their record on "
                                               "this champion and their team's chances."),
-                         "Games on it": st.column_config.NumberColumn(
-                             "Games on it", help="Pro games on this champion this season before this game.")},
+                         "# of Games": st.column_config.NumberColumn(
+                             "# of Games", help="Pro games on this champion this season before this game."),
+                         "Record on Champ": st.column_config.TextColumn(
+                             "Record on Champ", help="Wins–losses on this champion this season before this game.")},
                      hide_index=True, use_container_width=True)
     st.caption("# = rank among all ten players in this game, by rating.")
 

@@ -7,6 +7,9 @@ Every version below came from one round of requests. Newest first.
 - Refresh the Worlds data after each Swiss round and knockout stage.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.2 · Oct 27: Champion records in game pages
+- In each game's player table, "Games on it" is now **# of Games**, next to a new **Record on Champ** column: the player's wins–losses on that champion this season before the game.
+
 ## v1.1 · Oct 27: Series, Worlds Players and champion-aware expectations
 - **Series instead of loose games:** Worlds 2026 → *Series & Games* lists each series with its score and format (e.g. "2–1 · Bo3"). Open one, then pick Game 1, 2 or 3.
 - **New Worlds Players page:** Best, Lowest Rated, Above Expectations, Below Expectations, and a Player Lookup with each player's most-played champions this season.

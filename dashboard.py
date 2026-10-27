@@ -230,7 +230,11 @@ all_stats = stats[stats.league == "ALL"]
 # --- navigation -------------------------------------------------------------------------
 
 PAGES = ["Overview", "Worlds 2026", "Champions & patches", "Meta shifts", "Draft answers", "Teams & regions",
-         "Model accuracy"]
+         "Model accuracy", "Changelog"]
+CHANGELOG = PROCESSED.parent.parent / "CHANGELOG.md"
+changelog_text = CHANGELOG.read_text() if CHANGELOG.exists() else ""
+version_tag = next((line[3:].split("·")[0].strip() for line in changelog_text.splitlines()
+                    if line.startswith("## v")), "")
 with st.sidebar:
     st.markdown("## Patch Impact")
     st.caption("How balance changes move pro picks and bans · 2026 season")
@@ -238,6 +242,8 @@ with st.sidebar:
     st.divider()
     st.caption(f"{' · '.join(LEAGUES)} and international events. **Presence** = how often a champion is picked "
                "or banned, as a share of games.")
+    if version_tag:
+        st.caption(f"Version {version_tag}")
 
 
 # --- Overview --------------------------------------------------------------------------
@@ -865,6 +871,15 @@ elif page == "Model accuracy":
             st.markdown(f"**League backtest** (each patch predicted from earlier patches only): for changed "
                         f"champions the error was {row.mae_model * 100:.1f} pts vs {row.mae_persistence * 100:.1f} "
                         f"for “nothing changes”, with the direction right {row.direction_acc_model:.0%} of the time.")
+
+
+# --- Changelog ---------------------------------------------------------------------------
+
+elif page == "Changelog":
+    st.title("Changelog")
+    lead("What changed in each version of this project, newest first.")
+    # Skip the file's own title; the page has one.
+    st.markdown(changelog_text.split("\n", 1)[1] if changelog_text.startswith("# ") else changelog_text)
 
 
 # --- footer ------------------------------------------------------------------------------

@@ -5,6 +5,8 @@ the next patch from the patch notes alone?
 
 Covers the **LCK, LPL, LCS, LEC and CBLOL, 2026 season** (patches 26.1 onward).
 
+What changed in each version: see [CHANGELOG.md](CHANGELOG.md).
+
 ```
 python -m lolpatch all         # scrape + analyse + backtest + predict + events
 python -m lolpatch events      # refresh Worlds after each round (also reruns regions)

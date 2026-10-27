@@ -5,7 +5,16 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Publish the site on Streamlit Community Cloud.
 - Refresh the Worlds data after each Swiss round and knockout stage.
-- Ideas, not started: model item and rune changes (they often move the meta more than champion changes), and add player-level champion pools.
+- Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
+
+## v1.0 · Oct 27: Worlds games, player ratings and expected results
+- **Games:** click any Worlds game for the full picture: result and pre-game odds, team stats (kills, gold, towers, dragons, barons, heralds, voidgrubs, plates, first blood/tower), bans and picks in draft order, every player's stats, and the gold-lead curve with objectives.
+- **Player ratings out of 5:** each stat is compared with players in the same role at this year's international events, weighted for what the role does (vision matters for supports, lane leads for laners). The result counts relative to expectation, so an upset win is worth more than an expected one. 3.0 is typical; 4.5+ is the top 10%.
+- **Players:** a Worlds leaderboard by average rating, with each player's games and what drives their rating.
+- **Expected results:** a pre-game win chance for every international game, from team strength (all 2026 games, with cross-region games linking the leagues), using only games played before that day.
+  - Tested on First Stand, MSI, EWC and the Demacia Cup before Worlds was scored. Adding the teams' drafts and champion comfort didn't improve the predictions there, so the expectation uses team strength; each game's draft edge is still shown.
+- Fixed: stray `**` asterisks on the Overview and Champions pages.
+- Refreshed Worlds to 51 games (Play-In and Swiss rounds 1–3).
 
 ## v0.9 · Oct 27: Changelog
 - Added this changelog, also shown on the site's **Changelog** page.

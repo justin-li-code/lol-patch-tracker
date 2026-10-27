@@ -4,6 +4,7 @@ One page at a time (sidebar), each leading with a single takeaway and one main
 view; methods, caveats and full tables sit behind expanders and sub-tabs.
 """
 import json
+import re
 
 import numpy as np
 import pandas as pd
@@ -98,6 +99,19 @@ def load_draft():
                 first=pd.read_csv(PROCESSED / "first_pick_answers.csv"),
                 breakdown=pd.read_csv(PROCESSED / "answer_breakdown.csv"),
                 events=pd.read_csv(PROCESSED / "draft_lane_events.csv", dtype={"patch": str}))
+
+
+@st.cache_data
+def load_matches():
+    path = PROCESSED / "player_ratings.csv"
+    if not path.exists():
+        return None
+    read = lambda name: pd.read_csv(PROCESSED / name)
+    out = dict(games=read("match_games.csv"), teams=read("match_teams.csv"), ratings=read("player_ratings.csv"),
+               timeline=read("match_timeline.csv"), gold=read("match_gold.csv"), expected=read("match_expected.csv"))
+    ev_path = PROCESSED / "expected_eval.json"
+    out["eval"] = json.loads(ev_path.read_text()) if ev_path.exists() else {}
+    return out
 
 
 @st.cache_data
@@ -222,9 +236,225 @@ def scorecard(sc: dict):
     c.metric("Top-10 picked correctly", f"{sc['top10_model']}/10")
 
 
+def possessive(name: str) -> str:
+    return f"{name}'" if name.endswith("s") else f"{name}'s"
+
+
+RATING_HELP = ("Out of 5. Compares the player's stats with every player in the same role at this year's "
+               "international events (weighted for what that role is for), plus the result relative to "
+               "expectation: an upset win counts for more than an expected one. 3.0 is a typical international "
+               "performance; 4.5+ is the top ~10%.")
+
+
+def game_label(g) -> str:
+    return f"{g.date} · {g.stage.title()} · {g.blue} vs {g.red}"
+
+
+def worlds_games_tab(mx: dict):
+    games = mx["games"][mx["games"].event == "worlds"].copy()
+    rt = mx["ratings"]
+    exp = mx["expected"]
+    games = games.sort_values(["date", "game_uid"], ascending=False)
+    mvp = rt[rt.mvp].drop_duplicates("game_uid").set_index("game_uid")
+    win_p = exp.set_index(["game_uid", "team"]).p_win
+    rows = []
+    for g in games.itertuples():
+        pw = win_p.get((g.game_uid, g.winner), np.nan)
+        rows.append({
+            "Date": g.date, "Stage": g.stage.title(), "Blue": team_logo(g.blue), "Blue team": g.blue,
+            "Red": team_logo(g.red), "Red team": g.red, "Winner": g.winner,
+            "Winner's pre-game odds": pw, "": "upset" if pd.notna(pw) and pw < 0.4 else "",
+            "MVP": f"{mvp.player.get(g.game_uid, '—')} ({mvp.champion.get(g.game_uid, '')}) "
+                   f"{mvp.rating.get(g.game_uid, np.nan):.1f}" if g.game_uid in mvp.index else "—",
+            "Length": g.duration_str,
+        })
+    table_df = pd.DataFrame(rows)
+    st.markdown("Click a game to open it.")
+    picked = st.dataframe(
+        table_df.style.format({"Winner's pre-game odds": "{:.0%}"}, na_rep="—"),
+        column_config={"Blue": st.column_config.ImageColumn(" ", width="small"),
+                       "Red": st.column_config.ImageColumn("  ", width="small")},
+        hide_index=True, use_container_width=True, on_select="rerun", selection_mode="single-row",
+        key="worlds_game_table", height=min(420, 36 * len(table_df) + 40))
+    rows_sel = (picked or {}).get("selection", {}).get("rows", [])
+    if not rows_sel:
+        return
+    g = games.iloc[rows_sel[0]]
+    st.divider()
+    game_detail(g, mx)
+
+
+def game_detail(g, mx: dict):
+    teams = mx["teams"][mx["teams"].game_uid == g.game_uid].set_index("side")
+    rt = mx["ratings"][mx["ratings"].game_uid == g.game_uid]
+    exp = mx["expected"][mx["expected"].game_uid == g.game_uid].set_index("team")
+    blue, red = teams.loc["blue"], teams.loc["red"]
+
+    # Header: logos, names, result, expectation.
+    c1, c2, c3 = st.columns([5, 2, 5], vertical_alignment="center")
+    for col, tm, align in ((c1, blue, "left"), (c3, red, "right")):
+        with col:
+            lc, nc = st.columns([1, 4], vertical_alignment="center")
+            if team_logo(tm.team):
+                lc.image(team_logo(tm.team), width=56)
+            p = exp.p_win.get(tm.team, np.nan)
+            nc.markdown(f"### {tm.team}\n{'**Won**' if tm.result else 'Lost'} · "
+                        f"{'expected ' + format(p, '.0%') if pd.notna(p) else ''}")
+    c2.markdown(f"<div style='text-align:center'><span class='muted'>{g.stage.title()} · {g.date}</span><br>"
+                f"<b style='font-size:1.4rem'>{g.duration_str}</b><br><span class='muted'>patch "
+                f"{str(g.version).replace('16.', '26.')}</span></div>", unsafe_allow_html=True)
+    winner_p = exp.p_win.get(g.winner, np.nan)
+    if pd.notna(winner_p):
+        verdict = ("an upset" if winner_p < 0.4 else "as expected" if winner_p > 0.6 else "a close call beforehand")
+        edge = exp.draft_edge.get(blue.team, np.nan)
+        draft_note = ""
+        if pd.notna(edge) and abs(edge) >= 0.005:
+            ahead = blue.team if edge > 0 else red.team
+            draft_note = (f" On the draft, {possessive(ahead)} picks had the better recent win rates "
+                          f"(+{abs(edge) * 100:.1f} pts on average), though drafts haven't proven predictive.")
+        st.caption(f"Before the game the model gave {g.winner} a {winner_p:.0%} chance, so this was {verdict}."
+                   + draft_note)
+
+    t_over, t_players, t_draft, t_gold = st.tabs(["Overview", "Players", "Draft", "Gold & objectives"])
+    with t_over:
+        def fmt(v, kind=""):
+            if pd.isna(v):
+                return "—"
+            return f"{v / 1000:.1f}k" if kind == "gold" else ("✓" if kind == "flag" and v else ("" if kind == "flag" else f"{int(v)}"))
+        rows = [("Kills", "kills", ""), ("Gold", "gold", "gold"), ("Towers", "towers", ""), ("Dragons", "dragons", ""),
+                ("Barons", "barons", ""), ("Rift Heralds", "heralds", ""), ("Voidgrubs", "voidgrubs", ""),
+                ("Turret plates", "plates", ""), ("First blood", "first_blood", "flag"), ("First tower", "first_tower", "flag")]
+        comp = pd.DataFrame({"": [r[0] for r in rows],
+                             blue.team: [fmt(blue.get(r[1]), r[2]) for r in rows],
+                             red.team: [fmt(red.get(r[1]), r[2]) for r in rows]})
+        l, r = st.columns([3, 2], gap="large")
+        l.dataframe(comp, hide_index=True, use_container_width=True, height=36 * len(comp) + 40)
+        with r:
+            for tm in (blue, red):
+                if isinstance(tm.dragon_types, str) and tm.dragon_types:
+                    st.markdown(f"**{tm.team} dragons:** {tm.dragon_types}")
+            best = rt.sort_values("rating", ascending=False).iloc[0]
+            with st.container(border=True):
+                st.markdown("**Best performance**")
+                bc1, bc2 = st.columns([1, 3], vertical_alignment="center")
+                if champ_icon(best.champion):
+                    bc1.image(champ_icon(best.champion), width=52)
+                bc2.markdown(f"**{best.player}** ({best.team})  \n{best.champion} · "
+                             f"{int(best.Kills)}/{int(best.Deaths)}/{int(best.Assists)} · rating **{best.rating:.1f}**")
+
+    with t_players:
+        for tm in (blue, red):
+            st.markdown(f"**{tm.team}**" + (" · won" if tm.result else ""))
+            p = rt[rt.team == tm.team].copy()
+            p["order"] = p.role.map({r: i for i, r in enumerate(ROLES)})
+            p = p.sort_values("order")
+            t = pd.DataFrame({
+                "Role": p.role.str.title(), "Player": p.player, "Champion": p.champion,
+                "K / D / A": [f"{int(k)} / {int(d_)} / {int(a)}" for k, d_, a in zip(p.Kills, p.Deaths, p.Assists)],
+                "CS/min": p.CSM, "Gold share": p["GOLD%"] / 100, "Damage share": p["DMG%"] / 100,
+                "Vision/min": p.VSPM, "Gold diff @15": p["GD@15"], "Rating": p.rating,
+            })
+            t = with_icons(t, "Champion")
+            st.dataframe(t.style.format({"CS/min": "{:.1f}", "Gold share": "{:.0%}", "Damage share": "{:.0%}",
+                                         "Vision/min": "{:.1f}", "Gold diff @15": "{:+,.0f}", "Rating": "{:.1f}"})
+                         .background_gradient(cmap="Blues", subset=["Rating"], vmin=1, vmax=5),
+                         column_config=image_column() | {"Rating": st.column_config.NumberColumn("Rating", help=RATING_HELP)},
+                         hide_index=True, use_container_width=True)
+
+    with t_draft:
+        ev_games = load_events()["games"]
+        dg = ev_games[ev_games.game_uid == g.game_uid].set_index("team")
+        for tm in (blue, red):
+            if tm.team not in dg.index:
+                continue
+            row = dg.loc[tm.team]
+            fp = row.get("first_pick")
+            st.markdown(f"**{tm.team}**" + (" · first pick" if fp == 1 else ""))
+            pc, bc = st.columns([5, 5], gap="large")
+            picks = row.picks.split("|")
+            bans = row.bans.split("|") if isinstance(row.bans, str) else []
+            pc.caption("Picks, in draft order")
+            pc.image([champ_icon(c) for c in picks if champ_icon(c)], width=48, caption=picks)
+            bc.caption("Bans")
+            bc.image([champ_icon(c) for c in bans if champ_icon(c)], width=40, caption=bans)
+
+    with t_gold:
+        gl = mx["gold"][mx["gold"].game_uid == g.game_uid]
+        tl = mx["timeline"][mx["timeline"].game_uid == g.game_uid]
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=gl.minute, y=gl.blue_lead.clip(lower=0), fill="tozeroy", mode="none",
+                                 fillcolor="rgba(42,120,214,0.25)", name=f"{blue.team} ahead", hoverinfo="skip"))
+        fig.add_trace(go.Scatter(x=gl.minute, y=gl.blue_lead.clip(upper=0), fill="tozeroy", mode="none",
+                                 fillcolor="rgba(227,73,72,0.25)", name=f"{red.team} ahead", hoverinfo="skip"))
+        fig.add_trace(go.Scatter(x=gl.minute, y=gl.blue_lead, mode="lines", line=dict(color="#52514e", width=2),
+                                 showlegend=False, hovertemplate="%{x} min: %{y:+,.0f} gold<extra></extra>"))
+        for side, color in (("blue", BUFF), ("red", NERF)):
+            ev_side = tl[tl.side == side]
+            if len(ev_side):
+                lead_at = np.interp(ev_side.minute, gl.minute, gl.blue_lead) if len(gl) else np.zeros(len(ev_side))
+                fig.add_trace(go.Scatter(x=ev_side.minute, y=lead_at, mode="markers", showlegend=False,
+                                         marker=dict(color=color, size=9, line=dict(width=1.5, color="white")),
+                                         customdata=ev_side[["time", "objective", "team"]],
+                                         hovertemplate="%{customdata[0]} · %{customdata[2]}: %{customdata[1]}<extra></extra>"))
+        fig.add_hline(y=0, line=dict(color=NEUTRAL, width=1))
+        st.plotly_chart(style(fig, 320, xaxis=dict(title="Minute"), yaxis=dict(title="Gold lead", tickformat="+,.0f"),
+                              hovermode="closest"), use_container_width=True)
+        st.caption("Above the line = blue side ahead in gold. Dots are objectives (hover for which).")
+
+
+def worlds_players_tab(mx: dict):
+    rt = mx["ratings"][mx["ratings"].event == "worlds"]
+    role_p = st.radio("Role", ["all"] + ROLES, horizontal=True, key="worlds_player_role",
+                      format_func=lambda r: r.title() if r != "all" else "All roles")
+    view = rt if role_p == "all" else rt[rt.role == role_p]
+    agg = view.groupby(["player", "team", "role"]).agg(
+        games=("game_uid", "nunique"), rating=("rating", "mean"), best=("rating", "max"),
+        wins=("result", "sum"), k=("Kills", "sum"), d=("Deaths", "sum"), a=("Assists", "sum"),
+        champs=("champion", lambda s: ", ".join(s.value_counts().index[:3])),
+    ).reset_index()
+    agg = agg[agg.games >= 2].sort_values("rating", ascending=False)
+    if agg.empty:
+        st.info("No player has two Worlds games in this role yet.")
+        return
+    top = agg.iloc[0]
+    st.markdown(f"<div class='takeaway'>Highest-rated so far: <b>{top.player}</b> ({top.team}, {top.role}), "
+                f"averaging <b>{top.rating:.1f}</b> over {top.games} games.</div>", unsafe_allow_html=True)
+    t = pd.DataFrame({
+        "Logo": agg.team.map(team_logo), "Player": agg.player, "Team": agg.team, "Role": agg.role.str.title(),
+        "Games": agg.games, "Record": [f"{int(w)}–{int(n - w)}" for w, n in zip(agg.wins, agg.games)],
+        "Avg rating": agg.rating, "Best": agg.best,
+        "KDA": [(k + a) / max(d, 1) for k, d, a in zip(agg.k, agg.d, agg.a)], "Champions": agg.champs,
+    })
+    table(t, {"Avg rating": "{:.1f}", "Best": "{:.1f}", "KDA": "{:.1f}"}, n=15, more_label="Show all players")
+    st.caption("Players with 2+ Worlds games. " + RATING_HELP)
+
+    with st.expander("Look at one player"):
+        who = st.selectbox("Player", agg.player + " (" + agg.team + ")", key="worlds_player_pick")
+        name = who.rsplit(" (", 1)[0]
+        pg = rt[rt.player == name].sort_values("date")
+        gt = pd.DataFrame({"Date": pg.date, "Opponent": pg.opponent, "Champion": pg.champion,
+                           "Result": pg.result.map({1: "Won", 0: "Lost"}),
+                           "K / D / A": [f"{int(k)} / {int(d_)} / {int(a)}" for k, d_, a in zip(pg.Kills, pg.Deaths, pg.Assists)],
+                           "Rating": pg.rating})
+        st.dataframe(with_icons(gt, "Champion").style.format({"Rating": "{:.1f}"}), column_config=image_column(),
+                     hide_index=True, use_container_width=True)
+        from lolpatch.ratings import ROLE_WEIGHTS, STAT_LABELS
+        role = pg.role.iloc[0]
+        prof = pd.Series({STAT_LABELS[s]: pg[f"z_{s}"].mean() for s in ROLE_WEIGHTS[role]}).sort_values()
+        fig = go.Figure(go.Bar(x=prof.values, y=prof.index, orientation="h",
+                               marker=dict(color=[BUFF if v >= 0 else NERF for v in prof.values], cornerradius=3),
+                               hovertemplate="%{y}: %{x:+.1f} SD vs other %{customdata}s<extra></extra>",
+                               customdata=[role] * len(prof)))
+        fig.add_vline(x=0, line=dict(color=NEUTRAL, width=1))
+        st.markdown(f"**What drives {name}'s rating** (vs other {role}s at international events)")
+        st.plotly_chart(row_layout(style(fig, xaxis=dict(title="Above / below the role average", range=[-2.5, 2.5]),
+                                         hovermode="closest"), prof.index, right=24),
+                        use_container_width=True)
+
+
 d = load()
 stats, changes, lines = d["stats"], d["changes"], d["lines"]
-ev, rg, rp, dr = load_events(), load_regions(), load_ripple(), load_draft()
+ev, rg, rp, dr, mx = load_events(), load_regions(), load_ripple(), load_draft(), load_matches()
 all_stats = stats[stats.league == "ALL"]
 
 # --- navigation -------------------------------------------------------------------------
@@ -257,8 +487,15 @@ if page == "Overview":
         wm = ev["metrics"]["worlds"]
         top = ev["worlds_current"].nlargest(3, "actual_presence")
         names = ", ".join(f"**{r.champion}** ({r.actual_presence:.0%})" for r in top.itertuples())
-        cards.append(("Worlds 2026", f"{wm['current']['games']} games played on patch {wm['patch']}. "
-                                     f"The most contested champions so far: {names}.", "Worlds 2026"))
+        text = (f"{wm['current']['games']} games played on patch {wm['patch']}. "
+                f"The most contested champions so far: {names}.")
+        if mx is not None:
+            wr_ = mx["ratings"][mx["ratings"].event == "worlds"]
+            lb = wr_.groupby(["player", "team"]).agg(n=("game_uid", "nunique"), r=("rating", "mean")).reset_index()
+            lb = lb[lb.n >= 2].sort_values("r", ascending=False)
+            if len(lb):
+                text += f" Top-rated player: **{lb.iloc[0].player}** ({lb.iloc[0].team}), {lb.iloc[0].r:.1f} / 5."
+        cards.append(("Worlds 2026", text, "Worlds 2026"))
     tr = transitions_for("ALL")
     eff = verdict_effects(tr)
     if {"buff", "nerf"} <= set(eff.index):
@@ -286,7 +523,9 @@ if page == "Overview":
         for col, (title, text, target) in zip(cols, cards[row:row + 2]):
             with col.container(border=True):
                 st.markdown(f"#### {title}")
-                st.markdown(f"<div class='takeaway'>{text}</div>", unsafe_allow_html=True)
+                # Markdown isn't processed inside raw HTML, so **bold** would show its asterisks.
+                html_text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
+                st.markdown(f"<div class='takeaway'>{html_text}</div>", unsafe_allow_html=True)
                 st.button(f"Open {target} →", key=f"go_{target}", on_click=go_to, args=(target,))
 
     st.markdown("")
@@ -328,8 +567,17 @@ elif page == "Worlds 2026":
                 "games played so far, so it starts from the patch notes and shifts toward what teams actually do "
                 "as games accumulate. Whiskers are an 80% range.")
 
-    t_teams, t_patch, t_fc, t_draft, t_region = st.tabs(
-        ["Teams", f"Patch {wm['patch']} changes", "Forecast check", "Draft answers", "By region"])
+    t_games, t_players, t_teams, t_patch, t_fc, t_draft, t_region = st.tabs(
+        ["Games", "Players", "Teams", f"Patch {wm['patch']} changes", "Forecast check", "Draft answers", "By region"])
+
+    with t_games:
+        if mx is None:
+            st.info("Run `python -m lolpatch matches` to load game details.")
+        else:
+            worlds_games_tab(mx)
+    with t_players:
+        if mx is not None:
+            worlds_players_tab(mx)
 
     wg = ev["games"][ev["games"].league == "worlds"]
     with t_teams:
@@ -532,9 +780,9 @@ elif page == "Champions & patches":
         lo_buff = changed[(changed.verdict == "buff") & (changed.prev_presence < 0.05)]
         if len(hi_nerf) and len(lo_buff):
             st.markdown(f"<div class='takeaway'>Nerfs bite hardest on top picks (above 60%: "
-                        f"**{hi_nerf.delta_presence.mean() * 100:+.0f} pts**, {(hi_nerf.delta_presence < 0).mean():.0%} fell). "
+                        f"<b>{hi_nerf.delta_presence.mean() * 100:+.0f} pts</b>, {(hi_nerf.delta_presence < 0).mean():.0%} fell). "
                         f"Buffs rarely rescue unplayed champions (under 5%: "
-                        f"**{lo_buff.delta_presence.mean() * 100:+.0f} pts**).</div>", unsafe_allow_html=True)
+                        f"<b>{lo_buff.delta_presence.mean() * 100:+.0f} pts</b>).</div>", unsafe_allow_html=True)
         fig = go.Figure()
         for v in ["buff", "nerf", "adjust"]:
             sub = changed[changed.verdict == v]

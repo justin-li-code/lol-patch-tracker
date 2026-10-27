@@ -8,8 +8,9 @@
     meta       ripple effects: pro roles, substitutions, champion groups
     players    fetch every game page for players and exact roles (slow, ~1 hour first time; cached)
     draft      draft answers: which picks teams make in response to an opponent's pick
+    matches    game details, expected results and player ratings for international games
     assets     champion portraits (Data Dragon) and team logos (gol.gg) for the dashboard
-    all        fetch + analyze + predict + events + regions + meta + players + draft + assets
+    all        fetch + analyze + predict + events + regions + meta + players + draft + matches + assets
     dashboard  open the Streamlit dashboard
 """
 import argparse
@@ -24,7 +25,7 @@ from .config import ROOT
 
 def main():
     p = argparse.ArgumentParser(prog="lolpatch", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "draft", "assets", "all", "dashboard"])
+    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "draft", "matches", "assets", "all", "dashboard"])
     p.add_argument("--refresh", action="store_true", help="re-download index pages (new games / patches)")
     p.add_argument("--target", help="patch to predict, e.g. 26.22 (default: latest patch notes)")
     p.add_argument("--notes-url", help="patch notes URL for --target, if not on the usual Riot URL")
@@ -73,6 +74,10 @@ def main():
     if a.command in ("events", "meta", "players", "draft", "all"):
         from . import draft
         draft.run()
+    if a.command in ("events", "matches", "all"):
+        from . import matches, ratings
+        matches.build()
+        ratings.run()
     if a.command in ("assets", "all"):
         from . import assets
         assets.run()

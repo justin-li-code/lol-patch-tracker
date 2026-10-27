@@ -117,6 +117,21 @@ Which picks teams make *in response* to an opponent's pick.
   from every game page) and tagged Worlds-, region-, team- or player-specific
   when one group accounts for most of it at ≥2× everyone else's rate.
 
+## Worlds games, ratings and expected results (`python -m lolpatch matches`)
+
+- **Game details** (`match_games/teams/players/timeline/gold.csv`): for every
+  international game, from gol.gg's game and "All stats" pages: objectives,
+  objective timeline, gold lead by minute, plates/voidgrubs, ~60 stats per player.
+- **Expected result** (`match_expected.csv`, `expected_eval.json`): pre-game win
+  probability from team + region strength over all 2026 games before that day
+  (recent games weighted more). Settings, including whether draft/comfort
+  features are used, are tuned on First Stand, MSI, EWC and Demacia; Worlds is
+  only scored. The draft features didn't help on the tuning events, so they're off.
+- **Player rating** (`player_ratings.csv`): role-weighted z-scores vs the same
+  role across all international games, plus 0.4 × (won − expected win chance)
+  in the same units, turned into a 1.0–5.0 percentile. Best player on a winning
+  team: median ~4.8; best on a losing team: ~3.3.
+
 ## Pipeline
 
 | Step | Module | Output (`data/processed/`) |

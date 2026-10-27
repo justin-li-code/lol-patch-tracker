@@ -17,7 +17,12 @@ international game) weighted per role, plus the result relative to expectation
 (won - expected win probability). The combined score is turned into a percentile, so 3.0
 is a typical international performance and ~4.8 is the top 5%.
 
-Outputs (data/processed/): match_expected.csv, expected_eval.json, player_ratings.csv
+Expected player rating: before each game, from the player's earlier games (form), their
+record on that champion relative to their form, their team's win chance, and for
+international games how strong their region has been against other regions.
+
+Outputs (data/processed/): match_expected.csv, expected_eval.json, player_ratings.csv,
+expected_rating_eval.json
 """
 import json
 
@@ -127,13 +132,17 @@ def to_pairs(g: pd.DataFrame, seed: int = 0) -> pd.DataFrame:
     })
 
 
-def predict_events(pairs: pd.DataFrame, C: float, region_scale: float, use_draft: bool = True) -> pd.Series:
-    """Win probability for team A in every international game, fit on earlier days only."""
+def predict_events(pairs: pd.DataFrame, C: float, region_scale: float, use_draft: bool = True,
+                   all_days: bool = False) -> pd.Series:
+    """Win probability for team A, fit on earlier days only: international games, or every game."""
     regions = sorted(set(pairs.region_a) | set(pairs.region_b))
     out = pd.Series(np.nan, index=pairs.index)
-    for day in sorted(pairs[pairs.event.notna()].date.unique()):
+    target = pairs if all_days else pairs[pairs.event.notna()]
+    for day in sorted(target.date.unique()):
         train = pairs[pairs.date < day]
-        test = pairs[(pairs.date == day) & pairs.event.notna()]
+        test = target[target.date == day]
+        if train.y.nunique() < 2:
+            continue  # the season's first days: nothing to learn from yet
         teams = sorted(set(train.team_a) | set(train.team_b))
         w = _decay((day - train.date).dt.days, GAME_HALF_LIFE)
         model = LogisticRegression(C=C, fit_intercept=False, max_iter=2000)
@@ -177,10 +186,10 @@ def expected_results(log=print) -> pd.DataFrame:
                     strength_only=_metrics(pairs.y[test], p_other[test] if use_draft else p_chosen[test]),
                     coin_flip=coin),
     )
-    p_full = p_chosen
     (PROCESSED / "expected_eval.json").write_text(json.dumps(evaluation, indent=2))
-    pairs["p_a"] = p_full
-    ev = pairs[pairs.event.notna()]
+    # Every game gets a prior-only expectation (player ratings use it for domestic games too).
+    pairs["p_a"] = predict_events(pairs, C, region_scale, use_draft, all_days=True).fillna(0.5)
+    ev = pairs
     both = pd.concat([
         pd.DataFrame({"game_uid": ev.game_uid, "team": ev.team_a, "opponent": ev.team_b, "p_win": ev.p_a,
                       "draft_edge": ev.draft_a - ev.draft_b, "won": ev.y}),
@@ -222,7 +231,7 @@ def player_ratings(expected: pd.DataFrame, log=print) -> pd.DataFrame:
     games = pd.read_csv(PROCESSED / "match_games.csv")
     p = player_metrics(players)
     stats = sorted({s for w in ROLE_WEIGHTS.values() for s in w})
-    # z-scores within role across every international game (the reference population).
+    # z-scores within role across every 2026 game (domestic + international), one common scale.
     for s in stats:
         grp = p.groupby("role")[s]
         p[f"z_{s}"] = ((p[s] - grp.transform("mean")) / grp.transform("std").replace(0, np.nan)).clip(-3, 3).fillna(0)
@@ -238,15 +247,101 @@ def player_ratings(expected: pd.DataFrame, log=print) -> pd.DataFrame:
     p["rating"] = (1 + 4 * (rankdata(p.score) - 0.5) / len(p)).round(1)
     p["stat_rating"] = (1 + 4 * (rankdata(p.perf_std) - 0.5) / len(p)).round(1)
     p["mvp"] = p.rating == p.groupby("game_uid").rating.transform("max")
-    p = p.merge(games[["game_uid", "event", "stage", "date"]], on="game_uid", how="left")
-    keep = ["game_uid", "event", "stage", "date", "team", "opponent", "side", "role", "player", "champion", "result",
+    p = p.merge(games[["game_uid", "event", "league", "series_id", "stage", "date"]], on="game_uid", how="left")
+    p = expected_player_ratings(p, log=log)
+    keep = ["game_uid", "event", "league", "series_id", "stage", "date", "team", "opponent", "side", "role", "player", "champion", "result",
             "p_win", "vs_expected", "rating", "stat_rating", "mvp", "Kills", "Deaths", "Assists", "CSM", "GOLD%",
             "DMG%", "DPM", "VSPM", "KP%", "GD@15", "CSD@15", "XPD@15", "Golds", "Total damage to Champion",
-            "Vision Score", "Solo kills", "duration"] + [f"z_{s}" for s in stats]
+            "Vision Score", "Solo kills", "duration", "expected_rating", "rating_vs_expected", "player_prior",
+            "player_games", "champ_games", "champ_prior"] + [f"z_{s}" for s in stats]
     out = p[keep]
     out.to_csv(PROCESSED / "player_ratings.csv", index=False)
-    log(f"  rated {len(out)} player-games across {out.game_uid.nunique()} international games")
+    log(f"  rated {len(out)} player-games across {out.game_uid.nunique()} games")
     return out
+
+
+# --- expected player rating ------------------------------------------------------------------
+
+PLAYER_PRIOR_GAMES, CHAMP_PRIOR_GAMES, REGION_PRIOR_GAMES = 5, 3, 20
+
+
+def _prior_by(df: pd.DataFrame, keys: list[str]) -> pd.DataFrame:
+    """Sum and count of rating for each key from strictly earlier days (same-day games excluded)."""
+    daily = df.groupby(keys + ["date"]).rating.agg(["sum", "count"]).reset_index().sort_values("date")
+    daily[["cum_sum", "cum_n"]] = daily.groupby(keys)[["sum", "count"]].cumsum()
+    daily["prior_sum"] = daily.cum_sum - daily["sum"]
+    daily["prior_n"] = daily.cum_n - daily["count"]
+    return daily[keys + ["date", "prior_sum", "prior_n"]]
+
+
+def region_strength_prior(games: pd.DataFrame) -> pd.DataFrame:
+    """Each region's win rate in cross-region games before each date (shrunk toward 50%)."""
+    g = all_games()[["game_uid", "date", "team", "region", "result"]]
+    pair = g.merge(g, on="game_uid", suffixes=("", "_opp"))
+    pair = pair[(pair.team != pair.team_opp) & (pair.region != pair.region_opp)]
+    rows = []
+    for day in sorted(pd.to_datetime(games.date).unique()):
+        past = pair[pair.date < day].groupby("region").result.agg(["sum", "count"])
+        for region, r in past.iterrows():
+            rows.append(dict(date=day, region=region,
+                             region_strength=(r["sum"] + REGION_PRIOR_GAMES * 0.5) / (r["count"] + REGION_PRIOR_GAMES)))
+    return pd.DataFrame(rows)
+
+
+def expected_player_ratings(p: pd.DataFrame, log=print) -> pd.DataFrame:
+    """Pre-game expected rating from the player's earlier games, their record on this champion,
+    the team's win chance, and (for international games) how strong their region has been.
+
+    Fit on every game before Worlds; Worlds is scored against simpler baselines."""
+    from sklearn.linear_model import LinearRegression
+    p = p.copy()
+    p["date"] = pd.to_datetime(p.date)
+    pl = _prior_by(p, ["player"])
+    ch = _prior_by(p, ["player", "champion"]).rename(columns={"prior_sum": "c_sum", "prior_n": "c_n"})
+    p = p.merge(pl, on=["player", "date"], how="left").merge(ch, on=["player", "champion", "date"], how="left")
+    p["player_games"] = p.prior_n.fillna(0).astype(int)
+    p["champ_games"] = p.c_n.fillna(0).astype(int)
+    p["player_prior"] = (p.prior_sum.fillna(0) + PLAYER_PRIOR_GAMES * 3.0) / (p.player_games + PLAYER_PRIOR_GAMES)
+    p["champ_prior"] = (p.c_sum.fillna(0) + CHAMP_PRIOR_GAMES * p.player_prior) / (p.champ_games + CHAMP_PRIOR_GAMES)
+    regions = team_regions(load_games())
+    p["region"] = p.team.map(regions).fillna("Other")
+    rs = region_strength_prior(p)
+    p = p.merge(rs, on=["date", "region"], how="left")
+    p["region_strength"] = p.region_strength.fillna(0.5)
+    p["intl"] = p.event.notna().astype(float)
+
+    def features(df, champion=True):
+        X = pd.DataFrame({
+            "form": df.player_prior - 3, "win_chance": df.p_win - 0.5, "intl": df.intl,
+            "intl_form": df.intl * (df.player_prior - 3), "intl_region": df.intl * (df.region_strength - 0.5),
+        })
+        if champion:
+            X["champ_edge"] = df.champ_prior - df.player_prior
+            X["champ_experience"] = np.log1p(df.champ_games)
+        return X
+
+    train = p[p.event != TEST_EVENT]
+    test = p[p.event == TEST_EVENT]
+    full = LinearRegression().fit(features(train), train.rating)
+    no_champ = LinearRegression().fit(features(train, False), train.rating)
+    mae = lambda pred: float(np.mean(np.abs(np.clip(pred, 1, 5) - test.rating)))
+    corr = lambda pred: float(np.corrcoef(pred, test.rating)[0, 1])
+    pred_full = full.predict(features(test))
+    evaluation = dict(
+        n=int(len(test)),
+        coefficients=dict(zip(features(train).columns, map(float, full.coef_))),
+        mae=dict(model=mae(pred_full), without_champion_history=mae(no_champ.predict(features(test, False))),
+                 everyone_average=mae(np.full(len(test), train.rating.mean()))),
+        correlation=dict(model=corr(pred_full), without_champion_history=corr(no_champ.predict(features(test, False)))),
+    )
+    (PROCESSED / "expected_rating_eval.json").write_text(json.dumps(evaluation, indent=2))
+    p["expected_rating"] = np.clip(full.predict(features(p)), 1, 5).round(1)
+    p["rating_vs_expected"] = (p.rating - p.expected_rating).round(1)
+    p["date"] = p.date.dt.strftime("%Y-%m-%d")
+    log(f"  expected rating on Worlds ({len(test)} player-games): error {evaluation['mae']['model']:.2f} "
+        f"(without champion history {evaluation['mae']['without_champion_history']:.2f}, "
+        f"everyone average {evaluation['mae']['everyone_average']:.2f})")
+    return p
 
 
 def run(log=print):

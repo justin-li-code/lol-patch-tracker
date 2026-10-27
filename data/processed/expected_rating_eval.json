@@ -1,0 +1,21 @@
+{
+  "n": 510,
+  "coefficients": {
+    "form": 0.42499799195076193,
+    "win_chance": 1.23740547626345,
+    "intl": -0.10586708382200039,
+    "intl_form": 0.03809022524566609,
+    "intl_region": 0.39635137641584406,
+    "champ_edge": 0.3201875932256924,
+    "champ_experience": 0.01884049363362629
+  },
+  "mae": {
+    "model": 0.9838492709506764,
+    "without_champion_history": 0.9923669335629232,
+    "everyone_average": 1.0227793992277217
+  },
+  "correlation": {
+    "model": 0.24226414092082235,
+    "without_champion_history": 0.20397674013023417
+  }
+}

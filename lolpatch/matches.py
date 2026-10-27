@@ -1,4 +1,4 @@
-"""Per-game detail for international events: teams, objectives, timeline, gold lead and player stats.
+"""Per-game detail for every 2026 game: teams, objectives, timeline, gold lead and player stats.
 
 Sources (gol.gg, cached):
   page-game       teams, result, duration, kills/towers/dragons/barons/gold, objective timeline,
@@ -113,13 +113,20 @@ def parse_fullstats(html: str) -> pd.DataFrame:
     return df
 
 
-def build(event_keys: list[str] | None = None, log=print) -> dict:
+def build(domestic: bool = True, log=print) -> dict:
+    """International events, plus every domestic league game when `domestic` (needed for player history)."""
     from .events import EVENTS
-    keys = event_keys or list(EVENTS)
+    from .scrape_matches import league_of, list_tournaments
+    sources = [(key, None, ev["title"], ev["tournaments"]) for key, ev in EVENTS.items()]
+    if domestic:
+        by_league = {}
+        for t in list_tournaments():
+            by_league.setdefault(league_of(t), []).append(t)
+        sources += [(None, lg, f"{lg} (domestic)", ts) for lg, ts in by_league.items()]
     games, teams, plist, timeline, gold = [], [], [], [], []
-    for key in keys:
-        ev = EVENTS[key]
-        for t in ev["tournaments"]:
+    for key, league, title, tournaments in sources:
+        n_before = len(games)
+        for t in tournaments:
             for s in list_series(t):
                 for game_no, gid in game_ids(s["series_id"], s["page"]):
                     uid = f"{s['series_id']}-{game_no}"
@@ -134,7 +141,8 @@ def build(event_keys: list[str] | None = None, log=print) -> dict:
                     if not info or stats.empty:
                         continue
                     blue, red = info["teams"]
-                    games.append(dict(game_uid=uid, gol_id=gid, event=key, tournament=t, stage=s["stage"],
+                    games.append(dict(game_uid=uid, gol_id=gid, event=key, league=league or key,
+                                      series_id=s["series_id"], tournament=t, stage=s["stage"],
                                       date=s["date"], game_no=game_no, version=info["version"],
                                       duration=info["duration"], duration_str=info["duration_str"],
                                       blue=blue["team"], red=red["team"],
@@ -154,7 +162,7 @@ def build(event_keys: list[str] | None = None, log=print) -> dict:
                         timeline.append(dict(game_uid=uid, team=names[e["side"]], **e))
                     for minute, lead in enumerate(info["gold_lead"]):
                         gold.append(dict(game_uid=uid, minute=minute, blue_lead=lead))
-        log(f"  {ev['title']}: {sum(g['event'] == key for g in games)} games")
+        log(f"  {title}: {len(games) - n_before} games")
     out = dict(games=pd.DataFrame(games), teams=pd.DataFrame(teams), players=pd.concat(plist, ignore_index=True),
                timeline=pd.DataFrame(timeline), gold=pd.DataFrame(gold))
     for name, df in out.items():

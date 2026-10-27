@@ -106,7 +106,8 @@ def load_matches():
     path = PROCESSED / "player_ratings.csv"
     if not path.exists():
         return None
-    read = lambda name: pd.read_csv(PROCESSED / name)
+    # event/league are empty for domestic games, so read them as text to avoid mixed-type columns.
+    read = lambda name: pd.read_csv(PROCESSED / name, dtype={"event": str, "league": str, "series_id": str})
     out = dict(games=read("match_games.csv"), teams=read("match_teams.csv"), ratings=read("player_ratings.csv"),
                timeline=read("match_timeline.csv"), gold=read("match_gold.csv"), expected=read("match_expected.csv"))
     ev_path = PROCESSED / "expected_eval.json"
@@ -246,41 +247,72 @@ RATING_HELP = ("Out of 5. Compares the player's stats with every player in the s
                "performance; 4.5+ is the top ~10%.")
 
 
-def game_label(g) -> str:
-    return f"{g.date} · {g.stage.title()} · {g.blue} vs {g.red}"
+def stage_label(tournament: str, stage: str) -> str:
+    """gol.gg stage codes to readable names: ROUND2 at Worlds is 'Swiss Round 2' (or 'Play-In Round 2')."""
+    m = re.fullmatch(r"ROUND(\d+)", str(stage).upper())
+    if m:
+        return f"{'Play-In' if 'Play-In' in str(tournament) else 'Swiss'} Round {m.group(1)}"
+    return str(stage).replace("3RD.PALCE", "3rd Place").title()
 
 
-def worlds_games_tab(mx: dict):
-    games = mx["games"][mx["games"].event == "worlds"].copy()
-    rt = mx["ratings"]
-    exp = mx["expected"]
-    games = games.sort_values(["date", "game_uid"], ascending=False)
-    mvp = rt[rt.mvp].drop_duplicates("game_uid").set_index("game_uid")
-    win_p = exp.set_index(["game_uid", "team"]).p_win
+def worlds_series(mx: dict) -> pd.DataFrame:
+    """One row per Worlds series: teams, score, format, date, stage."""
+    games = mx["games"][mx["games"].event == "worlds"]
     rows = []
-    for g in games.itertuples():
-        pw = win_p.get((g.game_uid, g.winner), np.nan)
+    for sid, g in games.groupby("series_id"):
+        g = g.sort_values("game_no")
+        wins = g.winner.value_counts()
+        teams = sorted(set(g.blue) | set(g.red), key=lambda t: -wins.get(t, 0))
+        a, b = teams[0], teams[1] if len(teams) > 1 else ""
+        best_of = {1: 1, 2: 3, 3: 5}.get(int(wins.max()), len(g))
+        rows.append(dict(series_id=sid, date=g.date.iloc[0], stage=stage_label(g.tournament.iloc[0], g.stage.iloc[0]),
+                         team_a=a, team_b=b,
+                         wins_a=int(wins.get(a, 0)), wins_b=int(wins.get(b, 0)), games=len(g), best_of=best_of))
+    return pd.DataFrame(rows).sort_values(["date", "series_id"], ascending=False).reset_index(drop=True)
+
+
+def worlds_series_tab(mx: dict):
+    series = worlds_series(mx)
+    rt = mx["ratings"]
+    exp = mx["expected"].set_index(["game_uid", "team"]).p_win
+    games = mx["games"]
+    rows = []
+    for s in series.itertuples():
+        sg = games[games.series_id == s.series_id]
+        first = sg.sort_values("game_no").iloc[0]
+        pre = exp.get((first.game_uid, s.team_a), np.nan)
+        sr = rt[rt.series_id == s.series_id].groupby(["player", "team"]).rating.mean()
+        mvp = sr.idxmax() if len(sr) else ("—", "")
         rows.append({
-            "Date": g.date, "Stage": g.stage.title(), "Blue": team_logo(g.blue), "Blue team": g.blue,
-            "Red": team_logo(g.red), "Red team": g.red, "Winner": g.winner,
-            "Winner's pre-game odds": pw, "": "upset" if pd.notna(pw) and pw < 0.4 else "",
-            "MVP": f"{mvp.player.get(g.game_uid, '—')} ({mvp.champion.get(g.game_uid, '')}) "
-                   f"{mvp.rating.get(g.game_uid, np.nan):.1f}" if g.game_uid in mvp.index else "—",
-            "Length": g.duration_str,
+            "Date": s.date, "Stage": s.stage, "Format": f"Bo{s.best_of}",
+            " ": team_logo(s.team_a), "Winner": s.team_a, "Score": f"{s.wins_a}–{s.wins_b}",
+            "Loser": s.team_b, "  ": team_logo(s.team_b),
+            "Winner's odds (game 1)": pre, "Series MVP": f"{mvp[0]} ({mvp[1]})" if len(sr) else "—",
         })
-    table_df = pd.DataFrame(rows)
-    st.markdown("Click a game to open it.")
+    st.markdown(f"{len(series)} series so far. Click one to open its games.")
     picked = st.dataframe(
-        table_df.style.format({"Winner's pre-game odds": "{:.0%}"}, na_rep="—"),
-        column_config={"Blue": st.column_config.ImageColumn(" ", width="small"),
-                       "Red": st.column_config.ImageColumn("  ", width="small")},
+        pd.DataFrame(rows).style.format({"Winner's odds (game 1)": "{:.0%}"}, na_rep="—"),
+        column_config={" ": st.column_config.ImageColumn(" ", width="small"),
+                       "  ": st.column_config.ImageColumn("  ", width="small")},
         hide_index=True, use_container_width=True, on_select="rerun", selection_mode="single-row",
-        key="worlds_game_table", height=min(420, 36 * len(table_df) + 40))
+        key="worlds_series_table", height=min(440, 36 * len(rows) + 40))
     rows_sel = (picked or {}).get("selection", {}).get("rows", [])
     if not rows_sel:
         return
-    g = games.iloc[rows_sel[0]]
+    s = series.iloc[rows_sel[0]]
+    sg = games[games.series_id == s.series_id].sort_values("game_no")
     st.divider()
+    st.markdown(f"### {s.team_a} {s.wins_a}–{s.wins_b} {s.team_b}")
+    st.caption(f"{s.stage} · {s.date} · best of {s.best_of}")
+    if len(sg) > 1:
+        labels = {r.game_no: f"Game {r.game_no} · {r.winner} Won" for r in sg.itertuples()}
+        game_no = st.radio("Game", list(labels), horizontal=True, format_func=labels.get,
+                           key=f"series_game_{s.series_id}")
+    else:
+        game_no = sg.game_no.iloc[0]
+    g = sg[sg.game_no == game_no].iloc[0]
+    if len(sg) > 1:
+        st.caption(f"Game {game_no} of {len(sg)}")
     game_detail(g, mx)
 
 
@@ -300,7 +332,7 @@ def game_detail(g, mx: dict):
             p = exp.p_win.get(tm.team, np.nan)
             nc.markdown(f"### {tm.team}\n{'**Won**' if tm.result else 'Lost'} · "
                         f"{'expected ' + format(p, '.0%') if pd.notna(p) else ''}")
-    c2.markdown(f"<div style='text-align:center'><span class='muted'>{g.stage.title()} · {g.date}</span><br>"
+    c2.markdown(f"<div style='text-align:center'><span class='muted'>{stage_label(g.tournament, g.stage)} · {g.date}</span><br>"
                 f"<b style='font-size:1.4rem'>{g.duration_str}</b><br><span class='muted'>patch "
                 f"{str(g.version).replace('16.', '26.')}</span></div>", unsafe_allow_html=True)
     winner_p = exp.p_win.get(g.winner, np.nan)
@@ -315,7 +347,35 @@ def game_detail(g, mx: dict):
         st.caption(f"Before the game the model gave {g.winner} a {winner_p:.0%} chance, so this was {verdict}."
                    + draft_note)
 
-    t_over, t_players, t_draft, t_gold = st.tabs(["Overview", "Players", "Draft", "Gold & objectives"])
+    # Players first, no click needed; # ranks all ten players in the game by rating.
+    rt = rt.assign(game_rank=rt.rating.rank(ascending=False, method="min").astype(int))
+    for tm in (blue, red):
+        st.markdown(f"**{tm.team}**" + (" · won" if tm.result else ""))
+        p = rt[rt.team == tm.team].copy()
+        p["order"] = p.role.map({r: i for i, r in enumerate(ROLES)})
+        p = p.sort_values("order")
+        t = pd.DataFrame({
+            "#": p.game_rank, "Role": p.role.str.title(), "Player": p.player, "Champion": p.champion,
+            "Games on it": p.champ_games,
+            "K / D / A": [f"{int(k)} / {int(d_)} / {int(a)}" for k, d_, a in zip(p.Kills, p.Deaths, p.Assists)],
+            "CS/min": p.CSM, "Damage share": p["DMG%"] / 100,
+            "Vision/min": p.VSPM, "Gold diff @15": p["GD@15"], "Expected": p.expected_rating, "Rating": p.rating,
+        })
+        t = with_icons(t, "Champion")
+        st.dataframe(t.style.format({"CS/min": "{:.1f}", "Damage share": "{:.0%}", "Vision/min": "{:.1f}",
+                                     "Gold diff @15": "{:+,.0f}", "Expected": "{:.1f}", "Rating": "{:.1f}"})
+                     .background_gradient(cmap="Blues", subset=["Rating"], vmin=1, vmax=5),
+                     column_config=image_column() | {
+                         "Rating": st.column_config.NumberColumn("Rating", help=RATING_HELP),
+                         "Expected": st.column_config.NumberColumn(
+                             "Expected", help="Pre-game expectation from the player's form, their record on "
+                                              "this champion and their team's chances."),
+                         "Games on it": st.column_config.NumberColumn(
+                             "Games on it", help="Pro games on this champion this season before this game.")},
+                     hide_index=True, use_container_width=True)
+    st.caption("# = rank among all ten players in this game, by rating.")
+
+    t_over, t_draft, t_gold = st.tabs(["Team Stats", "Draft", "Gold & Objectives"])
     with t_over:
         def fmt(v, kind=""):
             if pd.isna(v):
@@ -341,25 +401,6 @@ def game_detail(g, mx: dict):
                     bc1.image(champ_icon(best.champion), width=52)
                 bc2.markdown(f"**{best.player}** ({best.team})  \n{best.champion} · "
                              f"{int(best.Kills)}/{int(best.Deaths)}/{int(best.Assists)} · rating **{best.rating:.1f}**")
-
-    with t_players:
-        for tm in (blue, red):
-            st.markdown(f"**{tm.team}**" + (" · won" if tm.result else ""))
-            p = rt[rt.team == tm.team].copy()
-            p["order"] = p.role.map({r: i for i, r in enumerate(ROLES)})
-            p = p.sort_values("order")
-            t = pd.DataFrame({
-                "Role": p.role.str.title(), "Player": p.player, "Champion": p.champion,
-                "K / D / A": [f"{int(k)} / {int(d_)} / {int(a)}" for k, d_, a in zip(p.Kills, p.Deaths, p.Assists)],
-                "CS/min": p.CSM, "Gold share": p["GOLD%"] / 100, "Damage share": p["DMG%"] / 100,
-                "Vision/min": p.VSPM, "Gold diff @15": p["GD@15"], "Rating": p.rating,
-            })
-            t = with_icons(t, "Champion")
-            st.dataframe(t.style.format({"CS/min": "{:.1f}", "Gold share": "{:.0%}", "Damage share": "{:.0%}",
-                                         "Vision/min": "{:.1f}", "Gold diff @15": "{:+,.0f}", "Rating": "{:.1f}"})
-                         .background_gradient(cmap="Blues", subset=["Rating"], vmin=1, vmax=5),
-                         column_config=image_column() | {"Rating": st.column_config.NumberColumn("Rating", help=RATING_HELP)},
-                         hide_index=True, use_container_width=True)
 
     with t_draft:
         ev_games = load_events()["games"]
@@ -402,54 +443,104 @@ def game_detail(g, mx: dict):
         st.caption("Above the line = blue side ahead in gold. Dots are objectives (hover for which).")
 
 
-def worlds_players_tab(mx: dict):
-    rt = mx["ratings"][mx["ratings"].event == "worlds"]
-    role_p = st.radio("Role", ["all"] + ROLES, horizontal=True, key="worlds_player_role",
-                      format_func=lambda r: r.title() if r != "all" else "All roles")
-    view = rt if role_p == "all" else rt[rt.role == role_p]
-    agg = view.groupby(["player", "team", "role"]).agg(
-        games=("game_uid", "nunique"), rating=("rating", "mean"), best=("rating", "max"),
-        wins=("result", "sum"), k=("Kills", "sum"), d=("Deaths", "sum"), a=("Assists", "sum"),
-        champs=("champion", lambda s: ", ".join(s.value_counts().index[:3])),
+def worlds_players_page(mx: dict):
+    rt = mx["ratings"]
+    w = rt[rt.event == "worlds"]
+    domestic = rt[rt.event.isna()].groupby("player").rating.mean()
+    min_games = st.slider("Minimum Games at Worlds", 1, 6, 3, key="wp_min_games")
+    agg = w.groupby(["player", "team", "role"]).agg(
+        games=("game_uid", "nunique"), rating=("rating", "mean"), expected=("expected_rating", "mean"),
+        wins=("result", "sum"), champs=("champion", lambda s: ", ".join(s.value_counts().index[:3])),
     ).reset_index()
-    agg = agg[agg.games >= 2].sort_values("rating", ascending=False)
+    agg["vs_expected"] = agg.rating - agg.expected
+    agg["domestic"] = agg.player.map(domestic)
+    agg = agg[agg.games >= min_games]
     if agg.empty:
-        st.info("No player has two Worlds games in this role yet.")
+        st.info("No players with that many Worlds games yet.")
         return
-    top = agg.iloc[0]
-    st.markdown(f"<div class='takeaway'>Highest-rated so far: <b>{top.player}</b> ({top.team}, {top.role}), "
-                f"averaging <b>{top.rating:.1f}</b> over {top.games} games.</div>", unsafe_allow_html=True)
-    t = pd.DataFrame({
-        "Logo": agg.team.map(team_logo), "Player": agg.player, "Team": agg.team, "Role": agg.role.str.title(),
-        "Games": agg.games, "Record": [f"{int(w)}–{int(n - w)}" for w, n in zip(agg.wins, agg.games)],
-        "Avg rating": agg.rating, "Best": agg.best,
-        "KDA": [(k + a) / max(d, 1) for k, d, a in zip(agg.k, agg.d, agg.a)], "Champions": agg.champs,
-    })
-    table(t, {"Avg rating": "{:.1f}", "Best": "{:.1f}", "KDA": "{:.1f}"}, n=15, more_label="Show all players")
-    st.caption("Players with 2+ Worlds games. " + RATING_HELP)
 
-    with st.expander("Look at one player"):
-        who = st.selectbox("Player", agg.player + " (" + agg.team + ")", key="worlds_player_pick")
+    def board(df, value_col, value_label, fmt):
+        cols = {"#": range(1, len(df) + 1), " ": df.team.map(team_logo), "Player": df.player, "Team": df.team,
+                "Role": df.role.str.title(), "Games": df.games,
+                "Record": [f"{int(w_)}–{int(n - w_)}" for w_, n in zip(df.wins, df.games)]}
+        if value_col != "rating":  # the ranking value first, then the rating it came from
+            cols[value_label] = df[value_col]
+        cols |= {"Avg rating": df.rating, "Expected": df.expected, "Season (domestic)": df.domestic,
+                 "Champions": df.champs}
+        t = pd.DataFrame(cols)
+        st.dataframe(t.style.format({value_label: fmt, "Avg rating": "{:.1f}", "Expected": "{:.1f}",
+                                     "Season (domestic)": "{:.1f}"}, na_rep="—"),
+                     column_config={" ": st.column_config.ImageColumn(" ", width="small")},
+                     hide_index=True, use_container_width=True, height=36 * min(len(t), 10) + 40)
+
+    t_best, t_low, t_up, t_down, t_look = st.tabs(
+        ["Best", "Lowest Rated", "Above Expectations", "Below Expectations", "Player Lookup"])
+    with t_best:
+        top = agg.sort_values("rating", ascending=False).head(10)
+        st.markdown(f"<div class='takeaway'>Best so far: <b>{top.iloc[0].player}</b> ({top.iloc[0].team}), "
+                    f"averaging <b>{top.iloc[0].rating:.1f}</b> over {top.iloc[0].games} games.</div>",
+                    unsafe_allow_html=True)
+        board(top, "rating", "Avg rating", "{:.1f}")
+    with t_low:
+        low = agg.sort_values("rating").head(10)
+        st.markdown("The lowest averages so far. Often a mix of tough opponents and losing games, "
+                    "since the result is part of the rating.")
+        board(low, "rating", "Avg rating", "{:.1f}")
+    with t_up:
+        up = agg.sort_values("vs_expected", ascending=False).head(10)
+        st.markdown(f"<div class='takeaway'>Playing furthest above what their form, champions and opponents "
+                    f"predicted: <b>{up.iloc[0].player}</b> ({up.iloc[0].team}), "
+                    f"<b>{up.iloc[0].vs_expected:+.1f}</b> per game.</div>", unsafe_allow_html=True)
+        board(up, "vs_expected", "Above expected", "{:+.1f}")
+    with t_down:
+        down = agg.sort_values("vs_expected").head(10)
+        st.markdown("Playing furthest below what their form, champions and opponents predicted.")
+        board(down, "vs_expected", "Below expected", "{:+.1f}")
+    with t_look:
+        who = st.selectbox("Player", (agg.player + " (" + agg.team + ")").tolist(), key="worlds_player_pick")
         name = who.rsplit(" (", 1)[0]
-        pg = rt[rt.player == name].sort_values("date")
+        game_rank = w.groupby("game_uid").rating.rank(ascending=False, method="min").astype(int)
+        pg = w[w.player == name].assign(game_rank=game_rank).sort_values("date")
         gt = pd.DataFrame({"Date": pg.date, "Opponent": pg.opponent, "Champion": pg.champion,
                            "Result": pg.result.map({1: "Won", 0: "Lost"}),
                            "K / D / A": [f"{int(k)} / {int(d_)} / {int(a)}" for k, d_, a in zip(pg.Kills, pg.Deaths, pg.Assists)],
-                           "Rating": pg.rating})
-        st.dataframe(with_icons(gt, "Champion").style.format({"Rating": "{:.1f}"}), column_config=image_column(),
-                     hide_index=True, use_container_width=True)
-        from lolpatch.ratings import ROLE_WEIGHTS, STAT_LABELS
-        role = pg.role.iloc[0]
-        prof = pd.Series({STAT_LABELS[s]: pg[f"z_{s}"].mean() for s in ROLE_WEIGHTS[role]}).sort_values()
-        fig = go.Figure(go.Bar(x=prof.values, y=prof.index, orientation="h",
-                               marker=dict(color=[BUFF if v >= 0 else NERF for v in prof.values], cornerradius=3),
-                               hovertemplate="%{y}: %{x:+.1f} SD vs other %{customdata}s<extra></extra>",
-                               customdata=[role] * len(prof)))
-        fig.add_vline(x=0, line=dict(color=NEUTRAL, width=1))
-        st.markdown(f"**What drives {name}'s rating** (vs other {role}s at international events)")
-        st.plotly_chart(row_layout(style(fig, xaxis=dict(title="Above / below the role average", range=[-2.5, 2.5]),
-                                         hovermode="closest"), prof.index, right=24),
-                        use_container_width=True)
+                           "Expected": pg.expected_rating, "Rating": pg.rating,
+                           "Rank in game": [f"{r} of 10" for r in pg.game_rank]})
+        st.dataframe(with_icons(gt, "Champion").style.format({"Rating": "{:.1f}", "Expected": "{:.1f}"}),
+                     column_config=image_column(), hide_index=True, use_container_width=True)
+        hist = rt[rt.player == name].groupby("champion").agg(games=("game_uid", "nunique"), rating=("rating", "mean"),
+                                                             wins=("result", "sum")).reset_index()
+        hist = hist.sort_values("games", ascending=False).head(8)
+        l, r = st.columns(2, gap="large")
+        with l:
+            st.markdown(f"**{name}'s most-played champions this season**")
+            ht = pd.DataFrame({"Champion": hist.champion, "Games": hist.games,
+                               "Record": [f"{int(w_)}–{int(n - w_)}" for w_, n in zip(hist.wins, hist.games)],
+                               "Avg rating": hist.rating})
+            st.dataframe(with_icons(ht, "Champion").style.format({"Avg rating": "{:.1f}"}),
+                         column_config=image_column(), hide_index=True, use_container_width=True)
+        with r:
+            from lolpatch.ratings import ROLE_WEIGHTS, STAT_LABELS
+            role = pg.role.iloc[0]
+            prof = pd.Series({STAT_LABELS[s]: pg[f"z_{s}"].mean() for s in ROLE_WEIGHTS[role]}).sort_values()
+            st.markdown(f"**What drives the rating at Worlds** (vs other {role}s)")
+            fig = go.Figure(go.Bar(x=prof.values, y=prof.index, orientation="h",
+                                   marker=dict(color=[BUFF if v >= 0 else NERF for v in prof.values], cornerradius=3),
+                                   hovertemplate="%{y}: %{x:+.1f} vs the role average<extra></extra>"))
+            fig.add_vline(x=0, line=dict(color=NEUTRAL, width=1))
+            st.plotly_chart(row_layout(style(fig, xaxis=dict(title="Below / above the role average", range=[-2.5, 2.5]),
+                                             hovermode="closest"), prof.index, right=24), use_container_width=True)
+
+    with st.expander("How ratings and expectations work"):
+        st.markdown(
+            "**Rating (out of 5):** each stat is compared with every player in the same role across all 2026 pro "
+            "games, weighted for what the role does, plus the game result relative to the pre-game odds. "
+            "3.0 is an average pro performance.\n\n"
+            "**Expected:** before each game, a prediction from the player's earlier games (form), how they've done "
+            "on that champion compared with their usual level, their team's chance of winning, and, for "
+            "international games, how strong their region has been against other regions.\n\n"
+            "**Season (domestic):** their average rating in league play this year, for reference. Ratings in "
+            "weaker leagues come against weaker opponents, which is why *expected* accounts for region strength.")
 
 
 d = load()
@@ -459,8 +550,8 @@ all_stats = stats[stats.league == "ALL"]
 
 # --- navigation -------------------------------------------------------------------------
 
-PAGES = ["Overview", "Worlds 2026", "Champions & patches", "Meta shifts", "Draft answers", "Teams & regions",
-         "Model accuracy", "Changelog"]
+PAGES = ["Overview", "Worlds 2026", "Worlds Players", "Champions & Patches", "Meta Shifts", "Draft Answers", "Teams & Regions",
+         "Model Accuracy", "Changelog"]
 CHANGELOG = PROCESSED.parent.parent / "CHANGELOG.md"
 changelog_text = CHANGELOG.read_text() if CHANGELOG.exists() else ""
 version_tag = next((line[3:].split("·")[0].strip() for line in changelog_text.splitlines()
@@ -500,23 +591,23 @@ if page == "Overview":
     eff = verdict_effects(tr)
     if {"buff", "nerf"} <= set(eff.index):
         hi_nerf = tr[tr.changed & (tr.verdict == "nerf") & (tr.prev_presence > 0.6)]
-        cards.append(("Do buffs and nerfs work?",
+        cards.append(("Do Buffs and Nerfs Work?",
                       f"On average a buff adds **{eff.loc['buff', 'mean_delta_presence'] * 100:+.0f} points** of "
                       f"presence and a nerf takes **{eff.loc['nerf', 'mean_delta_presence'] * 100:+.0f}**. "
                       f"Nerfs hit hardest on top picks: **{hi_nerf.delta_presence.mean() * 100:+.0f} points** "
-                      "for champions above 60%.", "Champions & patches"))
+                      "for champions above 60%.", "Champions & Patches"))
     if dr is not None:
         solid = dr["lanes"][dr["lanes"].solid].sort_values("n", ascending=False)
         ex = solid.iloc[0]
-        cards.append(("Draft answers",
+        cards.append(("Draft Answers",
                       f"Teams have clear go-to responses: **{len(solid)} lane answers** stand out, like "
                       f"**{ex.answer} into {ex.opener}** ({ex.role}), taken {ex.lift:.1f}× as often as usual.",
-                      "Draft answers"))
+                      "Draft Answers"))
     if ev:
         wins = sum(m["frozen"]["all"]["mae_model"] < m["frozen"]["all"]["mae_baseline"] for m in ev["metrics"].values())
-        cards.append(("Can patch notes predict the meta?",
+        cards.append(("Can Patch Notes Predict the Meta?",
                       f"A little. The forecast beat “nothing changes” at **{wins} of {len(ev['metrics'])}** "
-                      "international events, mostly by small margins.", "Model accuracy"))
+                      "international events, mostly by small margins.", "Model Accuracy"))
 
     for row in range(0, len(cards), 2):
         cols = st.columns(2, gap="medium")
@@ -529,7 +620,7 @@ if page == "Overview":
                 st.button(f"Open {target} →", key=f"go_{target}", on_click=go_to, args=(target,))
 
     st.markdown("")
-    st.caption("Also: **Meta shifts** shows who lost ground as a group of champions rose; **Teams & regions** shows "
+    st.caption("Also: **Meta Shifts** shows who lost ground as a group of champions rose; **Teams & Regions** shows "
                "what each team and region leans on, and whether that wins games.")
 
 
@@ -567,17 +658,14 @@ elif page == "Worlds 2026":
                 "games played so far, so it starts from the patch notes and shifts toward what teams actually do "
                 "as games accumulate. Whiskers are an 80% range.")
 
-    t_games, t_players, t_teams, t_patch, t_fc, t_draft, t_region = st.tabs(
-        ["Games", "Players", "Teams", f"Patch {wm['patch']} changes", "Forecast check", "Draft answers", "By region"])
+    t_games, t_teams, t_patch, t_fc, t_draft, t_region = st.tabs(
+        ["Series & Games", "Teams", f"Patch {wm['patch']} Changes", "Forecast Check", "Draft Answers", "By Region"])
 
     with t_games:
         if mx is None:
             st.info("Run `python -m lolpatch matches` to load game details.")
         else:
-            worlds_games_tab(mx)
-    with t_players:
-        if mx is not None:
-            worlds_players_tab(mx)
+            worlds_series_tab(mx)
 
     wg = ev["games"][ev["games"].league == "worlds"]
     with t_teams:
@@ -606,7 +694,7 @@ elif page == "Worlds 2026":
                     f"{', '.join(bridge)}. Here's what changed and how those champions are doing.")
         wcmp = ev["worlds_current"].set_index("champ_key")
         bp = st.radio("Patch", bridge[::-1], horizontal=True, key="worlds_bridge_patch",
-                      format_func=lambda p: f"{p} (Worlds patch)" if p == wm["patch"] else p)
+                      format_func=lambda p: f"{p} (Worlds Patch)" if p == wm["patch"] else p)
         pc = changes[changes.patch == bp].copy()
         pc["before"] = pc.champ_key.map(wcmp.domestic_presence).fillna(0)
         pc["worlds"] = pc.champ_key.map(wcmp.actual_presence).fillna(0)
@@ -664,18 +752,29 @@ elif page == "Worlds 2026":
                          column_config=image_column(), hide_index=True, use_container_width=True)
 
 
+# --- Worlds Players ----------------------------------------------------------------------
+
+elif page == "Worlds Players":
+    st.title("Worlds Players")
+    lead("Who's playing best at Worlds, and who's beating or missing what their form predicted.")
+    if mx is None:
+        st.info("Run `python -m lolpatch matches` first.")
+        st.stop()
+    worlds_players_page(mx)
+
+
 # --- Champions & patches ----------------------------------------------------------------
 
-elif page == "Champions & patches":
-    st.title("Champions & patches")
+elif page == "Champions & Patches":
+    st.title("Champions & Patches")
     lead("Follow any champion through the season, see what each patch did, and check whether buffs and nerfs work.")
-    league = st.selectbox("League", ["ALL"] + LEAGUES, format_func=lambda x: "All leagues" if x == "ALL" else x,
+    league = st.selectbox("League", ["ALL"] + LEAGUES, format_func=lambda x: "All Leagues" if x == "ALL" else x,
                           key="league")
     scope = stats[stats.league == league]
     trans = transitions_for(league)
     patches = sorted(scope.patch.unique(), key=patch_key)
 
-    t_champ, t_patch, t_effect, t_pred = st.tabs(["Champion", "Patch", "Do buffs & nerfs work?", "Next patch"])
+    t_champ, t_patch, t_effect, t_pred = st.tabs(["Champion", "Patch", "Do Buffs & Nerfs Work?", "Next Patch"])
 
     with t_champ:
         champs = scope.groupby("champion").presence.max().sort_values(ascending=False).index.tolist()
@@ -813,18 +912,18 @@ elif page == "Champions & patches":
             fig = style(fig, xaxis=dict(title="Predicted change in presence", tickformat="+.0%"),
                         hovermode="closest", bargap=0.3)
             st.plotly_chart(row_layout(fig, show.champion), use_container_width=True)
-            st.caption("The model's track record is on the **Model accuracy** page.")
+            st.caption("The model's track record is on the **Model Accuracy** page.")
 
 
 # --- Meta shifts -----------------------------------------------------------------------
 
-elif page == "Meta shifts":
-    st.title("Meta shifts")
+elif page == "Meta Shifts":
+    st.title("Meta Shifts")
     lead("When champions rise, someone else loses the slot. Pick a group and see who it pushed out.")
     if rp is None:
         st.info("Run `python -m lolpatch meta` first.")
         st.stop()
-    t_group, t_slot = st.tabs(["Rise & fall", "Who took the slot"])
+    t_group, t_slot = st.tabs(["Rise & Fall", "Who Took the Slot"])
 
     with t_group:
         all_champs = sorted(all_stats.champion.unique())
@@ -894,7 +993,7 @@ elif page == "Meta shifts":
         st.markdown("After a big buff or nerf, which untouched champion in the same role moved the other way?")
         subs, pairs = rp["subs"], rp["pairs"]
         role_f = st.radio("Role", ["all"] + ROLES, horizontal=True, key="ripple_role",
-                          format_func=lambda r: r.title() if r != "all" else "All roles")
+                          format_func=lambda r: r.title() if r != "all" else "All Roles")
         sv = subs if role_f == "all" else subs[subs.role == role_f]
         sv = sv.reindex(sv.changed_delta.abs().sort_values(ascending=False).index)
         t = pd.DataFrame({
@@ -915,8 +1014,8 @@ elif page == "Meta shifts":
 
 # --- Draft answers ---------------------------------------------------------------------
 
-elif page == "Draft answers":
-    st.title("Draft answers")
+elif page == "Draft Answers":
+    st.title("Draft Answers")
     lead("When a team locks a champion, what does the opponent answer with in the same role?")
     if dr is None:
         st.info("Run `python -m lolpatch draft` first.")
@@ -924,10 +1023,10 @@ elif page == "Draft answers":
     solid = dr["lanes"][dr["lanes"].solid].copy()
     f1, f2 = st.columns([3, 2])
     role_d = f1.radio("Role", ["all"] + ROLES, horizontal=True, key="draft_role",
-                      format_func=lambda r: r.title() if r != "all" else "All roles")
-    kinds = {"Everyone": None, "Mostly at Worlds": "Worlds", "One region": "(region)", "One team": "(team)",
-             "One player": "(player)"}
-    kind = f2.selectbox("Who does it", list(kinds), key="draft_kind")
+                      format_func=lambda r: r.title() if r != "all" else "All Roles")
+    kinds = {"Everyone": None, "Mostly at Worlds": "Worlds", "One Region": "(region)", "One Team": "(team)",
+             "One Player": "(player)"}
+    kind = f2.selectbox("Who Does It", list(kinds), key="draft_kind")
     view = solid if role_d == "all" else solid[solid.role == role_d]
     if kinds[kind]:
         view = view[view.where_from.str.contains(kinds[kind], regex=False)]
@@ -973,19 +1072,19 @@ elif page == "Draft answers":
             "is usually picked in that role **on the same patches** (so two champions that were simply popular at "
             "the same time don't count), and to survive a statistical correction for testing "
             f"{dm['lane_pairs_tested']:,} pairs.\n\n"
-            "**Who does it** names an event, region, team or player when they make the answer at least twice as "
+            "**Who Does It** names an event, region, team or player when they make the answer at least twice as "
             "often as everyone else. It means *led by*, not *only by*.")
 
 
 # --- Teams & regions ---------------------------------------------------------------------
 
-elif page == "Teams & regions":
-    st.title("Teams & regions")
+elif page == "Teams & Regions":
+    st.title("Teams & Regions")
     lead("What each team and region leans on, and whether leaning on it wins games.")
     if rg is None:
         st.info("Run `python -m lolpatch regions` first.")
         st.stop()
-    t_team, t_region, t_wins = st.tabs(["Team explorer", "Region preferences", "Does priority win?"])
+    t_team, t_region, t_wins = st.tabs(["Team Explorer", "Region Preferences", "Does Priority Win?"])
 
     with t_team:
         tc = rg["teams"]
@@ -1020,8 +1119,8 @@ elif page == "Teams & regions":
 
     with t_region:
         metric = st.radio("Measure", ["presence_lift", "early_lift"], horizontal=True, key="region_metric",
-                          format_func=lambda m: {"presence_lift": "Picked or banned",
-                                                 "early_lift": "Taken early (first 2 picks / 3 bans)"}[m])
+                          format_func=lambda m: {"presence_lift": "Picked or Banned",
+                                                 "early_lift": "Taken Early (First 2 Picks / 3 Bans)"}[m])
         rc = rg["regions"]
         champs = rc.groupby("champion").presence.mean().nlargest(25).index
         z = rc[rc.champion.isin(champs)].pivot(index="champion", columns="league", values=metric).reindex(champs)
@@ -1075,15 +1174,15 @@ elif page == "Teams & regions":
 
 # --- Model accuracy ----------------------------------------------------------------------
 
-elif page == "Model accuracy":
-    st.title("Model accuracy")
+elif page == "Model Accuracy":
+    st.title("Model Accuracy")
     lead("Can patch notes predict the meta? Each international event is a test the model never saw.")
     if not ev:
         st.info("Run `python -m lolpatch events` first.")
         st.stop()
     version = st.radio("Forecast", ["frozen", "current"], horizontal=True, key="fc_version",
-                       format_func=lambda v: {"frozen": "Saved before the event (blind)",
-                                              "current": "Rebuilt with today's model"}[v])
+                       format_func=lambda v: {"frozen": "Saved Before the Event (Blind)",
+                                              "current": "Rebuilt With Today's Model"}[v])
     rows = []
     for key, m in ev["metrics"].items():
         sc = m[version]
@@ -1096,7 +1195,7 @@ elif page == "Model accuracy":
     st.caption("Error = average gap between forecast and actual presence; lower is better.")
 
     keys = list(ev["metrics"])
-    pick = st.selectbox("Look at one event", keys, index=keys.index("worlds") if "worlds" in keys else 0,
+    pick = st.selectbox("Look at One Event", keys, index=keys.index("worlds") if "worlds" in keys else 0,
                         format_func=lambda k: ev["metrics"][k]["title"], key="fc_event")
     sc = ev["metrics"][pick][version]
     scorecard(sc)

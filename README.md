@@ -131,6 +131,15 @@ Which picks teams make *in response* to an opponent's pick.
   role across all international games, plus 0.4 × (won − expected win chance)
   in the same units, turned into a 1.0–5.0 percentile. Best player on a winning
   team: median ~4.8; best on a losing team: ~3.3.
+- **Scope:** ratings cover every 2026 pro game (domestic + international,
+  2,397 games) on one scale, so `python -m lolpatch matches` fetches each
+  game's stats page once (~1 hour first run, cached after).
+- **Expected player rating** (`expected_rating_eval.json`): before each game,
+  from the player's earlier games (form, shrunk toward 3.0), their record on
+  that champion relative to their form (shrunk toward 0), the team's win
+  chance, and for international games their region's cross-region strength.
+  Fit on games before Worlds, scored on Worlds: correlation with actual
+  ratings 0.24 (0.20 without champion history).
 
 ## Pipeline
 

@@ -7,6 +7,17 @@ Every version below came from one round of requests. Newest first.
 - Refresh the Worlds data after each Swiss round and knockout stage.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.1 · Oct 27: Series, Worlds Players and champion-aware expectations
+- **Series instead of loose games:** Worlds 2026 → *Series & Games* lists each series with its score and format (e.g. "2–1 · Bo3"). Open one, then pick Game 1, 2 or 3.
+- **New Worlds Players page:** Best, Lowest Rated, Above Expectations, Below Expectations, and a Player Lookup with each player's most-played champions this season.
+- **Expected rating for every player in every game:** from their earlier games (form), how they've done on that champion compared with their usual level, their team's chance of winning, and, at international events, how strong their region has been. Game pages show it next to the actual rating, along with how many games the player had on that champion.
+- Ratings now cover every 2026 pro game, domestic and international, on one common scale (2,397 games). That's what makes champion history and "season vs Worlds" comparisons possible.
+- **What champion history adds:** the expectation tracks actual Worlds ratings noticeably better with it (correlation 0.24 vs 0.20 without). Single games stay noisy, though: a player's rating swings about 1.1 points from game to game. Expectations are most useful over several games, as in the Above and Below Expectations boards.
+- Series show readable stages ("Play-In Round 1", "Swiss Round 3") and their format (Bo1, Bo3, Bo5).
+- Game pages show both teams' players straight away, no click needed, with a **#** rank (1–10) for every player in the game. Team stats, draft and gold/objectives sit in tabs below.
+- Ranking numbers on every Worlds Players board, and each game's rank in the Player Lookup.
+- Menu and tab names are now in Title Case.
+
 ## v1.0 · Oct 27: Worlds games, player ratings and expected results
 - **Games:** click any Worlds game for the full picture: result and pre-game odds, team stats (kills, gold, towers, dragons, barons, heralds, voidgrubs, plates, first blood/tower), bans and picks in draft order, every player's stats, and the gold-lead curve with objectives.
 - **Player ratings out of 5:** each stat is compared with players in the same role at this year's international events, weighted for what the role does (vision matters for supports, lane leads for laners). The result counts relative to expectation, so an upset win is worth more than an expected one. 3.0 is typical; 4.5+ is the top 10%.

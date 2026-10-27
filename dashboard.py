@@ -15,7 +15,7 @@ from lolpatch.analyze import build_transitions, load_changes, verdict_effects
 from lolpatch.config import LEAGUES, PROCESSED, patch_key
 from lolpatch.events import PRIOR_GAMES
 from lolpatch.meta import ROLES, SUB_MIN_MOVE_A, SUB_MIN_MOVE_B, displacement, group_presence, rise_window
-from lolpatch.ui import champ_icon, image_column, row_layout, team_logo, with_icons
+from lolpatch.ui import champ_icon, image_column, nice, row_layout, team_logo, with_icons
 
 st.set_page_config(page_title="Patch Impact · LoL pro 2026", layout="wide", initial_sidebar_state="expanded")
 
@@ -184,9 +184,9 @@ def pair_table(df: pd.DataFrame, opener_label: str = "Their pick", answer_label:
     if "role" in df:
         t.insert(0, "Role", df.role.str.title().values)
     t["How often"] = [f"{n} of {m} times" for n, m in zip(df.n, df.opener_n)]
-    t["vs usual"] = [f"×{x:.1f}" for x in df.lift]
+    t["Compared with usual"] = [f"{x:.1f}× more often" for x in df.lift]
     if "where_from" in df:
-        t["Led by"] = df.where_from.replace("Broad meta", "everyone").values
+        t["Who does it most"] = df.where_from.replace("Broad meta", "everyone").values
     if detail:
         t["Answer rate"] = df.answer_rate.values
         t["Usual rate"] = df.base_rate.values
@@ -199,7 +199,7 @@ def pair_table(df: pd.DataFrame, opener_label: str = "Their pick", answer_label:
 PAIR_FMT = {"Answer rate": "{:.0%}", "Usual rate": "{:.0%}", "Answer won": "{:.0%}"}
 
 
-def forecast_chart(cmp: pd.DataFrame, base_patch: str, games: int, n: int = 20):
+def forecast_chart(cmp: pd.DataFrame, base_patch: str, games: int, n: int = 30):
     """Domestic -> forecast -> actual presence for the champions that mattered most."""
     relevance = cmp[["domestic_presence", "pred_presence", "actual_presence"]].max(axis=1)
     show = cmp.loc[relevance.nlargest(n).index].sort_values("actual_presence")
@@ -208,9 +208,9 @@ def forecast_chart(cmp: pd.DataFrame, base_patch: str, games: int, n: int = 20):
         fig.add_trace(go.Scatter(x=[r.domestic_presence, r.pred_presence, r.actual_presence], y=[r.champion] * 3,
                                  mode="lines", line=dict(color="#c3c2b7", width=1.5), showlegend=False, hoverinfo="skip"))
     hover = "<b>%{y}</b><br>%{x:.0%}<extra>%{fullData.name}</extra>"
-    fig.add_trace(go.Scatter(x=show.domestic_presence, y=show.champion, mode="markers", name=f"Before ({base_patch})",
+    fig.add_trace(go.Scatter(x=show.domestic_presence, y=show.champion, mode="markers", name=f"In the leagues ({base_patch})",
                              marker=dict(color=NEUTRAL, size=8), hovertemplate=hover))
-    fig.add_trace(go.Scatter(x=show.pred_presence, y=show.champion, mode="markers", name="Forecast",
+    fig.add_trace(go.Scatter(x=show.pred_presence, y=show.champion, mode="markers", name="Our prediction",
                              marker=dict(color="rgba(0,0,0,0)", size=11, line=dict(width=2, color=SERIES[1])),
                              hovertemplate=hover))
     fig.add_trace(go.Scatter(x=show.actual_presence, y=show.champion, mode="markers", showlegend=False,
@@ -219,32 +219,37 @@ def forecast_chart(cmp: pd.DataFrame, base_patch: str, games: int, n: int = 20):
                              customdata=show[["verdict", "change_patches"]],
                              hovertemplate="<b>%{y}</b> — %{customdata[0]} %{customdata[1]}<br>actual %{x:.0%}<extra></extra>"))
     # Legend entry for "actual" in neutral ink: the real dots are colored by change type.
-    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", name=f"Actual ({games} games)",
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", name=f"What happened ({games} games)",
                              marker=dict(color="#52514e", size=11)))
     # Start the axis slightly below 0 so 0% markers aren't cut off at the edge.
-    fig = style(fig, xaxis=dict(title="Presence", range=[-0.03, 1.03], **PCT), hovermode="closest")
+    fig = style(fig, xaxis=dict(title="Pick/ban rate (share of games where it was picked or banned)",
+                                range=[-0.03, 1.03], **PCT), hovermode="closest")
     st.plotly_chart(row_layout(fig, show.champion, legend=True), use_container_width=True)
-    st.caption("Gray = before the event · orange ring = forecast · filled = what happened "
-               "(blue buffed, red nerfed, gray unchanged/adjusted).")
+    st.caption("Gray dot = how often it was picked or banned in the leagues · orange ring = what we predicted · "
+               "colored dot = what actually happened (blue = buffed since, red = nerfed, gray = no change). "
+               f"The {n} champions that mattered most.")
 
 
 def scorecard(sc: dict):
     a, b, c = st.columns(3)
-    a.metric("Forecast error", f"{sc['all']['mae_model'] * 100:.1f} pp",
-             help="Average gap between forecast and actual presence, in percentage points")
-    b.metric("“Nothing changes” error", f"{sc['all']['mae_baseline'] * 100:.1f} pp",
-             help=f"The same, if you assumed every champion stayed at its domestic {sc['base_patch']} presence")
-    c.metric("Top-10 picked correctly", f"{sc['top10_model']}/10")
+    a.metric("Our prediction was off by", f"{sc['all']['mae_model'] * 100:.1f} points",
+             help="On average, how far our predicted pick/ban rate was from the real one. "
+                  "Points = percentage points: predicting 40% when it was 44% is 4 points off.")
+    b.metric("Guessing “no change” was off by", f"{sc['all']['mae_baseline'] * 100:.1f} points",
+             help=f"The same, if you simply assumed every champion would be picked or banned exactly as often as in "
+                  f"the leagues on {sc['base_patch']}. Lower is better, so our prediction should beat this.")
+    c.metric("Top 10 champions guessed right", f"{sc['top10_model']} of 10")
 
 
 def possessive(name: str) -> str:
     return f"{name}'" if name.endswith("s") else f"{name}'s"
 
 
-RATING_HELP = ("Out of 5. Compares the player's stats with every player in the same role at this year's "
-               "international events (weighted for what that role is for), plus the result relative to "
-               "expectation: an upset win counts for more than an expected one. 3.0 is a typical international "
-               "performance; 4.5+ is the top ~10%.")
+RATING_HELP = ("A score out of 5 for this game. It compares the player's damage, gold, kill participation, deaths, "
+               "vision and more with every other player in the same role in 2026 pro play, including how they did "
+               "against their lane opponent and how much of their team's and the game's damage and gold they had. "
+               "Winning when your team wasn't expected to earns extra credit. 3.0 is an average pro game; 4.5 or "
+               "more is one of the best 10%.")
 
 
 def stage_label(tournament: str, stage: str) -> str:
@@ -287,11 +292,11 @@ def worlds_series_tab(mx: dict):
             "Date": s.date, "Stage": s.stage, "Format": f"Bo{s.best_of}",
             " ": team_logo(s.team_a), "Winner": s.team_a, "Score": f"{s.wins_a}–{s.wins_b}",
             "Loser": s.team_b, "  ": team_logo(s.team_b),
-            "Winner's odds (game 1)": pre, "Series MVP": f"{mvp[0]} ({mvp[1]})" if len(sr) else "—",
+            "Winner's chance before game 1": pre, "Series MVP": f"{mvp[0]} ({mvp[1]})" if len(sr) else "—",
         })
     st.markdown(f"{len(series)} series so far. Click one to open its games.")
     picked = st.dataframe(
-        pd.DataFrame(rows).style.format({"Winner's odds (game 1)": "{:.0%}"}, na_rep="—"),
+        pd.DataFrame(rows).style.format({"Winner's chance before game 1": "{:.0%}"}, na_rep="—"),
         column_config={" ": st.column_config.ImageColumn(" ", width="small"),
                        "  ": st.column_config.ImageColumn("  ", width="small")},
         hide_index=True, use_container_width=True, on_select="rerun", selection_mode="single-row",
@@ -331,21 +336,21 @@ def game_detail(g, mx: dict):
                 lc.image(team_logo(tm.team), width=56)
             p = exp.p_win.get(tm.team, np.nan)
             nc.markdown(f"### {tm.team}\n{'**Won**' if tm.result else 'Lost'} · "
-                        f"{'expected ' + format(p, '.0%') if pd.notna(p) else ''}")
+                        f"{format(p, '.0%') + ' chance to win' if pd.notna(p) else ''}")
     c2.markdown(f"<div style='text-align:center'><span class='muted'>{stage_label(g.tournament, g.stage)} · {g.date}</span><br>"
                 f"<b style='font-size:1.4rem'>{g.duration_str}</b><br><span class='muted'>patch "
                 f"{str(g.version).replace('16.', '26.')}</span></div>", unsafe_allow_html=True)
     winner_p = exp.p_win.get(g.winner, np.nan)
     if pd.notna(winner_p):
-        verdict = ("an upset" if winner_p < 0.4 else "as expected" if winner_p > 0.6 else "a close call beforehand")
+        verdict = ("an upset" if winner_p < 0.4 else "the expected result" if winner_p > 0.6 else "close to a coin flip beforehand")
         edge = exp.draft_edge.get(blue.team, np.nan)
         draft_note = ""
         if pd.notna(edge) and abs(edge) >= 0.005:
             ahead = blue.team if edge > 0 else red.team
-            draft_note = (f" On the draft, {possessive(ahead)} picks had the better recent win rates "
-                          f"(+{abs(edge) * 100:.1f} pts on average), though drafts haven't proven predictive.")
-        st.caption(f"Before the game the model gave {g.winner} a {winner_p:.0%} chance, so this was {verdict}."
-                   + draft_note)
+            draft_note = (f" {possessive(ahead)} champions had been winning slightly more lately, but this year "
+                          "drafts haven't turned out to predict who wins.")
+        st.caption(f"Before the game, based on how both teams have played this year, {g.winner} had a "
+                   f"{winner_p:.0%} chance to win, so this was {verdict}." + draft_note)
 
     # Players first, no click needed; # ranks all ten players in the game by rating.
     rt = rt.assign(game_rank=rt.rating.rank(ascending=False, method="min").astype(int))
@@ -363,24 +368,50 @@ def game_detail(g, mx: dict):
             "#": p.game_rank, "Role": p.role.str.title(), "Player": p.player, "Champion": p.champion,
             "# of Games": p.champ_games, "Record on Champ": p.champ_record,
             "K / D / A": [f"{int(k)} / {int(d_)} / {int(a)}" for k, d_, a in zip(p.Kills, p.Deaths, p.Assists)],
-            "CS/min": p.CSM, "Damage share": p["DMG%"] / 100,
-            "Vision/min": p.VSPM, "Gold diff @15": p["GD@15"], "Expected": p.expected_rating, "Rating": p.rating,
+            "Kill participation": p["KP%"] / 100,
+            "Damage": p["Total damage to Champion"], "% of team damage": p["DMG%"] / 100,
+            "Gold": p.Golds, "% of team gold": p["GOLD%"] / 100,
+            "Expected": p.expected_rating, "Rating": p.rating,
         })
         t = with_icons(t, "Champion")
-        st.dataframe(t.style.format({"CS/min": "{:.1f}", "Damage share": "{:.0%}", "Vision/min": "{:.1f}",
-                                     "Gold diff @15": "{:+,.0f}", "Expected": "{:.1f}", "Rating": "{:.1f}"})
+        st.dataframe(t.style.format({"Kill participation": "{:.0%}", "Damage": "{:,.0f}", "% of team damage": "{:.0%}",
+                                     "Gold": "{:,.0f}", "% of team gold": "{:.0%}", "Expected": "{:.1f}",
+                                     "Rating": "{:.1f}"})
                      .background_gradient(cmap="Blues", subset=["Rating"], vmin=1, vmax=5),
                      column_config=image_column() | {
                          "Rating": st.column_config.NumberColumn("Rating", help=RATING_HELP),
                          "Expected": st.column_config.NumberColumn(
-                             "Expected", help="Pre-game expectation from the player's form, their record on "
-                                              "this champion and their team's chances."),
+                             "Expected", help="The rating we'd have expected before the game, from how the player "
+                                              "has been playing, how they do on this champion, and their team's "
+                                              "chance to win."),
+                         "Kill participation": st.column_config.NumberColumn(
+                             "Kill participation", help="Share of their team's kills they got or assisted."),
                          "# of Games": st.column_config.NumberColumn(
                              "# of Games", help="Pro games on this champion this season before this game."),
                          "Record on Champ": st.column_config.TextColumn(
                              "Record on Champ", help="Wins–losses on this champion this season before this game.")},
                      hide_index=True, use_container_width=True)
     st.caption("# = rank among all ten players in this game, by rating.")
+    with st.expander("More stats: compared with the whole game and with the lane opponent"):
+        more = rt.copy()
+        more["order"] = more.role.map({x: i for i, x in enumerate(ROLES)})
+        more = more.sort_values(["team", "order"])
+        mt = pd.DataFrame({
+            "Team": more.team, "Role": more.role.str.title(), "Player": more.player, "Champion": more.champion,
+            "% of all damage in the game": more.dmg_game / 100, "% of all gold in the game": more.gold_game / 100,
+            "Damage vs lane opponent": [f"{a:,.0f} vs {b:,.0f}" for a, b in
+                                        zip(more["Total damage to Champion"], more.opp_dmg)],
+            "Gold vs lane opponent": [f"{a - b:+,.0f}" for a, b in zip(more.Golds, more.opp_gold)],
+            "Damage per 1k gold": more.dmg_per_gold * 1000,
+            "CS per min": more.CSM, "Vision per min": more.VSPM, "Gold lead at 15 min": more["GD@15"],
+        })
+        st.dataframe(with_icons(mt, "Champion").style.format(
+            {"% of all damage in the game": "{:.0%}", "% of all gold in the game": "{:.0%}",
+             "Damage per 1k gold": "{:,.0f}", "CS per min": "{:.1f}", "Vision per min": "{:.1f}",
+             "Gold lead at 15 min": "{:+,.0f}"}),
+            column_config=image_column(), hide_index=True, use_container_width=True)
+        st.caption("All of these feed into the rating, weighted by role: carries are judged more on damage and "
+                   "gold, supports more on vision, kill participation and protecting teammates.")
 
     t_over, t_draft, t_gold = st.tabs(["Team Stats", "Draft", "Gold & Objectives"])
     with t_over:
@@ -422,9 +453,9 @@ def game_detail(g, mx: dict):
             picks = row.picks.split("|")
             bans = row.bans.split("|") if isinstance(row.bans, str) else []
             pc.caption("Picks, in draft order")
-            pc.image([champ_icon(c) for c in picks if champ_icon(c)], width=48, caption=picks)
+            pc.image([champ_icon(c) for c in picks if champ_icon(c)], width=48, caption=[nice(c) for c in picks])
             bc.caption("Bans")
-            bc.image([champ_icon(c) for c in bans if champ_icon(c)], width=40, caption=bans)
+            bc.image([champ_icon(c) for c in bans if champ_icon(c)], width=40, caption=[nice(c) for c in bans])
 
     with t_gold:
         gl = mx["gold"][mx["gold"].game_uid == g.game_uid]
@@ -457,7 +488,7 @@ def worlds_players_page(mx: dict):
     min_games = st.slider("Minimum Games at Worlds", 1, 6, 3, key="wp_min_games")
     agg = w.groupby(["player", "team", "role"]).agg(
         games=("game_uid", "nunique"), rating=("rating", "mean"), expected=("expected_rating", "mean"),
-        wins=("result", "sum"), champs=("champion", lambda s: ", ".join(s.value_counts().index[:3])),
+        wins=("result", "sum"), champs=("champion", lambda s: ", ".join(map(nice, s.value_counts().index[:3]))),
     ).reset_index()
     agg["vs_expected"] = agg.rating - agg.expected
     agg["domestic"] = agg.player.map(domestic)
@@ -472,11 +503,11 @@ def worlds_players_page(mx: dict):
                 "Record": [f"{int(w_)}–{int(n - w_)}" for w_, n in zip(df.wins, df.games)]}
         if value_col != "rating":  # the ranking value first, then the rating it came from
             cols[value_label] = df[value_col]
-        cols |= {"Avg rating": df.rating, "Expected": df.expected, "Season (domestic)": df.domestic,
+        cols |= {"Average rating": df.rating, "Expected rating": df.expected, "Rating in their league": df.domestic,
                  "Champions": df.champs}
         t = pd.DataFrame(cols)
-        st.dataframe(t.style.format({value_label: fmt, "Avg rating": "{:.1f}", "Expected": "{:.1f}",
-                                     "Season (domestic)": "{:.1f}"}, na_rep="—"),
+        st.dataframe(t.style.format({value_label: fmt, "Average rating": "{:.1f}", "Expected rating": "{:.1f}",
+                                     "Rating in their league": "{:.1f}"}, na_rep="—"),
                      column_config={" ": st.column_config.ImageColumn(" ", width="small")},
                      hide_index=True, use_container_width=True, height=36 * min(len(t), 10) + 40)
 
@@ -487,22 +518,23 @@ def worlds_players_page(mx: dict):
         st.markdown(f"<div class='takeaway'>Best so far: <b>{top.iloc[0].player}</b> ({top.iloc[0].team}), "
                     f"averaging <b>{top.iloc[0].rating:.1f}</b> over {top.iloc[0].games} games.</div>",
                     unsafe_allow_html=True)
-        board(top, "rating", "Avg rating", "{:.1f}")
+        board(top, "rating", "Average rating", "{:.1f}")
     with t_low:
         low = agg.sort_values("rating").head(10)
         st.markdown("The lowest averages so far. Often a mix of tough opponents and losing games, "
                     "since the result is part of the rating.")
-        board(low, "rating", "Avg rating", "{:.1f}")
+        board(low, "rating", "Average rating", "{:.1f}")
     with t_up:
         up = agg.sort_values("vs_expected", ascending=False).head(10)
         st.markdown(f"<div class='takeaway'>Playing furthest above what their form, champions and opponents "
                     f"predicted: <b>{up.iloc[0].player}</b> ({up.iloc[0].team}), "
-                    f"<b>{up.iloc[0].vs_expected:+.1f}</b> per game.</div>", unsafe_allow_html=True)
-        board(up, "vs_expected", "Above expected", "{:+.1f}")
+                    f"<b>{up.iloc[0].vs_expected:+.1f}</b> rating points per game above what we expected.</div>",
+                    unsafe_allow_html=True)
+        board(up, "vs_expected", "Above expected (per game)", "{:+.1f}")
     with t_down:
         down = agg.sort_values("vs_expected").head(10)
         st.markdown("Playing furthest below what their form, champions and opponents predicted.")
-        board(down, "vs_expected", "Below expected", "{:+.1f}")
+        board(down, "vs_expected", "Below expected (per game)", "{:+.1f}")
     with t_look:
         who = st.selectbox("Player", (agg.player + " (" + agg.team + ")").tolist(), key="worlds_player_pick")
         name = who.rsplit(" (", 1)[0]
@@ -523,31 +555,38 @@ def worlds_players_page(mx: dict):
             st.markdown(f"**{name}'s most-played champions this season**")
             ht = pd.DataFrame({"Champion": hist.champion, "Games": hist.games,
                                "Record": [f"{int(w_)}–{int(n - w_)}" for w_, n in zip(hist.wins, hist.games)],
-                               "Avg rating": hist.rating})
-            st.dataframe(with_icons(ht, "Champion").style.format({"Avg rating": "{:.1f}"}),
+                               "Average rating": hist.rating})
+            st.dataframe(with_icons(ht, "Champion").style.format({"Average rating": "{:.1f}"}),
                          column_config=image_column(), hide_index=True, use_container_width=True)
         with r:
             from lolpatch.ratings import ROLE_WEIGHTS, STAT_LABELS
             role = pg.role.iloc[0]
             prof = pd.Series({STAT_LABELS[s]: pg[f"z_{s}"].mean() for s in ROLE_WEIGHTS[role]}).sort_values()
-            st.markdown(f"**What drives the rating at Worlds** (vs other {role}s)")
+            st.markdown(f"**Strengths and weaknesses at Worlds**, compared with a typical pro {role}")
             fig = go.Figure(go.Bar(x=prof.values, y=prof.index, orientation="h",
                                    marker=dict(color=[BUFF if v >= 0 else NERF for v in prof.values], cornerradius=3),
-                                   hovertemplate="%{y}: %{x:+.1f} vs the role average<extra></extra>"))
+                                   hovertemplate="%{y}: %{customdata}<extra></extra>",
+                                   customdata=["much better than most" if v >= 1 else "better than most" if v >= 0.3
+                                               else "about average" if v > -0.3 else "worse than most" if v > -1
+                                               else "much worse than most" for v in prof.values]))
             fig.add_vline(x=0, line=dict(color=NEUTRAL, width=1))
-            st.plotly_chart(row_layout(style(fig, xaxis=dict(title="Below / above the role average", range=[-2.5, 2.5]),
+            st.plotly_chart(row_layout(style(fig, xaxis=dict(title="← worse than a typical pro · better →", range=[-2.5, 2.5],
+                                                             showticklabels=False),
                                              hovermode="closest"), prof.index, right=24), use_container_width=True)
 
     with st.expander("How ratings and expectations work"):
         st.markdown(
-            "**Rating (out of 5):** each stat is compared with every player in the same role across all 2026 pro "
-            "games, weighted for what the role does, plus the game result relative to the pre-game odds. "
-            "3.0 is an average pro performance.\n\n"
-            "**Expected:** before each game, a prediction from the player's earlier games (form), how they've done "
-            "on that champion compared with their usual level, their team's chance of winning, and, for "
-            "international games, how strong their region has been against other regions.\n\n"
-            "**Season (domestic):** their average rating in league play this year, for reference. Ratings in "
-            "weaker leagues come against weaker opponents, which is why *expected* accounts for region strength.")
+            "**Rating (out of 5):** how well a player did in a game, compared with every other pro in the same "
+            "role this year. It looks at damage, gold, kill participation, deaths, vision and more, including "
+            "how much of their team's and the whole game's damage and gold they had, and how they did against "
+            "their lane opponent. Supports are judged more on vision and helping teammates, carries more on "
+            "damage. Winning when your team wasn't expected to earns extra credit. 3.0 is an average pro game.\n\n"
+            "**Expected rating:** what we'd have guessed before the game, from how the player has been playing, "
+            "how they usually do on that champion, how likely their team was to win, and (at international "
+            "events) how strong their region has been against other regions.\n\n"
+            "**Rating in their league:** their average in league games this year. Players in weaker leagues face "
+            "weaker opponents, so a big league number doesn't always carry over; the expected rating accounts "
+            "for that.")
 
 
 d = load()
@@ -568,8 +607,8 @@ with st.sidebar:
     st.caption("How balance changes move pro picks and bans · 2026 season")
     page = st.radio("Go to", PAGES, key="page", label_visibility="collapsed")
     st.divider()
-    st.caption(f"{' · '.join(LEAGUES)} and international events. **Presence** = how often a champion is picked "
-               "or banned, as a share of games.")
+    st.caption(f"{' · '.join(LEAGUES)} and international events.\n\n**Pick/ban rate** = the share of games where a "
+               "champion was picked or banned. Changes are shown in **points**: going from 40% to 44% is +4 points.")
     if version_tag:
         st.caption(f"Version {version_tag}")
 
@@ -578,43 +617,60 @@ with st.sidebar:
 
 if page == "Overview":
     st.title("Patch Impact")
-    lead("What Riot's balance changes actually did to pro drafts in 2026, and what's happening at Worlds right now.")
+    lead("What Riot's buffs and nerfs actually did to pro drafts in 2026, and what's happening at Worlds right now.")
 
     cards = []
     if ev and "worlds" in ev["metrics"]:
         wm = ev["metrics"]["worlds"]
-        top = ev["worlds_current"].nlargest(3, "actual_presence")
-        names = ", ".join(f"**{r.champion}** ({r.actual_presence:.0%})" for r in top.itertuples())
-        text = (f"{wm['current']['games']} games played on patch {wm['patch']}. "
-                f"The most contested champions so far: {names}.")
+        top = ev["worlds_current"].nlargest(5, "actual_presence")
+        names = ", ".join(f"**{nice(r.champion)}** {r.actual_presence:.0%}" for r in top.itertuples())
+        text = (f"{wm['current']['games']} games played so far, all on patch {wm['patch']}. "
+                f"Picked or banned the most (share of games): {names}.")
         if mx is not None:
             wr_ = mx["ratings"][mx["ratings"].event == "worlds"]
             lb = wr_.groupby(["player", "team"]).agg(n=("game_uid", "nunique"), r=("rating", "mean")).reset_index()
             lb = lb[lb.n >= 2].sort_values("r", ascending=False)
             if len(lb):
-                text += f" Top-rated player: **{lb.iloc[0].player}** ({lb.iloc[0].team}), {lb.iloc[0].r:.1f} / 5."
+                text += f" Best player so far: **{lb.iloc[0].player}** ({lb.iloc[0].team}), {lb.iloc[0].r:.1f} out of 5."
         cards.append(("Worlds 2026", text, "Worlds 2026"))
     tr = transitions_for("ALL")
     eff = verdict_effects(tr)
     if {"buff", "nerf"} <= set(eff.index):
         hi_nerf = tr[tr.changed & (tr.verdict == "nerf") & (tr.prev_presence > 0.6)]
         cards.append(("Do Buffs and Nerfs Work?",
-                      f"On average a buff adds **{eff.loc['buff', 'mean_delta_presence'] * 100:+.0f} points** of "
-                      f"presence and a nerf takes **{eff.loc['nerf', 'mean_delta_presence'] * 100:+.0f}**. "
-                      f"Nerfs hit hardest on top picks: **{hi_nerf.delta_presence.mean() * 100:+.0f} points** "
-                      "for champions above 60%.", "Champions & Patches"))
+                      f"Yes, but modestly. After a buff, pros pick or ban a champion about "
+                      f"**{eff.loc['buff', 'mean_delta_presence'] * 100:.0f} points more often**; after a nerf, about "
+                      f"**{-eff.loc['nerf', 'mean_delta_presence'] * 100:.0f} points less**. Nerfs hit the most popular "
+                      f"champions hardest: ones picked or banned in over 60% of games dropped "
+                      f"**{-hi_nerf.delta_presence.mean() * 100:.0f} points** on average.", "Champions & Patches"))
     if dr is not None:
         solid = dr["lanes"][dr["lanes"].solid].sort_values("n", ascending=False)
         ex = solid.iloc[0]
         cards.append(("Draft Answers",
-                      f"Teams have clear go-to responses: **{len(solid)} lane answers** stand out, like "
-                      f"**{ex.answer} into {ex.opener}** ({ex.role}), taken {ex.lift:.1f}× as often as usual.",
+                      f"Teams have go-to responses. When one team locks in **{nice(ex.opener)}** ({ex.role}), the "
+                      f"other team answers with **{nice(ex.answer)}** {ex.lift:.1f}× more often than usual. We found "
+                      f"**{len(solid)}** answers like this.",
                       "Draft Answers"))
     if ev:
-        wins = sum(m["frozen"]["all"]["mae_model"] < m["frozen"]["all"]["mae_baseline"] for m in ev["metrics"].values())
-        cards.append(("Can Patch Notes Predict the Meta?",
-                      f"A little. The forecast beat “nothing changes” at **{wins} of {len(ev['metrics'])}** "
-                      "international events, mostly by small margins.", "Model Accuracy"))
+        won = [m["title"].replace(" 2026", "") for m in ev["metrics"].values()
+               if m["frozen"]["all"]["mae_model"] < m["frozen"]["all"]["mae_baseline"]]
+        lost = [m["title"].replace(" 2026", "") for m in ev["metrics"].values()
+                if m["frozen"]["all"]["mae_model"] >= m["frozen"]["all"]["mae_baseline"]]
+        text = ("Before each international event, we predicted how often every champion would be picked or banned, "
+                "using league games plus the patch notes since, then checked what really happened. "
+                f"Reading the patch notes helped a little: our prediction was closer than simply assuming "
+                f"“nothing changes” at **{len(won)} of {len(ev['metrics'])}** events ({', '.join(won)}), "
+                "but only by small margins.")
+        if lost:
+            text += f" It did worse at {' and '.join(lost)}"
+            wf = ev.get("worlds_frozen")
+            if "Worlds" in lost and wf is not None:
+                stubborn = wf[wf.verdict == "nerf"].nlargest(1, "actual_presence")
+                if len(stubborn):
+                    text += (f", where pros kept picking champions that had just been nerfed, like "
+                             f"**{nice(stubborn.iloc[0].champion)}** ({stubborn.iloc[0].actual_presence:.0%} of games)")
+            text += "."
+        cards.append(("Can Patch Notes Predict the Meta?", text, "Model Accuracy"))
 
     for row in range(0, len(cards), 2):
         cols = st.columns(2, gap="medium")
@@ -644,26 +700,43 @@ elif page == "Worlds 2026":
     lead(f"{sc['games']} games so far, all on patch {wm['patch']}: {stages}.")
 
     if "worlds_live" in ev:
-        lv = ev["worlds_live"].head(15).iloc[::-1]
-        st.markdown("### Most contested champions")
+        lv = ev["worlds_live"].head(25).iloc[::-1]
+        st.markdown("### Most picked or banned champions")
         fig = go.Figure(go.Bar(
             x=lv.live_presence, y=lv.champion, orientation="h",
             marker=dict(color=[VERDICT_COLOR.get(v, NEUTRAL) for v in lv.verdict], cornerradius=4),
             error_x=dict(type="data", symmetric=False, array=lv.live_high - lv.live_presence,
                          arrayminus=lv.live_presence - lv.live_low, color=NEUTRAL, thickness=1.2, width=3),
             customdata=lv[["live_low", "live_high", "actual_presence", "picks", "bans", "games", "pred_presence"]],
-            hovertemplate="<b>%{y}</b> %{x:.0%} (likely %{customdata[0]:.0%}–%{customdata[1]:.0%})"
-                          "<br>so far %{customdata[2]:.0%}: %{customdata[3]} picks + %{customdata[4]} bans in "
-                          "%{customdata[5]} games<br>pre-Worlds forecast %{customdata[6]:.0%}<extra></extra>"))
-        fig = style(fig, xaxis=dict(title="Expected presence for the rest of Worlds", range=[0, 1], **PCT),
+            hovertemplate="<b>%{y}</b>: expected in %{x:.0%} of the remaining games "
+                          "(likely %{customdata[0]:.0%}–%{customdata[1]:.0%})"
+                          "<br>so far: %{customdata[3]} picks + %{customdata[4]} bans in %{customdata[5]} games"
+                          "<extra></extra>"))
+        fig = style(fig, xaxis=dict(title="How often we expect it to be picked or banned for the rest of Worlds",
+                                    range=[0, 1], **PCT),
                     hovermode="closest", showlegend=False, bargap=0.35)
         st.plotly_chart(row_layout(fig, lv.champion), use_container_width=True)
-        st.caption("Blue = buffed since the leagues ended, red = nerfed. Whiskers show the likely range.")
+        st.caption("The top 25. Blue = buffed since the leagues ended, red = nerfed, gray = unchanged. "
+                   "The thin line shows the likely range.")
+        with st.expander("All champions played or banned at Worlds"):
+            allc = ev["worlds_live"]
+            allc = allc[(allc.picks + allc.bans) > 0].sort_values("actual_presence", ascending=False)
+            wins_ = ev["worlds_current"].set_index("champ_key").wins
+            at = pd.DataFrame({
+                "Champion": allc.champion, "Picked or banned": allc.actual_presence, "Picks": allc.picks,
+                "Bans": allc.bans,
+                "Won–lost when picked": [f"{int(wins_.get(k, 0))}–{int(p - wins_.get(k, 0))}" if p else "—"
+                                         for k, p in zip(allc.champ_key, allc.picks)],
+            })
+            st.dataframe(with_icons(at, "Champion").style.format({"Picked or banned": "{:.0%}"}),
+                         column_config=image_column(), hide_index=True, use_container_width=True,
+                         height=min(600, 36 * len(at) + 40))
         with st.expander("How this estimate works"):
             st.markdown(
-                f"It blends the pre-Worlds forecast, counted as {PRIOR_GAMES} games' worth of evidence, with the "
-                "games played so far, so it starts from the patch notes and shifts toward what teams actually do "
-                "as games accumulate. Whiskers are an 80% range.")
+                "We start from our pre-Worlds prediction (based on league games and patch notes) and shift it toward "
+                "what teams are actually doing as games are played. Early on, the prediction matters more; the more "
+                f"games are played, the more the real results take over (the prediction counts like {PRIOR_GAMES} "
+                "games of evidence). The thin line is the range we're 80% confident in.")
 
     t_games, t_teams, t_patch, t_fc, t_draft, t_region = st.tabs(
         ["Series & Games", "Teams", f"Patch {wm['patch']} Changes", "Forecast Check", "Draft Answers", "By Region"])
@@ -679,7 +752,7 @@ elif page == "Worlds 2026":
         series = wg.groupby(["series_id", "team"]).result.sum().reset_index()
         series["won"] = series.groupby("series_id").result.transform(lambda s: (s == s.max()) & (s.max() > s.min()))
         picks = wg.assign(champion=wg.picks.str.split("|")).explode("champion")
-        top3 = picks.groupby("team").champion.agg(lambda s: ", ".join(s.value_counts().head(3).index))
+        top3 = picks.groupby("team").champion.agg(lambda s: ", ".join(map(nice, s.value_counts().head(3).index)))
         rec = series.groupby("team").won.agg(["sum", "size"])
         g_rec = wg.groupby("team").result.agg(["sum", "size"])
         tt = pd.DataFrame({"Team": sorted(wg.team.unique())})
@@ -710,15 +783,17 @@ elif page == "Worlds 2026":
         pc["record"] = [f"{w}–{p - w}" if p else "—" for w, p in zip(wins_, picks_)]
         pc = pc.sort_values("worlds", ascending=False)
         t = pc[["champion", "verdict", "before", "worlds", "record"]].rename(columns={
-            "champion": "Champion", "verdict": "Change", "before": f"Leagues ({sc['base_patch']})",
-            "worlds": "At Worlds", "record": "W–L when picked"})
-        table(with_icons(t, "Champion"), {f"Leagues ({sc['base_patch']})": "{:.0%}", "At Worlds": "{:.0%}"},
-              images=[" "], n=12)
+            "champion": "Champion", "verdict": "Change",
+            "before": f"Picked or banned in the leagues ({sc['base_patch']})",
+            "worlds": "Picked or banned at Worlds", "record": "Won–lost when picked"})
+        table(with_icons(t, "Champion"), {f"Picked or banned in the leagues ({sc['base_patch']})": "{:.0%}",
+                                          "Picked or banned at Worlds": "{:.0%}"}, images=[" "], n=20)
 
     with t_fc:
         scf = wm["frozen"]
-        st.markdown(f"Before Worlds, the model forecast {wm['patch']} from league play on {scf['base_patch']} plus "
-                    f"the patch notes since. No Worlds games went into it.")
+        st.markdown(f"Before Worlds started, we predicted how often each champion would be picked or banned on "
+                    f"{wm['patch']}, using league games on {scf['base_patch']} plus the patch notes since. "
+                    "Here's how that compares with what's actually happened.")
         scorecard(scf)
         forecast_chart(ev["worlds_frozen"], scf["base_patch"], scf["games"])
 
@@ -736,11 +811,12 @@ elif page == "Worlds 2026":
             wp["rest_rate"] = [rest_pair.get((r, o, a), 0) / rest_open[(r, o)] if (r, o) in rest_open else np.nan
                                for r, o, a in zip(wp.role, wp.opener, wp.answer)]
             wp = wp.sort_values(["n", "opener_n"], ascending=False)
-            st.markdown("Lane answers teams have repeated at Worlds, and how common they were before.")
+            st.markdown("When one team picks a champion, what the other team answers with in the same lane, "
+                        "for answers seen at least twice at Worlds.")
             t = pd.DataFrame({"Role": wp.role.str.title(), "Their pick": wp.opener, "Answer": wp.answer,
-                              "At Worlds": [f"{n} of {m}" for n, m in zip(wp.n, wp.opener_n)],
+                              "At Worlds": [f"{n} of {m} times" for n, m in zip(wp.n, wp.opener_n)],
                               "Before Worlds": wp.rest_rate,
-                              "Answer W–L": [f"{x}–{n - x}" for x, n in zip(wp.won, wp.n)]})
+                              "Answer won–lost": [f"{x}–{n - x}" for x, n in zip(wp.won, wp.n)]})
             table(with_icons(with_icons(t, "Their pick", label=" "), "Answer", label="  "),
                   {"Before Worlds": "{:.0%}"}, images=[" ", "  "])
 
@@ -748,7 +824,7 @@ elif page == "Worlds 2026":
         if rg is not None:
             wr = rg["events"][rg["events"].event == "worlds"]
             reg_games = wr.drop_duplicates("region").set_index("region").region_games
-            top = wr.groupby("champion").pick_ban_rate.max().nlargest(15).index
+            top = wr.groupby("champion").pick_ban_rate.max().nlargest(30).index
             z = wr[wr.champion.isin(top)].pivot(index="champion", columns="region", values="pick_ban_rate").reindex(top).fillna(0)
             z.columns = [f"{c} ({int(reg_games[c])})" for c in z.columns]
             reg_cols = list(z.columns)
@@ -806,15 +882,15 @@ elif page == "Champions & Patches":
         x_patch = {p: p for p in patches} | {e["label"]: e["patch"] for e in ev_pts}
 
         fig = go.Figure()
-        fig.add_trace(go.Scatter(x=patches, y=cs.presence, name="Presence in league play", mode="lines+markers",
+        fig.add_trace(go.Scatter(x=patches, y=cs.presence, name="Pick/ban rate in league games", mode="lines+markers",
                                  line=dict(color=SERIES[0], width=2.5), marker=dict(size=8),
-                                 hovertemplate="Presence %{y:.0%}<extra></extra>"))
+                                 hovertemplate="Picked or banned in %{y:.0%} of games<extra></extra>"))
         if ev_pts:
             ep = pd.DataFrame(ev_pts)
             fig.add_trace(go.Scatter(x=ep.label, y=ep.presence, name="International event", mode="markers",
                                      marker=dict(symbol="square", size=10, color="#52514e", line=dict(width=1.5, color="white")),
                                      customdata=ep[["games"]],
-                                     hovertemplate="<b>%{x}</b><br>presence %{y:.0%} in %{customdata[0]} games<extra></extra>"))
+                                     hovertemplate="<b>%{x}</b><br>picked or banned in %{y:.0%} of %{customdata[0]} games<extra></extra>"))
         ymax = max(cs.presence.max(), max((e["presence"] for e in ev_pts), default=0), 0.1) * 1.15
         for _, ch in cc.iterrows():
             nxt = next((x for x in x_order if patch_key(x_patch[x]) >= patch_key(ch.patch)), None)
@@ -830,7 +906,8 @@ elif page == "Champions & Patches":
         st.plotly_chart(style(fig, 380, yaxis=dict(title=None, range=[0, ymax * 1.08], **PCT),
                               xaxis=dict(type="category", categoryorder="array", categoryarray=x_order, title=None)),
                         use_container_width=True)
-        st.caption("▲ buff · ▼ nerf · ◆ adjustment. Squares are international events, on the patch they were played on.")
+        st.caption("How often the champion was picked or banned, patch by patch. ▲ buff · ▼ nerf · ◆ adjustment. "
+                   "Squares are international events, placed on the patch they were played on.")
         if len(cc):
             with st.expander(f"{champ}'s balance changes ({len(cc)})"):
                 for _, ch in cc.sort_values("patch", key=lambda s: s.map(patch_key)).iterrows():
@@ -846,8 +923,8 @@ elif page == "Champions & Patches":
         t = trans[trans.to_patch == tp]
         fp = t.from_patch.iloc[0]
         window = [p for p in sorted(changes.patch.unique(), key=patch_key) if patch_key(fp) < patch_key(p) <= patch_key(tp)]
-        st.markdown(f"Champions changed in **{', '.join(window) or '—'}**, and how their presence moved from "
-                    f"{fp} to {tp}.")
+        st.markdown(f"Champions changed in **{', '.join(window) or '—'}**, and how often they were picked or banned "
+                    f"before ({fp}) and after ({tp}).")
         ch = t[t.changed].sort_values("delta_presence")
         fig = go.Figure()
         for _, r in ch.iterrows():
@@ -861,34 +938,35 @@ elif page == "Champions & Patches":
                                  hovertemplate="%{y}: %{x:.0%}<extra>after</extra>"))
         fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", name=f"After ({tp})", marker=dict(color="#52514e", size=11)))
         x_hi = max(ch.prev_presence.max(), ch.next_presence.max(), 0.1) + 0.03
-        fig = style(fig, xaxis=dict(title="Presence", range=[-0.02, x_hi], **PCT), hovermode="closest")
+        fig = style(fig, xaxis=dict(title="Pick/ban rate", range=[-0.02, x_hi], **PCT), hovermode="closest")
         st.plotly_chart(row_layout(fig, ch.champion, legend=True), use_container_width=True)
-        st.caption("Line color: blue buff, red nerf, gray adjustment.")
+        st.caption("Line color: blue = buffed, red = nerfed, gray = adjusted.")
         with st.expander("Biggest movers this patch, changed or not"):
-            movers = t.reindex(t.delta_presence.abs().sort_values(ascending=False).index).head(15)
-            mt = pd.DataFrame({"Champion": movers.champion, "Change": movers.verdict.replace("none", "—"),
-                               "Before": movers.prev_presence, "After": movers.next_presence,
-                               "Move": movers.delta_presence})
+            movers = t.reindex(t.delta_presence.abs().sort_values(ascending=False).index).head(25)
+            mt = pd.DataFrame({"Champion": movers.champion, "Balance change": movers.verdict.replace("none", "—"),
+                               "Pick/ban rate before": movers.prev_presence, "After": movers.next_presence,
+                               "Change (points)": movers.delta_presence * 100})
             st.dataframe(with_icons(mt, "Champion").style.format(
-                {"Before": "{:.0%}", "After": "{:.0%}", "Move": "{:+.0%}"}),
+                {"Pick/ban rate before": "{:.0%}", "After": "{:.0%}", "Change (points)": "{:+.0f}"}),
                 column_config=image_column(), hide_index=True, use_container_width=True)
 
     with t_effect:
         eff = verdict_effects(trans).reindex(["buff", "nerf", "adjust", "none"]).dropna(how="all")
-        st.markdown("Average change in presence on the next patch with pro games:")
+        st.markdown("On average, how much more or less often a champion was picked or banned on the next patch:")
         cols = st.columns(len(eff))
         for col, (v, row) in zip(cols, eff.iterrows()):
             label = {"buff": "After a buff", "nerf": "After a nerf", "adjust": "After an adjustment",
                      "none": "No change"}[v]
-            col.metric(label, f"{row.mean_delta_presence * 100:+.1f} pts")
+            col.metric(label, f"{row.mean_delta_presence * 100:+.1f} points")
         changed = trans[trans.changed]
         hi_nerf = changed[(changed.verdict == "nerf") & (changed.prev_presence > 0.6)]
         lo_buff = changed[(changed.verdict == "buff") & (changed.prev_presence < 0.05)]
         if len(hi_nerf) and len(lo_buff):
-            st.markdown(f"<div class='takeaway'>Nerfs bite hardest on top picks (above 60%: "
-                        f"<b>{hi_nerf.delta_presence.mean() * 100:+.0f} pts</b>, {(hi_nerf.delta_presence < 0).mean():.0%} fell). "
-                        f"Buffs rarely rescue unplayed champions (under 5%: "
-                        f"<b>{lo_buff.delta_presence.mean() * 100:+.0f} pts</b>).</div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='takeaway'>Nerfs hit the most popular champions hardest: ones picked or banned "
+                        f"in over 60% of games dropped <b>{-hi_nerf.delta_presence.mean() * 100:.0f} points</b> on "
+                        f"average, and {(hi_nerf.delta_presence < 0).mean():.0%} of them fell. Buffs rarely rescue "
+                        f"champions nobody plays: ones under 5% only gained "
+                        f"<b>{lo_buff.delta_presence.mean() * 100:.0f} points</b>.</div>", unsafe_allow_html=True)
         fig = go.Figure()
         for v in ["buff", "nerf", "adjust"]:
             sub = changed[changed.verdict == v]
@@ -897,29 +975,33 @@ elif page == "Champions & Patches":
                 marker=dict(color=VERDICT_COLOR[v], size=8, line=dict(width=1, color="white")),
                 customdata=sub[["champion", "from_patch", "to_patch"]],
                 hovertemplate="<b>%{customdata[0]}</b> %{customdata[1]}→%{customdata[2]}"
-                              "<br>presence before %{x:.0%}, change %{y:+.0%}<extra></extra>"))
+                              "<br>picked or banned in %{x:.0%} of games before, then %{y:+.0%} points<extra></extra>"))
         fig.add_hline(y=0, line=dict(color=NEUTRAL, dash="dot"))
-        st.plotly_chart(style(fig, 380, xaxis=dict(title="Presence before the change", **PCT),
-                              yaxis=dict(title="Change after", tickformat="+.0%"), hovermode="closest"),
+        st.plotly_chart(style(fig, 380, xaxis=dict(title="Pick/ban rate before the change", **PCT),
+                              yaxis=dict(title="Change on the next patch (points)", tickformat="+.0%"),
+                              hovermode="closest"),
                         use_container_width=True)
+        st.caption("Each dot is one champion after one balance change. Above the line = picked or banned more often "
+                   "afterwards, below = less.")
 
     with t_pred:
         if "predictions" not in d:
             st.info("Run `python -m lolpatch predict` first.")
         else:
             pr, meta = d["predictions"], d["meta"]
-            st.markdown(f"Forecast for **{meta.get('target_patch')}** from league play on {meta.get('base_patch')} "
-                        "plus every balance change since. Champions changed, or expected to move 5+ points:")
+            st.markdown(f"Our prediction for **{meta.get('target_patch')}**: starting from league games on "
+                        f"{meta.get('base_patch')} and applying every buff and nerf since. Champions that were changed, "
+                        "or that we expect to move by 5+ points:")
             show = pr[(pr.n_changes > 0) | (pr.pred_delta_presence.abs() >= 0.05)].sort_values("pred_delta_presence")
             fig = go.Figure(go.Bar(
                 x=show.pred_delta_presence, y=show.champion, orientation="h",
                 marker=dict(color=[VERDICT_COLOR.get(v, NEUTRAL) for v in show.verdict], cornerradius=4),
                 customdata=show[["prev_presence", "pred_presence", "verdict"]],
                 hovertemplate="<b>%{y}</b> (%{customdata[2]})<br>%{customdata[0]:.0%} → %{customdata[1]:.0%}<extra></extra>"))
-            fig = style(fig, xaxis=dict(title="Predicted change in presence", tickformat="+.0%"),
+            fig = style(fig, xaxis=dict(title="Predicted change in pick/ban rate (points)", tickformat="+.0%"),
                         hovermode="closest", bargap=0.3)
             st.plotly_chart(row_layout(fig, show.champion), use_container_width=True)
-            st.caption("The model's track record is on the **Model Accuracy** page.")
+            st.caption("How good have these predictions been? See the **Model Accuracy** page.")
 
 
 # --- Meta shifts -----------------------------------------------------------------------
@@ -953,7 +1035,7 @@ elif page == "Meta Shifts":
             else:
                 pushed = disp[(disp.change <= -0.05) & (disp.r <= -0.3)]
                 fell = disp[disp.change <= -0.05]
-                headline = ", ".join(pushed.champion.head(3)) if len(pushed) else ", ".join(fell.champion.head(3))
+                headline = ", ".join(map(nice, (pushed if len(pushed) else fell).champion.head(3)))
                 verb = "pushed out" if len(pushed) else "fell over the same stretch (not clearly pushed out)"
                 st.markdown(f"<div class='takeaway'><b>{label}</b> went from <b>{gp[win[0]]:.0%}</b> to "
                             f"<b>{gp[win[1]]:.0%}</b> of games ({win[0]} → {win[1]}). Biggest losers: "
@@ -971,12 +1053,12 @@ elif page == "Meta Shifts":
                 fig.add_vrect(x0=g_patches.index(win[0]), x1=g_patches.index(win[1]), fillcolor="#2a78d6",
                               opacity=0.06, line_width=0)
                 st.plotly_chart(style(fig, 340, xaxis=dict(type="category", title=None),
-                                      yaxis=dict(title="Presence", **PCT)), use_container_width=True)
+                                      yaxis=dict(title="Pick/ban rate", **PCT)), use_container_width=True)
 
                 def lead_table(df):
                     t = pd.DataFrame({
                         "Champion": df.champion, "Role": df.role.fillna("—").str.title(),
-                        "Presence": [f"{b:.0%} → {a:.0%}" for b, a in zip(df.before, df.after)],
+                        "Picked or banned": [f"{b:.0%} → {a:.0%}" for b, a in zip(df.before, df.after)],
                         "Pushed out?": ["likely" if r <= -0.3 else "no, moves with them" if r >= 0.3 else "unclear"
                                         if pd.notna(r) else "—" for r in df.r],
                     })
@@ -985,16 +1067,16 @@ elif page == "Meta Shifts":
                 l, r = st.columns(2)
                 with l:
                     st.markdown("**Fell**")
-                    table(lead_table(fell), images=[" "], n=8)
+                    table(lead_table(fell), images=[" "], n=12)
                 with r:
                     st.markdown("**Rose alongside**")
-                    table(lead_table(disp[disp.change >= 0.05].sort_values("change", ascending=False)), images=[" "], n=8)
+                    table(lead_table(disp[disp.change >= 0.05].sort_values("change", ascending=False)), images=[" "], n=12)
                 with st.expander("How “pushed out” is decided"):
                     st.markdown(
-                        "Presence at each end of the window is averaged over two patches. **Pushed out** means the "
-                        "champion's patch-to-patch moves go opposite the group's: when the group rises, it drops. "
-                        "Champions that fell over the window but move *with* the group from patch to patch were "
-                        "declining for other reasons, like their own nerfs or a different meta.")
+                        "**Pushed out** means that, patch after patch, this champion went down whenever the group "
+                        "went up. Champions that fell overall but usually moved *in the same direction* as the "
+                        "group were dropping for other reasons, like their own nerfs. (Start and end values are "
+                        "averaged over two patches so one odd patch doesn't skew them.)")
 
     with t_slot:
         st.markdown("After a big buff or nerf, which untouched champion in the same role moved the other way?")
@@ -1015,8 +1097,9 @@ elif page == "Meta Shifts":
         if len(rec):
             st.markdown("**Happened more than once:** " + "; ".join(
                 f"{r.other} replacing {r.changed} ({r.role}, {r.patches})" for r in rec.itertuples()))
-        st.caption(f"A changed champion moved {SUB_MIN_MOVE_A:.0%}+ and an untouched same-role champion moved "
-                   f"{SUB_MIN_MOVE_B:.0%}+ the other way in the same patch window. Timing suggests, it doesn't prove.")
+        st.caption(f"Shown when a changed champion's pick/ban rate moved by {SUB_MIN_MOVE_A * 100:.0f}+ points and "
+                   f"an unchanged champion in the same role moved {SUB_MIN_MOVE_B * 100:.0f}+ points the other way "
+                   "at the same time. The timing points to a swap, but doesn't prove it.")
 
 
 # --- Draft answers ---------------------------------------------------------------------
@@ -1040,8 +1123,9 @@ elif page == "Draft Answers":
     view = view.sort_values(["n", "lift"], ascending=False)
     if len(view):
         top = view.iloc[0]
-        st.markdown(f"<div class='takeaway'>Most common: <b>{top.answer} into {top.opener}</b> ({top.role}), "
-                    f"{top.n} times, {top.lift:.1f}× as often as {top.answer} is usually picked there.</div>",
+        st.markdown(f"<div class='takeaway'>Most common: when a team picks <b>{nice(top.opener)}</b> ({top.role}), "
+                    f"the other team answers with <b>{nice(top.answer)}</b>. That happened {top.n} times, "
+                    f"{top.lift:.1f}× more often than {nice(top.answer)} usually gets picked.</div>",
                     unsafe_allow_html=True)
     table(pair_table(view), images=[" ", "  "], more_label="Show all patterns")
 
@@ -1056,9 +1140,9 @@ elif page == "Draft Answers":
                 g = g.sort_values(["answers", "rate"], ascending=False).head(6)
                 cols[i % 2].markdown(f"**By {dim}**")
                 cols[i % 2].dataframe(pd.DataFrame({
-                    dim.capitalize(): g.group, "Answered": [f"{a} of {o}" for a, o in zip(g.answers, g.openers)],
-                    "Rate": g.rate, "Everyone else": g.rest_rate,
-                }).style.format({"Rate": "{:.0%}", "Everyone else": "{:.0%}"}, na_rep="—"),
+                    dim.capitalize(): g.group, "Answered": [f"{a} of {o} times" for a, o in zip(g.answers, g.openers)],
+                    "How often": g.rate, "Everyone else": g.rest_rate,
+                }).style.format({"How often": "{:.0%}", "Everyone else": "{:.0%}"}, na_rep="—"),
                     hide_index=True, use_container_width=True)
 
     with st.expander("Answers to the very first pick of the draft"):
@@ -1072,15 +1156,14 @@ elif page == "Draft Answers":
     with st.expander("How answers are found"):
         dm = dr["meta"]
         st.markdown(
-            f"gol.gg's pick lists reveal the draft order: the first-picking team takes picks 1, 4–5 and 8–9, the "
-            f"other team 2–3, 6–7 and 10. That's known for **{dm['games']:,} games** "
-            f"({dm['lanes']:,} lane match-ups). An answer is the later of the two picks in the same role.\n\n"
-            f"A pattern needs at least 4 occurrences and to happen at least 1.5× as often as the answering champion "
-            "is usually picked in that role **on the same patches** (so two champions that were simply popular at "
-            "the same time don't count), and to survive a statistical correction for testing "
-            f"{dm['lane_pairs_tested']:,} pairs.\n\n"
-            "**Who Does It** names an event, region, team or player when they make the answer at least twice as "
-            "often as everyone else. It means *led by*, not *only by*.")
+            f"We know the order teams picked in for **{dm['games']:,} games**. In every lane, whichever champion "
+            "was picked second was picked *knowing* what the opponent had, so we call it the answer.\n\n"
+            "An answer is listed when it happened at least 4 times and at least 1.5× more often than that champion "
+            "usually gets picked in that lane **on the same patches**. That way, two champions that were simply "
+            "popular at the same time don't count. We also checked that it isn't a fluke, since with "
+            f"{dm['lane_pairs_tested']:,} pairs tested, some would look special by luck.\n\n"
+            "**Who Does It** shows an event, region, team or player when they make this answer at least twice as "
+            "often as everyone else. It means they lead it, not that only they do it.")
 
 
 # --- Teams & regions ---------------------------------------------------------------------
@@ -1114,7 +1197,7 @@ elif page == "Teams & Regions":
                 text=[f"{w:.0%} WR" for w in sig.win_rate], textposition="outside", cliponaxis=False,
                 hovertemplate="<b>%{y}</b>: in %{customdata[1]:.0%} of games vs league %{customdata[2]:.0%}"
                               "<br>%{customdata[0]} picks · %{customdata[3]:.0%} win rate<extra></extra>"))
-            fig = style(fig, xaxis=dict(title="Pick share above league average",
+            fig = style(fig, xaxis=dict(title="How much more often they pick it than other teams in their league",
                                         range=[0, sig.pick_lift.max() * 1.25], **PCT), hovermode="closest")
             st.plotly_chart(row_layout(fig, sig.champion, right=64), use_container_width=True)
         with r:
@@ -1129,7 +1212,7 @@ elif page == "Teams & Regions":
                           format_func=lambda m: {"presence_lift": "Picked or Banned",
                                                  "early_lift": "Taken Early (First 2 Picks / 3 Bans)"}[m])
         rc = rg["regions"]
-        champs = rc.groupby("champion").presence.mean().nlargest(25).index
+        champs = rc.groupby("champion").presence.mean().nlargest(40).index
         z = rc[rc.champion.isin(champs)].pivot(index="champion", columns="league", values=metric).reindex(champs)
         base = "presence" if metric == "presence_lift" else "early_priority"
         exp = "expected_presence" if metric == "presence_lift" else "expected_early"
@@ -1144,24 +1227,25 @@ elif page == "Teams & Regions":
             colorbar=dict(title="vs avg", tickformat="+.0%", thickness=10)))
         fig = style(fig, 400, hovermode="closest", xaxis=dict(side="top"))
         st.plotly_chart(row_layout(fig, z.index, x_top=True, right=90, reverse=True), use_container_width=True)
-        st.caption("Blue = the region plays it more than the average league on the same patches; red = less. "
-                   "The 25 most-contested champions of the season.")
+        st.caption("Blue = this region picks or bans it more than the average league did on the same patches; "
+                   "red = less. The 40 champions picked or banned most this season.")
 
     with t_wins:
         eff = rg["effects"]
         md, cf, fv = eff["meta_draft"], eff["comfort"], eff["region_favorites"]
-        st.markdown("<div class='takeaway'>Mostly <b>no</b>. Once you account for how good the teams are, priority "
-                    "itself doesn't show a reliable edge.</div>", unsafe_allow_html=True)
+        st.markdown("<div class='takeaway'>Mostly <b>no</b>. Better teams win more, of course. But once you take "
+                    "that into account, picking the popular champions or a team's favorites doesn't win extra "
+                    "games. Numbers below are win-rate differences in points.</div>", unsafe_allow_html=True)
         st.markdown("")
         rows = [
             ("Drafting the most-contested champions", f"{md['adjusted_win_prob_plus10pp']:.0%} win rate",
              "No edge: team strength explains the wins."),
-            ("Sticking to champions a team has played a lot", f"{cf['within_team_diff'] * 100:+.0f} pts",
+            ("Sticking to champions a team has played a lot", f"{cf['within_team_diff'] * 100:+.0f} points",
              "No edge; if anything slightly worse."),
         ]
         if fv["regions"]:
             rows.append(("Regions playing their home favorites at internationals",
-                         f"{fv['within_region_diff'] * 100:+.0f} pts", "Too few games to tell."))
+                         f"{fv['within_region_diff'] * 100:+.0f} points", "Too few games to tell."))
         for title, value, note in rows:
             with st.container(border=True):
                 a, b = st.columns([3, 1], vertical_alignment="center")
@@ -1169,37 +1253,44 @@ elif page == "Teams & Regions":
                 b.markdown(f"### {value}")
         with st.expander("How these were tested"):
             st.markdown(
-                f"- **Contested champions:** {md['games']:,} league games. Compares teams whose picks had higher "
-                "presence on the *previous* patch (what teams knew at draft time), controlling for each team's "
-                f"season win rate. 95% range {md['adjusted_ci'][0]:.0%}–{md['adjusted_ci'][1]:.0%}.\n"
-                f"- **Comfort picks:** within each of {cf['teams']} teams, win rate on champions it had already played "
-                f"3+ times *before that game* vs its other picks. 95% range {cf['ci'][0] * 100:+.0f} to "
-                f"{cf['ci'][1] * 100:+.0f} pts.\n"
+                f"- **Popular champions:** across {md['games']:,} league games, we compared teams that drafted "
+                "champions that had been popular on the previous patch (what teams knew when drafting) with teams "
+                "that didn't, after accounting for how strong each team is. The true effect is most likely between "
+                f"{md['adjusted_ci'][0]:.0%} and {md['adjusted_ci'][1]:.0%} win rate, so about even.\n"
+                f"- **Team favorites:** for each of {cf['teams']} teams, its win rate on champions it had already "
+                "played 3+ times before that game, compared with its other picks. Most likely between "
+                f"{cf['ci'][0] * 100:+.0f} and {cf['ci'][1] * 100:+.0f} points.\n"
                 + (f"- **Home favorites:** {fv['favorite_picks']} picks at international events against other "
-                   f"regions. 95% range {fv['ci'][0] * 100:+.0f} to {fv['ci'][1] * 100:+.0f} pts." if fv["regions"] else ""))
+                   f"regions. Most likely between {fv['ci'][0] * 100:+.0f} and {fv['ci'][1] * 100:+.0f} points, "
+                   "too wide to say." if fv["regions"] else ""))
 
 
 # --- Model accuracy ----------------------------------------------------------------------
 
 elif page == "Model Accuracy":
     st.title("Model Accuracy")
-    lead("Can patch notes predict the meta? Each international event is a test the model never saw.")
+    lead("Before each international event, we predicted how often every champion would be picked or banned. "
+         "Here's how close we got.")
     if not ev:
         st.info("Run `python -m lolpatch events` first.")
         st.stop()
     version = st.radio("Forecast", ["frozen", "current"], horizontal=True, key="fc_version",
-                       format_func=lambda v: {"frozen": "Saved Before the Event (Blind)",
+                       format_func=lambda v: {"frozen": "Saved Before the Event",
                                               "current": "Rebuilt With Today's Model"}[v])
     rows = []
     for key, m in ev["metrics"].items():
         sc = m[version]
         rows.append({"Event": m["title"], "Patch": m["patch"], "Games": sc["games"],
-                     "Forecast error": sc["all"]["mae_model"], "“Nothing changes” error": sc["all"]["mae_baseline"],
-                     "Better?": "✓" if sc["all"]["mae_model"] < sc["all"]["mae_baseline"] else "—"})
-    st.dataframe(pd.DataFrame(rows).style.format({"Forecast error": lambda v: f"{v * 100:.1f} pts",
-                                                  "“Nothing changes” error": lambda v: f"{v * 100:.1f} pts"}),
+                     "Our prediction was off by": sc["all"]["mae_model"],
+                     "Guessing “no change” was off by": sc["all"]["mae_baseline"],
+                     "Did we beat “no change”?": "Yes" if sc["all"]["mae_model"] < sc["all"]["mae_baseline"] else "No"})
+    st.dataframe(pd.DataFrame(rows).style.format(
+        {"Our prediction was off by": lambda v: f"{v * 100:.1f} points",
+         "Guessing “no change” was off by": lambda v: f"{v * 100:.1f} points"}),
                  hide_index=True, use_container_width=True)
-    st.caption("Error = average gap between forecast and actual presence; lower is better.")
+    st.caption("“Off by” = on average, how far the predicted pick/ban rate was from the real one (lower is better). "
+               "“No change” means assuming every champion stays exactly as popular as in the leagues; if reading "
+               "the patch notes is worth anything, our prediction should beat it.")
 
     keys = list(ev["metrics"])
     pick = st.selectbox("Look at One Event", keys, index=keys.index("worlds") if "worlds" in keys else 0,
@@ -1210,21 +1301,24 @@ elif page == "Model Accuracy":
 
     with st.expander("How the forecast works, and what was tried"):
         st.markdown(
-            "The model learns from the leagues how presence moves after buffs, nerfs and adjustments, and how "
-            "champions drift on their own. For each event it starts from league play on the last patch before it "
-            "and applies every balance change since. Forecasts saved before an event are never edited. "
-            "(First Stand, MSI and EWC forecasts were built later with the current model, so only Worlds and the "
-            "Demacia Cup are true blind tests.)")
+            "From a whole season of league games, the model learned how much more or less often pros pick or ban "
+            "a champion after a buff, a nerf or an adjustment, and how very popular champions tend to cool off on "
+            "their own. For each event, it starts from the last league patch before it and applies every balance "
+            "change since.\n\n"
+            "Predictions **saved before the event** were never edited afterwards, so they're a fair test. (For "
+            "First Stand, MSI and EWC we built the prediction later, using only data from before each event; only "
+            "Worlds and the Demacia Cup were saved in advance.)")
         if "adjustment" in ev:
             st.markdown(
-                "**Tried and dropped:** an “international adjustment” assuming top picks hold their priority at "
-                "events. On the earlier events it made forecasts worse, because top picks actually tend to fall "
-                "*more* at international events than in the leagues.")
+                "**Tried and dropped:** assuming the most popular champions stay just as popular at international "
+                "events. On the earlier events that made predictions worse: top picks usually lose *more* "
+                "popularity at internationals than in the leagues.")
         if "backtest_metrics" in d:
             row = d["backtest_metrics"].set_index(d["backtest_metrics"].columns[0]).loc["changed champions"]
-            st.markdown(f"**League backtest** (each patch predicted from earlier patches only): for changed "
-                        f"champions the error was {row.mae_model * 100:.1f} pts vs {row.mae_persistence * 100:.1f} "
-                        f"for “nothing changes”, with the direction right {row.direction_acc_model:.0%} of the time.")
+            st.markdown(f"**In the leagues** (predicting each patch using only earlier patches): for buffed or "
+                        f"nerfed champions we were off by {row.mae_model * 100:.1f} points on average, vs "
+                        f"{row.mae_persistence * 100:.1f} for “no change”, and we called whether a champion would "
+                        f"rise or fall correctly {row.direction_acc_model:.0%} of the time.")
 
 
 # --- Changelog ---------------------------------------------------------------------------

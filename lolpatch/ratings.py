@@ -43,19 +43,29 @@ CHAMP_PRIOR = 10  # pseudo-games at 50% for champion win rates
 RESULT_WEIGHT = 0.4
 
 # Per-role stat weights (sum to 1). Negative-is-good stats are flipped before weighting.
+# "_share" = share of the player's own team; "_game" = share of everything in the game (both teams);
+# "_vs_opp" = against the lane opponent (same role, other team).
 ROLE_WEIGHTS = {
-    "top": {"laning": .22, "dmg_share": .16, "kp": .10, "deaths": .14, "tanking": .12, "turrets": .10,
-            "csm": .08, "ka_pm": .08},
-    "jungle": {"kp": .18, "deaths": .14, "vision": .14, "laning": .14, "dmg_share": .12, "tanking": .08,
-               "ka_pm": .12, "cc": .08},
-    "mid": {"dmg_share": .20, "laning": .18, "kp": .14, "deaths": .14, "csm": .10, "ka_pm": .12, "dpm": .12},
-    "bot": {"dmg_share": .20, "dpm": .14, "laning": .14, "csm": .14, "deaths": .16, "kp": .10, "turrets": .12},
-    "support": {"vision": .24, "kp": .18, "deaths": .14, "cc": .12, "laning": .08, "ka_pm": .12, "protect": .12},
+    "top": {"laning": .16, "dmg_share": .10, "dmg_game": .04, "dmg_vs_opp": .08, "gold_vs_opp": .08,
+            "gold_share": .04, "kp": .10, "deaths": .12, "tanking": .10, "turrets": .08, "csm": .04, "ka_pm": .06},
+    "jungle": {"kp": .16, "deaths": .12, "vision": .12, "laning": .10, "dmg_share": .08, "dmg_game": .04,
+               "gold_vs_opp": .08, "dmg_vs_opp": .04, "gold_share": .04, "tanking": .06, "ka_pm": .10, "cc": .06},
+    "mid": {"dmg_share": .14, "dmg_game": .06, "dmg_vs_opp": .08, "gold_vs_opp": .08, "dmg_per_gold": .06,
+            "gold_share": .04, "laning": .12, "kp": .12, "deaths": .12, "csm": .06, "ka_pm": .06, "dpm": .06},
+    "bot": {"dmg_share": .14, "dmg_game": .06, "dmg_vs_opp": .08, "gold_vs_opp": .08, "dmg_per_gold": .06,
+            "gold_share": .04, "dpm": .08, "laning": .10, "csm": .10, "deaths": .12, "kp": .08, "turrets": .06},
+    "support": {"vision": .20, "kp": .16, "deaths": .12, "cc": .10, "laning": .06, "ka_pm": .10, "protect": .10,
+                "gold_vs_opp": .04, "dmg_game": .04, "tanking": .04, "dmg_vs_opp": .04},
 }
-STAT_LABELS = {"laning": "Lane lead at 15", "dmg_share": "Damage share", "kp": "Kill participation",
-               "deaths": "Deaths (fewer is better)", "tanking": "Damage absorbed", "turrets": "Turret damage",
-               "csm": "CS per minute", "ka_pm": "Kills + assists per minute", "vision": "Vision",
-               "cc": "Crowd control", "dpm": "Damage per minute", "protect": "Heals & shields on allies"}
+assert all(abs(sum(w.values()) - 1) < 1e-9 for w in ROLE_WEIGHTS.values())
+STAT_LABELS = {"laning": "Lead over lane opponent at 15 min", "dmg_share": "Share of team's damage",
+               "dmg_game": "Share of all damage in the game", "dmg_vs_opp": "Damage vs lane opponent",
+               "gold_vs_opp": "Gold vs lane opponent", "gold_share": "Share of team's gold",
+               "dmg_per_gold": "Damage for the gold earned", "kp": "Kill participation",
+               "deaths": "Staying alive (fewer deaths)", "tanking": "Damage absorbed for the team",
+               "turrets": "Damage to towers", "csm": "Farming (CS per minute)", "ka_pm": "Kills + assists per minute",
+               "vision": "Vision (wards)", "cc": "Crowd control", "dpm": "Damage per minute",
+               "protect": "Heals & shields on teammates"}
 
 
 # --- expected result ------------------------------------------------------------------
@@ -223,6 +233,17 @@ def player_metrics(players: pd.DataFrame) -> pd.DataFrame:
     p["cc"] = p["Time ccing others"] / dur
     p["dpm"] = p["DPM"]
     p["protect"] = (p["Total Heals On Teammates"].fillna(0) + p["Total Damage Shielded On Teammates"].fillna(0)) / dur
+    # Relative to the whole game and to the lane opponent (same role, other team).
+    dmg, gold = "Total damage to Champion", "Golds"
+    p["gold_share"] = p["GOLD%"]
+    p["dmg_game"] = 100 * p[dmg] / p.groupby("game_uid")[dmg].transform("sum").replace(0, np.nan)
+    p["gold_game"] = 100 * p[gold] / p.groupby("game_uid")[gold].transform("sum").replace(0, np.nan)
+    opp = p[["game_uid", "role", "team", dmg, gold]].rename(columns={"team": "opp_team", dmg: "opp_dmg", gold: "opp_gold"})
+    p = p.merge(opp, on=["game_uid", "role"], how="left")
+    p = p[p.team != p.opp_team].drop(columns="opp_team")
+    p["dmg_vs_opp"] = np.log2((p[dmg] + 500) / (p.opp_dmg + 500)).clip(-3, 3)
+    p["gold_vs_opp"] = (p[gold] - p.opp_gold) / dur
+    p["dmg_per_gold"] = p[dmg] / p[gold].replace(0, np.nan)
     return p
 
 
@@ -252,7 +273,8 @@ def player_ratings(expected: pd.DataFrame, log=print) -> pd.DataFrame:
     keep = ["game_uid", "event", "league", "series_id", "stage", "date", "team", "opponent", "side", "role", "player", "champion", "result",
             "p_win", "vs_expected", "rating", "stat_rating", "mvp", "Kills", "Deaths", "Assists", "CSM", "GOLD%",
             "DMG%", "DPM", "VSPM", "KP%", "GD@15", "CSD@15", "XPD@15", "Golds", "Total damage to Champion",
-            "Vision Score", "Solo kills", "duration", "expected_rating", "rating_vs_expected", "player_prior",
+            "Vision Score", "Solo kills", "duration", "gold_share", "dmg_game", "gold_game", "opp_dmg", "opp_gold",
+            "dmg_per_gold", "expected_rating", "rating_vs_expected", "player_prior",
             "player_games", "champ_games", "champ_prior"] + [f"z_{s}" for s in stats]
     out = p[keep]
     out.to_csv(PROCESSED / "player_ratings.csv", index=False)

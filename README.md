@@ -127,7 +127,9 @@ Which picks teams make *in response* to an opponent's pick.
   (recent games weighted more). Settings, including whether draft/comfort
   features are used, are tuned on First Stand, MSI, EWC and Demacia; Worlds is
   only scored. The draft features didn't help on the tuning events, so they're off.
-- **Player rating** (`player_ratings.csv`): role-weighted z-scores vs the same
+- **Player rating** (`player_ratings.csv`): stats include damage/gold/kill
+  participation as shares of the team and of the whole game, damage and gold
+  vs the lane opponent, and damage per gold; role-weighted z-scores vs the same
   role across all international games, plus 0.4 × (won − expected win chance)
   in the same units, turned into a 1.0–5.0 percentile. Best player on a winning
   team: median ~4.8; best on a losing team: ~3.3.

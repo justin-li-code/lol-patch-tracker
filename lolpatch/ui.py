@@ -54,6 +54,21 @@ def _render(path: Path, size: int, pad_right: int, rounded: bool) -> str:
     return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
 
 
+@lru_cache(maxsize=1)
+def _display_names() -> dict:
+    path = ASSETS / "meraki_champions.json"
+    if not path.exists():
+        return {}
+    return {champ_key(c["name"]): c["name"] for c in json.loads(path.read_text()).values()}
+
+
+def nice(name):
+    """Official spelling for display: gol.gg writes "KSante", "KhaZix"; players expect "K'Sante", "Kha'Zix"."""
+    if not isinstance(name, str):
+        return name
+    return _display_names().get(champ_key(name), name)
+
+
 def champ_icon(name: str, size: int = 64) -> str | None:
     p = _path(name, "champion")
     return _render(p, size, 0, True) if p else None
@@ -69,6 +84,8 @@ def with_icons(df: pd.DataFrame, col: str = "champion", kind: str = "champion", 
     fn = champ_icon if kind == "champion" else team_logo
     out = df.copy()
     out.insert(out.columns.get_loc(col), label, out[col].map(fn))
+    if kind == "champion":
+        out[col] = out[col].map(nice)
     return out
 
 
@@ -88,7 +105,11 @@ def row_layout(fig, names, *, legend: bool = False, x_title: bool = True, x_top:
     No portraits here: browsers lay out tick labels differently enough that
     images beside them can overlap the names.
     """
-    names = list(names)
+    names = [nice(x) for x in names]
+    # Rename the traces' row values the same way so they still match the category order.
+    for trace in fig.data:
+        if trace.y is not None and len(trace.y) and isinstance(trace.y[0], str):
+            trace.y = [nice(v) for v in trace.y]
     n = max(len(names), 1)
     top = (34 if legend else 8) + (24 if x_top else 0)
     bottom = 8 if x_top else (46 if x_title else 24)

@@ -7,6 +7,22 @@ Every version below came from one round of requests. Newest first.
 - Refresh the Worlds data after each Swiss round and knockout stage.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.3 · Oct 27: Plain language, more champions, richer player stats
+- **Written for everyone, not just data people.**
+  - "Presence" is now **pick/ban rate** everywhere, explained in the sidebar, with changes shown as "points".
+  - Statistics jargon is gone. Forecasts are "off by X points", and likely ranges replace confidence intervals.
+  - Every page and explanation is rewritten in everyday terms.
+- **The Overview's prediction card explains itself:** what was predicted, what it was compared with, where it helped, and where it missed (e.g. pros kept picking the just-nerfed Nocturne at Worlds).
+- **More champions:**
+  - The Worlds chart shows 25 champions, with a full list of every champion picked or banned there.
+  - The forecast chart shows 30, the region map 40 and the Worlds region table 30.
+  - The Overview lists the top 5, and other lists are longer.
+- **Richer player stats, counted in the rating:**
+  - Damage, gold and kill participation, each as a share of the team and of the whole game.
+  - Damage and gold against the lane opponent, and damage per gold.
+  - Game pages show them in the main player table plus a "More stats" panel.
+- Champion names use their official spelling (K'Sante, Kha'Zix, Cho'Gath).
+
 ## v1.2 · Oct 27: Champion records in game pages
 - In each game's player table, "Games on it" is now **# of Games**, next to a new **Record on Champ** column: the player's wins–losses on that champion this season before the game.
 

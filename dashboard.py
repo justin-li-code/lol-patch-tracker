@@ -536,8 +536,13 @@ def worlds_players_page(mx: dict):
         st.info("No players with that many Worlds games yet.")
         return
 
-    def board(df, value_col, value_label, fmt):
-        cols = {"#": range(1, len(df) + 1), " ": df.team.map(team_logo), "Player": df.player, "Team": df.team,
+    # Overall and within-role ranks by average rating, among players shown at this minimum.
+    agg = agg.sort_values("rating", ascending=False).reset_index(drop=True)
+    agg["rank"] = np.arange(1, len(agg) + 1)
+    agg["role_rank"] = agg.groupby("role").cumcount() + 1
+
+    def board(df, value_col, value_label, fmt, ranks=None, highlight=None):
+        cols = {"#": range(1, len(df) + 1) if ranks is None else ranks, " ": df.team.map(team_logo), "Player": df.player, "Team": df.team,
                 "Role": df.role.str.title(), "Games": df.games,
                 "Record": [f"{int(w_)}–{int(n - w_)}" for w_, n in zip(df.wins, df.games)]}
         if value_col != "rating":  # the ranking value first, then the rating it came from
@@ -545,19 +550,30 @@ def worlds_players_page(mx: dict):
         cols |= {"Average rating": df.rating, "Expected rating": df.expected, "Rating in their league": df.domestic,
                  "Champions": df.champs}
         t = pd.DataFrame(cols)
-        st.dataframe(t.style.format({value_label: fmt, "Average rating": "{:.1f}", "Expected rating": "{:.1f}",
-                                     "Rating in their league": "{:.1f}"}, na_rep="—"),
+        styled = t.style.format({value_label: fmt, "Average rating": "{:.1f}", "Expected rating": "{:.1f}",
+                                 "Rating in their league": "{:.1f}"}, na_rep="—")
+        if highlight is not None:
+            styled = styled.apply(lambda row: ["background-color: rgba(42,120,214,.14); font-weight: 600"
+                                               if row.Player == highlight else "" for _ in row], axis=1)
+        st.dataframe(styled,
                      column_config={" ": st.column_config.ImageColumn(" ", width="small")},
                      hide_index=True, use_container_width=True, height=36 * min(len(t), 10) + 40)
 
-    t_best, t_low, t_up, t_down, t_look = st.tabs(
-        ["Best", "Lowest Rated", "Above Expectations", "Below Expectations", "Player Lookup"])
+    t_best, t_roles, t_low, t_up, t_down, t_look = st.tabs(
+        ["Best", "Top 5 by Role", "Lowest Rated", "Above Expectations", "Below Expectations", "Player Lookup"])
     with t_best:
         top = agg.sort_values("rating", ascending=False).head(10)
         st.markdown(f"<div class='takeaway'>Best so far: <b>{top.iloc[0].player}</b> ({top.iloc[0].team}), "
                     f"averaging <b>{top.iloc[0].rating:.1f}</b> over {top.iloc[0].games} games.</div>",
                     unsafe_allow_html=True)
         board(top, "rating", "Average rating", "{:.1f}")
+    with t_roles:
+        st.markdown("The five best-rated players in each position. Ratings compare each player with others "
+                    "in the same position, so the positions are on the same scale.")
+        role_order = [r for r in ["top", "jungle", "mid", "bot", "support"] if r in set(agg.role)]
+        for role, tab in zip(role_order, st.tabs([r.title() for r in role_order])):
+            with tab:
+                board(agg[agg.role == role].head(5), "rating", "Average rating", "{:.1f}")
     with t_low:
         low = agg.sort_values("rating").head(10)
         st.markdown("The lowest averages so far. Often a mix of tough opponents and losing games, "
@@ -575,8 +591,19 @@ def worlds_players_page(mx: dict):
         st.markdown("Playing furthest below what their form, champions and opponents predicted.")
         board(down, "vs_expected", "Below expected (per game)", "{:+.1f}")
     with t_look:
-        who = st.selectbox("Player", (agg.player + " (" + agg.team + ")").tolist(), key="worlds_player_pick")
+        who = st.selectbox("Player", sorted(agg.player + " (" + agg.team + ")", key=str.lower),
+                           key="worlds_player_pick")
         name = who.rsplit(" (", 1)[0]
+        me = agg[agg.player == name].iloc[0]
+        n_role = int((agg.role == me.role).sum())
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Overall Rank", f"#{me['rank']} of {len(agg)}")
+        c2.metric(f"Rank Among {me.role.title()} Players", f"#{me.role_rank} of {n_role}")
+        c3.metric("Average Rating", f"{me.rating:.1f} / 5",
+                  f"{me.vs_expected:+.1f} vs. expected", delta_color="normal")
+        near = agg.iloc[max(0, me["rank"] - 2):me["rank"] + 1]
+        st.markdown(f"**Next to {name} in the overall ranking** (the player just above and just below)")
+        board(near, "rating", "Average rating", "{:.1f}", ranks=near["rank"].tolist(), highlight=name)
         game_rank = w.groupby("game_uid").rating.rank(ascending=False, method="min").astype(int)
         pg = w[w.player == name].assign(game_rank=game_rank).sort_values("date")
         gt = pd.DataFrame({"Date": pg.date, "Opponent": pg.opponent, "Champion": pg.champion,

@@ -6,6 +6,11 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.7 · Oct 27: Player ranks and the best players by position
+- **Player Lookup** shows each player's rank overall (for example "#6 of 95") and among players in the same position, plus their average rating and how far it is above or below what we expected.
+- It also shows the players ranked **just above and just below** them, with the chosen player highlighted, so it's easy to see who they're competing with. The player list is now alphabetical.
+- New **Top 5 by Role** tab: the five best-rated Top, Jungle, Mid, Bot and Support players at Worlds.
+
 ## v1.6 · Oct 27: New fonts
 - Headings use **Chakra Petch**, which has an angular, game-interface look. Text, numbers and chart labels use **Inter**, which stays easy to read at small sizes.
 - Numbers now line up in columns because every digit is the same width.

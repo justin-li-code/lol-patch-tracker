@@ -918,7 +918,8 @@ all_stats = stats[stats.league == "ALL"]
 # --- navigation -------------------------------------------------------------------------
 
 PAGES = ["Overview", "Worlds 2026", "Worlds Players", "Champions & Patches", "Meta Shifts", "Draft Answers", "Teams & Regions",
-         "Model Accuracy", "Changelog"]
+         "Model Accuracy"]
+# The changelog itself lives in the repository (CHANGELOG.md); the site only shows the version.
 CHANGELOG = PROCESSED.parent.parent / "CHANGELOG.md"
 changelog_text = CHANGELOG.read_text() if CHANGELOG.exists() else ""
 version_tag = next((line[3:].split("·")[0].strip() for line in changelog_text.splitlines()
@@ -1653,15 +1654,6 @@ elif page == "Model Accuracy":
                         f"nerfed champions we were off by {row.mae_model * 100:.1f} points on average, vs "
                         f"{row.mae_persistence * 100:.1f} for “no change”, and we called whether a champion would "
                         f"rise or fall correctly {row.direction_acc_model:.0%} of the time.")
-
-
-# --- Changelog ---------------------------------------------------------------------------
-
-elif page == "Changelog":
-    st.title("Changelog")
-    lead("What changed in each version of this project, newest first.")
-    # Skip the file's own title; the page has one.
-    st.markdown(changelog_text.split("\n", 1)[1] if changelog_text.startswith("# ") else changelog_text)
 
 
 # --- footer ------------------------------------------------------------------------------

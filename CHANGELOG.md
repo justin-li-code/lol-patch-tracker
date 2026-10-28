@@ -6,6 +6,9 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.8.1 · Oct 28: Changelog moved off the site
+- The website no longer has a Changelog page. The full history stays here in the GitHub repository, and the sidebar still shows the current version number.
+
 ## v1.8 · Oct 28: Swiss bracket
 - The **Worlds 2026** page now opens with the **Swiss stage as a bracket**. There's one column per round, and each box groups the teams with the same record (2–0, 1–1, …). Every match shows its score, with the winner in bold.
   - Scheduled matches are shown with dashed borders and their date.

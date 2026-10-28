@@ -44,14 +44,21 @@ def parse_players(html: str) -> list[dict]:
     return out
 
 
-def scrape(log=print) -> pd.DataFrame:
+def scrape(events_only: bool = False, incremental: bool = False, log=print) -> pd.DataFrame:
+    """Every game page (or only international events'), optionally keeping games already in players.csv."""
     from .events import EVENTS
-    tournaments = list_tournaments() + [t for ev in EVENTS.values() for t in ev["tournaments"]]
+    event_tournaments = [t for ev in EVENTS.values() for t in ev["tournaments"]]
+    tournaments = event_tournaments if events_only else list_tournaments() + event_tournaments
+    path = PROCESSED / "players.csv"
+    existing = pd.read_csv(path) if incremental and path.exists() else pd.DataFrame()
+    known = set(existing.game_uid) if len(existing) else set()
     rows, n_series = [], 0
     for t in tournaments:
         for s in list_series(t):
             n_series += 1
             for game_no, gid in game_ids(s["series_id"], s["page"]):
+                if f"{s['series_id']}-{game_no}" in known:
+                    continue
                 try:
                     html = http.get(f"{BASE}/game/stats/{gid}/page-game/")
                 except RuntimeError as e:
@@ -60,7 +67,7 @@ def scrape(log=print) -> pd.DataFrame:
                 for r in parse_players(html or ""):
                     rows.append(dict(game_uid=f"{s['series_id']}-{game_no}", tournament=t, **r))
         log(f"  {t}: done ({len(rows) // 10} games so far)")
-    df = pd.DataFrame(rows)
-    df.to_csv(PROCESSED / "players.csv", index=False)
-    log(f"Saved {df.game_uid.nunique()} games with players to {PROCESSED / 'players.csv'}")
+    df = pd.concat([existing, pd.DataFrame(rows)], ignore_index=True) if len(existing) else pd.DataFrame(rows)
+    df.to_csv(path, index=False)
+    log(f"Saved {df.game_uid.nunique()} games with players ({len(rows) // 10} new) to {path}")
     return df

@@ -6,7 +6,7 @@ Precomputes everything a preview needs, so the dashboard can preview any pairing
   team_pools.csv      each team's recent champion picks by role (decayed weights)
   team_bans.csv       what each team bans, and what opponents ban against it (decayed)
   worlds_role_meta.csv  each champion's share of picks per role at Worlds
-  worlds_standings.csv  Swiss record and status per team
+  worlds_standings.csv  Swiss record, status, and chances to reach each round / win Worlds
   upcoming.csv        scheduled matches: from Leaguepedia when it answers, otherwise from
                       data/overrides/upcoming.csv (team_a, team_b, date, best_of, stage)
 """
@@ -110,48 +110,88 @@ def standings(log=print) -> pd.DataFrame:
     return st
 
 
-def swiss_odds(st: pd.DataFrame, strength: pd.Series, n_sims: int = 20000, seed: int = 0) -> pd.Series:
-    """Chance each team still playing reaches 3 wins, simulating the remaining Swiss rounds.
+def tournament_odds(st: pd.DataFrame, strength: pd.Series, regions: pd.Series, n_sims: int = 20000,
+                    seed: int = 0) -> pd.DataFrame:
+    """Play out the rest of Worlds many times: remaining Swiss rounds, then a best-of-five bracket.
 
-    Each round pairs teams with the same record at random (avoiding rematches when possible);
-    remaining matches are best-of-three, each game won with the model's win chance.
+    Swiss: teams with the same record meet (rematches avoided when possible), best of three.
+    Quarterfinal draw (the real one isn't known until the Swiss ends), following recent Worlds
+    rules: the best records face the worst (3-0 vs 3-2, 3-1 vs 3-1), same-region quarterfinals
+    avoided when possible; the bracket halves are random. Every knockout match is best of five.
+    Returns, per team, the chance to reach the quarterfinals, semifinals, final, and to win.
     """
     g = pd.read_csv(PROCESSED / "match_games.csv", dtype={"event": str, "series_id": str})
     sw = g[(g.event == "worlds") & g.tournament.str.contains("Main Event")]
     played = {frozenset((s.blue.iloc[0], s.red.iloc[0])) for _, s in sw.groupby("series_id")}
     rng = np.random.default_rng(seed)
     alive0 = st[st.status == "Still playing"]
-    advanced = pd.Series(0.0, index=st.team)
-    advanced[st[st.status == "Advanced"].team] = n_sims
-    p_series = {}
+    done0 = st[st.status == "Advanced"]
+    counts = {k: pd.Series(0.0, index=st.team) for k in ("p_advance", "p_semis", "p_final", "p_title")}
+    cache = {}
+
+    def series_winner(a, b, best_of):
+        key = (a, b, best_of)
+        if key not in cache:
+            cache[key] = series_prob(win_prob(strength, a, b), best_of)
+        return (a, b) if rng.random() < cache[key] else (b, a)
+
+    def pair_up(teams, avoid):
+        """Pair a list in order (first with last, ...) after shuffling to dodge `avoid` pairs."""
+        best = None
+        for _try in range(20):
+            pairs = [(teams[i], teams[len(teams) - 1 - i]) for i in range(len(teams) // 2)]
+            bad = sum(avoid(a, b) for a, b in pairs)
+            if best is None or bad < best[0]:
+                best = (bad, pairs)
+            if bad == 0:
+                break
+            # Shuffle within each record tier only, keeping "best vs worst" intact.
+            tiers = {}
+            for t in teams:
+                tiers.setdefault(record[t], []).append(t)
+            teams = [t for r in sorted(tiers, key=lambda r: (-r[0], r[1])) for t in rng.permutation(tiers[r])]
+        return best[1]
+
     for _ in range(n_sims):
-        rec = {t: [w, l] for t, w, l in zip(alive0.team, alive0.wins, alive0.losses)}
-        while rec:
+        record = {t: (w, l) for t, w, l in zip(st.team, st.wins, st.losses)}
+        live = {t: [w, l] for t, w, l in zip(alive0.team, alive0.wins, alive0.losses)}
+        qualified = list(done0.team)
+        while live:
             groups = {}
-            for t, (w, l) in rec.items():
+            for t, (w, l) in live.items():
                 groups.setdefault((w, l), []).append(t)
             for group in groups.values():
                 rng.shuffle(group)
-                # Re-shuffle a few times to avoid rematches, then accept whatever pairing we have.
                 for _try in range(10):
                     pairs = [(group[i], group[i + 1]) for i in range(0, len(group) - 1, 2)]
                     if all(frozenset(p) not in played for p in pairs):
                         break
                     rng.shuffle(group)
                 for a, b in pairs:
-                    key = (a, b)
-                    if key not in p_series:
-                        p_series[key] = series_prob(win_prob(strength, a, b), 3)
-                    winner, loser = (a, b) if rng.random() < p_series[key] else (b, a)
-                    rec[winner][0] += 1
-                    rec[loser][1] += 1
-            for t in list(rec):
-                if rec[t][0] >= 3:
-                    advanced[t] += 1
-                    del rec[t]
-                elif rec[t][1] >= 3:
-                    del rec[t]
-    return (advanced / n_sims).rename("p_advance")
+                    w_, l_ = series_winner(a, b, 3)
+                    live[w_][0] += 1
+                    live[l_][1] += 1
+            for t in list(live):
+                record[t] = tuple(live[t])
+                if live[t][0] >= 3:
+                    qualified.append(t)
+                    del live[t]
+                elif live[t][1] >= 3:
+                    del live[t]
+        for t in qualified:
+            counts["p_advance"][t] += 1
+        # Quarterfinals: best records vs worst, avoiding same-region pairs where possible.
+        seeded = sorted(qualified, key=lambda t: (-record[t][0], record[t][1], rng.random()))
+        qf = pair_up(seeded, lambda a, b: regions.get(a) == regions.get(b))
+        rng.shuffle(qf)
+        semis = [series_winner(a, b, 5)[0] for a, b in qf]
+        for t in semis:
+            counts["p_semis"][t] += 1
+        finalists = [series_winner(semis[i], semis[i + 1], 5)[0] for i in (0, 2)]
+        for t in finalists:
+            counts["p_final"][t] += 1
+        counts["p_title"][series_winner(*finalists, 5)[0]] += 1
+    return pd.DataFrame({k: v / n_sims for k, v in counts.items()})
 
 
 # Leaguepedia names that differ from gol.gg's (bracketed suffixes are stripped separately).
@@ -202,12 +242,12 @@ def schedule(log=print) -> pd.DataFrame:
 
 
 def run(log=print):
-    strength = team_strengths(log=log).set_index("team").strength
+    ts = team_strengths(log=log).set_index("team")
     pools_and_bans(log=log)
     st = standings(log=log)
-    odds = swiss_odds(st, strength)
+    odds = tournament_odds(st, ts.strength, ts.region)
     st = st.merge(odds, left_on="team", right_index=True, how="left")
     st.to_csv(PROCESSED / "worlds_standings.csv", index=False)
-    log("  chance to reach the knockouts: " + ", ".join(
-        f"{t} {p:.0%}" for t, p in st[st.status == "Still playing"].set_index("team").p_advance.items()))
+    log("  chance to win Worlds: " + ", ".join(
+        f"{t} {p:.0%}" for t, p in st.set_index("team").p_title.sort_values(ascending=False).head(8).items()))
     schedule(log=log)

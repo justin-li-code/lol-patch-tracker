@@ -1,9 +1,11 @@
 """Project-wide settings."""
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-RAW = DATA / "raw"
+# Downloaded-page cache. Override with LOLPATCH_CACHE (e.g. to test a cold-cache cloud run).
+RAW = Path(os.environ.get("LOLPATCH_CACHE", DATA / "raw"))
 PROCESSED = DATA / "processed"
 OVERRIDES = DATA / "overrides"
 

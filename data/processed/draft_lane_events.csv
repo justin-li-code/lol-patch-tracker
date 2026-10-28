@@ -11179,68 +11179,68 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83653-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Bilibili Gaming,3,Knight,Locke,Team Liquid,8,Quid,0,False
 83653-1,support,Worlds,Worlds 2026 Main Event,26.20,Karma,Team Liquid,5,CoreJJ,Nautilus,Bilibili Gaming,10,ON,1,True
 83653-1,top,Worlds,Worlds 2026 Main Event,26.20,Camille,Bilibili Gaming,6,Bin,KSante,Team Liquid,9,Morgan,0,False
-83654-1,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Invictus Gaming,2,,Kalista,Hanwha Life Esports,4,,0,False
-83654-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Hanwha Life Esports,1,,Nocturne,Invictus Gaming,6,,1,False
-83654-1,mid,Worlds,Worlds 2026 Main Event,26.20,Annie,Invictus Gaming,7,,Lissandra,Hanwha Life Esports,9,,0,False
-83654-1,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Invictus Gaming,3,,Renata Glasc,Hanwha Life Esports,5,,0,False
-83654-1,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Hanwha Life Esports,8,,Kled,Invictus Gaming,10,,1,True
-83655-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,G2 Esports,2,,Varus,Top Esports,8,,1,False
-83655-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,Top Esports,1,,Wukong,G2 Esports,7,,0,False
-83655-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Top Esports,4,,Akali,G2 Esports,6,,0,False
-83655-1,support,Worlds,Worlds 2026 Main Event,26.20,Karma,G2 Esports,3,,Nautilus,Top Esports,5,,1,False
-83655-1,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Top Esports,9,,Shen,G2 Esports,10,,0,True
-83656-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Movistar KOI,2,,Kaisa,Dplus KIA,9,,1,False
-83656-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Dplus KIA,4,,Trundle,Movistar KOI,10,,0,True
-83656-1,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Dplus KIA,1,,Anivia,Movistar KOI,6,,0,False
-83656-1,support,Worlds,Worlds 2026 Main Event,26.20,Karma,Movistar KOI,3,,Nautilus,Dplus KIA,5,,1,False
-83656-1,top,Worlds,Worlds 2026 Main Event,26.20,Jayce,Movistar KOI,7,,Ornn,Dplus KIA,8,,1,False
-83656-2,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Movistar KOI,4,,Caitlyn,Dplus KIA,6,,1,False
-83656-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,Movistar KOI,1,,Jarvan IV,Dplus KIA,3,,1,False
-83656-2,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Dplus KIA,7,,Diana,Movistar KOI,9,,0,False
-83656-2,support,Worlds,Worlds 2026 Main Event,26.20,Bard,Dplus KIA,2,,Lulu,Movistar KOI,5,,0,False
-83656-2,top,Worlds,Worlds 2026 Main Event,26.20,Gnar,Movistar KOI,8,,Irelia,Dplus KIA,10,,1,True
-83659-1,bot,Worlds,Worlds 2026 Main Event,26.20,Kalista,LYON,2,,Jhin,Gen.G,4,,0,False
-83659-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Gen.G,1,,Xin Zhao,LYON,7,,1,False
-83659-1,mid,Worlds,Worlds 2026 Main Event,26.20,Anivia,Gen.G,8,,Ahri,LYON,10,,1,True
-83659-1,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,LYON,3,,Alistar,Gen.G,5,,0,False
-83659-1,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,LYON,6,,Rumble,Gen.G,9,,0,False
-83659-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Gen.G,4,,Yunara,LYON,6,,0,False
-83659-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,Gen.G,1,,Vi,LYON,2,,0,False
-83659-2,mid,Worlds,Worlds 2026 Main Event,26.20,Akali,LYON,7,,Lissandra,Gen.G,9,,1,False
-83659-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,LYON,3,,Seraphine,Gen.G,5,,1,False
-83659-2,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Gen.G,8,,Shen,LYON,10,,0,True
-83659-3,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Gen.G,1,,Lucian,LYON,2,,0,False
-83659-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Jayce,Gen.G,4,,Maokai,LYON,7,,0,False
-83659-3,mid,Worlds,Worlds 2026 Main Event,26.20,Galio,Gen.G,9,,Tristana,LYON,10,,0,True
-83659-3,support,Worlds,Worlds 2026 Main Event,26.20,Milio,LYON,3,,Nautilus,Gen.G,5,,1,False
-83659-3,top,Worlds,Worlds 2026 Main Event,26.20,KSante,LYON,6,,Camille,Gen.G,8,,1,False
-83662-1,bot,Worlds,Worlds 2026 Main Event,26.20,Jhin,T1,5,,Kaisa,CTBC Flying Oyster,10,,0,True
-83662-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,T1,1,,Qiyana,CTBC Flying Oyster,3,,0,False
-83662-1,mid,Worlds,Worlds 2026 Main Event,26.20,Galio,T1,4,,Ryze,CTBC Flying Oyster,6,,0,False
-83662-1,support,Worlds,Worlds 2026 Main Event,26.20,Alistar,CTBC Flying Oyster,7,,Rakan,T1,9,,1,False
-83662-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,CTBC Flying Oyster,2,,Ambessa,T1,8,,1,False
-83663-1,bot,Worlds,Worlds 2026 Main Event,26.20,Jhin,Karmine Corp,5,,Kaisa,Bilibili Gaming,10,,1,True
-83663-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Karmine Corp,1,,Jarvan IV,Bilibili Gaming,3,,1,False
-83663-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Bilibili Gaming,2,,Viktor,Karmine Corp,9,,0,False
-83663-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Bilibili Gaming,7,,Alistar,Karmine Corp,8,,0,False
-83663-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Karmine Corp,4,,Ambessa,Bilibili Gaming,6,,1,False
-83664-1,bot,Worlds,Worlds 2026 Main Event,26.20,Kalista,Los Grandes,2,,Caitlyn,Team Secret Whales,4,,0,False
-83664-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Team Secret Whales,1,,Wukong,Los Grandes,7,,1,False
-83664-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Los Grandes,6,,Akali,Team Secret Whales,8,,0,False
-83664-1,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,Los Grandes,3,,Elise,Team Secret Whales,5,,0,False
-83664-1,top,Worlds,Worlds 2026 Main Event,26.20,Shen,Team Secret Whales,9,,Gnar,Los Grandes,10,,1,True
-83664-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Los Grandes,2,,Miss Fortune,Team Secret Whales,8,,0,False
-83664-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,Team Secret Whales,1,,Trundle,Los Grandes,7,,1,False
-83664-2,mid,Worlds,Worlds 2026 Main Event,26.20,Locke,Team Secret Whales,4,,Galio,Los Grandes,6,,1,False
-83664-2,support,Worlds,Worlds 2026 Main Event,26.20,Seraphine,Los Grandes,3,,Nautilus,Team Secret Whales,5,,0,False
-83664-2,top,Worlds,Worlds 2026 Main Event,26.20,Jax,Team Secret Whales,9,,Kennen,Los Grandes,10,,1,True
-83667-1,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Anyone s Legend,2,,Lucian,Team Liquid,4,,1,False
-83667-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Team Liquid,1,,Skarner,Anyone s Legend,10,,0,True
-83667-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Anyone s Legend,6,,Galio,Team Liquid,9,,1,False
-83667-1,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Anyone s Legend,3,,Nami,Team Liquid,5,,1,False
-83667-1,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Anyone s Legend,7,,Camille,Team Liquid,8,,1,False
-83667-2,bot,Worlds,Worlds 2026 Main Event,26.20,Xayah,Team Liquid,2,,Jinx,Anyone s Legend,8,,0,False
-83667-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,Anyone s Legend,1,,Pantheon,Team Liquid,7,,1,False
-83667-2,mid,Worlds,Worlds 2026 Main Event,26.20,Annie,Anyone s Legend,5,,Akali,Team Liquid,10,,1,True
-83667-2,support,Worlds,Worlds 2026 Main Event,26.20,Rakan,Team Liquid,3,,Tahm Kench,Anyone s Legend,9,,0,False
-83667-2,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Anyone s Legend,4,,Kled,Team Liquid,6,,1,False
+83654-1,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Invictus Gaming,2,JiaQi,Kalista,Hanwha Life Esports,4,Gumayusi,0,False
+83654-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Hanwha Life Esports,1,Kanavi,Nocturne,Invictus Gaming,6,Wei,1,False
+83654-1,mid,Worlds,Worlds 2026 Main Event,26.20,Annie,Invictus Gaming,7,RooKie,Lissandra,Hanwha Life Esports,9,Zeka,0,False
+83654-1,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Invictus Gaming,3,meiko,Renata Glasc,Hanwha Life Esports,5,Delight,0,False
+83654-1,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Hanwha Life Esports,8,Zeus,Kled,Invictus Gaming,10,TheShy,1,True
+83655-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,G2 Esports,2,Hans Sama,Varus,Top Esports,8,JackeyLove,1,False
+83655-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,Top Esports,1,Tian,Wukong,G2 Esports,7,SkewMond,0,False
+83655-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Top Esports,4,Creme,Akali,G2 Esports,6,Caps,0,False
+83655-1,support,Worlds,Worlds 2026 Main Event,26.20,Karma,G2 Esports,3,Labrov,Nautilus,Top Esports,5,Zhuo,1,False
+83655-1,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Top Esports,9,369,Shen,G2 Esports,10,BrokenBlade,0,True
+83656-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Movistar KOI,2,Supa,Kaisa,Dplus KIA,9,Smash,1,False
+83656-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Dplus KIA,4,Lucid,Trundle,Movistar KOI,10,Elyoya,0,True
+83656-1,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Dplus KIA,1,ShowMaker,Anivia,Movistar KOI,6,jojopyun,0,False
+83656-1,support,Worlds,Worlds 2026 Main Event,26.20,Karma,Movistar KOI,3,Alvaro,Nautilus,Dplus KIA,5,Career,1,False
+83656-1,top,Worlds,Worlds 2026 Main Event,26.20,Jayce,Movistar KOI,7,Myrwn,Ornn,Dplus KIA,8,Siwoo,1,False
+83656-2,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Movistar KOI,4,Supa,Caitlyn,Dplus KIA,6,Smash,1,False
+83656-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,Movistar KOI,1,Elyoya,Jarvan IV,Dplus KIA,3,Lucid,1,False
+83656-2,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Dplus KIA,7,ShowMaker,Diana,Movistar KOI,9,jojopyun,0,False
+83656-2,support,Worlds,Worlds 2026 Main Event,26.20,Bard,Dplus KIA,2,Career,Lulu,Movistar KOI,5,Alvaro,0,False
+83656-2,top,Worlds,Worlds 2026 Main Event,26.20,Gnar,Movistar KOI,8,Myrwn,Irelia,Dplus KIA,10,Siwoo,1,True
+83659-1,bot,Worlds,Worlds 2026 Main Event,26.20,Kalista,LYON,2,Berserker,Jhin,Gen.G,4,Ruler,0,False
+83659-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Gen.G,1,Canyon,Xin Zhao,LYON,7,Inspired,1,False
+83659-1,mid,Worlds,Worlds 2026 Main Event,26.20,Anivia,Gen.G,8,Chovy,Ahri,LYON,10,Saint,1,True
+83659-1,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,LYON,3,Isles,Alistar,Gen.G,5,Duro,0,False
+83659-1,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,LYON,6,Dhokla,Rumble,Gen.G,9,Kiin,0,False
+83659-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Gen.G,4,Ruler,Yunara,LYON,6,Berserker,0,False
+83659-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,Gen.G,1,Canyon,Vi,LYON,2,Inspired,0,False
+83659-2,mid,Worlds,Worlds 2026 Main Event,26.20,Akali,LYON,7,Saint,Lissandra,Gen.G,9,Chovy,1,False
+83659-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,LYON,3,Isles,Seraphine,Gen.G,5,Duro,1,False
+83659-2,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Gen.G,8,Kiin,Shen,LYON,10,Dhokla,0,True
+83659-3,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Gen.G,1,Ruler,Lucian,LYON,2,Berserker,0,False
+83659-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Jayce,Gen.G,4,Canyon,Maokai,LYON,7,Inspired,0,False
+83659-3,mid,Worlds,Worlds 2026 Main Event,26.20,Galio,Gen.G,9,Chovy,Tristana,LYON,10,Saint,0,True
+83659-3,support,Worlds,Worlds 2026 Main Event,26.20,Milio,LYON,3,Isles,Nautilus,Gen.G,5,Duro,1,False
+83659-3,top,Worlds,Worlds 2026 Main Event,26.20,KSante,LYON,6,Dhokla,Camille,Gen.G,8,Kiin,1,False
+83662-1,bot,Worlds,Worlds 2026 Main Event,26.20,Jhin,T1,5,Peyz,Kaisa,CTBC Flying Oyster,10,Doggo,0,True
+83662-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,T1,1,Oner,Qiyana,CTBC Flying Oyster,3,Shad0w,0,False
+83662-1,mid,Worlds,Worlds 2026 Main Event,26.20,Galio,T1,4,Faker,Ryze,CTBC Flying Oyster,6,Pout,0,False
+83662-1,support,Worlds,Worlds 2026 Main Event,26.20,Alistar,CTBC Flying Oyster,7,Kino,Rakan,T1,9,Keria,1,False
+83662-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,CTBC Flying Oyster,2,Rest,Ambessa,T1,8,Doran,1,False
+83663-1,bot,Worlds,Worlds 2026 Main Event,26.20,Jhin,Karmine Corp,5,Caliste,Kaisa,Bilibili Gaming,10,Viper,1,True
+83663-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Karmine Corp,1,Yike,Jarvan IV,Bilibili Gaming,3,XUN,1,False
+83663-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Bilibili Gaming,2,Knight,Viktor,Karmine Corp,9,Kyeahoo,0,False
+83663-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Bilibili Gaming,7,ON,Alistar,Karmine Corp,8,Busio,0,False
+83663-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Karmine Corp,4,Canna,Ambessa,Bilibili Gaming,6,Bin,1,False
+83664-1,bot,Worlds,Worlds 2026 Main Event,26.20,Kalista,Los Grandes,2,Duduhh,Caitlyn,Team Secret Whales,4,Eddie,0,False
+83664-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Team Secret Whales,1,Hizto,Wukong,Los Grandes,7,Curse,1,False
+83664-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Los Grandes,6,Feisty,Akali,Team Secret Whales,8,Dire,0,False
+83664-1,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,Los Grandes,3,Ackerman,Elise,Team Secret Whales,5,Bie,0,False
+83664-1,top,Worlds,Worlds 2026 Main Event,26.20,Shen,Team Secret Whales,9,Pun,Gnar,Los Grandes,10,Zest,1,True
+83664-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Los Grandes,2,Duduhh,Miss Fortune,Team Secret Whales,8,Eddie,0,False
+83664-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,Team Secret Whales,1,Hizto,Trundle,Los Grandes,7,Curse,1,False
+83664-2,mid,Worlds,Worlds 2026 Main Event,26.20,Locke,Team Secret Whales,4,Dire,Galio,Los Grandes,6,Feisty,1,False
+83664-2,support,Worlds,Worlds 2026 Main Event,26.20,Seraphine,Los Grandes,3,Ackerman,Nautilus,Team Secret Whales,5,Bie,0,False
+83664-2,top,Worlds,Worlds 2026 Main Event,26.20,Jax,Team Secret Whales,9,Pun,Kennen,Los Grandes,10,Zest,1,True
+83667-1,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Anyone s Legend,2,Hope,Lucian,Team Liquid,4,Yeon,1,False
+83667-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Team Liquid,1,Josedeodo,Skarner,Anyone s Legend,10,Tarzan,0,True
+83667-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Anyone s Legend,6,Shanks,Galio,Team Liquid,9,Quid,1,False
+83667-1,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Anyone s Legend,3,Kael,Nami,Team Liquid,5,CoreJJ,1,False
+83667-1,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Anyone s Legend,7,Breathe,Camille,Team Liquid,8,Morgan,1,False
+83667-2,bot,Worlds,Worlds 2026 Main Event,26.20,Xayah,Team Liquid,2,Yeon,Jinx,Anyone s Legend,8,Hope,0,False
+83667-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,Anyone s Legend,1,Tarzan,Pantheon,Team Liquid,7,Josedeodo,1,False
+83667-2,mid,Worlds,Worlds 2026 Main Event,26.20,Annie,Anyone s Legend,5,Shanks,Akali,Team Liquid,10,Quid,1,True
+83667-2,support,Worlds,Worlds 2026 Main Event,26.20,Rakan,Team Liquid,3,CoreJJ,Tahm Kench,Anyone s Legend,9,Kael,0,False
+83667-2,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Anyone s Legend,4,Breathe,Kled,Team Liquid,6,Morgan,1,False

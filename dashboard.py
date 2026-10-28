@@ -724,20 +724,41 @@ def worlds_upcoming_tab(up: dict):
             st.divider()
             match_preview(up, m.team_a, m.team_b, int(m.best_of))
 
-    st.markdown("### Swiss standings")
     stn = up["standings"].copy()
+    if "p_title" in stn:
+        st.markdown("### Who will win Worlds?")
+        odds = stn[stn.p_title >= 0.005].sort_values("p_title")
+        fig = go.Figure(go.Bar(x=odds.p_title, y=odds.team, orientation="h",
+                               marker=dict(color=BUFF, cornerradius=4),
+                               text=[f"{p:.0%}" if p >= 0.01 else "<1%" for p in odds.p_title], textposition="outside",
+                               cliponaxis=False, hovertemplate="<b>%{y}</b>: %{x:.1%} chance to win Worlds<extra></extra>"))
+        fig = style(fig, xaxis=dict(title="Chance to win Worlds", range=[0, odds.p_title.max() * 1.2], **PCT),
+                    hovermode="closest", showlegend=False, bargap=0.35)
+        st.plotly_chart(row_layout(fig, odds.team, right=48), use_container_width=True)
+        st.caption("From playing out the rest of Worlds 20,000 times with each team's win chances: the remaining "
+                   "Swiss rounds, then best-of-five quarterfinals, semifinals and final. The real quarterfinal "
+                   "draw isn't known yet, so it's simulated with the usual rules (best records face the worst, "
+                   "teams from the same region kept apart when possible).")
+
+    st.markdown("### Swiss standings")
     stn["Logo"] = stn.team.map(team_logo)
     stn["Record"] = stn.wins.astype(str) + "–" + stn.losses.astype(str)
-    stn["Chance to reach the knockouts"] = np.where(stn.status == "Advanced", 1.0,
-                                                    np.where(stn.status == "Eliminated", 0.0, stn.p_advance))
-    st.dataframe(stn[["Logo", "team", "Record", "status", "Chance to reach the knockouts"]].rename(
-        columns={"team": "Team", "status": "Status"}),
-        column_config={"Logo": st.column_config.ImageColumn(" ", width="small"),
-                       "Chance to reach the knockouts": st.column_config.ProgressColumn(
-                           "Chance to reach the knockouts", format="%.0f%%", min_value=0, max_value=1)},
-        hide_index=True, use_container_width=True, height=36 * len(stn) + 40)
-    st.caption("Teams advance at 3 wins and go home at 3 losses. Chances come from playing out the rest of the "
-               "Swiss stage 20,000 times with each team's win chances.")
+    stn["Reach knockouts"] = np.where(stn.status == "Advanced", 1.0,
+                                      np.where(stn.status == "Eliminated", 0.0, stn.p_advance))
+    # Progress bars label with printf formats, so show these as 0–100 rather than 0–1.
+    pct = lambda label: st.column_config.ProgressColumn(label, format="%.0f%%", min_value=0, max_value=100)
+    cols = ["Logo", "team", "Record", "status", "Reach knockouts"]
+    cfg = {"Logo": st.column_config.ImageColumn(" ", width="small"), "Reach knockouts": pct("Reach knockouts")}
+    if "p_title" in stn:
+        stn = stn.rename(columns={"p_semis": "Reach semifinals", "p_final": "Reach final", "p_title": "Win Worlds"})
+        cols += ["Reach semifinals", "Reach final", "Win Worlds"]
+        cfg |= {c: pct(c) for c in ["Reach semifinals", "Reach final", "Win Worlds"]}
+    for c in cols[4:]:
+        stn[c] = stn[c] * 100
+    st.dataframe(stn[cols].rename(columns={"team": "Team", "status": "Status"}), column_config=cfg,
+                 hide_index=True, use_container_width=True, height=36 * len(stn) + 40)
+    st.caption("Teams advance at 3 wins and go home at 3 losses. The bars show each team's chances from the same "
+               "20,000 simulated tournaments.")
 
     with st.expander("Preview any matchup"):
         alive = up["standings"].team.tolist()

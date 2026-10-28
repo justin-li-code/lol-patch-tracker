@@ -10,6 +10,8 @@
     draft      draft answers: which picks teams make in response to an opponent's pick
     matches    game details, expected results and player ratings for international games
     upcoming   Worlds schedule, standings, chances to advance and matchup-preview data
+    refresh    quick Worlds update: new international games only, then every Worlds view
+               (what the scheduled GitHub Action runs; needs no page cache)
     assets     champion portraits (Data Dragon) and team logos (gol.gg) for the dashboard
     all        fetch + analyze + predict + events + regions + meta + players + draft + matches + upcoming + assets
     dashboard  open the Streamlit dashboard
@@ -24,9 +26,51 @@ from .champions import champ_key
 from .config import ROOT
 
 
+def refresh(force: bool = False):
+    """Quick Worlds update. Season data doesn't change during Worlds, so only new international
+    games are downloaded. If there are no new games and the schedule is unchanged, nothing is
+    recomputed (so the scheduled job doesn't commit timestamp-only changes)."""
+    import hashlib
+    import json
+    import os
+    from . import draft, events, matches, players, ratings, regions, upcoming
+    from .config import PROCESSED
+
+    state_path = PROCESSED / "refresh_state.json"
+
+    def fingerprint():
+        uids = sorted(set(pd.read_csv(PROCESSED / "event_games.csv").game_uid))
+        sched = (PROCESSED / "upcoming.csv").read_text() if (PROCESSED / "upcoming.csv").exists() else ""
+        return dict(event_games=len(uids), games_hash=hashlib.sha1("|".join(uids).encode()).hexdigest(),
+                    schedule_hash=hashlib.sha1(sched.encode()).hexdigest())
+
+    def report(changed: bool):
+        if os.environ.get("GITHUB_OUTPUT"):  # tells the GitHub Action whether to commit
+            with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                f.write(f"changed={'true' if changed else 'false'}\n")
+
+    events.scrape(refresh=True)
+    upcoming.schedule()
+    now = fingerprint()
+    before = json.loads(state_path.read_text()) if state_path.exists() else {}
+    if now == before and not force:
+        print("No new games and no schedule change: nothing to update.")
+        report(False)
+        return
+    events.run(refresh=False)
+    players.scrape(events_only=True, incremental=True)
+    regions.run()
+    draft.run()
+    matches.build(domestic=False, incremental=True)
+    ratings.run()
+    upcoming.run()
+    state_path.write_text(json.dumps(now, indent=2))
+    report(True)
+
+
 def main():
     p = argparse.ArgumentParser(prog="lolpatch", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "draft", "matches", "upcoming", "assets", "all", "dashboard"])
+    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "draft", "matches", "upcoming", "refresh", "assets", "all", "dashboard"])
     p.add_argument("--refresh", action="store_true", help="re-download index pages (new games / patches)")
     p.add_argument("--target", help="patch to predict, e.g. 26.22 (default: latest patch notes)")
     p.add_argument("--notes-url", help="patch notes URL for --target, if not on the usual Riot URL")
@@ -85,6 +129,8 @@ def main():
     if a.command in ("assets", "all"):
         from . import assets
         assets.run()
+    if a.command == "refresh":
+        refresh(force=a.refresh)
     if a.command == "dashboard":
         sys.exit(subprocess.call([sys.executable, "-m", "streamlit", "run", str(ROOT / "dashboard.py")]))
 

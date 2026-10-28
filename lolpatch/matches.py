@@ -113,8 +113,11 @@ def parse_fullstats(html: str) -> pd.DataFrame:
     return df
 
 
-def build(domestic: bool = True, log=print) -> dict:
-    """International events, plus every domestic league game when `domestic` (needed for player history)."""
+def build(domestic: bool = True, incremental: bool = False, log=print) -> dict:
+    """International events, plus every domestic league game when `domestic` (needed for player history).
+
+    `incremental` keeps the games already in the match_*.csv files and only downloads new ones
+    (what the scheduled cloud refresh uses, since it has no page cache)."""
     from .events import EVENTS
     from .scrape_matches import league_of, list_tournaments
     sources = [(key, None, ev["title"], ev["tournaments"]) for key, ev in EVENTS.items()]
@@ -124,12 +127,20 @@ def build(domestic: bool = True, log=print) -> dict:
             by_league.setdefault(league_of(t), []).append(t)
         sources += [(None, lg, f"{lg} (domestic)", ts) for lg, ts in by_league.items()]
     games, teams, plist, timeline, gold = [], [], [], [], []
+    names_out = ["games", "teams", "players", "timeline", "gold"]
+    existing = {}
+    if incremental and (PROCESSED / "match_games.csv").exists():
+        existing = {n: pd.read_csv(PROCESSED / f"match_{n}.csv", dtype={"event": str, "league": str, "series_id": str})
+                    for n in names_out}
+    known = set(existing["games"].game_uid) if existing else set()
     for key, league, title, tournaments in sources:
         n_before = len(games)
         for t in tournaments:
             for s in list_series(t):
                 for game_no, gid in game_ids(s["series_id"], s["page"]):
                     uid = f"{s['series_id']}-{game_no}"
+                    if uid in known:
+                        continue
                     try:
                         page = http.get(f"{BASE}/game/stats/{gid}/page-game/")
                         full = http.get(f"{BASE}/game/stats/{gid}/page-fullstats/")
@@ -163,9 +174,11 @@ def build(domestic: bool = True, log=print) -> dict:
                     for minute, lead in enumerate(info["gold_lead"]):
                         gold.append(dict(game_uid=uid, minute=minute, blue_lead=lead))
         log(f"  {title}: {len(games) - n_before} games")
-    out = dict(games=pd.DataFrame(games), teams=pd.DataFrame(teams), players=pd.concat(plist, ignore_index=True),
+    new = dict(games=pd.DataFrame(games), teams=pd.DataFrame(teams),
+               players=pd.concat(plist, ignore_index=True) if plist else pd.DataFrame(),
                timeline=pd.DataFrame(timeline), gold=pd.DataFrame(gold))
+    out = {n: pd.concat([existing[n], new[n]], ignore_index=True) if existing else new[n] for n in names_out}
     for name, df in out.items():
         df.to_csv(PROCESSED / f"match_{name}.csv", index=False)
-    log(f"  saved {len(out['games'])} games, {len(out['players'])} player-games")
+    log(f"  saved {len(out['games'])} games ({len(new['games'])} new), {len(out['players'])} player-games")
     return out

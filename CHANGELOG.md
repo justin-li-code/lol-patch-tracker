@@ -4,9 +4,11 @@ Every version below came from one round of requests. Newest first.
 
 ## Up next
 - Publish the site on Streamlit Community Cloud.
-- Knockout bracket odds (chance to win Worlds) once the Swiss stage ends.
-- Refresh the Worlds data after each Swiss round and knockout stage.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
+
+## v1.5 · Oct 27: Title odds and automatic updates
+- **Who will win Worlds?** Each team's chance to reach the knockouts, semifinals and final, and to win the title. It comes from playing out the rest of Worlds 20,000 times: the remaining Swiss rounds, then best-of-five quarterfinals, semifinals and final. The quarterfinal draw follows the usual rules until the real one is known.
+- **Automatic updates:** a scheduled GitHub job refreshes the Worlds data every 3 hours (new games, ratings, standings, odds, previews) and redeploys the site. It downloads only new games, so it runs without the laptop.
 
 ## v1.4 · Oct 27: Upcoming matches and previews
 - New **Upcoming** tab in Worlds 2026: the next matches (Swiss Round 4) with the favorite and their chance to win the series.

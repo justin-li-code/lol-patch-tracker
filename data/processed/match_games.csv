@@ -27,7 +27,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 75560-3,75562,first_stand,first_stand,75560,2026 First Stand,GROUPS.DAY3,2026-03-18,3,16.5,28.8,28:48,BNK FearX,Team Secret Whales,BNK FearX
 75555-1,75555,first_stand,first_stand,75555,2026 First Stand,GROUPS.DAY3,2026-03-18,1,16.5,32.88333333333333,32:53,Bilibili Gaming,G2 Esports,Bilibili Gaming
 75555-2,75556,first_stand,first_stand,75555,2026 First Stand,GROUPS.DAY3,2026-03-18,2,16.5,29.9,29:54,Bilibili Gaming,G2 Esports,Bilibili Gaming
-75555-3,75557,first_stand,first_stand,75555,2026 First Stand,GROUPS.DAY3,2026-03-18,3,16.5,30.066666666666666,30:04,Bilibili Gaming,G2 Esports,Bilibili Gaming
+75555-3,75557,first_stand,first_stand,75555,2026 First Stand,GROUPS.DAY3,2026-03-18,3,16.5,30.066666666666663,30:04,Bilibili Gaming,G2 Esports,Bilibili Gaming
 75550-1,75550,first_stand,first_stand,75550,2026 First Stand,GROUPS.DAY2,2026-03-17,1,16.5,27.233333333333334,27:14,LYON,LOUD,LYON
 75550-2,75551,first_stand,first_stand,75550,2026 First Stand,GROUPS.DAY2,2026-03-17,2,16.5,36.28333333333333,36:17,LYON,LOUD,LOUD
 75550-3,75552,first_stand,first_stand,75550,2026 First Stand,GROUPS.DAY2,2026-03-17,3,16.5,30.583333333333332,30:35,LYON,LOUD,LYON
@@ -52,7 +52,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 79792-1,79792,msi,msi,79792,MSI 2026,ROUND4,2026-07-11,1,16.13,39.0,39:00,LYON,Hanwha Life Esports,Hanwha Life Esports
 79792-2,79793,msi,msi,79792,MSI 2026,ROUND4,2026-07-11,2,16.13,30.916666666666668,30:55,Hanwha Life Esports,LYON,LYON
 79792-3,79794,msi,msi,79792,MSI 2026,ROUND4,2026-07-11,3,16.13,30.466666666666665,30:28,LYON,Hanwha Life Esports,LYON
-79792-4,79795,msi,msi,79792,MSI 2026,ROUND4,2026-07-11,4,16.13,29.816666666666666,29:49,LYON,Hanwha Life Esports,Hanwha Life Esports
+79792-4,79795,msi,msi,79792,MSI 2026,ROUND4,2026-07-11,4,16.13,29.816666666666663,29:49,LYON,Hanwha Life Esports,Hanwha Life Esports
 79792-5,79796,msi,msi,79792,MSI 2026,ROUND4,2026-07-11,5,16.13,22.266666666666666,22:16,Hanwha Life Esports,LYON,Hanwha Life Esports
 79776-1,79776,msi,msi,79776,MSI 2026,ROUND3,2026-07-10,1,16.13,35.7,35:42,G2 Esports,LYON,LYON
 79776-2,79777,msi,msi,79776,MSI 2026,ROUND3,2026-07-10,2,16.13,30.633333333333333,30:38,LYON,G2 Esports,LYON
@@ -78,8 +78,8 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 79696-2,79697,msi,msi,79696,MSI 2026,ROUND2,2026-07-05,2,16.13,24.4,24:24,Hanwha Life Esports,G2 Esports,Hanwha Life Esports
 79696-3,79698,msi,msi,79696,MSI 2026,ROUND2,2026-07-05,3,16.13,25.116666666666667,25:07,Hanwha Life Esports,G2 Esports,Hanwha Life Esports
 79686-1,79686,msi,msi,79686,MSI 2026,ROUND1,2026-07-05,1,16.13,32.11666666666667,32:07,Team Secret Whales,Top Esports,Team Secret Whales
-79686-2,79687,msi,msi,79686,MSI 2026,ROUND1,2026-07-05,2,16.13,28.316666666666666,28:19,Team Secret Whales,Top Esports,Top Esports
-79686-3,79688,msi,msi,79686,MSI 2026,ROUND1,2026-07-05,3,16.13,30.933333333333334,30:56,Top Esports,Team Secret Whales,Team Secret Whales
+79686-2,79687,msi,msi,79686,MSI 2026,ROUND1,2026-07-05,2,16.13,28.316666666666663,28:19,Team Secret Whales,Top Esports,Top Esports
+79686-3,79688,msi,msi,79686,MSI 2026,ROUND1,2026-07-05,3,16.13,30.933333333333337,30:56,Top Esports,Team Secret Whales,Team Secret Whales
 79686-4,79689,msi,msi,79686,MSI 2026,ROUND1,2026-07-05,4,16.13,41.916666666666664,41:55,Team Secret Whales,Top Esports,Team Secret Whales
 79618-1,79618,msi,msi,79618,MSI 2026,ROUND1,2026-07-04,1,16.13,41.266666666666666,41:16,T1,Bilibili Gaming,T1
 79618-2,79619,msi,msi,79618,MSI 2026,ROUND1,2026-07-04,2,16.13,29.1,29:06,Bilibili Gaming,T1,Bilibili Gaming
@@ -91,16 +91,16 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 79613-3,79615,msi,msi,79613,MSI 2026,ROUND1,2026-07-04,3,16.13,28.216666666666665,28:13,LYON,FURIA,LYON
 79608-1,79608,msi,msi,79608,MSI 2026,ROUND1,2026-07-03,1,16.13,34.083333333333336,34:05,Top Esports,G2 Esports,Top Esports
 79608-2,79609,msi,msi,79608,MSI 2026,ROUND1,2026-07-03,2,16.13,32.06666666666667,32:04,Top Esports,G2 Esports,Top Esports
-79608-3,79610,msi,msi,79608,MSI 2026,ROUND1,2026-07-03,3,16.13,27.066666666666666,27:04,Top Esports,G2 Esports,G2 Esports
+79608-3,79610,msi,msi,79608,MSI 2026,ROUND1,2026-07-03,3,16.13,27.066666666666663,27:04,Top Esports,G2 Esports,G2 Esports
 79608-4,79611,msi,msi,79608,MSI 2026,ROUND1,2026-07-03,4,16.13,41.266666666666666,41:16,G2 Esports,Top Esports,G2 Esports
 79608-5,79612,msi,msi,79608,MSI 2026,ROUND1,2026-07-03,5,16.13,36.18333333333333,36:11,G2 Esports,Top Esports,G2 Esports
 79603-1,79603,msi,msi,79603,MSI 2026,ROUND1,2026-07-03,1,16.13,26.4,26:24,Hanwha Life Esports,Team Secret Whales,Hanwha Life Esports
 79603-2,79604,msi,msi,79603,MSI 2026,ROUND1,2026-07-03,2,16.13,28.233333333333334,28:14,Hanwha Life Esports,Team Secret Whales,Hanwha Life Esports
-79603-3,79605,msi,msi,79603,MSI 2026,ROUND1,2026-07-03,3,16.13,30.066666666666666,30:04,Hanwha Life Esports,Team Secret Whales,Hanwha Life Esports
+79603-3,79605,msi,msi,79603,MSI 2026,ROUND1,2026-07-03,3,16.13,30.066666666666663,30:04,Hanwha Life Esports,Team Secret Whales,Hanwha Life Esports
 79574-1,79574,msi,msi,79574,MSI 2026,PLAY-IN.DAY4,2026-07-01,1,16.13,27.583333333333332,27:35,T1,Team Liquid,T1
 79574-2,79575,msi,msi,79574,MSI 2026,PLAY-IN.DAY4,2026-07-01,2,16.13,41.06666666666667,41:04,Team Liquid,T1,T1
 79574-3,79576,msi,msi,79574,MSI 2026,PLAY-IN.DAY4,2026-07-01,3,16.13,23.6,23:36,Team Liquid,T1,T1
-79542-1,79542,msi,msi,79542,MSI 2026,PLAY-IN.DAY3,2026-06-30,1,16.13,29.683333333333334,29:41,Team Liquid,Karmine Corp,Team Liquid
+79542-1,79542,msi,msi,79542,MSI 2026,PLAY-IN.DAY3,2026-06-30,1,16.13,29.683333333333337,29:41,Team Liquid,Karmine Corp,Team Liquid
 79542-2,79543,msi,msi,79542,MSI 2026,PLAY-IN.DAY3,2026-06-30,2,16.13,35.85,35:51,Karmine Corp,Team Liquid,Team Liquid
 79542-3,79544,msi,msi,79542,MSI 2026,PLAY-IN.DAY3,2026-06-30,3,16.13,35.18333333333333,35:11,Team Liquid,Karmine Corp,Team Liquid
 79539-1,79539,msi,msi,79539,MSI 2026,PLAY-IN.DAY2,2026-06-29,1,16.13,33.583333333333336,33:35,Team Liquid,Deep Cross Gaming,Team Liquid
@@ -142,10 +142,10 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 79935-2,79936,ewc,ewc,79935,Esports World Cup 2026,GROUPSTAGE,2026-07-16,2,16.13,31.5,31:30,Sentinels,Karmine Corp,Karmine Corp
 79932-1,79932,ewc,ewc,79932,Esports World Cup 2026,GROUPSTAGE,2026-07-16,1,16.13,32.4,32:24,JD Gaming,Los Grandes,JD Gaming
 79932-2,79933,ewc,ewc,79932,Esports World Cup 2026,GROUPSTAGE,2026-07-16,2,16.13,28.283333333333335,28:17,JD Gaming,Los Grandes,JD Gaming
-79929-1,79929,ewc,ewc,79929,Esports World Cup 2026,GROUPSTAGE,2026-07-16,1,16.13,26.316666666666666,26:19,Dplus KIA,G2 Esports,Dplus KIA
+79929-1,79929,ewc,ewc,79929,Esports World Cup 2026,GROUPSTAGE,2026-07-16,1,16.13,26.316666666666663,26:19,Dplus KIA,G2 Esports,Dplus KIA
 79929-2,79930,ewc,ewc,79929,Esports World Cup 2026,GROUPSTAGE,2026-07-16,2,16.13,38.5,38:30,Dplus KIA,G2 Esports,Dplus KIA
 79928-1,79928,ewc,ewc,79928,Esports World Cup 2026,GROUPSTAGE,2026-07-16,1,16.13,26.3,26:18,JD Gaming,Hanwha Life Esports,Hanwha Life Esports
-79927-1,79927,ewc,ewc,79927,Esports World Cup 2026,GROUPSTAGE,2026-07-16,1,16.13,31.933333333333334,31:56,Anyone s Legend,G2 Esports,Anyone s Legend
+79927-1,79927,ewc,ewc,79927,Esports World Cup 2026,GROUPSTAGE,2026-07-16,1,16.13,31.933333333333337,31:56,Anyone s Legend,G2 Esports,Anyone s Legend
 79926-1,79926,ewc,ewc,79926,Esports World Cup 2026,GROUPSTAGE,2026-07-16,1,16.13,32.416666666666664,32:25,T1,Bilibili Gaming,Bilibili Gaming
 79925-1,79925,ewc,ewc,79925,Esports World Cup 2026,GROUPSTAGE,2026-07-16,1,16.13,31.6,31:36,Gen.G,Sentinels,Gen.G
 79922-1,79922,ewc,ewc,79922,Esports World Cup 2026,GROUPSTAGE,2026-07-15,1,16.13,38.21666666666667,38:13,LYON,Los Grandes,Los Grandes
@@ -169,7 +169,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83618-1,83618,demacia,demacia,83618,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,1,16.18,31.383333333333333,31:23,Team WE,BNK FearX,BNK FearX
 83618-2,83619,demacia,demacia,83618,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,2,16.18,27.55,27:33,BNK FearX,Team WE,BNK FearX
 83618-3,83620,demacia,demacia,83618,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,3,16.18,31.133333333333333,31:08,BNK FearX,Team WE,Team WE
-83618-4,83621,demacia,demacia,83618,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,4,16.18,23.566666666666666,23:34,Team WE,BNK FearX,BNK FearX
+83618-4,83621,demacia,demacia,83618,Demacia Cup Global Invitational 2026,FINALS,2026-10-17,4,16.18,23.566666666666663,23:34,Team WE,BNK FearX,BNK FearX
 83608-1,83608,demacia,demacia,83608,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,1,16.18,31.166666666666668,31:10,Team WE,HANJIN BRION,Team WE
 83608-2,83609,demacia,demacia,83608,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,2,16.18,35.68333333333333,35:41,Team WE,HANJIN BRION,Team WE
 83608-3,83610,demacia,demacia,83608,Demacia Cup Global Invitational 2026,SEMIFINALS,2026-10-15,3,16.18,37.65,37:39,Team WE,HANJIN BRION,HANJIN BRION
@@ -196,16 +196,16 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83563-1,83563,demacia,demacia,83563,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,1,16.18,34.21666666666667,34:13,Team Vitality,KT Rolster,Team Vitality
 83563-2,83564,demacia,demacia,83563,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,2,16.18,37.416666666666664,37:25,KT Rolster,Team Vitality,Team Vitality
 83563-3,83565,demacia,demacia,83563,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,3,16.18,23.133333333333333,23:08,KT Rolster,Team Vitality,KT Rolster
-83563-4,83566,demacia,demacia,83563,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,4,16.18,25.816666666666666,25:49,KT Rolster,Team Vitality,KT Rolster
+83563-4,83566,demacia,demacia,83563,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,4,16.18,25.816666666666663,25:49,KT Rolster,Team Vitality,KT Rolster
 83563-5,83567,demacia,demacia,83563,Demacia Cup Global Invitational 2026,QUARTERFINALS,2026-10-12,5,16.18,32.85,32:51,KT Rolster,Team Vitality,KT Rolster
 83540-1,83540,demacia,demacia,83540,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,1,16.18,35.483333333333334,35:29,JD Gaming,Natus Vincere,Natus Vincere
 83540-2,83541,demacia,demacia,83540,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,2,16.18,31.616666666666667,31:37,Natus Vincere,JD Gaming,JD Gaming
 83540-3,83542,demacia,demacia,83540,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,3,16.18,27.4,27:24,JD Gaming,Natus Vincere,JD Gaming
 83537-1,83537,demacia,demacia,83537,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,1,16.18,35.916666666666664,35:55,RED Canids,FlyQuest,FlyQuest
 83537-2,83538,demacia,demacia,83537,Demacia Cup Global Invitational 2026,ROUND4,2026-10-08,2,16.18,27.3,27:18,FlyQuest,RED Canids,FlyQuest
-83534-1,83534,demacia,demacia,83534,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,1,16.18,31.183333333333334,31:11,Shopify Rebellion,FlyQuest,FlyQuest
+83534-1,83534,demacia,demacia,83534,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,1,16.18,31.183333333333337,31:11,Shopify Rebellion,FlyQuest,FlyQuest
 83534-2,83535,demacia,demacia,83534,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,2,16.18,27.45,27:27,FlyQuest,Shopify Rebellion,Shopify Rebellion
-83534-3,83536,demacia,demacia,83534,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,3,16.18,25.316666666666666,25:19,FlyQuest,Shopify Rebellion,FlyQuest
+83534-3,83536,demacia,demacia,83534,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,3,16.18,25.316666666666663,25:19,FlyQuest,Shopify Rebellion,FlyQuest
 83531-1,83531,demacia,demacia,83531,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,1,16.18,30.35,30:21,GAM Esports,Shopify Rebellion,Shopify Rebellion
 83531-2,83532,demacia,demacia,83531,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,2,16.18,39.166666666666664,39:10,Shopify Rebellion,GAM Esports,Shopify Rebellion
 83528-1,83528,demacia,demacia,83528,Demacia Cup Global Invitational 2026,ROUND3RR,2026-10-07,1,16.18,22.766666666666666,22:46,FlyQuest,GAM Esports,FlyQuest
@@ -224,7 +224,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83462-1,83462,demacia,demacia,83462,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,1,16.18,25.95,25:57,Team Vitality,GAM Esports,Team Vitality
 83462-2,83463,demacia,demacia,83462,Demacia Cup Global Invitational 2026,ROUND2,2026-10-05,2,16.18,28.883333333333333,28:53,Team Vitality,GAM Esports,Team Vitality
 83459-1,83459,demacia,demacia,83459,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,1,16.18,35.7,35:42,Team WE,HANJIN BRION,Team WE
-83459-2,83460,demacia,demacia,83459,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,2,16.18,27.683333333333334,27:41,Team WE,HANJIN BRION,HANJIN BRION
+83459-2,83460,demacia,demacia,83459,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,2,16.18,27.683333333333337,27:41,Team WE,HANJIN BRION,HANJIN BRION
 83459-3,83461,demacia,demacia,83459,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,3,16.18,28.516666666666666,28:31,Team WE,HANJIN BRION,Team WE
 83456-1,83456,demacia,demacia,83456,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,1,16.18,28.083333333333332,28:05,KT Rolster,RED Canids,KT Rolster
 83456-2,83457,demacia,demacia,83456,Demacia Cup Global Invitational 2026,ROUND2,2026-10-04,2,16.18,23.0,23:00,KT Rolster,RED Canids,KT Rolster
@@ -237,57 +237,57 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83449-1,83449,demacia,demacia,83449,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,1,16.18,27.4,27:24,KT Rolster,Shopify Rebellion,KT Rolster
 83448-1,83448,demacia,demacia,83448,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,1,16.18,23.633333333333333,23:38,FlyQuest,LGD Gaming,LGD Gaming
 83447-1,83447,demacia,demacia,83447,Demacia Cup Global Invitational 2026,ROUND1,2026-10-03,1,16.18,34.483333333333334,34:29,RED Canids,Natus Vincere,RED Canids
-83635-1,83635,worlds,worlds,83635,Worlds 2026 Play-In,ROUND3,2026-10-18,1,16.20,28.466666666666665,28:28,Karmine Corp,MVK Esports,Karmine Corp
-83635-2,83636,worlds,worlds,83635,Worlds 2026 Play-In,ROUND3,2026-10-18,2,16.20,27.433333333333334,27:26,Karmine Corp,MVK Esports,Karmine Corp
-83635-3,83637,worlds,worlds,83635,Worlds 2026 Play-In,ROUND3,2026-10-18,3,16.20,26.85,26:51,MVK Esports,Karmine Corp,Karmine Corp
-83631-1,83631,worlds,worlds,83631,Worlds 2026 Play-In,ROUND2,2026-10-17,1,16.20,31.133333333333333,31:08,MVK Esports,FURIA,MVK Esports
-83631-2,83632,worlds,worlds,83631,Worlds 2026 Play-In,ROUND2,2026-10-17,2,16.20,27.4,27:24,MVK Esports,FURIA,MVK Esports
-83631-3,83633,worlds,worlds,83631,Worlds 2026 Play-In,ROUND2,2026-10-17,3,16.20,36.25,36:15,MVK Esports,FURIA,FURIA
-83631-4,83634,worlds,worlds,83631,Worlds 2026 Play-In,ROUND2,2026-10-17,4,16.20,28.15,28:09,MVK Esports,FURIA,MVK Esports
-83628-1,83628,worlds,worlds,83628,Worlds 2026 Play-In,ROUND2,2026-10-16,1,16.20,30.233333333333334,30:14,Karmine Corp,MVK Esports,Karmine Corp
-83628-2,83629,worlds,worlds,83628,Worlds 2026 Play-In,ROUND2,2026-10-16,2,16.20,33.05,33:03,Karmine Corp,MVK Esports,Karmine Corp
-83628-3,83630,worlds,worlds,83628,Worlds 2026 Play-In,ROUND2,2026-10-16,3,16.20,36.21666666666667,36:13,MVK Esports,Karmine Corp,Karmine Corp
-83623-1,83623,worlds,worlds,83623,Worlds 2026 Play-In,ROUND1,2026-10-16,1,16.20,39.86666666666667,39:52,FURIA,Cloud9,Cloud9
-83623-2,83624,worlds,worlds,83623,Worlds 2026 Play-In,ROUND1,2026-10-16,2,16.20,35.266666666666666,35:16,Cloud9,FURIA,FURIA
-83623-3,83625,worlds,worlds,83623,Worlds 2026 Play-In,ROUND1,2026-10-16,3,16.20,34.15,34:09,FURIA,Cloud9,FURIA
-83623-4,83626,worlds,worlds,83623,Worlds 2026 Play-In,ROUND1,2026-10-16,4,16.20,28.6,28:36,FURIA,Cloud9,FURIA
-83598-1,83598,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,1,16.20,35.03333333333333,35:02,Karmine Corp,Cloud9,Cloud9
-83598-2,83599,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,2,16.20,35.166666666666664,35:10,Cloud9,Karmine Corp,Karmine Corp
-83598-3,83600,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,3,16.20,37.81666666666667,37:49,Karmine Corp,Cloud9,Cloud9
-83598-4,83601,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,4,16.20,38.15,38:09,Cloud9,Karmine Corp,Karmine Corp
-83598-5,83602,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,5,16.20,31.35,31:21,Karmine Corp,Cloud9,Karmine Corp
-83593-1,83593,worlds,worlds,83593,Worlds 2026 Play-In,ROUND1,2026-10-15,1,16.20,35.4,35:24,MVK Esports,FURIA,MVK Esports
-83593-2,83594,worlds,worlds,83593,Worlds 2026 Play-In,ROUND1,2026-10-15,2,16.20,34.93333333333333,34:56,MVK Esports,FURIA,MVK Esports
-83593-3,83595,worlds,worlds,83593,Worlds 2026 Play-In,ROUND1,2026-10-15,3,16.20,27.033333333333335,27:02,MVK Esports,FURIA,MVK Esports
-83667-1,83667,worlds,worlds,83667,Worlds 2026 Main Event,ROUND3,2026-10-26,1,16.20,33.21666666666667,33:13,Anyone s Legend,Team Liquid,Team Liquid
-83667-2,83668,worlds,worlds,83667,Worlds 2026 Main Event,ROUND3,2026-10-26,2,16.20,47.483333333333334,47:29,Team Liquid,Anyone s Legend,Team Liquid
-83664-1,83664,worlds,worlds,83664,Worlds 2026 Main Event,ROUND3,2026-10-26,1,16.20,40.06666666666667,40:04,Team Secret Whales,Los Grandes,Los Grandes
-83664-2,83665,worlds,worlds,83664,Worlds 2026 Main Event,ROUND3,2026-10-26,2,16.20,37.38333333333333,37:23,Team Secret Whales,Los Grandes,Los Grandes
-83663-1,83663,worlds,worlds,83663,Worlds 2026 Main Event,ROUND3,2026-10-26,1,16.20,36.333333333333336,36:20,Bilibili Gaming,Karmine Corp,Bilibili Gaming
-83662-1,83662,worlds,worlds,83662,Worlds 2026 Main Event,ROUND3,2026-10-26,1,16.20,27.383333333333333,27:23,T1,CTBC Flying Oyster,T1
-83659-1,83659,worlds,worlds,83659,Worlds 2026 Main Event,ROUND3,2026-10-25,1,16.20,35.75,35:45,LYON,Gen.G,LYON
-83659-2,83660,worlds,worlds,83659,Worlds 2026 Main Event,ROUND3,2026-10-25,2,16.20,26.533333333333335,26:32,Gen.G,LYON,Gen.G
-83659-3,83661,worlds,worlds,83659,Worlds 2026 Main Event,ROUND3,2026-10-25,3,16.20,31.95,31:57,Gen.G,LYON,Gen.G
-83656-1,83656,worlds,worlds,83656,Worlds 2026 Main Event,ROUND3,2026-10-25,1,16.20,39.333333333333336,39:20,Movistar KOI,Dplus KIA,Dplus KIA
-83656-2,83657,worlds,worlds,83656,Worlds 2026 Main Event,ROUND3,2026-10-25,2,16.20,25.166666666666668,25:10,Dplus KIA,Movistar KOI,Dplus KIA
-83655-1,83655,worlds,worlds,83655,Worlds 2026 Main Event,ROUND3,2026-10-25,1,16.20,35.733333333333334,35:44,Top Esports,G2 Esports,Top Esports
-83654-1,83654,worlds,worlds,83654,Worlds 2026 Main Event,ROUND3,2026-10-25,1,16.20,28.6,28:36,Invictus Gaming,Hanwha Life Esports,Invictus Gaming
-83653-1,83653,worlds,worlds,83653,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.20,31.583333333333332,31:35,Team Liquid,Bilibili Gaming,Bilibili Gaming
-83652-1,83652,worlds,worlds,83652,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.20,41.516666666666666,41:31,Dplus KIA,T1,Dplus KIA
-83651-1,83651,worlds,worlds,83651,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.20,29.016666666666666,29:01,Hanwha Life Esports,Gen.G,Gen.G
-83650-1,83650,worlds,worlds,83650,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.20,30.333333333333332,30:20,Team Secret Whales,Invictus Gaming,Invictus Gaming
-83649-1,83649,worlds,worlds,83649,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.20,37.53333333333333,37:32,Karmine Corp,LYON,LYON
-83648-1,83648,worlds,worlds,83648,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.20,38.93333333333333,38:56,Los Grandes,G2 Esports,G2 Esports
-83647-1,83647,worlds,worlds,83647,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.20,33.13333333333333,33:08,Movistar KOI,CTBC Flying Oyster,Movistar KOI
-83646-1,83646,worlds,worlds,83646,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.20,30.3,30:18,Top Esports,Anyone s Legend,Top Esports
-83645-1,83645,worlds,worlds,83645,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.20,38.68333333333333,38:41,Movistar KOI,Bilibili Gaming,Movistar KOI
-83644-1,83644,worlds,worlds,83644,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.20,26.816666666666666,26:49,LYON,Team Secret Whales,LYON
-83643-1,83643,worlds,worlds,83643,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.20,24.433333333333334,24:26,Los Grandes,T1,T1
-83642-1,83642,worlds,worlds,83642,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.20,23.85,23:51,Top Esports,Hanwha Life Esports,Hanwha Life Esports
-83641-1,83641,worlds,worlds,83641,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.20,32.63333333333333,32:38,Dplus KIA,G2 Esports,Dplus KIA
-83640-1,83640,worlds,worlds,83640,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.20,33.266666666666666,33:16,Karmine Corp,Anyone s Legend,Karmine Corp
-83639-1,83639,worlds,worlds,83639,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.20,37.53333333333333,37:32,Team Liquid,CTBC Flying Oyster,CTBC Flying Oyster
-83638-1,83638,worlds,worlds,83638,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.20,26.016666666666666,26:01,Invictus Gaming,Gen.G,Gen.G
+83635-1,83635,worlds,worlds,83635,Worlds 2026 Play-In,ROUND3,2026-10-18,1,16.2,28.466666666666665,28:28,Karmine Corp,MVK Esports,Karmine Corp
+83635-2,83636,worlds,worlds,83635,Worlds 2026 Play-In,ROUND3,2026-10-18,2,16.2,27.433333333333337,27:26,Karmine Corp,MVK Esports,Karmine Corp
+83635-3,83637,worlds,worlds,83635,Worlds 2026 Play-In,ROUND3,2026-10-18,3,16.2,26.85,26:51,MVK Esports,Karmine Corp,Karmine Corp
+83631-1,83631,worlds,worlds,83631,Worlds 2026 Play-In,ROUND2,2026-10-17,1,16.2,31.133333333333333,31:08,MVK Esports,FURIA,MVK Esports
+83631-2,83632,worlds,worlds,83631,Worlds 2026 Play-In,ROUND2,2026-10-17,2,16.2,27.4,27:24,MVK Esports,FURIA,MVK Esports
+83631-3,83633,worlds,worlds,83631,Worlds 2026 Play-In,ROUND2,2026-10-17,3,16.2,36.25,36:15,MVK Esports,FURIA,FURIA
+83631-4,83634,worlds,worlds,83631,Worlds 2026 Play-In,ROUND2,2026-10-17,4,16.2,28.15,28:09,MVK Esports,FURIA,MVK Esports
+83628-1,83628,worlds,worlds,83628,Worlds 2026 Play-In,ROUND2,2026-10-16,1,16.2,30.233333333333334,30:14,Karmine Corp,MVK Esports,Karmine Corp
+83628-2,83629,worlds,worlds,83628,Worlds 2026 Play-In,ROUND2,2026-10-16,2,16.2,33.05,33:03,Karmine Corp,MVK Esports,Karmine Corp
+83628-3,83630,worlds,worlds,83628,Worlds 2026 Play-In,ROUND2,2026-10-16,3,16.2,36.21666666666667,36:13,MVK Esports,Karmine Corp,Karmine Corp
+83623-1,83623,worlds,worlds,83623,Worlds 2026 Play-In,ROUND1,2026-10-16,1,16.2,39.86666666666667,39:52,FURIA,Cloud9,Cloud9
+83623-2,83624,worlds,worlds,83623,Worlds 2026 Play-In,ROUND1,2026-10-16,2,16.2,35.266666666666666,35:16,Cloud9,FURIA,FURIA
+83623-3,83625,worlds,worlds,83623,Worlds 2026 Play-In,ROUND1,2026-10-16,3,16.2,34.15,34:09,FURIA,Cloud9,FURIA
+83623-4,83626,worlds,worlds,83623,Worlds 2026 Play-In,ROUND1,2026-10-16,4,16.2,28.6,28:36,FURIA,Cloud9,FURIA
+83598-1,83598,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,1,16.2,35.03333333333333,35:02,Karmine Corp,Cloud9,Cloud9
+83598-2,83599,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,2,16.2,35.166666666666664,35:10,Cloud9,Karmine Corp,Karmine Corp
+83598-3,83600,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,3,16.2,37.81666666666667,37:49,Karmine Corp,Cloud9,Cloud9
+83598-4,83601,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,4,16.2,38.15,38:09,Cloud9,Karmine Corp,Karmine Corp
+83598-5,83602,worlds,worlds,83598,Worlds 2026 Play-In,ROUND1,2026-10-15,5,16.2,31.35,31:21,Karmine Corp,Cloud9,Karmine Corp
+83593-1,83593,worlds,worlds,83593,Worlds 2026 Play-In,ROUND1,2026-10-15,1,16.2,35.4,35:24,MVK Esports,FURIA,MVK Esports
+83593-2,83594,worlds,worlds,83593,Worlds 2026 Play-In,ROUND1,2026-10-15,2,16.2,34.93333333333333,34:56,MVK Esports,FURIA,MVK Esports
+83593-3,83595,worlds,worlds,83593,Worlds 2026 Play-In,ROUND1,2026-10-15,3,16.2,27.033333333333335,27:02,MVK Esports,FURIA,MVK Esports
+83667-1,83667,worlds,worlds,83667,Worlds 2026 Main Event,ROUND3,2026-10-26,1,16.2,33.21666666666667,33:13,Anyone s Legend,Team Liquid,Team Liquid
+83667-2,83668,worlds,worlds,83667,Worlds 2026 Main Event,ROUND3,2026-10-26,2,16.2,47.483333333333334,47:29,Team Liquid,Anyone s Legend,Team Liquid
+83664-1,83664,worlds,worlds,83664,Worlds 2026 Main Event,ROUND3,2026-10-26,1,16.2,40.06666666666667,40:04,Team Secret Whales,Los Grandes,Los Grandes
+83664-2,83665,worlds,worlds,83664,Worlds 2026 Main Event,ROUND3,2026-10-26,2,16.2,37.38333333333333,37:23,Team Secret Whales,Los Grandes,Los Grandes
+83663-1,83663,worlds,worlds,83663,Worlds 2026 Main Event,ROUND3,2026-10-26,1,16.2,36.333333333333336,36:20,Bilibili Gaming,Karmine Corp,Bilibili Gaming
+83662-1,83662,worlds,worlds,83662,Worlds 2026 Main Event,ROUND3,2026-10-26,1,16.2,27.383333333333333,27:23,T1,CTBC Flying Oyster,T1
+83659-1,83659,worlds,worlds,83659,Worlds 2026 Main Event,ROUND3,2026-10-25,1,16.2,35.75,35:45,LYON,Gen.G,LYON
+83659-2,83660,worlds,worlds,83659,Worlds 2026 Main Event,ROUND3,2026-10-25,2,16.2,26.533333333333335,26:32,Gen.G,LYON,Gen.G
+83659-3,83661,worlds,worlds,83659,Worlds 2026 Main Event,ROUND3,2026-10-25,3,16.2,31.95,31:57,Gen.G,LYON,Gen.G
+83656-1,83656,worlds,worlds,83656,Worlds 2026 Main Event,ROUND3,2026-10-25,1,16.2,39.333333333333336,39:20,Movistar KOI,Dplus KIA,Dplus KIA
+83656-2,83657,worlds,worlds,83656,Worlds 2026 Main Event,ROUND3,2026-10-25,2,16.2,25.166666666666668,25:10,Dplus KIA,Movistar KOI,Dplus KIA
+83655-1,83655,worlds,worlds,83655,Worlds 2026 Main Event,ROUND3,2026-10-25,1,16.2,35.733333333333334,35:44,Top Esports,G2 Esports,Top Esports
+83654-1,83654,worlds,worlds,83654,Worlds 2026 Main Event,ROUND3,2026-10-25,1,16.2,28.6,28:36,Invictus Gaming,Hanwha Life Esports,Invictus Gaming
+83653-1,83653,worlds,worlds,83653,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.2,31.583333333333332,31:35,Team Liquid,Bilibili Gaming,Bilibili Gaming
+83652-1,83652,worlds,worlds,83652,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.2,41.516666666666666,41:31,Dplus KIA,T1,Dplus KIA
+83651-1,83651,worlds,worlds,83651,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.2,29.016666666666666,29:01,Hanwha Life Esports,Gen.G,Gen.G
+83650-1,83650,worlds,worlds,83650,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.2,30.333333333333332,30:20,Team Secret Whales,Invictus Gaming,Invictus Gaming
+83649-1,83649,worlds,worlds,83649,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.2,37.53333333333333,37:32,Karmine Corp,LYON,LYON
+83648-1,83648,worlds,worlds,83648,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.2,38.93333333333333,38:56,Los Grandes,G2 Esports,G2 Esports
+83647-1,83647,worlds,worlds,83647,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.2,33.13333333333333,33:08,Movistar KOI,CTBC Flying Oyster,Movistar KOI
+83646-1,83646,worlds,worlds,83646,Worlds 2026 Main Event,ROUND2,2026-10-24,1,16.2,30.3,30:18,Top Esports,Anyone s Legend,Top Esports
+83645-1,83645,worlds,worlds,83645,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.2,38.68333333333333,38:41,Movistar KOI,Bilibili Gaming,Movistar KOI
+83644-1,83644,worlds,worlds,83644,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.2,26.816666666666663,26:49,LYON,Team Secret Whales,LYON
+83643-1,83643,worlds,worlds,83643,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.2,24.433333333333337,24:26,Los Grandes,T1,T1
+83642-1,83642,worlds,worlds,83642,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.2,23.85,23:51,Top Esports,Hanwha Life Esports,Hanwha Life Esports
+83641-1,83641,worlds,worlds,83641,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.2,32.63333333333333,32:38,Dplus KIA,G2 Esports,Dplus KIA
+83640-1,83640,worlds,worlds,83640,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.2,33.266666666666666,33:16,Karmine Corp,Anyone s Legend,Karmine Corp
+83639-1,83639,worlds,worlds,83639,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.2,37.53333333333333,37:32,Team Liquid,CTBC Flying Oyster,CTBC Flying Oyster
+83638-1,83638,worlds,worlds,83638,Worlds 2026 Main Event,ROUND1,2026-10-23,1,16.2,26.016666666666666,26:01,Invictus Gaming,Gen.G,Gen.G
 83064-1,83064,,LPL,83064,LPL 2026 Regional Finals,ROUND2,2026-09-19,1,16.17,33.43333333333333,33:26,JD Gaming,Invictus Gaming,Invictus Gaming
 83064-2,83065,,LPL,83064,LPL 2026 Regional Finals,ROUND2,2026-09-19,2,16.17,32.95,32:57,JD Gaming,Invictus Gaming,Invictus Gaming
 83064-3,83066,,LPL,83064,LPL 2026 Regional Finals,ROUND2,2026-09-19,3,16.17,34.3,34:18,Invictus Gaming,JD Gaming,JD Gaming
@@ -308,7 +308,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 82836-2,82837,,LPL,82836,LPL 2026 Grand Finals,ROUND4,2026-09-12,2,16.17,36.43333333333333,36:26,Invictus Gaming,Anyone s Legend,Anyone s Legend
 82836-3,82838,,LPL,82836,LPL 2026 Grand Finals,ROUND4,2026-09-12,3,16.17,31.916666666666668,31:55,Invictus Gaming,Anyone s Legend,Anyone s Legend
 82836-4,82839,,LPL,82836,LPL 2026 Grand Finals,ROUND4,2026-09-12,4,16.17,29.616666666666667,29:37,Invictus Gaming,Anyone s Legend,Invictus Gaming
-82836-5,82840,,LPL,82836,LPL 2026 Grand Finals,ROUND4,2026-09-12,5,16.17,30.183333333333334,30:11,Anyone s Legend,Invictus Gaming,Anyone s Legend
+82836-5,82840,,LPL,82836,LPL 2026 Grand Finals,ROUND4,2026-09-12,5,16.17,30.183333333333337,30:11,Anyone s Legend,Invictus Gaming,Anyone s Legend
 82793-1,82793,,LPL,82793,LPL 2026 Grand Finals,ROUND3,2026-09-08,1,16.17,26.966666666666665,26:58,LGD Gaming,Invictus Gaming,Invictus Gaming
 82793-2,82794,,LPL,82793,LPL 2026 Grand Finals,ROUND3,2026-09-08,2,16.17,25.5,25:30,Invictus Gaming,LGD Gaming,Invictus Gaming
 82793-3,82795,,LPL,82793,LPL 2026 Grand Finals,ROUND3,2026-09-08,3,16.17,27.75,27:45,Invictus Gaming,LGD Gaming,Invictus Gaming
@@ -331,7 +331,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 82424-2,82425,,LPL,82424,LPL 2026 Grand Finals,ROUND1,2026-09-05,2,16.17,28.333333333333332,28:20,Invictus Gaming,Top Esports,Top Esports
 82424-3,82426,,LPL,82424,LPL 2026 Grand Finals,ROUND1,2026-09-05,3,16.17,42.46666666666667,42:28,Invictus Gaming,Top Esports,Invictus Gaming
 82424-4,82427,,LPL,82424,LPL 2026 Grand Finals,ROUND1,2026-09-05,4,16.17,36.233333333333334,36:14,Invictus Gaming,Top Esports,Top Esports
-82424-5,82428,,LPL,82424,LPL 2026 Grand Finals,ROUND1,2026-09-05,5,16.17,25.066666666666666,25:04,Top Esports,Invictus Gaming,Invictus Gaming
+82424-5,82428,,LPL,82424,LPL 2026 Grand Finals,ROUND1,2026-09-05,5,16.17,25.066666666666663,25:04,Top Esports,Invictus Gaming,Invictus Gaming
 82439-1,82439,,LPL,82439,LPL 2026 Grand Finals,ROUND2,2026-09-04,1,16.17,24.916666666666668,24:55,LGD Gaming,Anyone s Legend,LGD Gaming
 82439-2,82440,,LPL,82439,LPL 2026 Grand Finals,ROUND2,2026-09-04,2,16.17,31.233333333333334,31:14,Anyone s Legend,LGD Gaming,Anyone s Legend
 82439-3,82441,,LPL,82439,LPL 2026 Grand Finals,ROUND2,2026-09-04,3,16.17,37.766666666666666,37:46,Anyone s Legend,LGD Gaming,Anyone s Legend
@@ -342,7 +342,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 82434-4,82437,,LPL,82434,LPL 2026 Grand Finals,ROUND2,2026-09-03,4,16.17,24.85,24:51,Team WE,Bilibili Gaming,Bilibili Gaming
 82183-1,82183,,LPL,82183,LPL 2026 Grand Finals,ROUND1,2026-08-30,1,16.17,30.1,30:06,Team WE,JD Gaming,Team WE
 82183-2,82184,,LPL,82183,LPL 2026 Grand Finals,ROUND1,2026-08-30,2,16.17,31.9,31:54,Team WE,JD Gaming,Team WE
-82183-3,82185,,LPL,82183,LPL 2026 Grand Finals,ROUND1,2026-08-30,3,16.17,31.183333333333334,31:11,Team WE,JD Gaming,JD Gaming
+82183-3,82185,,LPL,82183,LPL 2026 Grand Finals,ROUND1,2026-08-30,3,16.17,31.183333333333337,31:11,Team WE,JD Gaming,JD Gaming
 82183-4,82186,,LPL,82183,LPL 2026 Grand Finals,ROUND1,2026-08-30,4,16.17,37.61666666666667,37:37,Team WE,JD Gaming,Team WE
 82178-1,82178,,LPL,82178,LPL 2026 Grand Finals,ROUND1,2026-08-29,1,16.17,33.1,33:06,LGD Gaming,Top Esports,LGD Gaming
 82178-2,82179,,LPL,82178,LPL 2026 Grand Finals,ROUND1,2026-08-29,2,16.17,32.0,32:00,LGD Gaming,Top Esports,LGD Gaming
@@ -384,14 +384,14 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81913-2,81914,,LPL,81913,LPL 2026 Split 3,WEEK5,2026-08-20,2,16.16,28.3,28:18,ThunderTalk Gaming,JD Gaming,JD Gaming
 81913-3,81915,,LPL,81913,LPL 2026 Split 3,WEEK5,2026-08-20,3,16.16,28.966666666666665,28:58,JD Gaming,ThunderTalk Gaming,JD Gaming
 81910-1,81910,,LPL,81910,LPL 2026 Split 3,WEEK5,2026-08-19,1,16.16,30.8,30:48,Top Esports,Anyone s Legend,Top Esports
-81910-2,81911,,LPL,81910,LPL 2026 Split 3,WEEK5,2026-08-19,2,16.16,27.316666666666666,27:19,Top Esports,Anyone s Legend,Anyone s Legend
+81910-2,81911,,LPL,81910,LPL 2026 Split 3,WEEK5,2026-08-19,2,16.16,27.316666666666663,27:19,Top Esports,Anyone s Legend,Anyone s Legend
 81910-3,81912,,LPL,81910,LPL 2026 Split 3,WEEK5,2026-08-19,3,16.16,41.8,41:48,Anyone s Legend,Top Esports,Top Esports
 81907-1,81907,,LPL,81907,LPL 2026 Split 3,WEEK5,2026-08-19,1,16.16,31.233333333333334,31:14,Weibo Gaming,LNG Esports,Weibo Gaming
 81907-2,81908,,LPL,81907,LPL 2026 Split 3,WEEK5,2026-08-19,2,16.16,31.216666666666665,31:13,Weibo Gaming,LNG Esports,LNG Esports
 81907-3,81909,,LPL,81907,LPL 2026 Split 3,WEEK5,2026-08-19,3,16.16,37.166666666666664,37:10,LNG Esports,Weibo Gaming,Weibo Gaming
-81706-1,81706,,LPL,81706,LPL 2026 Split 3,WEEK5,2026-08-19,1,16.16,28.933333333333334,28:56,EDward Gaming,Team WE,EDward Gaming
+81706-1,81706,,LPL,81706,LPL 2026 Split 3,WEEK5,2026-08-19,1,16.16,28.933333333333337,28:56,EDward Gaming,Team WE,EDward Gaming
 81706-2,81707,,LPL,81706,LPL 2026 Split 3,WEEK5,2026-08-19,2,16.16,31.283333333333335,31:17,EDward Gaming,Team WE,EDward Gaming
-81409-1,81409,,LPL,81409,LPL 2026 Split 3,WEEK4,2026-08-16,1,16.15,26.683333333333334,26:41,EDward Gaming,Top Esports,Top Esports
+81409-1,81409,,LPL,81409,LPL 2026 Split 3,WEEK4,2026-08-16,1,16.15,26.683333333333337,26:41,EDward Gaming,Top Esports,Top Esports
 81409-2,81410,,LPL,81409,LPL 2026 Split 3,WEEK4,2026-08-16,2,16.15,34.81666666666667,34:49,Top Esports,EDward Gaming,Top Esports
 81406-1,81406,,LPL,81406,LPL 2026 Split 3,WEEK4,2026-08-16,1,16.15,35.8,35:48,Invictus Gaming,Weibo Gaming,Invictus Gaming
 81406-2,81407,,LPL,81406,LPL 2026 Split 3,WEEK4,2026-08-16,2,16.15,32.9,32:54,Invictus Gaming,Weibo Gaming,Weibo Gaming
@@ -409,9 +409,9 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81394-3,81396,,LPL,81394,LPL 2026 Split 3,WEEK4,2026-08-15,3,16.15,24.216666666666665,24:13,LNG Esports,Ninjas in Pyjamas,Ninjas in Pyjamas
 81391-1,81391,,LPL,81391,LPL 2026 Split 3,WEEK4,2026-08-14,1,16.15,37.18333333333333,37:11,JD Gaming,Anyone s Legend,JD Gaming
 81391-2,81392,,LPL,81391,LPL 2026 Split 3,WEEK4,2026-08-14,2,16.15,31.166666666666668,31:10,Anyone s Legend,JD Gaming,Anyone s Legend
-81391-3,81393,,LPL,81391,LPL 2026 Split 3,WEEK4,2026-08-14,3,16.15,28.683333333333334,28:41,JD Gaming,Anyone s Legend,Anyone s Legend
+81391-3,81393,,LPL,81391,LPL 2026 Split 3,WEEK4,2026-08-14,3,16.15,28.683333333333337,28:41,JD Gaming,Anyone s Legend,Anyone s Legend
 81388-1,81388,,LPL,81388,LPL 2026 Split 3,WEEK4,2026-08-14,1,16.15,39.233333333333334,39:14,Top Esports,Team WE,Team WE
-81388-2,81389,,LPL,81388,LPL 2026 Split 3,WEEK4,2026-08-14,2,16.15,24.933333333333334,24:56,Team WE,Top Esports,Team WE
+81388-2,81389,,LPL,81388,LPL 2026 Split 3,WEEK4,2026-08-14,2,16.15,24.933333333333337,24:56,Team WE,Top Esports,Team WE
 81385-1,81385,,LPL,81385,LPL 2026 Split 3,WEEK4,2026-08-14,1,16.15,30.916666666666668,30:55,LGD Gaming,EDward Gaming,LGD Gaming
 81385-2,81386,,LPL,81385,LPL 2026 Split 3,WEEK4,2026-08-14,2,16.15,24.833333333333332,24:50,LGD Gaming,EDward Gaming,LGD Gaming
 81382-1,81382,,LPL,81382,LPL 2026 Split 3,WEEK4,2026-08-13,1,16.15,29.5,29:30,Bilibili Gaming,ThunderTalk Gaming,Bilibili Gaming
@@ -422,7 +422,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81376-2,81377,,LPL,81376,LPL 2026 Split 3,WEEK4,2026-08-13,2,16.15,30.65,30:39,Ninjas in Pyjamas,Weibo Gaming,Weibo Gaming
 81376-3,81378,,LPL,81376,LPL 2026 Split 3,WEEK4,2026-08-13,3,16.15,32.78333333333333,32:47,Weibo Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
 81373-1,81373,,LPL,81373,LPL 2026 Split 3,WEEK4,2026-08-12,1,16.15,30.866666666666667,30:52,JD Gaming,Bilibili Gaming,Bilibili Gaming
-81373-2,81374,,LPL,81373,LPL 2026 Split 3,WEEK4,2026-08-12,2,16.15,26.433333333333334,26:26,Bilibili Gaming,JD Gaming,JD Gaming
+81373-2,81374,,LPL,81373,LPL 2026 Split 3,WEEK4,2026-08-12,2,16.15,26.433333333333337,26:26,Bilibili Gaming,JD Gaming,JD Gaming
 81373-3,81375,,LPL,81373,LPL 2026 Split 3,WEEK4,2026-08-12,3,16.15,35.15,35:09,JD Gaming,Bilibili Gaming,JD Gaming
 81370-1,81370,,LPL,81370,LPL 2026 Split 3,WEEK4,2026-08-12,1,16.15,42.4,42:24,Anyone s Legend,EDward Gaming,EDward Gaming
 81370-2,81371,,LPL,81370,LPL 2026 Split 3,WEEK4,2026-08-12,2,16.15,26.55,26:33,EDward Gaming,Anyone s Legend,Anyone s Legend
@@ -452,7 +452,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80990-2,80991,,LPL,80990,LPL 2026 Split 3,WEEK3,2026-08-06,2,16.15,31.133333333333333,31:08,Invictus Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
 80990-3,80992,,LPL,80990,LPL 2026 Split 3,WEEK3,2026-08-06,3,16.15,46.86666666666667,46:52,Ninjas in Pyjamas,Invictus Gaming,Ninjas in Pyjamas
 80987-1,80987,,LPL,80987,LPL 2026 Split 3,WEEK3,2026-08-06,1,16.15,34.916666666666664,34:55,ThunderTalk Gaming,LGD Gaming,LGD Gaming
-80987-2,80988,,LPL,80987,LPL 2026 Split 3,WEEK3,2026-08-06,2,16.15,30.816666666666666,30:49,LGD Gaming,ThunderTalk Gaming,ThunderTalk Gaming
+80987-2,80988,,LPL,80987,LPL 2026 Split 3,WEEK3,2026-08-06,2,16.15,30.816666666666663,30:49,LGD Gaming,ThunderTalk Gaming,ThunderTalk Gaming
 80987-3,80989,,LPL,80987,LPL 2026 Split 3,WEEK3,2026-08-06,3,16.15,32.2,32:12,ThunderTalk Gaming,LGD Gaming,ThunderTalk Gaming
 80984-1,80984,,LPL,80984,LPL 2026 Split 3,WEEK3,2026-08-05,1,16.15,29.85,29:51,EDward Gaming,Top Esports,Top Esports
 80984-2,80985,,LPL,80984,LPL 2026 Split 3,WEEK3,2026-08-05,2,16.15,39.6,39:36,Top Esports,EDward Gaming,Top Esports
@@ -469,7 +469,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80618-1,80618,,LPL,80618,LPL 2026 Split 3,WEEK2,2026-08-01,1,16.14,33.833333333333336,33:50,Bilibili Gaming,JD Gaming,Bilibili Gaming
 80618-2,80619,,LPL,80618,LPL 2026 Split 3,WEEK2,2026-08-01,2,16.14,31.266666666666666,31:16,Bilibili Gaming,JD Gaming,Bilibili Gaming
 80615-1,80615,,LPL,80615,LPL 2026 Split 3,WEEK2,2026-08-01,1,16.14,26.266666666666666,26:16,Top Esports,LGD Gaming,LGD Gaming
-80615-2,80616,,LPL,80615,LPL 2026 Split 3,WEEK2,2026-08-01,2,16.14,26.433333333333334,26:26,LGD Gaming,Top Esports,Top Esports
+80615-2,80616,,LPL,80615,LPL 2026 Split 3,WEEK2,2026-08-01,2,16.14,26.433333333333337,26:26,LGD Gaming,Top Esports,Top Esports
 80615-3,80617,,LPL,80615,LPL 2026 Split 3,WEEK2,2026-08-01,3,16.14,31.983333333333334,31:59,Top Esports,LGD Gaming,Top Esports
 80612-1,80612,,LPL,80612,LPL 2026 Split 3,WEEK2,2026-08-01,1,16.14,21.916666666666668,21:55,ThunderTalk Gaming,Anyone s Legend,Anyone s Legend
 80612-2,80613,,LPL,80612,LPL 2026 Split 3,WEEK2,2026-08-01,2,16.14,24.15,24:09,Anyone s Legend,ThunderTalk Gaming,Anyone s Legend
@@ -480,7 +480,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80603-1,80603,,LPL,80603,LPL 2026 Split 3,WEEK2,2026-07-30,1,16.14,33.016666666666666,33:01,JD Gaming,ThunderTalk Gaming,ThunderTalk Gaming
 80603-2,80604,,LPL,80603,LPL 2026 Split 3,WEEK2,2026-07-30,2,16.14,27.4,27:24,ThunderTalk Gaming,JD Gaming,JD Gaming
 80603-3,80605,,LPL,80603,LPL 2026 Split 3,WEEK2,2026-07-30,3,16.14,32.68333333333333,32:41,JD Gaming,ThunderTalk Gaming,JD Gaming
-80600-1,80600,,LPL,80600,LPL 2026 Split 3,WEEK2,2026-07-30,1,16.14,30.816666666666666,30:49,Team WE,EDward Gaming,Team WE
+80600-1,80600,,LPL,80600,LPL 2026 Split 3,WEEK2,2026-07-30,1,16.14,30.816666666666663,30:49,Team WE,EDward Gaming,Team WE
 80600-2,80601,,LPL,80600,LPL 2026 Split 3,WEEK2,2026-07-30,2,16.14,37.85,37:51,Team WE,EDward Gaming,Team WE
 80597-1,80597,,LPL,80597,LPL 2026 Split 3,WEEK2,2026-07-30,1,16.14,29.8,29:48,Weibo Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
 80597-2,80598,,LPL,80597,LPL 2026 Split 3,WEEK2,2026-07-30,2,16.14,29.783333333333335,29:47,Ninjas in Pyjamas,Weibo Gaming,Ninjas in Pyjamas
@@ -512,9 +512,9 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80198-3,80200,,LPL,80198,LPL 2026 Split 3,WEEK1,2026-07-24,3,16.14,30.4,30:24,JD Gaming,Team WE,Team WE
 80195-1,80195,,LPL,80195,LPL 2026 Split 3,WEEK1,2026-07-24,1,16.14,29.85,29:51,LGD Gaming,Anyone s Legend,Anyone s Legend
 80195-2,80196,,LPL,80195,LPL 2026 Split 3,WEEK1,2026-07-24,2,16.14,31.233333333333334,31:14,Anyone s Legend,LGD Gaming,Anyone s Legend
-80192-1,80192,,LPL,80192,LPL 2026 Split 3,WEEK1,2026-07-23,1,16.14,30.433333333333334,30:26,ThunderTalk Gaming,Bilibili Gaming,Bilibili Gaming
-80192-2,80193,,LPL,80192,LPL 2026 Split 3,WEEK1,2026-07-23,2,16.14,28.566666666666666,28:34,Bilibili Gaming,ThunderTalk Gaming,ThunderTalk Gaming
-80192-3,80194,,LPL,80192,LPL 2026 Split 3,WEEK1,2026-07-23,3,16.14,29.683333333333334,29:41,ThunderTalk Gaming,Bilibili Gaming,Bilibili Gaming
+80192-1,80192,,LPL,80192,LPL 2026 Split 3,WEEK1,2026-07-23,1,16.14,30.433333333333337,30:26,ThunderTalk Gaming,Bilibili Gaming,Bilibili Gaming
+80192-2,80193,,LPL,80192,LPL 2026 Split 3,WEEK1,2026-07-23,2,16.14,28.566666666666663,28:34,Bilibili Gaming,ThunderTalk Gaming,ThunderTalk Gaming
+80192-3,80194,,LPL,80192,LPL 2026 Split 3,WEEK1,2026-07-23,3,16.14,29.683333333333337,29:41,ThunderTalk Gaming,Bilibili Gaming,Bilibili Gaming
 80189-1,80189,,LPL,80189,LPL 2026 Split 3,WEEK1,2026-07-23,1,16.14,29.75,29:45,JD Gaming,Anyone s Legend,JD Gaming
 80189-2,80190,,LPL,80189,LPL 2026 Split 3,WEEK1,2026-07-23,2,16.14,36.15,36:09,JD Gaming,Anyone s Legend,Anyone s Legend
 80189-3,80191,,LPL,80189,LPL 2026 Split 3,WEEK1,2026-07-23,3,16.14,56.4,56:24,JD Gaming,Anyone s Legend,Anyone s Legend
@@ -522,81 +522,81 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80186-2,80187,,LPL,80186,LPL 2026 Split 3,WEEK1,2026-07-22,2,16.13,29.15,29:09,Top Esports,Team WE,Top Esports
 80183-1,80183,,LPL,80183,LPL 2026 Split 3,WEEK1,2026-07-22,1,16.13,41.81666666666667,41:49,EDward Gaming,LGD Gaming,LGD Gaming
 80183-2,80184,,LPL,80183,LPL 2026 Split 3,WEEK1,2026-07-22,2,16.13,37.6,37:36,LGD Gaming,EDward Gaming,LGD Gaming
-79523-1,79523,,LPL,79523,LPL 2026 Split 2 Playoffs,FINALS,2026-06-14,1,16.10,25.016666666666666,25:01,Top Esports,Bilibili Gaming,Bilibili Gaming
-79523-2,79524,,LPL,79523,LPL 2026 Split 2 Playoffs,FINALS,2026-06-14,2,16.10,40.3,40:18,Bilibili Gaming,Top Esports,Bilibili Gaming
-79523-3,79525,,LPL,79523,LPL 2026 Split 2 Playoffs,FINALS,2026-06-14,3,16.10,28.7,28:42,Bilibili Gaming,Top Esports,Bilibili Gaming
-79333-1,79333,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,1,16.10,26.8,26:48,Team WE,Bilibili Gaming,Bilibili Gaming
-79333-2,79334,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,2,16.10,32.516666666666666,32:31,Bilibili Gaming,Team WE,Team WE
-79333-3,79335,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,3,16.10,32.2,32:12,Bilibili Gaming,Team WE,Team WE
-79333-4,79336,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,4,16.10,36.333333333333336,36:20,Bilibili Gaming,Team WE,Bilibili Gaming
-79333-5,79337,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,5,16.10,33.63333333333333,33:38,Bilibili Gaming,Team WE,Bilibili Gaming
-79290-1,79290,,LPL,79290,LPL 2026 Split 2 Playoffs,ROUND3,2026-06-08,1,16.10,41.13333333333333,41:08,Anyone s Legend,Bilibili Gaming,Bilibili Gaming
-79290-2,79291,,LPL,79290,LPL 2026 Split 2 Playoffs,ROUND3,2026-06-08,2,16.10,32.86666666666667,32:52,Bilibili Gaming,Anyone s Legend,Bilibili Gaming
-79290-3,79292,,LPL,79290,LPL 2026 Split 2 Playoffs,ROUND3,2026-06-08,3,16.10,29.75,29:45,Bilibili Gaming,Anyone s Legend,Bilibili Gaming
-79240-1,79240,,LPL,79240,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-07,1,16.10,33.55,33:33,Top Esports,Team WE,Top Esports
-79240-2,79241,,LPL,79240,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-07,2,16.10,29.816666666666666,29:49,Top Esports,Team WE,Top Esports
-79240-3,79242,,LPL,79240,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-07,3,16.10,29.483333333333334,29:29,Top Esports,Team WE,Top Esports
-79235-1,79235,,LPL,79235,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-06,1,16.10,37.06666666666667,37:04,JD Gaming,Bilibili Gaming,Bilibili Gaming
-79235-2,79236,,LPL,79235,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-06,2,16.10,32.46666666666667,32:28,JD Gaming,Bilibili Gaming,JD Gaming
-79235-3,79237,,LPL,79235,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-06,3,16.10,35.5,35:30,JD Gaming,Bilibili Gaming,Bilibili Gaming
-79235-4,79238,,LPL,79235,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-06,4,16.10,34.35,34:21,Bilibili Gaming,JD Gaming,Bilibili Gaming
-79230-1,79230,,LPL,79230,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-05,1,16.10,35.4,35:24,LGD Gaming,Anyone s Legend,Anyone s Legend
-79230-2,79231,,LPL,79230,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-05,2,16.10,34.1,34:06,LGD Gaming,Anyone s Legend,Anyone s Legend
-79230-3,79232,,LPL,79230,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-05,3,16.10,39.56666666666667,39:34,LGD Gaming,Anyone s Legend,Anyone s Legend
-79117-1,79117,,LPL,79117,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-03,1,16.10,29.5,29:30,Bilibili Gaming,EDward Gaming,Bilibili Gaming
-79117-2,79118,,LPL,79117,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-03,2,16.10,28.183333333333334,28:11,Bilibili Gaming,EDward Gaming,Bilibili Gaming
-79117-3,79119,,LPL,79117,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-03,3,16.10,36.61666666666667,36:37,Bilibili Gaming,EDward Gaming,Bilibili Gaming
-79112-1,79112,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,1,16.10,27.416666666666668,27:25,ThunderTalk Gaming,LGD Gaming,LGD Gaming
-79112-2,79113,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,2,16.10,27.516666666666666,27:31,ThunderTalk Gaming,LGD Gaming,LGD Gaming
-79112-3,79114,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,3,16.10,29.1,29:06,ThunderTalk Gaming,LGD Gaming,ThunderTalk Gaming
-79112-4,79115,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,4,16.10,41.25,41:15,ThunderTalk Gaming,LGD Gaming,ThunderTalk Gaming
-79112-5,79116,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,5,16.10,32.31666666666667,32:19,ThunderTalk Gaming,LGD Gaming,LGD Gaming
-79127-1,79127,,LPL,79127,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-01,1,16.10,29.583333333333332,29:35,Anyone s Legend,Team WE,Team WE
-79127-2,79128,,LPL,79127,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-01,2,16.10,31.883333333333333,31:53,Team WE,Anyone s Legend,Team WE
-79127-3,79129,,LPL,79127,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-01,3,16.10,27.55,27:33,Anyone s Legend,Team WE,Team WE
-79122-1,79122,,LPL,79122,LPL 2026 Split 2 Playoffs,ROUND2,2026-05-31,1,16.10,24.266666666666666,24:16,Top Esports,JD Gaming,JD Gaming
-79122-2,79123,,LPL,79122,LPL 2026 Split 2 Playoffs,ROUND2,2026-05-31,2,16.10,32.7,32:42,JD Gaming,Top Esports,Top Esports
-79122-3,79124,,LPL,79122,LPL 2026 Split 2 Playoffs,ROUND2,2026-05-31,3,16.10,30.2,30:12,Top Esports,JD Gaming,Top Esports
-79122-4,79125,,LPL,79122,LPL 2026 Split 2 Playoffs,ROUND2,2026-05-31,4,16.10,35.06666666666667,35:04,JD Gaming,Top Esports,Top Esports
-78867-1,78867,,LPL,78867,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,1,16.10,33.35,33:21,Bilibili Gaming,Team WE,Team WE
-78867-2,78868,,LPL,78867,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,2,16.10,37.983333333333334,37:59,Team WE,Bilibili Gaming,Bilibili Gaming
-78867-3,78869,,LPL,78867,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,3,16.10,45.13333333333333,45:08,Bilibili Gaming,Team WE,Team WE
-78867-4,78870,,LPL,78867,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,4,16.10,36.38333333333333,36:23,Bilibili Gaming,Team WE,Team WE
-78862-1,78862,,LPL,78862,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,1,16.10,37.016666666666666,37:01,Anyone s Legend,EDward Gaming,Anyone s Legend
-78862-2,78863,,LPL,78862,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,2,16.10,27.666666666666668,27:40,Anyone s Legend,EDward Gaming,Anyone s Legend
-78862-3,78864,,LPL,78862,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,3,16.10,36.88333333333333,36:53,Anyone s Legend,EDward Gaming,Anyone s Legend
-78857-1,78857,,LPL,78857,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,1,16.10,27.733333333333334,27:44,Top Esports,LGD Gaming,Top Esports
-78857-2,78858,,LPL,78857,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,2,16.10,30.783333333333335,30:47,Top Esports,LGD Gaming,Top Esports
-78857-3,78859,,LPL,78857,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,3,16.10,32.2,32:12,LGD Gaming,Top Esports,Top Esports
-78852-1,78852,,LPL,78852,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,1,16.10,25.8,25:48,JD Gaming,ThunderTalk Gaming,ThunderTalk Gaming
-78852-2,78853,,LPL,78852,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,2,16.10,35.61666666666667,35:37,ThunderTalk Gaming,JD Gaming,JD Gaming
-78852-3,78854,,LPL,78852,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,3,16.10,30.05,30:03,JD Gaming,ThunderTalk Gaming,JD Gaming
-78852-4,78855,,LPL,78852,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,4,16.10,31.3,31:18,ThunderTalk Gaming,JD Gaming,JD Gaming
-78374-1,78374,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,1,16.10,28.266666666666666,28:16,LGD Gaming,Weibo Gaming,LGD Gaming
-78374-2,78375,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,2,16.10,25.95,25:57,Weibo Gaming,LGD Gaming,LGD Gaming
-78374-3,78376,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,3,16.10,33.43333333333333,33:26,LGD Gaming,Weibo Gaming,Weibo Gaming
-78374-4,78377,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,4,16.10,37.35,37:21,Weibo Gaming,LGD Gaming,Weibo Gaming
-78374-5,78378,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,5,16.10,31.366666666666667,31:22,Weibo Gaming,LGD Gaming,LGD Gaming
-78369-1,78369,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,1,16.10,29.85,29:51,EDward Gaming,Ninjas in Pyjamas,EDward Gaming
-78369-2,78370,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,2,16.10,44.38333333333333,44:23,EDward Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
-78369-3,78371,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,3,16.10,36.53333333333333,36:32,Ninjas in Pyjamas,EDward Gaming,EDward Gaming
-78369-4,78372,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,4,16.10,40.21666666666667,40:13,EDward Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
-78369-5,78373,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,5,16.10,37.4,37:24,Ninjas in Pyjamas,EDward Gaming,EDward Gaming
-78364-1,78364,,LPL,78364,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,1,16.10,28.8,28:48,ThunderTalk Gaming,Invictus Gaming,ThunderTalk Gaming
-78364-2,78365,,LPL,78364,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,2,16.10,26.183333333333334,26:11,ThunderTalk Gaming,Invictus Gaming,ThunderTalk Gaming
-78364-3,78366,,LPL,78364,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,3,16.10,32.71666666666667,32:43,Invictus Gaming,ThunderTalk Gaming,ThunderTalk Gaming
-78359-1,78359,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,1,16.10,30.266666666666666,30:16,LNG Esports,Team WE,Team WE
-78359-2,78360,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,2,16.10,35.733333333333334,35:44,Team WE,LNG Esports,LNG Esports
-78359-3,78361,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,3,16.10,33.083333333333336,33:05,LNG Esports,Team WE,LNG Esports
-78359-4,78362,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,4,16.10,27.75,27:45,LNG Esports,Team WE,Team WE
-78359-5,78363,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,5,16.10,37.88333333333333,37:53,LNG Esports,Team WE,Team WE
+79523-1,79523,,LPL,79523,LPL 2026 Split 2 Playoffs,FINALS,2026-06-14,1,16.1,25.016666666666666,25:01,Top Esports,Bilibili Gaming,Bilibili Gaming
+79523-2,79524,,LPL,79523,LPL 2026 Split 2 Playoffs,FINALS,2026-06-14,2,16.1,40.3,40:18,Bilibili Gaming,Top Esports,Bilibili Gaming
+79523-3,79525,,LPL,79523,LPL 2026 Split 2 Playoffs,FINALS,2026-06-14,3,16.1,28.7,28:42,Bilibili Gaming,Top Esports,Bilibili Gaming
+79333-1,79333,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,1,16.1,26.8,26:48,Team WE,Bilibili Gaming,Bilibili Gaming
+79333-2,79334,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,2,16.1,32.516666666666666,32:31,Bilibili Gaming,Team WE,Team WE
+79333-3,79335,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,3,16.1,32.2,32:12,Bilibili Gaming,Team WE,Team WE
+79333-4,79336,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,4,16.1,36.333333333333336,36:20,Bilibili Gaming,Team WE,Bilibili Gaming
+79333-5,79337,,LPL,79333,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-13,5,16.1,33.63333333333333,33:38,Bilibili Gaming,Team WE,Bilibili Gaming
+79290-1,79290,,LPL,79290,LPL 2026 Split 2 Playoffs,ROUND3,2026-06-08,1,16.1,41.13333333333333,41:08,Anyone s Legend,Bilibili Gaming,Bilibili Gaming
+79290-2,79291,,LPL,79290,LPL 2026 Split 2 Playoffs,ROUND3,2026-06-08,2,16.1,32.86666666666667,32:52,Bilibili Gaming,Anyone s Legend,Bilibili Gaming
+79290-3,79292,,LPL,79290,LPL 2026 Split 2 Playoffs,ROUND3,2026-06-08,3,16.1,29.75,29:45,Bilibili Gaming,Anyone s Legend,Bilibili Gaming
+79240-1,79240,,LPL,79240,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-07,1,16.1,33.55,33:33,Top Esports,Team WE,Top Esports
+79240-2,79241,,LPL,79240,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-07,2,16.1,29.816666666666663,29:49,Top Esports,Team WE,Top Esports
+79240-3,79242,,LPL,79240,LPL 2026 Split 2 Playoffs,ROUND4,2026-06-07,3,16.1,29.483333333333334,29:29,Top Esports,Team WE,Top Esports
+79235-1,79235,,LPL,79235,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-06,1,16.1,37.06666666666667,37:04,JD Gaming,Bilibili Gaming,Bilibili Gaming
+79235-2,79236,,LPL,79235,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-06,2,16.1,32.46666666666667,32:28,JD Gaming,Bilibili Gaming,JD Gaming
+79235-3,79237,,LPL,79235,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-06,3,16.1,35.5,35:30,JD Gaming,Bilibili Gaming,Bilibili Gaming
+79235-4,79238,,LPL,79235,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-06,4,16.1,34.35,34:21,Bilibili Gaming,JD Gaming,Bilibili Gaming
+79230-1,79230,,LPL,79230,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-05,1,16.1,35.4,35:24,LGD Gaming,Anyone s Legend,Anyone s Legend
+79230-2,79231,,LPL,79230,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-05,2,16.1,34.1,34:06,LGD Gaming,Anyone s Legend,Anyone s Legend
+79230-3,79232,,LPL,79230,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-05,3,16.1,39.56666666666667,39:34,LGD Gaming,Anyone s Legend,Anyone s Legend
+79117-1,79117,,LPL,79117,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-03,1,16.1,29.5,29:30,Bilibili Gaming,EDward Gaming,Bilibili Gaming
+79117-2,79118,,LPL,79117,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-03,2,16.1,28.183333333333337,28:11,Bilibili Gaming,EDward Gaming,Bilibili Gaming
+79117-3,79119,,LPL,79117,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-03,3,16.1,36.61666666666667,36:37,Bilibili Gaming,EDward Gaming,Bilibili Gaming
+79112-1,79112,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,1,16.1,27.416666666666668,27:25,ThunderTalk Gaming,LGD Gaming,LGD Gaming
+79112-2,79113,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,2,16.1,27.516666666666666,27:31,ThunderTalk Gaming,LGD Gaming,LGD Gaming
+79112-3,79114,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,3,16.1,29.1,29:06,ThunderTalk Gaming,LGD Gaming,ThunderTalk Gaming
+79112-4,79115,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,4,16.1,41.25,41:15,ThunderTalk Gaming,LGD Gaming,ThunderTalk Gaming
+79112-5,79116,,LPL,79112,LPL 2026 Split 2 Playoffs,ROUND1,2026-06-02,5,16.1,32.31666666666667,32:19,ThunderTalk Gaming,LGD Gaming,LGD Gaming
+79127-1,79127,,LPL,79127,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-01,1,16.1,29.583333333333332,29:35,Anyone s Legend,Team WE,Team WE
+79127-2,79128,,LPL,79127,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-01,2,16.1,31.883333333333333,31:53,Team WE,Anyone s Legend,Team WE
+79127-3,79129,,LPL,79127,LPL 2026 Split 2 Playoffs,ROUND2,2026-06-01,3,16.1,27.55,27:33,Anyone s Legend,Team WE,Team WE
+79122-1,79122,,LPL,79122,LPL 2026 Split 2 Playoffs,ROUND2,2026-05-31,1,16.1,24.266666666666666,24:16,Top Esports,JD Gaming,JD Gaming
+79122-2,79123,,LPL,79122,LPL 2026 Split 2 Playoffs,ROUND2,2026-05-31,2,16.1,32.7,32:42,JD Gaming,Top Esports,Top Esports
+79122-3,79124,,LPL,79122,LPL 2026 Split 2 Playoffs,ROUND2,2026-05-31,3,16.1,30.2,30:12,Top Esports,JD Gaming,Top Esports
+79122-4,79125,,LPL,79122,LPL 2026 Split 2 Playoffs,ROUND2,2026-05-31,4,16.1,35.06666666666667,35:04,JD Gaming,Top Esports,Top Esports
+78867-1,78867,,LPL,78867,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,1,16.1,33.35,33:21,Bilibili Gaming,Team WE,Team WE
+78867-2,78868,,LPL,78867,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,2,16.1,37.983333333333334,37:59,Team WE,Bilibili Gaming,Bilibili Gaming
+78867-3,78869,,LPL,78867,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,3,16.1,45.13333333333333,45:08,Bilibili Gaming,Team WE,Team WE
+78867-4,78870,,LPL,78867,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,4,16.1,36.38333333333333,36:23,Bilibili Gaming,Team WE,Team WE
+78862-1,78862,,LPL,78862,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,1,16.1,37.016666666666666,37:01,Anyone s Legend,EDward Gaming,Anyone s Legend
+78862-2,78863,,LPL,78862,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,2,16.1,27.666666666666668,27:40,Anyone s Legend,EDward Gaming,Anyone s Legend
+78862-3,78864,,LPL,78862,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-30,3,16.1,36.88333333333333,36:53,Anyone s Legend,EDward Gaming,Anyone s Legend
+78857-1,78857,,LPL,78857,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,1,16.1,27.733333333333334,27:44,Top Esports,LGD Gaming,Top Esports
+78857-2,78858,,LPL,78857,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,2,16.1,30.783333333333335,30:47,Top Esports,LGD Gaming,Top Esports
+78857-3,78859,,LPL,78857,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,3,16.1,32.2,32:12,LGD Gaming,Top Esports,Top Esports
+78852-1,78852,,LPL,78852,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,1,16.1,25.8,25:48,JD Gaming,ThunderTalk Gaming,ThunderTalk Gaming
+78852-2,78853,,LPL,78852,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,2,16.1,35.61666666666667,35:37,ThunderTalk Gaming,JD Gaming,JD Gaming
+78852-3,78854,,LPL,78852,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,3,16.1,30.05,30:03,JD Gaming,ThunderTalk Gaming,JD Gaming
+78852-4,78855,,LPL,78852,LPL 2026 Split 2 Playoffs,ROUND1,2026-05-29,4,16.1,31.3,31:18,ThunderTalk Gaming,JD Gaming,JD Gaming
+78374-1,78374,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,1,16.1,28.266666666666666,28:16,LGD Gaming,Weibo Gaming,LGD Gaming
+78374-2,78375,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,2,16.1,25.95,25:57,Weibo Gaming,LGD Gaming,LGD Gaming
+78374-3,78376,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,3,16.1,33.43333333333333,33:26,LGD Gaming,Weibo Gaming,Weibo Gaming
+78374-4,78377,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,4,16.1,37.35,37:21,Weibo Gaming,LGD Gaming,Weibo Gaming
+78374-5,78378,,LPL,78374,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,5,16.1,31.366666666666667,31:22,Weibo Gaming,LGD Gaming,LGD Gaming
+78369-1,78369,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,1,16.1,29.85,29:51,EDward Gaming,Ninjas in Pyjamas,EDward Gaming
+78369-2,78370,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,2,16.1,44.38333333333333,44:23,EDward Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
+78369-3,78371,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,3,16.1,36.53333333333333,36:32,Ninjas in Pyjamas,EDward Gaming,EDward Gaming
+78369-4,78372,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,4,16.1,40.21666666666667,40:13,EDward Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
+78369-5,78373,,LPL,78369,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-24,5,16.1,37.4,37:24,Ninjas in Pyjamas,EDward Gaming,EDward Gaming
+78364-1,78364,,LPL,78364,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,1,16.1,28.8,28:48,ThunderTalk Gaming,Invictus Gaming,ThunderTalk Gaming
+78364-2,78365,,LPL,78364,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,2,16.1,26.183333333333337,26:11,ThunderTalk Gaming,Invictus Gaming,ThunderTalk Gaming
+78364-3,78366,,LPL,78364,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,3,16.1,32.71666666666667,32:43,Invictus Gaming,ThunderTalk Gaming,ThunderTalk Gaming
+78359-1,78359,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,1,16.1,30.266666666666666,30:16,LNG Esports,Team WE,Team WE
+78359-2,78360,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,2,16.1,35.733333333333334,35:44,Team WE,LNG Esports,LNG Esports
+78359-3,78361,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,3,16.1,33.083333333333336,33:05,LNG Esports,Team WE,LNG Esports
+78359-4,78362,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,4,16.1,27.75,27:45,LNG Esports,Team WE,Team WE
+78359-5,78363,,LPL,78359,LPL 2026 Split 2 Playoffs,PLAY-IN,2026-05-23,5,16.1,37.88333333333333,37:53,LNG Esports,Team WE,Team WE
 78117-1,78117,,LPL,78117,LPL 2026 Split 2,WEEK7,2026-05-17,1,16.9,33.233333333333334,33:14,Bilibili Gaming,Anyone s Legend,Bilibili Gaming
 78117-2,78118,,LPL,78117,LPL 2026 Split 2,WEEK7,2026-05-17,2,16.9,31.716666666666665,31:43,Anyone s Legend,Bilibili Gaming,Bilibili Gaming
 78114-1,78114,,LPL,78114,LPL 2026 Split 2,WEEK7,2026-05-17,1,16.9,37.083333333333336,37:05,Invictus Gaming,JD Gaming,Invictus Gaming
 78114-2,78115,,LPL,78114,LPL 2026 Split 2,WEEK7,2026-05-17,2,16.9,28.966666666666665,28:58,Invictus Gaming,JD Gaming,JD Gaming
 78114-3,78116,,LPL,78114,LPL 2026 Split 2,WEEK7,2026-05-17,3,16.9,30.9,30:54,JD Gaming,Invictus Gaming,JD Gaming
 78111-1,78111,,LPL,78111,LPL 2026 Split 2,WEEK7,2026-05-16,1,16.9,41.36666666666667,41:22,Team WE,Ninjas in Pyjamas,Ninjas in Pyjamas
-78111-2,78112,,LPL,78111,LPL 2026 Split 2,WEEK7,2026-05-16,2,16.9,27.183333333333334,27:11,Team WE,Ninjas in Pyjamas,Team WE
+78111-2,78112,,LPL,78111,LPL 2026 Split 2,WEEK7,2026-05-16,2,16.9,27.183333333333337,27:11,Team WE,Ninjas in Pyjamas,Team WE
 78111-3,78113,,LPL,78111,LPL 2026 Split 2,WEEK7,2026-05-16,3,16.9,23.783333333333335,23:47,Team WE,Ninjas in Pyjamas,Ninjas in Pyjamas
 78108-1,78108,,LPL,78108,LPL 2026 Split 2,WEEK7,2026-05-16,1,16.9,30.8,30:48,ThunderTalk Gaming,EDward Gaming,ThunderTalk Gaming
 78108-2,78109,,LPL,78108,LPL 2026 Split 2,WEEK7,2026-05-16,2,16.9,35.13333333333333,35:08,ThunderTalk Gaming,EDward Gaming,EDward Gaming
@@ -624,7 +624,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 78084-3,78086,,LPL,78084,LPL 2026 Split 2,WEEK7,2026-05-12,3,16.9,29.483333333333334,29:29,Top Esports,Ninjas in Pyjamas,Ninjas in Pyjamas
 77735-1,77735,,LPL,77735,LPL 2026 Split 2,WEEK6,2026-05-10,1,16.9,43.266666666666666,43:16,JD Gaming,Anyone s Legend,JD Gaming
 77735-2,77736,,LPL,77735,LPL 2026 Split 2,WEEK6,2026-05-10,2,16.9,28.983333333333334,28:59,Anyone s Legend,JD Gaming,Anyone s Legend
-77735-3,77737,,LPL,77735,LPL 2026 Split 2,WEEK6,2026-05-10,3,16.9,24.816666666666666,24:49,JD Gaming,Anyone s Legend,JD Gaming
+77735-3,77737,,LPL,77735,LPL 2026 Split 2,WEEK6,2026-05-10,3,16.9,24.816666666666663,24:49,JD Gaming,Anyone s Legend,JD Gaming
 77732-1,77732,,LPL,77732,LPL 2026 Split 2,WEEK6,2026-05-10,1,16.9,40.266666666666666,40:16,Ninjas in Pyjamas,Weibo Gaming,Weibo Gaming
 77732-2,77733,,LPL,77732,LPL 2026 Split 2,WEEK6,2026-05-10,2,16.9,36.45,36:27,Weibo Gaming,Ninjas in Pyjamas,Weibo Gaming
 77729-1,77729,,LPL,77729,LPL 2026 Split 2,WEEK6,2026-05-09,1,16.9,34.96666666666667,34:58,Team WE,Top Esports,Top Esports
@@ -642,7 +642,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 77714-2,77715,,LPL,77714,LPL 2026 Split 2,WEEK6,2026-05-07,2,16.9,33.0,33:00,Team WE,Weibo Gaming,Team WE
 77714-3,77716,,LPL,77714,LPL 2026 Split 2,WEEK6,2026-05-07,3,16.9,35.53333333333333,35:32,Team WE,Weibo Gaming,Weibo Gaming
 77711-1,77711,,LPL,77711,LPL 2026 Split 2,WEEK6,2026-05-06,1,16.9,26.4,26:24,JD Gaming,Top Esports,JD Gaming
-77711-2,77712,,LPL,77711,LPL 2026 Split 2,WEEK6,2026-05-06,2,16.9,24.066666666666666,24:04,JD Gaming,Top Esports,Top Esports
+77711-2,77712,,LPL,77711,LPL 2026 Split 2,WEEK6,2026-05-06,2,16.9,24.066666666666663,24:04,JD Gaming,Top Esports,Top Esports
 77711-3,77713,,LPL,77711,LPL 2026 Split 2,WEEK6,2026-05-06,3,16.9,26.533333333333335,26:32,JD Gaming,Top Esports,JD Gaming
 77708-1,77708,,LPL,77708,LPL 2026 Split 2,WEEK6,2026-05-06,1,16.9,32.78333333333333,32:47,Team WE,Invictus Gaming,Team WE
 77708-2,77709,,LPL,77708,LPL 2026 Split 2,WEEK6,2026-05-06,2,16.9,23.033333333333335,23:02,Team WE,Invictus Gaming,Invictus Gaming
@@ -650,16 +650,16 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 77241-1,77241,,LPL,77241,LPL 2026 Split 2,WEEK5,2026-05-03,1,16.9,39.45,39:27,Ninjas in Pyjamas,Bilibili Gaming,Bilibili Gaming
 77241-2,77242,,LPL,77241,LPL 2026 Split 2,WEEK5,2026-05-03,2,16.9,33.916666666666664,33:55,Bilibili Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
 77241-3,77243,,LPL,77241,LPL 2026 Split 2,WEEK5,2026-05-03,3,16.9,35.56666666666667,35:34,Ninjas in Pyjamas,Bilibili Gaming,Bilibili Gaming
-77238-1,77238,,LPL,77238,LPL 2026 Split 2,WEEK5,2026-05-03,1,16.9,28.183333333333334,28:11,LNG Esports,ThunderTalk Gaming,LNG Esports
+77238-1,77238,,LPL,77238,LPL 2026 Split 2,WEEK5,2026-05-03,1,16.9,28.183333333333337,28:11,LNG Esports,ThunderTalk Gaming,LNG Esports
 77238-2,77239,,LPL,77238,LPL 2026 Split 2,WEEK5,2026-05-03,2,16.9,32.833333333333336,32:50,LNG Esports,ThunderTalk Gaming,ThunderTalk Gaming
 77238-3,77240,,LPL,77238,LPL 2026 Split 2,WEEK5,2026-05-03,3,16.9,23.466666666666665,23:28,ThunderTalk Gaming,LNG Esports,LNG Esports
-77235-1,77235,,LPL,77235,LPL 2026 Split 2,WEEK5,2026-05-02,1,16.8,25.316666666666666,25:19,Invictus Gaming,Anyone s Legend,Anyone s Legend
+77235-1,77235,,LPL,77235,LPL 2026 Split 2,WEEK5,2026-05-02,1,16.8,25.316666666666663,25:19,Invictus Gaming,Anyone s Legend,Anyone s Legend
 77235-2,77236,,LPL,77235,LPL 2026 Split 2,WEEK5,2026-05-02,2,16.8,27.983333333333334,27:59,Anyone s Legend,Invictus Gaming,Anyone s Legend
 77232-1,77232,,LPL,77232,LPL 2026 Split 2,WEEK5,2026-05-02,1,16.8,25.916666666666668,25:55,Weibo Gaming,Top Esports,Top Esports
 77232-2,77233,,LPL,77232,LPL 2026 Split 2,WEEK5,2026-05-02,2,16.8,29.033333333333335,29:02,Top Esports,Weibo Gaming,Top Esports
 77229-1,77229,,LPL,77229,LPL 2026 Split 2,WEEK5,2026-05-02,1,16.8,37.45,37:27,Team WE,JD Gaming,Team WE
 77229-2,77230,,LPL,77229,LPL 2026 Split 2,WEEK5,2026-05-02,2,16.8,27.483333333333334,27:29,JD Gaming,Team WE,JD Gaming
-77229-3,77231,,LPL,77229,LPL 2026 Split 2,WEEK5,2026-05-02,3,16.8,27.816666666666666,27:49,JD Gaming,Team WE,JD Gaming
+77229-3,77231,,LPL,77229,LPL 2026 Split 2,WEEK5,2026-05-02,3,16.8,27.816666666666663,27:49,JD Gaming,Team WE,JD Gaming
 77226-1,77226,,LPL,77226,LPL 2026 Split 2,WEEK5,2026-05-01,1,16.8,36.166666666666664,36:10,Invictus Gaming,Weibo Gaming,Weibo Gaming
 77226-2,77227,,LPL,77226,LPL 2026 Split 2,WEEK5,2026-05-01,2,16.8,33.8,33:48,Weibo Gaming,Invictus Gaming,Invictus Gaming
 77226-3,77228,,LPL,77226,LPL 2026 Split 2,WEEK5,2026-05-01,3,16.8,26.8,26:48,Invictus Gaming,Weibo Gaming,Invictus Gaming
@@ -690,16 +690,16 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76965-2,76966,,LPL,76965,LPL 2026 Split 2,WEEK4,2026-04-25,2,16.8,27.2,27:12,JD Gaming,Team WE,JD Gaming
 76962-1,76962,,LPL,76962,LPL 2026 Split 2,WEEK4,2026-04-25,1,16.8,30.65,30:39,Top Esports,Ninjas in Pyjamas,Top Esports
 76962-2,76963,,LPL,76962,LPL 2026 Split 2,WEEK4,2026-04-25,2,16.8,32.68333333333333,32:41,Top Esports,Ninjas in Pyjamas,Top Esports
-76959-1,76959,,LPL,76959,LPL 2026 Split 2,WEEK4,2026-04-24,1,16.8,31.183333333333334,31:11,JD Gaming,Invictus Gaming,JD Gaming
-76959-2,76960,,LPL,76959,LPL 2026 Split 2,WEEK4,2026-04-24,2,16.8,26.566666666666666,26:34,JD Gaming,Invictus Gaming,JD Gaming
-76956-1,76956,,LPL,76956,LPL 2026 Split 2,WEEK4,2026-04-24,1,16.8,30.816666666666666,30:49,Oh My God,LNG Esports,LNG Esports
+76959-1,76959,,LPL,76959,LPL 2026 Split 2,WEEK4,2026-04-24,1,16.8,31.183333333333337,31:11,JD Gaming,Invictus Gaming,JD Gaming
+76959-2,76960,,LPL,76959,LPL 2026 Split 2,WEEK4,2026-04-24,2,16.8,26.566666666666663,26:34,JD Gaming,Invictus Gaming,JD Gaming
+76956-1,76956,,LPL,76956,LPL 2026 Split 2,WEEK4,2026-04-24,1,16.8,30.816666666666663,30:49,Oh My God,LNG Esports,LNG Esports
 76956-2,76957,,LPL,76956,LPL 2026 Split 2,WEEK4,2026-04-24,2,16.8,32.166666666666664,32:10,LNG Esports,Oh My God,LNG Esports
 76953-1,76953,,LPL,76953,LPL 2026 Split 2,WEEK4,2026-04-23,1,16.8,33.88333333333333,33:53,Ninjas in Pyjamas,Bilibili Gaming,Ninjas in Pyjamas
 76953-2,76954,,LPL,76953,LPL 2026 Split 2,WEEK4,2026-04-23,2,16.8,31.55,31:33,Ninjas in Pyjamas,Bilibili Gaming,Ninjas in Pyjamas
 76950-1,76950,,LPL,76950,LPL 2026 Split 2,WEEK4,2026-04-23,1,16.8,26.516666666666666,26:31,LGD Gaming,EDward Gaming,LGD Gaming
 76950-2,76951,,LPL,76950,LPL 2026 Split 2,WEEK4,2026-04-23,2,16.8,49.9,49:54,LGD Gaming,EDward Gaming,LGD Gaming
 76947-1,76947,,LPL,76947,LPL 2026 Split 2,WEEK4,2026-04-22,1,16.8,37.18333333333333,37:11,Ninjas in Pyjamas,Anyone s Legend,Anyone s Legend
-76947-2,76948,,LPL,76947,LPL 2026 Split 2,WEEK4,2026-04-22,2,16.8,29.683333333333334,29:41,Anyone s Legend,Ninjas in Pyjamas,Anyone s Legend
+76947-2,76948,,LPL,76947,LPL 2026 Split 2,WEEK4,2026-04-22,2,16.8,29.683333333333337,29:41,Anyone s Legend,Ninjas in Pyjamas,Anyone s Legend
 76944-1,76944,,LPL,76944,LPL 2026 Split 2,WEEK4,2026-04-22,1,16.8,31.1,31:06,Weibo Gaming,Team WE,Weibo Gaming
 76944-2,76945,,LPL,76944,LPL 2026 Split 2,WEEK4,2026-04-22,2,16.8,27.483333333333334,27:29,Weibo Gaming,Team WE,Weibo Gaming
 76587-1,76587,,LPL,76587,LPL 2026 Split 2,WEEK3,2026-04-19,1,16.7,32.083333333333336,32:05,Bilibili Gaming,Anyone s Legend,Bilibili Gaming
@@ -711,12 +711,12 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76581-3,76583,,LPL,76581,LPL 2026 Split 2,WEEK3,2026-04-18,3,16.7,33.36666666666667,33:22,JD Gaming,Weibo Gaming,JD Gaming
 76578-1,76578,,LPL,76578,LPL 2026 Split 2,WEEK3,2026-04-18,1,16.7,34.56666666666667,34:34,Invictus Gaming,Bilibili Gaming,Bilibili Gaming
 76578-2,76579,,LPL,76578,LPL 2026 Split 2,WEEK3,2026-04-18,2,16.7,30.133333333333333,30:08,Invictus Gaming,Bilibili Gaming,Invictus Gaming
-76578-3,76580,,LPL,76578,LPL 2026 Split 2,WEEK3,2026-04-18,3,16.7,26.933333333333334,26:56,Invictus Gaming,Bilibili Gaming,Bilibili Gaming
+76578-3,76580,,LPL,76578,LPL 2026 Split 2,WEEK3,2026-04-18,3,16.7,26.933333333333337,26:56,Invictus Gaming,Bilibili Gaming,Bilibili Gaming
 76575-1,76575,,LPL,76575,LPL 2026 Split 2,WEEK3,2026-04-17,1,16.7,26.716666666666665,26:43,Ninjas in Pyjamas,JD Gaming,Ninjas in Pyjamas
 76575-2,76576,,LPL,76575,LPL 2026 Split 2,WEEK3,2026-04-17,2,16.7,35.666666666666664,35:40,Ninjas in Pyjamas,JD Gaming,Ninjas in Pyjamas
-76572-1,76572,,LPL,76572,LPL 2026 Split 2,WEEK3,2026-04-17,1,16.7,31.316666666666666,31:19,Oh My God,ThunderTalk Gaming,Oh My God
+76572-1,76572,,LPL,76572,LPL 2026 Split 2,WEEK3,2026-04-17,1,16.7,31.316666666666663,31:19,Oh My God,ThunderTalk Gaming,Oh My God
 76572-2,76573,,LPL,76572,LPL 2026 Split 2,WEEK3,2026-04-17,2,16.7,29.966666666666665,29:58,ThunderTalk Gaming,Oh My God,ThunderTalk Gaming
-76572-3,76574,,LPL,76572,LPL 2026 Split 2,WEEK3,2026-04-17,3,16.7,31.566666666666666,31:34,ThunderTalk Gaming,Oh My God,ThunderTalk Gaming
+76572-3,76574,,LPL,76572,LPL 2026 Split 2,WEEK3,2026-04-17,3,16.7,31.566666666666663,31:34,ThunderTalk Gaming,Oh My God,ThunderTalk Gaming
 76569-1,76569,,LPL,76569,LPL 2026 Split 2,WEEK3,2026-04-16,1,16.7,34.4,34:24,Top Esports,Bilibili Gaming,Top Esports
 76569-2,76570,,LPL,76569,LPL 2026 Split 2,WEEK3,2026-04-16,2,16.7,30.016666666666666,30:01,Top Esports,Bilibili Gaming,Top Esports
 76566-1,76566,,LPL,76566,LPL 2026 Split 2,WEEK3,2026-04-16,1,16.7,28.533333333333335,28:32,Team WE,Anyone s Legend,Anyone s Legend
@@ -725,12 +725,12 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76563-2,76564,,LPL,76563,LPL 2026 Split 2,WEEK3,2026-04-15,2,16.7,38.516666666666666,38:31,Invictus Gaming,Weibo Gaming,Weibo Gaming
 76563-3,76565,,LPL,76563,LPL 2026 Split 2,WEEK3,2026-04-15,3,16.7,36.3,36:18,Invictus Gaming,Weibo Gaming,Weibo Gaming
 76560-1,76560,,LPL,76560,LPL 2026 Split 2,WEEK3,2026-04-15,1,16.7,34.266666666666666,34:16,Ultra Prime,ThunderTalk Gaming,ThunderTalk Gaming
-76560-2,76561,,LPL,76560,LPL 2026 Split 2,WEEK3,2026-04-15,2,16.7,28.433333333333334,28:26,ThunderTalk Gaming,Ultra Prime,ThunderTalk Gaming
+76560-2,76561,,LPL,76560,LPL 2026 Split 2,WEEK3,2026-04-15,2,16.7,28.433333333333337,28:26,ThunderTalk Gaming,Ultra Prime,ThunderTalk Gaming
 76210-1,76210,,LPL,76210,LPL 2026 Split 2,WEEK2,2026-04-12,1,16.7,40.35,40:21,Weibo Gaming,Bilibili Gaming,Bilibili Gaming
 76210-2,76211,,LPL,76210,LPL 2026 Split 2,WEEK2,2026-04-12,2,16.7,27.1,27:06,Bilibili Gaming,Weibo Gaming,Bilibili Gaming
 76207-1,76207,,LPL,76207,LPL 2026 Split 2,WEEK2,2026-04-12,1,16.7,29.216666666666665,29:13,Oh My God,LGD Gaming,Oh My God
-76207-2,76208,,LPL,76207,LPL 2026 Split 2,WEEK2,2026-04-12,2,16.7,28.066666666666666,28:04,Oh My God,LGD Gaming,LGD Gaming
-76207-3,76209,,LPL,76207,LPL 2026 Split 2,WEEK2,2026-04-12,3,16.7,30.316666666666666,30:19,LGD Gaming,Oh My God,LGD Gaming
+76207-2,76208,,LPL,76207,LPL 2026 Split 2,WEEK2,2026-04-12,2,16.7,28.066666666666663,28:04,Oh My God,LGD Gaming,LGD Gaming
+76207-3,76209,,LPL,76207,LPL 2026 Split 2,WEEK2,2026-04-12,3,16.7,30.316666666666663,30:19,LGD Gaming,Oh My God,LGD Gaming
 76204-1,76204,,LPL,76204,LPL 2026 Split 2,WEEK2,2026-04-11,1,16.7,32.15,32:09,JD Gaming,Top Esports,Top Esports
 76204-2,76205,,LPL,76204,LPL 2026 Split 2,WEEK2,2026-04-11,2,16.7,29.466666666666665,29:28,JD Gaming,Top Esports,Top Esports
 76201-1,76201,,LPL,76201,LPL 2026 Split 2,WEEK2,2026-04-11,1,16.7,31.966666666666665,31:58,Invictus Gaming,Team WE,Invictus Gaming
@@ -752,7 +752,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76183-3,76185,,LPL,76183,LPL 2026 Split 2,WEEK2,2026-04-08,3,16.7,30.9,30:54,Invictus Gaming,Ninjas in Pyjamas,Invictus Gaming
 76017-1,76017,,LPL,76017,LPL 2026 Split 2,WEEK1,2026-04-05,1,16.7,37.28333333333333,37:17,Top Esports,Anyone s Legend,Top Esports
 76017-2,76018,,LPL,76017,LPL 2026 Split 2,WEEK1,2026-04-05,2,16.7,25.416666666666668,25:25,Top Esports,Anyone s Legend,Top Esports
-76014-1,76014,,LPL,76014,LPL 2026 Split 2,WEEK1,2026-04-05,1,16.7,26.683333333333334,26:41,JD Gaming,Bilibili Gaming,Bilibili Gaming
+76014-1,76014,,LPL,76014,LPL 2026 Split 2,WEEK1,2026-04-05,1,16.7,26.683333333333337,26:41,JD Gaming,Bilibili Gaming,Bilibili Gaming
 76014-2,76015,,LPL,76014,LPL 2026 Split 2,WEEK1,2026-04-05,2,16.7,29.283333333333335,29:17,Bilibili Gaming,JD Gaming,JD Gaming
 76014-3,76016,,LPL,76014,LPL 2026 Split 2,WEEK1,2026-04-05,3,16.7,40.15,40:09,JD Gaming,Bilibili Gaming,Bilibili Gaming
 76011-1,76011,,LPL,76011,LPL 2026 Split 2,WEEK1,2026-04-04,1,16.7,32.03333333333333,32:02,Team WE,Ninjas in Pyjamas,Ninjas in Pyjamas
@@ -775,12 +775,12 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 75073-1,75073,,LPL,75073,LPL 2026 Split 1 Playoffs,ROUND4,2026-03-04,1,16.3,39.21666666666667,39:13,JD Gaming,Bilibili Gaming,JD Gaming
 75073-2,75074,,LPL,75073,LPL 2026 Split 1 Playoffs,ROUND4,2026-03-04,2,16.3,33.75,33:45,JD Gaming,Bilibili Gaming,Bilibili Gaming
 75073-3,75075,,LPL,75073,LPL 2026 Split 1 Playoffs,ROUND4,2026-03-04,3,16.3,35.766666666666666,35:46,Bilibili Gaming,JD Gaming,JD Gaming
-75073-4,75076,,LPL,75073,LPL 2026 Split 1 Playoffs,ROUND4,2026-03-04,4,16.3,30.316666666666666,30:19,JD Gaming,Bilibili Gaming,Bilibili Gaming
+75073-4,75076,,LPL,75073,LPL 2026 Split 1 Playoffs,ROUND4,2026-03-04,4,16.3,30.316666666666663,30:19,JD Gaming,Bilibili Gaming,Bilibili Gaming
 75073-5,75077,,LPL,75073,LPL 2026 Split 1 Playoffs,ROUND4,2026-03-04,5,16.3,29.483333333333334,29:29,Bilibili Gaming,JD Gaming,Bilibili Gaming
 75068-1,75068,,LPL,75068,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-03,1,16.3,26.766666666666666,26:46,Invictus Gaming,Anyone s Legend,Anyone s Legend
-75068-2,75069,,LPL,75068,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-03,2,16.3,31.183333333333334,31:11,Anyone s Legend,Invictus Gaming,Invictus Gaming
-75068-3,75070,,LPL,75068,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-03,3,16.3,30.433333333333334,30:26,Invictus Gaming,Anyone s Legend,Anyone s Legend
-75068-4,75071,,LPL,75068,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-03,4,16.3,23.683333333333334,23:41,Anyone s Legend,Invictus Gaming,Anyone s Legend
+75068-2,75069,,LPL,75068,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-03,2,16.3,31.183333333333337,31:11,Anyone s Legend,Invictus Gaming,Invictus Gaming
+75068-3,75070,,LPL,75068,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-03,3,16.3,30.433333333333337,30:26,Invictus Gaming,Anyone s Legend,Anyone s Legend
+75068-4,75071,,LPL,75068,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-03,4,16.3,23.683333333333337,23:41,Anyone s Legend,Invictus Gaming,Anyone s Legend
 75063-1,75063,,LPL,75063,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-02,1,16.3,31.05,31:03,Weibo Gaming,Top Esports,Weibo Gaming
 75063-2,75064,,LPL,75063,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-02,2,16.3,33.25,33:15,Weibo Gaming,Top Esports,Top Esports
 75063-3,75065,,LPL,75063,LPL 2026 Split 1 Playoffs,ROUND2,2026-03-02,3,16.3,32.733333333333334,32:44,Weibo Gaming,Top Esports,Weibo Gaming
@@ -792,7 +792,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74919-4,74922,,LPL,74919,LPL 2026 Split 1 Playoffs,ROUND1,2026-03-01,4,16.3,39.35,39:21,Invictus Gaming,Ninjas in Pyjamas,Invictus Gaming
 74914-1,74914,,LPL,74914,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-28,1,16.3,29.8,29:48,Team WE,Top Esports,Top Esports
 74914-2,74915,,LPL,74914,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-28,2,16.3,30.1,30:06,Team WE,Top Esports,Top Esports
-74914-3,74916,,LPL,74914,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-28,3,16.3,28.183333333333334,28:11,Team WE,Top Esports,Top Esports
+74914-3,74916,,LPL,74914,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-28,3,16.3,28.183333333333337,28:11,Team WE,Top Esports,Top Esports
 74935-1,74935,,LPL,74935,LPL 2026 Split 1 Playoffs,ROUND2,2026-02-27,1,16.3,32.45,32:27,Bilibili Gaming,Weibo Gaming,Bilibili Gaming
 74935-2,74936,,LPL,74935,LPL 2026 Split 1 Playoffs,ROUND2,2026-02-27,2,16.3,24.216666666666665,24:13,Bilibili Gaming,Weibo Gaming,Bilibili Gaming
 74935-3,74937,,LPL,74935,LPL 2026 Split 1 Playoffs,ROUND2,2026-02-27,3,16.3,26.15,26:09,Bilibili Gaming,Weibo Gaming,Bilibili Gaming
@@ -810,8 +810,8 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74432-1,74432,,LPL,74432,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,1,16.3,26.533333333333335,26:32,Team WE,Anyone s Legend,Anyone s Legend
 74432-2,74433,,LPL,74432,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,2,16.3,25.983333333333334,25:59,Anyone s Legend,Team WE,Anyone s Legend
 74432-3,74434,,LPL,74432,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,3,16.3,21.966666666666665,21:58,Anyone s Legend,Team WE,Anyone s Legend
-74427-1,74427,,LPL,74427,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,1,16.3,29.933333333333334,29:56,Top Esports,JD Gaming,Top Esports
-74427-2,74428,,LPL,74427,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,2,16.3,23.066666666666666,23:04,Top Esports,JD Gaming,JD Gaming
+74427-1,74427,,LPL,74427,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,1,16.3,29.933333333333337,29:56,Top Esports,JD Gaming,Top Esports
+74427-2,74428,,LPL,74427,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,2,16.3,23.066666666666663,23:04,Top Esports,JD Gaming,JD Gaming
 74427-3,74429,,LPL,74427,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,3,16.3,35.95,35:57,JD Gaming,Top Esports,Top Esports
 74427-4,74430,,LPL,74427,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,4,16.3,32.96666666666667,32:58,JD Gaming,Top Esports,JD Gaming
 74427-5,74431,,LPL,74427,LPL 2026 Split 1 Playoffs,ROUND1,2026-02-24,5,16.3,29.766666666666666,29:46,JD Gaming,Top Esports,JD Gaming
@@ -820,8 +820,8 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74314-3,74316,,LPL,74314,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND3,2026-02-11,3,16.2,30.95,30:57,Team WE,LNG Esports,LNG Esports
 74314-4,74317,,LPL,74314,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND3,2026-02-11,4,16.2,38.78333333333333,38:47,LNG Esports,Team WE,Team WE
 74309-1,74309,,LPL,74309,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND3,2026-02-11,1,16.2,46.266666666666666,46:16,Oh My God,Invictus Gaming,Invictus Gaming
-74309-2,74310,,LPL,74309,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND3,2026-02-11,2,16.2,31.433333333333334,31:26,Invictus Gaming,Oh My God,Invictus Gaming
-74309-3,74311,,LPL,74309,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND3,2026-02-11,3,16.2,29.683333333333334,29:41,Invictus Gaming,Oh My God,Invictus Gaming
+74309-2,74310,,LPL,74309,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND3,2026-02-11,2,16.2,31.433333333333337,31:26,Invictus Gaming,Oh My God,Invictus Gaming
+74309-3,74311,,LPL,74309,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND3,2026-02-11,3,16.2,29.683333333333337,29:41,Invictus Gaming,Oh My God,Invictus Gaming
 74270-1,74270,,LPL,74270,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND2,2026-02-10,1,16.2,41.4,41:24,Oh My God,EDward Gaming,Oh My God
 74270-2,74271,,LPL,74270,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND2,2026-02-10,2,16.2,37.483333333333334,37:29,Oh My God,EDward Gaming,Oh My God
 74270-3,74272,,LPL,74270,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND2,2026-02-10,3,16.2,33.666666666666664,33:40,Oh My God,EDward Gaming,EDward Gaming
@@ -834,12 +834,12 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74260-3,74262,,LPL,74260,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND1,2026-02-09,3,16.2,33.03333333333333,33:02,Invictus Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
 74260-4,74263,,LPL,74260,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND1,2026-02-09,4,16.2,32.85,32:51,Invictus Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
 74255-1,74255,,LPL,74255,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND1,2026-02-09,1,16.2,42.61666666666667,42:37,Team WE,Top Esports,Team WE
-74255-2,74256,,LPL,74255,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND1,2026-02-09,2,16.2,30.566666666666666,30:34,Team WE,Top Esports,Top Esports
+74255-2,74256,,LPL,74255,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND1,2026-02-09,2,16.2,30.566666666666663,30:34,Team WE,Top Esports,Top Esports
 74255-3,74257,,LPL,74255,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND1,2026-02-09,3,16.2,30.1,30:06,Team WE,Top Esports,Top Esports
 74255-4,74258,,LPL,74255,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND1,2026-02-09,4,16.2,37.46666666666667,37:28,Team WE,Top Esports,Team WE
 74255-5,74259,,LPL,74255,LPL 2026 Split 1 Playoffs,PLAYIN.ROUND1,2026-02-09,5,16.2,35.733333333333334,35:44,Team WE,Top Esports,Top Esports
 74131-1,74131,,LPL,74131,LPL 2026 Split 1,TIEBREAKERS,2026-02-07,1,16.2,39.21666666666667,39:13,Team WE,Ninjas in Pyjamas,Ninjas in Pyjamas
-74131-2,74132,,LPL,74131,LPL 2026 Split 1,TIEBREAKERS,2026-02-07,2,16.2,31.816666666666666,31:49,Team WE,Ninjas in Pyjamas,Ninjas in Pyjamas
+74131-2,74132,,LPL,74131,LPL 2026 Split 1,TIEBREAKERS,2026-02-07,2,16.2,31.816666666666663,31:49,Team WE,Ninjas in Pyjamas,Ninjas in Pyjamas
 74005-1,74005,,LPL,74005,LPL 2026 Split 1,WEEK4,2026-02-06,1,16.2,34.36666666666667,34:22,Bilibili Gaming,Anyone s Legend,Bilibili Gaming
 74005-2,74006,,LPL,74005,LPL 2026 Split 1,WEEK4,2026-02-06,2,16.2,32.96666666666667,32:58,Bilibili Gaming,Anyone s Legend,Anyone s Legend
 74005-3,74007,,LPL,74005,LPL 2026 Split 1,WEEK4,2026-02-06,3,16.2,34.56666666666667,34:34,Anyone s Legend,Bilibili Gaming,Anyone s Legend
@@ -884,7 +884,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73630-3,73632,,LPL,73630,LPL 2026 Split 1,WEEK3,2026-01-29,3,16.2,36.7,36:42,JD Gaming,Weibo Gaming,Weibo Gaming
 73627-1,73627,,LPL,73627,LPL 2026 Split 1,WEEK3,2026-01-29,1,16.2,29.033333333333335,29:02,ThunderTalk Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
 73627-2,73628,,LPL,73627,LPL 2026 Split 1,WEEK3,2026-01-29,2,16.2,25.666666666666668,25:40,Ninjas in Pyjamas,ThunderTalk Gaming,Ninjas in Pyjamas
-73624-1,73624,,LPL,73624,LPL 2026 Split 1,WEEK3,2026-01-28,1,16.2,31.316666666666666,31:19,EDward Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
+73624-1,73624,,LPL,73624,LPL 2026 Split 1,WEEK3,2026-01-28,1,16.2,31.316666666666663,31:19,EDward Gaming,Ninjas in Pyjamas,Ninjas in Pyjamas
 73624-2,73625,,LPL,73624,LPL 2026 Split 1,WEEK3,2026-01-28,2,16.2,26.45,26:27,EDward Gaming,Ninjas in Pyjamas,EDward Gaming
 73624-3,73626,,LPL,73624,LPL 2026 Split 1,WEEK3,2026-01-28,3,16.2,39.36666666666667,39:22,EDward Gaming,Ninjas in Pyjamas,EDward Gaming
 73621-1,73621,,LPL,73621,LPL 2026 Split 1,WEEK3,2026-01-28,1,16.2,35.516666666666666,35:31,LNG Esports,Oh My God,LNG Esports
@@ -911,17 +911,17 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73495-2,73496,,LPL,73495,LPL 2026 Split 1,WEEK2,2026-01-25,2,16.1,36.4,36:24,Team WE,Ninjas in Pyjamas,Ninjas in Pyjamas
 73495-3,73497,,LPL,73495,LPL 2026 Split 1,WEEK2,2026-01-25,3,16.1,38.85,38:51,Team WE,Ninjas in Pyjamas,Team WE
 73492-1,73492,,LPL,73492,LPL 2026 Split 1,WEEK2,2026-01-24,1,16.1,31.9,31:54,JD Gaming,Weibo Gaming,Weibo Gaming
-73492-2,73493,,LPL,73492,LPL 2026 Split 1,WEEK2,2026-01-24,2,16.1,31.316666666666666,31:19,Weibo Gaming,JD Gaming,Weibo Gaming
+73492-2,73493,,LPL,73492,LPL 2026 Split 1,WEEK2,2026-01-24,2,16.1,31.316666666666663,31:19,Weibo Gaming,JD Gaming,Weibo Gaming
 73489-1,73489,,LPL,73489,LPL 2026 Split 1,WEEK2,2026-01-24,1,16.1,32.4,32:24,Anyone s Legend,Top Esports,Anyone s Legend
 73489-2,73490,,LPL,73489,LPL 2026 Split 1,WEEK2,2026-01-24,2,16.1,28.55,28:33,Anyone s Legend,Top Esports,Top Esports
-73489-3,73491,,LPL,73489,LPL 2026 Split 1,WEEK2,2026-01-24,3,16.1,29.183333333333334,29:11,Top Esports,Anyone s Legend,Anyone s Legend
+73489-3,73491,,LPL,73489,LPL 2026 Split 1,WEEK2,2026-01-24,3,16.1,29.183333333333337,29:11,Top Esports,Anyone s Legend,Anyone s Legend
 73486-1,73486,,LPL,73486,LPL 2026 Split 1,WEEK2,2026-01-23,1,16.1,40.766666666666666,40:46,Bilibili Gaming,JD Gaming,JD Gaming
 73486-2,73487,,LPL,73486,LPL 2026 Split 1,WEEK2,2026-01-23,2,16.1,35.06666666666667,35:04,JD Gaming,Bilibili Gaming,JD Gaming
 73483-1,73483,,LPL,73483,LPL 2026 Split 1,WEEK2,2026-01-23,1,16.1,32.46666666666667,32:28,ThunderTalk Gaming,EDward Gaming,ThunderTalk Gaming
 73483-2,73484,,LPL,73483,LPL 2026 Split 1,WEEK2,2026-01-23,2,16.1,36.1,36:06,ThunderTalk Gaming,EDward Gaming,EDward Gaming
 73483-3,73485,,LPL,73483,LPL 2026 Split 1,WEEK2,2026-01-23,3,16.1,36.53333333333333,36:32,EDward Gaming,ThunderTalk Gaming,EDward Gaming
 73480-1,73480,,LPL,73480,LPL 2026 Split 1,WEEK2,2026-01-23,1,16.1,46.38333333333333,46:23,LGD Gaming,Oh My God,Oh My God
-73480-2,73481,,LPL,73480,LPL 2026 Split 1,WEEK2,2026-01-23,2,16.1,27.816666666666666,27:49,LGD Gaming,Oh My God,LGD Gaming
+73480-2,73481,,LPL,73480,LPL 2026 Split 1,WEEK2,2026-01-23,2,16.1,27.816666666666663,27:49,LGD Gaming,Oh My God,LGD Gaming
 73480-3,73482,,LPL,73480,LPL 2026 Split 1,WEEK2,2026-01-23,3,16.1,29.033333333333335,29:02,LGD Gaming,Oh My God,Oh My God
 73477-1,73477,,LPL,73477,LPL 2026 Split 1,WEEK2,2026-01-22,1,16.1,30.833333333333332,30:50,Team WE,Ninjas in Pyjamas,Team WE
 73477-2,73478,,LPL,73477,LPL 2026 Split 1,WEEK2,2026-01-22,2,16.1,33.6,33:36,Team WE,Ninjas in Pyjamas,Ninjas in Pyjamas
@@ -959,7 +959,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73169-1,73169,,LPL,73169,LPL 2026 Split 1,WEEK1,2026-01-17,1,16.1,31.7,31:42,Anyone s Legend,Bilibili Gaming,Anyone s Legend
 73169-2,73170,,LPL,73169,LPL 2026 Split 1,WEEK1,2026-01-17,2,16.1,31.016666666666666,31:01,Anyone s Legend,Bilibili Gaming,Bilibili Gaming
 73169-3,73171,,LPL,73169,LPL 2026 Split 1,WEEK1,2026-01-17,3,16.1,32.766666666666666,32:46,Bilibili Gaming,Anyone s Legend,Bilibili Gaming
-73293-1,73293,,LPL,73293,LPL 2026 Split 1,WEEK1,2026-01-16,1,16.1,28.816666666666666,28:49,Oh My God,LNG Esports,LNG Esports
+73293-1,73293,,LPL,73293,LPL 2026 Split 1,WEEK1,2026-01-16,1,16.1,28.816666666666663,28:49,Oh My God,LNG Esports,LNG Esports
 73293-2,73294,,LPL,73293,LPL 2026 Split 1,WEEK1,2026-01-16,2,16.1,24.2,24:12,LNG Esports,Oh My God,LNG Esports
 73166-1,73166,,LPL,73166,LPL 2026 Split 1,WEEK1,2026-01-16,1,16.1,38.31666666666667,38:19,EDward Gaming,Team WE,Team WE
 73166-2,73167,,LPL,73166,LPL 2026 Split 1,WEEK1,2026-01-16,2,16.1,31.833333333333332,31:50,Team WE,EDward Gaming,Team WE
@@ -970,7 +970,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73157-2,73158,,LPL,73157,LPL 2026 Split 1,WEEK1,2026-01-15,2,16.1,34.15,34:09,Anyone s Legend,Invictus Gaming,Anyone s Legend
 73154-1,73154,,LPL,73154,LPL 2026 Split 1,WEEK1,2026-01-15,1,16.1,34.516666666666666,34:31,Ultra Prime,LGD Gaming,LGD Gaming
 73154-2,73155,,LPL,73154,LPL 2026 Split 1,WEEK1,2026-01-15,2,16.1,37.333333333333336,37:20,Ultra Prime,LGD Gaming,LGD Gaming
-73151-1,73151,,LPL,73151,LPL 2026 Split 1,WEEK1,2026-01-14,1,16.1,24.933333333333334,24:56,JD Gaming,Top Esports,JD Gaming
+73151-1,73151,,LPL,73151,LPL 2026 Split 1,WEEK1,2026-01-14,1,16.1,24.933333333333337,24:56,JD Gaming,Top Esports,JD Gaming
 73151-2,73152,,LPL,73151,LPL 2026 Split 1,WEEK1,2026-01-14,2,16.1,28.4,28:24,JD Gaming,Top Esports,JD Gaming
 73148-1,73148,,LPL,73148,LPL 2026 Split 1,WEEK1,2026-01-14,1,16.1,38.7,38:42,Invictus Gaming,Weibo Gaming,Invictus Gaming
 73148-2,73149,,LPL,73148,LPL 2026 Split 1,WEEK1,2026-01-14,2,16.1,33.13333333333333,33:08,Invictus Gaming,Weibo Gaming,Weibo Gaming
@@ -1005,12 +1005,12 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 82992-4,82995,,LCS,82992,LCS 2026 Summer Playoffs,ROUND2,2026-09-19,4,16.17,25.366666666666667,25:22,Cloud9,LYON,Cloud9
 82987-1,82987,,LCS,82987,LCS 2026 Summer Playoffs,ROUND1,2026-09-18,1,16.17,27.0,27:00,Shopify Rebellion,Sentinels,Sentinels
 82987-2,82988,,LCS,82987,LCS 2026 Summer Playoffs,ROUND1,2026-09-18,2,16.17,29.733333333333334,29:44,Sentinels,Shopify Rebellion,Sentinels
-82987-3,82989,,LCS,82987,LCS 2026 Summer Playoffs,ROUND1,2026-09-18,3,16.17,30.316666666666666,30:19,Sentinels,Shopify Rebellion,Shopify Rebellion
+82987-3,82989,,LCS,82987,LCS 2026 Summer Playoffs,ROUND1,2026-09-18,3,16.17,30.316666666666663,30:19,Sentinels,Shopify Rebellion,Shopify Rebellion
 82987-4,82990,,LCS,82987,LCS 2026 Summer Playoffs,ROUND1,2026-09-18,4,16.17,31.716666666666665,31:43,Shopify Rebellion,Sentinels,Shopify Rebellion
 82987-5,82991,,LCS,82987,LCS 2026 Summer Playoffs,ROUND1,2026-09-18,5,16.17,35.15,35:09,Shopify Rebellion,Sentinels,Shopify Rebellion
 82770-1,82770,,LCS,82770,LCS 2026 Summer Playoffs,ROUND1,2026-09-13,1,16.17,32.583333333333336,32:35,FlyQuest,Sentinels,FlyQuest
 82770-2,82771,,LCS,82770,LCS 2026 Summer Playoffs,ROUND1,2026-09-13,2,16.17,35.63333333333333,35:38,FlyQuest,Sentinels,FlyQuest
-82770-3,82772,,LCS,82770,LCS 2026 Summer Playoffs,ROUND1,2026-09-13,3,16.17,31.183333333333334,31:11,FlyQuest,Sentinels,FlyQuest
+82770-3,82772,,LCS,82770,LCS 2026 Summer Playoffs,ROUND1,2026-09-13,3,16.17,31.183333333333337,31:11,FlyQuest,Sentinels,FlyQuest
 82765-1,82765,,LCS,82765,LCS 2026 Summer Playoffs,ROUND1,2026-09-12,1,16.17,34.88333333333333,34:53,Shopify Rebellion,Cloud9,Cloud9
 82765-2,82766,,LCS,82765,LCS 2026 Summer Playoffs,ROUND1,2026-09-12,2,16.17,30.4,30:24,Cloud9,Shopify Rebellion,Cloud9
 82765-3,82767,,LCS,82765,LCS 2026 Summer Playoffs,ROUND1,2026-09-12,3,16.17,40.95,40:57,Cloud9,Shopify Rebellion,Cloud9
@@ -1041,14 +1041,14 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81771-1,81771,,LCS,81771,LCS 2026 Summer,WEEK5,2026-08-22,1,16.16,32.416666666666664,32:25,Sentinels,FlyQuest,Sentinels
 81771-2,81772,,LCS,81771,LCS 2026 Summer,WEEK5,2026-08-22,2,16.16,30.1,30:06,Sentinels,FlyQuest,Sentinels
 81439-1,81439,,LCS,81439,LCS 2026 Summer,WEEK4,2026-08-16,1,16.16,43.95,43:57,Sentinels,LYON,Sentinels
-81439-2,81440,,LCS,81439,LCS 2026 Summer,WEEK4,2026-08-16,2,16.16,30.183333333333334,30:11,Sentinels,LYON,LYON
+81439-2,81440,,LCS,81439,LCS 2026 Summer,WEEK4,2026-08-16,2,16.16,30.183333333333337,30:11,Sentinels,LYON,LYON
 81439-3,81441,,LCS,81439,LCS 2026 Summer,WEEK4,2026-08-16,3,16.16,40.86666666666667,40:52,LYON,Sentinels,Sentinels
 81436-1,81436,,LCS,81436,LCS 2026 Summer,WEEK4,2026-08-16,1,16.16,39.93333333333333,39:56,Cloud9,FlyQuest,Cloud9
 81436-2,81437,,LCS,81436,LCS 2026 Summer,WEEK4,2026-08-16,2,16.16,34.81666666666667,34:49,Cloud9,FlyQuest,Cloud9
 81433-1,81433,,LCS,81433,LCS 2026 Summer,WEEK4,2026-08-15,1,16.16,32.0,32:00,Shopify Rebellion,Dignitas,Dignitas
 81433-2,81434,,LCS,81433,LCS 2026 Summer,WEEK4,2026-08-15,2,16.16,32.38333333333333,32:23,Shopify Rebellion,Dignitas,Shopify Rebellion
 81433-3,81435,,LCS,81433,LCS 2026 Summer,WEEK4,2026-08-15,3,16.16,25.783333333333335,25:47,Dignitas,Shopify Rebellion,Shopify Rebellion
-81430-1,81430,,LCS,81430,LCS 2026 Summer,WEEK4,2026-08-15,1,16.16,29.933333333333334,29:56,Team Liquid,Disguised,Team Liquid
+81430-1,81430,,LCS,81430,LCS 2026 Summer,WEEK4,2026-08-15,1,16.16,29.933333333333337,29:56,Team Liquid,Disguised,Team Liquid
 81430-2,81431,,LCS,81430,LCS 2026 Summer,WEEK4,2026-08-15,2,16.16,29.966666666666665,29:58,Team Liquid,Disguised,Team Liquid
 80978-1,80978,,LCS,80978,LCS 2026 Summer,WEEK3,2026-08-09,1,16.15,26.733333333333334,26:44,Team Liquid,FlyQuest,Team Liquid
 80978-2,80979,,LCS,80978,LCS 2026 Summer,WEEK3,2026-08-09,2,16.15,24.916666666666668,24:55,Team Liquid,FlyQuest,Team Liquid
@@ -1072,7 +1072,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80334-1,80334,,LCS,80334,LCS 2026 Summer,WEEK1,2026-07-26,1,16.14,39.75,39:45,Shopify Rebellion,Disguised,Shopify Rebellion
 80334-2,80335,,LCS,80334,LCS 2026 Summer,WEEK1,2026-07-26,2,16.14,28.883333333333333,28:53,Shopify Rebellion,Disguised,Shopify Rebellion
 80331-1,80331,,LCS,80331,LCS 2026 Summer,WEEK1,2026-07-26,1,16.14,37.55,37:33,Team Liquid,Cloud9,Team Liquid
-80331-2,80332,,LCS,80331,LCS 2026 Summer,WEEK1,2026-07-26,2,16.14,29.433333333333334,29:26,Team Liquid,Cloud9,Team Liquid
+80331-2,80332,,LCS,80331,LCS 2026 Summer,WEEK1,2026-07-26,2,16.14,29.433333333333337,29:26,Team Liquid,Cloud9,Team Liquid
 80328-1,80328,,LCS,80328,LCS 2026 Summer,WEEK1,2026-07-25,1,16.14,36.583333333333336,36:35,Sentinels,Dignitas,Dignitas
 80328-2,80329,,LCS,80328,LCS 2026 Summer,WEEK1,2026-07-25,2,16.14,26.533333333333335,26:32,Dignitas,Sentinels,Sentinels
 80328-3,80330,,LCS,80328,LCS 2026 Summer,WEEK1,2026-07-25,3,16.14,29.733333333333334,29:44,Sentinels,Dignitas,Sentinels
@@ -1097,25 +1097,25 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 78842-1,78842,,LCS,78842,LCS 2026 Spring Playoffs,ROUND1,2026-05-30,1,16.11,35.06666666666667,35:04,FlyQuest,Sentinels,FlyQuest
 78842-2,78843,,LCS,78842,LCS 2026 Spring Playoffs,ROUND1,2026-05-30,2,16.11,31.1,31:06,FlyQuest,Sentinels,FlyQuest
 78842-3,78844,,LCS,78842,LCS 2026 Spring Playoffs,ROUND1,2026-05-30,3,16.11,37.68333333333333,37:41,FlyQuest,Sentinels,FlyQuest
-78681-1,78681,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,1,16.10,33.983333333333334,33:59,Team Liquid,LYON,Team Liquid
-78681-2,78682,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,2,16.10,38.25,38:15,Team Liquid,LYON,LYON
-78681-3,78683,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,3,16.10,30.966666666666665,30:58,LYON,Team Liquid,LYON
-78681-4,78684,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,4,16.10,29.9,29:54,LYON,Team Liquid,Team Liquid
-78681-5,78685,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,5,16.10,36.18333333333333,36:11,Team Liquid,LYON,LYON
-78676-1,78676,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,1,16.10,25.1,25:06,FlyQuest,Cloud9,Cloud9
-78676-2,78677,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,2,16.10,31.866666666666667,31:52,Cloud9,FlyQuest,Cloud9
-78676-3,78678,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,3,16.10,30.316666666666666,30:19,Cloud9,FlyQuest,FlyQuest
-78676-4,78679,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,4,16.10,30.816666666666666,30:49,FlyQuest,Cloud9,FlyQuest
-78676-5,78680,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,5,16.10,34.516666666666666,34:31,FlyQuest,Cloud9,Cloud9
-78144-1,78144,,LCS,78144,LCS 2026 Spring,WEEK7,2026-05-17,1,16.10,38.21666666666667,38:13,LYON,FlyQuest,FlyQuest
-78144-2,78145,,LCS,78144,LCS 2026 Spring,WEEK7,2026-05-17,2,16.10,29.266666666666666,29:16,FlyQuest,LYON,LYON
-78144-3,78146,,LCS,78144,LCS 2026 Spring,WEEK7,2026-05-17,3,16.10,27.733333333333334,27:44,LYON,FlyQuest,FlyQuest
-78141-1,78141,,LCS,78141,LCS 2026 Spring,WEEK7,2026-05-17,1,16.10,25.95,25:57,Dignitas,Sentinels,Sentinels
-78141-2,78142,,LCS,78141,LCS 2026 Spring,WEEK7,2026-05-17,2,16.10,31.6,31:36,Sentinels,Dignitas,Sentinels
-78138-1,78138,,LCS,78138,LCS 2026 Spring,WEEK7,2026-05-16,1,16.10,29.966666666666665,29:58,Shopify Rebellion,Disguised,Shopify Rebellion
-78138-2,78139,,LCS,78138,LCS 2026 Spring,WEEK7,2026-05-16,2,16.10,37.03333333333333,37:02,Shopify Rebellion,Disguised,Shopify Rebellion
-78135-1,78135,,LCS,78135,LCS 2026 Spring,WEEK7,2026-05-16,1,16.10,37.766666666666666,37:46,Cloud9,Team Liquid,Cloud9
-78135-2,78136,,LCS,78135,LCS 2026 Spring,WEEK7,2026-05-16,2,16.10,34.083333333333336,34:05,Cloud9,Team Liquid,Cloud9
+78681-1,78681,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,1,16.1,33.983333333333334,33:59,Team Liquid,LYON,Team Liquid
+78681-2,78682,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,2,16.1,38.25,38:15,Team Liquid,LYON,LYON
+78681-3,78683,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,3,16.1,30.966666666666665,30:58,LYON,Team Liquid,LYON
+78681-4,78684,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,4,16.1,29.9,29:54,LYON,Team Liquid,Team Liquid
+78681-5,78685,,LCS,78681,LCS 2026 Spring Playoffs,ROUND1,2026-05-24,5,16.1,36.18333333333333,36:11,Team Liquid,LYON,LYON
+78676-1,78676,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,1,16.1,25.1,25:06,FlyQuest,Cloud9,Cloud9
+78676-2,78677,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,2,16.1,31.866666666666667,31:52,Cloud9,FlyQuest,Cloud9
+78676-3,78678,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,3,16.1,30.316666666666663,30:19,Cloud9,FlyQuest,FlyQuest
+78676-4,78679,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,4,16.1,30.816666666666663,30:49,FlyQuest,Cloud9,FlyQuest
+78676-5,78680,,LCS,78676,LCS 2026 Spring Playoffs,ROUND1,2026-05-23,5,16.1,34.516666666666666,34:31,FlyQuest,Cloud9,Cloud9
+78144-1,78144,,LCS,78144,LCS 2026 Spring,WEEK7,2026-05-17,1,16.1,38.21666666666667,38:13,LYON,FlyQuest,FlyQuest
+78144-2,78145,,LCS,78144,LCS 2026 Spring,WEEK7,2026-05-17,2,16.1,29.266666666666666,29:16,FlyQuest,LYON,LYON
+78144-3,78146,,LCS,78144,LCS 2026 Spring,WEEK7,2026-05-17,3,16.1,27.733333333333334,27:44,LYON,FlyQuest,FlyQuest
+78141-1,78141,,LCS,78141,LCS 2026 Spring,WEEK7,2026-05-17,1,16.1,25.95,25:57,Dignitas,Sentinels,Sentinels
+78141-2,78142,,LCS,78141,LCS 2026 Spring,WEEK7,2026-05-17,2,16.1,31.6,31:36,Sentinels,Dignitas,Sentinels
+78138-1,78138,,LCS,78138,LCS 2026 Spring,WEEK7,2026-05-16,1,16.1,29.966666666666665,29:58,Shopify Rebellion,Disguised,Shopify Rebellion
+78138-2,78139,,LCS,78138,LCS 2026 Spring,WEEK7,2026-05-16,2,16.1,37.03333333333333,37:02,Shopify Rebellion,Disguised,Shopify Rebellion
+78135-1,78135,,LCS,78135,LCS 2026 Spring,WEEK7,2026-05-16,1,16.1,37.766666666666666,37:46,Cloud9,Team Liquid,Cloud9
+78135-2,78136,,LCS,78135,LCS 2026 Spring,WEEK7,2026-05-16,2,16.1,34.083333333333336,34:05,Cloud9,Team Liquid,Cloud9
 77747-1,77747,,LCS,77747,LCS 2026 Spring,WEEK6,2026-05-10,1,16.9,34.583333333333336,34:35,Team Liquid,LYON,LYON
 77747-2,77748,,LCS,77747,LCS 2026 Spring,WEEK6,2026-05-10,2,16.9,37.55,37:33,LYON,Team Liquid,Team Liquid
 77747-3,77749,,LCS,77747,LCS 2026 Spring,WEEK6,2026-05-10,3,16.9,40.13333333333333,40:08,Team Liquid,LYON,LYON
@@ -1133,7 +1133,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 77322-2,77323,,LCS,77322,LCS 2026 Spring,WEEK5,2026-05-03,2,16.9,43.61666666666667,43:37,LYON,Sentinels,LYON
 77319-1,77319,,LCS,77319,LCS 2026 Spring,WEEK5,2026-05-02,1,16.9,29.983333333333334,29:59,Disguised,Team Liquid,Team Liquid
 77319-2,77320,,LCS,77319,LCS 2026 Spring,WEEK5,2026-05-02,2,16.9,33.266666666666666,33:16,Team Liquid,Disguised,Team Liquid
-77316-1,77316,,LCS,77316,LCS 2026 Spring,WEEK5,2026-05-02,1,16.9,31.816666666666666,31:49,Dignitas,Cloud9,Cloud9
+77316-1,77316,,LCS,77316,LCS 2026 Spring,WEEK5,2026-05-02,1,16.9,31.816666666666663,31:49,Dignitas,Cloud9,Cloud9
 77316-2,77317,,LCS,77316,LCS 2026 Spring,WEEK5,2026-05-02,2,16.9,35.0,35:00,Cloud9,Dignitas,Dignitas
 77316-3,77318,,LCS,77316,LCS 2026 Spring,WEEK5,2026-05-02,3,16.9,31.833333333333332,31:50,Dignitas,Cloud9,Cloud9
 77022-1,77022,,LCS,77022,LCS 2026 Spring,WEEK4,2026-04-26,1,16.8,23.766666666666666,23:46,Team Liquid,Sentinels,Team Liquid
@@ -1142,27 +1142,27 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 77019-1,77019,,LCS,77019,LCS 2026 Spring,WEEK4,2026-04-26,1,16.8,37.21666666666667,37:13,Disguised,LYON,LYON
 77019-2,77020,,LCS,77019,LCS 2026 Spring,WEEK4,2026-04-26,2,16.8,29.916666666666668,29:55,LYON,Disguised,LYON
 77016-1,77016,,LCS,77016,LCS 2026 Spring,WEEK4,2026-04-25,1,16.8,35.8,35:48,Shopify Rebellion,Cloud9,Cloud9
-77016-2,77017,,LCS,77016,LCS 2026 Spring,WEEK4,2026-04-25,2,16.8,23.566666666666666,23:34,Cloud9,Shopify Rebellion,Cloud9
+77016-2,77017,,LCS,77016,LCS 2026 Spring,WEEK4,2026-04-25,2,16.8,23.566666666666663,23:34,Cloud9,Shopify Rebellion,Cloud9
 77013-1,77013,,LCS,77013,LCS 2026 Spring,WEEK4,2026-04-25,1,16.8,26.366666666666667,26:22,Dignitas,FlyQuest,FlyQuest
 77013-2,77014,,LCS,77013,LCS 2026 Spring,WEEK4,2026-04-25,2,16.8,42.78333333333333,42:47,FlyQuest,Dignitas,FlyQuest
 76599-1,76599,,LCS,76599,LCS 2026 Spring,WEEK3,2026-04-19,1,16.8,44.13333333333333,44:08,Team Liquid,Dignitas,Team Liquid
 76599-2,76600,,LCS,76599,LCS 2026 Spring,WEEK3,2026-04-19,2,16.8,39.43333333333333,39:26,Team Liquid,Dignitas,Dignitas
 76599-3,76601,,LCS,76599,LCS 2026 Spring,WEEK3,2026-04-19,3,16.8,26.133333333333333,26:08,Dignitas,Team Liquid,Team Liquid
 76596-1,76596,,LCS,76596,LCS 2026 Spring,WEEK3,2026-04-19,1,16.8,31.05,31:03,Shopify Rebellion,LYON,LYON
-76596-2,76597,,LCS,76596,LCS 2026 Spring,WEEK3,2026-04-19,2,16.8,30.066666666666666,30:04,LYON,Shopify Rebellion,LYON
-76593-1,76593,,LCS,76593,LCS 2026 Spring,WEEK3,2026-04-18,1,16.8,30.066666666666666,30:04,FlyQuest,Sentinels,Sentinels
+76596-2,76597,,LCS,76596,LCS 2026 Spring,WEEK3,2026-04-19,2,16.8,30.066666666666663,30:04,LYON,Shopify Rebellion,LYON
+76593-1,76593,,LCS,76593,LCS 2026 Spring,WEEK3,2026-04-18,1,16.8,30.066666666666663,30:04,FlyQuest,Sentinels,Sentinels
 76593-2,76594,,LCS,76593,LCS 2026 Spring,WEEK3,2026-04-18,2,16.8,30.966666666666665,30:58,Sentinels,FlyQuest,FlyQuest
 76593-3,76595,,LCS,76593,LCS 2026 Spring,WEEK3,2026-04-18,3,16.8,38.55,38:33,FlyQuest,Sentinels,Sentinels
-76590-1,76590,,LCS,76590,LCS 2026 Spring,WEEK3,2026-04-18,1,16.8,24.683333333333334,24:41,Cloud9,Disguised,Cloud9
+76590-1,76590,,LCS,76590,LCS 2026 Spring,WEEK3,2026-04-18,1,16.8,24.683333333333337,24:41,Cloud9,Disguised,Cloud9
 76590-2,76591,,LCS,76590,LCS 2026 Spring,WEEK3,2026-04-18,2,16.8,25.033333333333335,25:02,Cloud9,Disguised,Cloud9
 76150-1,76150,,LCS,76150,LCS 2026 Spring,WEEK2,2026-04-12,1,16.7,33.15,33:09,Cloud9,Sentinels,Cloud9
 76150-2,76151,,LCS,76150,LCS 2026 Spring,WEEK2,2026-04-12,2,16.7,34.166666666666664,34:10,Cloud9,Sentinels,Sentinels
-76150-3,76152,,LCS,76150,LCS 2026 Spring,WEEK2,2026-04-12,3,16.7,30.933333333333334,30:56,Sentinels,Cloud9,Cloud9
+76150-3,76152,,LCS,76150,LCS 2026 Spring,WEEK2,2026-04-12,3,16.7,30.933333333333337,30:56,Sentinels,Cloud9,Cloud9
 76147-1,76147,,LCS,76147,LCS 2026 Spring,WEEK2,2026-04-12,1,16.7,30.083333333333332,30:05,FlyQuest,Disguised,FlyQuest
 76147-2,76148,,LCS,76147,LCS 2026 Spring,WEEK2,2026-04-12,2,16.7,26.65,26:39,FlyQuest,Disguised,FlyQuest
 76144-1,76144,,LCS,76144,LCS 2026 Spring,WEEK2,2026-04-11,1,16.7,32.6,32:36,LYON,Dignitas,Dignitas
 76144-2,76145,,LCS,76144,LCS 2026 Spring,WEEK2,2026-04-11,2,16.7,36.06666666666667,36:04,Dignitas,LYON,LYON
-76144-3,76146,,LCS,76144,LCS 2026 Spring,WEEK2,2026-04-11,3,16.7,29.816666666666666,29:49,LYON,Dignitas,LYON
+76144-3,76146,,LCS,76144,LCS 2026 Spring,WEEK2,2026-04-11,3,16.7,29.816666666666663,29:49,LYON,Dignitas,LYON
 76141-1,76141,,LCS,76141,LCS 2026 Spring,WEEK2,2026-04-11,1,16.7,24.866666666666667,24:52,Team Liquid,Shopify Rebellion,Team Liquid
 76141-2,76142,,LCS,76141,LCS 2026 Spring,WEEK2,2026-04-11,2,16.7,37.6,37:36,Team Liquid,Shopify Rebellion,Team Liquid
 76138-1,76138,,LCS,76138,LCS 2026 Spring,WEEK1,2026-04-05,1,16.7,33.516666666666666,33:31,Dignitas,Shopify Rebellion,Shopify Rebellion
@@ -1179,7 +1179,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 75058-1,75058,,LCS,75058,LCS 2026 Lock-In,FINALS,2026-03-01,1,16.4,37.55,37:33,LYON,Cloud9,Cloud9
 75058-2,75059,,LCS,75058,LCS 2026 Lock-In,FINALS,2026-03-01,2,16.4,35.36666666666667,35:22,Cloud9,LYON,LYON
 75058-3,75060,,LCS,75058,LCS 2026 Lock-In,FINALS,2026-03-01,3,16.4,41.18333333333333,41:11,LYON,Cloud9,LYON
-75058-4,75061,,LCS,75058,LCS 2026 Lock-In,FINALS,2026-03-01,4,16.4,31.066666666666666,31:04,LYON,Cloud9,LYON
+75058-4,75061,,LCS,75058,LCS 2026 Lock-In,FINALS,2026-03-01,4,16.4,31.066666666666663,31:04,LYON,Cloud9,LYON
 75006-1,75006,,LCS,75006,LCS 2026 Lock-In,PLAYOFFS.ROUND3,2026-02-28,1,16.4,31.05,31:03,LYON,Sentinels,LYON
 75006-2,75007,,LCS,75006,LCS 2026 Lock-In,PLAYOFFS.ROUND3,2026-02-28,2,16.4,37.18333333333333,37:11,LYON,Sentinels,LYON
 75006-3,75008,,LCS,75006,LCS 2026 Lock-In,PLAYOFFS.ROUND3,2026-02-28,3,16.4,34.45,34:27,LYON,Sentinels,Sentinels
@@ -1195,7 +1195,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74599-2,74600,,LCS,74599,LCS 2026 Lock-In,PLAYOFFS.ROUND1,2026-02-21,2,16.4,38.43333333333333,38:26,LYON,FlyQuest,LYON
 74599-3,74601,,LCS,74599,LCS 2026 Lock-In,PLAYOFFS.ROUND1,2026-02-21,3,16.4,28.783333333333335,28:47,LYON,FlyQuest,LYON
 74594-1,74594,,LCS,74594,LCS 2026 Lock-In,PLAYOFFS.ROUND1,2026-02-20,1,16.4,34.233333333333334,34:14,Team Liquid,Disguised,Team Liquid
-74594-2,74595,,LCS,74594,LCS 2026 Lock-In,PLAYOFFS.ROUND1,2026-02-20,2,16.4,24.066666666666666,24:04,Team Liquid,Disguised,Team Liquid
+74594-2,74595,,LCS,74594,LCS 2026 Lock-In,PLAYOFFS.ROUND1,2026-02-20,2,16.4,24.066666666666663,24:04,Team Liquid,Disguised,Team Liquid
 74594-3,74596,,LCS,74594,LCS 2026 Lock-In,PLAYOFFS.ROUND1,2026-02-20,3,16.4,30.766666666666666,30:46,Team Liquid,Disguised,Team Liquid
 74238-1,74238,,LCS,74238,LCS 2026 Lock-In,PLAYOFFS.ROUND1,2026-02-15,1,16.3,29.033333333333335,29:02,Cloud9,FlyQuest,Cloud9
 74238-2,74239,,LCS,74238,LCS 2026 Lock-In,PLAYOFFS.ROUND1,2026-02-15,2,16.3,25.616666666666667,25:37,Cloud9,FlyQuest,Cloud9
@@ -1218,7 +1218,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74014-2,74015,,LCS,74014,LCS 2026 Lock-In,SWISS.ROUND3,2026-02-07,2,16.3,31.033333333333335,31:02,LYON,Disguised,LYON
 74014-3,74016,,LCS,74014,LCS 2026 Lock-In,SWISS.ROUND3,2026-02-07,3,16.3,28.166666666666668,28:10,LYON,Disguised,Disguised
 73776-1,73776,,LCS,73776,LCS 2026 Lock-In,SWISS.ROUND2,2026-02-01,1,16.2,28.633333333333333,28:38,Team Liquid,Shopify Rebellion,Team Liquid
-73776-2,73777,,LCS,73776,LCS 2026 Lock-In,SWISS.ROUND2,2026-02-01,2,16.2,24.183333333333334,24:11,Team Liquid,Shopify Rebellion,Team Liquid
+73776-2,73777,,LCS,73776,LCS 2026 Lock-In,SWISS.ROUND2,2026-02-01,2,16.2,24.183333333333337,24:11,Team Liquid,Shopify Rebellion,Team Liquid
 73773-1,73773,,LCS,73773,LCS 2026 Lock-In,SWISS.ROUND2,2026-02-01,1,16.2,28.45,28:27,Disguised,FlyQuest,FlyQuest
 73773-2,73774,,LCS,73773,LCS 2026 Lock-In,SWISS.ROUND2,2026-02-01,2,16.2,35.083333333333336,35:05,Disguised,FlyQuest,Disguised
 73773-3,73775,,LCS,73773,LCS 2026 Lock-In,SWISS.ROUND2,2026-02-01,3,16.2,30.383333333333333,30:23,FlyQuest,Disguised,FlyQuest
@@ -1265,14 +1265,14 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 82760-3,82762,,CBLOL,82760,CBLOL 2026 Split 2 Playoffs,ROUND2,2026-09-13,3,16.17,33.93333333333333,33:56,LOUD,paiN Gaming,LOUD
 82760-4,82763,,CBLOL,82760,CBLOL 2026 Split 2 Playoffs,ROUND2,2026-09-13,4,16.17,35.583333333333336,35:35,LOUD,paiN Gaming,LOUD
 82755-1,82755,,CBLOL,82755,CBLOL 2026 Split 2 Playoffs,ROUND2,2026-09-12,1,16.17,40.9,40:54,FURIA,Los Grandes,Los Grandes
-82755-2,82756,,CBLOL,82755,CBLOL 2026 Split 2 Playoffs,ROUND2,2026-09-12,2,16.17,27.433333333333334,27:26,Los Grandes,FURIA,Los Grandes
+82755-2,82756,,CBLOL,82755,CBLOL 2026 Split 2 Playoffs,ROUND2,2026-09-12,2,16.17,27.433333333333337,27:26,Los Grandes,FURIA,Los Grandes
 82755-3,82757,,CBLOL,82755,CBLOL 2026 Split 2 Playoffs,ROUND2,2026-09-12,3,16.17,30.033333333333335,30:02,Los Grandes,FURIA,FURIA
 82755-4,82758,,CBLOL,82755,CBLOL 2026 Split 2 Playoffs,ROUND2,2026-09-12,4,16.17,31.716666666666665,31:43,FURIA,Los Grandes,Los Grandes
 82449-1,82449,,CBLOL,82449,CBLOL 2026 Split 2 Playoffs,ROUND1,2026-09-06,1,16.17,38.583333333333336,38:35,RED Canids,FURIA,FURIA
 82449-2,82450,,CBLOL,82449,CBLOL 2026 Split 2 Playoffs,ROUND1,2026-09-06,2,16.17,32.016666666666666,32:01,FURIA,RED Canids,FURIA
 82449-3,82451,,CBLOL,82449,CBLOL 2026 Split 2 Playoffs,ROUND1,2026-09-06,3,16.17,32.016666666666666,32:01,FURIA,RED Canids,FURIA
 82444-1,82444,,CBLOL,82444,CBLOL 2026 Split 2 Playoffs,ROUND1,2026-09-05,1,16.17,31.8,31:48,paiN Gaming,Vivo Keyd Stars,Vivo Keyd Stars
-82444-2,82445,,CBLOL,82444,CBLOL 2026 Split 2 Playoffs,ROUND1,2026-09-05,2,16.17,29.566666666666666,29:34,Vivo Keyd Stars,paiN Gaming,paiN Gaming
+82444-2,82445,,CBLOL,82444,CBLOL 2026 Split 2 Playoffs,ROUND1,2026-09-05,2,16.17,29.566666666666663,29:34,Vivo Keyd Stars,paiN Gaming,paiN Gaming
 82444-3,82446,,CBLOL,82444,CBLOL 2026 Split 2 Playoffs,ROUND1,2026-09-05,3,16.17,35.266666666666666,35:16,paiN Gaming,Vivo Keyd Stars,paiN Gaming
 82444-4,82447,,CBLOL,82444,CBLOL 2026 Split 2 Playoffs,ROUND1,2026-09-05,4,16.17,28.866666666666667,28:52,paiN Gaming,Vivo Keyd Stars,paiN Gaming
 82153-1,82153,,CBLOL,82153,CBLOL 2026 Split 2,WEEK6,2026-08-30,1,16.17,36.93333333333333,36:56,FURIA,Leviatan,FURIA
@@ -1282,7 +1282,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 82150-3,82152,,CBLOL,82150,CBLOL 2026 Split 2,WEEK6,2026-08-30,3,16.17,49.016666666666666,49:01,paiN Gaming,Vivo Keyd Stars,Vivo Keyd Stars
 82147-1,82147,,CBLOL,82147,CBLOL 2026 Split 2,WEEK6,2026-08-29,1,16.17,31.083333333333332,31:05,Fluxo W7M,Los Grandes,Fluxo W7M
 82147-2,82148,,CBLOL,82147,CBLOL 2026 Split 2,WEEK6,2026-08-29,2,16.17,27.783333333333335,27:47,Fluxo W7M,Los Grandes,Los Grandes
-82147-3,82149,,CBLOL,82147,CBLOL 2026 Split 2,WEEK6,2026-08-29,3,16.17,23.816666666666666,23:49,Los Grandes,Fluxo W7M,Los Grandes
+82147-3,82149,,CBLOL,82147,CBLOL 2026 Split 2,WEEK6,2026-08-29,3,16.17,23.816666666666663,23:49,Los Grandes,Fluxo W7M,Los Grandes
 82144-1,82144,,CBLOL,82144,CBLOL 2026 Split 2,WEEK6,2026-08-29,1,16.17,43.13333333333333,43:08,LOUD,RED Canids,LOUD
 82144-2,82145,,CBLOL,82144,CBLOL 2026 Split 2,WEEK6,2026-08-29,2,16.17,25.716666666666665,25:43,LOUD,RED Canids,LOUD
 81752-1,81752,,CBLOL,81752,CBLOL 2026 Split 2,WEEK5,2026-08-23,1,16.16,33.93333333333333,33:56,LOUD,Los Grandes,LOUD
@@ -1296,14 +1296,14 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81463-1,81463,,CBLOL,81463,CBLOL 2026 Split 2,WEEK4,2026-08-16,1,16.16,33.2,33:12,paiN Gaming,Fluxo W7M,paiN Gaming
 81463-2,81464,,CBLOL,81463,CBLOL 2026 Split 2,WEEK4,2026-08-16,2,16.16,30.9,30:54,paiN Gaming,Fluxo W7M,paiN Gaming
 81460-1,81460,,CBLOL,81460,CBLOL 2026 Split 2,WEEK4,2026-08-16,1,16.16,29.35,29:21,Leviatan,LOUD,LOUD
-81460-2,81461,,CBLOL,81460,CBLOL 2026 Split 2,WEEK4,2026-08-16,2,16.16,23.433333333333334,23:26,LOUD,Leviatan,LOUD
+81460-2,81461,,CBLOL,81460,CBLOL 2026 Split 2,WEEK4,2026-08-16,2,16.16,23.433333333333337,23:26,LOUD,Leviatan,LOUD
 81457-1,81457,,CBLOL,81457,CBLOL 2026 Split 2,WEEK4,2026-08-15,1,16.16,32.06666666666667,32:04,Los Grandes,Vivo Keyd Stars,Los Grandes
 81457-2,81458,,CBLOL,81457,CBLOL 2026 Split 2,WEEK4,2026-08-15,2,16.16,28.633333333333333,28:38,Los Grandes,Vivo Keyd Stars,Los Grandes
 81454-1,81454,,CBLOL,81454,CBLOL 2026 Split 2,WEEK4,2026-08-15,1,16.16,38.4,38:24,RED Canids,FURIA,FURIA
 81454-2,81455,,CBLOL,81454,CBLOL 2026 Split 2,WEEK4,2026-08-15,2,16.16,32.016666666666666,32:01,FURIA,RED Canids,RED Canids
-81454-3,81456,,CBLOL,81454,CBLOL 2026 Split 2,WEEK4,2026-08-15,3,16.16,29.183333333333334,29:11,RED Canids,FURIA,FURIA
+81454-3,81456,,CBLOL,81454,CBLOL 2026 Split 2,WEEK4,2026-08-15,3,16.16,29.183333333333337,29:11,RED Canids,FURIA,FURIA
 80966-1,80966,,CBLOL,80966,CBLOL 2026 Split 2,WEEK3,2026-08-10,1,16.15,32.18333333333333,32:11,Los Grandes,paiN Gaming,Los Grandes
-80966-2,80967,,CBLOL,80966,CBLOL 2026 Split 2,WEEK3,2026-08-10,2,16.15,28.566666666666666,28:34,Los Grandes,paiN Gaming,Los Grandes
+80966-2,80967,,CBLOL,80966,CBLOL 2026 Split 2,WEEK3,2026-08-10,2,16.15,28.566666666666663,28:34,Los Grandes,paiN Gaming,Los Grandes
 80963-1,80963,,CBLOL,80963,CBLOL 2026 Split 2,WEEK3,2026-08-10,1,16.15,35.13333333333333,35:08,Leviatan,RED Canids,Leviatan
 80963-2,80964,,CBLOL,80963,CBLOL 2026 Split 2,WEEK3,2026-08-10,2,16.15,34.516666666666666,34:31,Leviatan,RED Canids,Leviatan
 80960-1,80960,,CBLOL,80960,CBLOL 2026 Split 2,WEEK3,2026-08-09,1,16.15,27.516666666666666,27:31,Fluxo W7M,FURIA,FURIA
@@ -1331,10 +1331,10 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80452-2,80453,,CBLOL,80452,CBLOL 2026 Split 2,WEEK1,2026-07-26,2,16.14,25.766666666666666,25:46,Vivo Keyd Stars,RED Canids,RED Canids
 80452-3,80454,,CBLOL,80452,CBLOL 2026 Split 2,WEEK1,2026-07-26,3,16.14,31.866666666666667,31:52,RED Canids,Vivo Keyd Stars,Vivo Keyd Stars
 80449-1,80449,,CBLOL,80449,CBLOL 2026 Split 2,WEEK1,2026-07-26,1,16.14,32.483333333333334,32:29,Leviatan,Fluxo W7M,Fluxo W7M
-80449-2,80450,,CBLOL,80449,CBLOL 2026 Split 2,WEEK1,2026-07-26,2,16.14,31.183333333333334,31:11,Fluxo W7M,Leviatan,Fluxo W7M
+80449-2,80450,,CBLOL,80449,CBLOL 2026 Split 2,WEEK1,2026-07-26,2,16.14,31.183333333333337,31:11,Fluxo W7M,Leviatan,Fluxo W7M
 80446-1,80446,,CBLOL,80446,CBLOL 2026 Split 2,WEEK1,2026-07-25,1,16.14,26.85,26:51,paiN Gaming,LOUD,paiN Gaming
 80446-2,80447,,CBLOL,80446,CBLOL 2026 Split 2,WEEK1,2026-07-25,2,16.14,36.65,36:39,paiN Gaming,LOUD,LOUD
-80446-3,80448,,CBLOL,80446,CBLOL 2026 Split 2,WEEK1,2026-07-25,3,16.14,28.316666666666666,28:19,LOUD,paiN Gaming,LOUD
+80446-3,80448,,CBLOL,80446,CBLOL 2026 Split 2,WEEK1,2026-07-25,3,16.14,28.316666666666663,28:19,LOUD,paiN Gaming,LOUD
 80443-1,80443,,CBLOL,80443,CBLOL 2026 Split 2,WEEK1,2026-07-25,1,16.14,30.666666666666668,30:40,FURIA,Los Grandes,Los Grandes
 80443-2,80444,,CBLOL,80443,CBLOL 2026 Split 2,WEEK1,2026-07-25,2,16.14,34.483333333333334,34:29,Los Grandes,FURIA,Los Grandes
 79152-1,79152,,CBLOL,79152,CBLOL 2026 Split 1 Playoffs,FINALS,2026-06-06,1,16.11,27.966666666666665,27:58,Los Grandes,FURIA,FURIA
@@ -1346,34 +1346,34 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 79132-3,79134,,CBLOL,79132,CBLOL 2026 Split 1 Playoffs,ROUND4,2026-05-31,3,16.11,26.033333333333335,26:02,Los Grandes,RED Canids,Los Grandes
 78905-1,78905,,CBLOL,78905,CBLOL 2026 Split 1 Playoffs,ROUND3,2026-05-30,1,16.11,37.93333333333333,37:56,Los Grandes,Fluxo W7M,Los Grandes
 78905-2,78906,,CBLOL,78905,CBLOL 2026 Split 1 Playoffs,ROUND3,2026-05-30,2,16.11,30.8,30:48,Los Grandes,Fluxo W7M,Fluxo W7M
-78905-3,78907,,CBLOL,78905,CBLOL 2026 Split 1 Playoffs,ROUND3,2026-05-30,3,16.11,30.933333333333334,30:56,Fluxo W7M,Los Grandes,Fluxo W7M
+78905-3,78907,,CBLOL,78905,CBLOL 2026 Split 1 Playoffs,ROUND3,2026-05-30,3,16.11,30.933333333333337,30:56,Fluxo W7M,Los Grandes,Fluxo W7M
 78905-4,78908,,CBLOL,78905,CBLOL 2026 Split 1 Playoffs,ROUND3,2026-05-30,4,16.11,30.7,30:42,Fluxo W7M,Los Grandes,Los Grandes
 78905-5,78909,,CBLOL,78905,CBLOL 2026 Split 1 Playoffs,ROUND3,2026-05-30,5,16.11,25.833333333333332,25:50,Los Grandes,Fluxo W7M,Los Grandes
-78822-1,78822,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,1,16.10,37.25,37:15,Los Grandes,LOUD,Los Grandes
-78822-2,78823,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,2,16.10,31.166666666666668,31:10,Los Grandes,LOUD,Los Grandes
-78822-3,78824,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,3,16.10,28.066666666666666,28:04,Los Grandes,LOUD,LOUD
-78822-4,78825,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,4,16.10,36.63333333333333,36:38,LOUD,Los Grandes,LOUD
-78822-5,78826,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,5,16.10,27.85,27:51,LOUD,Los Grandes,Los Grandes
-78817-1,78817,,CBLOL,78817,CBLOL 2026 Split 1 Playoffs,ROUND4,2026-05-24,1,16.10,31.166666666666668,31:10,FURIA,RED Canids,FURIA
-78817-2,78818,,CBLOL,78817,CBLOL 2026 Split 1 Playoffs,ROUND4,2026-05-24,2,16.10,34.7,34:42,FURIA,RED Canids,FURIA
-78817-3,78819,,CBLOL,78817,CBLOL 2026 Split 1 Playoffs,ROUND4,2026-05-24,3,16.10,39.95,39:57,FURIA,RED Canids,FURIA
-78120-1,78120,,CBLOL,78120,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-23,1,16.10,38.2,38:12,Los Grandes,Vivo Keyd Stars,Los Grandes
-78120-2,78121,,CBLOL,78120,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-23,2,16.10,36.46666666666667,36:28,Los Grandes,Vivo Keyd Stars,Los Grandes
-78120-3,78122,,CBLOL,78120,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-23,3,16.10,23.35,23:21,Los Grandes,Vivo Keyd Stars,Los Grandes
-78130-1,78130,,CBLOL,78130,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-17,1,16.10,32.36666666666667,32:22,LOUD,FURIA,FURIA
-78130-2,78131,,CBLOL,78130,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-17,2,16.10,32.15,32:09,FURIA,LOUD,FURIA
-78130-3,78132,,CBLOL,78130,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-17,3,16.10,34.083333333333336,34:05,FURIA,LOUD,FURIA
-78125-1,78125,,CBLOL,78125,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-16,1,16.10,44.31666666666667,44:19,Fluxo W7M,RED Canids,Fluxo W7M
-78125-2,78126,,CBLOL,78125,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-16,2,16.10,37.93333333333333,37:56,Fluxo W7M,RED Canids,RED Canids
-78125-3,78127,,CBLOL,78125,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-16,3,16.10,23.55,23:33,RED Canids,Fluxo W7M,RED Canids
-78125-4,78128,,CBLOL,78125,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-16,4,16.10,37.31666666666667,37:19,RED Canids,Fluxo W7M,RED Canids
+78822-1,78822,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,1,16.1,37.25,37:15,Los Grandes,LOUD,Los Grandes
+78822-2,78823,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,2,16.1,31.166666666666668,31:10,Los Grandes,LOUD,Los Grandes
+78822-3,78824,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,3,16.1,28.066666666666663,28:04,Los Grandes,LOUD,LOUD
+78822-4,78825,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,4,16.1,36.63333333333333,36:38,LOUD,Los Grandes,LOUD
+78822-5,78826,,CBLOL,78822,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-25,5,16.1,27.85,27:51,LOUD,Los Grandes,Los Grandes
+78817-1,78817,,CBLOL,78817,CBLOL 2026 Split 1 Playoffs,ROUND4,2026-05-24,1,16.1,31.166666666666668,31:10,FURIA,RED Canids,FURIA
+78817-2,78818,,CBLOL,78817,CBLOL 2026 Split 1 Playoffs,ROUND4,2026-05-24,2,16.1,34.7,34:42,FURIA,RED Canids,FURIA
+78817-3,78819,,CBLOL,78817,CBLOL 2026 Split 1 Playoffs,ROUND4,2026-05-24,3,16.1,39.95,39:57,FURIA,RED Canids,FURIA
+78120-1,78120,,CBLOL,78120,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-23,1,16.1,38.2,38:12,Los Grandes,Vivo Keyd Stars,Los Grandes
+78120-2,78121,,CBLOL,78120,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-23,2,16.1,36.46666666666667,36:28,Los Grandes,Vivo Keyd Stars,Los Grandes
+78120-3,78122,,CBLOL,78120,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-23,3,16.1,23.35,23:21,Los Grandes,Vivo Keyd Stars,Los Grandes
+78130-1,78130,,CBLOL,78130,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-17,1,16.1,32.36666666666667,32:22,LOUD,FURIA,FURIA
+78130-2,78131,,CBLOL,78130,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-17,2,16.1,32.15,32:09,FURIA,LOUD,FURIA
+78130-3,78132,,CBLOL,78130,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-17,3,16.1,34.083333333333336,34:05,FURIA,LOUD,FURIA
+78125-1,78125,,CBLOL,78125,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-16,1,16.1,44.31666666666667,44:19,Fluxo W7M,RED Canids,Fluxo W7M
+78125-2,78126,,CBLOL,78125,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-16,2,16.1,37.93333333333333,37:56,Fluxo W7M,RED Canids,RED Canids
+78125-3,78127,,CBLOL,78125,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-16,3,16.1,23.55,23:33,RED Canids,Fluxo W7M,RED Canids
+78125-4,78128,,CBLOL,78125,CBLOL 2026 Split 1 Playoffs,ROUND2,2026-05-16,4,16.1,37.31666666666667,37:19,RED Canids,Fluxo W7M,RED Canids
 78037-1,78037,,CBLOL,78037,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-10,1,16.9,25.116666666666667,25:07,Fluxo W7M,Los Grandes,Fluxo W7M
 78037-2,78038,,CBLOL,78037,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-10,2,16.9,27.866666666666667,27:52,Fluxo W7M,Los Grandes,Los Grandes
 78037-3,78039,,CBLOL,78037,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-10,3,16.9,32.25,32:15,Fluxo W7M,Los Grandes,Fluxo W7M
 78037-4,78040,,CBLOL,78037,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-10,4,16.9,28.85,28:51,Fluxo W7M,Los Grandes,Los Grandes
 78037-5,78041,,CBLOL,78037,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-10,5,16.9,37.38333333333333,37:23,Fluxo W7M,Los Grandes,Fluxo W7M
-78032-1,78032,,CBLOL,78032,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-09,1,16.9,26.933333333333334,26:56,LOUD,Vivo Keyd Stars,LOUD
-78032-2,78033,,CBLOL,78032,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-09,2,16.9,26.933333333333334,26:56,LOUD,Vivo Keyd Stars,LOUD
+78032-1,78032,,CBLOL,78032,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-09,1,16.9,26.933333333333337,26:56,LOUD,Vivo Keyd Stars,LOUD
+78032-2,78033,,CBLOL,78032,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-09,2,16.9,26.933333333333337,26:56,LOUD,Vivo Keyd Stars,LOUD
 78032-3,78034,,CBLOL,78032,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-09,3,16.9,37.86666666666667,37:52,LOUD,Vivo Keyd Stars,Vivo Keyd Stars
 78032-4,78035,,CBLOL,78032,CBLOL 2026 Split 1 Playoffs,ROUND1,2026-05-09,4,16.9,29.483333333333334,29:29,Vivo Keyd Stars,LOUD,LOUD
 77295-1,77295,,CBLOL,77295,CBLOL 2026 Split 1,WEEK6,2026-05-03,1,16.9,43.03333333333333,43:02,LOUD,Vivo Keyd Stars,LOUD
@@ -1469,7 +1469,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74202-3,74204,,CBLOL,74202,CBLOL Cup 2026,ROUND2,2026-02-08,3,16.3,37.96666666666667,37:58,Los Grandes,LOUD,LOUD
 74199-1,74199,,CBLOL,74199,CBLOL Cup 2026,ROUND2,2026-02-08,1,16.3,36.71666666666667,36:43,RED Canids,FURIA,RED Canids
 74199-2,74200,,CBLOL,74199,CBLOL Cup 2026,ROUND2,2026-02-08,2,16.3,30.633333333333333,30:38,FURIA,RED Canids,RED Canids
-74061-1,74061,,CBLOL,74061,CBLOL Cup 2026,ROUND1,2026-02-07,1,16.3,29.066666666666666,29:04,Leviatan,FURIA,FURIA
+74061-1,74061,,CBLOL,74061,CBLOL Cup 2026,ROUND1,2026-02-07,1,16.3,29.066666666666663,29:04,Leviatan,FURIA,FURIA
 74061-2,74062,,CBLOL,74061,CBLOL Cup 2026,ROUND1,2026-02-07,2,16.3,29.533333333333335,29:32,Leviatan,FURIA,FURIA
 74058-1,74058,,CBLOL,74058,CBLOL Cup 2026,ROUND1,2026-02-07,1,16.3,36.68333333333333,36:41,LOUD,Vivo Keyd Stars,LOUD
 74058-2,74059,,CBLOL,74058,CBLOL Cup 2026,ROUND1,2026-02-07,2,16.3,31.65,31:39,Vivo Keyd Stars,LOUD,LOUD
@@ -1487,7 +1487,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73744-1,73744,,CBLOL,73744,CBLOL Cup 2026,WEEK3,2026-02-01,1,16.2,33.18333333333333,33:11,Vivo Keyd Stars,FURIA,FURIA
 73743-1,73743,,CBLOL,73743,CBLOL Cup 2026,WEEK3,2026-02-01,1,16.2,33.56666666666667,33:34,Los Grandes,RED Canids,Los Grandes
 73742-1,73742,,CBLOL,73742,CBLOL Cup 2026,WEEK3,2026-01-31,1,16.2,35.61666666666667,35:37,LOUD,Leviatan,Leviatan
-73741-1,73741,,CBLOL,73741,CBLOL Cup 2026,WEEK3,2026-01-31,1,16.2,31.316666666666666,31:19,Los Grandes,paiN Gaming,paiN Gaming
+73741-1,73741,,CBLOL,73741,CBLOL Cup 2026,WEEK3,2026-01-31,1,16.2,31.316666666666663,31:19,Los Grandes,paiN Gaming,paiN Gaming
 73740-1,73740,,CBLOL,73740,CBLOL Cup 2026,WEEK3,2026-01-31,1,16.2,36.21666666666667,36:13,FURIA,Fluxo W7M,FURIA
 73739-1,73739,,CBLOL,73739,CBLOL Cup 2026,WEEK3,2026-01-31,1,16.2,31.266666666666666,31:16,Vivo Keyd Stars,RED Canids,RED Canids
 73426-1,73426,,CBLOL,73426,CBLOL Cup 2026,WEEK2,2026-01-25,1,16.2,28.0,28:00,Los Grandes,FURIA,Los Grandes
@@ -1505,7 +1505,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73262-1,73262,,CBLOL,73262,CBLOL Cup 2026,WEEK1,2026-01-18,1,16.1,27.25,27:15,Fluxo W7M,Vivo Keyd Stars,Vivo Keyd Stars
 73261-1,73261,,CBLOL,73261,CBLOL Cup 2026,WEEK1,2026-01-18,1,16.1,28.233333333333334,28:14,paiN Gaming,FURIA,FURIA
 73260-1,73260,,CBLOL,73260,CBLOL Cup 2026,WEEK1,2026-01-18,1,16.1,30.1,30:06,Fluxo W7M,Los Grandes,Los Grandes
-73259-1,73259,,CBLOL,73259,CBLOL Cup 2026,WEEK1,2026-01-17,1,16.1,31.816666666666666,31:49,Leviatan,FURIA,FURIA
+73259-1,73259,,CBLOL,73259,CBLOL Cup 2026,WEEK1,2026-01-17,1,16.1,31.816666666666663,31:49,Leviatan,FURIA,FURIA
 73258-1,73258,,CBLOL,73258,CBLOL Cup 2026,WEEK1,2026-01-17,1,16.1,25.216666666666665,25:13,Los Grandes,Vivo Keyd Stars,Los Grandes
 73257-1,73257,,CBLOL,73257,CBLOL Cup 2026,WEEK1,2026-01-17,1,16.1,29.65,29:39,LOUD,FURIA,FURIA
 73256-1,73256,,CBLOL,73256,CBLOL Cup 2026,WEEK1,2026-01-17,1,16.1,34.71666666666667,34:43,RED Canids,Fluxo W7M,RED Canids
@@ -1514,8 +1514,8 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83082-2,83083,,LEC,83082,LEC 2026 Summer Playoffs,FINALS,2026-09-20,2,16.17,31.783333333333335,31:47,G2 Esports,Movistar KOI,G2 Esports
 83082-3,83084,,LEC,83082,LEC 2026 Summer Playoffs,FINALS,2026-09-20,3,16.17,29.1,29:06,G2 Esports,Movistar KOI,G2 Esports
 83074-1,83074,,LEC,83074,LEC 2026 Summer Playoffs,ROUND3,2026-09-19,1,16.17,43.05,43:03,Karmine Corp,Movistar KOI,Movistar KOI
-83074-2,83075,,LEC,83074,LEC 2026 Summer Playoffs,ROUND3,2026-09-19,2,16.17,30.933333333333334,30:56,Movistar KOI,Karmine Corp,Movistar KOI
-83074-3,83076,,LEC,83074,LEC 2026 Summer Playoffs,ROUND3,2026-09-19,3,16.17,26.066666666666666,26:04,Movistar KOI,Karmine Corp,Movistar KOI
+83074-2,83075,,LEC,83074,LEC 2026 Summer Playoffs,ROUND3,2026-09-19,2,16.17,30.933333333333337,30:56,Movistar KOI,Karmine Corp,Movistar KOI
+83074-3,83076,,LEC,83074,LEC 2026 Summer Playoffs,ROUND3,2026-09-19,3,16.17,26.066666666666663,26:04,Movistar KOI,Karmine Corp,Movistar KOI
 82972-1,82972,,LEC,82972,LEC 2026 Summer Playoffs,ROUND2,2026-09-18,1,16.17,41.38333333333333,41:23,Movistar KOI,Natus Vincere,Natus Vincere
 82972-2,82973,,LEC,82972,LEC 2026 Summer Playoffs,ROUND2,2026-09-18,2,16.17,28.116666666666667,28:07,Movistar KOI,Natus Vincere,Movistar KOI
 82972-3,82974,,LEC,82972,LEC 2026 Summer Playoffs,ROUND2,2026-09-18,3,16.17,32.2,32:12,Movistar KOI,Natus Vincere,Movistar KOI
@@ -1555,7 +1555,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 82208-2,82209,,LEC,82208,LEC 2026 Summer Season,WEEK6,2026-08-29,2,16.17,42.11666666666667,42:07,Karmine Corp,SK Gaming,Karmine Corp
 82205-1,82205,,LEC,82205,LEC 2026 Summer Season,WEEK6,2026-08-28,1,16.17,32.65,32:39,Fnatic,Team Vitality,Fnatic
 82205-2,82206,,LEC,82205,LEC 2026 Summer Season,WEEK6,2026-08-28,2,16.17,28.333333333333332,28:20,Fnatic,Team Vitality,Team Vitality
-82205-3,82207,,LEC,82205,LEC 2026 Summer Season,WEEK6,2026-08-28,3,16.17,26.316666666666666,26:19,Team Vitality,Fnatic,Team Vitality
+82205-3,82207,,LEC,82205,LEC 2026 Summer Season,WEEK6,2026-08-28,3,16.17,26.316666666666663,26:19,Team Vitality,Fnatic,Team Vitality
 82202-1,82202,,LEC,82202,LEC 2026 Summer Season,WEEK6,2026-08-28,1,16.17,28.383333333333333,28:23,Team Heretics,Shifters,Shifters
 82202-2,82203,,LEC,82202,LEC 2026 Summer Season,WEEK6,2026-08-28,2,16.17,26.05,26:03,Shifters,Team Heretics,Shifters
 81804-1,81804,,LEC,81804,LEC 2026 Summer Season,WEEK5,2026-08-24,1,16.16,25.583333333333332,25:35,G2 Esports,GIANTX,G2 Esports
@@ -1568,7 +1568,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81798-3,81800,,LEC,81798,LEC 2026 Summer Season,WEEK5,2026-08-23,3,16.16,32.95,32:57,Karmine Corp,Shifters,Karmine Corp
 81795-1,81795,,LEC,81795,LEC 2026 Summer Season,WEEK5,2026-08-23,1,16.16,41.13333333333333,41:08,GIANTX,Team Heretics,GIANTX
 81795-2,81796,,LEC,81795,LEC 2026 Summer Season,WEEK5,2026-08-23,2,16.16,33.21666666666667,33:13,GIANTX,Team Heretics,GIANTX
-81792-1,81792,,LEC,81792,LEC 2026 Summer Season,WEEK5,2026-08-22,1,16.16,29.316666666666666,29:19,Movistar KOI,SK Gaming,SK Gaming
+81792-1,81792,,LEC,81792,LEC 2026 Summer Season,WEEK5,2026-08-22,1,16.16,29.316666666666663,29:19,Movistar KOI,SK Gaming,SK Gaming
 81792-2,81793,,LEC,81792,LEC 2026 Summer Season,WEEK5,2026-08-22,2,16.16,31.866666666666667,31:52,SK Gaming,Movistar KOI,SK Gaming
 81789-1,81789,,LEC,81789,LEC 2026 Summer Season,WEEK5,2026-08-22,1,16.16,34.18333333333333,34:11,Fnatic,Shifters,Fnatic
 81789-2,81790,,LEC,81789,LEC 2026 Summer Season,WEEK5,2026-08-22,2,16.16,32.95,32:57,Fnatic,Shifters,Fnatic
@@ -1628,7 +1628,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80520-2,80521,,LEC,80520,LEC 2026 Summer Season,WEEK2,2026-08-01,2,16.15,49.13333333333333,49:08,GIANTX,SK Gaming,GIANTX
 80520-3,80522,,LEC,80520,LEC 2026 Summer Season,WEEK2,2026-08-01,3,16.15,26.15,26:09,GIANTX,SK Gaming,SK Gaming
 80517-1,80517,,LEC,80517,LEC 2026 Summer Season,WEEK2,2026-07-31,1,16.15,42.36666666666667,42:22,Movistar KOI,Shifters,Shifters
-80517-2,80518,,LEC,80517,LEC 2026 Summer Season,WEEK2,2026-07-31,2,16.15,28.433333333333334,28:26,Shifters,Movistar KOI,Movistar KOI
+80517-2,80518,,LEC,80517,LEC 2026 Summer Season,WEEK2,2026-07-31,2,16.15,28.433333333333337,28:26,Shifters,Movistar KOI,Movistar KOI
 80517-3,80519,,LEC,80517,LEC 2026 Summer Season,WEEK2,2026-07-31,3,16.15,28.966666666666665,28:58,Movistar KOI,Shifters,Movistar KOI
 80514-1,80514,,LEC,80514,LEC 2026 Summer Season,WEEK2,2026-07-31,1,16.15,35.833333333333336,35:50,Team Heretics,Team Vitality,Team Vitality
 80514-2,80515,,LEC,80514,LEC 2026 Summer Season,WEEK2,2026-07-31,2,16.15,27.0,27:00,Team Vitality,Team Heretics,Team Vitality
@@ -1640,43 +1640,43 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80349-3,80351,,LEC,80349,LEC 2026 Summer Season,WEEK1,2026-07-26,3,16.14,33.833333333333336,33:50,Movistar KOI,Team Vitality,Team Vitality
 80346-1,80346,,LEC,80346,LEC 2026 Summer Season,WEEK1,2026-07-25,1,16.14,31.35,31:21,Movistar KOI,Karmine Corp,Karmine Corp
 80346-2,80347,,LEC,80346,LEC 2026 Summer Season,WEEK1,2026-07-25,2,16.14,27.233333333333334,27:14,Karmine Corp,Movistar KOI,Karmine Corp
-80343-1,80343,,LEC,80343,LEC 2026 Summer Season,WEEK1,2026-07-25,1,16.14,27.683333333333334,27:41,G2 Esports,Team Vitality,G2 Esports
+80343-1,80343,,LEC,80343,LEC 2026 Summer Season,WEEK1,2026-07-25,1,16.14,27.683333333333337,27:41,G2 Esports,Team Vitality,G2 Esports
 80343-2,80344,,LEC,80343,LEC 2026 Summer Season,WEEK1,2026-07-25,2,16.14,29.533333333333335,29:32,G2 Esports,Team Vitality,G2 Esports
 80340-1,80340,,LEC,80340,LEC 2026 Summer Season,WEEK1,2026-07-24,1,16.14,37.55,37:33,Karmine Corp,Team Vitality,Karmine Corp
 80340-2,80341,,LEC,80340,LEC 2026 Summer Season,WEEK1,2026-07-24,2,16.14,38.46666666666667,38:28,Karmine Corp,Team Vitality,Karmine Corp
 80337-1,80337,,LEC,80337,LEC 2026 Summer Season,WEEK1,2026-07-24,1,16.14,29.9,29:54,Movistar KOI,G2 Esports,Movistar KOI
 80337-2,80338,,LEC,80337,LEC 2026 Summer Season,WEEK1,2026-07-24,2,16.14,33.583333333333336,33:35,Movistar KOI,G2 Esports,G2 Esports
 80337-3,80339,,LEC,80337,LEC 2026 Summer Season,WEEK1,2026-07-24,3,16.14,46.31666666666667,46:19,G2 Esports,Movistar KOI,G2 Esports
-79285-1,79285,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,1,16.10,32.36666666666667,32:22,G2 Esports,Karmine Corp,Karmine Corp
-79285-2,79286,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,2,16.10,22.8,22:48,Karmine Corp,G2 Esports,G2 Esports
-79285-3,79287,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,3,16.10,35.55,35:33,G2 Esports,Karmine Corp,Karmine Corp
-79285-4,79288,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,4,16.10,29.8,29:48,Karmine Corp,G2 Esports,G2 Esports
-79285-5,79289,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,5,16.10,26.3,26:18,G2 Esports,Karmine Corp,G2 Esports
-79180-1,79180,,LEC,79180,LEC 2026 Spring Playoffs,ROUND3,2026-06-06,1,16.10,42.083333333333336,42:05,Karmine Corp,Movistar KOI,Karmine Corp
-79180-2,79181,,LEC,79180,LEC 2026 Spring Playoffs,ROUND3,2026-06-06,2,16.10,35.7,35:42,Karmine Corp,Movistar KOI,Karmine Corp
-79180-3,79182,,LEC,79180,LEC 2026 Spring Playoffs,ROUND3,2026-06-06,3,16.10,37.05,37:03,Karmine Corp,Movistar KOI,Karmine Corp
-79167-1,79167,,LEC,79167,LEC 2026 Spring Playoffs,ROUND2,2026-06-01,1,16.10,33.93333333333333,33:56,Karmine Corp,GIANTX,Karmine Corp
-79167-2,79168,,LEC,79167,LEC 2026 Spring Playoffs,ROUND2,2026-06-01,2,16.10,29.733333333333334,29:44,Karmine Corp,GIANTX,Karmine Corp
-79167-3,79169,,LEC,79167,LEC 2026 Spring Playoffs,ROUND2,2026-06-01,3,16.10,27.9,27:54,Karmine Corp,GIANTX,Karmine Corp
-78832-1,78832,,LEC,78832,LEC 2026 Spring Playoffs,ROUND1,2026-05-31,1,16.10,40.06666666666667,40:04,Team Vitality,GIANTX,GIANTX
-78832-2,78833,,LEC,78832,LEC 2026 Spring Playoffs,ROUND1,2026-05-31,2,16.10,41.916666666666664,41:55,Team Vitality,GIANTX,GIANTX
-78832-3,78834,,LEC,78832,LEC 2026 Spring Playoffs,ROUND1,2026-05-31,3,16.10,47.483333333333334,47:29,Team Vitality,GIANTX,GIANTX
-78827-1,78827,,LEC,78827,LEC 2026 Spring Playoffs,ROUND1,2026-05-30,1,16.10,29.333333333333332,29:20,Natus Vincere,Karmine Corp,Karmine Corp
-78827-2,78828,,LEC,78827,LEC 2026 Spring Playoffs,ROUND1,2026-05-30,2,16.10,31.216666666666665,31:13,Karmine Corp,Natus Vincere,Karmine Corp
-78827-3,78829,,LEC,78827,LEC 2026 Spring Playoffs,ROUND1,2026-05-30,3,16.10,38.416666666666664,38:25,Karmine Corp,Natus Vincere,Natus Vincere
-78827-4,78830,,LEC,78827,LEC 2026 Spring Playoffs,ROUND1,2026-05-30,4,16.10,26.566666666666666,26:34,Natus Vincere,Karmine Corp,Karmine Corp
-78837-1,78837,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,1,16.10,31.633333333333333,31:38,Movistar KOI,G2 Esports,Movistar KOI
-78837-2,78838,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,2,16.10,32.733333333333334,32:44,Movistar KOI,G2 Esports,Movistar KOI
-78837-3,78839,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,3,16.10,24.966666666666665,24:58,Movistar KOI,G2 Esports,G2 Esports
-78837-4,78840,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,4,16.10,32.3,32:18,G2 Esports,Movistar KOI,G2 Esports
-78837-5,78841,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,5,16.10,37.95,37:57,G2 Esports,Movistar KOI,G2 Esports
-78297-1,78297,,LEC,78297,LEC 2026 Spring Playoffs,ROUND1,2026-05-24,1,16.10,37.03333333333333,37:02,Movistar KOI,Team Vitality,Movistar KOI
-78297-2,78298,,LEC,78297,LEC 2026 Spring Playoffs,ROUND1,2026-05-24,2,16.10,30.883333333333333,30:53,Movistar KOI,Team Vitality,Movistar KOI
-78297-3,78299,,LEC,78297,LEC 2026 Spring Playoffs,ROUND1,2026-05-24,3,16.10,25.966666666666665,25:58,Movistar KOI,Team Vitality,Movistar KOI
-78292-1,78292,,LEC,78292,LEC 2026 Spring Playoffs,ROUND1,2026-05-23,1,16.10,44.25,44:15,G2 Esports,Karmine Corp,Karmine Corp
-78292-2,78293,,LEC,78292,LEC 2026 Spring Playoffs,ROUND1,2026-05-23,2,16.10,27.466666666666665,27:28,G2 Esports,Karmine Corp,G2 Esports
-78292-3,78294,,LEC,78292,LEC 2026 Spring Playoffs,ROUND1,2026-05-23,3,16.10,30.8,30:48,G2 Esports,Karmine Corp,G2 Esports
-78292-4,78295,,LEC,78292,LEC 2026 Spring Playoffs,ROUND1,2026-05-23,4,16.10,26.1,26:06,G2 Esports,Karmine Corp,G2 Esports
+79285-1,79285,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,1,16.1,32.36666666666667,32:22,G2 Esports,Karmine Corp,Karmine Corp
+79285-2,79286,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,2,16.1,22.8,22:48,Karmine Corp,G2 Esports,G2 Esports
+79285-3,79287,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,3,16.1,35.55,35:33,G2 Esports,Karmine Corp,Karmine Corp
+79285-4,79288,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,4,16.1,29.8,29:48,Karmine Corp,G2 Esports,G2 Esports
+79285-5,79289,,LEC,79285,LEC 2026 Spring Playoffs,FINALS,2026-06-07,5,16.1,26.3,26:18,G2 Esports,Karmine Corp,G2 Esports
+79180-1,79180,,LEC,79180,LEC 2026 Spring Playoffs,ROUND3,2026-06-06,1,16.1,42.083333333333336,42:05,Karmine Corp,Movistar KOI,Karmine Corp
+79180-2,79181,,LEC,79180,LEC 2026 Spring Playoffs,ROUND3,2026-06-06,2,16.1,35.7,35:42,Karmine Corp,Movistar KOI,Karmine Corp
+79180-3,79182,,LEC,79180,LEC 2026 Spring Playoffs,ROUND3,2026-06-06,3,16.1,37.05,37:03,Karmine Corp,Movistar KOI,Karmine Corp
+79167-1,79167,,LEC,79167,LEC 2026 Spring Playoffs,ROUND2,2026-06-01,1,16.1,33.93333333333333,33:56,Karmine Corp,GIANTX,Karmine Corp
+79167-2,79168,,LEC,79167,LEC 2026 Spring Playoffs,ROUND2,2026-06-01,2,16.1,29.733333333333334,29:44,Karmine Corp,GIANTX,Karmine Corp
+79167-3,79169,,LEC,79167,LEC 2026 Spring Playoffs,ROUND2,2026-06-01,3,16.1,27.9,27:54,Karmine Corp,GIANTX,Karmine Corp
+78832-1,78832,,LEC,78832,LEC 2026 Spring Playoffs,ROUND1,2026-05-31,1,16.1,40.06666666666667,40:04,Team Vitality,GIANTX,GIANTX
+78832-2,78833,,LEC,78832,LEC 2026 Spring Playoffs,ROUND1,2026-05-31,2,16.1,41.916666666666664,41:55,Team Vitality,GIANTX,GIANTX
+78832-3,78834,,LEC,78832,LEC 2026 Spring Playoffs,ROUND1,2026-05-31,3,16.1,47.483333333333334,47:29,Team Vitality,GIANTX,GIANTX
+78827-1,78827,,LEC,78827,LEC 2026 Spring Playoffs,ROUND1,2026-05-30,1,16.1,29.333333333333332,29:20,Natus Vincere,Karmine Corp,Karmine Corp
+78827-2,78828,,LEC,78827,LEC 2026 Spring Playoffs,ROUND1,2026-05-30,2,16.1,31.216666666666665,31:13,Karmine Corp,Natus Vincere,Karmine Corp
+78827-3,78829,,LEC,78827,LEC 2026 Spring Playoffs,ROUND1,2026-05-30,3,16.1,38.416666666666664,38:25,Karmine Corp,Natus Vincere,Natus Vincere
+78827-4,78830,,LEC,78827,LEC 2026 Spring Playoffs,ROUND1,2026-05-30,4,16.1,26.566666666666663,26:34,Natus Vincere,Karmine Corp,Karmine Corp
+78837-1,78837,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,1,16.1,31.633333333333333,31:38,Movistar KOI,G2 Esports,Movistar KOI
+78837-2,78838,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,2,16.1,32.733333333333334,32:44,Movistar KOI,G2 Esports,Movistar KOI
+78837-3,78839,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,3,16.1,24.966666666666665,24:58,Movistar KOI,G2 Esports,G2 Esports
+78837-4,78840,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,4,16.1,32.3,32:18,G2 Esports,Movistar KOI,G2 Esports
+78837-5,78841,,LEC,78837,LEC 2026 Spring Playoffs,ROUND3,2026-05-25,5,16.1,37.95,37:57,G2 Esports,Movistar KOI,G2 Esports
+78297-1,78297,,LEC,78297,LEC 2026 Spring Playoffs,ROUND1,2026-05-24,1,16.1,37.03333333333333,37:02,Movistar KOI,Team Vitality,Movistar KOI
+78297-2,78298,,LEC,78297,LEC 2026 Spring Playoffs,ROUND1,2026-05-24,2,16.1,30.883333333333333,30:53,Movistar KOI,Team Vitality,Movistar KOI
+78297-3,78299,,LEC,78297,LEC 2026 Spring Playoffs,ROUND1,2026-05-24,3,16.1,25.966666666666665,25:58,Movistar KOI,Team Vitality,Movistar KOI
+78292-1,78292,,LEC,78292,LEC 2026 Spring Playoffs,ROUND1,2026-05-23,1,16.1,44.25,44:15,G2 Esports,Karmine Corp,Karmine Corp
+78292-2,78293,,LEC,78292,LEC 2026 Spring Playoffs,ROUND1,2026-05-23,2,16.1,27.466666666666665,27:28,G2 Esports,Karmine Corp,G2 Esports
+78292-3,78294,,LEC,78292,LEC 2026 Spring Playoffs,ROUND1,2026-05-23,3,16.1,30.8,30:48,G2 Esports,Karmine Corp,G2 Esports
+78292-4,78295,,LEC,78292,LEC 2026 Spring Playoffs,ROUND1,2026-05-23,4,16.1,26.1,26:06,G2 Esports,Karmine Corp,G2 Esports
 77801-1,77801,,LEC,77801,LEC 2026 Spring Season,WEEK7,2026-05-10,1,16.9,29.633333333333333,29:38,G2 Esports,Movistar KOI,Movistar KOI
 77801-2,77802,,LEC,77801,LEC 2026 Spring Season,WEEK7,2026-05-10,2,16.9,32.86666666666667,32:52,Movistar KOI,G2 Esports,G2 Esports
 77801-3,77803,,LEC,77801,LEC 2026 Spring Season,WEEK7,2026-05-10,3,16.9,42.916666666666664,42:55,G2 Esports,Movistar KOI,Movistar KOI
@@ -1694,7 +1694,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 77786-2,77787,,LEC,77786,LEC 2026 Spring Season,WEEK7,2026-05-08,2,16.9,30.633333333333333,30:38,G2 Esports,Karmine Corp,G2 Esports
 77375-1,77375,,LEC,77375,LEC 2026 Spring Season,WEEK6,2026-05-04,1,16.9,36.46666666666667,36:28,Movistar KOI,Shifters,Shifters
 77375-2,77376,,LEC,77375,LEC 2026 Spring Season,WEEK6,2026-05-04,2,16.9,33.63333333333333,33:38,Movistar KOI,Shifters,Movistar KOI
-77375-3,77377,,LEC,77375,LEC 2026 Spring Season,WEEK6,2026-05-04,3,16.9,31.816666666666666,31:49,Movistar KOI,Shifters,Movistar KOI
+77375-3,77377,,LEC,77375,LEC 2026 Spring Season,WEEK6,2026-05-04,3,16.9,31.816666666666663,31:49,Movistar KOI,Shifters,Movistar KOI
 77372-1,77372,,LEC,77372,LEC 2026 Spring Season,WEEK6,2026-05-04,1,16.9,34.333333333333336,34:20,Team Vitality,Fnatic,Fnatic
 77372-2,77373,,LEC,77372,LEC 2026 Spring Season,WEEK6,2026-05-04,2,16.9,38.68333333333333,38:41,Fnatic,Team Vitality,Team Vitality
 77372-3,77374,,LEC,77372,LEC 2026 Spring Season,WEEK6,2026-05-04,3,16.9,32.65,32:39,Team Vitality,Fnatic,Team Vitality
@@ -1728,7 +1728,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76614-1,76614,,LEC,76614,LEC 2026 Spring Season,WEEK4,2026-04-20,1,16.8,38.46666666666667,38:28,G2 Esports,Shifters,G2 Esports
 76614-2,76615,,LEC,76614,LEC 2026 Spring Season,WEEK4,2026-04-20,2,16.8,38.9,38:54,G2 Esports,Shifters,G2 Esports
 76611-1,76611,,LEC,76611,LEC 2026 Spring Season,WEEK4,2026-04-19,1,16.8,32.516666666666666,32:31,Movistar KOI,Team Heretics,Movistar KOI
-76611-2,76612,,LEC,76611,LEC 2026 Spring Season,WEEK4,2026-04-19,2,16.8,30.066666666666666,30:04,Movistar KOI,Team Heretics,Movistar KOI
+76611-2,76612,,LEC,76611,LEC 2026 Spring Season,WEEK4,2026-04-19,2,16.8,30.066666666666663,30:04,Movistar KOI,Team Heretics,Movistar KOI
 76608-1,76608,,LEC,76608,LEC 2026 Spring Season,WEEK4,2026-04-19,1,16.8,33.583333333333336,33:35,Team Vitality,GIANTX,Team Vitality
 76608-2,76609,,LEC,76608,LEC 2026 Spring Season,WEEK4,2026-04-19,2,16.8,25.983333333333334,25:59,Team Vitality,GIANTX,Team Vitality
 76605-1,76605,,LEC,76605,LEC 2026 Spring Season,WEEK4,2026-04-18,1,16.8,39.85,39:51,SK Gaming,G2 Esports,G2 Esports
@@ -1741,7 +1741,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76264-1,76264,,LEC,76264,LEC 2026 Spring Season,WEEK3,2026-04-13,1,16.7,56.45,56:27,SK Gaming,Fnatic,SK Gaming
 76264-2,76265,,LEC,76264,LEC 2026 Spring Season,WEEK3,2026-04-13,2,16.7,37.36666666666667,37:22,SK Gaming,Fnatic,SK Gaming
 76261-1,76261,,LEC,76261,LEC 2026 Spring Season,WEEK3,2026-04-12,1,16.7,23.633333333333333,23:38,Team Heretics,Karmine Corp,Karmine Corp
-76261-2,76262,,LEC,76261,LEC 2026 Spring Season,WEEK3,2026-04-12,2,16.7,23.816666666666666,23:49,Team Heretics,Karmine Corp,Karmine Corp
+76261-2,76262,,LEC,76261,LEC 2026 Spring Season,WEEK3,2026-04-12,2,16.7,23.816666666666663,23:49,Team Heretics,Karmine Corp,Karmine Corp
 76258-1,76258,,LEC,76258,LEC 2026 Spring Season,WEEK3,2026-04-12,1,16.7,33.416666666666664,33:25,Team Vitality,Shifters,Shifters
 76258-2,76259,,LEC,76258,LEC 2026 Spring Season,WEEK3,2026-04-12,2,16.7,29.016666666666666,29:01,Team Vitality,Shifters,Team Vitality
 76258-3,76260,,LEC,76258,LEC 2026 Spring Season,WEEK3,2026-04-12,3,16.7,30.5,30:30,Team Vitality,Shifters,Team Vitality
@@ -1767,7 +1767,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 75887-2,75888,,LEC,75887,LEC 2026 Spring Season,WEEK2,2026-04-04,2,16.7,50.56666666666667,50:34,Team Vitality,Natus Vincere,Team Vitality
 75884-1,75884,,LEC,75884,LEC 2026 Spring Season,WEEK2,2026-04-04,1,16.7,37.516666666666666,37:31,G2 Esports,Team Heretics,G2 Esports
 75884-2,75885,,LEC,75884,LEC 2026 Spring Season,WEEK2,2026-04-04,2,16.7,29.85,29:51,G2 Esports,Team Heretics,G2 Esports
-75881-1,75881,,LEC,75881,LEC 2026 Spring Season,WEEK2,2026-04-04,1,16.7,25.066666666666666,25:04,SK Gaming,Shifters,SK Gaming
+75881-1,75881,,LEC,75881,LEC 2026 Spring Season,WEEK2,2026-04-04,1,16.7,25.066666666666663,25:04,SK Gaming,Shifters,SK Gaming
 75881-2,75882,,LEC,75881,LEC 2026 Spring Season,WEEK2,2026-04-04,2,16.7,43.2,43:12,SK Gaming,Shifters,SK Gaming
 75757-1,75757,,LEC,75757,LEC 2026 Spring Season,WEEK1,2026-03-30,1,16.6,39.46666666666667,39:28,Team Vitality,Team Heretics,Team Vitality
 75757-2,75758,,LEC,75757,LEC 2026 Spring Season,WEEK1,2026-03-30,2,16.6,29.416666666666668,29:25,Team Vitality,Team Heretics,Team Vitality
@@ -1780,7 +1780,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 75749-2,75750,,LEC,75749,LEC 2026 Spring Season,WEEK1,2026-03-29,2,16.6,32.983333333333334,32:59,SK Gaming,Team Heretics,Team Heretics
 75749-3,75751,,LEC,75749,LEC 2026 Spring Season,WEEK1,2026-03-29,3,16.6,30.9,30:54,SK Gaming,Team Heretics,Team Heretics
 75662-1,75662,,LEC,75662,LEC 2026 Spring Season,WEEK1,2026-03-28,1,16.6,34.03333333333333,34:02,Movistar KOI,Natus Vincere,Natus Vincere
-75662-2,75663,,LEC,75662,LEC 2026 Spring Season,WEEK1,2026-03-28,2,16.6,28.933333333333334,28:56,Movistar KOI,Natus Vincere,Movistar KOI
+75662-2,75663,,LEC,75662,LEC 2026 Spring Season,WEEK1,2026-03-28,2,16.6,28.933333333333337,28:56,Movistar KOI,Natus Vincere,Movistar KOI
 75662-3,75664,,LEC,75662,LEC 2026 Spring Season,WEEK1,2026-03-28,3,16.6,36.35,36:21,Movistar KOI,Natus Vincere,Natus Vincere
 75659-1,75659,,LEC,75659,LEC 2026 Spring Season,WEEK1,2026-03-28,1,16.6,30.083333333333332,30:05,Team Vitality,Karmine Corp,Team Vitality
 75659-2,75660,,LEC,75659,LEC 2026 Spring Season,WEEK1,2026-03-28,2,16.6,54.083333333333336,54:05,Team Vitality,Karmine Corp,Karmine Corp
@@ -1802,7 +1802,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74832-2,74833,,LEC,74832,LEC 2026 Versus Playoffs,ROUND3,2026-02-27,2,16.3,31.6,31:36,GIANTX,Karmine Corp,Karmine Corp
 74832-3,74834,,LEC,74832,LEC 2026 Versus Playoffs,ROUND3,2026-02-27,3,16.3,41.61666666666667,41:37,GIANTX,Karmine Corp,Karmine Corp
 74827-1,74827,,LEC,74827,LEC 2026 Versus Playoffs,ROUND4,2026-02-23,1,16.3,33.88333333333333,33:53,G2 Esports,Movistar KOI,G2 Esports
-74827-2,74828,,LEC,74827,LEC 2026 Versus Playoffs,ROUND4,2026-02-23,2,16.3,27.316666666666666,27:19,G2 Esports,Movistar KOI,G2 Esports
+74827-2,74828,,LEC,74827,LEC 2026 Versus Playoffs,ROUND4,2026-02-23,2,16.3,27.316666666666663,27:19,G2 Esports,Movistar KOI,G2 Esports
 74827-3,74829,,LEC,74827,LEC 2026 Versus Playoffs,ROUND4,2026-02-23,3,16.3,36.65,36:39,G2 Esports,Movistar KOI,G2 Esports
 74819-1,74819,,LEC,74819,LEC 2026 Versus Playoffs,ROUND2,2026-02-22,1,16.3,38.81666666666667,38:49,Team Vitality,Karmine Corp,Team Vitality
 74819-2,74820,,LEC,74819,LEC 2026 Versus Playoffs,ROUND2,2026-02-22,2,16.3,34.45,34:27,Team Vitality,Karmine Corp,Karmine Corp
@@ -1822,7 +1822,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74252-1,74252,,LEC,74252,LEC 2026 Versus Playoffs,ROUND1,2026-02-17,1,16.3,32.56666666666667,32:34,Karmine Corp,GIANTX,Karmine Corp
 74252-2,74253,,LEC,74252,LEC 2026 Versus Playoffs,ROUND1,2026-02-17,2,16.3,34.15,34:09,GIANTX,Karmine Corp,Karmine Corp
 74249-1,74249,,LEC,74249,LEC 2026 Versus Playoffs,ROUND1,2026-02-17,1,16.3,24.916666666666668,24:55,Team Heretics,G2 Esports,G2 Esports
-74249-2,74250,,LEC,74249,LEC 2026 Versus Playoffs,ROUND1,2026-02-17,2,16.3,24.433333333333334,24:26,G2 Esports,Team Heretics,G2 Esports
+74249-2,74250,,LEC,74249,LEC 2026 Versus Playoffs,ROUND1,2026-02-17,2,16.3,24.433333333333337,24:26,G2 Esports,Team Heretics,G2 Esports
 74246-1,74246,,LEC,74246,LEC 2026 Versus Playoffs,ROUND1,2026-02-16,1,16.3,55.7,55:42,Movistar KOI,Team Vitality,Movistar KOI
 74246-2,74247,,LEC,74246,LEC 2026 Versus Playoffs,ROUND1,2026-02-16,2,16.3,31.25,31:15,Movistar KOI,Team Vitality,Movistar KOI
 74243-1,74243,,LEC,74243,LEC 2026 Versus Playoffs,ROUND1,2026-02-16,1,16.3,30.6,30:36,Natus Vincere,Fnatic,Natus Vincere
@@ -1842,7 +1842,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73796-1,73796,,LEC,73796,LEC 2026 Versus Season,WEEK3,2026-02-02,1,16.2,31.266666666666666,31:16,Karmine Corp,Shifters,Karmine Corp
 73795-1,73795,,LEC,73795,LEC 2026 Versus Season,WEEK3,2026-02-02,1,16.2,37.81666666666667,37:49,Team Heretics,Movistar KOI,Team Heretics
 73794-1,73794,,LEC,73794,LEC 2026 Versus Season,WEEK3,2026-02-02,1,16.2,40.63333333333333,40:38,G2 Esports,Team Vitality,G2 Esports
-73793-1,73793,,LEC,73793,LEC 2026 Versus Season,WEEK3,2026-02-02,1,16.2,30.816666666666666,30:49,Los Ratones,Natus Vincere,Natus Vincere
+73793-1,73793,,LEC,73793,LEC 2026 Versus Season,WEEK3,2026-02-02,1,16.2,30.816666666666663,30:49,Los Ratones,Natus Vincere,Natus Vincere
 73792-1,73792,,LEC,73792,LEC 2026 Versus Season,WEEK3,2026-02-02,1,16.2,34.61666666666667,34:37,SK Gaming,GIANTX,GIANTX
 73791-1,73791,,LEC,73791,LEC 2026 Versus Season,WEEK3,2026-02-02,1,16.2,33.416666666666664,33:25,Karmine Corp Blue,Fnatic,Fnatic
 73790-1,73790,,LEC,73790,LEC 2026 Versus Season,WEEK3,2026-02-01,1,16.2,31.533333333333335,31:32,G2 Esports,Los Ratones,Los Ratones
@@ -1877,14 +1877,14 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73523-1,73523,,LEC,73523,LEC 2026 Versus Season,WEEK2,2026-01-24,1,16.2,24.516666666666666,24:31,GIANTX,Los Ratones,GIANTX
 73306-1,73306,,LEC,73306,LEC 2026 Versus Season,WEEK1,2026-01-19,1,16.1,25.533333333333335,25:32,G2 Esports,SK Gaming,G2 Esports
 73305-1,73305,,LEC,73305,LEC 2026 Versus Season,WEEK1,2026-01-19,1,16.1,37.35,37:21,Los Ratones,Karmine Corp,Karmine Corp
-73304-1,73304,,LEC,73304,LEC 2026 Versus Season,WEEK1,2026-01-19,1,16.1,26.683333333333334,26:41,Shifters,Movistar KOI,Shifters
+73304-1,73304,,LEC,73304,LEC 2026 Versus Season,WEEK1,2026-01-19,1,16.1,26.683333333333337,26:41,Shifters,Movistar KOI,Shifters
 73303-1,73303,,LEC,73303,LEC 2026 Versus Season,WEEK1,2026-01-19,1,16.1,41.78333333333333,41:47,Team Heretics,GIANTX,Team Heretics
 73302-1,73302,,LEC,73302,LEC 2026 Versus Season,WEEK1,2026-01-19,1,16.1,36.05,36:03,Karmine Corp Blue,Team Vitality,Team Vitality
 73301-1,73301,,LEC,73301,LEC 2026 Versus Season,WEEK1,2026-01-19,1,16.1,37.833333333333336,37:50,Natus Vincere,Fnatic,Fnatic
 73300-1,73300,,LEC,73300,LEC 2026 Versus Season,WEEK1,2026-01-18,1,16.1,32.233333333333334,32:14,Karmine Corp,Movistar KOI,Movistar KOI
 73299-1,73299,,LEC,73299,LEC 2026 Versus Season,WEEK1,2026-01-18,1,16.1,35.983333333333334,35:59,G2 Esports,GIANTX,GIANTX
 73298-1,73298,,LEC,73298,LEC 2026 Versus Season,WEEK1,2026-01-18,1,16.1,28.2,28:12,Fnatic,SK Gaming,SK Gaming
-73297-1,73297,,LEC,73297,LEC 2026 Versus Season,WEEK1,2026-01-18,1,16.1,30.683333333333334,30:41,Team Vitality,Natus Vincere,Natus Vincere
+73297-1,73297,,LEC,73297,LEC 2026 Versus Season,WEEK1,2026-01-18,1,16.1,30.683333333333337,30:41,Team Vitality,Natus Vincere,Natus Vincere
 73296-1,73296,,LEC,73296,LEC 2026 Versus Season,WEEK1,2026-01-18,1,16.1,37.36666666666667,37:22,Los Ratones,Karmine Corp Blue,Karmine Corp Blue
 73295-1,73295,,LEC,73295,LEC 2026 Versus Season,WEEK1,2026-01-18,1,16.1,40.31666666666667,40:19,Team Heretics,Shifters,Shifters
 73270-1,73270,,LEC,73270,LEC 2026 Versus Season,WEEK1,2026-01-17,1,16.1,31.866666666666667,31:52,G2 Esports,Movistar KOI,Movistar KOI
@@ -1894,8 +1894,8 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73266-1,73266,,LEC,73266,LEC 2026 Versus Season,WEEK1,2026-01-17,1,16.1,35.416666666666664,35:25,GIANTX,Shifters,GIANTX
 73265-1,73265,,LEC,73265,LEC 2026 Versus Season,WEEK1,2026-01-17,1,16.1,32.21666666666667,32:13,Fnatic,Los Ratones,Fnatic
 82962-1,82962,,LCK,82962,LCK 2026 Season Playoffs,FINALS,2026-09-13,1,16.16,38.75,38:45,Gen.G,Hanwha Life Esports,Hanwha Life Esports
-82962-2,82963,,LCK,82962,LCK 2026 Season Playoffs,FINALS,2026-09-13,2,16.16,31.066666666666666,31:04,Hanwha Life Esports,Gen.G,Gen.G
-82962-3,82964,,LCK,82962,LCK 2026 Season Playoffs,FINALS,2026-09-13,3,16.16,26.933333333333334,26:56,Hanwha Life Esports,Gen.G,Gen.G
+82962-2,82963,,LCK,82962,LCK 2026 Season Playoffs,FINALS,2026-09-13,2,16.16,31.066666666666663,31:04,Hanwha Life Esports,Gen.G,Gen.G
+82962-3,82964,,LCK,82962,LCK 2026 Season Playoffs,FINALS,2026-09-13,3,16.16,26.933333333333337,26:56,Hanwha Life Esports,Gen.G,Gen.G
 82962-4,82965,,LCK,82962,LCK 2026 Season Playoffs,FINALS,2026-09-13,4,16.16,28.016666666666666,28:01,Gen.G,Hanwha Life Esports,Gen.G
 82745-1,82745,,LCK,82745,LCK 2026 Season Playoffs,ROUND4,2026-09-12,1,16.16,48.15,48:09,Hanwha Life Esports,T1,Hanwha Life Esports
 82745-2,82746,,LCK,82745,LCK 2026 Season Playoffs,ROUND4,2026-09-12,2,16.16,29.983333333333334,29:59,T1,Hanwha Life Esports,Hanwha Life Esports
@@ -1918,11 +1918,11 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 82409-3,82411,,LCK,82409,LCK 2026 Season Playoffs,ROUND1,2026-09-03,3,16.16,31.866666666666667,31:52,Dplus KIA,BNK FearX,Dplus KIA
 82409-4,82412,,LCK,82409,LCK 2026 Season Playoffs,ROUND1,2026-09-03,4,16.16,22.633333333333333,22:38,BNK FearX,Dplus KIA,Dplus KIA
 82409-5,82413,,LCK,82409,LCK 2026 Season Playoffs,ROUND1,2026-09-03,5,16.16,24.633333333333333,24:38,Dplus KIA,BNK FearX,Dplus KIA
-82419-1,82419,,LCK,82419,LCK 2026 Season Playoffs,ROUND2,2026-09-02,1,16.16,29.683333333333334,29:41,T1,Hanwha Life Esports,T1
+82419-1,82419,,LCK,82419,LCK 2026 Season Playoffs,ROUND2,2026-09-02,1,16.16,29.683333333333337,29:41,T1,Hanwha Life Esports,T1
 82419-2,82420,,LCK,82419,LCK 2026 Season Playoffs,ROUND2,2026-09-02,2,16.16,29.3,29:18,T1,Hanwha Life Esports,T1
 82419-3,82421,,LCK,82419,LCK 2026 Season Playoffs,ROUND2,2026-09-02,3,16.16,25.6,25:36,Hanwha Life Esports,T1,Hanwha Life Esports
 82419-4,82422,,LCK,82419,LCK 2026 Season Playoffs,ROUND2,2026-09-02,4,16.16,27.383333333333333,27:23,T1,Hanwha Life Esports,Hanwha Life Esports
-82419-5,82423,,LCK,82419,LCK 2026 Season Playoffs,ROUND2,2026-09-02,5,16.16,27.933333333333334,27:56,T1,Hanwha Life Esports,Hanwha Life Esports
+82419-5,82423,,LCK,82419,LCK 2026 Season Playoffs,ROUND2,2026-09-02,5,16.16,27.933333333333337,27:56,T1,Hanwha Life Esports,Hanwha Life Esports
 82414-1,82414,,LCK,82414,LCK 2026 Season Playoffs,ROUND2,2026-09-01,1,16.16,35.9,35:54,Gen.G,KT Rolster,Gen.G
 82414-2,82415,,LCK,82414,LCK 2026 Season Playoffs,ROUND2,2026-09-01,2,16.16,32.93333333333333,32:56,Gen.G,KT Rolster,Gen.G
 82414-3,82416,,LCK,82414,LCK 2026 Season Playoffs,ROUND2,2026-09-01,3,16.16,28.483333333333334,28:29,Gen.G,KT Rolster,Gen.G
@@ -1954,7 +1954,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81862-1,81862,,LCK,81862,LCK 2026 Rounds 3-4,WEEK13,2026-08-23,1,16.16,28.7,28:42,T1,Hanwha Life Esports,Hanwha Life Esports
 81862-2,81863,,LCK,81862,LCK 2026 Rounds 3-4,WEEK13,2026-08-23,2,16.16,22.866666666666667,22:52,Hanwha Life Esports,T1,Hanwha Life Esports
 81859-1,81859,,LCK,81859,LCK 2026 Rounds 3-4,WEEK13,2026-08-22,1,16.16,37.4,37:24,Kiwoom DRX,DN SOOPers,DN SOOPers
-81859-2,81860,,LCK,81859,LCK 2026 Rounds 3-4,WEEK13,2026-08-22,2,16.16,26.566666666666666,26:34,DN SOOPers,Kiwoom DRX,DN SOOPers
+81859-2,81860,,LCK,81859,LCK 2026 Rounds 3-4,WEEK13,2026-08-22,2,16.16,26.566666666666663,26:34,DN SOOPers,Kiwoom DRX,DN SOOPers
 81856-1,81856,,LCK,81856,LCK 2026 Rounds 3-4,WEEK13,2026-08-22,1,16.16,31.3,31:18,Gen.G,Dplus KIA,Gen.G
 81856-2,81857,,LCK,81856,LCK 2026 Rounds 3-4,WEEK13,2026-08-22,2,16.16,32.61666666666667,32:37,Dplus KIA,Gen.G,Dplus KIA
 81856-3,81858,,LCK,81856,LCK 2026 Rounds 3-4,WEEK13,2026-08-22,3,16.16,33.1,33:06,Dplus KIA,Gen.G,Dplus KIA
@@ -1992,10 +1992,10 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81344-2,81345,,LCK,81344,LCK 2026 Rounds 3-4,WEEK12,2026-08-13,2,16.15,31.883333333333333,31:53,Gen.G,Hanwha Life Esports,Gen.G
 81341-1,81341,,LCK,81341,LCK 2026 Rounds 3-4,WEEK12,2026-08-13,1,16.15,32.63333333333333,32:38,Kiwoom DRX,BNK FearX,Kiwoom DRX
 81341-2,81342,,LCK,81341,LCK 2026 Rounds 3-4,WEEK12,2026-08-13,2,16.15,26.1,26:06,BNK FearX,Kiwoom DRX,BNK FearX
-81341-3,81343,,LCK,81341,LCK 2026 Rounds 3-4,WEEK12,2026-08-13,3,16.15,27.433333333333334,27:26,Kiwoom DRX,BNK FearX,BNK FearX
-81338-1,81338,,LCK,81338,LCK 2026 Rounds 3-4,WEEK12,2026-08-12,1,16.15,25.566666666666666,25:34,Dplus KIA,KT Rolster,Dplus KIA
+81341-3,81343,,LCK,81341,LCK 2026 Rounds 3-4,WEEK12,2026-08-13,3,16.15,27.433333333333337,27:26,Kiwoom DRX,BNK FearX,BNK FearX
+81338-1,81338,,LCK,81338,LCK 2026 Rounds 3-4,WEEK12,2026-08-12,1,16.15,25.566666666666663,25:34,Dplus KIA,KT Rolster,Dplus KIA
 81338-2,81339,,LCK,81338,LCK 2026 Rounds 3-4,WEEK12,2026-08-12,2,16.15,33.88333333333333,33:53,Dplus KIA,KT Rolster,Dplus KIA
-81335-1,81335,,LCK,81335,LCK 2026 Rounds 3-4,WEEK12,2026-08-12,1,16.15,25.683333333333334,25:41,Nongshim RedForce,DN SOOPers,Nongshim RedForce
+81335-1,81335,,LCK,81335,LCK 2026 Rounds 3-4,WEEK12,2026-08-12,1,16.15,25.683333333333337,25:41,Nongshim RedForce,DN SOOPers,Nongshim RedForce
 81335-2,81336,,LCK,81335,LCK 2026 Rounds 3-4,WEEK12,2026-08-12,2,16.15,30.45,30:27,DN SOOPers,Nongshim RedForce,DN SOOPers
 81335-3,81337,,LCK,81335,LCK 2026 Rounds 3-4,WEEK12,2026-08-12,3,16.15,28.766666666666666,28:46,DN SOOPers,Nongshim RedForce,DN SOOPers
 81053-1,81053,,LCK,81053,LCK 2026 Rounds 3-4,WEEK11,2026-08-09,1,16.15,29.133333333333333,29:08,BNK FearX,Kiwoom DRX,BNK FearX
@@ -2021,7 +2021,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 81029-3,81031,,LCK,81029,LCK 2026 Rounds 3-4,WEEK11,2026-08-05,3,16.15,36.05,36:03,Hanwha Life Esports,Gen.G,Gen.G
 81026-1,81026,,LCK,81026,LCK 2026 Rounds 3-4,WEEK11,2026-08-05,1,16.15,40.4,40:24,Nongshim RedForce,HANJIN BRION,HANJIN BRION
 81026-2,81027,,LCK,81026,LCK 2026 Rounds 3-4,WEEK11,2026-08-05,2,16.15,30.45,30:27,HANJIN BRION,Nongshim RedForce,Nongshim RedForce
-81026-3,81028,,LCK,81026,LCK 2026 Rounds 3-4,WEEK11,2026-08-05,3,16.15,31.316666666666666,31:19,Nongshim RedForce,HANJIN BRION,HANJIN BRION
+81026-3,81028,,LCK,81026,LCK 2026 Rounds 3-4,WEEK11,2026-08-05,3,16.15,31.316666666666663,31:19,Nongshim RedForce,HANJIN BRION,HANJIN BRION
 80681-1,80681,,LCK,80681,LCK 2026 Rounds 3-4,WEEK10,2026-08-02,1,16.14,34.85,34:51,Hanwha Life Esports,KT Rolster,KT Rolster
 80681-2,80682,,LCK,80681,LCK 2026 Rounds 3-4,WEEK10,2026-08-02,2,16.14,28.616666666666667,28:37,KT Rolster,Hanwha Life Esports,Hanwha Life Esports
 80681-3,80683,,LCK,80681,LCK 2026 Rounds 3-4,WEEK10,2026-08-02,3,16.14,32.85,32:51,KT Rolster,Hanwha Life Esports,KT Rolster
@@ -2039,9 +2039,9 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 80666-1,80666,,LCK,80666,LCK 2026 Rounds 3-4,WEEK10,2026-07-31,1,16.14,29.333333333333332,29:20,Gen.G,T1,T1
 80666-2,80667,,LCK,80666,LCK 2026 Rounds 3-4,WEEK10,2026-07-31,2,16.14,33.1,33:06,T1,Gen.G,T1
 80743-1,80743,,LCK,80743,LCK 2026 Rounds 3-4,WEEK10,2026-07-30,1,16.14,30.9,30:54,Hanwha Life Esports,Dplus KIA,Dplus KIA
-80743-2,80744,,LCK,80743,LCK 2026 Rounds 3-4,WEEK10,2026-07-30,2,16.14,31.933333333333334,31:56,Dplus KIA,Hanwha Life Esports,Hanwha Life Esports
+80743-2,80744,,LCK,80743,LCK 2026 Rounds 3-4,WEEK10,2026-07-30,2,16.14,31.933333333333337,31:56,Dplus KIA,Hanwha Life Esports,Hanwha Life Esports
 80743-3,80745,,LCK,80743,LCK 2026 Rounds 3-4,WEEK10,2026-07-30,3,16.14,36.35,36:21,Hanwha Life Esports,Dplus KIA,Dplus KIA
-80660-1,80660,,LCK,80660,LCK 2026 Rounds 3-4,WEEK10,2026-07-30,1,16.14,31.183333333333334,31:11,BNK FearX,DN SOOPers,BNK FearX
+80660-1,80660,,LCK,80660,LCK 2026 Rounds 3-4,WEEK10,2026-07-30,1,16.14,31.183333333333337,31:11,BNK FearX,DN SOOPers,BNK FearX
 80660-2,80661,,LCK,80660,LCK 2026 Rounds 3-4,WEEK10,2026-07-30,2,16.14,27.783333333333335,27:47,BNK FearX,DN SOOPers,BNK FearX
 80657-1,80657,,LCK,80657,LCK 2026 Rounds 3-4,WEEK10,2026-07-29,1,16.14,35.7,35:42,T1,KT Rolster,KT Rolster
 80657-2,80658,,LCK,80657,LCK 2026 Rounds 3-4,WEEK10,2026-07-29,2,16.14,35.916666666666664,35:55,KT Rolster,T1,KT Rolster
@@ -2057,7 +2057,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 79438-3,79440,,LCK,79438,LCK 2026 Road to MSI,ROUND3,2026-06-13,3,16.11,45.61666666666667,45:37,Gen.G,KT Rolster,Gen.G
 79275-1,79275,,LCK,79275,LCK 2026 Road to MSI,ROUND3,2026-06-12,1,16.11,37.9,37:54,Hanwha Life Esports,T1,Hanwha Life Esports
 79275-2,79276,,LCK,79275,LCK 2026 Road to MSI,ROUND3,2026-06-12,2,16.11,34.483333333333334,34:29,T1,Hanwha Life Esports,T1
-79275-3,79277,,LCK,79275,LCK 2026 Road to MSI,ROUND3,2026-06-12,3,16.11,31.816666666666666,31:49,T1,Hanwha Life Esports,Hanwha Life Esports
+79275-3,79277,,LCK,79275,LCK 2026 Road to MSI,ROUND3,2026-06-12,3,16.11,31.816666666666663,31:49,T1,Hanwha Life Esports,Hanwha Life Esports
 79275-4,79278,,LCK,79275,LCK 2026 Road to MSI,ROUND3,2026-06-12,4,16.11,32.28333333333333,32:17,Hanwha Life Esports,T1,Hanwha Life Esports
 79270-1,79270,,LCK,79270,LCK 2026 Road to MSI,ROUND2,2026-06-07,1,16.11,23.733333333333334,23:44,KT Rolster,Dplus KIA,Dplus KIA
 79270-2,79271,,LCK,79270,LCK 2026 Road to MSI,ROUND2,2026-06-07,2,16.11,34.5,34:30,KT Rolster,Dplus KIA,Dplus KIA
@@ -2067,68 +2067,68 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 79147-1,79147,,LCK,79147,LCK 2026 Road to MSI,ROUND1,2026-06-06,1,16.11,34.38333333333333,34:23,Dplus KIA,HANJIN BRION,Dplus KIA
 79147-2,79148,,LCK,79147,LCK 2026 Road to MSI,ROUND1,2026-06-06,2,16.11,22.033333333333335,22:02,Dplus KIA,HANJIN BRION,Dplus KIA
 79147-3,79149,,LCK,79147,LCK 2026 Road to MSI,ROUND1,2026-06-06,3,16.11,24.116666666666667,24:07,Dplus KIA,HANJIN BRION,Dplus KIA
-78899-1,78899,,LCK,78899,LCK 2026 Rounds 1-2,WEEK9,2026-05-31,1,16.10,29.9,29:54,Nongshim RedForce,Dplus KIA,Dplus KIA
-78899-2,78900,,LCK,78899,LCK 2026 Rounds 1-2,WEEK9,2026-05-31,2,16.10,28.883333333333333,28:53,Dplus KIA,Nongshim RedForce,Dplus KIA
-78896-1,78896,,LCK,78896,LCK 2026 Rounds 1-2,WEEK9,2026-05-31,1,16.10,33.3,33:18,Hanwha Life Esports,HANJIN BRION,Hanwha Life Esports
-78896-2,78897,,LCK,78896,LCK 2026 Rounds 1-2,WEEK9,2026-05-31,2,16.10,28.216666666666665,28:13,Hanwha Life Esports,HANJIN BRION,Hanwha Life Esports
-78893-1,78893,,LCK,78893,LCK 2026 Rounds 1-2,WEEK9,2026-05-30,1,16.10,37.93333333333333,37:56,BNK FearX,T1,T1
-78893-2,78894,,LCK,78893,LCK 2026 Rounds 1-2,WEEK9,2026-05-30,2,16.10,29.783333333333335,29:47,BNK FearX,T1,T1
-78890-1,78890,,LCK,78890,LCK 2026 Rounds 1-2,WEEK9,2026-05-30,1,16.10,30.516666666666666,30:31,KT Rolster,DN SOOPers,KT Rolster
-78890-2,78891,,LCK,78890,LCK 2026 Rounds 1-2,WEEK9,2026-05-30,2,16.10,34.03333333333333,34:02,KT Rolster,DN SOOPers,KT Rolster
-78887-1,78887,,LCK,78887,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,1,16.10,29.316666666666666,29:19,Gen.G,HANJIN BRION,Gen.G
-78887-2,78888,,LCK,78887,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,2,16.10,29.583333333333332,29:35,Gen.G,HANJIN BRION,Gen.G
-78884-1,78884,,LCK,78884,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,1,16.10,28.25,28:15,Dplus KIA,Kiwoom DRX,Dplus KIA
-78884-2,78885,,LCK,78884,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,2,16.10,28.066666666666666,28:04,Dplus KIA,Kiwoom DRX,Kiwoom DRX
-78884-3,78886,,LCK,78884,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,3,16.10,30.933333333333334,30:56,Kiwoom DRX,Dplus KIA,Dplus KIA
-78881-1,78881,,LCK,78881,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,1,16.10,28.783333333333335,28:47,T1,KT Rolster,T1
-78881-2,78882,,LCK,78881,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,2,16.10,35.53333333333333,35:32,T1,KT Rolster,T1
-78878-1,78878,,LCK,78878,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,1,16.10,35.71666666666667,35:43,DN SOOPers,Nongshim RedForce,DN SOOPers
-78878-2,78879,,LCK,78878,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,2,16.10,24.816666666666666,24:49,DN SOOPers,Nongshim RedForce,Nongshim RedForce
-78878-3,78880,,LCK,78878,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,3,16.10,31.45,31:27,DN SOOPers,Nongshim RedForce,Nongshim RedForce
-78875-1,78875,,LCK,78875,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,1,16.10,34.733333333333334,34:44,BNK FearX,Kiwoom DRX,BNK FearX
-78875-2,78876,,LCK,78875,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,2,16.10,32.25,32:15,BNK FearX,Kiwoom DRX,Kiwoom DRX
-78875-3,78877,,LCK,78875,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,3,16.10,42.85,42:51,Kiwoom DRX,BNK FearX,BNK FearX
-78872-1,78872,,LCK,78872,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,1,16.10,43.11666666666667,43:07,Gen.G,Hanwha Life Esports,Hanwha Life Esports
-78872-2,78873,,LCK,78872,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,2,16.10,31.466666666666665,31:28,Gen.G,Hanwha Life Esports,Gen.G
-78872-3,78874,,LCK,78872,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,3,16.10,26.4,26:24,Gen.G,Hanwha Life Esports,Gen.G
-78249-1,78249,,LCK,78249,LCK 2026 Rounds 1-2,WEEK8,2026-05-24,1,16.10,33.1,33:06,T1,HANJIN BRION,T1
-78249-2,78250,,LCK,78249,LCK 2026 Rounds 1-2,WEEK8,2026-05-24,2,16.10,28.783333333333335,28:47,T1,HANJIN BRION,T1
-78246-1,78246,,LCK,78246,LCK 2026 Rounds 1-2,WEEK8,2026-05-24,1,16.10,28.133333333333333,28:08,Gen.G,DN SOOPers,Gen.G
-78246-2,78247,,LCK,78246,LCK 2026 Rounds 1-2,WEEK8,2026-05-24,2,16.10,28.216666666666665,28:13,Gen.G,DN SOOPers,Gen.G
-78243-1,78243,,LCK,78243,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,1,16.10,30.416666666666668,30:25,Hanwha Life Esports,Nongshim RedForce,Nongshim RedForce
-78243-2,78244,,LCK,78243,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,2,16.10,29.766666666666666,29:46,Nongshim RedForce,Hanwha Life Esports,Hanwha Life Esports
-78243-3,78245,,LCK,78243,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,3,16.10,27.283333333333335,27:17,Hanwha Life Esports,Nongshim RedForce,Hanwha Life Esports
-78240-1,78240,,LCK,78240,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,1,16.10,31.766666666666666,31:46,Dplus KIA,BNK FearX,Dplus KIA
-78240-2,78241,,LCK,78240,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,2,16.10,32.46666666666667,32:28,BNK FearX,Dplus KIA,BNK FearX
-78240-3,78242,,LCK,78240,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,3,16.10,30.016666666666666,30:01,Dplus KIA,BNK FearX,Dplus KIA
-78237-1,78237,,LCK,78237,LCK 2026 Rounds 1-2,WEEK8,2026-05-22,1,16.10,27.866666666666667,27:52,KT Rolster,Gen.G,Gen.G
-78237-2,78238,,LCK,78237,LCK 2026 Rounds 1-2,WEEK8,2026-05-22,2,16.10,33.15,33:09,KT Rolster,Gen.G,Gen.G
-78234-1,78234,,LCK,78234,LCK 2026 Rounds 1-2,WEEK8,2026-05-22,1,16.10,33.583333333333336,33:35,DN SOOPers,Kiwoom DRX,Kiwoom DRX
-78234-2,78235,,LCK,78234,LCK 2026 Rounds 1-2,WEEK8,2026-05-22,2,16.10,28.316666666666666,28:19,Kiwoom DRX,DN SOOPers,Kiwoom DRX
-78231-1,78231,,LCK,78231,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,1,16.10,41.1,41:06,Dplus KIA,HANJIN BRION,Dplus KIA
-78231-2,78232,,LCK,78231,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,2,16.10,35.95,35:57,HANJIN BRION,Dplus KIA,HANJIN BRION
-78231-3,78233,,LCK,78231,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,3,16.10,30.133333333333333,30:08,HANJIN BRION,Dplus KIA,Dplus KIA
-78228-1,78228,,LCK,78228,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,1,16.10,36.28333333333333,36:17,BNK FearX,Hanwha Life Esports,Hanwha Life Esports
-78228-2,78229,,LCK,78228,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,2,16.10,30.183333333333334,30:11,Hanwha Life Esports,BNK FearX,Hanwha Life Esports
-78225-1,78225,,LCK,78225,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,1,16.10,23.866666666666667,23:52,Nongshim RedForce,KT Rolster,Nongshim RedForce
-78225-2,78226,,LCK,78225,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,2,16.10,30.566666666666666,30:34,KT Rolster,Nongshim RedForce,KT Rolster
-78225-3,78227,,LCK,78225,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,3,16.10,33.85,33:51,KT Rolster,Nongshim RedForce,KT Rolster
-78222-1,78222,,LCK,78222,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,1,16.10,28.266666666666666,28:16,T1,Kiwoom DRX,T1
-78222-2,78223,,LCK,78222,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,2,16.10,31.083333333333332,31:05,T1,Kiwoom DRX,Kiwoom DRX
-78222-3,78224,,LCK,78222,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,3,16.10,27.133333333333333,27:08,Kiwoom DRX,T1,T1
+78899-1,78899,,LCK,78899,LCK 2026 Rounds 1-2,WEEK9,2026-05-31,1,16.1,29.9,29:54,Nongshim RedForce,Dplus KIA,Dplus KIA
+78899-2,78900,,LCK,78899,LCK 2026 Rounds 1-2,WEEK9,2026-05-31,2,16.1,28.883333333333333,28:53,Dplus KIA,Nongshim RedForce,Dplus KIA
+78896-1,78896,,LCK,78896,LCK 2026 Rounds 1-2,WEEK9,2026-05-31,1,16.1,33.3,33:18,Hanwha Life Esports,HANJIN BRION,Hanwha Life Esports
+78896-2,78897,,LCK,78896,LCK 2026 Rounds 1-2,WEEK9,2026-05-31,2,16.1,28.216666666666665,28:13,Hanwha Life Esports,HANJIN BRION,Hanwha Life Esports
+78893-1,78893,,LCK,78893,LCK 2026 Rounds 1-2,WEEK9,2026-05-30,1,16.1,37.93333333333333,37:56,BNK FearX,T1,T1
+78893-2,78894,,LCK,78893,LCK 2026 Rounds 1-2,WEEK9,2026-05-30,2,16.1,29.783333333333335,29:47,BNK FearX,T1,T1
+78890-1,78890,,LCK,78890,LCK 2026 Rounds 1-2,WEEK9,2026-05-30,1,16.1,30.516666666666666,30:31,KT Rolster,DN SOOPers,KT Rolster
+78890-2,78891,,LCK,78890,LCK 2026 Rounds 1-2,WEEK9,2026-05-30,2,16.1,34.03333333333333,34:02,KT Rolster,DN SOOPers,KT Rolster
+78887-1,78887,,LCK,78887,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,1,16.1,29.316666666666663,29:19,Gen.G,HANJIN BRION,Gen.G
+78887-2,78888,,LCK,78887,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,2,16.1,29.583333333333332,29:35,Gen.G,HANJIN BRION,Gen.G
+78884-1,78884,,LCK,78884,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,1,16.1,28.25,28:15,Dplus KIA,Kiwoom DRX,Dplus KIA
+78884-2,78885,,LCK,78884,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,2,16.1,28.066666666666663,28:04,Dplus KIA,Kiwoom DRX,Kiwoom DRX
+78884-3,78886,,LCK,78884,LCK 2026 Rounds 1-2,WEEK9,2026-05-29,3,16.1,30.933333333333337,30:56,Kiwoom DRX,Dplus KIA,Dplus KIA
+78881-1,78881,,LCK,78881,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,1,16.1,28.783333333333335,28:47,T1,KT Rolster,T1
+78881-2,78882,,LCK,78881,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,2,16.1,35.53333333333333,35:32,T1,KT Rolster,T1
+78878-1,78878,,LCK,78878,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,1,16.1,35.71666666666667,35:43,DN SOOPers,Nongshim RedForce,DN SOOPers
+78878-2,78879,,LCK,78878,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,2,16.1,24.816666666666663,24:49,DN SOOPers,Nongshim RedForce,Nongshim RedForce
+78878-3,78880,,LCK,78878,LCK 2026 Rounds 1-2,WEEK9,2026-05-28,3,16.1,31.45,31:27,DN SOOPers,Nongshim RedForce,Nongshim RedForce
+78875-1,78875,,LCK,78875,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,1,16.1,34.733333333333334,34:44,BNK FearX,Kiwoom DRX,BNK FearX
+78875-2,78876,,LCK,78875,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,2,16.1,32.25,32:15,BNK FearX,Kiwoom DRX,Kiwoom DRX
+78875-3,78877,,LCK,78875,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,3,16.1,42.85,42:51,Kiwoom DRX,BNK FearX,BNK FearX
+78872-1,78872,,LCK,78872,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,1,16.1,43.11666666666667,43:07,Gen.G,Hanwha Life Esports,Hanwha Life Esports
+78872-2,78873,,LCK,78872,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,2,16.1,31.466666666666665,31:28,Gen.G,Hanwha Life Esports,Gen.G
+78872-3,78874,,LCK,78872,LCK 2026 Rounds 1-2,WEEK9,2026-05-27,3,16.1,26.4,26:24,Gen.G,Hanwha Life Esports,Gen.G
+78249-1,78249,,LCK,78249,LCK 2026 Rounds 1-2,WEEK8,2026-05-24,1,16.1,33.1,33:06,T1,HANJIN BRION,T1
+78249-2,78250,,LCK,78249,LCK 2026 Rounds 1-2,WEEK8,2026-05-24,2,16.1,28.783333333333335,28:47,T1,HANJIN BRION,T1
+78246-1,78246,,LCK,78246,LCK 2026 Rounds 1-2,WEEK8,2026-05-24,1,16.1,28.133333333333333,28:08,Gen.G,DN SOOPers,Gen.G
+78246-2,78247,,LCK,78246,LCK 2026 Rounds 1-2,WEEK8,2026-05-24,2,16.1,28.216666666666665,28:13,Gen.G,DN SOOPers,Gen.G
+78243-1,78243,,LCK,78243,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,1,16.1,30.416666666666668,30:25,Hanwha Life Esports,Nongshim RedForce,Nongshim RedForce
+78243-2,78244,,LCK,78243,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,2,16.1,29.766666666666666,29:46,Nongshim RedForce,Hanwha Life Esports,Hanwha Life Esports
+78243-3,78245,,LCK,78243,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,3,16.1,27.283333333333335,27:17,Hanwha Life Esports,Nongshim RedForce,Hanwha Life Esports
+78240-1,78240,,LCK,78240,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,1,16.1,31.766666666666666,31:46,Dplus KIA,BNK FearX,Dplus KIA
+78240-2,78241,,LCK,78240,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,2,16.1,32.46666666666667,32:28,BNK FearX,Dplus KIA,BNK FearX
+78240-3,78242,,LCK,78240,LCK 2026 Rounds 1-2,WEEK8,2026-05-23,3,16.1,30.016666666666666,30:01,Dplus KIA,BNK FearX,Dplus KIA
+78237-1,78237,,LCK,78237,LCK 2026 Rounds 1-2,WEEK8,2026-05-22,1,16.1,27.866666666666667,27:52,KT Rolster,Gen.G,Gen.G
+78237-2,78238,,LCK,78237,LCK 2026 Rounds 1-2,WEEK8,2026-05-22,2,16.1,33.15,33:09,KT Rolster,Gen.G,Gen.G
+78234-1,78234,,LCK,78234,LCK 2026 Rounds 1-2,WEEK8,2026-05-22,1,16.1,33.583333333333336,33:35,DN SOOPers,Kiwoom DRX,Kiwoom DRX
+78234-2,78235,,LCK,78234,LCK 2026 Rounds 1-2,WEEK8,2026-05-22,2,16.1,28.316666666666663,28:19,Kiwoom DRX,DN SOOPers,Kiwoom DRX
+78231-1,78231,,LCK,78231,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,1,16.1,41.1,41:06,Dplus KIA,HANJIN BRION,Dplus KIA
+78231-2,78232,,LCK,78231,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,2,16.1,35.95,35:57,HANJIN BRION,Dplus KIA,HANJIN BRION
+78231-3,78233,,LCK,78231,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,3,16.1,30.133333333333333,30:08,HANJIN BRION,Dplus KIA,Dplus KIA
+78228-1,78228,,LCK,78228,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,1,16.1,36.28333333333333,36:17,BNK FearX,Hanwha Life Esports,Hanwha Life Esports
+78228-2,78229,,LCK,78228,LCK 2026 Rounds 1-2,WEEK8,2026-05-21,2,16.1,30.183333333333337,30:11,Hanwha Life Esports,BNK FearX,Hanwha Life Esports
+78225-1,78225,,LCK,78225,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,1,16.1,23.866666666666667,23:52,Nongshim RedForce,KT Rolster,Nongshim RedForce
+78225-2,78226,,LCK,78225,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,2,16.1,30.566666666666663,30:34,KT Rolster,Nongshim RedForce,KT Rolster
+78225-3,78227,,LCK,78225,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,3,16.1,33.85,33:51,KT Rolster,Nongshim RedForce,KT Rolster
+78222-1,78222,,LCK,78222,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,1,16.1,28.266666666666666,28:16,T1,Kiwoom DRX,T1
+78222-2,78223,,LCK,78222,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,2,16.1,31.083333333333332,31:05,T1,Kiwoom DRX,Kiwoom DRX
+78222-3,78224,,LCK,78222,LCK 2026 Rounds 1-2,WEEK8,2026-05-20,3,16.1,27.133333333333333,27:08,Kiwoom DRX,T1,T1
 78069-1,78069,,LCK,78069,LCK 2026 Rounds 1-2,WEEK7,2026-05-17,1,16.9,41.9,41:54,HANJIN BRION,Kiwoom DRX,HANJIN BRION
 78069-2,78070,,LCK,78069,LCK 2026 Rounds 1-2,WEEK7,2026-05-17,2,16.9,30.166666666666668,30:10,HANJIN BRION,Kiwoom DRX,Kiwoom DRX
 78069-3,78071,,LCK,78069,LCK 2026 Rounds 1-2,WEEK7,2026-05-17,3,16.9,36.46666666666667,36:28,Kiwoom DRX,HANJIN BRION,Kiwoom DRX
 78066-1,78066,,LCK,78066,LCK 2026 Rounds 1-2,WEEK7,2026-05-17,1,16.9,30.016666666666666,30:01,KT Rolster,Hanwha Life Esports,KT Rolster
 78066-2,78067,,LCK,78066,LCK 2026 Rounds 1-2,WEEK7,2026-05-17,2,16.9,26.483333333333334,26:29,KT Rolster,Hanwha Life Esports,Hanwha Life Esports
-78066-3,78068,,LCK,78066,LCK 2026 Rounds 1-2,WEEK7,2026-05-17,3,16.9,29.566666666666666,29:34,KT Rolster,Hanwha Life Esports,KT Rolster
+78066-3,78068,,LCK,78066,LCK 2026 Rounds 1-2,WEEK7,2026-05-17,3,16.9,29.566666666666663,29:34,KT Rolster,Hanwha Life Esports,KT Rolster
 78063-1,78063,,LCK,78063,LCK 2026 Rounds 1-2,WEEK7,2026-05-16,1,16.9,32.25,32:15,BNK FearX,Nongshim RedForce,BNK FearX
 78063-2,78064,,LCK,78063,LCK 2026 Rounds 1-2,WEEK7,2026-05-16,2,16.9,38.266666666666666,38:16,BNK FearX,Nongshim RedForce,BNK FearX
 78060-1,78060,,LCK,78060,LCK 2026 Rounds 1-2,WEEK7,2026-05-16,1,16.9,27.233333333333334,27:14,Gen.G,T1,Gen.G
 78060-2,78061,,LCK,78060,LCK 2026 Rounds 1-2,WEEK7,2026-05-16,2,16.9,50.3,50:18,T1,Gen.G,T1
 78060-3,78062,,LCK,78060,LCK 2026 Rounds 1-2,WEEK7,2026-05-16,3,16.9,33.46666666666667,33:28,T1,Gen.G,T1
-78057-1,78057,,LCK,78057,LCK 2026 Rounds 1-2,WEEK7,2026-05-15,1,16.9,27.183333333333334,27:11,HANJIN BRION,DN SOOPers,HANJIN BRION
-78057-2,78058,,LCK,78057,LCK 2026 Rounds 1-2,WEEK7,2026-05-15,2,16.9,26.066666666666666,26:04,DN SOOPers,HANJIN BRION,HANJIN BRION
+78057-1,78057,,LCK,78057,LCK 2026 Rounds 1-2,WEEK7,2026-05-15,1,16.9,27.183333333333337,27:11,HANJIN BRION,DN SOOPers,HANJIN BRION
+78057-2,78058,,LCK,78057,LCK 2026 Rounds 1-2,WEEK7,2026-05-15,2,16.9,26.066666666666663,26:04,DN SOOPers,HANJIN BRION,HANJIN BRION
 78054-1,78054,,LCK,78054,LCK 2026 Rounds 1-2,WEEK7,2026-05-15,1,16.9,37.583333333333336,37:35,Hanwha Life Esports,Dplus KIA,Hanwha Life Esports
 78054-2,78055,,LCK,78054,LCK 2026 Rounds 1-2,WEEK7,2026-05-15,2,16.9,25.166666666666668,25:10,Hanwha Life Esports,Dplus KIA,Hanwha Life Esports
 78051-1,78051,,LCK,78051,LCK 2026 Rounds 1-2,WEEK7,2026-05-14,1,16.9,24.1,24:06,Kiwoom DRX,KT Rolster,KT Rolster
@@ -2182,7 +2182,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 77181-3,77183,,LCK,77181,LCK 2026 Rounds 1-2,WEEK5,2026-04-30,3,16.8,37.86666666666667,37:52,Kiwoom DRX,Gen.G,Gen.G
 77178-1,77178,,LCK,77178,LCK 2026 Rounds 1-2,WEEK5,2026-04-29,1,16.8,29.166666666666668,29:10,KT Rolster,Hanwha Life Esports,Hanwha Life Esports
 77178-2,77179,,LCK,77178,LCK 2026 Rounds 1-2,WEEK5,2026-04-29,2,16.8,31.3,31:18,Hanwha Life Esports,KT Rolster,Hanwha Life Esports
-77175-1,77175,,LCK,77175,LCK 2026 Rounds 1-2,WEEK5,2026-04-29,1,16.8,29.816666666666666,29:49,Nongshim RedForce,T1,T1
+77175-1,77175,,LCK,77175,LCK 2026 Rounds 1-2,WEEK5,2026-04-29,1,16.8,29.816666666666663,29:49,Nongshim RedForce,T1,T1
 77175-2,77176,,LCK,77175,LCK 2026 Rounds 1-2,WEEK5,2026-04-29,2,16.8,29.8,29:48,T1,Nongshim RedForce,T1
 76941-1,76941,,LCK,76941,LCK 2026 Rounds 1-2,WEEK4,2026-04-26,1,16.8,31.133333333333333,31:08,Nongshim RedForce,Gen.G,Gen.G
 76941-2,76942,,LCK,76941,LCK 2026 Rounds 1-2,WEEK4,2026-04-26,2,16.8,26.216666666666665,26:13,Nongshim RedForce,Gen.G,Gen.G
@@ -2200,9 +2200,9 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76923-2,76924,,LCK,76923,LCK 2026 Rounds 1-2,WEEK4,2026-04-23,2,16.8,25.6,25:36,Gen.G,DN SOOPers,Gen.G
 76920-1,76920,,LCK,76920,LCK 2026 Rounds 1-2,WEEK4,2026-04-23,1,16.8,36.666666666666664,36:40,HANJIN BRION,Dplus KIA,Dplus KIA
 76920-2,76921,,LCK,76920,LCK 2026 Rounds 1-2,WEEK4,2026-04-23,2,16.8,25.883333333333333,25:53,Dplus KIA,HANJIN BRION,Dplus KIA
-76917-1,76917,,LCK,76917,LCK 2026 Rounds 1-2,WEEK4,2026-04-22,1,16.8,28.816666666666666,28:49,Hanwha Life Esports,Nongshim RedForce,Hanwha Life Esports
+76917-1,76917,,LCK,76917,LCK 2026 Rounds 1-2,WEEK4,2026-04-22,1,16.8,28.816666666666663,28:49,Hanwha Life Esports,Nongshim RedForce,Hanwha Life Esports
 76917-2,76918,,LCK,76917,LCK 2026 Rounds 1-2,WEEK4,2026-04-22,2,16.8,36.13333333333333,36:08,Hanwha Life Esports,Nongshim RedForce,Nongshim RedForce
-76917-3,76919,,LCK,76917,LCK 2026 Rounds 1-2,WEEK4,2026-04-22,3,16.8,30.816666666666666,30:49,Nongshim RedForce,Hanwha Life Esports,Hanwha Life Esports
+76917-3,76919,,LCK,76917,LCK 2026 Rounds 1-2,WEEK4,2026-04-22,3,16.8,30.816666666666663,30:49,Nongshim RedForce,Hanwha Life Esports,Hanwha Life Esports
 76914-1,76914,,LCK,76914,LCK 2026 Rounds 1-2,WEEK4,2026-04-22,1,16.8,37.0,37:00,Kiwoom DRX,KT Rolster,KT Rolster
 76914-2,76915,,LCK,76914,LCK 2026 Rounds 1-2,WEEK4,2026-04-22,2,16.8,24.883333333333333,24:53,Kiwoom DRX,KT Rolster,KT Rolster
 76545-1,76545,,LCK,76545,LCK 2026 Rounds 1-2,WEEK3,2026-04-19,1,16.7,31.85,31:51,T1,Kiwoom DRX,T1
@@ -2221,7 +2221,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76530-2,76531,,LCK,76530,LCK 2026 Rounds 1-2,WEEK3,2026-04-17,2,16.7,34.11666666666667,34:07,BNK FearX,Kiwoom DRX,BNK FearX
 76527-1,76527,,LCK,76527,LCK 2026 Rounds 1-2,WEEK3,2026-04-16,1,16.7,22.766666666666666,22:46,DN SOOPers,Hanwha Life Esports,Hanwha Life Esports
 76527-2,76528,,LCK,76527,LCK 2026 Rounds 1-2,WEEK3,2026-04-16,2,16.7,32.083333333333336,32:05,Hanwha Life Esports,DN SOOPers,Hanwha Life Esports
-76524-1,76524,,LCK,76524,LCK 2026 Rounds 1-2,WEEK3,2026-04-16,1,16.7,29.183333333333334,29:11,HANJIN BRION,Gen.G,Gen.G
+76524-1,76524,,LCK,76524,LCK 2026 Rounds 1-2,WEEK3,2026-04-16,1,16.7,29.183333333333337,29:11,HANJIN BRION,Gen.G,Gen.G
 76524-2,76525,,LCK,76524,LCK 2026 Rounds 1-2,WEEK3,2026-04-16,2,16.7,32.4,32:24,Gen.G,HANJIN BRION,Gen.G
 76521-1,76521,,LCK,76521,LCK 2026 Rounds 1-2,WEEK3,2026-04-15,1,16.7,31.9,31:54,Dplus KIA,KT Rolster,Dplus KIA
 76521-2,76522,,LCK,76521,LCK 2026 Rounds 1-2,WEEK3,2026-04-15,2,16.7,40.4,40:24,KT Rolster,Dplus KIA,KT Rolster
@@ -2250,7 +2250,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 76055-2,76056,,LCK,76055,LCK 2026 Rounds 1-2,WEEK2,2026-04-08,2,16.7,29.1,29:06,Gen.G,T1,Gen.G
 76052-1,76052,,LCK,76052,LCK 2026 Rounds 1-2,WEEK2,2026-04-08,1,16.7,37.03333333333333,37:02,Hanwha Life Esports,Dplus KIA,Hanwha Life Esports
 76052-2,76053,,LCK,76052,LCK 2026 Rounds 1-2,WEEK2,2026-04-08,2,16.7,26.75,26:45,Hanwha Life Esports,Dplus KIA,Hanwha Life Esports
-75846-1,75846,,LCK,75846,LCK 2026 Rounds 1-2,WEEK1,2026-04-05,1,16.6,27.433333333333334,27:26,Gen.G,BNK FearX,Gen.G
+75846-1,75846,,LCK,75846,LCK 2026 Rounds 1-2,WEEK1,2026-04-05,1,16.6,27.433333333333337,27:26,Gen.G,BNK FearX,Gen.G
 75846-2,75847,,LCK,75846,LCK 2026 Rounds 1-2,WEEK1,2026-04-05,2,16.6,31.583333333333332,31:35,Gen.G,BNK FearX,Gen.G
 75843-1,75843,,LCK,75843,LCK 2026 Rounds 1-2,WEEK1,2026-04-05,1,16.6,32.71666666666667,32:43,Nongshim RedForce,DN SOOPers,Nongshim RedForce
 75843-2,75844,,LCK,75843,LCK 2026 Rounds 1-2,WEEK1,2026-04-05,2,16.6,33.21666666666667,33:13,Nongshim RedForce,DN SOOPers,Nongshim RedForce
@@ -2266,11 +2266,11 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 75828-1,75828,,LCK,75828,LCK 2026 Rounds 1-2,WEEK1,2026-04-02,1,16.6,33.31666666666667,33:19,Kiwoom DRX,DN SOOPers,DN SOOPers
 75828-2,75829,,LCK,75828,LCK 2026 Rounds 1-2,WEEK1,2026-04-02,2,16.6,29.916666666666668,29:55,Kiwoom DRX,DN SOOPers,DN SOOPers
 75825-1,75825,,LCK,75825,LCK 2026 Rounds 1-2,WEEK1,2026-04-02,1,16.6,32.983333333333334,32:59,Nongshim RedForce,Dplus KIA,Nongshim RedForce
-75825-2,75826,,LCK,75825,LCK 2026 Rounds 1-2,WEEK1,2026-04-02,2,16.6,23.433333333333334,23:26,Nongshim RedForce,Dplus KIA,Nongshim RedForce
+75825-2,75826,,LCK,75825,LCK 2026 Rounds 1-2,WEEK1,2026-04-02,2,16.6,23.433333333333337,23:26,Nongshim RedForce,Dplus KIA,Nongshim RedForce
 75822-1,75822,,LCK,75822,LCK 2026 Rounds 1-2,WEEK1,2026-04-01,1,16.6,24.0,24:00,KT Rolster,T1,KT Rolster
 75822-2,75823,,LCK,75822,LCK 2026 Rounds 1-2,WEEK1,2026-04-01,2,16.6,40.56666666666667,40:34,KT Rolster,T1,KT Rolster
 75819-1,75819,,LCK,75819,LCK 2026 Rounds 1-2,WEEK1,2026-04-01,1,16.6,32.11666666666667,32:07,HANJIN BRION,Hanwha Life Esports,Hanwha Life Esports
-75819-2,75820,,LCK,75819,LCK 2026 Rounds 1-2,WEEK1,2026-04-01,2,16.6,29.566666666666666,29:34,Hanwha Life Esports,HANJIN BRION,Hanwha Life Esports
+75819-2,75820,,LCK,75819,LCK 2026 Rounds 1-2,WEEK1,2026-04-01,2,16.6,29.566666666666663,29:34,Hanwha Life Esports,HANJIN BRION,Hanwha Life Esports
 74996-1,74996,,LCK,74996,LCK Cup 2026,FINALS,2026-03-01,1,16.3,27.883333333333333,27:53,Gen.G,BNK FearX,Gen.G
 74996-2,74997,,LCK,74996,LCK Cup 2026,FINALS,2026-03-01,2,16.3,24.116666666666667,24:07,Gen.G,BNK FearX,Gen.G
 74996-3,74998,,LCK,74996,LCK Cup 2026,FINALS,2026-03-01,3,16.3,30.9,30:54,Gen.G,BNK FearX,Gen.G
@@ -2278,7 +2278,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74822-2,74823,,LCK,74822,LCK Cup 2026,PLAYOFFS.ROUND4,2026-02-28,2,16.3,34.93333333333333,34:56,BNK FearX,Dplus KIA,BNK FearX
 74822-3,74824,,LCK,74822,LCK Cup 2026,PLAYOFFS.ROUND4,2026-02-28,3,16.3,30.9,30:54,BNK FearX,Dplus KIA,BNK FearX
 74754-1,74754,,LCK,74754,LCK Cup 2026,PLAYOFFS.ROUND3,2026-02-22,1,16.3,34.95,34:57,Dplus KIA,T1,T1
-74754-2,74755,,LCK,74754,LCK Cup 2026,PLAYOFFS.ROUND3,2026-02-22,2,16.3,29.066666666666666,29:04,Dplus KIA,T1,T1
+74754-2,74755,,LCK,74754,LCK Cup 2026,PLAYOFFS.ROUND3,2026-02-22,2,16.3,29.066666666666663,29:04,Dplus KIA,T1,T1
 74754-3,74756,,LCK,74754,LCK Cup 2026,PLAYOFFS.ROUND3,2026-02-22,3,16.3,39.18333333333333,39:11,T1,Dplus KIA,Dplus KIA
 74754-4,74757,,LCK,74754,LCK Cup 2026,PLAYOFFS.ROUND3,2026-02-22,4,16.3,33.88333333333333,33:53,Dplus KIA,T1,Dplus KIA
 74754-5,74758,,LCK,74754,LCK Cup 2026,PLAYOFFS.ROUND3,2026-02-22,5,16.3,31.55,31:33,Dplus KIA,T1,Dplus KIA
@@ -2291,13 +2291,13 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 74673-3,74675,,LCK,74673,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-20,3,16.3,32.85,32:51,Dplus KIA,DN SOOPers,DN SOOPers
 74673-4,74676,,LCK,74673,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-20,4,16.3,29.866666666666667,29:52,DN SOOPers,Dplus KIA,Dplus KIA
 74447-1,74447,,LCK,74447,LCK Cup 2026,PLAYOFFS.ROUND1,2026-02-19,1,16.3,30.0,30:00,Kiwoom DRX,DN SOOPers,DN SOOPers
-74447-2,74448,,LCK,74447,LCK Cup 2026,PLAYOFFS.ROUND1,2026-02-19,2,16.3,28.566666666666666,28:34,DN SOOPers,Kiwoom DRX,DN SOOPers
+74447-2,74448,,LCK,74447,LCK Cup 2026,PLAYOFFS.ROUND1,2026-02-19,2,16.3,28.566666666666663,28:34,DN SOOPers,Kiwoom DRX,DN SOOPers
 74447-3,74449,,LCK,74447,LCK Cup 2026,PLAYOFFS.ROUND1,2026-02-19,3,16.3,27.65,27:39,DN SOOPers,Kiwoom DRX,Kiwoom DRX
 74447-4,74450,,LCK,74447,LCK Cup 2026,PLAYOFFS.ROUND1,2026-02-19,4,16.3,36.516666666666666,36:31,Kiwoom DRX,DN SOOPers,DN SOOPers
 74457-1,74457,,LCK,74457,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-15,1,16.3,31.216666666666665,31:13,BNK FearX,T1,BNK FearX
 74457-2,74458,,LCK,74457,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-15,2,16.3,34.18333333333333,34:11,BNK FearX,T1,T1
 74457-3,74459,,LCK,74457,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-15,3,16.3,27.416666666666668,27:25,T1,BNK FearX,BNK FearX
-74457-4,74460,,LCK,74457,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-15,4,16.3,27.816666666666666,27:49,BNK FearX,T1,BNK FearX
+74457-4,74460,,LCK,74457,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-15,4,16.3,27.816666666666663,27:49,BNK FearX,T1,BNK FearX
 74452-1,74452,,LCK,74452,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-14,1,16.3,31.15,31:09,Dplus KIA,Gen.G,Gen.G
 74452-2,74453,,LCK,74452,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-14,2,16.3,40.583333333333336,40:35,Dplus KIA,Gen.G,Dplus KIA
 74452-3,74454,,LCK,74452,LCK Cup 2026,PLAYOFFS.ROUND2,2026-02-14,3,16.3,31.866666666666667,31:52,Dplus KIA,Gen.G,Gen.G
@@ -2333,9 +2333,9 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73690-3,73692,,LCK,73690,LCK Cup 2026,WEEK3,2026-01-31,3,16.2,39.63333333333333,39:38,T1,Dplus KIA,T1
 73685-1,73685,,LCK,73685,LCK Cup 2026,WEEK3,2026-01-30,1,16.2,27.366666666666667,27:22,KT Rolster,Nongshim RedForce,Nongshim RedForce
 73685-2,73686,,LCK,73685,LCK Cup 2026,WEEK3,2026-01-30,2,16.2,37.81666666666667,37:49,Nongshim RedForce,KT Rolster,Nongshim RedForce
-73685-3,73687,,LCK,73685,LCK Cup 2026,WEEK3,2026-01-30,3,16.2,25.683333333333334,25:41,Nongshim RedForce,KT Rolster,KT Rolster
+73685-3,73687,,LCK,73685,LCK Cup 2026,WEEK3,2026-01-30,3,16.2,25.683333333333337,25:41,Nongshim RedForce,KT Rolster,KT Rolster
 73685-4,73688,,LCK,73685,LCK Cup 2026,WEEK3,2026-01-30,4,16.2,38.55,38:33,KT Rolster,Nongshim RedForce,KT Rolster
-73685-5,73689,,LCK,73685,LCK Cup 2026,WEEK3,2026-01-30,5,16.2,26.183333333333334,26:11,KT Rolster,Nongshim RedForce,Nongshim RedForce
+73685-5,73689,,LCK,73685,LCK Cup 2026,WEEK3,2026-01-30,5,16.2,26.183333333333337,26:11,KT Rolster,Nongshim RedForce,Nongshim RedForce
 73680-1,73680,,LCK,73680,LCK Cup 2026,WEEK3,2026-01-29,1,16.2,35.233333333333334,35:14,BNK FearX,DN SOOPers,BNK FearX
 73680-2,73681,,LCK,73680,LCK Cup 2026,WEEK3,2026-01-29,2,16.2,25.583333333333332,25:35,BNK FearX,DN SOOPers,BNK FearX
 73680-3,73682,,LCK,73680,LCK Cup 2026,WEEK3,2026-01-29,3,16.2,33.78333333333333,33:47,BNK FearX,DN SOOPers,DN SOOPers
@@ -2359,10 +2359,10 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73402-1,73402,,LCK,73402,LCK Cup 2026,WEEK2,2026-01-23,1,16.1,30.1,30:06,Kiwoom DRX,Nongshim RedForce,Kiwoom DRX
 73402-2,73403,,LCK,73402,LCK Cup 2026,WEEK2,2026-01-23,2,16.1,34.233333333333334,34:14,Kiwoom DRX,Nongshim RedForce,Nongshim RedForce
 73402-3,73404,,LCK,73402,LCK Cup 2026,WEEK2,2026-01-23,3,16.1,35.5,35:30,Nongshim RedForce,Kiwoom DRX,Kiwoom DRX
-73399-1,73399,,LCK,73399,LCK Cup 2026,WEEK2,2026-01-23,1,16.1,30.816666666666666,30:49,T1,KT Rolster,T1
+73399-1,73399,,LCK,73399,LCK Cup 2026,WEEK2,2026-01-23,1,16.1,30.816666666666663,30:49,T1,KT Rolster,T1
 73399-2,73400,,LCK,73399,LCK Cup 2026,WEEK2,2026-01-23,2,16.1,46.6,46:36,T1,KT Rolster,T1
 73396-1,73396,,LCK,73396,LCK Cup 2026,WEEK2,2026-01-22,1,16.1,34.583333333333336,34:35,Gen.G,BNK FearX,Gen.G
-73396-2,73397,,LCK,73396,LCK Cup 2026,WEEK2,2026-01-22,2,16.1,31.933333333333334,31:56,Gen.G,BNK FearX,Gen.G
+73396-2,73397,,LCK,73396,LCK Cup 2026,WEEK2,2026-01-22,2,16.1,31.933333333333337,31:56,Gen.G,BNK FearX,Gen.G
 73393-1,73393,,LCK,73393,LCK Cup 2026,WEEK2,2026-01-22,1,16.1,36.983333333333334,36:59,Hanwha Life Esports,HANJIN BRION,Hanwha Life Esports
 73393-2,73394,,LCK,73393,LCK Cup 2026,WEEK2,2026-01-22,2,16.1,34.8,34:48,Hanwha Life Esports,HANJIN BRION,HANJIN BRION
 73393-3,73395,,LCK,73393,LCK Cup 2026,WEEK2,2026-01-22,3,16.1,28.983333333333334,28:59,HANJIN BRION,Hanwha Life Esports,Hanwha Life Esports
@@ -2370,12 +2370,12 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73390-2,73391,,LCK,73390,LCK Cup 2026,WEEK2,2026-01-21,2,16.1,32.38333333333333,32:23,Kiwoom DRX,DN SOOPers,DN SOOPers
 73390-3,73392,,LCK,73390,LCK Cup 2026,WEEK2,2026-01-21,3,16.1,33.38333333333333,33:23,DN SOOPers,Kiwoom DRX,DN SOOPers
 73387-1,73387,,LCK,73387,LCK Cup 2026,WEEK2,2026-01-21,1,16.1,38.43333333333333,38:26,Dplus KIA,Nongshim RedForce,Dplus KIA
-73387-2,73388,,LCK,73387,LCK Cup 2026,WEEK2,2026-01-21,2,16.1,23.933333333333334,23:56,Dplus KIA,Nongshim RedForce,Nongshim RedForce
+73387-2,73388,,LCK,73387,LCK Cup 2026,WEEK2,2026-01-21,2,16.1,23.933333333333337,23:56,Dplus KIA,Nongshim RedForce,Nongshim RedForce
 73387-3,73389,,LCK,73387,LCK Cup 2026,WEEK2,2026-01-21,3,16.1,27.1,27:06,Dplus KIA,Nongshim RedForce,Dplus KIA
-73139-1,73139,,LCK,73139,LCK Cup 2026,WEEK1,2026-01-18,1,16.1,29.433333333333334,29:26,T1,Kiwoom DRX,T1
+73139-1,73139,,LCK,73139,LCK Cup 2026,WEEK1,2026-01-18,1,16.1,29.433333333333337,29:26,T1,Kiwoom DRX,T1
 73139-2,73140,,LCK,73139,LCK Cup 2026,WEEK1,2026-01-18,2,16.1,30.533333333333335,30:32,T1,Kiwoom DRX,Kiwoom DRX
 73139-3,73141,,LCK,73139,LCK Cup 2026,WEEK1,2026-01-18,3,16.1,35.03333333333333,35:02,Kiwoom DRX,T1,T1
-73136-1,73136,,LCK,73136,LCK Cup 2026,WEEK1,2026-01-18,1,16.1,30.933333333333334,30:56,Hanwha Life Esports,Nongshim RedForce,Nongshim RedForce
+73136-1,73136,,LCK,73136,LCK Cup 2026,WEEK1,2026-01-18,1,16.1,30.933333333333337,30:56,Hanwha Life Esports,Nongshim RedForce,Nongshim RedForce
 73136-2,73137,,LCK,73136,LCK Cup 2026,WEEK1,2026-01-18,2,16.1,34.516666666666666,34:31,Nongshim RedForce,Hanwha Life Esports,Nongshim RedForce
 73133-1,73133,,LCK,73133,LCK Cup 2026,WEEK1,2026-01-17,1,16.1,31.2,31:12,KT Rolster,Gen.G,Gen.G
 73133-2,73134,,LCK,73133,LCK Cup 2026,WEEK1,2026-01-17,2,16.1,28.033333333333335,28:02,Gen.G,KT Rolster,Gen.G
@@ -2391,7 +2391,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73121-2,73122,,LCK,73121,LCK Cup 2026,WEEK1,2026-01-15,2,16.1,28.866666666666667,28:52,BNK FearX,Nongshim RedForce,BNK FearX
 73118-1,73118,,LCK,73118,LCK Cup 2026,WEEK1,2026-01-15,1,16.1,29.716666666666665,29:43,Kiwoom DRX,Gen.G,Gen.G
 73118-2,73119,,LCK,73118,LCK Cup 2026,WEEK1,2026-01-15,2,16.1,24.483333333333334,24:29,Gen.G,Kiwoom DRX,Gen.G
-73115-1,73115,,LCK,73115,LCK Cup 2026,WEEK1,2026-01-14,1,16.1,28.316666666666666,28:19,Dplus KIA,HANJIN BRION,Dplus KIA
+73115-1,73115,,LCK,73115,LCK Cup 2026,WEEK1,2026-01-14,1,16.1,28.316666666666663,28:19,Dplus KIA,HANJIN BRION,Dplus KIA
 73115-2,73116,,LCK,73115,LCK Cup 2026,WEEK1,2026-01-14,2,16.1,25.5,25:30,Dplus KIA,HANJIN BRION,Dplus KIA
 73112-1,73112,,LCK,73112,LCK Cup 2026,WEEK1,2026-01-14,1,16.1,31.466666666666665,31:28,DN SOOPers,KT Rolster,DN SOOPers
 73112-2,73113,,LCK,73112,LCK Cup 2026,WEEK1,2026-01-14,2,16.1,27.5,27:30,DN SOOPers,KT Rolster,KT Rolster

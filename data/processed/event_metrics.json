@@ -52,7 +52,7 @@
       "top10_model": 6,
       "top10_baseline": 7,
       "base_patch": "26.4",
-      "forecast_created": "2026-10-27 08:27 UTC"
+      "forecast_created": "2026-10-28 02:00 UTC"
     }
   },
   "msi": {
@@ -111,7 +111,7 @@
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.11",
-      "forecast_created": "2026-10-27 08:27 UTC"
+      "forecast_created": "2026-10-28 02:00 UTC"
     }
   },
   "ewc": {
@@ -169,7 +169,7 @@
       "top10_model": 5,
       "top10_baseline": 5,
       "base_patch": "26.11",
-      "forecast_created": "2026-10-27 08:27 UTC"
+      "forecast_created": "2026-10-28 02:00 UTC"
     }
   },
   "demacia": {
@@ -230,7 +230,7 @@
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
-      "forecast_created": "2026-10-27 08:27 UTC"
+      "forecast_created": "2026-10-28 02:00 UTC"
     }
   },
   "worlds": {
@@ -287,7 +287,7 @@
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
-      "forecast_created": "2026-10-27 08:27 UTC"
+      "forecast_created": "2026-10-28 02:00 UTC"
     }
   }
 }

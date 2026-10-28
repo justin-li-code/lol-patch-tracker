@@ -157,6 +157,17 @@ Which picks teams make *in response* to an opponent's pick.
 - **Chance to reach the knockouts:** the remaining Swiss rounds simulated 20,000
   times (same-record pairings, rematches avoided, Bo3).
 
+## Automatic updates (GitHub Actions)
+
+`.github/workflows/refresh.yml` runs `python -m lolpatch refresh` every 3 hours
+(and on demand from the Actions tab), then commits any changed data, which
+redeploys the Streamlit site. `refresh` downloads only new international games
+(incremental match and player downloads), so it needs no page cache; the season's
+league data doesn't change during Worlds and is reused from the repository.
+
+Working locally while the job runs: **`git pull` before committing**, since the
+job pushes data commits of its own.
+
 ## Pipeline
 
 | Step | Module | Output (`data/processed/`) |

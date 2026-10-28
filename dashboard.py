@@ -44,6 +44,26 @@ st.markdown("""
 
 # --- data -----------------------------------------------------------------------------
 
+@st.cache_resource
+def _cache_state() -> dict:
+    return {}
+
+
+def _files_version() -> float:
+    """Latest change time across the data and code the cached loaders depend on."""
+    root = PROCESSED.parent.parent
+    files = [*PROCESSED.glob("*"), *(root / "data" / "forecasts").glob("*"), *(root / "lolpatch").glob("*.py")]
+    return max((p.stat().st_mtime for p in files if p.is_file()), default=0.0)
+
+
+# Streamlit keeps cached data across redeploys unless a loader's own code changes, so new data
+# (e.g. from the scheduled refresh) or changed columns would otherwise be served stale.
+_state, _version = _cache_state(), _files_version()
+if _state.get("version") != _version:
+    st.cache_data.clear()
+    _state["version"] = _version
+
+
 @st.cache_data
 def load():
     stats = pd.read_csv(PROCESSED / "champion_patch_stats.csv", dtype={"patch": str})
@@ -572,7 +592,8 @@ def worlds_players_page(mx: dict):
         with r:
             from lolpatch.ratings import ROLE_WEIGHTS, STAT_LABELS
             role = pg.role.iloc[0]
-            prof = pd.Series({STAT_LABELS[s]: pg[f"z_{s}"].mean() for s in ROLE_WEIGHTS[role]}).sort_values()
+            prof = pd.Series({STAT_LABELS[s]: pg[f"z_{s}"].mean() for s in ROLE_WEIGHTS[role]
+                              if f"z_{s}" in pg}).sort_values()
             st.markdown(f"**Strengths and weaknesses at Worlds**, compared with a typical pro {role}")
             fig = go.Figure(go.Bar(x=prof.values, y=prof.index, orientation="h",
                                    marker=dict(color=[BUFF if v >= 0 else NERF for v in prof.values], cornerradius=3),

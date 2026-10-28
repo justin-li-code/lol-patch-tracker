@@ -6,6 +6,9 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.5.1 · Oct 27: Fix for the Worlds Players page
+- **Fixed:** the Worlds Players page crashed on the live site. The site was still using a saved copy of the player data from before v1.3, which lacked the new stats. The site now reloads its data whenever the data or code changes, so the automatic updates also show up right away.
+
 ## v1.5 · Oct 27: Title odds and automatic updates
 - **Who will win Worlds?** Each team's chance to reach the knockouts, semifinals and final, and to win the title. It comes from playing out the rest of Worlds 20,000 times: the remaining Swiss rounds, then best-of-five quarterfinals, semifinals and final. The quarterfinal draw follows the usual rules until the real one is known.
 - **Automatic updates:** a scheduled GitHub job refreshes the Worlds data every 3 hours (new games, ratings, standings, odds, previews) and redeploys the site. It downloads only new games, so it runs without the laptop.

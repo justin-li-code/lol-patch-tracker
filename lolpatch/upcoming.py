@@ -110,6 +110,33 @@ def standings(log=print) -> pd.DataFrame:
     return st
 
 
+def swiss_bracket(games: pd.DataFrame, sched: pd.DataFrame) -> pd.DataFrame:
+    """Every Swiss match (played, then scheduled) with its round and the record both teams brought in.
+
+    Rounds aren't labelled on gol.gg, so they're rebuilt by playing the series back in order:
+    a match is round n+1 for teams that had played n series, in the pool of their shared record.
+    """
+    sw = games[(games.event == "worlds") & games.tournament.str.contains("Main Event")]
+    record: dict[str, list[int]] = {}
+    rows = []
+    for sid, s in sorted(sw.groupby("series_id"), key=lambda x: (x[1].date.min(), x[0])):
+        a, b = s.blue.iloc[0], s.red.iloc[0]
+        wins = s.winner.value_counts()
+        ra, rb = record.setdefault(a, [0, 0]), record.setdefault(b, [0, 0])
+        rows.append(dict(round=sum(ra) + 1, pool=f"{ra[0]}–{ra[1]}", team_a=a, team_b=b,
+                         score_a=int(wins.get(a, 0)), score_b=int(wins.get(b, 0)), winner=wins.idxmax(),
+                         date=s.date.min(), pending=False))
+        ra[0 if wins.idxmax() == a else 1] += 1
+        rb[0 if wins.idxmax() == b else 1] += 1
+    for m in sched.itertuples():
+        ra = record.get(m.team_a, [0, 0])
+        rows.append(dict(round=sum(ra) + 1, pool=f"{ra[0]}–{ra[1]}", team_a=m.team_a, team_b=m.team_b,
+                         score_a=None, score_b=None, winner=None, date=str(m.date), pending=True))
+    out = pd.DataFrame(rows)
+    out.attrs["records"] = {t: tuple(r) for t, r in record.items()}
+    return out
+
+
 def tournament_odds(st: pd.DataFrame, strength: pd.Series, regions: pd.Series, n_sims: int = 20000,
                     seed: int = 0) -> pd.DataFrame:
     """Play out the rest of Worlds many times: remaining Swiss rounds, then a best-of-five bracket.

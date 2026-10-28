@@ -14,6 +14,13 @@ from .champions import champ_key
 ROW_PX = 28        # height of one category row in champion charts
 # Matches the page body font (loaded in dashboard.py); Streamlit's chart theme would otherwise reset it.
 CHART_FONT = "Inter, 'Source Sans Pro', system-ui, sans-serif"
+# Broadcast tags for Worlds teams, for compact views like the Swiss bracket.
+TEAM_SHORT = {
+    "Gen.G": "GEN", "Dplus KIA": "DK", "Hanwha Life Esports": "HLE", "T1": "T1", "Bilibili Gaming": "BLG",
+    "Invictus Gaming": "IG", "Top Esports": "TES", "Anyone s Legend": "AL", "G2 Esports": "G2",
+    "Karmine Corp": "KC", "Movistar KOI": "MKOI", "Team Liquid": "TL", "LYON": "LYON",
+    "CTBC Flying Oyster": "CFO", "Team Secret Whales": "TSW", "Los Grandes": "LOS",
+}
 
 
 @lru_cache(maxsize=1)

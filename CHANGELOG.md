@@ -6,6 +6,13 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.8 · Oct 28: Swiss bracket
+- The **Worlds 2026** page now opens with the **Swiss stage as a bracket**. There's one column per round, and each box groups the teams with the same record (2–0, 1–1, …). Every match shows its score, with the winner in bold.
+  - Scheduled matches are shown with dashed borders and their date.
+  - Teams that reach 3 wins appear in green **Advanced** boxes; teams with 3 losses appear in red **Eliminated** boxes.
+  - It updates on its own with the automatic data refresh.
+- The **Most Picked or Banned Champions** chart is now in a collapsed section, so the page is less crowded. Open it to see three tabs: Top 25, All Champions, and How This Works.
+
 ## v1.7.1 · Oct 27: Top 10 by role
 - The **Top 5 by Role** tab is now **Top 10 by Role**, showing the ten best-rated players in each position.
 

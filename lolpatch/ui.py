@@ -12,6 +12,8 @@ from .assets import ASSETS, CHAMPIONS, LOGOS
 from .champions import champ_key
 
 ROW_PX = 28        # height of one category row in champion charts
+# Matches the page body font (loaded in dashboard.py); Streamlit's chart theme would otherwise reset it.
+CHART_FONT = "Inter, 'Source Sans Pro', system-ui, sans-serif"
 
 
 @lru_cache(maxsize=1)
@@ -114,6 +116,7 @@ def row_layout(fig, names, *, legend: bool = False, x_title: bool = True, x_top:
     top = (34 if legend else 8) + (24 if x_top else 0)
     bottom = 8 if x_top else (46 if x_title else 24)
     fig.update_layout(
+        font=dict(family=CHART_FONT),
         height=n * ROW_PX + top + bottom,
         margin=dict(l=8, r=right, t=top, b=bottom),
         legend=dict(orientation="h", x=0, xanchor="left", y=1, yanchor="bottom", font=dict(size=12)),

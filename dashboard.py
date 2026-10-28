@@ -15,7 +15,7 @@ from lolpatch.analyze import build_transitions, load_changes, verdict_effects
 from lolpatch.config import LEAGUES, PROCESSED, patch_key
 from lolpatch.events import PRIOR_GAMES
 from lolpatch.meta import ROLES, SUB_MIN_MOVE_A, SUB_MIN_MOVE_B, displacement, group_presence, rise_window
-from lolpatch.ui import champ_icon, image_column, nice, row_layout, team_logo, with_icons
+from lolpatch.ui import CHART_FONT, champ_icon, image_column, nice, row_layout, team_logo, with_icons
 
 st.set_page_config(page_title="Patch Impact · LoL pro 2026", layout="wide", initial_sidebar_state="expanded")
 
@@ -30,6 +30,14 @@ TOP_N = 10  # rows shown before "show all"
 # Calmer typography: fewer heavy headings, more air between blocks.
 st.markdown("""
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+  /* Inter for reading text; Chakra Petch only for headings. Icon spans set their own font. */
+  html, body, .stApp, p, li, label, input, textarea, select, button, td, th,
+  div[data-testid="stMarkdownContainer"], div[data-testid="stMetricValue"], div[data-testid="stMetricLabel"] {
+    font-family: 'Inter', 'Source Sans Pro', system-ui, sans-serif;
+    font-feature-settings: 'tnum' 1;
+  }
+  h1, h2, h3, h1 *, h2 *, h3 * { font-family: 'Chakra Petch', 'Inter', system-ui, sans-serif !important; letter-spacing: .01em; }
   .block-container { padding-top: 2.2rem; max-width: 1200px; }
   h1 { font-size: 2.0rem !important; margin-bottom: .2rem !important; }
   h2 { font-size: 1.45rem !important; margin-top: .4rem !important; }
@@ -170,7 +178,7 @@ def load_regions():
 
 def style(fig, height=380, **layout):
     # Legend sits in the top margin, above the plot, so it never covers data.
-    layout = dict(margin=dict(l=10, r=10, t=40, b=10),
+    layout = dict(margin=dict(l=10, r=10, t=40, b=10), font=dict(family=CHART_FONT),
                   legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0, xanchor="left"),
                   hovermode="x unified") | layout
     fig.update_layout(height=height, **layout)

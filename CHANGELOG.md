@@ -6,6 +6,10 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.6 · Oct 27: New fonts
+- Headings use **Chakra Petch**, which has an angular, game-interface look. Text, numbers and chart labels use **Inter**, which stays easy to read at small sizes.
+- Numbers now line up in columns because every digit is the same width.
+
 ## v1.5.1 · Oct 27: Fix for the Worlds Players page
 - **Fixed:** the Worlds Players page crashed on the live site. The site was still using a saved copy of the player data from before v1.3, which lacked the new stats. The site now reloads its data whenever the data or code changes, so the automatic updates also show up right away.
 

@@ -4,8 +4,19 @@ Every version below came from one round of requests. Newest first.
 
 ## Up next
 - Publish the site on Streamlit Community Cloud.
+- Knockout bracket odds (chance to win Worlds) once the Swiss stage ends.
 - Refresh the Worlds data after each Swiss round and knockout stage.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
+
+## v1.4 · Oct 27: Upcoming matches and previews
+- New **Upcoming** tab in Worlds 2026: the next matches (Swiss Round 4) with the favorite and their chance to win the series.
+- **Match previews** (click a match, or pick any two teams):
+  - Win chances for one game and for the series.
+  - Each side's likely bans and likely game-1 picks by role.
+  - Players to watch, and head-to-head results this year.
+- **Swiss standings** with each team's chance to reach the knockouts, from playing out the rest of the Swiss stage 20,000 times.
+- **Track record:** how often our pre-game favorite has actually won at Worlds (29 of 51 so far).
+- The schedule comes from Leaguepedia when it responds; the latest known schedule is kept as a backup.
 
 ## v1.3 · Oct 27: Plain language, more champions, richer player stats
 - **Written for everyone, not just data people.**

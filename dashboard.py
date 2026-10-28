@@ -116,6 +116,17 @@ def load_matches():
 
 
 @st.cache_data
+def load_upcoming():
+    path = PROCESSED / "team_strength.csv"
+    if not path.exists():
+        return None
+    read = lambda name: pd.read_csv(PROCESSED / name)
+    return dict(strength=read("team_strength.csv").set_index("team").strength, pools=read("team_pools.csv"),
+                bans=read("team_bans.csv"), meta=read("worlds_role_meta.csv"), standings=read("worlds_standings.csv"),
+                schedule=read("upcoming.csv"))
+
+
+@st.cache_data
 def load_ripple():
     path = PROCESSED / "substitutions.csv"
     if not path.exists():
@@ -589,9 +600,164 @@ def worlds_players_page(mx: dict):
             "for that.")
 
 
+def likely_bans(up: dict, team: str, opponent: str) -> pd.Series:
+    """Chance `team` bans each champion: half its own habits, half what opponents ban against `opponent`."""
+    b = up["bans"]
+    own = b[b.team == team].set_index("champion").own_rate
+    vs = b[b.team == opponent].set_index("champion").against_rate
+    p = (0.5 * own.reindex(own.index.union(vs.index)).fillna(0)
+         + 0.5 * vs.reindex(own.index.union(vs.index)).fillna(0)).clip(upper=0.95)
+    return p.sort_values(ascending=False)
+
+
+def likely_picks(up: dict, team: str, banned: pd.Series, n: int = 2) -> dict:
+    """Per role: the team's most likely game-1 picks, from its recent pool and the Worlds meta,
+    minus champions likely to be banned."""
+    pools, meta = up["pools"], up["meta"]
+    out = {}
+    for role in ROLES:
+        own = pools[(pools.team == team) & (pools.role == role)].set_index("champion").share
+        m = meta[meta.role == role].set_index("champion").share
+        idx = own.index.union(m.index)
+        score = 0.8 * own.reindex(idx).fillna(0) + 0.2 * m.reindex(idx).fillna(0)
+        score = score * (1 - banned.reindex(idx).fillna(0))
+        score = score / score.sum() if score.sum() else score
+        out[role] = score.sort_values(ascending=False).head(n)
+    return out
+
+
+def match_preview(up: dict, a: str, b: str, best_of: int):
+    p_game = 1 / (1 + np.exp(-(up["strength"].get(a, 0) - up["strength"].get(b, 0))))
+    from lolpatch.upcoming import series_prob
+    p_series = series_prob(p_game, best_of) if best_of > 1 else p_game
+    fav, fav_p = (a, p_series) if p_series >= 0.5 else (b, 1 - p_series)
+
+    c1, c2, c3 = st.columns([5, 3, 5], vertical_alignment="center")
+    for col, tm, p in ((c1, a, p_series), (c3, b, 1 - p_series)):
+        with col:
+            lc, nc = st.columns([1, 4], vertical_alignment="center")
+            if team_logo(tm):
+                lc.image(team_logo(tm), width=56)
+            nc.markdown(f"### {tm}\n**{p:.0%}** chance to win")
+    c2.markdown(f"<div style='text-align:center'><span class='muted'>Best of {best_of}</span><br>"
+                f"<b>{fav}</b> favored</div>", unsafe_allow_html=True)
+    st.progress(float(p_series), text=f"{a} {p_series:.0%} · {b} {1 - p_series:.0%}")
+    st.caption(f"Based on how both teams have played all year, {fav} would win a single game about "
+               f"{max(p_game, 1 - p_game):.0%} of the time, which makes them {fav_p:.0%} to win a best of {best_of}.")
+
+    bans_a, bans_b = likely_bans(up, a, b), likely_bans(up, b, a)
+    banned = 1 - (1 - bans_a.reindex(bans_a.index.union(bans_b.index)).fillna(0)) * \
+        (1 - bans_b.reindex(bans_a.index.union(bans_b.index)).fillna(0))
+    l, r = st.columns(2, gap="large")
+    for col, tm, bans in ((l, a, bans_a), (r, b, bans_b)):
+        with col:
+            st.markdown(f"**{tm}: likely bans**")
+            top = bans.head(5)
+            st.image([champ_icon(c) for c in top.index if champ_icon(c)], width=44,
+                     caption=[f"{nice(c)} {p:.0%}" for c, p in top.items() if champ_icon(c)])
+            st.markdown(f"**{tm}: likely picks** (game 1)")
+            picks = likely_picks(up, tm, banned)
+            rows = [{"Role": role.title(), "Most likely": nice(ch.index[0]) if len(ch) else "—",
+                     "Chance": ch.iloc[0] if len(ch) else np.nan,
+                     "Or": nice(ch.index[1]) if len(ch) > 1 else "—",
+                     "Chance ": ch.iloc[1] if len(ch) > 1 else np.nan} for role, ch in picks.items()]
+            t = pd.DataFrame(rows)
+            t.insert(1, " ", [champ_icon(x) if x != "—" else None for x in t["Most likely"]])
+            st.dataframe(t.style.format({"Chance": "{:.0%}", "Chance ": "{:.0%}"}, na_rep="—"),
+                         column_config=image_column(" "), hide_index=True, use_container_width=True)
+
+    if mx is not None:
+        rt = mx["ratings"]
+        st.markdown("**Players to watch**")
+        l, r = st.columns(2, gap="large")
+        for col, tm in ((l, a), (r, b)):
+            tr = rt[rt.team == tm]
+            if tr.empty:
+                col.caption(f"No game data for {tm}.")
+                continue
+            last = tr[tr.date == tr.date.max()].drop_duplicates("role")
+            roster = last.assign(order=last.role.map({x: i for i, x in enumerate(ROLES)})).sort_values("order")
+            w = rt[(rt.event == "worlds")].groupby("player").rating.mean()
+            season = rt[rt.event.isna()].groupby("player").rating.mean()
+            col.dataframe(pd.DataFrame({
+                "Role": roster.role.str.title(), "Player": roster.player,
+                "Rating at Worlds": roster.player.map(w), "Rating in their league": roster.player.map(season),
+            }).style.format({"Rating at Worlds": "{:.1f}", "Rating in their league": "{:.1f}"}, na_rep="—"),
+                hide_index=True, use_container_width=True)
+        g = mx["games"]
+        h2h = g[((g.blue == a) & (g.red == b)) | ((g.blue == b) & (g.red == a))]
+        if len(h2h):
+            wins_a = int((h2h.winner == a).sum())
+            last = h2h.sort_values("date").iloc[-1]
+            st.markdown(f"**Head to head this year:** {a} {wins_a}–{len(h2h) - wins_a} {b} in games "
+                        f"(last met {last.date}, {last.winner} won).")
+        else:
+            st.markdown("**Head to head this year:** they haven't played each other yet.")
+    st.caption("Worlds uses Fearless Draft: a champion used in one game of a series can't be picked again in "
+               "that series, so the picks above are for game 1. Bans: half what the team usually bans, half what "
+               "teams usually ban against its opponent. Picks: mostly the team's own recent champions, nudged by "
+               "what's popular at Worlds, minus likely bans.")
+
+
+def worlds_upcoming_tab(up: dict):
+    sched = up["schedule"]
+    from lolpatch.upcoming import series_prob
+    if len(sched):
+        st.markdown("### Next matches")
+        rows = []
+        for m in sched.itertuples():
+            p = 1 / (1 + np.exp(-(up["strength"].get(m.team_a, 0) - up["strength"].get(m.team_b, 0))))
+            ps = series_prob(p, int(m.best_of))
+            fav, fp = (m.team_a, ps) if ps >= 0.5 else (m.team_b, 1 - ps)
+            rows.append({"When (UTC)": m.date, "Stage": m.stage, " ": team_logo(m.team_a), "Team": m.team_a,
+                         "vs": "vs", "  ": team_logo(m.team_b), "Opponent": m.team_b, "Format": f"Bo{int(m.best_of)}",
+                         "Favorite": fav, "Chance": fp})
+        picked = st.dataframe(pd.DataFrame(rows).style.format({"Chance": "{:.0%}"}),
+                              column_config={" ": st.column_config.ImageColumn(" ", width="small"),
+                                             "  ": st.column_config.ImageColumn("  ", width="small")},
+                              hide_index=True, use_container_width=True, on_select="rerun",
+                              selection_mode="single-row", key="upcoming_table")
+        sel = (picked or {}).get("selection", {}).get("rows", [])
+        st.caption("Click a match for the full preview: likely bans and picks, players to watch, head to head.")
+        if sel:
+            m = sched.iloc[sel[0]]
+            st.divider()
+            match_preview(up, m.team_a, m.team_b, int(m.best_of))
+
+    st.markdown("### Swiss standings")
+    stn = up["standings"].copy()
+    stn["Logo"] = stn.team.map(team_logo)
+    stn["Record"] = stn.wins.astype(str) + "–" + stn.losses.astype(str)
+    stn["Chance to reach the knockouts"] = np.where(stn.status == "Advanced", 1.0,
+                                                    np.where(stn.status == "Eliminated", 0.0, stn.p_advance))
+    st.dataframe(stn[["Logo", "team", "Record", "status", "Chance to reach the knockouts"]].rename(
+        columns={"team": "Team", "status": "Status"}),
+        column_config={"Logo": st.column_config.ImageColumn(" ", width="small"),
+                       "Chance to reach the knockouts": st.column_config.ProgressColumn(
+                           "Chance to reach the knockouts", format="%.0f%%", min_value=0, max_value=1)},
+        hide_index=True, use_container_width=True, height=36 * len(stn) + 40)
+    st.caption("Teams advance at 3 wins and go home at 3 losses. Chances come from playing out the rest of the "
+               "Swiss stage 20,000 times with each team's win chances.")
+
+    with st.expander("Preview any matchup"):
+        alive = up["standings"].team.tolist()
+        c1, c2, c3 = st.columns([3, 3, 2])
+        a = c1.selectbox("Team", alive, index=0, key="pv_a")
+        b = c2.selectbox("Opponent", [t for t in alive if t != a], index=0, key="pv_b")
+        bo = c3.selectbox("Format", [1, 3, 5], index=1, format_func=lambda x: f"Best of {x}", key="pv_bo")
+        match_preview(up, a, b, bo)
+
+    if mx is not None:
+        e = mx["expected"].merge(mx["games"][["game_uid", "event"]], on="game_uid")
+        w = e[(e.event == "worlds") & (e.p_win > 0.5)]
+        if len(w):
+            st.caption(f"Track record: at Worlds so far, the team we favored before the game won "
+                       f"{int(w.won.sum())} of {len(w)} games ({w.won.mean():.0%}).")
+
+
 d = load()
 stats, changes, lines = d["stats"], d["changes"], d["lines"]
-ev, rg, rp, dr, mx = load_events(), load_regions(), load_ripple(), load_draft(), load_matches()
+ev, rg, rp, dr, mx, up = load_events(), load_regions(), load_ripple(), load_draft(), load_matches(), load_upcoming()
 all_stats = stats[stats.league == "ALL"]
 
 # --- navigation -------------------------------------------------------------------------
@@ -738,8 +904,15 @@ elif page == "Worlds 2026":
                 f"games are played, the more the real results take over (the prediction counts like {PRIOR_GAMES} "
                 "games of evidence). The thin line is the range we're 80% confident in.")
 
-    t_games, t_teams, t_patch, t_fc, t_draft, t_region = st.tabs(
-        ["Series & Games", "Teams", f"Patch {wm['patch']} Changes", "Forecast Check", "Draft Answers", "By Region"])
+    t_up, t_games, t_teams, t_patch, t_fc, t_draft, t_region = st.tabs(
+        ["Upcoming", "Series & Games", "Teams", f"Patch {wm['patch']} Changes", "Forecast Check", "Draft Answers",
+         "By Region"])
+
+    with t_up:
+        if up is None:
+            st.info("Run `python -m lolpatch upcoming` to load upcoming matches.")
+        else:
+            worlds_upcoming_tab(up)
 
     with t_games:
         if mx is None:

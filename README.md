@@ -143,6 +143,20 @@ Which picks teams make *in response* to an opponent's pick.
   Fit on games before Worlds, scored on Worlds: correlation with actual
   ratings 0.24 (0.20 without champion history).
 
+## Upcoming matches (`python -m lolpatch upcoming`)
+
+- **Schedule:** Leaguepedia's MatchSchedule when it responds (it often rate-limits
+  anonymous requests); otherwise `data/overrides/upcoming.csv`
+  (`date,stage,team_a,team_b,best_of`), which also keeps the last good fetch.
+  Leaguepedia names are mapped to gol.gg's (`TEAM_ALIASES`).
+- **Win chance:** team + region strength fit on every 2026 game (same model as
+  the expected results); series odds from the per-game chance.
+- **Likely bans:** half the team's own recent bans, half what opponents ban
+  against the other team. **Likely picks:** 80% the team's recent pool for that
+  role, 20% the Worlds meta, minus likely bans (game 1, since Worlds is Fearless).
+- **Chance to reach the knockouts:** the remaining Swiss rounds simulated 20,000
+  times (same-record pairings, rematches avoided, Bo3).
+
 ## Pipeline
 
 | Step | Module | Output (`data/processed/`) |

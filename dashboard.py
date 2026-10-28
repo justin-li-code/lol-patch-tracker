@@ -560,7 +560,7 @@ def worlds_players_page(mx: dict):
                      hide_index=True, use_container_width=True, height=36 * min(len(t), 10) + 40)
 
     t_best, t_roles, t_low, t_up, t_down, t_look = st.tabs(
-        ["Best", "Top 5 by Role", "Lowest Rated", "Above Expectations", "Below Expectations", "Player Lookup"])
+        ["Best", "Top 10 by Role", "Lowest Rated", "Above Expectations", "Below Expectations", "Player Lookup"])
     with t_best:
         top = agg.sort_values("rating", ascending=False).head(10)
         st.markdown(f"<div class='takeaway'>Best so far: <b>{top.iloc[0].player}</b> ({top.iloc[0].team}), "
@@ -568,12 +568,12 @@ def worlds_players_page(mx: dict):
                     unsafe_allow_html=True)
         board(top, "rating", "Average rating", "{:.1f}")
     with t_roles:
-        st.markdown("The five best-rated players in each position. Ratings compare each player with others "
+        st.markdown("The ten best-rated players in each position. Ratings compare each player with others "
                     "in the same position, so the positions are on the same scale.")
         role_order = [r for r in ["top", "jungle", "mid", "bot", "support"] if r in set(agg.role)]
         for role, tab in zip(role_order, st.tabs([r.title() for r in role_order])):
             with tab:
-                board(agg[agg.role == role].head(5), "rating", "Average rating", "{:.1f}")
+                board(agg[agg.role == role].head(10), "rating", "Average rating", "{:.1f}")
     with t_low:
         low = agg.sort_values("rating").head(10)
         st.markdown("The lowest averages so far. Often a mix of tough opponents and losing games, "

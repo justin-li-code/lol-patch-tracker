@@ -8,7 +8,7 @@
       0.47207142195803037,
       0.5131165530223379
     ],
-    "p_value": 0.47895304789096926,
+    "p_value": 0.47895304789096893,
     "strength_coef": 3.4609355388156553,
     "by_bucket": [
       {
@@ -364,44 +364,44 @@
       },
       {
         "region": "LCK",
-        "n_favorite": 85,
-        "n_other": 580,
-        "win_rate_favorite": 0.7294117647058823,
-        "win_rate_other": 0.6775862068965517,
-        "diff": 0.051825557809330625
+        "n_favorite": 86,
+        "n_other": 589,
+        "win_rate_favorite": 0.7325581395348837,
+        "win_rate_other": 0.6825127334465195,
+        "diff": 0.050045406088364164
       },
       {
         "region": "LCS",
-        "n_favorite": 55,
-        "n_other": 360,
-        "win_rate_favorite": 0.4909090909090909,
-        "win_rate_other": 0.4527777777777778,
-        "diff": 0.03813131313131313
+        "n_favorite": 58,
+        "n_other": 372,
+        "win_rate_favorite": 0.46551724137931033,
+        "win_rate_other": 0.45161290322580644,
+        "diff": 0.013904338153503892
       },
       {
         "region": "LEC",
-        "n_favorite": 92,
-        "n_other": 418,
-        "win_rate_favorite": 0.44565217391304346,
-        "win_rate_other": 0.5239234449760766,
-        "diff": -0.07827127106303311
+        "n_favorite": 94,
+        "n_other": 426,
+        "win_rate_favorite": 0.43617021276595747,
+        "win_rate_other": 0.5140845070422535,
+        "diff": -0.07791429427629604
       },
       {
         "region": "LPL",
         "n_favorite": 56,
-        "n_other": 499,
+        "n_other": 514,
         "win_rate_favorite": 0.5178571428571429,
-        "win_rate_other": 0.5531062124248497,
-        "diff": -0.03524906956770679
+        "win_rate_other": 0.556420233463035,
+        "diff": -0.038563090605892136
       }
     ],
-    "within_region_diff": -0.006507350472547182,
+    "within_region_diff": -0.011736604578312907,
     "ci": [
-      -0.06829331518660552,
-      0.05150325347659005
+      -0.06876098366514659,
+      0.049268740174452465
     ],
     "favorite_lift": 0.05,
-    "favorite_picks": 315,
-    "total_picks": 2365
+    "favorite_picks": 321,
+    "total_picks": 2415
   }
 }

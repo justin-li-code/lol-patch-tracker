@@ -4793,3 +4793,13 @@ game_uid,side,team,result,kills,towers,dragons,barons,gold,dragon_types,heralds,
 73112-2,red,KT Rolster,1,14.0,10.0,4.0,1.0,62600.0,"Cloud, Infernal, Hextech, Hextech",0,1,1,0.0,42.0,15.0,15.0,12.0
 73112-3,blue,KT Rolster,1,17.0,7.0,4.0,0.0,72900.0,"Mountain, Chemtech, Hextech, Hextech",1,1,1,3.0,25.0,5.0,15.0,5.0
 73112-3,red,DN SOOPers,0,14.0,3.0,1.0,0.0,68000.0,Hextech,0,0,0,0.0,21.0,9.0,5.0,7.0
+83672-1,blue,LYON,0,4.0,2.0,0.0,0.0,46800.0,,0,0,1,0.0,17.0,8.0,2.0,7.0
+83672-1,red,Invictus Gaming,1,19.0,7.0,4.0,0.0,55500.0,"Ocean, Ocean, Chemtech, Hextech",1,1,0,3.0,26.0,5.0,15.0,6.0
+83672-2,blue,Invictus Gaming,0,8.0,3.0,3.0,1.0,63800.0,"Cloud, Mountain, Infernal",1,1,0,1.0,18.0,5.0,7.0,6.0
+83672-2,red,LYON,1,18.0,10.0,3.0,1.0,75500.0,"Infernal, Infernal, Infernal",0,0,1,2.0,40.0,15.0,15.0,10.0
+83672-3,blue,LYON,0,5.0,1.0,0.0,0.0,39600.0,,0,0,0,3.0,9.0,5.0,0.0,4.0
+83672-3,red,Invictus Gaming,1,7.0,9.0,4.0,0.0,48100.0,"Cloud, Mountain, Mountain, Hextech",1,1,1,0.0,38.0,8.0,15.0,15.0
+83669-1,blue,T1,1,20.0,10.0,4.0,1.0,82900.0,"Cloud, Ocean, Infernal, Infernal",1,0,1,0.0,40.0,10.0,15.0,15.0
+83669-1,red,Movistar KOI,0,10.0,5.0,3.0,1.0,79800.0,"Infernal, Infernal, Infernal",0,1,0,3.0,25.0,10.0,5.0,10.0
+83669-2,blue,T1,1,22.0,9.0,3.0,0.0,57500.0,"Ocean, Mountain, Infernal",1,1,1,0.0,38.0,8.0,15.0,15.0
+83669-2,red,Movistar KOI,0,9.0,0.0,0.0,0.0,45200.0,,0,0,0,3.0,6.0,3.0,1.0,2.0

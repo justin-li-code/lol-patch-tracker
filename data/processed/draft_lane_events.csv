@@ -11244,3 +11244,28 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83667-2,mid,Worlds,Worlds 2026 Main Event,26.20,Annie,Anyone s Legend,5,Shanks,Akali,Team Liquid,10,Quid,1,True
 83667-2,support,Worlds,Worlds 2026 Main Event,26.20,Rakan,Team Liquid,3,CoreJJ,Tahm Kench,Anyone s Legend,9,Kael,0,False
 83667-2,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Anyone s Legend,4,Breathe,Kled,Team Liquid,6,Morgan,1,False
+83669-1,bot,Worlds,Worlds 2026 Main Event,26.20,Kaisa,Movistar KOI,5,Supa,Xayah,T1,6,Peyz,1,False
+83669-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Movistar KOI,1,Elyoya,Lee Sin,T1,3,Oner,1,False
+83669-1,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,T1,7,Faker,Akali,Movistar KOI,8,jojopyun,0,False
+83669-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,T1,2,Keria,Alistar,Movistar KOI,4,Alvaro,0,False
+83669-1,top,Worlds,Worlds 2026 Main Event,26.20,Gnar,Movistar KOI,9,Myrwn,Ambessa,T1,10,Doran,1,True
+83669-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Movistar KOI,1,Supa,Jhin,T1,6,Peyz,1,False
+83669-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,T1,3,Oner,Xin Zhao,Movistar KOI,5,Elyoya,0,False
+83669-2,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,T1,7,Faker,Viktor,Movistar KOI,8,jojopyun,0,False
+83669-2,support,Worlds,Worlds 2026 Main Event,26.20,Karma,T1,2,Keria,Seraphine,Movistar KOI,4,Alvaro,0,False
+83669-2,top,Worlds,Worlds 2026 Main Event,26.20,Ornn,Movistar KOI,9,Myrwn,Gwen,T1,10,Doran,1,True
+83672-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,LYON,2,Berserker,Yunara,Invictus Gaming,5,JiaQi,1,False
+83672-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,LYON,3,Inspired,Vi,Invictus Gaming,4,Wei,1,False
+83672-1,mid,Worlds,Worlds 2026 Main Event,26.20,Aurora,Invictus Gaming,9,RooKie,Sylas,LYON,10,Saint,0,True
+83672-1,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Invictus Gaming,1,meiko,Karma,LYON,6,Isles,0,False
+83672-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,LYON,7,Dhokla,Ornn,Invictus Gaming,8,TheShy,1,False
+83672-2,bot,Worlds,Worlds 2026 Main Event,26.20,Jhin,Invictus Gaming,2,JiaQi,Corki,LYON,5,Berserker,1,False
+83672-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,LYON,1,Inspired,Lee Sin,Invictus Gaming,3,Wei,0,False
+83672-2,mid,Worlds,Worlds 2026 Main Event,26.20,Annie,Invictus Gaming,7,RooKie,Taliyah,LYON,9,Saint,1,False
+83672-2,support,Worlds,Worlds 2026 Main Event,26.20,Alistar,LYON,4,Isles,Nautilus,Invictus Gaming,6,meiko,0,False
+83672-2,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,LYON,8,Dhokla,Zaahen,Invictus Gaming,10,TheShy,0,True
+83672-3,bot,Worlds,Worlds 2026 Main Event,26.20,Lucian,LYON,2,Berserker,Caitlyn,Invictus Gaming,4,JiaQi,1,False
+83672-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Xin Zhao,LYON,7,Inspired,Trundle,Invictus Gaming,8,Wei,1,False
+83672-3,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Invictus Gaming,1,RooKie,LeBlanc,LYON,6,Saint,0,False
+83672-3,support,Worlds,Worlds 2026 Main Event,26.20,Milio,LYON,3,Isles,Lux,Invictus Gaming,5,meiko,1,False
+83672-3,top,Worlds,Worlds 2026 Main Event,26.20,Jayce,Invictus Gaming,9,TheShy,KSante,LYON,10,Dhokla,0,True

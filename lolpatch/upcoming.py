@@ -229,6 +229,27 @@ def _team_name(name: str) -> str:
     return TEAM_ALIASES.get(name, name)
 
 
+def drop_played(up: pd.DataFrame, log=print) -> pd.DataFrame:
+    """Remove scheduled matches already on gol.gg: the same two teams have played a Worlds series
+    since the day before the scheduled date (time zones). The fallback file never learns results
+    on its own, so without this finished matches would stay listed as upcoming."""
+    path = PROCESSED / "event_games.csv"
+    if up.empty or not path.exists():
+        return up
+    ev = pd.read_csv(path, usecols=["series_id", "league", "date", "team"], dtype={"series_id": str})
+    ev = ev[ev.league == "worlds"]
+    played = ev.groupby("series_id").agg(date=("date", "min"), teams=("team", frozenset))
+    played["date"] = pd.to_datetime(played.date)
+    keep = []
+    for m in up.itertuples():
+        since = pd.to_datetime(m.date).normalize() - pd.Timedelta(days=1)
+        done = played[(played.teams == frozenset((m.team_a, m.team_b))) & (played.date >= since)]
+        keep.append(done.empty)
+    if not all(keep):
+        log(f"  schedule: {len(keep) - sum(keep)} match(es) already played, removed")
+    return up[keep].reset_index(drop=True)
+
+
 def schedule(log=print) -> pd.DataFrame:
     """Upcoming Worlds matches: Leaguepedia when it answers, else the hand-maintained file."""
     rows = []
@@ -254,13 +275,15 @@ def schedule(log=print) -> pd.DataFrame:
             UPCOMING_TEMPLATE.write_text("date,stage,team_a,team_b,best_of\n")
         manual = pd.read_csv(UPCOMING_TEMPLATE)
         rows = manual.to_dict("records")
-    up = pd.DataFrame(rows, columns=["date", "stage", "team_a", "team_b", "best_of"])
+    up = drop_played(pd.DataFrame(rows, columns=["date", "stage", "team_a", "team_b", "best_of"]), log=log)
     known = set(pd.read_csv(PROCESSED / "team_strength.csv").team)
     unknown = sorted((set(up.team_a) | set(up.team_b)) - known)
     if unknown:
         log(f"  schedule: unrecognised team names {unknown}; add them to TEAM_ALIASES")
     up.to_csv(PROCESSED / "upcoming.csv", index=False)
-    if len(up):  # keep a copy, so the page still works if Leaguepedia is rate-limiting next time
+    # Keep a copy, so the page still works if Leaguepedia is rate-limiting next time. Written even
+    # when empty (header only) once played matches are removed, so they don't come back.
+    if len(up) or len(rows):
         up.to_csv(UPCOMING_TEMPLATE, index=False)
     log(f"  {len(up)} upcoming matches")
     return up

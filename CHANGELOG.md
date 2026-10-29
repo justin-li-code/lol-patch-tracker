@@ -6,6 +6,11 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.10 · Oct 29: Finished matches leave Upcoming; clearer bracket
+- **Upcoming matches drop off once they're played.** When the official schedule can't be reached, the site uses its saved copy, which never removed finished matches. Now any match whose two teams have since played each other is removed, both on the site and in the saved copy.
+- **Bracket winners are easier to spot.** The team that won each series is highlighted in blue with a bar on the left, and the loser is faded.
+- **Teams waiting on their next opponent** appear in their new record group with "Opponent to be drawn", e.g. LYON and MKOI at 2–2 after Round 4.
+
 ## v1.9 · Oct 28: Current form in the odds, and a sturdier refresh
 - **Win chances now account for how teams are actually playing.** It's not just whether a team won: a team that keeps winning narrowly, or losing badly, moves accordingly. This made predictions a bit better on past events (First Stand, MSI, EWC, Demacia Cup) and raised Worlds accuracy from 57% to 61%.
 - **What we tested and didn't use:** giving the most recent Worlds games extra weight. On every past event, it made predictions worse, because a handful of games is mostly luck.

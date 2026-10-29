@@ -822,9 +822,16 @@ def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
 
     def pool_box(rnd, pool):
         ms = b[(b["round"] == rnd) & (b.pool == pool)]
-        if ms.empty:
+        # Teams already on this record whose next opponent isn't scheduled yet.
+        listed = set(ms.team_a) | set(ms.team_b)
+        waiting = [t for t, r in records.items() if f"{r[0]}–{r[1]}" == pool and sum(r) == rnd - 1 and t not in listed]
+        if ms.empty and not waiting:
             return ""
-        return f"<div class='sw-pool'><div class='sw-h'>{pool}</div>{''.join(match_html(m) for m in ms.itertuples())}</div>"
+        html = "".join(match_html(m) for m in ms.itertuples())
+        if waiting:
+            html += (f"<div class='sw-m pend'>{''.join(team_line(t, None, '') for t in waiting)}"
+                     f"<div class='sw-when'>Opponent to be drawn</div></div>")
+        return f"<div class='sw-pool'><div class='sw-h'>{pool}</div>{html}</div>"
 
     def final_box(w, l):
         ts = [t for t, r in records.items() if r == (w, l)]
@@ -856,7 +863,7 @@ def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
 .sw-m{{border-radius:5px;background:rgba(128,128,128,.08);margin-bottom:5px;padding:2px 0}}
 .sw-m.pend{{border:1px dashed rgba(128,128,128,.45);background:none}}
 .sw-t{{display:flex;align-items:center;gap:6px;padding:2px 6px;font-size:.85rem;line-height:1.35}}
-.sw-t.win{{font-weight:700}}
+.sw-t.win{{font-weight:700;background:rgba(42,120,214,.16);box-shadow:inset 3px 0 0 #2a78d6;border-radius:4px}}
 .sw-t.loss{{opacity:.5}}
 .sw-logo{{width:16px;height:16px;flex:none;background-size:contain;background-repeat:no-repeat;background-position:center}}
 .sw-n{{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
@@ -865,7 +872,7 @@ def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
 .sw-tbd{{font-size:.8rem;opacity:.45;text-align:center;border:1px dashed rgba(128,128,128,.3);border-radius:8px;padding:14px 4px}}
 </style><div class='sw-wrap'><div class='sw-grid'>{body}</div></div>""", unsafe_allow_html=True)
     st.caption("Teams with the same record play each other each round. Three wins sends a team to the knockout "
-               "stage; three losses sends it home. Bold = series winner. Dashed boxes are scheduled matches "
+               "stage; three losses sends it home. Highlighted in blue = series winner. Dashed boxes are scheduled matches "
                "(dates in UTC). Hover a team for its full name.")
 
 

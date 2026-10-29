@@ -682,6 +682,37 @@ def likely_picks(up: dict, team: str, banned: pd.Series, n: int = 2) -> dict:
     return out
 
 
+def worlds_form(mx: dict) -> pd.DataFrame:
+    """Per team at Worlds: games, wins, wins the model expected before each game, average gold lead."""
+    e = mx["expected"].merge(mx["games"][["game_uid", "event"]], on="game_uid")
+    e = e[e.event == "worlds"]
+    sides = mx["teams"][["game_uid", "team", "side"]]
+    lead = mx["gold"].groupby("game_uid").blue_lead.mean()
+    e = e.merge(sides, on=["game_uid", "team"], how="left")
+    e["lead"] = e.game_uid.map(lead) * np.where(e.side == "blue", 1, -1)
+    f = e.groupby("team").agg(games=("won", "size"), wins=("won", "sum"), expected=("p_win", "sum"),
+                              lead=("lead", "mean"))
+    f["vs_expected"] = f.wins - f.expected
+    return f
+
+
+def form_label(gap: float) -> str:
+    """Wins above or below expectation, in words."""
+    if abs(gap) < 0.3:
+        return "As expected"
+    return f"{'Above' if gap > 0 else 'Below'} ({gap:+.1f} wins)"
+
+
+def form_text(f: pd.DataFrame, team: str) -> str:
+    if team not in f.index:
+        return f"<b>{team}</b>: no Worlds games yet"
+    r = f.loc[team]
+    gap = r.vs_expected
+    vs = "about as expected" if abs(gap) < 0.3 else f"{abs(gap):.1f} {'more' if gap > 0 else 'fewer'} wins than expected"
+    lead = "" if pd.isna(r.lead) else f", average gold lead {r.lead:+,.0f}"
+    return f"<b>{team}</b>: {int(r.wins)}–{int(r.games - r.wins)} in games, {vs}{lead}"
+
+
 def match_preview(up: dict, a: str, b: str, best_of: int):
     p_game = 1 / (1 + np.exp(-(up["strength"].get(a, 0) - up["strength"].get(b, 0))))
     from lolpatch.upcoming import series_prob
@@ -698,8 +729,13 @@ def match_preview(up: dict, a: str, b: str, best_of: int):
     c2.markdown(f"<div style='text-align:center'><span class='muted'>Best of {best_of}</span><br>"
                 f"<b>{fav}</b> favored</div>", unsafe_allow_html=True)
     st.progress(float(p_series), text=f"{a} {p_series:.0%} · {b} {1 - p_series:.0%}")
-    st.caption(f"Based on how both teams have played all year, {fav} would win a single game about "
-               f"{max(p_game, 1 - p_game):.0%} of the time, which makes them {fav_p:.0%} to win a best of {best_of}.")
+    st.caption(f"Based on how both teams have played all year, Worlds included, and how decisively they won or "
+               f"lost, {fav} would win a single game about {max(p_game, 1 - p_game):.0%} of the time, which makes "
+               f"them {fav_p:.0%} to win a best of {best_of}.")
+    if mx is not None:
+        f = worlds_form(mx)
+        st.markdown(f"<div class='muted'>Form at Worlds: {form_text(f, a)} · {form_text(f, b)}</div>",
+                    unsafe_allow_html=True)
 
     bans_a, bans_b = likely_bans(up, a, b), likely_bans(up, b, a)
     banned = 1 - (1 - bans_a.reindex(bans_a.index.union(bans_b.index)).fillna(0)) * \
@@ -881,18 +917,27 @@ def worlds_upcoming_tab(up: dict):
                                       np.where(stn.status == "Eliminated", 0.0, stn.p_advance))
     # Progress bars label with printf formats, so show these as 0–100 rather than 0–1.
     pct = lambda label: st.column_config.ProgressColumn(label, format="%.0f%%", min_value=0, max_value=100)
-    cols = ["Logo", "team", "Record", "status", "Reach knockouts"]
-    cfg = {"Logo": st.column_config.ImageColumn(" ", width="small"), "Reach knockouts": pct("Reach knockouts")}
+    cols = ["Logo", "team", "Record", "status"]
+    cfg = {"Logo": st.column_config.ImageColumn(" ", width="small")}
+    if mx is not None:
+        f = worlds_form(mx)
+        stn["Form"] = [form_label(f.vs_expected.get(t, 0.0)) for t in stn.team]
+        stn["Avg gold lead"] = stn.team.map(f.lead)
+        cols += ["Form", "Avg gold lead"]
+        cfg |= {"Avg gold lead": st.column_config.NumberColumn("Avg gold lead", format="%+.0f")}
+    cols += ["Reach knockouts"]
+    cfg |= {"Reach knockouts": pct("Reach knockouts")}
     if "p_title" in stn:
         stn = stn.rename(columns={"p_semis": "Reach semifinals", "p_final": "Reach final", "p_title": "Win Worlds"})
         cols += ["Reach semifinals", "Reach final", "Win Worlds"]
         cfg |= {c: pct(c) for c in ["Reach semifinals", "Reach final", "Win Worlds"]}
-    for c in cols[4:]:
+    for c in cols[cols.index("Reach knockouts"):]:
         stn[c] = stn[c] * 100
     st.dataframe(stn[cols].rename(columns={"team": "Team", "status": "Status"}), column_config=cfg,
                  hide_index=True, use_container_width=True, height=36 * len(stn) + 40)
-    st.caption("Teams advance at 3 wins and go home at 3 losses. The bars show each team's chances from the same "
-               "20,000 simulated tournaments.")
+    st.caption("Teams advance at 3 wins and go home at 3 losses. Form compares each team's game wins at Worlds with "
+               "what we expected before each game; average gold lead shows how far ahead or behind they've been, win "
+               "or lose. The bars show each team's chances from the same 20,000 simulated tournaments.")
 
     with st.expander("Preview any matchup"):
         alive = up["standings"].team.tolist()

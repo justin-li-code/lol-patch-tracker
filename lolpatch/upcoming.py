@@ -15,10 +15,9 @@ import json
 import numpy as np
 import pandas as pd
 import requests
-from sklearn.linear_model import LogisticRegression
 
 from .config import OVERRIDES, PROCESSED
-from .ratings import GAME_HALF_LIFE, _decay, _design, all_games, game_features, to_pairs
+from .ratings import GAME_HALF_LIFE, _decay, all_games, fit_strength, game_features, to_pairs, with_margins
 from .regions import long_draft
 
 POOL_HALF_LIFE = 30  # days: recent picks matter most
@@ -30,13 +29,12 @@ UPCOMING_TEMPLATE = OVERRIDES / "upcoming.csv"
 def team_strengths(log=print) -> pd.DataFrame:
     settings = json.loads((PROCESSED / "expected_eval.json").read_text())["settings"]
     games = game_features(all_games())
-    pairs = to_pairs(games)
+    pairs = with_margins(to_pairs(games))
     today = pairs.date.max()
     teams = sorted(set(pairs.team_a) | set(pairs.team_b))
     regions = sorted(set(pairs.region_a) | set(pairs.region_b))
-    model = LogisticRegression(C=settings["C"], fit_intercept=False, max_iter=3000)
-    model.fit(_design(pairs, teams, regions, settings["region_scale"], False), pairs.y,
-              sample_weight=_decay((today - pairs.date).dt.days, GAME_HALF_LIFE))
+    model = fit_strength(pairs, teams, regions, settings["C"], settings["region_scale"], False,
+                         settings.get("margin_weight", 0.0), _decay((today - pairs.date).dt.days, GAME_HALF_LIFE))
     coef = model.coef_[0]
     team_region = games.drop_duplicates("team").set_index("team").region
     rs = settings["region_scale"]

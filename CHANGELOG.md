@@ -6,6 +6,12 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.9 · Oct 28: Current form in the odds, and a sturdier refresh
+- **Win chances now account for how teams are actually playing.** It's not just whether a team won: a team that keeps winning narrowly, or losing badly, moves accordingly. This made predictions a bit better on past events (First Stand, MSI, EWC, Demacia Cup) and raised Worlds accuracy from 57% to 61%.
+- **What we tested and didn't use:** giving the most recent Worlds games extra weight. On every past event, it made predictions worse, because a handful of games is mostly luck.
+- **Form at Worlds** is shown next to the odds. Each match preview, and the Swiss standings, shows each team's record, how many more or fewer games they've won than we expected, and their average gold lead. G2, for example: 1–2, 0.6 wins below expected, but ahead on gold on average.
+- **Automatic updates no longer fail when gol.gg is down.** The run skips with a warning, leaves the data untouched and tries again 3 hours later. The GitHub job also uses newer versions of its setup steps, so the Node.js 20 warning is gone.
+
 ## v1.8.1 · Oct 28: Changelog moved off the site
 - The website no longer has a Changelog page. The full history stays here in the GitHub repository, and the sidebar still shows the current version number.
 

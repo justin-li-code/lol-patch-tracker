@@ -38,6 +38,10 @@ from .regions import team_regions
 TEST_EVENT = "worlds"
 CHAMP_HALF_LIFE, COMFORT_HALF_LIFE, GAME_HALF_LIFE = 30, 120, 90  # days
 CHAMP_PRIOR = 10  # pseudo-games at 50% for champion win rates
+# Gold lead that counts as a clear win when results are blended with how decisive games were:
+# an average lead of 2k over the game reads as a 73% "deserved" win.
+MARGIN_SCALE = 2000
+MARGIN_WEIGHTS = (0.25, 0.5)  # tried on top of the best results-only settings
 # Weight of (won - expected) next to the standardised stat score. Stats already track winning
 # (r ~ 0.46), so 0.4 keeps the best winner around 4.8 while a standout loser still reaches ~3.3+.
 RESULT_WEIGHT = 0.4
@@ -142,8 +146,34 @@ def to_pairs(g: pd.DataFrame, seed: int = 0) -> pd.DataFrame:
     })
 
 
+def with_margins(pairs: pd.DataFrame) -> pd.DataFrame:
+    """Add `margin`: team A's average gold lead over the game (NaN where there's no gold timeline)."""
+    teams = pd.read_csv(PROCESSED / "match_teams.csv", usecols=["game_uid", "side", "team"])
+    blue = teams[teams.side == "blue"].set_index("game_uid").team
+    lead = pd.read_csv(PROCESSED / "match_gold.csv").groupby("game_uid").blue_lead.mean()
+    sign = np.where(pairs.game_uid.map(blue) == pairs.team_a, 1.0, -1.0)
+    return pairs.assign(margin=pairs.game_uid.map(lead) * sign)
+
+
+def fit_strength(train: pd.DataFrame, teams: list[str], regions: list[str], C: float, region_scale: float,
+                 use_draft: bool, margin_weight: float, weights) -> LogisticRegression:
+    """Team + region logistic model. With margin_weight > 0 the target blends the result with how
+    decisively the game went (average gold lead, squashed to 0–1): a scrappy win counts as less
+    than a stomp, so a team winning narrowly, or losing badly, moves its strength accordingly."""
+    X = _design(train, teams, regions, region_scale, use_draft)
+    y = train.y.to_numpy(float)
+    if margin_weight and "margin" in train:
+        soft = 1 / (1 + np.exp(-train.margin.to_numpy(float) / MARGIN_SCALE))
+        y = np.where(np.isnan(soft), y, (1 - margin_weight) * y + margin_weight * soft)
+    w = np.asarray(weights, float)
+    # Fractional targets: each game enters once as a win and once as a loss, weighted by y and 1 - y.
+    model = LogisticRegression(C=C, fit_intercept=False, max_iter=3000)
+    model.fit(np.vstack([X, X]), np.r_[np.ones(len(y)), np.zeros(len(y))], sample_weight=np.r_[w * y, w * (1 - y)])
+    return model
+
+
 def predict_events(pairs: pd.DataFrame, C: float, region_scale: float, use_draft: bool = True,
-                   all_days: bool = False) -> pd.Series:
+                   all_days: bool = False, margin_weight: float = 0.0) -> pd.Series:
     """Win probability for team A, fit on earlier days only: international games, or every game."""
     regions = sorted(set(pairs.region_a) | set(pairs.region_b))
     out = pd.Series(np.nan, index=pairs.index)
@@ -155,8 +185,7 @@ def predict_events(pairs: pd.DataFrame, C: float, region_scale: float, use_draft
             continue  # the season's first days: nothing to learn from yet
         teams = sorted(set(train.team_a) | set(train.team_b))
         w = _decay((day - train.date).dt.days, GAME_HALF_LIFE)
-        model = LogisticRegression(C=C, fit_intercept=False, max_iter=2000)
-        model.fit(_design(train, teams, regions, region_scale, use_draft), train.y, sample_weight=w)
+        model = fit_strength(train, teams, regions, C, region_scale, use_draft, margin_weight, w)
         out[test.index] = model.predict_proba(_design(test, teams, regions, region_scale, use_draft))[:, 1]
     return out
 
@@ -170,7 +199,7 @@ def _metrics(y, p) -> dict:
 
 def expected_results(log=print) -> pd.DataFrame:
     games = game_features(all_games())
-    pairs = to_pairs(games).reset_index(drop=True)
+    pairs = with_margins(to_pairs(games).reset_index(drop=True))
     tune = pairs.event.notna() & (pairs.event != TEST_EVENT)
     # Tuning never sees Worlds games, not even as training data (the Play-In overlapped the
     # end of the Demacia Cup), so Worlds stays a clean test.
@@ -183,22 +212,33 @@ def expected_results(log=print) -> pd.DataFrame:
                 ll = _metrics(no_worlds.y[tune], p[tune[no_worlds.index]])["log_loss"]
                 if best is None or ll < best[0]:
                     best = (ll, C, region_scale, use_draft)
-    _, C, region_scale, use_draft = best
-    p_chosen = predict_events(pairs, C, region_scale, use_draft)
-    p_other = predict_events(pairs, C, region_scale, not use_draft)
+    results_only_ll, C, region_scale, use_draft = best
+    # Then: does blending in how decisive games were (gold leads) beat results alone?
+    margin_weight = 0.0
+    for mw in MARGIN_WEIGHTS:
+        p = predict_events(no_worlds, C, region_scale, use_draft, margin_weight=mw)
+        ll = _metrics(no_worlds.y[tune], p[tune[no_worlds.index]])["log_loss"]
+        if ll < best[0]:
+            best, margin_weight = (ll, C, region_scale, use_draft), mw
+    p_chosen = predict_events(pairs, C, region_scale, use_draft, margin_weight=margin_weight)
+    p_other = predict_events(pairs, C, region_scale, not use_draft, margin_weight=margin_weight)
+    p_results = predict_events(pairs, C, region_scale, use_draft) if margin_weight else p_chosen
     test = pairs.event == TEST_EVENT
     coin = _metrics(pairs.y[test], np.full(test.sum(), 0.5)) | {"accuracy": 0.5}
     evaluation = dict(
-        settings=dict(C=C, region_scale=region_scale, uses_draft=use_draft),
+        settings=dict(C=C, region_scale=region_scale, uses_draft=use_draft, margin_weight=margin_weight),
         tuned_on=_metrics(pairs.y[tune], p_chosen[tune]),
+        tuned_on_results_only=dict(log_loss=results_only_ll),
         worlds=dict(model=_metrics(pairs.y[test], p_chosen[test]),
+                    results_only=_metrics(pairs.y[test], p_results[test]),
                     with_draft=_metrics(pairs.y[test], p_chosen[test] if use_draft else p_other[test]),
                     strength_only=_metrics(pairs.y[test], p_other[test] if use_draft else p_chosen[test]),
                     coin_flip=coin),
     )
     (PROCESSED / "expected_eval.json").write_text(json.dumps(evaluation, indent=2))
     # Every game gets a prior-only expectation (player ratings use it for domestic games too).
-    pairs["p_a"] = predict_events(pairs, C, region_scale, use_draft, all_days=True).fillna(0.5)
+    pairs["p_a"] = predict_events(pairs, C, region_scale, use_draft, all_days=True,
+                                  margin_weight=margin_weight).fillna(0.5)
     ev = pairs
     both = pd.concat([
         pd.DataFrame({"game_uid": ev.game_uid, "team": ev.team_a, "opponent": ev.team_b, "p_win": ev.p_a,
@@ -208,7 +248,8 @@ def expected_results(log=print) -> pd.DataFrame:
     ], ignore_index=True)
     both.to_csv(PROCESSED / "match_expected.csv", index=False)
     w = evaluation["worlds"]
-    log(f"  expected results: tuned C={C}, region_scale={region_scale}, draft features {'on' if use_draft else 'off'}")
+    log(f"  expected results: tuned C={C}, region_scale={region_scale}, draft features {'on' if use_draft else 'off'}, "
+        f"margin weight {margin_weight}")
     log(f"  Worlds ({w['model']['n']} games): accuracy {w['model']['accuracy']:.0%}, log loss {w['model']['log_loss']:.3f} "
         f"(strength only {w['strength_only']['log_loss']:.3f}, coin flip {w['coin_flip']['log_loss']:.3f})")
     return both

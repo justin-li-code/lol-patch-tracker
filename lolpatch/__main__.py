@@ -49,7 +49,13 @@ def refresh(force: bool = False):
             with open(os.environ["GITHUB_OUTPUT"], "a") as f:
                 f.write(f"changed={'true' if changed else 'false'}\n")
 
-    events.scrape(refresh=True)
+    try:
+        events.scrape(refresh=True)
+    except RuntimeError as e:
+        # gol.gg is down or refusing us: skip this run without touching any data; the next one retries.
+        print(f"::warning::gol.gg unavailable, skipping this refresh ({e})")
+        report(False)
+        return
     upcoming.schedule()
     now = fingerprint()
     before = json.loads(state_path.read_text()) if state_path.exists() else {}

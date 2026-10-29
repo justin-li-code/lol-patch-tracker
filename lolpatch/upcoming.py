@@ -108,6 +108,26 @@ def standings(log=print) -> pd.DataFrame:
     return st
 
 
+# 16-team Swiss: teams per record group in each round, and teams finishing on each final record.
+SWISS_POOLS = {(1, "0–0"): 16, (2, "1–0"): 8, (2, "0–1"): 8, (3, "2–0"): 4, (3, "1–1"): 8, (3, "0–2"): 4,
+               (4, "2–1"): 6, (4, "1–2"): 6, (5, "2–2"): 6}
+SWISS_FINISHES = {(3, 0): 2, (0, 3): 2, (3, 1): 3, (1, 3): 3, (3, 2): 3, (2, 3): 3}
+
+
+def swiss_best_of(rnd: int, pool: str) -> int:
+    """Best of three when a team can advance or be eliminated (rounds 3's 2–0 / 0–2, rounds 4–5)."""
+    return 3 if rnd >= 4 or pool in ("2–0", "0–2") else 1
+
+
+def unscheduled_matches(b: pd.DataFrame) -> list[dict]:
+    """Swiss matches that will happen but aren't on the schedule yet (opponents not drawn)."""
+    out = []
+    for (rnd, pool), size in SWISS_POOLS.items():
+        known = int(((b["round"] == rnd) & (b.pool == pool)).sum())
+        out += [dict(round=rnd, pool=pool, best_of=swiss_best_of(rnd, pool))] * max(0, size // 2 - known)
+    return out
+
+
 def swiss_bracket(games: pd.DataFrame, sched: pd.DataFrame) -> pd.DataFrame:
     """Every Swiss match (played, then scheduled) with its round and the record both teams brought in.
 

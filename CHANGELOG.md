@@ -6,6 +6,10 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.11 · Oct 29: TBA placeholders
+- **The bracket shows every slot**, with **TBA** for teams and matchups that aren't decided yet. For example, Round 5's 2–2 group shows LYON, MKOI and four TBA spots, and the final-record boxes start as TBA. Matchups are never guessed: a group's teams are listed together under "Matchups to be drawn" until the real pairings are published.
+- **Next matches** lists future matches as "TBA vs TBA" rows with their round and format, so you can see what's still to come. They fill in once the schedule is known.
+
 ## v1.10 · Oct 29: Finished matches leave Upcoming; clearer bracket
 - **Upcoming matches drop off once they're played.** When the official schedule can't be reached, the site uses its saved copy, which never removed finished matches. Now any match whose two teams have since played each other is removed, both on the site and in the saved copy.
 - **Bracket winners are easier to spot.** The team that won each series is highlighted in blue with a bar on the left, and the loser is faded.

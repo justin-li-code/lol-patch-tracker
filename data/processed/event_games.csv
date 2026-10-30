@@ -519,6 +519,10 @@ game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,
 83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83675-1,83675,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Karmine Corp,1,Wukong|Cassiopeia|Galio|Nautilus|Tristana,Qiyana|Vi|Nocturne|Jhin|Seraphine,0.0,Swiss R4
+83675-1,83675,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,CTBC Flying Oyster,0,Jarvan IV|Syndra|Rumble|Alistar|Kaisa,Jayce|Renata Glasc|Lee Sin|Ezreal|Lulu,1.0,Swiss R4
+83675-2,83675,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Karmine Corp,1,Lulu|Yunara|Pantheon|Viktor|Camille,Qiyana|Vi|Nocturne|Akali|Locke,0.0,Swiss R4
+83675-2,83675,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,CTBC Flying Oyster,0,Lee Sin|Caitlyn|Karma|Ryze|Ambessa,Renata Glasc|Ezreal|Jayce|Orianna|Renekton,1.0,Swiss R4
 83672-1,83672,worlds,Worlds 2026 Main Event,ROUND4,2026-10-28,16.20,26.20,LYON,0,Ezreal|Nocturne|Karma|Rumble|Sylas,Syndra|Cassiopeia|Orianna|Ambessa|KSante,0.0,Swiss R4
 83672-1,83672,worlds,Worlds 2026 Main Event,ROUND4,2026-10-28,16.20,26.20,Invictus Gaming,1,Lulu|Vi|Yunara|Ornn|Aurora,Wukong|Galio|Renata Glasc|Ahri|Annie,1.0,Swiss R4
 83672-2,83672,worlds,Worlds 2026 Main Event,ROUND4,2026-10-28,16.20,26.20,LYON,1,Qiyana|Alistar|Corki|Olaf|Taliyah,Syndra|Orianna|Jayce|Ambessa|Twisted Fate,1.0,Swiss R4

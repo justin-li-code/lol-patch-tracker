@@ -11269,3 +11269,13 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83672-3,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Invictus Gaming,1,RooKie,LeBlanc,LYON,6,Saint,0,False
 83672-3,support,Worlds,Worlds 2026 Main Event,26.20,Milio,LYON,3,Isles,Lux,Invictus Gaming,5,meiko,1,False
 83672-3,top,Worlds,Worlds 2026 Main Event,26.20,Jayce,Invictus Gaming,9,TheShy,KSante,LYON,10,Dhokla,0,True
+83675-1,bot,Worlds,Worlds 2026 Main Event,26.20,Kaisa,CTBC Flying Oyster,9,Doggo,Tristana,Karmine Corp,10,Caliste,1,True
+83675-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,CTBC Flying Oyster,1,Shad0w,Wukong,Karmine Corp,2,Yike,1,False
+83675-1,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Karmine Corp,3,Kyeahoo,Syndra,CTBC Flying Oyster,4,Pout,0,False
+83675-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Karmine Corp,7,Busio,Alistar,CTBC Flying Oyster,8,Kino,0,False
+83675-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,CTBC Flying Oyster,5,Rest,Galio,Karmine Corp,6,Canna,1,False
+83675-2,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Karmine Corp,3,Caliste,Caitlyn,CTBC Flying Oyster,4,Doggo,0,False
+83675-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,CTBC Flying Oyster,1,Shad0w,Pantheon,Karmine Corp,6,Yike,1,False
+83675-2,mid,Worlds,Worlds 2026 Main Event,26.20,Viktor,Karmine Corp,7,Kyeahoo,Ryze,CTBC Flying Oyster,8,Pout,0,False
+83675-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Karmine Corp,2,Busio,Karma,CTBC Flying Oyster,5,Kino,0,False
+83675-2,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,CTBC Flying Oyster,9,Rest,Camille,Karmine Corp,10,Canna,1,True

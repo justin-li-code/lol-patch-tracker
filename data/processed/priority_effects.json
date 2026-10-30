@@ -380,11 +380,11 @@
       },
       {
         "region": "LEC",
-        "n_favorite": 94,
-        "n_other": 426,
-        "win_rate_favorite": 0.43617021276595747,
-        "win_rate_other": 0.5140845070422535,
-        "diff": -0.07791429427629604
+        "n_favorite": 97,
+        "n_other": 433,
+        "win_rate_favorite": 0.4536082474226804,
+        "win_rate_other": 0.5219399538106235,
+        "diff": -0.06833170638794311
       },
       {
         "region": "LPL",
@@ -395,13 +395,13 @@
         "diff": -0.038563090605892136
       }
     ],
-    "within_region_diff": -0.011736604578312907,
+    "within_region_diff": -0.009543221257050939,
     "ci": [
-      -0.06876098366514659,
-      0.049268740174452465
+      -0.06673906577916741,
+      0.04713405486078117
     ],
     "favorite_lift": 0.05,
-    "favorite_picks": 321,
-    "total_picks": 2415
+    "favorite_picks": 324,
+    "total_picks": 2425
   }
 }

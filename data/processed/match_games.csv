@@ -2396,8 +2396,10 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 73112-1,73112,,LCK,73112,LCK Cup 2026,WEEK1,2026-01-14,1,16.1,31.466666666666665,31:28,DN SOOPers,KT Rolster,DN SOOPers
 73112-2,73113,,LCK,73112,LCK Cup 2026,WEEK1,2026-01-14,2,16.1,27.5,27:30,DN SOOPers,KT Rolster,KT Rolster
 73112-3,73114,,LCK,73112,LCK Cup 2026,WEEK1,2026-01-14,3,16.1,36.61666666666667,36:37,KT Rolster,DN SOOPers,KT Rolster
-83672-1,83672,worlds,worlds,83672,Worlds 2026 Main Event,ROUND4,2026-10-28,1,16.20,27.15,27:09,LYON,Invictus Gaming,Invictus Gaming
-83672-2,83673,worlds,worlds,83672,Worlds 2026 Main Event,ROUND4,2026-10-28,2,16.20,38.06666666666667,38:04,Invictus Gaming,LYON,LYON
-83672-3,83674,worlds,worlds,83672,Worlds 2026 Main Event,ROUND4,2026-10-28,3,16.20,23.983333333333334,23:59,LYON,Invictus Gaming,Invictus Gaming
-83669-1,83669,worlds,worlds,83669,Worlds 2026 Main Event,ROUND4,2026-10-28,1,16.20,40.0,40:00,T1,Movistar KOI,T1
-83669-2,83670,worlds,worlds,83669,Worlds 2026 Main Event,ROUND4,2026-10-28,2,16.20,25.716666666666665,25:43,T1,Movistar KOI,T1
+83672-1,83672,worlds,worlds,83672,Worlds 2026 Main Event,ROUND4,2026-10-28,1,16.2,27.15,27:09,LYON,Invictus Gaming,Invictus Gaming
+83672-2,83673,worlds,worlds,83672,Worlds 2026 Main Event,ROUND4,2026-10-28,2,16.2,38.06666666666667,38:04,Invictus Gaming,LYON,LYON
+83672-3,83674,worlds,worlds,83672,Worlds 2026 Main Event,ROUND4,2026-10-28,3,16.2,23.983333333333334,23:59,LYON,Invictus Gaming,Invictus Gaming
+83669-1,83669,worlds,worlds,83669,Worlds 2026 Main Event,ROUND4,2026-10-28,1,16.2,40.0,40:00,T1,Movistar KOI,T1
+83669-2,83670,worlds,worlds,83669,Worlds 2026 Main Event,ROUND4,2026-10-28,2,16.2,25.716666666666665,25:43,T1,Movistar KOI,T1
+83675-1,83675,worlds,worlds,83675,Worlds 2026 Main Event,ROUND4,2026-10-29,1,16.20,27.583333333333332,27:35,Karmine Corp,CTBC Flying Oyster,Karmine Corp
+83675-2,83676,worlds,worlds,83675,Worlds 2026 Main Event,ROUND4,2026-10-29,2,16.20,36.9,36:54,CTBC Flying Oyster,Karmine Corp,Karmine Corp

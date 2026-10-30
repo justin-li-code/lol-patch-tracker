@@ -14,6 +14,14 @@ from .champions import champ_key
 ROW_PX = 28        # height of one category row in champion charts
 # Matches the page body font (loaded in dashboard.py); Streamlit's chart theme would otherwise reset it.
 CHART_FONT = "Inter, 'Source Sans Pro', system-ui, sans-serif"
+SITE_TZ = "America/Los_Angeles"  # times are stored in UTC and shown in Pacific time
+
+
+def pacific(utc: str, fmt: str = "%b %-d, %-I:%M %p %Z") -> str:
+    """'2026-10-29 20:00' (UTC) -> 'Oct 29, 1:00 PM PDT' (PST in winter)."""
+    return pd.Timestamp(utc).tz_localize("UTC").tz_convert(SITE_TZ).strftime(fmt)
+
+
 # Broadcast tags for Worlds teams, for compact views like the Swiss bracket.
 TEAM_SHORT = {
     "Gen.G": "GEN", "Dplus KIA": "DK", "Hanwha Life Esports": "HLE", "T1": "T1", "Bilibili Gaming": "BLG",

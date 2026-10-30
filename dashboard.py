@@ -15,7 +15,7 @@ from lolpatch.analyze import build_transitions, load_changes, verdict_effects
 from lolpatch.config import LEAGUES, PROCESSED, patch_key
 from lolpatch.events import PRIOR_GAMES
 from lolpatch.meta import ROLES, SUB_MIN_MOVE_A, SUB_MIN_MOVE_B, displacement, group_presence, rise_window
-from lolpatch.ui import TEAM_SHORT, CHART_FONT, champ_icon, image_column, nice, row_layout, team_logo, with_icons
+from lolpatch.ui import TEAM_SHORT, CHART_FONT, champ_icon, pacific, image_column, nice, row_layout, team_logo, with_icons
 
 st.set_page_config(page_title="Patch Impact · LoL pro 2026", layout="wide", initial_sidebar_state="expanded")
 
@@ -815,7 +815,7 @@ def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
 
     def match_html(m):
         if m.pending:
-            when = pd.to_datetime(m.date).strftime("%b %-d")
+            when = pacific(m.date, "%b %-d, %-I %p")
             return (f"<div class='sw-m pend'>{team_line(m.team_a, None, '')}{team_line(m.team_b, None, '')}"
                     f"<div class='sw-when'>{when}</div></div>")
         st_a = "win" if m.winner == m.team_a else "loss"
@@ -873,7 +873,7 @@ def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
 </style><div class='sw-wrap'><div class='sw-grid'>{body}</div></div>""", unsafe_allow_html=True)
     st.caption("Teams with the same record play each other each round. Three wins sends a team to the knockout "
                "stage; three losses sends it home. Highlighted in blue = series winner. Dashed boxes are scheduled matches "
-               "(dates in UTC); TBA marks a team or matchup that isn't decided yet. Hover a team for its full name.")
+               "(dates in Pacific time); TBA marks a team or matchup that isn't decided yet. Hover a team for its full name.")
 
 
 def worlds_upcoming_tab(up: dict):
@@ -888,11 +888,11 @@ def worlds_upcoming_tab(up: dict):
             p = 1 / (1 + np.exp(-(up["strength"].get(m.team_a, 0) - up["strength"].get(m.team_b, 0))))
             ps = series_prob(p, int(m.best_of))
             fav, fp = (m.team_a, ps) if ps >= 0.5 else (m.team_b, 1 - ps)
-            rows.append({"When (UTC)": m.date, "Stage": m.stage, " ": team_logo(m.team_a), "Team": m.team_a,
+            rows.append({"When (Pacific)": pacific(m.date), "Stage": m.stage, " ": team_logo(m.team_a), "Team": m.team_a,
                          "vs": "vs", "  ": team_logo(m.team_b), "Opponent": m.team_b, "Format": f"Bo{int(m.best_of)}",
                          "Favorite": fav, "Chance": fp})
         for ph in placeholders:
-            rows.append({"When (UTC)": "TBA", "Stage": f"Round {ph['round']} ({ph['pool']})", " ": None, "Team": "TBA",
+            rows.append({"When (Pacific)": "TBA", "Stage": f"Round {ph['round']} ({ph['pool']})", " ": None, "Team": "TBA",
                          "vs": "vs", "  ": None, "Opponent": "TBA", "Format": f"Bo{ph['best_of']}",
                          "Favorite": "—", "Chance": np.nan})
         picked = st.dataframe(pd.DataFrame(rows).style.format({"Chance": "{:.0%}"}, na_rep="—"),

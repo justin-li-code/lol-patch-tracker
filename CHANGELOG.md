@@ -6,6 +6,9 @@ Every version below came from one round of requests. Newest first.
 - Publish the site on Streamlit Community Cloud.
 - Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
 
+## v1.11.2 · Oct 30: Fix for a crash after updates
+- **Fixed:** after v1.11.1 went live, the site showed an "ImportError". The server kept running the previous version of the project's code alongside the new page. The site now reloads that code whenever it changes, so updates take effect right away.
+
 ## v1.11.1 · Oct 29: Pacific time
 - Match times in **Next matches** and the bracket are now in Pacific time (PDT now, PST from November 1), e.g. "Oct 29, 1:00 PM PDT".
 

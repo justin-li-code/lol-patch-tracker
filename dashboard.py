@@ -5,11 +5,23 @@ view; methods, caveats and full tables sit behind expanders and sub-tabs.
 """
 import json
 import re
+import sys
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+
+# Streamlit reruns this script on every visit but keeps already-imported modules, so after a
+# redeploy changes lolpatch/ the old code would stay loaded (and new names fail to import).
+# Drop the old copies whenever any lolpatch file has changed since they were imported.
+_pkg_stamp = max(p.stat().st_mtime for p in (Path(__file__).parent / "lolpatch").glob("*.py"))
+if getattr(sys.modules.get("lolpatch"), "_loaded_stamp", None) != _pkg_stamp:
+    for _name in [m for m in sys.modules if m == "lolpatch" or m.startswith("lolpatch.")]:
+        del sys.modules[_name]
+    import lolpatch
+    lolpatch._loaded_stamp = _pkg_stamp
 
 from lolpatch.analyze import build_transitions, load_changes, verdict_effects
 from lolpatch.config import LEAGUES, PROCESSED, patch_key

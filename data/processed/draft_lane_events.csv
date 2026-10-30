@@ -11279,3 +11279,18 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83675-2,mid,Worlds,Worlds 2026 Main Event,26.20,Viktor,Karmine Corp,7,Kyeahoo,Ryze,CTBC Flying Oyster,8,Pout,0,False
 83675-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Karmine Corp,2,Busio,Karma,CTBC Flying Oyster,5,Kino,0,False
 83675-2,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,CTBC Flying Oyster,9,Rest,Camille,Karmine Corp,10,Canna,1,True
+83678-1,bot,Worlds,Worlds 2026 Main Event,26.20,Jhin,Top Esports,2,JackeyLove,Ezreal,Bilibili Gaming,8,Viper,1,False
+83678-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,Bilibili Gaming,1,XUN,Qiyana,Top Esports,3,Tian,0,False
+83678-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Bilibili Gaming,5,Knight,Viktor,Top Esports,7,Creme,0,False
+83678-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Bilibili Gaming,4,ON,Alistar,Top Esports,6,Zhuo,0,False
+83678-1,top,Worlds,Worlds 2026 Main Event,26.20,Gnar,Bilibili Gaming,9,Bin,Jayce,Top Esports,10,369,0,True
+83678-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Bilibili Gaming,2,Viper,Lucian,Top Esports,4,JackeyLove,1,False
+83678-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,Top Esports,1,Tian,Wukong,Bilibili Gaming,6,XUN,0,False
+83678-2,mid,Worlds,Worlds 2026 Main Event,26.20,Locke,Top Esports,8,Creme,LeBlanc,Bilibili Gaming,10,Knight,0,True
+83678-2,support,Worlds,Worlds 2026 Main Event,26.20,Seraphine,Bilibili Gaming,3,ON,Milio,Top Esports,5,Zhuo,1,False
+83678-2,top,Worlds,Worlds 2026 Main Event,26.20,KSante,Bilibili Gaming,7,Bin,Aatrox,Top Esports,9,369,1,False
+83678-3,bot,Worlds,Worlds 2026 Main Event,26.20,Kalista,Bilibili Gaming,5,Viper,Tristana,Top Esports,10,JackeyLove,1,True
+83678-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Pantheon,Top Esports,7,Tian,Maokai,Bilibili Gaming,9,XUN,0,False
+83678-3,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Top Esports,2,Creme,Yone,Bilibili Gaming,8,Knight,0,False
+83678-3,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,Bilibili Gaming,1,ON,Lulu,Top Esports,3,Zhuo,1,False
+83678-3,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Bilibili Gaming,4,Bin,Renekton,Top Esports,6,369,1,False

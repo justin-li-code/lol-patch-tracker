@@ -1,21 +1,21 @@
 {
-  "n": 580,
+  "n": 610,
   "coefficients": {
-    "form": 0.35746093900364634,
-    "win_chance": 1.666262735168254,
-    "intl": -0.09778530220991871,
-    "intl_form": 0.06341124006224608,
-    "intl_region": 0.6195837203704032,
-    "champ_edge": 0.34981743477688004,
-    "champ_experience": 0.0122852575282133
+    "form": 0.357297356416441,
+    "win_chance": 1.666431577050727,
+    "intl": -0.0977000500146612,
+    "intl_form": 0.06223448501391371,
+    "intl_region": 0.6200957690645407,
+    "champ_edge": 0.34984722910051014,
+    "champ_experience": 0.01220185220853498
   },
   "mae": {
-    "model": 0.9884308578134692,
-    "without_champion_history": 0.9968966673143757,
-    "everyone_average": 1.0436438692418497
+    "model": 0.9953016634353586,
+    "without_champion_history": 1.0041304306443628,
+    "everyone_average": 1.0460905203136137
   },
   "correlation": {
-    "model": 0.29440982196594495,
-    "without_champion_history": 0.2632114805867624
+    "model": 0.27435714810638634,
+    "without_champion_history": 0.24040506717670623
   }
 }

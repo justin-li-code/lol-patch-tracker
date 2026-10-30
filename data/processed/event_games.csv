@@ -519,6 +519,12 @@ game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,
 83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83678-1,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Bilibili Gaming,1,Vi|Nautilus|Orianna|Ezreal|Gnar,Akali|Renata Glasc|Nocturne|Locke|Rumble,1.0,Swiss R4
+83678-1,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Top Esports,0,Jhin|Qiyana|Alistar|Viktor|Jayce,Olaf|Cassiopeia|Ambessa|Kaisa|KSante,0.0,Swiss R4
+83678-2,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Bilibili Gaming,0,Ashe|Seraphine|Wukong|KSante|LeBlanc,Nocturne|Cassiopeia|Yunara|Sylas|Rumble,0.0,Swiss R4
+83678-2,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Top Esports,1,Jarvan IV|Lucian|Milio|Locke|Aatrox,Olaf|Ambessa|Renata Glasc|Akali|Camille,1.0,Swiss R4
+83678-3,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Bilibili Gaming,0,Renata Glasc|Ambessa|Kalista|Yone|Maokai,Akali|Rumble|Nocturne|Yunara|Xin Zhao,1.0,Swiss R4
+83678-3,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Top Esports,1,Syndra|Lulu|Renekton|Pantheon|Tristana,Olaf|Cassiopeia|Lee Sin|Ahri|Sylas,0.0,Swiss R4
 83675-1,83675,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Karmine Corp,1,Wukong|Cassiopeia|Galio|Nautilus|Tristana,Qiyana|Vi|Nocturne|Jhin|Seraphine,0.0,Swiss R4
 83675-1,83675,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,CTBC Flying Oyster,0,Jarvan IV|Syndra|Rumble|Alistar|Kaisa,Jayce|Renata Glasc|Lee Sin|Ezreal|Lulu,1.0,Swiss R4
 83675-2,83675,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Karmine Corp,1,Lulu|Yunara|Pantheon|Viktor|Camille,Qiyana|Vi|Nocturne|Akali|Locke,0.0,Swiss R4

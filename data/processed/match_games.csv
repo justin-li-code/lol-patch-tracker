@@ -2401,5 +2401,8 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83672-3,83674,worlds,worlds,83672,Worlds 2026 Main Event,ROUND4,2026-10-28,3,16.2,23.983333333333334,23:59,LYON,Invictus Gaming,Invictus Gaming
 83669-1,83669,worlds,worlds,83669,Worlds 2026 Main Event,ROUND4,2026-10-28,1,16.2,40.0,40:00,T1,Movistar KOI,T1
 83669-2,83670,worlds,worlds,83669,Worlds 2026 Main Event,ROUND4,2026-10-28,2,16.2,25.716666666666665,25:43,T1,Movistar KOI,T1
-83675-1,83675,worlds,worlds,83675,Worlds 2026 Main Event,ROUND4,2026-10-29,1,16.20,27.583333333333332,27:35,Karmine Corp,CTBC Flying Oyster,Karmine Corp
-83675-2,83676,worlds,worlds,83675,Worlds 2026 Main Event,ROUND4,2026-10-29,2,16.20,36.9,36:54,CTBC Flying Oyster,Karmine Corp,Karmine Corp
+83675-1,83675,worlds,worlds,83675,Worlds 2026 Main Event,ROUND4,2026-10-29,1,16.2,27.583333333333332,27:35,Karmine Corp,CTBC Flying Oyster,Karmine Corp
+83675-2,83676,worlds,worlds,83675,Worlds 2026 Main Event,ROUND4,2026-10-29,2,16.2,36.9,36:54,CTBC Flying Oyster,Karmine Corp,Karmine Corp
+83678-1,83678,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,1,16.20,27.85,27:51,Bilibili Gaming,Top Esports,Bilibili Gaming
+83678-2,83679,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,2,16.20,37.6,37:36,Bilibili Gaming,Top Esports,Top Esports
+83678-3,83680,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,3,16.20,27.8,27:48,Top Esports,Bilibili Gaming,Top Esports

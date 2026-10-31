@@ -3,6 +3,7 @@ import pandas as pd
 
 from .champions import champ_key
 from .config import MIN_GAMES_PER_PATCH, PROCESSED, patch_key
+from .items import exposure
 
 WINRATE_PRIOR_GAMES = 10  # shrink small-sample win rates toward 50%
 
@@ -95,7 +96,9 @@ def build_transitions(stats: pd.DataFrame, changes: pd.DataFrame) -> pd.DataFram
         else:
             before["prev_delta_presence"] = 0.0
             before["lag_change_score"] = 0.0
-        t = before.join(after).join(ch)
+        # Item/rune changes in the same window, weighted by how often each champion built them.
+        ex = exposure(patches[max(0, i - 2):i], prev, cur).reindex(keys).fillna(0.0)
+        t = before.join(after).join(ch).join(ex)
         t["change_score"] = t.change_score.fillna(0.0)
         t["n_changes"] = t.n_changes.fillna(0)
         t["n_lines"] = t.n_lines.fillna(0)

@@ -7,13 +7,15 @@
     regions    region/team champion priorities and whether priority wins (runs after events)
     meta       ripple effects: pro roles, substitutions, champion groups
     players    fetch every game page for players and exact roles (slow, ~1 hour first time; cached)
+    builds     final items and runes per player, from the cached game pages (needs players)
     draft      draft answers: which picks teams make in response to an opponent's pick
     matches    game details, expected results and player ratings for international games
     upcoming   Worlds schedule, standings, chances to advance and matchup-preview data
     refresh    quick Worlds update: new international games only, then every Worlds view
                (what the scheduled GitHub Action runs; needs no page cache)
     assets     champion portraits (Data Dragon) and team logos (gol.gg) for the dashboard
-    all        fetch + analyze + predict + events + regions + meta + players + draft + matches + upcoming + assets
+    all        fetch + analyze + predict + events + regions + meta + players + builds + draft + matches
+               + upcoming + assets (on a first run, run predict again after builds)
     dashboard  open the Streamlit dashboard
 """
 import argparse
@@ -33,7 +35,7 @@ def refresh(force: bool = False):
     import hashlib
     import json
     import os
-    from . import draft, events, matches, players, ratings, regions, upcoming
+    from . import builds, draft, events, matches, players, ratings, regions, upcoming
     from .config import PROCESSED
 
     state_path = PROCESSED / "refresh_state.json"
@@ -65,6 +67,7 @@ def refresh(force: bool = False):
         return
     events.run(refresh=False)
     players.scrape(events_only=True, incremental=True)
+    builds.build(incremental=True, events_only=True)
     regions.run()
     draft.run()
     matches.build(domestic=False, incremental=True)
@@ -76,7 +79,7 @@ def refresh(force: bool = False):
 
 def main():
     p = argparse.ArgumentParser(prog="lolpatch", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "draft", "matches", "upcoming", "refresh", "assets", "all", "dashboard"])
+    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "builds", "draft", "matches", "upcoming", "refresh", "assets", "all", "dashboard"])
     p.add_argument("--refresh", action="store_true", help="re-download index pages (new games / patches)")
     p.add_argument("--target", help="patch to predict, e.g. 26.22 (default: latest patch notes)")
     p.add_argument("--notes-url", help="patch notes URL for --target, if not on the usual Riot URL")
@@ -122,6 +125,9 @@ def main():
     if a.command in ("players", "all"):
         from . import players
         players.scrape()
+    if a.command in ("players", "builds", "all"):
+        from . import builds
+        builds.build()
     if a.command in ("events", "meta", "players", "draft", "all"):
         from . import draft
         draft.run()

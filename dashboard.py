@@ -694,6 +694,29 @@ def likely_picks(up: dict, team: str, banned: pd.Series, n: int = 2) -> dict:
     return out
 
 
+def item_change_table(after: str | None, upto: str, before: list[str], min_games: int = 5):
+    """Item and rune changes in (after, upto], each with the champions that built it most beforehand."""
+    from lolpatch.items import build_shares, changes_in
+    ic = changes_in(after, upto)
+    if ic.empty:
+        st.caption("No item or rune changes.")
+        return
+    sh = build_shares(before)
+    sh = sh[sh.games >= min_games]
+    names = all_stats.drop_duplicates("champ_key").set_index("champ_key").champion
+    rows = []
+    for r in ic.itertuples():
+        users = sh[(sh.kind == r.kind) & (sh.key == r.key)].sort_values("share", ascending=False).head(4)
+        status = {"new": "New", "removed": "Removed", "reworked": "Reworked"}.get(r.status)
+        rows.append({"Patch": r.patch, "Item or rune": r.name, "Type": r.kind.title(),
+                     "Change": status or r.verdict.title(),
+                     "Built most by": ", ".join(f"{nice(names.get(u.champ_key, u.champ_key))} ({u.share:.0%})"
+                                                for u in users.itertuples()) or "—"})
+    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+    st.caption("Percentages: the share of that champion's pro games where it was built (items) or taken (runes) "
+               "on the patches just before the change.")
+
+
 def worlds_form(mx: dict) -> pd.DataFrame:
     """Per team at Worlds: games, wins, wins the model expected before each game, average gold lead."""
     e = mx["expected"].merge(mx["games"][["game_uid", "event"]], on="game_uid")
@@ -1194,6 +1217,11 @@ elif page == "Worlds 2026":
             "worlds": "Picked or banned at Worlds", "record": "Won–lost when picked"})
         table(with_icons(t, "Champion"), {f"Picked or banned in the leagues ({sc['base_patch']})": "{:.0%}",
                                           "Picked or banned at Worlds": "{:.0%}"}, images=[" "], n=20)
+        from lolpatch.items import changes_in
+        prev_bp = f"{bp.split('.')[0]}.{int(bp.split('.')[1]) - 1}"
+        with st.expander(f"Item & rune changes in {bp} ({len(changes_in(prev_bp, bp))})"):
+            pats = sorted(all_stats.patch.unique(), key=patch_key)
+            item_change_table(prev_bp, bp, [p for p in pats if patch_key(p) <= patch_key(sc["base_patch"])][-2:])
 
     with t_fc:
         scf = wm["frozen"]
@@ -1322,6 +1350,26 @@ elif page == "Champions & Patches":
                         st.caption(ch.context)
                     ln = lines[(lines.patch == ch.patch) & (lines.champ_key == key) & lines.text.notna()]
                     st.dataframe(ln[["ability", "stat", "before", "after"]], hide_index=True, use_container_width=True)
+        from lolpatch.items import top_exposed
+        hit = []
+        for r in trans[(trans.champ_key == key) & ((trans.item_exposure != 0) | (trans.rune_exposure != 0))].itertuples():
+            i = patches.index(r.to_patch) if r.to_patch in patches else None
+            if i is None:
+                continue
+            te = top_exposed(patches[max(0, i - 2):i], r.from_patch, r.to_patch, min_share=0.1)
+            for u in te[te.champ_key == key].itertuples():
+                hit.append({"Patch": u.patch, "Item or rune": u.name, "Change": u.verdict.title(),
+                            f"{champ} built or took it": u.share,
+                            f"{champ}'s own change": r.verdict.title() if r.verdict != "none" else "—",
+                            "Pick/ban rate after (points)": r.delta_presence * 100})
+        if hit:
+            with st.expander(f"Item & rune changes that affected {champ} ({len(hit)})"):
+                st.dataframe(pd.DataFrame(hit).style.format({f"{champ} built or took it": "{:.0%}",
+                                                             "Pick/ban rate after (points)": "{:+.0f}"}),
+                             hide_index=True, use_container_width=True)
+                st.caption(f"Changes to items or runes {champ} used in at least 10% of games just before. The last "
+                           "column is the change in its pick/ban rate on the next patch, from all causes, including "
+                           f"any change to {champ} itself in the same patch.")
 
     with t_patch:
         trans_patches = sorted(trans.to_patch.unique(), key=patch_key)
@@ -1355,6 +1403,11 @@ elif page == "Champions & Patches":
             st.dataframe(with_icons(mt, "Champion").style.format(
                 {"Pick/ban rate before": "{:.0%}", "After": "{:.0%}", "Change (points)": "{:+.0f}"}),
                 column_config=image_column(), hide_index=True, use_container_width=True)
+        from lolpatch.items import changes_in
+        n_items = len(changes_in(fp, tp))
+        with st.expander(f"Item & rune changes this patch ({n_items})"):
+            i = patches.index(fp) + 1 if fp in patches else len(patches)
+            item_change_table(fp, tp, patches[max(0, i - 2):i])
 
     with t_effect:
         eff = verdict_effects(trans).reindex(["buff", "nerf", "adjust", "none"]).dropna(how="all")
@@ -1390,6 +1443,30 @@ elif page == "Champions & Patches":
         st.caption("Each dot is one champion after one balance change. Above the line = picked or banned more often "
                    "afterwards, below = less.")
 
+        st.markdown("### Do item and rune changes matter?")
+        # Champions with no change of their own, so only items/runes (and the usual drift) moved them.
+        nc = trans[~trans.changed & (trans.prev_presence >= 0.2)]
+        none_ = nc[(nc.item_exposure.abs() < 0.05) & (nc.rune_exposure.abs() < 0.05)]
+        groups = [("Core items nerfed", nc[nc.item_exposure <= -0.3]), ("No item or rune changes", none_),
+                  ("Core items buffed", nc[nc.item_exposure >= 0.3]), ("Core runes nerfed", nc[nc.rune_exposure <= -0.3])]
+        cols = st.columns(len(groups))
+        for col, (label, g) in zip(cols, groups):
+            col.metric(label, f"{g.delta_presence.mean() * 100:+.1f} points" if len(g) >= 5 else "—",
+                       help=f"{len(g)} cases")
+        nerfed, base_ = groups[0][1], none_
+        if len(nerfed) >= 5 and len(base_) >= 5:
+            extra = (nerfed.delta_presence.mean() - base_.delta_presence.mean()) * 100
+            st.markdown(f"<div class='takeaway'>Not much, as far as the data can tell. Popular champions (picked or "
+                        f"banned in 20%+ of games) whose main items were nerfed, with no change of their own, moved "
+                        f"<b>{extra:+.1f} points</b> compared with ones whose items weren't touched. But that's only "
+                        f"{len(nerfed)} cases, and they varied so much that this could easily be chance. Item buffs "
+                        "and rune changes show no clear effect either. Champion changes are what move the meta; item "
+                        "and rune changes are at most a nudge.</div>", unsafe_allow_html=True)
+        st.caption("A champion's exposure is how often pros built the changed item (or took the rune) on it just "
+                   "before, times how big the buff or nerf was. \"Core\" means exposure of 0.3 or more, e.g. built "
+                   "in 40% of games and clearly nerfed. Popular champions usually drift down a little on their own, "
+                   "which is why even the middle group is below zero.")
+
     with t_pred:
         if "predictions" not in d:
             st.info("Run `python -m lolpatch predict` first.")
@@ -1402,12 +1479,22 @@ elif page == "Champions & Patches":
             fig = go.Figure(go.Bar(
                 x=show.pred_delta_presence, y=show.champion, orientation="h",
                 marker=dict(color=[VERDICT_COLOR.get(v, NEUTRAL) for v in show.verdict], cornerradius=4),
-                customdata=show[["prev_presence", "pred_presence", "verdict"]],
-                hovertemplate="<b>%{y}</b> (%{customdata[2]})<br>%{customdata[0]:.0%} → %{customdata[1]:.0%}<extra></extra>"))
+                customdata=show[["prev_presence", "pred_presence", "verdict", "pred_item_effect"]],
+                hovertemplate="<b>%{y}</b> (%{customdata[2]})<br>%{customdata[0]:.0%} → %{customdata[1]:.0%}"
+                              "<br>from item & rune changes: %{customdata[3]:+.1%}<extra></extra>"))
             fig = style(fig, xaxis=dict(title="Predicted change in pick/ban rate (points)", tickformat="+.0%"),
                         hovermode="closest", bargap=0.3)
             st.plotly_chart(row_layout(fig, show.champion), use_container_width=True)
             st.caption("How good have these predictions been? See the **Model Accuracy** page.")
+            from lolpatch.items import changes_in
+            n_items = len(changes_in(meta.get("base_patch"), meta.get("target_patch")))
+            with st.expander(f"Item & rune changes since {meta.get('base_patch')} ({n_items})"):
+                pats = sorted(all_stats.patch.unique(), key=patch_key)
+                item_change_table(meta.get("base_patch"), meta.get("target_patch"), pats[-2:])
+                hit = pr[pr.pred_item_effect.abs() >= 0.005].sort_values("pred_item_effect")
+                if len(hit):
+                    st.markdown("Champions whose prediction moves because of them: " + ", ".join(
+                        f"**{nice(c)}** ({e * 100:+.0f})" for c, e in zip(hit.champion, hit.pred_item_effect)) + " points.")
 
 
 # --- Meta shifts -----------------------------------------------------------------------

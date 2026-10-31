@@ -162,6 +162,30 @@ Which picks teams make *in response* to an opponent's pick.
 - **Chance to reach the knockouts:** the remaining Swiss rounds simulated 20,000
   times (same-record pairings, rematches avoided, Bo3).
 
+## Item & rune changes (`python -m lolpatch builds`, then `analyze` / `predict`)
+
+- **Changes** (`item_changes.csv`): the Items and Runes sections of each patch's
+  notes, scored like champion changes. `[REMOVED]` counts as a full nerf for the
+  champions that used it; `[NEW]` and `[REWORKED]` aren't scored. Blocks naming
+  several items ("Gluttonous Greaves / Immortal Path") are split.
+- **Builds** (`builds.csv`): each player's final items (consumables and wards
+  dropped) and runes, keystone first. Names come from Data Dragon for the game's
+  own version, because Riot reuses ids (8230 was Phase Rush before 26.9).
+- **Exposure** (`items.py`): for a change window, sum over changed items of
+  (share of the champion's games with that item on the two pro patches before)
+  × (buff/nerf score); runes the same. Added to the forecast as `item_exposure`
+  and `rune_exposure`.
+- **Usage is shrunk** toward zero for rarely played champions (as if each had 4
+  extra games without the item), so one game with an item isn't "100% exposed".
+- **Findings:** accuracy is essentially unchanged (walk-forward MAE 0.0469 either
+  way; event errors within ±0.1 points). Popular champions (20%+ presence) with
+  no change of their own fell 4.3 points (± 4.3 SE, 14 cases) when items they
+  rely on were nerfed vs 1.9 (± 0.6) when nothing touched them: a hint, not a
+  reliable effect (item nerf × prior presence p ≈ 0.07). Item buffs and rune
+  changes show no reliable effect either.
+- **Limit:** only *final* builds are seen, so starting items (Doran's) and
+  components sold later are undercounted.
+
 ## Automatic updates (GitHub Actions)
 
 `.github/workflows/refresh.yml` runs `python -m lolpatch refresh` every 3 hours
@@ -179,7 +203,9 @@ job pushes data commits of its own.
 |---|---|---|
 | Pro games: picks, bans, winner, game version per game, scraped from [gol.gg](https://gol.gg) | `scrape_matches.py` | `games.csv` |
 | Champion changes from Riot patch notes, auto-scored buff/nerf | `scrape_patches.py` | `patch_changes.csv` (per line), `champion_changes.csv` (per champion) |
-| Per-patch stats + patch-to-patch transitions | `analyze.py` | `champion_patch_stats.csv`, `transitions.csv`, `verdict_effects.csv` |
+| Item and rune changes from the same patch notes, scored the same way | `scrape_patches.py` | `item_changes.csv` |
+| Final items and runes per player per game, from the cached game pages | `builds.py` | `builds.csv` |
+| Per-patch stats + patch-to-patch transitions (incl. item/rune exposure, `items.py`) | `analyze.py` | `champion_patch_stats.csv`, `transitions.csv`, `verdict_effects.csv` |
 | Walk-forward backtest + next-patch prediction | `model.py` | `backtest_metrics.csv`, `backtest_predictions.csv`, `predictions.csv` |
 
 All downloaded pages are cached in `data/raw/`, so re-runs are offline and

@@ -3,8 +3,19 @@
 Every version below came from one round of requests. Newest first.
 
 ## Up next
-- Publish the site on Streamlit Community Cloud.
-- Ideas, not started: model item and rune changes (they often move the meta more than champion changes); player ratings across the whole domestic season, not just international events.
+- Ideas, not started: player ratings across the whole domestic season, not just international events.
+
+## v1.12 · Oct 31: Item and rune changes
+- **Item and rune changes are now part of the analysis.** Each patch's Items and Runes changes are read from the patch notes and scored as buffs or nerfs, like champion changes. That's 69 changes this season.
+- **We know what pros actually build.** Every player's final items and runes in all 2,397 games, so each champion's exposure to a change is measured: for example, Twisted Fate built Lich Bane in 81% of games before it was buffed.
+- **What we found:** item and rune changes barely move pro priority, at least not measurably. Popular champions whose main items were nerfed dropped a little more than similar champions whose items weren't touched, but with only 14 cases that could easily be chance. Item buffs and rune changes showed no clear effect. Champion changes are what move the meta.
+- **Forecasts** now include item and rune changes. Accuracy is the same as before, which fits the finding. The Next Patch view shows how much of each predicted move comes from items, e.g. about −1 point for Olaf from the Experimental Hexplate nerf.
+- Rarely played champions are no longer treated as fully dependent on an item because of one or two games.
+- **Where to see it** (all in collapsed sections, so the pages stay calm):
+  - Champion tab: the item and rune changes that affected that champion.
+  - Patch tab: each patch's item and rune changes, and who builds them.
+  - Do Buffs & Nerfs Work?: the item and rune results.
+  - Next Patch and Worlds' patch tab: the latest item and rune changes.
 
 ## v1.11.2 · Oct 30: Fix for a crash after updates
 - **Fixed:** after v1.11.1 went live, the site showed an "ImportError". The server kept running the previous version of the project's code alongside the new page. The site now reloads that code whenever it changes, so updates take effect right away.

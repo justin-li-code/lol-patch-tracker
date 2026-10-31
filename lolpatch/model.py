@@ -12,11 +12,12 @@ from sklearn.linear_model import Ridge
 
 from .analyze import build_transitions, changes_between, champion_stats, load_changes, load_games, pro_patches
 from .config import PROCESSED, patch_key
+from .items import exposure
 
 FEATURES = [
     "change_score", "n_changes", "n_lines", "pro_targeted", "base_stats",
     "prev_presence", "prev_pick_rate", "prev_ban_rate", "prev_win_rate",
-    "prev_delta_presence", "lag_change_score",
+    "prev_delta_presence", "lag_change_score", "item_exposure", "rune_exposure",
 ]
 TARGET = "delta_presence"
 MIN_TRAIN_TRANSITIONS = 4
@@ -109,6 +110,8 @@ def predict_future(stats: pd.DataFrame, changes: pd.DataFrame, transitions: pd.D
     X["n_lines"] = ch.n_lines.fillna(0)
     X["pro_targeted"] = ch.pro_targeted.eq(True)
     X["base_stats"] = ch.base_stats.eq(True)
+    ex = exposure(patches[-2:], base, target_patch).reindex(keys).fillna(0.0)
+    X["item_exposure"], X["rune_exposure"] = ex.item_exposure, ex.rune_exposure
     X["verdict"] = ch.verdict.fillna("none")
     X["change_patches"] = ch.change_patches.fillna("")
 
@@ -116,9 +119,12 @@ def predict_future(stats: pd.DataFrame, changes: pd.DataFrame, transitions: pd.D
     X["pred_delta_presence"] = model.predict(_X(X))
     # Same champion with no balance changes: isolates the patch-note effect from
     # the drift (mean reversion, momentum) the model predicts anyway.
-    untouched = X.assign(change_score=0.0, n_changes=0.0, n_lines=0.0, pro_targeted=False, base_stats=False)
+    untouched = X.assign(change_score=0.0, n_changes=0.0, n_lines=0.0, pro_targeted=False, base_stats=False,
+                         item_exposure=0.0, rune_exposure=0.0)
     X["pred_drift"] = model.predict(_X(untouched))
     X["pred_change_effect"] = X.pred_delta_presence - X.pred_drift
+    # The part that comes from item and rune changes alone (champion changes kept as they are).
+    X["pred_item_effect"] = X.pred_delta_presence - model.predict(_X(X.assign(item_exposure=0.0, rune_exposure=0.0)))
     X["pred_presence"] = (X.prev_presence + X.pred_delta_presence).clip(0, 1)
     names = pd.concat([stats.drop_duplicates("champ_key").set_index("champ_key").champion,
                        changes.drop_duplicates("champ_key").set_index("champ_key").champion])

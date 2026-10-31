@@ -91,12 +91,18 @@ def score_line(stat: str, before: str, after: str, ability: str = "") -> tuple[f
     return sign, min(abs(delta), 1.0)
 
 
-def _section_blocks(soup: BeautifulSoup):
-    """Yield champion change blocks from the Champions section(s) only."""
+SECTIONS = {"champion": ("patch-champions", ("champions", "champion changes")),
+            "item": ("patch-items", ("items", "item changes")),
+            "rune": ("patch-runes", ("runes", "rune changes"))}
+
+
+def _section_blocks(soup: BeautifulSoup, kind: str = "champion"):
+    """Yield change blocks from one section (Champions, Items or Runes) only."""
+    sec_id, titles = SECTIONS[kind]
     for h2 in soup.find_all("h2"):
         hid = (h2.get("id") or "").lower()
         title = h2.get_text(" ", strip=True).lower()
-        if not (hid == "patch-champions" or title in ("champions", "champion changes")):
+        if not (hid == sec_id or title in titles):
             continue
         header = h2.find_parent("header") or h2
         for sib in header.find_next_siblings():
@@ -106,10 +112,12 @@ def _section_blocks(soup: BeautifulSoup):
                 yield block
 
 
-def parse_patch(patch: str, html: str) -> list[dict]:
+def parse_patch(patch: str, html: str, kind: str = "champion") -> list[dict]:
+    """Change lines for champions, items or runes. Items and runes reuse the champion columns
+    (champion = item/rune name), since they're scored the same way."""
     soup = BeautifulSoup(html, "lxml")
     rows = []
-    for block in _section_blocks(soup):
+    for block in _section_blocks(soup, kind):
         title = block.find("h3", class_="change-title")
         if not title:
             continue
@@ -195,8 +203,33 @@ def apply_overrides(changes: pd.DataFrame) -> pd.DataFrame:
     return changes
 
 
+def item_rune_changes(lines: pd.DataFrame) -> pd.DataFrame:
+    """One verdict per item or rune per patch. A block like "Gluttonous Greaves / Immortal Path"
+    covers several items, so it's split into one row per name."""
+    if lines.empty:
+        return pd.DataFrame(columns=["patch", "kind", "name", "key", "verdict", "score", "n_lines", "context"])
+    out = []
+    for kind, g in lines.groupby("kind"):
+        summ = summarise(g.drop(columns="kind"))
+        summ["kind"] = kind
+        out.append(summ)
+    ch = pd.concat(out, ignore_index=True).rename(columns={"champion": "name"})
+    ch["name"] = ch.name.str.split(r"\s+/\s+")
+    ch = ch.explode("name")
+    # Riot tags blocks "[NEW] X", "[REMOVED] X", "[REWORKED] X". Removing something a champion
+    # relied on is a full nerf for it; new and reworked things can't be scored automatically.
+    tag = ch.name.str.extract(r"^\[(\w+)\]", expand=False).str.lower().fillna("")
+    ch["status"] = tag.replace({"": "changed"})
+    ch["name"] = ch.name.str.replace(r"^\[\w+\]\s*", "", regex=True)
+    ch.loc[ch.status == "removed", ["verdict", "score"]] = ["nerf", -1.0]
+    ch.loc[ch.status.isin(["new", "reworked"]), ["verdict", "score"]] = ["adjust", 0.0]
+    ch["key"] = ch.name.map(champ_key)
+    return ch[["patch", "kind", "name", "key", "status", "verdict", "score", "n_lines", "n_buff_lines",
+               "n_nerf_lines", "context"]].reset_index(drop=True)
+
+
 def scrape(first: int = 1, last: int = 24, refresh: bool = False, log=print) -> pd.DataFrame:
-    lines = []
+    lines, ir_lines = [], []
     for minor in range(first, last + 1):
         patch = f"{PATCH_BRAND_MAJOR}.{minor}"
         url = patch_url(patch)
@@ -204,14 +237,20 @@ def scrape(first: int = 1, last: int = 24, refresh: bool = False, log=print) -> 
             continue
         html = http.get(url, refresh=refresh)
         rows = parse_patch(patch, html)
-        log(f"  {patch}: {len({r['champ_key'] for r in rows})} champions changed")
+        extra = [r | {"kind": k} for k in ("item", "rune") for r in parse_patch(patch, html, k)]
+        log(f"  {patch}: {len({r['champ_key'] for r in rows})} champions, "
+            f"{len({r['champ_key'] for r in extra})} items/runes changed")
         lines.extend(rows)
+        ir_lines.extend(extra)
     lines = pd.DataFrame(lines)
     PROCESSED.mkdir(parents=True, exist_ok=True)
     lines.to_csv(PROCESSED / "patch_changes.csv", index=False)
     changes = apply_overrides(summarise(lines))
     changes.to_csv(PROCESSED / "champion_changes.csv", index=False)
     log(f"Saved {len(changes)} champion changes across {changes.patch.nunique()} patches")
+    ir = item_rune_changes(pd.DataFrame(ir_lines))
+    ir.to_csv(PROCESSED / "item_changes.csv", index=False)
+    log(f"Saved {len(ir)} item/rune changes ({(ir.kind == 'item').sum()} item, {(ir.kind == 'rune').sum()} rune)")
     return changes
 
 

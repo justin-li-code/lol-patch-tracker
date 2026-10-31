@@ -356,35 +356,35 @@
     "regions": [
       {
         "region": "CBLOL",
-        "n_favorite": 27,
-        "n_other": 193,
-        "win_rate_favorite": 0.25925925925925924,
-        "win_rate_other": 0.24870466321243523,
-        "diff": 0.010554596046824016
+        "n_favorite": 29,
+        "n_other": 206,
+        "win_rate_favorite": 0.27586206896551724,
+        "win_rate_other": 0.2766990291262136,
+        "diff": -0.0008369601606963428
       },
       {
         "region": "LCK",
-        "n_favorite": 86,
-        "n_other": 589,
-        "win_rate_favorite": 0.7325581395348837,
-        "win_rate_other": 0.6825127334465195,
-        "diff": 0.050045406088364164
+        "n_favorite": 88,
+        "n_other": 597,
+        "win_rate_favorite": 0.7386363636363636,
+        "win_rate_other": 0.6867671691792295,
+        "diff": 0.051869194457134116
       },
       {
         "region": "LCS",
-        "n_favorite": 58,
-        "n_other": 372,
-        "win_rate_favorite": 0.46551724137931033,
-        "win_rate_other": 0.45161290322580644,
-        "diff": 0.013904338153503892
+        "n_favorite": 61,
+        "n_other": 384,
+        "win_rate_favorite": 0.4426229508196721,
+        "win_rate_other": 0.4505208333333333,
+        "diff": -0.007897882513661192
       },
       {
         "region": "LEC",
-        "n_favorite": 97,
-        "n_other": 433,
-        "win_rate_favorite": 0.4536082474226804,
-        "win_rate_other": 0.5219399538106235,
-        "diff": -0.06833170638794311
+        "n_favorite": 99,
+        "n_other": 441,
+        "win_rate_favorite": 0.4444444444444444,
+        "win_rate_other": 0.5124716553287982,
+        "diff": -0.06802721088435382
       },
       {
         "region": "LPL",
@@ -395,13 +395,13 @@
         "diff": -0.038563090605892136
       }
     ],
-    "within_region_diff": -0.009543221257050939,
+    "within_region_diff": -0.013653399024447762,
     "ci": [
-      -0.06673906577916741,
-      0.04713405486078117
+      -0.07021026073888147,
+      0.040414324632686294
     ],
     "favorite_lift": 0.05,
-    "favorite_picks": 324,
-    "total_picks": 2425
+    "favorite_picks": 333,
+    "total_picks": 2475
   }
 }

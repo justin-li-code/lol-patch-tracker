@@ -2403,6 +2403,11 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83669-2,83670,worlds,worlds,83669,Worlds 2026 Main Event,ROUND4,2026-10-28,2,16.2,25.716666666666665,25:43,T1,Movistar KOI,T1
 83675-1,83675,worlds,worlds,83675,Worlds 2026 Main Event,ROUND4,2026-10-29,1,16.2,27.583333333333332,27:35,Karmine Corp,CTBC Flying Oyster,Karmine Corp
 83675-2,83676,worlds,worlds,83675,Worlds 2026 Main Event,ROUND4,2026-10-29,2,16.2,36.9,36:54,CTBC Flying Oyster,Karmine Corp,Karmine Corp
-83678-1,83678,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,1,16.20,27.85,27:51,Bilibili Gaming,Top Esports,Bilibili Gaming
-83678-2,83679,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,2,16.20,37.6,37:36,Bilibili Gaming,Top Esports,Top Esports
-83678-3,83680,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,3,16.20,27.8,27:48,Top Esports,Bilibili Gaming,Top Esports
+83678-1,83678,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,1,16.2,27.85,27:51,Bilibili Gaming,Top Esports,Bilibili Gaming
+83678-2,83679,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,2,16.2,37.6,37:36,Bilibili Gaming,Top Esports,Top Esports
+83678-3,83680,worlds,worlds,83678,Worlds 2026 Main Event,ROUND4,2026-10-29,3,16.2,27.8,27:48,Top Esports,Bilibili Gaming,Top Esports
+83684-1,83684,worlds,worlds,83684,Worlds 2026 Main Event,ROUND4,2026-10-30,1,16.20,28.083333333333332,28:05,G2 Esports,Hanwha Life Esports,Hanwha Life Esports
+83684-2,83685,worlds,worlds,83684,Worlds 2026 Main Event,ROUND4,2026-10-30,2,16.20,26.2,26:12,Hanwha Life Esports,G2 Esports,Hanwha Life Esports
+83681-1,83681,worlds,worlds,83681,Worlds 2026 Main Event,ROUND4,2026-10-30,1,16.20,29.866666666666667,29:52,Los Grandes,Team Liquid,Los Grandes
+83681-2,83682,worlds,worlds,83681,Worlds 2026 Main Event,ROUND4,2026-10-30,2,16.20,38.016666666666666,38:01,Los Grandes,Team Liquid,Team Liquid
+83681-3,83683,worlds,worlds,83681,Worlds 2026 Main Event,ROUND4,2026-10-30,3,16.20,47.266666666666666,47:16,Team Liquid,Los Grandes,Los Grandes

@@ -11294,3 +11294,28 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83678-3,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Top Esports,2,Creme,Yone,Bilibili Gaming,8,Knight,0,False
 83678-3,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,Bilibili Gaming,1,ON,Lulu,Top Esports,3,Zhuo,1,False
 83678-3,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Bilibili Gaming,4,Bin,Renekton,Top Esports,6,369,1,False
+83681-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Los Grandes,2,Duduhh,Ziggs,Team Liquid,4,Yeon,0,False
+83681-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,Team Liquid,1,Josedeodo,Trundle,Los Grandes,7,Curse,1,False
+83681-1,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Los Grandes,6,Feisty,Sylas,Team Liquid,8,Quid,0,False
+83681-1,support,Worlds,Worlds 2026 Main Event,26.20,Seraphine,Los Grandes,3,Ackerman,Nautilus,Team Liquid,5,CoreJJ,0,False
+83681-1,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Team Liquid,9,Morgan,Jayce,Los Grandes,10,Zest,1,True
+83681-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Los Grandes,1,Duduhh,Lucian,Team Liquid,2,Yeon,1,False
+83681-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,Los Grandes,5,Curse,Xin Zhao,Team Liquid,7,Josedeodo,1,False
+83681-2,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Team Liquid,6,Quid,Galio,Los Grandes,9,Feisty,0,False
+83681-2,support,Worlds,Worlds 2026 Main Event,26.20,Nami,Team Liquid,3,CoreJJ,Karma,Los Grandes,4,Ackerman,0,False
+83681-2,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Los Grandes,8,Zest,Ornn,Team Liquid,10,Morgan,1,True
+83681-3,bot,Worlds,Worlds 2026 Main Event,26.20,Kalista,Los Grandes,2,Duduhh,Yunara,Team Liquid,4,Yeon,0,False
+83681-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Pantheon,Los Grandes,6,Curse,Sejuani,Team Liquid,8,Josedeodo,0,False
+83681-3,mid,Worlds,Worlds 2026 Main Event,26.20,Viktor,Team Liquid,1,Quid,Taliyah,Los Grandes,7,Feisty,1,False
+83681-3,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,Los Grandes,3,Ackerman,Lulu,Team Liquid,5,CoreJJ,0,False
+83681-3,top,Worlds,Worlds 2026 Main Event,26.20,Gnar,Team Liquid,9,Morgan,Tristana,Los Grandes,10,Zest,1,True
+83684-1,bot,Worlds,Worlds 2026 Main Event,26.20,Corki,Hanwha Life Esports,8,Gumayusi,Jhin,G2 Esports,10,Hans Sama,0,True
+83684-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Hanwha Life Esports,1,Kanavi,Pantheon,G2 Esports,2,SkewMond,0,False
+83684-1,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Hanwha Life Esports,5,Zeka,Cassiopeia,G2 Esports,7,Caps,0,False
+83684-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,G2 Esports,3,Labrov,Alistar,Hanwha Life Esports,4,Delight,1,False
+83684-1,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,G2 Esports,6,BrokenBlade,KSante,Hanwha Life Esports,9,Zeus,1,False
+83684-2,bot,Worlds,Worlds 2026 Main Event,26.20,Lucian,Hanwha Life Esports,2,Gumayusi,Xayah,G2 Esports,4,Hans Sama,0,False
+83684-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,G2 Esports,1,SkewMond,Jarvan IV,Hanwha Life Esports,6,Kanavi,1,False
+83684-2,mid,Worlds,Worlds 2026 Main Event,26.20,Galio,G2 Esports,9,Caps,Swain,Hanwha Life Esports,10,Zeka,1,True
+83684-2,support,Worlds,Worlds 2026 Main Event,26.20,Milio,Hanwha Life Esports,3,Delight,Rakan,G2 Esports,5,Labrov,0,False
+83684-2,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Hanwha Life Esports,7,Zeus,Camille,G2 Esports,8,BrokenBlade,0,False

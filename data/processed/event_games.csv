@@ -519,6 +519,16 @@ game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,
 83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83684-1,83684,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,G2 Esports,0,Pantheon|Nautilus|Olaf|Cassiopeia|Jhin,Jayce|Nocturne|Vi|Camille|Ambessa,0.0,Swiss R4
+83684-1,83684,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,Hanwha Life Esports,1,Lee Sin|Alistar|Syndra|Corki|KSante,Renata Glasc|Jarvan IV|Orianna|Viktor|Draven,1.0,Swiss R4
+83684-2,83684,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,G2 Esports,0,Qiyana|Xayah|Rakan|Camille|Galio,Jayce|Nocturne|Naafiri|Viktor|Renekton,1.0,Swiss R4
+83684-2,83684,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,Hanwha Life Esports,1,Lucian|Milio|Jarvan IV|Ambessa|Swain,Renata Glasc|Vi|Orianna|Akali|Annie,0.0,Swiss R4
+83681-1,83681,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,Los Grandes,1,Ashe|Seraphine|Syndra|Trundle|Jayce,Qiyana|Lee Sin|Orianna|Olaf|Camille,0.0,Swiss R4
+83681-1,83681,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,Team Liquid,0,Nocturne|Ziggs|Nautilus|Sylas|Ambessa,Cassiopeia|Vi|Renata Glasc|Wukong|Renekton,1.0,Swiss R4
+83681-2,83681,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,Los Grandes,0,Ezreal|Karma|Jarvan IV|Rumble|Galio,Lee Sin|Renata Glasc|Locke|Wukong|Jax,1.0,Swiss R4
+83681-2,83681,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,Team Liquid,1,Lucian|Nami|Orianna|Xin Zhao|Ornn,Vi|Cassiopeia|Qiyana|Viktor|Akali,0.0,Swiss R4
+83681-3,83681,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,Los Grandes,1,Kalista|Renata Glasc|Pantheon|Taliyah|Tristana,Lee Sin|Qiyana|Olaf|Wukong|Skarner,0.0,Swiss R4
+83681-3,83681,worlds,Worlds 2026 Main Event,ROUND4,2026-10-30,16.20,26.20,Team Liquid,0,Viktor|Yunara|Lulu|Sejuani|Gnar,Cassiopeia|Vi|Locke|Akali|Vayne,1.0,Swiss R4
 83678-1,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Bilibili Gaming,1,Vi|Nautilus|Orianna|Ezreal|Gnar,Akali|Renata Glasc|Nocturne|Locke|Rumble,1.0,Swiss R4
 83678-1,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Top Esports,0,Jhin|Qiyana|Alistar|Viktor|Jayce,Olaf|Cassiopeia|Ambessa|Kaisa|KSante,0.0,Swiss R4
 83678-2,83678,worlds,Worlds 2026 Main Event,ROUND4,2026-10-29,16.20,26.20,Bilibili Gaming,0,Ashe|Seraphine|Wukong|KSante|LeBlanc,Nocturne|Cassiopeia|Yunara|Sylas|Rumble,0.0,Swiss R4

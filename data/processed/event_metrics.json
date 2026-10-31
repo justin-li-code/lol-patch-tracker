@@ -12,15 +12,15 @@
       "games": 45,
       "all": {
         "n": 109,
-        "mae_model": 0.08598959755236914,
-        "mae_baseline": 0.08842289209261685,
+        "mae_model": 0.08598959755236918,
+        "mae_baseline": 0.08842289209261686,
         "direction_acc": 0.5,
         "n_moved": 56
       },
       "changed": {
         "n": 14,
         "mae_model": 0.09679782221872094,
-        "mae_baseline": 0.10884353741496597,
+        "mae_baseline": 0.10884353741496598,
         "direction_acc": 0.7142857142857143,
         "n_moved": 7
       },
@@ -35,7 +35,7 @@
       "games": 45,
       "all": {
         "n": 113,
-        "mae_model": 0.07954179400820714,
+        "mae_model": 0.07954179400820716,
         "mae_baseline": 0.07777777777777777,
         "direction_acc": 0.5294117647058824,
         "n_moved": 51
@@ -52,7 +52,7 @@
       "top10_model": 6,
       "top10_baseline": 7,
       "base_patch": "26.4",
-      "forecast_created": "2026-10-31 10:43 UTC"
+      "forecast_created": "2026-10-31 19:20 UTC"
     }
   },
   "msi": {
@@ -72,14 +72,14 @@
       "all": {
         "n": 113,
         "mae_model": 0.08108393575163388,
-        "mae_baseline": 0.08540829729911119,
+        "mae_baseline": 0.0854082972991112,
         "direction_acc": 0.6190476190476191,
         "n_moved": 63
       },
       "changed": {
         "n": 31,
-        "mae_model": 0.07919742070575322,
-        "mae_baseline": 0.09329092836589428,
+        "mae_model": 0.0791974207057532,
+        "mae_baseline": 0.0932909283658943,
         "direction_acc": 0.9411764705882353,
         "n_moved": 17
       },
@@ -94,24 +94,24 @@
       "games": 71,
       "all": {
         "n": 113,
-        "mae_model": 0.07764408499220884,
+        "mae_model": 0.0774899601540673,
         "mae_baseline": 0.0783971571926789,
-        "direction_acc": 0.5333333333333333,
+        "direction_acc": 0.48333333333333334,
         "n_moved": 60
       },
       "changed": {
         "n": 31,
-        "mae_model": 0.07713523047659658,
+        "mae_model": 0.07704192557592665,
         "mae_baseline": 0.08512173610925514,
         "direction_acc": 0.9375,
         "n_moved": 16
       },
-      "spearman_model": 0.8035342264109351,
+      "spearman_model": 0.8031606388255835,
       "spearman_baseline": 0.8037182077119465,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.11",
-      "forecast_created": "2026-10-31 10:43 UTC"
+      "forecast_created": "2026-10-31 19:20 UTC"
     }
   },
   "ewc": {
@@ -130,13 +130,13 @@
       "all": {
         "n": 109,
         "mae_model": 0.11777245868633072,
-        "mae_baseline": 0.11961199440961987,
+        "mae_baseline": 0.11961199440961988,
         "direction_acc": 0.5217391304347826,
         "n_moved": 69
       },
       "changed": {
         "n": 31,
-        "mae_model": 0.13136355856197615,
+        "mae_model": 0.1313635585619761,
         "mae_baseline": 0.13924974456283754,
         "direction_acc": 0.7368421052631579,
         "n_moved": 19
@@ -152,24 +152,24 @@
       "games": 51,
       "all": {
         "n": 110,
-        "mae_model": 0.11785137250674137,
-        "mae_baseline": 0.11657754010695186,
-        "direction_acc": 0.4696969696969697,
+        "mae_model": 0.11802295142353253,
+        "mae_baseline": 0.11657754010695184,
+        "direction_acc": 0.4393939393939394,
         "n_moved": 66
       },
       "changed": {
         "n": 31,
-        "mae_model": 0.1372149296750992,
-        "mae_baseline": 0.1385199240986717,
+        "mae_model": 0.13786837409916847,
+        "mae_baseline": 0.13851992409867173,
         "direction_acc": 0.7222222222222222,
         "n_moved": 18
       },
-      "spearman_model": 0.6862963294957982,
+      "spearman_model": 0.685298576464563,
       "spearman_baseline": 0.6813002896164831,
       "top10_model": 5,
       "top10_baseline": 5,
       "base_patch": "26.11",
-      "forecast_created": "2026-10-31 10:43 UTC"
+      "forecast_created": "2026-10-31 19:20 UTC"
     }
   },
   "demacia": {
@@ -190,15 +190,15 @@
       "games": 71,
       "all": {
         "n": 119,
-        "mae_model": 0.05143127887481826,
-        "mae_baseline": 0.04589122260137723,
+        "mae_model": 0.05143127887481828,
+        "mae_baseline": 0.045891222601377235,
         "direction_acc": 0.40540540540540543,
         "n_moved": 37
       },
       "changed": {
         "n": 11,
-        "mae_model": 0.0643969656106691,
-        "mae_baseline": 0.0403714730882557,
+        "mae_model": 0.06439696561066911,
+        "mae_baseline": 0.040371473088255706,
         "direction_acc": 0.5,
         "n_moved": 2
       },
@@ -213,24 +213,24 @@
       "games": 71,
       "all": {
         "n": 122,
-        "mae_model": 0.04890635889598826,
-        "mae_baseline": 0.04355229739090279,
-        "direction_acc": 0.41025641025641024,
+        "mae_model": 0.049157794253659536,
+        "mae_baseline": 0.043552297390902786,
+        "direction_acc": 0.4358974358974359,
         "n_moved": 39
       },
       "changed": {
         "n": 11,
-        "mae_model": 0.06112729687238376,
+        "mae_model": 0.06163931794421642,
         "mae_baseline": 0.03624863660074927,
         "direction_acc": 0.5,
         "n_moved": 2
       },
-      "spearman_model": 0.9325990426767848,
+      "spearman_model": 0.9322590889073273,
       "spearman_baseline": 0.9321449629237124,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
-      "forecast_created": "2026-10-31 10:43 UTC"
+      "forecast_created": "2026-10-31 19:20 UTC"
     }
   },
   "worlds": {
@@ -242,53 +242,54 @@
       "Swiss R1": 8,
       "Swiss R2": 8,
       "Swiss R3": 13,
-      "Swiss R4": 15
+      "Swiss R4": 15,
+      "Swiss R5": 2
     },
     "frozen": {
-      "games": 66,
+      "games": 68,
       "all": {
         "n": 125,
-        "mae_model": 0.06283322887461167,
-        "mae_baseline": 0.05621029572836801,
-        "direction_acc": 0.46,
-        "n_moved": 50
+        "mae_model": 0.0634502500384674,
+        "mae_baseline": 0.056595322466335925,
+        "direction_acc": 0.45098039215686275,
+        "n_moved": 51
       },
       "changed": {
         "n": 40,
-        "mae_model": 0.06543353339802671,
-        "mae_baseline": 0.05360076670317635,
+        "mae_model": 0.06572589332728059,
+        "mae_baseline": 0.05366761162296243,
         "direction_acc": 0.42857142857142855,
         "n_moved": 14
       },
-      "spearman_model": 0.8923205291782835,
-      "spearman_baseline": 0.8869793618074157,
+      "spearman_model": 0.8930133767280256,
+      "spearman_baseline": 0.8891316972663642,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
       "forecast_created": "2026-10-24 10:49 UTC"
     },
     "current": {
-      "games": 66,
+      "games": 68,
       "all": {
         "n": 128,
-        "mae_model": 0.0603647309609282,
-        "mae_baseline": 0.05472695707070707,
-        "direction_acc": 0.46,
-        "n_moved": 50
+        "mae_model": 0.06057026337775997,
+        "mae_baseline": 0.054623672385620915,
+        "direction_acc": 0.42857142857142855,
+        "n_moved": 49
       },
       "changed": {
         "n": 40,
-        "mae_model": 0.06280319988879442,
-        "mae_baseline": 0.05500841750841752,
-        "direction_acc": 0.4,
-        "n_moved": 15
+        "mae_model": 0.06317386198654724,
+        "mae_baseline": 0.05487472766884531,
+        "direction_acc": 0.375,
+        "n_moved": 16
       },
-      "spearman_model": 0.9068030323861817,
-      "spearman_baseline": 0.8999802828195609,
+      "spearman_model": 0.9080643181132578,
+      "spearman_baseline": 0.9030970832966809,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
-      "forecast_created": "2026-10-31 10:43 UTC"
+      "forecast_created": "2026-10-31 19:20 UTC"
     }
   }
 }

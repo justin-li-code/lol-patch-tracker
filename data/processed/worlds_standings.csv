@@ -1,15 +1,15 @@
 team,wins,played,last,losses,status,p_advance,p_semis,p_final,p_title
-Dplus KIA,3,3,2026-10-25,0,Advanced,1.0,0.69145,0.35965,0.16845
-Gen.G,3,3,2026-10-25,0,Advanced,1.0,0.79675,0.5552,0.37615
-Invictus Gaming,3,4,2026-10-28,1,Advanced,1.0,0.329,0.10115,0.02615
-T1,3,4,2026-10-28,1,Advanced,1.0,0.70115,0.3605,0.16525
-Top Esports,3,4,2026-10-29,1,Advanced,1.0,0.3451,0.10795,0.02995
-Bilibili Gaming,2,4,2026-10-29,2,Still playing,0.6898,0.29275,0.1642,0.0853
-Hanwha Life Esports,2,4,2026-10-30,2,Still playing,0.68355,0.49785,0.26105,0.12555
-Karmine Corp,2,4,2026-10-29,2,Still playing,0.5558,0.15295,0.04915,0.01435
-LYON,2,4,2026-10-28,2,Still playing,0.40405,0.09105,0.02425,0.0062
-Los Grandes,2,4,2026-10-30,2,Still playing,0.27035,0.0337,0.00485,0.00085
-Movistar KOI,2,4,2026-10-28,2,Still playing,0.39645,0.06825,0.01205,0.0018
+Dplus KIA,3,3,2026-10-25,0,Advanced,1.0,0.66765,0.35005,0.1651
+Gen.G,3,3,2026-10-25,0,Advanced,1.0,0.775,0.5405,0.366
+Invictus Gaming,3,4,2026-10-28,1,Advanced,1.0,0.3246,0.10225,0.0267
+T1,3,4,2026-10-28,1,Advanced,1.0,0.70025,0.35385,0.1609
+Top Esports,3,4,2026-10-29,1,Advanced,1.0,0.3433,0.10925,0.03025
+Karmine Corp,3,5,2026-10-31,2,Advanced,1.0,0.26585,0.0848,0.0248
+Bilibili Gaming,2,4,2026-10-29,2,Still playing,0.68275,0.29275,0.1613,0.08685
+Hanwha Life Esports,2,4,2026-10-30,2,Still playing,0.6951,0.50495,0.26715,0.13295
+LYON,2,4,2026-10-28,2,Still playing,0.39215,0.09765,0.0265,0.0059
+Los Grandes,2,4,2026-10-30,2,Still playing,0.23,0.028,0.00435,0.00055
+Movistar KOI,2,5,2026-10-31,3,Eliminated,0.0,0.0,0.0,0.0
 CTBC Flying Oyster,1,4,2026-10-29,3,Eliminated,0.0,0.0,0.0,0.0
 G2 Esports,1,4,2026-10-30,3,Eliminated,0.0,0.0,0.0,0.0
 Team Liquid,1,4,2026-10-30,3,Eliminated,0.0,0.0,0.0,0.0

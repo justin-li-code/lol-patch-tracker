@@ -11319,3 +11319,13 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83684-2,mid,Worlds,Worlds 2026 Main Event,26.20,Galio,G2 Esports,9,Caps,Swain,Hanwha Life Esports,10,Zeka,1,True
 83684-2,support,Worlds,Worlds 2026 Main Event,26.20,Milio,Hanwha Life Esports,3,Delight,Rakan,G2 Esports,5,Labrov,0,False
 83684-2,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Hanwha Life Esports,7,Zeus,Camille,G2 Esports,8,BrokenBlade,0,False
+83686-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Karmine Corp,2,Caliste,Zeri,Movistar KOI,4,Supa,0,False
+83686-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Wukong,Karmine Corp,7,Yike,Sejuani,Movistar KOI,9,Elyoya,0,False
+83686-1,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Movistar KOI,1,jojopyun,Syndra,Karmine Corp,6,Kyeahoo,1,False
+83686-1,support,Worlds,Worlds 2026 Main Event,26.20,Seraphine,Karmine Corp,3,Busio,Yuumi,Movistar KOI,5,Alvaro,0,False
+83686-1,top,Worlds,Worlds 2026 Main Event,26.20,Camille,Movistar KOI,8,Myrwn,Renekton,Karmine Corp,10,Canna,1,True
+83686-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Movistar KOI,4,Supa,Sivir,Karmine Corp,6,Caliste,1,False
+83686-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Movistar KOI,1,Elyoya,Pantheon,Karmine Corp,2,Yike,1,False
+83686-2,mid,Worlds,Worlds 2026 Main Event,26.20,Anivia,Movistar KOI,8,jojopyun,Viktor,Karmine Corp,10,Kyeahoo,1,True
+83686-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Karmine Corp,3,Busio,Karma,Movistar KOI,5,Alvaro,0,False
+83686-2,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Karmine Corp,7,Canna,Ornn,Movistar KOI,9,Myrwn,0,False

@@ -4823,3 +4823,7 @@ game_uid,side,team,result,kills,towers,dragons,barons,gold,dragon_types,heralds,
 83681-2,red,Team Liquid,1,15.0,9.0,5.0,1.0,75100.0,"Chemtech, Chemtech, Chemtech, Hextech",1,1,1,0.0,38.0,13.0,15.0,10.0
 83681-3,blue,Team Liquid,0,5.0,6.0,2.0,2.0,81600.0,"Infernal, Infernal",0,0,0,2.0,30.0,5.0,15.0,10.0
 83681-3,red,Los Grandes,1,17.0,10.0,5.0,1.0,91400.0,"Ocean, Infernal, Infernal, Chemtech",1,1,1,1.0,42.0,15.0,15.0,12.0
+83686-1,blue,Karmine Corp,1,13.0,8.0,5.0,2.0,76900.0,"Mountain, Infernal, Infernal, Hextech",1,1,1,3.0,34.0,9.0,15.0,10.0
+83686-1,red,Movistar KOI,0,14.0,5.0,1.0,0.0,73600.0,,0,0,0,0.0,32.0,13.0,10.0,9.0
+83686-2,blue,Karmine Corp,1,18.0,8.0,3.0,1.0,57800.0,"Cloud, Mountain, Infernal",1,1,1,3.0,32.0,5.0,12.0,15.0
+83686-2,red,Movistar KOI,0,4.0,1.0,0.0,0.0,42500.0,,0,0,0,0.0,8.0,2.0,1.0,5.0

@@ -15060,7 +15060,7 @@ game_uid,team,side,minute,time,objective
 83672-1,Invictus Gaming,red,16.583333333333332,16:35,Rift Herald
 83672-1,Invictus Gaming,red,20.416666666666668,20:25,Ocean Drake
 83672-1,Invictus Gaming,red,26.05,26:03,Ocean Drake
-83672-2,Invictus Gaming,blue,3.6333333333333333,3:38,First blood
+83672-2,Invictus Gaming,blue,3.6333333333333337,3:38,First blood
 83672-2,Invictus Gaming,blue,6.5,6:30,Cloud Drake
 83672-2,LYON,red,11.516666666666667,11:31,First Tower
 83672-2,Invictus Gaming,blue,12.566666666666666,12:34,Mountain Drake
@@ -15080,7 +15080,7 @@ game_uid,team,side,minute,time,objective
 83672-3,Invictus Gaming,red,22.266666666666666,22:16,Mountain Drake
 83669-1,Movistar KOI,red,5.716666666666667,5:43,First blood
 83669-1,T1,blue,6.566666666666666,6:34,Cloud Drake
-83669-1,T1,blue,11.966666666666667,11:58,Ocean Drake
+83669-1,T1,blue,11.966666666666669,11:58,Ocean Drake
 83669-1,T1,blue,16.033333333333335,16:02,Rift Herald
 83669-1,T1,blue,17.6,17:36,First Tower
 83669-1,Movistar KOI,red,17.666666666666668,17:40,Infernal Drake
@@ -15102,7 +15102,7 @@ game_uid,team,side,minute,time,objective
 83675-1,Karmine Corp,blue,15.833333333333334,15:50,Rift Herald
 83675-1,Karmine Corp,blue,16.516666666666666,16:31,First Tower
 83675-1,Karmine Corp,blue,17.916666666666668,17:55,Infernal Drake
-83675-1,Karmine Corp,blue,23.316666666666666,23:19,Infernal Drake
+83675-1,Karmine Corp,blue,23.316666666666663,23:19,Infernal Drake
 83675-1,Karmine Corp,blue,24.9,24:54,Nashor
 83675-2,CTBC Flying Oyster,blue,2.183333333333333,2:11,First blood
 83675-2,CTBC Flying Oyster,blue,5.55,5:33,Hextech Drake
@@ -15110,10 +15110,10 @@ game_uid,team,side,minute,time,objective
 83675-2,Karmine Corp,red,11.9,11:54,Cloud Drake
 83675-2,CTBC Flying Oyster,blue,15.55,15:33,Rift Herald
 83675-2,CTBC Flying Oyster,blue,17.25,17:15,Ocean Drake
-83675-2,CTBC Flying Oyster,blue,22.566666666666666,22:34,Ocean Drake
+83675-2,CTBC Flying Oyster,blue,22.566666666666663,22:34,Ocean Drake
 83675-2,CTBC Flying Oyster,blue,24.266666666666666,24:16,Nashor
 83675-2,CTBC Flying Oyster,blue,27.916666666666668,27:55,Ocean Drake
-83675-2,Karmine Corp,red,30.933333333333334,30:56,Nashor
+83675-2,Karmine Corp,red,30.933333333333337,30:56,Nashor
 83675-2,Karmine Corp,red,35.93333333333333,35:56,Elder Drake
 83678-1,Bilibili Gaming,blue,3.45,3:27,First blood
 83678-1,Top Esports,red,7.666666666666667,7:40,Mountain Drake
@@ -15122,7 +15122,7 @@ game_uid,team,side,minute,time,objective
 83678-1,Bilibili Gaming,blue,15.433333333333334,15:26,Rift Herald
 83678-1,Bilibili Gaming,blue,18.416666666666668,18:25,Chemtech Drake
 83678-1,Bilibili Gaming,blue,24.083333333333332,24:05,Chemtech Drake
-83678-1,Bilibili Gaming,blue,24.566666666666666,24:34,Nashor
+83678-1,Bilibili Gaming,blue,24.566666666666663,24:34,Nashor
 83678-2,Bilibili Gaming,blue,7.483333333333333,7:29,First blood
 83678-2,Bilibili Gaming,blue,9.8,9:48,Mountain Drake
 83678-2,Bilibili Gaming,blue,15.483333333333333,15:29,Rift Herald
@@ -15139,18 +15139,18 @@ game_uid,team,side,minute,time,objective
 83678-3,Top Esports,blue,16.966666666666665,16:58,Rift Herald
 83678-3,Top Esports,blue,17.883333333333333,17:53,Hextech Drake
 83678-3,Bilibili Gaming,red,23.216666666666665,23:13,Hextech Drake
-83678-3,Top Esports,blue,24.183333333333334,24:11,Nashor
+83678-3,Top Esports,blue,24.183333333333337,24:11,Nashor
 83684-1,G2 Esports,blue,3.9833333333333334,3:59,First blood
 83684-1,Hanwha Life Esports,red,11.25,11:15,Hextech Drake
 83684-1,Hanwha Life Esports,red,15.4,15:24,Rift Herald
 83684-1,Hanwha Life Esports,red,15.616666666666667,15:37,First Tower
 83684-1,Hanwha Life Esports,red,17.083333333333332,17:05,Chemtech Drake
-83684-1,Hanwha Life Esports,red,20.566666666666666,20:34,Nashor
+83684-1,Hanwha Life Esports,red,20.566666666666663,20:34,Nashor
 83684-1,Hanwha Life Esports,red,24.416666666666668,24:25,Infernal Drake
 83684-2,Hanwha Life Esports,blue,3.4166666666666665,3:25,First blood
 83684-2,Hanwha Life Esports,blue,5.9,5:54,Ocean Drake
 83684-2,Hanwha Life Esports,blue,11.45,11:27,Infernal Drake
-83684-2,G2 Esports,red,12.216666666666667,12:13,First Tower
+83684-2,G2 Esports,red,12.216666666666669,12:13,First Tower
 83684-2,Hanwha Life Esports,blue,15.333333333333334,15:20,Rift Herald
 83684-2,Hanwha Life Esports,blue,16.75,16:45,Hextech Drake
 83684-2,Hanwha Life Esports,blue,22.7,22:42,Hextech Drake
@@ -15162,7 +15162,7 @@ game_uid,team,side,minute,time,objective
 83681-1,Los Grandes,blue,17.766666666666666,17:46,First Tower
 83681-1,Los Grandes,blue,20.6,20:36,Nashor
 83681-1,Los Grandes,blue,22.55,22:33,Ocean Drake
-83681-1,Los Grandes,blue,26.933333333333334,26:56,Nashor
+83681-1,Los Grandes,blue,26.933333333333337,26:56,Nashor
 83681-1,Los Grandes,blue,29.2,29:12,Ocean Drake
 83681-2,Los Grandes,blue,5.933333333333334,5:56,Infernal Drake
 83681-2,Team Liquid,red,7.2,7:12,First blood
@@ -15172,7 +15172,7 @@ game_uid,team,side,minute,time,objective
 83681-2,Team Liquid,red,17.683333333333334,17:41,Chemtech Drake
 83681-2,Team Liquid,red,23.583333333333332,23:35,Chemtech Drake
 83681-2,Team Liquid,red,29.133333333333333,29:08,Chemtech Drake
-83681-2,Team Liquid,red,29.816666666666666,29:49,Nashor
+83681-2,Team Liquid,red,29.816666666666663,29:49,Nashor
 83681-2,Team Liquid,red,36.166666666666664,36:10,Elder Drake
 83681-3,Los Grandes,red,3.3833333333333333,3:23,First blood
 83681-3,Los Grandes,red,13.3,13:18,First Tower

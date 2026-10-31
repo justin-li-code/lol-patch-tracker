@@ -12,15 +12,15 @@
       "games": 45,
       "all": {
         "n": 109,
-        "mae_model": 0.08598959755236918,
-        "mae_baseline": 0.08842289209261686,
+        "mae_model": 0.08598959755236914,
+        "mae_baseline": 0.08842289209261685,
         "direction_acc": 0.5,
         "n_moved": 56
       },
       "changed": {
         "n": 14,
         "mae_model": 0.09679782221872094,
-        "mae_baseline": 0.10884353741496598,
+        "mae_baseline": 0.10884353741496597,
         "direction_acc": 0.7142857142857143,
         "n_moved": 7
       },
@@ -35,24 +35,24 @@
       "games": 45,
       "all": {
         "n": 113,
-        "mae_model": 0.0794649244818293,
+        "mae_model": 0.07954179400820714,
         "mae_baseline": 0.07777777777777777,
         "direction_acc": 0.5294117647058824,
         "n_moved": 51
       },
       "changed": {
         "n": 14,
-        "mae_model": 0.09033771743329888,
+        "mae_model": 0.0900160823143945,
         "mae_baseline": 0.09166666666666666,
         "direction_acc": 0.8,
         "n_moved": 5
       },
-      "spearman_model": 0.7673229989654041,
+      "spearman_model": 0.784478390735255,
       "spearman_baseline": 0.8010637365222716,
       "top10_model": 6,
       "top10_baseline": 7,
       "base_patch": "26.4",
-      "forecast_created": "2026-10-31 05:39 UTC"
+      "forecast_created": "2026-10-31 10:43 UTC"
     }
   },
   "msi": {
@@ -72,14 +72,14 @@
       "all": {
         "n": 113,
         "mae_model": 0.08108393575163388,
-        "mae_baseline": 0.0854082972991112,
+        "mae_baseline": 0.08540829729911119,
         "direction_acc": 0.6190476190476191,
         "n_moved": 63
       },
       "changed": {
         "n": 31,
-        "mae_model": 0.0791974207057532,
-        "mae_baseline": 0.0932909283658943,
+        "mae_model": 0.07919742070575322,
+        "mae_baseline": 0.09329092836589428,
         "direction_acc": 0.9411764705882353,
         "n_moved": 17
       },
@@ -94,24 +94,24 @@
       "games": 71,
       "all": {
         "n": 113,
-        "mae_model": 0.07730513435292581,
+        "mae_model": 0.07764408499220884,
         "mae_baseline": 0.0783971571926789,
-        "direction_acc": 0.48333333333333334,
+        "direction_acc": 0.5333333333333333,
         "n_moved": 60
       },
       "changed": {
         "n": 31,
-        "mae_model": 0.07663925218924511,
+        "mae_model": 0.07713523047659658,
         "mae_baseline": 0.08512173610925514,
         "direction_acc": 0.9375,
         "n_moved": 16
       },
-      "spearman_model": 0.8085227151064712,
+      "spearman_model": 0.8035342264109351,
       "spearman_baseline": 0.8037182077119465,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.11",
-      "forecast_created": "2026-10-31 05:39 UTC"
+      "forecast_created": "2026-10-31 10:43 UTC"
     }
   },
   "ewc": {
@@ -130,13 +130,13 @@
       "all": {
         "n": 109,
         "mae_model": 0.11777245868633072,
-        "mae_baseline": 0.11961199440961988,
+        "mae_baseline": 0.11961199440961987,
         "direction_acc": 0.5217391304347826,
         "n_moved": 69
       },
       "changed": {
         "n": 31,
-        "mae_model": 0.1313635585619761,
+        "mae_model": 0.13136355856197615,
         "mae_baseline": 0.13924974456283754,
         "direction_acc": 0.7368421052631579,
         "n_moved": 19
@@ -152,24 +152,24 @@
       "games": 51,
       "all": {
         "n": 110,
-        "mae_model": 0.11791947545432926,
-        "mae_baseline": 0.11657754010695184,
+        "mae_model": 0.11785137250674137,
+        "mae_baseline": 0.11657754010695186,
         "direction_acc": 0.4696969696969697,
         "n_moved": 66
       },
       "changed": {
         "n": 31,
-        "mae_model": 0.13769813622982624,
-        "mae_baseline": 0.13851992409867173,
+        "mae_model": 0.1372149296750992,
+        "mae_baseline": 0.1385199240986717,
         "direction_acc": 0.7222222222222222,
         "n_moved": 18
       },
-      "spearman_model": 0.6940515532251547,
+      "spearman_model": 0.6862963294957982,
       "spearman_baseline": 0.6813002896164831,
       "top10_model": 5,
       "top10_baseline": 5,
       "base_patch": "26.11",
-      "forecast_created": "2026-10-31 05:39 UTC"
+      "forecast_created": "2026-10-31 10:43 UTC"
     }
   },
   "demacia": {
@@ -190,15 +190,15 @@
       "games": 71,
       "all": {
         "n": 119,
-        "mae_model": 0.05143127887481828,
-        "mae_baseline": 0.045891222601377235,
+        "mae_model": 0.05143127887481826,
+        "mae_baseline": 0.04589122260137723,
         "direction_acc": 0.40540540540540543,
         "n_moved": 37
       },
       "changed": {
         "n": 11,
-        "mae_model": 0.06439696561066911,
-        "mae_baseline": 0.040371473088255706,
+        "mae_model": 0.0643969656106691,
+        "mae_baseline": 0.0403714730882557,
         "direction_acc": 0.5,
         "n_moved": 2
       },
@@ -213,24 +213,24 @@
       "games": 71,
       "all": {
         "n": 122,
-        "mae_model": 0.049320492861414364,
-        "mae_baseline": 0.043552297390902786,
-        "direction_acc": 0.4358974358974359,
+        "mae_model": 0.04890635889598826,
+        "mae_baseline": 0.04355229739090279,
+        "direction_acc": 0.41025641025641024,
         "n_moved": 39
       },
       "changed": {
         "n": 11,
-        "mae_model": 0.06284455357239879,
+        "mae_model": 0.06112729687238376,
         "mae_baseline": 0.03624863660074927,
         "direction_acc": 0.5,
         "n_moved": 2
       },
-      "spearman_model": 0.9329790441452109,
+      "spearman_model": 0.9325990426767848,
       "spearman_baseline": 0.9321449629237124,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
-      "forecast_created": "2026-10-31 05:39 UTC"
+      "forecast_created": "2026-10-31 10:43 UTC"
     }
   },
   "worlds": {
@@ -248,15 +248,15 @@
       "games": 66,
       "all": {
         "n": 125,
-        "mae_model": 0.06283322887461168,
-        "mae_baseline": 0.05621029572836802,
+        "mae_model": 0.06283322887461167,
+        "mae_baseline": 0.05621029572836801,
         "direction_acc": 0.46,
         "n_moved": 50
       },
       "changed": {
         "n": 40,
-        "mae_model": 0.06543353339802672,
-        "mae_baseline": 0.05360076670317634,
+        "mae_model": 0.06543353339802671,
+        "mae_baseline": 0.05360076670317635,
         "direction_acc": 0.42857142857142855,
         "n_moved": 14
       },
@@ -271,24 +271,24 @@
       "games": 66,
       "all": {
         "n": 128,
-        "mae_model": 0.06039050326414039,
+        "mae_model": 0.0603647309609282,
         "mae_baseline": 0.05472695707070707,
-        "direction_acc": 0.44,
+        "direction_acc": 0.46,
         "n_moved": 50
       },
       "changed": {
         "n": 40,
-        "mae_model": 0.0631994967455579,
+        "mae_model": 0.06280319988879442,
         "mae_baseline": 0.05500841750841752,
         "direction_acc": 0.4,
         "n_moved": 15
       },
-      "spearman_model": 0.9066913014637665,
+      "spearman_model": 0.9068030323861817,
       "spearman_baseline": 0.8999802828195609,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
-      "forecast_created": "2026-10-31 05:39 UTC"
+      "forecast_created": "2026-10-31 10:43 UTC"
     }
   }
 }

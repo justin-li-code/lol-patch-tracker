@@ -826,6 +826,58 @@ def match_preview(up: dict, a: str, b: str, best_of: int):
                "what's popular at Worlds, minus likely bans.")
 
 
+BRACKET_CSS = """
+.sw-wrap{overflow-x:auto;padding-bottom:.4rem}
+.sw-grid{display:grid;grid-template-columns:repeat(6,minmax(128px,1fr));gap:12px;min-width:820px}
+.sw-col{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.sw-r{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;opacity:.6;text-align:center}
+.sw-pool{border:1px solid rgba(128,128,128,.28);border-radius:8px;padding:6px 6px 4px}
+.sw-pool.adv{border-color:#1baf7a;background:rgba(27,175,122,.08)}
+.sw-pool.out{border-color:#e34948;background:rgba(227,73,72,.07)}
+.sw-h{font-size:.75rem;font-weight:600;opacity:.7;margin:0 0 4px 2px}
+.sw-m{border-radius:5px;background:rgba(128,128,128,.08);margin-bottom:5px;padding:2px 0}
+.sw-m.pend{border:1px dashed rgba(128,128,128,.45);background:none}
+.sw-t{display:flex;align-items:center;gap:6px;padding:2px 6px;font-size:.85rem;line-height:1.35}
+.sw-t.win{font-weight:700;background:rgba(42,120,214,.16);box-shadow:inset 3px 0 0 #2a78d6;border-radius:4px}
+.sw-t.loss{opacity:.5}
+.sw-t.tba{opacity:.5;font-style:italic}
+.sw-ph{border-radius:50%;background:rgba(128,128,128,.3)}
+.sw-logo{width:16px;height:16px;flex:none;background-size:contain;background-repeat:no-repeat;background-position:center}
+.sw-n{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sw-sc{font-variant-numeric:tabular-nums}
+.sw-when{font-size:.7rem;opacity:.6;padding:0 6px 2px}
+.ko-grid{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:18px;min-width:640px}
+.ko-col{display:flex;flex-direction:column;gap:8px}
+.ko-body{flex:1;display:flex;flex-direction:column;justify-content:space-around;gap:14px}
+.ko-col .sw-m{margin:0;padding:4px 0}
+.ko-champ{border:1px solid #eda100;background:rgba(237,161,0,.1);border-radius:8px;padding:8px 6px}
+.ko-champ .sw-t{font-size:1rem}
+"""
+
+
+def bracket_kit(teams):
+    """Shared pieces for both brackets: logo CSS (each logo embedded once), team rows, TBA rows."""
+    teams = sorted(t for t in set(teams) if t)
+    short = lambda t: TEAM_SHORT.get(t, t)
+    full = lambda t: t.replace("Anyone s", "Anyone's")
+    logo_css = "".join(f".sw-l{i}{{background-image:url({team_logo(t, 40)})}}" for i, t in enumerate(teams)
+                       if team_logo(t, 40))
+    cls = {t: f"sw-l{i}" for i, t in enumerate(teams)}
+    tba = "<div class='sw-t tba' title='Not decided yet'><span class='sw-logo sw-ph'></span><span class='sw-n'>TBA</span></div>"
+
+    def team_line(t, score=None, state=""):
+        if not t:
+            return tba
+        sc = "" if score is None or pd.isna(score) else f"<span class='sw-sc'>{int(score)}</span>"
+        return (f"<div class='sw-t {state}' title='{full(t)}'><span class='sw-logo {cls[t]}'></span>"
+                f"<span class='sw-n'>{short(t)}</span>{sc}</div>")
+    return logo_css, team_line, tba
+
+
+def show_bracket(css: str, body: str):
+    st.markdown(f"<style>{css}{BRACKET_CSS}</style><div class='sw-wrap'>{body}</div>", unsafe_allow_html=True)
+
+
 def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
     """The Swiss stage as a bracket: one column per round, one box per record group."""
     from lolpatch.upcoming import SWISS_FINISHES, SWISS_POOLS, swiss_bracket
@@ -833,25 +885,12 @@ def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
     if b.empty:
         return
     records = b.attrs["records"]
-    teams = sorted(set(b.team_a) | set(b.team_b))
-    short = lambda t: TEAM_SHORT.get(t, t)
-    full = lambda t: t.replace("Anyone s", "Anyone's")
-    # Each logo is embedded once as a CSS class, not once per appearance.
-    logo_css = "".join(f".sw-l{i}{{background-image:url({team_logo(t, 40)})}}" for i, t in enumerate(teams)
-                       if team_logo(t, 40))
-    cls = {t: f"sw-l{i}" for i, t in enumerate(teams)}
-
-    def team_line(t, score, state):
-        sc = "" if score is None or pd.isna(score) else f"<span class='sw-sc'>{int(score)}</span>"
-        return (f"<div class='sw-t {state}' title='{full(t)}'><span class='sw-logo {cls[t]}'></span>"
-                f"<span class='sw-n'>{short(t)}</span>{sc}</div>")
-
-    tba = "<div class='sw-t tba' title='Not decided yet'><span class='sw-logo sw-ph'></span><span class='sw-n'>TBA</span></div>"
+    logo_css, team_line, tba = bracket_kit(set(b.team_a) | set(b.team_b))
 
     def match_html(m):
         if m.pending:
             when = pacific(m.date, "%b %-d, %-I %p")
-            return (f"<div class='sw-m pend'>{team_line(m.team_a, None, '')}{team_line(m.team_b, None, '')}"
+            return (f"<div class='sw-m pend'>{team_line(m.team_a)}{team_line(m.team_b)}"
                     f"<div class='sw-when'>{when}</div></div>")
         st_a = "win" if m.winner == m.team_a else "loss"
         st_b = "win" if m.winner == m.team_b else "loss"
@@ -866,14 +905,14 @@ def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
         open_slots = max(0, SWISS_POOLS[(rnd, pool)] - 2 * len(ms) - len(waiting))
         html = "".join(match_html(m) for m in ms.itertuples())
         if waiting or open_slots:
-            html += (f"<div class='sw-m pend'>{''.join(team_line(t, None, '') for t in waiting)}{tba * open_slots}"
+            html += (f"<div class='sw-m pend'>{''.join(team_line(t) for t in waiting)}{tba * open_slots}"
                      f"<div class='sw-when'>Matchups to be drawn</div></div>")
         return f"<div class='sw-pool'><div class='sw-h'>{pool}</div>{html}</div>"
 
     def final_box(w, l):
         ts = [t for t, r in records.items() if r == (w, l)]
         kind, label = ("adv", "Advanced") if w == 3 else ("out", "Eliminated")
-        lines = "".join(team_line(t, None, "") for t in ts) + tba * max(0, SWISS_FINISHES[(w, l)] - len(ts))
+        lines = "".join(team_line(t) for t in ts) + tba * max(0, SWISS_FINISHES[(w, l)] - len(ts))
         return f"<div class='sw-pool {kind}'><div class='sw-h'>{w}–{l} · {label}</div>{lines}</div>"
 
     cols = [
@@ -885,30 +924,39 @@ def swiss_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
         ("Final records", [final_box(3, 2), final_box(2, 3)]),
     ]
     body = "".join(f"<div class='sw-col'><div class='sw-r'>{name}</div>{''.join(boxes)}</div>" for name, boxes in cols)
-    st.markdown(f"""<style>{logo_css}
-.sw-wrap{{overflow-x:auto;padding-bottom:.4rem}}
-.sw-grid{{display:grid;grid-template-columns:repeat(6,minmax(128px,1fr));gap:12px;min-width:820px}}
-.sw-col{{display:flex;flex-direction:column;justify-content:center;gap:10px}}
-.sw-r{{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;opacity:.6;text-align:center}}
-.sw-pool{{border:1px solid rgba(128,128,128,.28);border-radius:8px;padding:6px 6px 4px}}
-.sw-pool.adv{{border-color:#1baf7a;background:rgba(27,175,122,.08)}}
-.sw-pool.out{{border-color:#e34948;background:rgba(227,73,72,.07)}}
-.sw-h{{font-size:.75rem;font-weight:600;opacity:.7;margin:0 0 4px 2px}}
-.sw-m{{border-radius:5px;background:rgba(128,128,128,.08);margin-bottom:5px;padding:2px 0}}
-.sw-m.pend{{border:1px dashed rgba(128,128,128,.45);background:none}}
-.sw-t{{display:flex;align-items:center;gap:6px;padding:2px 6px;font-size:.85rem;line-height:1.35}}
-.sw-t.win{{font-weight:700;background:rgba(42,120,214,.16);box-shadow:inset 3px 0 0 #2a78d6;border-radius:4px}}
-.sw-t.loss{{opacity:.5}}
-.sw-t.tba{{opacity:.5;font-style:italic}}
-.sw-ph{{border-radius:50%;background:rgba(128,128,128,.3)}}
-.sw-logo{{width:16px;height:16px;flex:none;background-size:contain;background-repeat:no-repeat;background-position:center}}
-.sw-n{{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
-.sw-sc{{font-variant-numeric:tabular-nums}}
-.sw-when{{font-size:.7rem;opacity:.6;padding:0 6px 2px}}
-</style><div class='sw-wrap'><div class='sw-grid'>{body}</div></div>""", unsafe_allow_html=True)
+    show_bracket(logo_css, f"<div class='sw-grid'>{body}</div>")
     st.caption("Teams with the same record play each other each round. Three wins sends a team to the knockout "
                "stage; three losses sends it home. Highlighted in blue = series winner. Dashed boxes are scheduled matches "
                "(dates in Pacific time); TBA marks a team or matchup that isn't decided yet. Hover a team for its full name.")
+
+
+def knockout_bracket_view(games: pd.DataFrame, sched: pd.DataFrame):
+    """Quarterfinals → semifinals → final, best of five, in the drawn bracket order."""
+    from lolpatch.upcoming import knockout_bracket
+    ko = knockout_bracket(games, sched)
+    logo_css, team_line, tba = bracket_kit({m["team_a"] for m in ko} | {m["team_b"] for m in ko})
+
+    def match_html(m):
+        a, b = m["team_a"], m["team_b"]
+        if m["winner"]:
+            st_a = "win" if m["winner"] == a else "loss"
+            st_b = "win" if m["winner"] == b else "loss"
+            return (f"<div class='sw-m'>{team_line(a, m['score_a'], st_a)}{team_line(b, m['score_b'], st_b)}"
+                    f"<div class='sw-when'>Best of 5</div></div>")
+        when = pacific(m["date"], "%b %-d, %-I %p") if a and b else "TBA"
+        return f"<div class='sw-m pend'>{team_line(a)}{team_line(b)}<div class='sw-when'>Best of 5 · {when}</div></div>"
+
+    champ = ko[-1]["winner"]
+    champ_box = (f"<div class='ko-champ'><div class='sw-h'>World Champion</div>{team_line(champ, None, 'win' if champ else '')}"
+                 "</div>")
+    cols = [("Quarterfinals", ko[:4]), ("Semifinals", ko[4:6]), ("Final", ko[6:])]
+    body = "".join(f"<div class='ko-col'><div class='sw-r'>{name}</div>"
+                   f"<div class='ko-body'>{''.join(match_html(m) for m in ms)}</div></div>" for name, ms in cols)
+    body += f"<div class='ko-col'><div class='sw-r'>Champion</div><div class='ko-body'>{champ_box}</div></div>"
+    show_bracket(logo_css, f"<div class='ko-grid'>{body}</div>")
+    st.caption("Every knockout match is best of five. The top two quarterfinals feed one semifinal and the bottom two "
+               "the other. Highlighted in blue = series winner; dashed boxes are still to be played (times in Pacific "
+               "time, TBA until the schedule is published). Hover a team for its full name.")
 
 
 def worlds_upcoming_tab(up: dict):
@@ -916,6 +964,13 @@ def worlds_upcoming_tab(up: dict):
     from lolpatch.upcoming import series_prob, swiss_bracket, unscheduled_matches
     # Matches that will happen but whose teams aren't drawn yet: shown as TBA, never guessed.
     placeholders = unscheduled_matches(swiss_bracket(mx["games"], sched)) if mx is not None else []
+    if mx is not None:
+        from lolpatch.upcoming import knockout_bracket
+        scheduled = [{a, b} for a, b in zip(sched.team_a, sched.team_b)]
+        for m in knockout_bracket(mx["games"], sched):
+            if not m["winner"] and {m["team_a"], m["team_b"]} not in scheduled:
+                placeholders.append(dict(stage=m["round"], team_a=m["team_a"] or "TBA",
+                                         team_b=m["team_b"] or "TBA", best_of=5))
     if len(sched) or placeholders:
         st.markdown("### Next matches")
         rows = []
@@ -927,8 +982,10 @@ def worlds_upcoming_tab(up: dict):
                          "vs": "vs", "  ": team_logo(m.team_b), "Opponent": m.team_b, "Format": f"Bo{int(m.best_of)}",
                          "Favorite": fav, "Chance": fp})
         for ph in placeholders:
-            rows.append({"When (Pacific)": "TBA", "Stage": f"Round {ph['round']} ({ph['pool']})", " ": None, "Team": "TBA",
-                         "vs": "vs", "  ": None, "Opponent": "TBA", "Format": f"Bo{ph['best_of']}",
+            a, b = ph.get("team_a", "TBA"), ph.get("team_b", "TBA")
+            rows.append({"When (Pacific)": "TBA", "Stage": ph.get("stage") or f"Round {ph['round']} ({ph['pool']})",
+                         " ": team_logo(a) if a != "TBA" else None, "Team": a, "vs": "vs",
+                         "  ": team_logo(b) if b != "TBA" else None, "Opponent": b, "Format": f"Bo{ph['best_of']}",
                          "Favorite": "—", "Chance": np.nan})
         picked = st.dataframe(pd.DataFrame(rows).style.format({"Chance": "{:.0%}"}, na_rep="—"),
                               column_config={" ": st.column_config.ImageColumn(" ", width="small"),
@@ -954,10 +1011,13 @@ def worlds_upcoming_tab(up: dict):
         fig = style(fig, xaxis=dict(title="Chance to win Worlds", range=[0, odds.p_title.max() * 1.2], **PCT),
                     hovermode="closest", showlegend=False, bargap=0.35)
         st.plotly_chart(row_layout(fig, odds.team, right=48), use_container_width=True)
-        st.caption("From playing out the rest of Worlds 20,000 times with each team's win chances: the remaining "
-                   "Swiss rounds, then best-of-five quarterfinals, semifinals and final. The real quarterfinal "
-                   "draw isn't known yet, so it's simulated with the usual rules (best records face the worst, "
-                   "teams from the same region kept apart when possible).")
+        from lolpatch.upcoming import knockout_draw
+        draw_note = ("It uses the real quarterfinal draw, and results already played count as they happened."
+                     if knockout_draw() else
+                     "The real quarterfinal draw isn't known yet, so it's simulated with the usual rules (best "
+                     "records face the worst, teams from the same region kept apart when possible).")
+        st.caption("From playing out the rest of Worlds 20,000 times with each team's win chances: any remaining "
+                   f"Swiss rounds, then best-of-five quarterfinals, semifinals and final. {draw_note}")
 
     st.markdown("### Swiss standings")
     stn["Logo"] = stn.team.map(team_logo)
@@ -1116,8 +1176,15 @@ elif page == "Worlds 2026":
     lead(f"{sc['games']} games so far, all on patch {wm['patch']}: {stages}.")
 
     if mx is not None and up is not None:
-        st.markdown("### Swiss stage")
-        swiss_bracket_view(mx["games"], up["schedule"])
+        from lolpatch.upcoming import knockout_draw
+        swiss_done = (up["standings"].status != "Still playing").all() and len(up["standings"]) == 16
+        names = ["Knockout Stage", "Swiss Stage"] if swiss_done or knockout_draw() else ["Swiss Stage", "Knockout Stage"]
+        st.markdown("### Bracket")
+        tabs = dict(zip(names, st.tabs(names)))
+        with tabs["Knockout Stage"]:
+            knockout_bracket_view(mx["games"], up["schedule"])
+        with tabs["Swiss Stage"]:
+            swiss_bracket_view(mx["games"], up["schedule"])
 
     if "worlds_live" in ev:
         with st.expander("Most Picked or Banned Champions"):

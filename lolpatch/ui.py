@@ -18,7 +18,9 @@ SITE_TZ = "America/Los_Angeles"  # times are stored in UTC and shown in Pacific 
 
 
 def pacific(utc: str, fmt: str = "%b %-d, %-I:%M %p %Z") -> str:
-    """'2026-10-29 20:00' (UTC) -> 'Oct 29, 1:00 PM PDT' (PST in winter)."""
+    """'2026-10-29 20:00' (UTC) -> 'Oct 29, 1:00 PM PDT' (PST in winter); 'TBA' when unknown."""
+    if utc is None or pd.isna(utc) or not str(utc).strip():
+        return "TBA"
     return pd.Timestamp(utc).tz_localize("UTC").tz_convert(SITE_TZ).strftime(fmt)
 
 

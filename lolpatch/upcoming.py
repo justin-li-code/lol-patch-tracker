@@ -88,9 +88,75 @@ def pools_and_bans(log=print):
     log(f"  champion pools for {pools.team.nunique()} teams, ban tendencies, Worlds meta by role")
 
 
+KNOCKOUT_DRAW = OVERRIDES / "knockout_bracket.csv"  # slot,team_a,team_b: QF1-QF4 in bracket order
+KNOCKOUT_ROUNDS = ["Quarterfinals", "Semifinals", "Final"]
+
+
+def is_knockout_stage(stage: pd.Series) -> pd.Series:
+    """Schedule rows for the knockouts (Leaguepedia tabs / the fallback file's stage column)."""
+    return stage.astype(str).str.lower().str.startswith(("quarter", "semi", "final"))
+
+
+def _main_event(games: pd.DataFrame) -> pd.DataFrame:
+    return games[(games.event == "worlds") & games.tournament.str.contains("Main Event")]
+
+
+def swiss_games(games: pd.DataFrame) -> pd.DataFrame:
+    """Worlds Main Event games from the Swiss stage (gol.gg labels its rounds ROUND1-ROUND5)."""
+    m = _main_event(games)
+    return m[m.stage.astype(str).str.upper().str.startswith("ROUND")]
+
+
+def knockout_games(games: pd.DataFrame) -> pd.DataFrame:
+    m = _main_event(games)
+    return m[~m.stage.astype(str).str.upper().str.startswith("ROUND")]
+
+
+def knockout_draw() -> list[tuple[str, str]]:
+    """The quarterfinal draw in bracket order (QF1 and QF2 winners meet in one semifinal, QF3 and
+    QF4 in the other). Entered by hand once Riot publishes it; empty until then."""
+    if not KNOCKOUT_DRAW.exists():
+        return []
+    d = pd.read_csv(KNOCKOUT_DRAW).sort_values("slot")
+    return list(zip(d.team_a, d.team_b))
+
+
+def knockout_results(games: pd.DataFrame) -> dict[frozenset, dict]:
+    """Played knockout series by pair of teams: score per team, winner, date."""
+    out = {}
+    for _, s in knockout_games(games).groupby("series_id"):
+        wins = s.winner.value_counts()
+        teams = frozenset((s.blue.iloc[0], s.red.iloc[0]))
+        out[teams] = dict(score={t: int(wins.get(t, 0)) for t in teams}, winner=wins.idxmax(), date=s.date.min())
+    return out
+
+
+def knockout_bracket(games: pd.DataFrame, sched: pd.DataFrame) -> list[dict]:
+    """Seven matches in bracket order (QF1-4, SF1-2, Final). Teams are None until known, then
+    filled from the draw and from winners of earlier rounds; never guessed."""
+    results = knockout_results(games)
+
+    def match(rnd, a, b):
+        m = dict(round=rnd, team_a=a, team_b=b, score_a=None, score_b=None, winner=None, date=None, best_of=5)
+        if a and b:
+            r = results.get(frozenset((a, b)))
+            if r:
+                m.update(score_a=r["score"][a], score_b=r["score"][b], winner=r["winner"], date=r["date"])
+            else:
+                on = sched[[{a, b} == {x, y} for x, y in zip(sched.team_a, sched.team_b)]] if len(sched) else sched
+                if len(on):
+                    m["date"] = on.date.iloc[0]
+        return m
+
+    draw = knockout_draw() + [(None, None)] * 4
+    qf = [match("Quarterfinals", a, b) for a, b in draw[:4]]
+    sf = [match("Semifinals", qf[0]["winner"], qf[1]["winner"]), match("Semifinals", qf[2]["winner"], qf[3]["winner"])]
+    return qf + sf + [match("Final", sf[0]["winner"], sf[1]["winner"])]
+
+
 def standings(log=print) -> pd.DataFrame:
     g = pd.read_csv(PROCESSED / "match_games.csv", dtype={"event": str, "series_id": str})
-    sw = g[(g.event == "worlds") & g.tournament.str.contains("Main Event")]
+    sw = swiss_games(g)
     rows = []
     for sid, s in sw.groupby("series_id"):
         wins = s.winner.value_counts()
@@ -134,7 +200,7 @@ def swiss_bracket(games: pd.DataFrame, sched: pd.DataFrame) -> pd.DataFrame:
     Rounds aren't labelled on gol.gg, so they're rebuilt by playing the series back in order:
     a match is round n+1 for teams that had played n series, in the pool of their shared record.
     """
-    sw = games[(games.event == "worlds") & games.tournament.str.contains("Main Event")]
+    sw = swiss_games(games)
     record: dict[str, list[int]] = {}
     rows = []
     for sid, s in sorted(sw.groupby("series_id"), key=lambda x: (x[1].date.min(), x[0])):
@@ -146,7 +212,7 @@ def swiss_bracket(games: pd.DataFrame, sched: pd.DataFrame) -> pd.DataFrame:
                          date=s.date.min(), pending=False))
         ra[0 if wins.idxmax() == a else 1] += 1
         rb[0 if wins.idxmax() == b else 1] += 1
-    for m in sched.itertuples():
+    for m in sched[~is_knockout_stage(sched.stage)].itertuples() if len(sched) else []:
         ra = record.get(m.team_a, [0, 0])
         rows.append(dict(round=sum(ra) + 1, pool=f"{ra[0]}–{ra[1]}", team_a=m.team_a, team_b=m.team_b,
                          score_a=None, score_b=None, winner=None, date=str(m.date), pending=True))
@@ -166,7 +232,7 @@ def tournament_odds(st: pd.DataFrame, strength: pd.Series, regions: pd.Series, n
     Returns, per team, the chance to reach the quarterfinals, semifinals, final, and to win.
     """
     g = pd.read_csv(PROCESSED / "match_games.csv", dtype={"event": str, "series_id": str})
-    sw = g[(g.event == "worlds") & g.tournament.str.contains("Main Event")]
+    sw = swiss_games(g)
     played = {frozenset((s.blue.iloc[0], s.red.iloc[0])) for _, s in sw.groupby("series_id")}
     rng = np.random.default_rng(seed)
     alive0 = st[st.status == "Still playing"]
@@ -179,6 +245,13 @@ def tournament_odds(st: pd.DataFrame, strength: pd.Series, regions: pd.Series, n
         if key not in cache:
             cache[key] = series_prob(win_prob(strength, a, b), best_of)
         return (a, b) if rng.random() < cache[key] else (b, a)
+
+    draw, results = knockout_draw(), knockout_results(g)
+
+    def knockout_winner(a, b):
+        """Best of five; a series already played keeps its real result."""
+        r = results.get(frozenset((a, b)))
+        return r["winner"] if r else series_winner(a, b, 5)[0]
 
     def pair_up(teams, avoid):
         """Pair a list in order (first with last, ...) after shuffling to dodge `avoid` pairs."""
@@ -225,17 +298,20 @@ def tournament_odds(st: pd.DataFrame, strength: pd.Series, regions: pd.Series, n
                     del live[t]
         for t in qualified:
             counts["p_advance"][t] += 1
-        # Quarterfinals: best records vs worst, avoiding same-region pairs where possible.
-        seeded = sorted(qualified, key=lambda t: (-record[t][0], record[t][1], rng.random()))
-        qf = pair_up(seeded, lambda a, b: regions.get(a) == regions.get(b))
-        rng.shuffle(qf)
-        semis = [series_winner(a, b, 5)[0] for a, b in qf]
+        if len(draw) == 4:
+            qf = draw  # the real quarterfinal draw, in bracket order
+        else:
+            # Quarterfinals not drawn yet: best records vs worst, avoiding same-region pairs where possible.
+            seeded = sorted(qualified, key=lambda t: (-record[t][0], record[t][1], rng.random()))
+            qf = pair_up(seeded, lambda a, b: regions.get(a) == regions.get(b))
+            rng.shuffle(qf)
+        semis = [knockout_winner(a, b) for a, b in qf]
         for t in semis:
             counts["p_semis"][t] += 1
-        finalists = [series_winner(semis[i], semis[i + 1], 5)[0] for i in (0, 2)]
+        finalists = [knockout_winner(semis[i], semis[i + 1]) for i in (0, 2)]
         for t in finalists:
             counts["p_final"][t] += 1
-        counts["p_title"][series_winner(*finalists, 5)[0]] += 1
+        counts["p_title"][knockout_winner(*finalists)] += 1
     return pd.DataFrame({k: v / n_sims for k, v in counts.items()})
 
 
@@ -256,14 +332,19 @@ def drop_played(up: pd.DataFrame, log=print) -> pd.DataFrame:
     path = PROCESSED / "event_games.csv"
     if up.empty or not path.exists():
         return up
-    ev = pd.read_csv(path, usecols=["series_id", "league", "date", "team"], dtype={"series_id": str})
+    ev = pd.read_csv(path, usecols=["series_id", "league", "stage", "date", "team"], dtype={"series_id": str})
     ev = ev[ev.league == "worlds"]
-    played = ev.groupby("series_id").agg(date=("date", "min"), teams=("team", frozenset))
+    played = ev.groupby("series_id").agg(date=("date", "min"), teams=("team", frozenset), stage=("stage", "first"))
     played["date"] = pd.to_datetime(played.date)
+    played["knockout"] = ~played.stage.astype(str).str.upper().str.startswith(("ROUND", "PLAY"))
     keep = []
     for m in up.itertuples():
-        since = pd.to_datetime(m.date).normalize() - pd.Timedelta(days=1)
-        done = played[(played.teams == frozenset((m.team_a, m.team_b))) & (played.date >= since)]
+        pair = played[played.teams == frozenset((m.team_a, m.team_b))]
+        if str(m.stage).lower().startswith(("quarter", "semi", "final")):
+            done = pair[pair.knockout]  # e.g. Gen.G and LYON also met in the Swiss stage
+        else:
+            since = pd.to_datetime(m.date).normalize() - pd.Timedelta(days=1)
+            done = pair[pair.date >= since]
         keep.append(done.empty)
     if not all(keep):
         log(f"  schedule: {len(keep) - sum(keep)} match(es) already played, removed")

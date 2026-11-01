@@ -5,6 +5,13 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.13 · Nov 1: Knockout bracket
+- **New knockout bracket** on the Worlds 2026 page, in the same style as the Swiss one: quarterfinals → semifinals → final → World Champion. It opens first now that the Swiss stage is over; the Swiss bracket is one tab over.
+- **The real quarterfinal draw:** DK vs BLG and KC vs T1 in the top half; TES vs IG and Gen.G vs LYON in the bottom half. Winners move along the bracket on their own as results come in, and later-round spots show TBA until they're decided. Match times show TBA until the official schedule is out.
+- **Title odds use the real draw** and keep results already played, so a team that's knocked out drops to 0%. With the draw known, Gen.G's chance went from 38% to 45%, since it avoids DK, BLG and T1 until the final.
+- **Next matches** lists the four quarterfinals with win chances and previews, plus TBA rows for the semifinals and final.
+- Knockout games no longer count toward Swiss records.
+
 ## v1.12 · Oct 31: Item and rune changes
 - **Item and rune changes are now part of the analysis.** Each patch's Items and Runes changes are read from the patch notes and scored as buffs or nerfs, like champion changes. That's 69 changes this season.
 - **We know what pros actually build.** Every player's final items and runes in all 2,397 games, so each champion's exposure to a change is measured: for example, Twisted Fate built Lich Bane in 81% of games before it was buffed.

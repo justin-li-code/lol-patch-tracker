@@ -161,6 +161,12 @@ Which picks teams make *in response* to an opponent's pick.
   role, 20% the Worlds meta, minus likely bans (game 1, since Worlds is Fearless).
 - **Chance to reach the knockouts:** the remaining Swiss rounds simulated 20,000
   times (same-record pairings, rematches avoided, Bo3).
+- **Knockout bracket:** the quarterfinal draw lives in
+  `data/overrides/knockout_bracket.csv` (`slot,team_a,team_b`; slots 1–2 feed one
+  semifinal, 3–4 the other), entered by hand once Riot publishes it. Results come
+  from gol.gg (stages QUARTERFINALS / SEMIFINALS / FINALS) and winners move on
+  automatically; title odds use the real draw and keep results already played.
+  Swiss views only count gol.gg's ROUND1–ROUND5 games.
 
 ## Item & rune changes (`python -m lolpatch builds`, then `analyze` / `predict`)
 

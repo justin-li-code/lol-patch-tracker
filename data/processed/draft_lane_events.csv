@@ -11329,3 +11329,23 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83686-2,mid,Worlds,Worlds 2026 Main Event,26.20,Anivia,Movistar KOI,8,jojopyun,Viktor,Karmine Corp,10,Kyeahoo,1,True
 83686-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Karmine Corp,3,Busio,Karma,Movistar KOI,5,Alvaro,0,False
 83686-2,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Karmine Corp,7,Canna,Ornn,Movistar KOI,9,Myrwn,0,False
+83689-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,LYON,4,Berserker,Kaisa,Los Grandes,6,Duduhh,1,False
+83689-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,Los Grandes,3,Curse,Pantheon,LYON,5,Inspired,0,False
+83689-1,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,LYON,1,Saint,Cassiopeia,Los Grandes,2,Feisty,1,False
+83689-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Los Grandes,7,Ackerman,Alistar,LYON,8,Isles,0,False
+83689-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,LYON,9,Dhokla,Aurora,Los Grandes,10,Zest,1,True
+83689-2,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,LYON,2,Berserker,Caitlyn,Los Grandes,4,Duduhh,0,False
+83689-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Los Grandes,1,Curse,Lee Sin,LYON,7,Inspired,1,False
+83689-2,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,LYON,6,Saint,LeBlanc,Los Grandes,9,Feisty,0,False
+83689-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,LYON,3,Isles,Karma,Los Grandes,5,Ackerman,0,False
+83689-2,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Los Grandes,8,Zest,Gnar,LYON,10,Dhokla,1,True
+83689-3,bot,Worlds,Worlds 2026 Main Event,26.20,Kalista,Los Grandes,2,Duduhh,Lucian,LYON,4,Berserker,1,False
+83689-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,LYON,1,Inspired,Chogath,Los Grandes,7,Curse,0,False
+83689-3,mid,Worlds,Worlds 2026 Main Event,26.20,Ryze,Los Grandes,6,Feisty,Taliyah,LYON,8,Saint,1,False
+83689-3,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,Los Grandes,3,Ackerman,Milio,LYON,5,Isles,1,False
+83689-3,top,Worlds,Worlds 2026 Main Event,26.20,KSante,LYON,9,Dhokla,Renekton,Los Grandes,10,Zest,0,True
+83692-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Bilibili Gaming,6,Viper,Corki,Hanwha Life Esports,8,Gumayusi,0,False
+83692-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,Hanwha Life Esports,4,Kanavi,Lee Sin,Bilibili Gaming,7,XUN,1,False
+83692-1,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Hanwha Life Esports,1,Zeka,Orianna,Bilibili Gaming,2,Knight,1,False
+83692-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Bilibili Gaming,3,ON,Alistar,Hanwha Life Esports,5,Delight,0,False
+83692-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Hanwha Life Esports,9,Zeus,Gnar,Bilibili Gaming,10,Bin,1,True

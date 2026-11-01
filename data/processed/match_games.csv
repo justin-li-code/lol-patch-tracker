@@ -2411,5 +2411,9 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83681-1,83681,worlds,worlds,83681,Worlds 2026 Main Event,ROUND4,2026-10-30,1,16.2,29.866666666666667,29:52,Los Grandes,Team Liquid,Los Grandes
 83681-2,83682,worlds,worlds,83681,Worlds 2026 Main Event,ROUND4,2026-10-30,2,16.2,38.016666666666666,38:01,Los Grandes,Team Liquid,Team Liquid
 83681-3,83683,worlds,worlds,83681,Worlds 2026 Main Event,ROUND4,2026-10-30,3,16.2,47.266666666666666,47:16,Team Liquid,Los Grandes,Los Grandes
-83686-1,83686,worlds,worlds,83686,Worlds 2026 Main Event,ROUND5,2026-10-31,1,16.20,40.03333333333333,40:02,Karmine Corp,Movistar KOI,Karmine Corp
-83686-2,83687,worlds,worlds,83686,Worlds 2026 Main Event,ROUND5,2026-10-31,2,16.20,26.166666666666668,26:10,Karmine Corp,Movistar KOI,Karmine Corp
+83686-1,83686,worlds,worlds,83686,Worlds 2026 Main Event,ROUND5,2026-10-31,1,16.2,40.03333333333333,40:02,Karmine Corp,Movistar KOI,Karmine Corp
+83686-2,83687,worlds,worlds,83686,Worlds 2026 Main Event,ROUND5,2026-10-31,2,16.2,26.166666666666668,26:10,Karmine Corp,Movistar KOI,Karmine Corp
+83692-1,83692,worlds,worlds,83692,Worlds 2026 Main Event,ROUND5,2026-10-31,1,16.20,41.85,41:51,Bilibili Gaming,Hanwha Life Esports,Bilibili Gaming
+83689-1,83689,worlds,worlds,83689,Worlds 2026 Main Event,ROUND5,2026-10-31,1,16.20,35.1,35:06,LYON,Los Grandes,Los Grandes
+83689-2,83690,worlds,worlds,83689,Worlds 2026 Main Event,ROUND5,2026-10-31,2,16.20,47.1,47:06,Los Grandes,LYON,LYON
+83689-3,83691,worlds,worlds,83689,Worlds 2026 Main Event,ROUND5,2026-10-31,3,16.20,36.7,36:42,LYON,Los Grandes,LYON

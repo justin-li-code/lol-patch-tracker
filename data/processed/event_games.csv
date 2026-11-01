@@ -519,6 +519,14 @@ game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,
 83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83692-1,83692,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Bilibili Gaming,1,Orianna|Nautilus|Ezreal|Lee Sin|Gnar,Jayce|Vi|Nocturne|Jhin|Sivir,0.0,Swiss R5
+83692-1,83692,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Hanwha Life Esports,0,Cassiopeia|Jarvan IV|Alistar|Corki|Rumble,Renata Glasc|Qiyana|Syndra|Wukong|Ambessa,1.0,Swiss R5
+83689-1,83689,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,LYON,0,Syndra|Ezreal|Pantheon|Alistar|Rumble,Renata Glasc|Jarvan IV|Trundle|Ambessa|KSante,1.0,Swiss R5
+83689-1,83689,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Los Grandes,1,Cassiopeia|Vi|Kaisa|Nautilus|Aurora,Qiyana|Nocturne|Olaf|Karma|Jayce,0.0,Swiss R5
+83689-2,83689,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,LYON,1,Yunara|Lulu|Orianna|Lee Sin|Gnar,Nocturne|Seraphine|Jayce|Viktor|Taliyah,0.0,Swiss R5
+83689-2,83689,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Los Grandes,0,Qiyana|Caitlyn|Karma|Ambessa|LeBlanc,Renata Glasc|Wukong|Jarvan IV|Xin Zhao|Renekton,1.0,Swiss R5
+83689-3,83689,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,LYON,1,Nocturne|Lucian|Milio|Taliyah|KSante,Trundle|Viktor|KhaZix|Vayne|Jayce,1.0,Swiss R5
+83689-3,83689,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Los Grandes,0,Kalista|Renata Glasc|Ryze|Chogath|Renekton,Wukong|Jarvan IV|Olaf|Anivia|Twisted Fate,0.0,Swiss R5
 83686-1,83686,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Karmine Corp,1,Ashe|Seraphine|Syndra|Wukong|Renekton,Qiyana|Vi|Jarvan IV|Olaf|Lee Sin,0.0,Swiss R5
 83686-1,83686,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Movistar KOI,0,Cassiopeia|Zeri|Yuumi|Camille|Sejuani,Renata Glasc|Nautilus|Nocturne|Rumble|Jax,1.0,Swiss R5
 83686-2,83686,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Karmine Corp,1,Pantheon|Lulu|Sivir|Rumble|Viktor,Qiyana|Vi|Nocturne|Galio|Ryze,0.0,Swiss R5

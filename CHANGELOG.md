@@ -5,6 +5,9 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.13.1 · Nov 1: Win chances in the brackets
+- Every match still to be played in the knockout and Swiss brackets shows each team's chance to win the series, with the favorite in blue. Today's quarterfinals: BLG 54% vs DK, T1 70% vs KC, TES 51% vs IG, Gen.G 87% vs LYON. Played matches keep their scores, and matches with a TBA team show no chances until both teams are known.
+
 ## v1.13 · Nov 1: Knockout bracket
 - **New knockout bracket** on the Worlds 2026 page, in the same style as the Swiss one: quarterfinals → semifinals → final → World Champion. It opens first now that the Swiss stage is over; the Swiss bracket is one tab over.
 - **The real quarterfinal draw:** DK vs BLG and KC vs T1 in the top half; TES vs IG and Gen.G vs LYON in the bottom half. Winners move along the bracket on their own as results come in, and later-round spots show TBA until they're decided. Match times show TBA until the official schedule is out.

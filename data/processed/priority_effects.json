@@ -9,7 +9,7 @@
       0.5131165530223379
     ],
     "p_value": 0.47895304789096893,
-    "strength_coef": 3.4609355388156553,
+    "strength_coef": 3.4609355388156557,
     "by_bucket": [
       {
         "bucket": "much less meta",
@@ -365,10 +365,10 @@
       {
         "region": "LCK",
         "n_favorite": 89,
-        "n_other": 601,
+        "n_other": 606,
         "win_rate_favorite": 0.7303370786516854,
-        "win_rate_other": 0.6821963394342762,
-        "diff": 0.048140739217409245
+        "win_rate_other": 0.6765676567656765,
+        "diff": 0.05376942188600886
       },
       {
         "region": "LCS",
@@ -389,19 +389,19 @@
       {
         "region": "LPL",
         "n_favorite": 56,
-        "n_other": 519,
+        "n_other": 524,
         "win_rate_favorite": 0.5178571428571429,
-        "win_rate_other": 0.5606936416184971,
-        "diff": -0.0428364987613542
+        "win_rate_other": 0.5648854961832062,
+        "diff": -0.047028353326063255
       }
     ],
-    "within_region_diff": -0.015983272361252018,
+    "within_region_diff": -0.015198036162007872,
     "ci": [
-      -0.07287158545063332,
-      0.04010666099416612
+      -0.07137455031235994,
+      0.03916416800904188
     ],
     "favorite_lift": 0.05,
     "favorite_picks": 339,
-    "total_picks": 2515
+    "total_picks": 2525
   }
 }

@@ -4835,3 +4835,5 @@ game_uid,side,team,result,kills,towers,dragons,barons,gold,dragon_types,heralds,
 83689-2,red,LYON,1,9.0,10.0,4.0,1.0,85200.0,"Mountain, Mountain, Chemtech, Hextech",0,1,0,1.0,42.0,12.0,15.0,15.0
 83689-3,blue,LYON,1,17.0,9.0,3.0,0.0,70400.0,"Ocean, Infernal, Infernal",1,1,1,3.0,38.0,10.0,15.0,13.0
 83689-3,red,Los Grandes,0,7.0,6.0,2.0,1.0,66000.0,"Infernal, Chemtech",0,0,0,0.0,34.0,15.0,7.0,12.0
+83692-2,blue,Bilibili Gaming,1,14.0,10.0,4.0,1.0,67700.0,"Ocean, Mountain, Mountain, Mountain",1,1,1,0.0,40.0,10.0,15.0,15.0
+83692-2,red,Hanwha Life Esports,0,3.0,0.0,1.0,0.0,53400.0,Cloud,0,0,0,3.0,9.0,3.0,2.0,4.0

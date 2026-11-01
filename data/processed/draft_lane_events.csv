@@ -11349,3 +11349,8 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83692-1,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Hanwha Life Esports,1,Zeka,Orianna,Bilibili Gaming,2,Knight,1,False
 83692-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Bilibili Gaming,3,ON,Alistar,Hanwha Life Esports,5,Delight,0,False
 83692-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Hanwha Life Esports,9,Zeus,Gnar,Bilibili Gaming,10,Bin,1,True
+83692-2,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Bilibili Gaming,2,Viper,Caitlyn,Hanwha Life Esports,4,Gumayusi,0,False
+83692-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Pantheon,Bilibili Gaming,7,XUN,Skarner,Hanwha Life Esports,8,Kanavi,0,False
+83692-2,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Hanwha Life Esports,1,Zeka,Locke,Bilibili Gaming,6,Knight,1,False
+83692-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Bilibili Gaming,3,ON,Karma,Hanwha Life Esports,5,Delight,0,False
+83692-2,top,Worlds,Worlds 2026 Main Event,26.20,KSante,Hanwha Life Esports,9,Zeus,Olaf,Bilibili Gaming,10,Bin,1,True

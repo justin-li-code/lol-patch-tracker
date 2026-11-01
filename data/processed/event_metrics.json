@@ -52,7 +52,7 @@
       "top10_model": 6,
       "top10_baseline": 7,
       "base_patch": "26.4",
-      "forecast_created": "2026-11-01 00:10 UTC"
+      "forecast_created": "2026-11-01 06:01 UTC"
     }
   },
   "msi": {
@@ -111,7 +111,7 @@
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.11",
-      "forecast_created": "2026-11-01 00:10 UTC"
+      "forecast_created": "2026-11-01 06:01 UTC"
     }
   },
   "ewc": {
@@ -169,7 +169,7 @@
       "top10_model": 5,
       "top10_baseline": 5,
       "base_patch": "26.11",
-      "forecast_created": "2026-11-01 00:10 UTC"
+      "forecast_created": "2026-11-01 06:01 UTC"
     }
   },
   "demacia": {
@@ -230,7 +230,7 @@
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
-      "forecast_created": "2026-11-01 00:10 UTC"
+      "forecast_created": "2026-11-01 06:01 UTC"
     }
   },
   "worlds": {
@@ -243,53 +243,53 @@
       "Swiss R2": 8,
       "Swiss R3": 13,
       "Swiss R4": 15,
-      "Swiss R5": 6
+      "Swiss R5": 7
     },
     "frozen": {
-      "games": 72,
+      "games": 73,
       "all": {
         "n": 125,
-        "mae_model": 0.06312275690845741,
-        "mae_baseline": 0.05646854082998662,
-        "direction_acc": 0.46153846153846156,
+        "mae_model": 0.06293887053842816,
+        "mae_baseline": 0.05605149364581614,
+        "direction_acc": 0.4423076923076923,
         "n_moved": 52
       },
       "changed": {
         "n": 40,
-        "mae_model": 0.06601175267045352,
-        "mae_baseline": 0.05466030789825971,
+        "mae_model": 0.06674989315223998,
+        "mae_baseline": 0.054536639709523015,
         "direction_acc": 0.42857142857142855,
         "n_moved": 14
       },
-      "spearman_model": 0.8954605827446888,
-      "spearman_baseline": 0.8907012757880922,
+      "spearman_model": 0.8964133449174929,
+      "spearman_baseline": 0.8916799627930527,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
       "forecast_created": "2026-10-24 10:49 UTC"
     },
     "current": {
-      "games": 72,
+      "games": 73,
       "all": {
         "n": 128,
-        "mae_model": 0.06021985592793649,
-        "mae_baseline": 0.054253472222222224,
-        "direction_acc": 0.42,
-        "n_moved": 50
+        "mae_model": 0.059991093353585906,
+        "mae_baseline": 0.05377782534246575,
+        "direction_acc": 0.42857142857142855,
+        "n_moved": 49
       },
       "changed": {
         "n": 40,
-        "mae_model": 0.06337811035256032,
-        "mae_baseline": 0.05601851851851852,
-        "direction_acc": 0.4,
-        "n_moved": 15
+        "mae_model": 0.06411060654738528,
+        "mae_baseline": 0.055980466768138004,
+        "direction_acc": 0.42857142857142855,
+        "n_moved": 14
       },
-      "spearman_model": 0.9100520289198564,
-      "spearman_baseline": 0.904729385796422,
+      "spearman_model": 0.911400370299289,
+      "spearman_baseline": 0.9061276919041794,
       "top10_model": 6,
       "top10_baseline": 6,
       "base_patch": "26.17",
-      "forecast_created": "2026-11-01 00:10 UTC"
+      "forecast_created": "2026-11-01 06:01 UTC"
     }
   }
 }

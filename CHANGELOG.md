@@ -5,6 +5,9 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.13.2 · Nov 1: Correct logos in the knockout bracket
+- **Fixed:** the knockout bracket showed the wrong team logos. Both brackets sit on the same page, and the Swiss bracket's logo settings overwrote the knockout bracket's. Each logo is now tied to its team's name, so the two can't clash.
+
 ## v1.13.1 · Nov 1: Win chances in the brackets
 - Every match still to be played in the knockout and Swiss brackets shows each team's chance to win the series, with the favorite in blue. Today's quarterfinals: BLG 54% vs DK, T1 70% vs KC, TES 51% vs IG, Gen.G 87% vs LYON. Played matches keep their scores, and matches with a TBA team show no chances until both teams are known.
 

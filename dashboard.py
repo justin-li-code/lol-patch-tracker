@@ -862,9 +862,10 @@ def bracket_kit(teams):
     teams = sorted(t for t in set(teams) if t)
     short = lambda t: TEAM_SHORT.get(t, t)
     full = lambda t: t.replace("Anyone s", "Anyone's")
-    logo_css = "".join(f".sw-l{i}{{background-image:url({team_logo(t, 40)})}}" for i, t in enumerate(teams)
-                       if team_logo(t, 40))
-    cls = {t: f"sw-l{i}" for i, t in enumerate(teams)}
+    # Classes are named after the team, not its position in a list: both brackets sit on the same
+    # page, and numbered classes from one bracket's CSS would repaint the other's logos.
+    cls = {t: "sw-l-" + re.sub(r"[^a-z0-9]", "", t.lower()) for t in teams}
+    logo_css = "".join(f".{cls[t]}{{background-image:url({team_logo(t, 40)})}}" for t in teams if team_logo(t, 40))
     tba = "<div class='sw-t tba' title='Not decided yet'><span class='sw-logo sw-ph'></span><span class='sw-n'>TBA</span></div>"
 
     def team_line(t, score=None, state="", chance=None):

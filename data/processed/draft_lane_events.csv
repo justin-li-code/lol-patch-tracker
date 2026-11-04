@@ -11354,3 +11354,23 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83692-2,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Hanwha Life Esports,1,Zeka,Locke,Bilibili Gaming,6,Knight,1,False
 83692-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Bilibili Gaming,3,ON,Karma,Hanwha Life Esports,5,Delight,0,False
 83692-2,top,Worlds,Worlds 2026 Main Event,26.20,KSante,Hanwha Life Esports,9,Zeus,Olaf,Bilibili Gaming,10,Bin,1,True
+83694-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Top Esports,5,JackeyLove,Kaisa,Invictus Gaming,7,JiaQi,1,False
+83694-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,Top Esports,1,Tian,Qiyana,Invictus Gaming,2,Wei,1,False
+83694-1,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Top Esports,4,Creme,Syndra,Invictus Gaming,6,RooKie,1,False
+83694-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Invictus Gaming,3,meiko,Rell,Top Esports,9,Zhuo,0,False
+83694-1,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Top Esports,8,369,Gnar,Invictus Gaming,10,TheShy,1,True
+83694-2,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Invictus Gaming,3,JiaQi,Kalista,Top Esports,4,JackeyLove,1,False
+83694-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Wukong,Invictus Gaming,7,Wei,Xin Zhao,Top Esports,8,Tian,1,False
+83694-2,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Top Esports,1,Creme,Viktor,Invictus Gaming,6,RooKie,0,False
+83694-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Invictus Gaming,2,meiko,Renata Glasc,Top Esports,5,Zhuo,1,False
+83694-2,top,Worlds,Worlds 2026 Main Event,26.20,Renekton,Top Esports,9,369,Vayne,Invictus Gaming,10,TheShy,0,True
+83694-3,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Top Esports,2,JackeyLove,Zeri,Invictus Gaming,4,JiaQi,1,False
+83694-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Jayce,Invictus Gaming,1,Wei,Skarner,Top Esports,6,Tian,0,False
+83694-3,mid,Worlds,Worlds 2026 Main Event,26.20,Annie,Invictus Gaming,8,RooKie,Yone,Top Esports,10,Creme,0,True
+83694-3,support,Worlds,Worlds 2026 Main Event,26.20,Seraphine,Top Esports,3,Zhuo,Yuumi,Invictus Gaming,5,meiko,1,False
+83694-3,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Top Esports,7,369,Ornn,Invictus Gaming,9,TheShy,1,False
+83694-4,bot,Worlds,Worlds 2026 Main Event,26.20,Lucian,Top Esports,1,JackeyLove,Jhin,Invictus Gaming,2,JiaQi,1,False
+83694-4,jungle,Worlds,Worlds 2026 Main Event,26.20,Naafiri,Invictus Gaming,3,Wei,Maokai,Top Esports,5,Tian,0,False
+83694-4,mid,Worlds,Worlds 2026 Main Event,26.20,Aurora,Top Esports,9,Creme,Taliyah,Invictus Gaming,10,RooKie,1,True
+83694-4,support,Worlds,Worlds 2026 Main Event,26.20,Milio,Top Esports,4,Zhuo,Alistar,Invictus Gaming,6,meiko,1,False
+83694-4,top,Worlds,Worlds 2026 Main Event,26.20,KSante,Invictus Gaming,7,TheShy,Aatrox,Top Esports,8,369,0,False

@@ -519,6 +519,14 @@ game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,
 83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83694-1,83694,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,16.20,26.20,Invictus Gaming,1,Qiyana|Nautilus|Syndra|Kaisa|Gnar,Nocturne|Renata Glasc|Rumble|Leona|Alistar,0.0,Quarterfinals
+83694-1,83694,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,16.20,26.20,Top Esports,0,Vi|Cassiopeia|Ezreal|Ambessa|Rell,Olaf|Jarvan IV|Galio|Jhin|Renekton,1.0,Quarterfinals
+83694-2,83694,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,16.20,26.20,Invictus Gaming,0,Lulu|Yunara|Viktor|Wukong|Vayne,Nocturne|Pantheon|Lee Sin|Rumble|Maokai,0.0,Quarterfinals
+83694-2,83694,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,16.20,26.20,Top Esports,1,Orianna|Kalista|Renata Glasc|Xin Zhao|Renekton,Olaf|Jarvan IV|Locke|Jayce|Trundle,1.0,Quarterfinals
+83694-3,83694,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,16.20,26.20,Invictus Gaming,1,Jayce|Zeri|Yuumi|Annie|Ornn,Pantheon|Lee Sin|KSante|Locke|Akali,1.0,Quarterfinals
+83694-3,83694,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,16.20,26.20,Top Esports,0,Ashe|Seraphine|Skarner|Rumble|Yone,Olaf|Nocturne|Jarvan IV|Trundle|Maokai,0.0,Quarterfinals
+83694-4,83694,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,16.20,26.20,Invictus Gaming,1,Jhin|Naafiri|Alistar|KSante|Taliyah,Nocturne|Pantheon|Jarvan IV|Locke|Akali,0.0,Quarterfinals
+83694-4,83694,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,16.20,26.20,Top Esports,0,Lucian|Milio|Maokai|Aatrox|Aurora,Olaf|Caitlyn|Lee Sin|Camille|Gwen,1.0,Quarterfinals
 83692-1,83692,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Bilibili Gaming,1,Orianna|Nautilus|Ezreal|Lee Sin|Gnar,Jayce|Vi|Nocturne|Jhin|Sivir,0.0,Swiss R5
 83692-1,83692,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Hanwha Life Esports,0,Cassiopeia|Jarvan IV|Alistar|Corki|Rumble,Renata Glasc|Qiyana|Syndra|Wukong|Ambessa,1.0,Swiss R5
 83692-2,83692,worlds,Worlds 2026 Main Event,ROUND5,2026-10-31,16.20,26.20,Bilibili Gaming,1,Yunara|Lulu|Locke|Pantheon|Olaf,Jayce|Vi|Nocturne|Xin Zhao|Wukong,0.0,Swiss R5

@@ -1,9 +1,9 @@
 {
-  "games": 2271,
-  "lanes": 11355,
+  "games": 2275,
+  "lanes": 11375,
   "role_source": "exact for 100% of picks, inferred for the rest",
-  "lane_pairs_tested": 1604,
+  "lane_pairs_tested": 1605,
   "lane_solid": 196,
-  "fp_pairs_tested": 1250,
+  "fp_pairs_tested": 1252,
   "fp_solid": 37
 }

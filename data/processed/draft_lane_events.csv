@@ -11374,3 +11374,18 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83694-4,mid,Worlds,Worlds 2026 Main Event,26.20,Aurora,Top Esports,9,Creme,Taliyah,Invictus Gaming,10,RooKie,1,True
 83694-4,support,Worlds,Worlds 2026 Main Event,26.20,Milio,Top Esports,4,Zhuo,Alistar,Invictus Gaming,6,meiko,1,False
 83694-4,top,Worlds,Worlds 2026 Main Event,26.20,KSante,Invictus Gaming,7,TheShy,Aatrox,Top Esports,8,369,0,False
+83699-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,LYON,1,Berserker,Jhin,Gen.G,3,Ruler,1,False
+83699-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Gen.G,2,Canyon,Lee Sin,LYON,4,Inspired,0,False
+83699-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,LYON,9,Saint,Galio,Gen.G,10,Chovy,1,True
+83699-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,LYON,5,Isles,Leona,Gen.G,6,Duro,1,False
+83699-1,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Gen.G,7,Kiin,Jax,LYON,8,Dhokla,0,False
+83699-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Gen.G,3,Ruler,Mel,LYON,8,Berserker,0,False
+83699-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,Gen.G,2,Canyon,Wukong,LYON,4,Inspired,0,False
+83699-2,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,LYON,1,Saint,Viktor,Gen.G,10,Chovy,1,True
+83699-2,support,Worlds,Worlds 2026 Main Event,26.20,Seraphine,Gen.G,6,Duro,Pyke,LYON,9,Isles,0,False
+83699-2,top,Worlds,Worlds 2026 Main Event,26.20,Jayce,LYON,5,Dhokla,Sion,Gen.G,7,Kiin,1,False
+83699-3,bot,Worlds,Worlds 2026 Main Event,26.20,Xayah,Gen.G,4,Ruler,Corki,LYON,6,Berserker,0,False
+83699-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Pantheon,Gen.G,1,Canyon,Trundle,LYON,3,Inspired,0,False
+83699-3,mid,Worlds,Worlds 2026 Main Event,26.20,Anivia,LYON,7,Saint,Taliyah,Gen.G,9,Chovy,1,False
+83699-3,support,Worlds,Worlds 2026 Main Event,26.20,Alistar,LYON,2,Isles,Rakan,Gen.G,5,Duro,1,False
+83699-3,top,Worlds,Worlds 2026 Main Event,26.20,Aurora,Gen.G,8,Kiin,Gangplank,LYON,10,Dhokla,0,True

@@ -11389,3 +11389,18 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83699-3,mid,Worlds,Worlds 2026 Main Event,26.20,Anivia,LYON,7,Saint,Taliyah,Gen.G,9,Chovy,1,False
 83699-3,support,Worlds,Worlds 2026 Main Event,26.20,Alistar,LYON,2,Isles,Rakan,Gen.G,5,Duro,1,False
 83699-3,top,Worlds,Worlds 2026 Main Event,26.20,Aurora,Gen.G,8,Kiin,Gangplank,LYON,10,Dhokla,0,True
+83704-1,bot,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Bilibili Gaming,7,Viper,Corki,Dplus KIA,8,Smash,0,False
+83704-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Dplus KIA,1,Lucid,Naafiri,Bilibili Gaming,3,XUN,1,False
+83704-1,mid,Worlds,Worlds 2026 Main Event,26.20,Akali,Dplus KIA,9,ShowMaker,Galio,Bilibili Gaming,10,Knight,1,True
+83704-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Bilibili Gaming,2,ON,Rell,Dplus KIA,4,Career,0,False
+83704-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Dplus KIA,5,Siwoo,Ambessa,Bilibili Gaming,6,Bin,1,False
+83704-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Bilibili Gaming,3,Viper,Yunara,Dplus KIA,4,Smash,0,False
+83704-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,Dplus KIA,1,Lucid,Lee Sin,Bilibili Gaming,2,XUN,1,False
+83704-2,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Bilibili Gaming,7,Knight,Ryze,Dplus KIA,8,ShowMaker,0,False
+83704-2,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Dplus KIA,5,Career,Leona,Bilibili Gaming,10,ON,1,True
+83704-2,top,Worlds,Worlds 2026 Main Event,26.20,Gnar,Bilibili Gaming,6,Bin,Kennen,Dplus KIA,9,Siwoo,0,False
+83704-3,bot,Worlds,Worlds 2026 Main Event,26.20,Lucian,Bilibili Gaming,2,Viper,Aphelios,Dplus KIA,8,Smash,0,False
+83704-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Pantheon,Dplus KIA,4,Lucid,Trundle,Bilibili Gaming,7,XUN,1,False
+83704-3,mid,Worlds,Worlds 2026 Main Event,26.20,Viktor,Dplus KIA,5,ShowMaker,Ahri,Bilibili Gaming,10,Knight,1,True
+83704-3,support,Worlds,Worlds 2026 Main Event,26.20,Milio,Bilibili Gaming,3,ON,Thresh,Dplus KIA,9,Career,0,False
+83704-3,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Dplus KIA,1,Siwoo,Jax,Bilibili Gaming,6,Bin,1,False

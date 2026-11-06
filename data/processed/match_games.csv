@@ -2422,6 +2422,9 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83694-2,83695,worlds,worlds,83694,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,2,16.2,47.15,47:09,Invictus Gaming,Top Esports,Top Esports
 83694-3,83696,worlds,worlds,83694,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,3,16.2,29.483333333333334,29:29,Top Esports,Invictus Gaming,Invictus Gaming
 83694-4,83697,worlds,worlds,83694,Worlds 2026 Main Event,QUARTERFINALS,2026-11-03,4,16.2,30.966666666666665,30:58,Invictus Gaming,Top Esports,Invictus Gaming
-83699-1,83699,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,1,16.20,32.21666666666667,32:13,Gen.G,LYON,Gen.G
-83699-2,83700,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,2,16.20,26.533333333333335,26:32,Gen.G,LYON,Gen.G
-83699-3,83701,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,3,16.20,33.483333333333334,33:29,Gen.G,LYON,Gen.G
+83699-1,83699,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,1,16.2,32.21666666666667,32:13,Gen.G,LYON,Gen.G
+83699-2,83700,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,2,16.2,26.533333333333335,26:32,Gen.G,LYON,Gen.G
+83699-3,83701,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,3,16.2,33.483333333333334,33:29,Gen.G,LYON,Gen.G
+83704-1,83704,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,1,16.20,33.35,33:21,Bilibili Gaming,Dplus KIA,Bilibili Gaming
+83704-2,83705,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,2,16.20,32.18333333333333,32:11,Dplus KIA,Bilibili Gaming,Bilibili Gaming
+83704-3,83706,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,3,16.20,32.6,32:36,Dplus KIA,Bilibili Gaming,Bilibili Gaming

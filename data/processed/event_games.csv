@@ -519,6 +519,12 @@ game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,
 83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83704-1,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Bilibili Gaming,1,Nautilus|Naafiri|Ambessa|Cassiopeia|Galio,Vi|Olaf|Lee Sin|Kaisa|Syndra,0.0,Quarterfinals
+83704-1,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Dplus KIA,0,Qiyana|Rell|Rumble|Corki|Akali,Renata Glasc|Nocturne|Jarvan IV|Orianna|Ezreal,1.0,Quarterfinals
+83704-2,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Bilibili Gaming,1,Lee Sin|Ezreal|Gnar|Orianna|Leona,Vi|Olaf|Lucian|Vayne|Syndra,0.0,Quarterfinals
+83704-2,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Dplus KIA,0,Jarvan IV|Yunara|Lulu|Ryze|Kennen,Renata Glasc|Nocturne|Jayce|Locke|Alistar,1.0,Quarterfinals
+83704-3,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Bilibili Gaming,1,Lucian|Milio|Jax|Trundle|Ahri,Vi|Caitlyn|Syndra|Seraphine|Rakan,0.0,Quarterfinals
+83704-3,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Dplus KIA,0,Olaf|Pantheon|Viktor|Aphelios|Thresh,Nocturne|Renata Glasc|Locke|Skarner|Yone,1.0,Quarterfinals
 83699-1,83699,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,16.20,26.20,Gen.G,1,Qiyana|Jhin|Leona|Olaf|Galio,Nocturne|Renata Glasc|Cassiopeia|Rumble|KSante,0.0,Quarterfinals
 83699-1,83699,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,16.20,26.20,LYON,0,Ezreal|Lee Sin|Nautilus|Jax|Orianna,Akali|Syndra|Vi|Jayce|Locke,1.0,Quarterfinals
 83699-2,83699,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,16.20,26.20,Gen.G,1,Jarvan IV|Ashe|Seraphine|Sion|Viktor,Nocturne|Renata Glasc|Lucian|Lulu|Zeri,0.0,Quarterfinals

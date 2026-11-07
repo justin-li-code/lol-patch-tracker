@@ -11404,3 +11404,23 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83704-3,mid,Worlds,Worlds 2026 Main Event,26.20,Viktor,Dplus KIA,5,ShowMaker,Ahri,Bilibili Gaming,10,Knight,1,True
 83704-3,support,Worlds,Worlds 2026 Main Event,26.20,Milio,Bilibili Gaming,3,ON,Thresh,Dplus KIA,9,Career,0,False
 83704-3,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Dplus KIA,1,Siwoo,Jax,Bilibili Gaming,6,Bin,1,False
+83709-1,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Karmine Corp,4,Caliste,Yunara,T1,6,Peyz,1,False
+83709-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,T1,3,Oner,Lee Sin,Karmine Corp,9,Yike,0,False
+83709-1,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Karmine Corp,8,Kyeahoo,Viktor,T1,10,Faker,1,True
+83709-1,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,T1,2,Keria,Leona,Karmine Corp,5,Busio,0,False
+83709-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,Karmine Corp,1,Canna,Ornn,T1,7,Doran,1,False
+83709-2,bot,Worlds,Worlds 2026 Main Event,26.20,Kaisa,T1,8,Peyz,Tristana,Karmine Corp,10,Caliste,0,True
+83709-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Pantheon,Karmine Corp,3,Yike,Trundle,T1,9,Oner,1,False
+83709-2,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,T1,1,Faker,Orianna,Karmine Corp,2,Kyeahoo,0,False
+83709-2,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,T1,5,Keria,Rell,Karmine Corp,7,Busio,0,False
+83709-2,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,T1,4,Doran,Ambessa,Karmine Corp,6,Canna,0,False
+83709-3,bot,Worlds,Worlds 2026 Main Event,26.20,Ashe,Karmine Corp,2,Caliste,Zeri,T1,4,Peyz,0,False
+83709-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Xin Zhao,Karmine Corp,6,Yike,Sejuani,T1,8,Oner,0,False
+83709-3,mid,Worlds,Worlds 2026 Main Event,26.20,Anivia,Karmine Corp,7,Kyeahoo,Taliyah,T1,9,Faker,0,False
+83709-3,support,Worlds,Worlds 2026 Main Event,26.20,Seraphine,Karmine Corp,3,Busio,Yuumi,T1,5,Keria,0,False
+83709-3,top,Worlds,Worlds 2026 Main Event,26.20,Jayce,T1,1,Doran,KSante,Karmine Corp,10,Canna,1,True
+83709-4,bot,Worlds,Worlds 2026 Main Event,26.20,Xayah,Karmine Corp,2,Caliste,Miss Fortune,T1,5,Peyz,1,False
+83709-4,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,T1,1,Oner,Wukong,Karmine Corp,6,Yike,0,False
+83709-4,mid,Worlds,Worlds 2026 Main Event,26.20,Ahri,Karmine Corp,7,Kyeahoo,Annie,T1,8,Faker,1,False
+83709-4,support,Worlds,Worlds 2026 Main Event,26.20,Rakan,Karmine Corp,3,Busio,Neeko,T1,4,Keria,1,False
+83709-4,top,Worlds,Worlds 2026 Main Event,26.20,Camille,T1,9,Doran,Renekton,Karmine Corp,10,Canna,0,True

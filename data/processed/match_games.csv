@@ -2425,6 +2425,10 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83699-1,83699,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,1,16.2,32.21666666666667,32:13,Gen.G,LYON,Gen.G
 83699-2,83700,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,2,16.2,26.533333333333335,26:32,Gen.G,LYON,Gen.G
 83699-3,83701,worlds,worlds,83699,Worlds 2026 Main Event,QUARTERFINALS,2026-11-04,3,16.2,33.483333333333334,33:29,Gen.G,LYON,Gen.G
-83704-1,83704,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,1,16.20,33.35,33:21,Bilibili Gaming,Dplus KIA,Bilibili Gaming
-83704-2,83705,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,2,16.20,32.18333333333333,32:11,Dplus KIA,Bilibili Gaming,Bilibili Gaming
-83704-3,83706,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,3,16.20,32.6,32:36,Dplus KIA,Bilibili Gaming,Bilibili Gaming
+83704-1,83704,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,1,16.2,33.35,33:21,Bilibili Gaming,Dplus KIA,Bilibili Gaming
+83704-2,83705,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,2,16.2,32.18333333333333,32:11,Dplus KIA,Bilibili Gaming,Bilibili Gaming
+83704-3,83706,worlds,worlds,83704,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,3,16.2,32.6,32:36,Dplus KIA,Bilibili Gaming,Bilibili Gaming
+83709-1,83709,worlds,worlds,83709,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,1,16.20,35.65,35:39,T1,Karmine Corp,T1
+83709-2,83710,worlds,worlds,83709,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,2,16.20,29.7,29:42,Karmine Corp,T1,T1
+83709-3,83711,worlds,worlds,83709,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,3,16.20,36.733333333333334,36:44,Karmine Corp,T1,Karmine Corp
+83709-4,83712,worlds,worlds,83709,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,4,16.20,35.25,35:15,Karmine Corp,T1,T1

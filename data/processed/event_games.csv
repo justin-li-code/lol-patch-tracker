@@ -519,6 +519,14 @@ game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,
 83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83709-1,83709,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,16.20,26.20,T1,1,Lulu|Jarvan IV|Yunara|Ornn|Viktor,Cassiopeia|Vi|Qiyana|Wukong|Pantheon,0.0,Quarterfinals
+83709-1,83709,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,16.20,26.20,Karmine Corp,0,Rumble|Ezreal|Leona|Syndra|Lee Sin,Nocturne|Renata Glasc|Galio|Locke|Orianna,1.0,Quarterfinals
+83709-2,83709,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,16.20,26.20,T1,1,Cassiopeia|Olaf|Nautilus|Kaisa|Trundle,Locke|Akali|Renata Glasc|Alistar|Xayah,1.0,Quarterfinals
+83709-2,83709,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,16.20,26.20,Karmine Corp,0,Orianna|Pantheon|Ambessa|Rell|Tristana,Vi|Qiyana|Nocturne|Xin Zhao|Wukong,0.0,Quarterfinals
+83709-3,83709,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,16.20,26.20,T1,0,Jayce|Zeri|Yuumi|Sejuani|Taliyah,Renata Glasc|Locke|Wukong|Camille|Akali,1.0,Quarterfinals
+83709-3,83709,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,16.20,26.20,Karmine Corp,1,Ashe|Seraphine|Xin Zhao|Anivia|KSante,Vi|Qiyana|Nocturne|Sylas|Galio,0.0,Quarterfinals
+83709-4,83709,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,16.20,26.20,T1,1,Nocturne|Neeko|Miss Fortune|Annie|Camille,Renata Glasc|Akali|Maokai|Jax|Galio,1.0,Quarterfinals
+83709-4,83709,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-06,16.20,26.20,Karmine Corp,0,Xayah|Rakan|Wukong|Ahri|Renekton,Vi|Qiyana|Caitlyn|Ryze|Sylas,0.0,Quarterfinals
 83704-1,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Bilibili Gaming,1,Nautilus|Naafiri|Ambessa|Cassiopeia|Galio,Vi|Olaf|Lee Sin|Kaisa|Syndra,0.0,Quarterfinals
 83704-1,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Dplus KIA,0,Qiyana|Rell|Rumble|Corki|Akali,Renata Glasc|Nocturne|Jarvan IV|Orianna|Ezreal,1.0,Quarterfinals
 83704-2,83704,worlds,Worlds 2026 Main Event,QUARTERFINALS,2026-11-05,16.20,26.20,Bilibili Gaming,1,Lee Sin|Ezreal|Gnar|Orianna|Leona,Vi|Olaf|Lucian|Vayne|Syndra,0.0,Quarterfinals

@@ -4857,3 +4857,11 @@ game_uid,side,team,result,kills,towers,dragons,barons,gold,dragon_types,heralds,
 83704-2,red,Bilibili Gaming,1,13.0,8.0,5.0,0.0,64099.99999999999,"Cloud, Cloud, Ocean, Chemtech",1,1,0,0.0,30.0,5.0,15.0,10.0
 83704-3,blue,Dplus KIA,0,9.0,3.0,1.0,0.0,57600.0,Mountain,1,0,1,0.0,17.0,5.0,7.0,5.0
 83704-3,red,Bilibili Gaming,1,25.0,9.0,4.0,2.0,67700.0,"Cloud, Mountain, Mountain, Hextech",0,1,0,3.0,36.0,15.0,15.0,6.0
+83709-1,blue,T1,1,23.0,11.0,3.0,2.0,78800.0,"Hextech, Hextech, Hextech",1,0,1,1.0,45.0,15.0,15.0,15.0
+83709-1,red,Karmine Corp,0,7.0,2.0,2.0,0.0,65500.0,"Infernal, Chemtech",0,1,0,2.0,14.0,3.0,6.0,5.0
+83709-2,blue,Karmine Corp,0,9.0,2.0,1.0,0.0,55900.0,Hextech,0,0,0,0.0,18.0,7.0,3.0,8.0
+83709-2,red,T1,1,20.0,9.0,4.0,1.0,65200.0,"Ocean, Infernal, Hextech, Hextech",1,1,1,3.0,38.0,12.0,15.0,11.0
+83709-3,blue,Karmine Corp,1,8.0,8.0,5.0,2.0,70400.0,"Ocean, Ocean, Ocean, Chemtech",0,1,0,2.0,34.0,8.0,11.0,15.0
+83709-3,red,T1,0,6.0,6.0,1.0,0.0,66400.0,Cloud,1,0,1,1.0,30.0,10.0,10.0,10.0
+83709-4,blue,Karmine Corp,0,8.0,5.0,2.0,0.0,63600.0,"Cloud, Chemtech",1,1,0,1.0,29.0,12.0,10.0,7.0
+83709-4,red,T1,1,17.0,10.0,4.0,2.0,73200.0,"Ocean, Chemtech, Chemtech, Chemtech",0,0,1,2.0,40.0,15.0,15.0,10.0

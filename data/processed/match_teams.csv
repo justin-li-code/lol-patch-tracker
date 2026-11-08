@@ -4865,3 +4865,9 @@ game_uid,side,team,result,kills,towers,dragons,barons,gold,dragon_types,heralds,
 83709-3,red,T1,0,6.0,6.0,1.0,0.0,66400.0,Cloud,1,0,1,1.0,30.0,10.0,10.0,10.0
 83709-4,blue,Karmine Corp,0,8.0,5.0,2.0,0.0,63600.0,"Cloud, Chemtech",1,1,0,1.0,29.0,12.0,10.0,7.0
 83709-4,red,T1,1,17.0,10.0,4.0,2.0,73200.0,"Ocean, Chemtech, Chemtech, Chemtech",0,0,1,2.0,40.0,15.0,15.0,10.0
+83713-1,blue,Gen.G,1,29.0,9.0,4.0,1.0,73300.0,"Mountain, Hextech, Hextech, Hextech",1,1,0,1.0,37.0,15.0,15.0,7.0
+83713-1,red,Invictus Gaming,0,9.0,3.0,1.0,0.0,58600.0,Chemtech,0,0,1,2.0,18.0,6.0,7.0,5.0
+83713-2,blue,Gen.G,1,26.0,9.0,4.0,1.0,63800.0,"Ocean, Hextech, Hextech, Hextech",0,0,1,0.0,36.0,10.0,15.0,11.0
+83713-2,red,Invictus Gaming,0,9.0,1.0,1.0,0.0,49300.0,Chemtech,0,1,0,3.0,9.0,5.0,1.0,3.0
+83713-3,blue,Invictus Gaming,0,18.0,5.0,4.0,0.0,71700.0,"Ocean, Mountain, Mountain, Hextech",1,1,1,2.0,28.0,10.0,10.0,8.0
+83713-3,red,Gen.G,1,16.0,9.0,2.0,1.0,78200.0,"Mountain, Mountain",0,0,0,1.0,35.0,10.0,15.0,10.0

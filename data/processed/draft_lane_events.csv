@@ -11439,3 +11439,23 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83713-3,mid,Worlds,Worlds 2026 Main Event,26.20,Taliyah,Gen.G,5,Chovy,Locke,Invictus Gaming,6,RooKie,0,False
 83713-3,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Gen.G,1,Duro,Alistar,Invictus Gaming,2,meiko,0,False
 83713-3,top,Worlds,Worlds 2026 Main Event,26.20,Camille,Gen.G,8,Kiin,Gnar,Invictus Gaming,10,TheShy,0,True
+83718-1,bot,Worlds,Worlds 2026 Main Event,26.20,Xayah,T1,8,Peyz,Corki,Bilibili Gaming,10,Viper,1,True
+83718-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,T1,1,Oner,Naafiri,Bilibili Gaming,7,XUN,1,False
+83718-1,mid,Worlds,Worlds 2026 Main Event,26.20,Orianna,Bilibili Gaming,3,Knight,Locke,T1,4,Faker,0,False
+83718-1,support,Worlds,Worlds 2026 Main Event,26.20,Nautilus,Bilibili Gaming,2,ON,Rakan,T1,9,Keria,0,False
+83718-1,top,Worlds,Worlds 2026 Main Event,26.20,Rumble,T1,5,Doran,KSante,Bilibili Gaming,6,Bin,1,False
+83718-2,bot,Worlds,Worlds 2026 Main Event,26.20,Jhin,T1,5,Peyz,Kaisa,Bilibili Gaming,6,Viper,0,False
+83718-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Qiyana,Bilibili Gaming,2,XUN,Lee Sin,T1,4,Oner,1,False
+83718-2,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,T1,9,Faker,LeBlanc,Bilibili Gaming,10,Knight,0,True
+83718-2,support,Worlds,Worlds 2026 Main Event,26.20,Alistar,Bilibili Gaming,7,ON,Poppy,T1,8,Keria,1,False
+83718-2,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,T1,1,Doran,Camille,Bilibili Gaming,3,Bin,0,False
+83718-3,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Bilibili Gaming,1,Viper,Sivir,T1,7,Peyz,0,False
+83718-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Jarvan IV,T1,3,Oner,Pantheon,Bilibili Gaming,4,XUN,1,False
+83718-3,mid,Worlds,Worlds 2026 Main Event,26.20,Taliyah,Bilibili Gaming,9,Knight,Ahri,T1,10,Faker,0,True
+83718-3,support,Worlds,Worlds 2026 Main Event,26.20,Karma,T1,2,Keria,Nami,Bilibili Gaming,8,ON,1,False
+83718-3,top,Worlds,Worlds 2026 Main Event,26.20,Gnar,Bilibili Gaming,5,Bin,Ambessa,T1,6,Doran,0,False
+83718-4,bot,Worlds,Worlds 2026 Main Event,26.20,Lucian,T1,2,Peyz,Ashe,Bilibili Gaming,4,Viper,1,False
+83718-4,jungle,Worlds,Worlds 2026 Main Event,26.20,Wukong,T1,7,Oner,Skarner,Bilibili Gaming,8,XUN,1,False
+83718-4,mid,Worlds,Worlds 2026 Main Event,26.20,Viktor,Bilibili Gaming,1,Knight,Akali,T1,6,Faker,0,False
+83718-4,support,Worlds,Worlds 2026 Main Event,26.20,Milio,T1,3,Keria,Seraphine,Bilibili Gaming,5,ON,1,False
+83718-4,top,Worlds,Worlds 2026 Main Event,26.20,Renekton,Bilibili Gaming,9,Bin,Vayne,T1,10,Doran,0,True

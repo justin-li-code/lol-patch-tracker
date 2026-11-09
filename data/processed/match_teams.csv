@@ -4871,3 +4871,11 @@ game_uid,side,team,result,kills,towers,dragons,barons,gold,dragon_types,heralds,
 83713-2,red,Invictus Gaming,0,9.0,1.0,1.0,0.0,49300.0,Chemtech,0,1,0,3.0,9.0,5.0,1.0,3.0
 83713-3,blue,Invictus Gaming,0,18.0,5.0,4.0,0.0,71700.0,"Ocean, Mountain, Mountain, Hextech",1,1,1,2.0,28.0,10.0,10.0,8.0
 83713-3,red,Gen.G,1,16.0,9.0,2.0,1.0,78200.0,"Mountain, Mountain",0,0,0,1.0,35.0,10.0,15.0,10.0
+83718-1,blue,Bilibili Gaming,1,18.0,10.0,3.0,1.0,62000.0,"Infernal, Infernal, Hextech",1,0,1,3.0,40.0,10.0,15.0,15.0
+83718-1,red,T1,0,6.0,3.0,1.0,0.0,54200.0,Cloud,0,1,0,0.0,17.0,11.0,1.0,5.0
+83718-2,blue,T1,1,22.0,10.0,5.0,2.0,70000.0,"Ocean, Ocean, Infernal, Hextech",1,1,0,3.0,44.0,15.0,14.0,15.0
+83718-2,red,Bilibili Gaming,0,10.0,2.0,0.0,0.0,60200.0,,0,0,1,0.0,14.0,5.0,4.0,5.0
+83718-3,blue,Bilibili Gaming,1,19.0,11.0,4.0,2.0,77600.0,"Ocean, Infernal, Infernal, Infernal",1,0,1,3.0,45.0,15.0,15.0,15.0
+83718-3,red,T1,0,10.0,4.0,2.0,0.0,68300.0,"Cloud, Infernal",0,1,0,0.0,23.0,8.0,10.0,5.0
+83718-4,blue,T1,0,9.0,4.0,2.0,1.0,68800.0,"Ocean, Hextech",0,0,0,1.0,27.0,14.0,5.0,8.0
+83718-4,red,Bilibili Gaming,1,21.0,9.0,4.0,1.0,77700.0,"Mountain, Mountain, Mountain, Mountain",1,1,1,2.0,36.0,10.0,15.0,11.0

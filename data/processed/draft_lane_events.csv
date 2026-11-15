@@ -11459,3 +11459,23 @@ game_uid,role,scope,tournament,patch,opener,opener_team,opener_pos,opener_player
 83718-4,mid,Worlds,Worlds 2026 Main Event,26.20,Viktor,Bilibili Gaming,1,Knight,Akali,T1,6,Faker,0,False
 83718-4,support,Worlds,Worlds 2026 Main Event,26.20,Milio,T1,3,Keria,Seraphine,Bilibili Gaming,5,ON,1,False
 83718-4,top,Worlds,Worlds 2026 Main Event,26.20,Renekton,Bilibili Gaming,9,Bin,Vayne,T1,10,Doran,0,True
+83722-1,bot,Worlds,Worlds 2026 Main Event,26.20,Kalista,Bilibili Gaming,3,Viper,Corki,Gen.G,8,Ruler,1,False
+83722-1,jungle,Worlds,Worlds 2026 Main Event,26.20,Lee Sin,Gen.G,1,Canyon,Jarvan IV,Bilibili Gaming,10,XUN,0,True
+83722-1,mid,Worlds,Worlds 2026 Main Event,26.20,Syndra,Gen.G,4,Chovy,Locke,Bilibili Gaming,6,Knight,0,False
+83722-1,support,Worlds,Worlds 2026 Main Event,26.20,Renata Glasc,Bilibili Gaming,2,ON,Nami,Gen.G,9,Duro,1,False
+83722-1,top,Worlds,Worlds 2026 Main Event,26.20,Olaf,Gen.G,5,Kiin,KSante,Bilibili Gaming,7,Bin,0,False
+83722-2,bot,Worlds,Worlds 2026 Main Event,26.20,Ezreal,Gen.G,2,Ruler,Ziggs,Bilibili Gaming,9,Viper,1,False
+83722-2,jungle,Worlds,Worlds 2026 Main Event,26.20,Naafiri,Bilibili Gaming,5,XUN,Chogath,Gen.G,6,Canyon,0,False
+83722-2,mid,Worlds,Worlds 2026 Main Event,26.20,Cassiopeia,Bilibili Gaming,1,Knight,Orianna,Gen.G,7,Chovy,0,False
+83722-2,support,Worlds,Worlds 2026 Main Event,26.20,Karma,Gen.G,3,Duro,Camille,Bilibili Gaming,4,ON,1,False
+83722-2,top,Worlds,Worlds 2026 Main Event,26.20,Gnar,Bilibili Gaming,8,Bin,Vayne,Gen.G,10,Kiin,0,True
+83722-3,bot,Worlds,Worlds 2026 Main Event,26.20,Jhin,Gen.G,9,Ruler,Taliyah,Bilibili Gaming,10,Viper,1,True
+83722-3,jungle,Worlds,Worlds 2026 Main Event,26.20,Vi,Bilibili Gaming,3,XUN,Wukong,Gen.G,4,Canyon,0,False
+83722-3,mid,Worlds,Worlds 2026 Main Event,26.20,Annie,Gen.G,5,Chovy,Viktor,Bilibili Gaming,6,Knight,1,False
+83722-3,support,Worlds,Worlds 2026 Main Event,26.20,Alistar,Bilibili Gaming,7,ON,Rakan,Gen.G,8,Duro,0,False
+83722-3,top,Worlds,Worlds 2026 Main Event,26.20,Ambessa,Gen.G,1,Kiin,Jax,Bilibili Gaming,2,Bin,1,False
+83722-4,bot,Worlds,Worlds 2026 Main Event,26.20,Yunara,Bilibili Gaming,3,Viper,Xayah,Gen.G,4,Ruler,0,False
+83722-4,jungle,Worlds,Worlds 2026 Main Event,26.20,Nocturne,Bilibili Gaming,2,XUN,Pantheon,Gen.G,5,Canyon,0,False
+83722-4,mid,Worlds,Worlds 2026 Main Event,26.20,Akali,Gen.G,8,Chovy,Twisted Fate,Bilibili Gaming,10,Knight,1,True
+83722-4,support,Worlds,Worlds 2026 Main Event,26.20,Lulu,Gen.G,1,Duro,Neeko,Bilibili Gaming,6,ON,1,False
+83722-4,top,Worlds,Worlds 2026 Main Event,26.20,Gwen,Bilibili Gaming,7,Bin,Aurora,Gen.G,9,Kiin,0,False

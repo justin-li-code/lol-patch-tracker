@@ -2439,3 +2439,7 @@ game_uid,gol_id,event,league,series_id,tournament,stage,date,game_no,version,dur
 83718-2,83719,worlds,worlds,83718,Worlds 2026 Main Event,SEMIFINALS,2026-11-08,2,16.2,32.25,32:15,T1,Bilibili Gaming,T1
 83718-3,83720,worlds,worlds,83718,Worlds 2026 Main Event,SEMIFINALS,2026-11-08,3,16.2,36.96666666666667,36:58,Bilibili Gaming,T1,Bilibili Gaming
 83718-4,83721,worlds,worlds,83718,Worlds 2026 Main Event,SEMIFINALS,2026-11-08,4,16.2,37.78333333333333,37:47,T1,Bilibili Gaming,Bilibili Gaming
+83722-1,83722,worlds,worlds,83722,Worlds 2026 Main Event,FINALS,2026-11-14,1,16.20,38.983333333333334,38:59,Gen.G,Bilibili Gaming,Gen.G
+83722-2,83723,worlds,worlds,83722,Worlds 2026 Main Event,FINALS,2026-11-14,2,16.20,53.266666666666666,53:16,Gen.G,Bilibili Gaming,Bilibili Gaming
+83722-3,83724,worlds,worlds,83722,Worlds 2026 Main Event,FINALS,2026-11-14,3,16.20,37.666666666666664,37:40,Gen.G,Bilibili Gaming,Bilibili Gaming
+83722-4,83725,worlds,worlds,83722,Worlds 2026 Main Event,FINALS,2026-11-14,4,16.20,42.96666666666667,42:58,Bilibili Gaming,Gen.G,Bilibili Gaming

@@ -364,11 +364,11 @@
       },
       {
         "region": "LCK",
-        "n_favorite": 98,
-        "n_other": 682,
-        "win_rate_favorite": 0.7142857142857143,
-        "win_rate_other": 0.6671554252199413,
-        "diff": 0.04713028906577299
+        "n_favorite": 100,
+        "n_other": 700,
+        "win_rate_favorite": 0.71,
+        "win_rate_other": 0.6557142857142857,
+        "diff": 0.05428571428571427
       },
       {
         "region": "LCS",
@@ -388,20 +388,20 @@
       },
       {
         "region": "LPL",
-        "n_favorite": 61,
-        "n_other": 569,
-        "win_rate_favorite": 0.5409836065573771,
-        "win_rate_other": 0.5659050966608085,
-        "diff": -0.024921490103431365
+        "n_favorite": 63,
+        "n_other": 587,
+        "win_rate_favorite": 0.5555555555555556,
+        "win_rate_other": 0.5706984667802385,
+        "diff": -0.01514291122468292
       }
     ],
-    "within_region_diff": -0.011532454947860428,
+    "within_region_diff": -0.007486101147907263,
     "ci": [
-      -0.06322339948644139,
-      0.042386919011400355
+      -0.05831058884202913,
+      0.04711019413797917
     ],
     "favorite_lift": 0.05,
-    "favorite_picks": 359,
-    "total_picks": 2695
+    "favorite_picks": 363,
+    "total_picks": 2735
   }
 }

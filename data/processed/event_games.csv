@@ -519,6 +519,14 @@ game_uid,series_id,league,tournament,stage,date,version,patch,team,result,picks,
 83593-2,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Xayah|Rakan|Syndra|Wukong|Ornn,Nocturne|Jarvan IV|Caitlyn|Locke|LeBlanc,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,MVK Esports,1,Jarvan IV|Jhin|Camille|KogMaw|Zaahen,Ezreal|Renata Glasc|Sylas|Poppy|Shen,0.0,Play-In
 83593-3,83593,worlds,Worlds 2026 Play-In,ROUND1,2026-10-15,16.20,26.20,FURIA,0,Ryze|Kaisa|Naafiri|Leona|KSante,Locke|Nocturne|Yone|Orianna|Vayne,1.0,Play-In
+83722-1,83722,worlds,Worlds 2026 Main Event,FINALS,2026-11-14,16.20,26.20,Gen.G,1,Lee Sin|Syndra|Olaf|Corki|Nami,Nocturne|Orianna|Vi|Jax|Camille,1.0,Finals
+83722-1,83722,worlds,Worlds 2026 Main Event,FINALS,2026-11-14,16.20,26.20,Bilibili Gaming,0,Renata Glasc|Kalista|Locke|KSante|Jarvan IV,Qiyana|Cassiopeia|Lulu|Ezreal|Seraphine,0.0,Finals
+83722-2,83722,worlds,Worlds 2026 Main Event,FINALS,2026-11-14,16.20,26.20,Gen.G,0,Ezreal|Karma|Chogath|Orianna|Vayne,Nocturne|Qiyana|Nautilus|Lulu|Akali,0.0,Finals
+83722-2,83722,worlds,Worlds 2026 Main Event,FINALS,2026-11-14,16.20,26.20,Bilibili Gaming,1,Cassiopeia|Camille|Naafiri|Gnar|Ziggs,Jayce|Vi|Galio|Renekton|Viktor,1.0,Finals
+83722-3,83722,worlds,Worlds 2026 Main Event,FINALS,2026-11-14,16.20,26.20,Gen.G,0,Ambessa|Wukong|Annie|Rakan|Jhin,Nautilus|Renekton|Seraphine|Kaisa|Sivir,1.0,Finals
+83722-3,83722,worlds,Worlds 2026 Main Event,FINALS,2026-11-14,16.20,26.20,Bilibili Gaming,1,Jax|Vi|Viktor|Alistar|Taliyah,Qiyana|Jayce|Lulu|Xayah|Poppy,0.0,Finals
+83722-4,83722,worlds,Worlds 2026 Main Event,FINALS,2026-11-14,16.20,26.20,Gen.G,0,Lulu|Xayah|Pantheon|Akali|Aurora,Nautilus|Skarner|Kindred|Renekton|Galio,1.0,Finals
+83722-4,83722,worlds,Worlds 2026 Main Event,FINALS,2026-11-14,16.20,26.20,Bilibili Gaming,1,Nocturne|Yunara|Neeko|Gwen|Twisted Fate,Qiyana|Jayce|Seraphine|Sylas|Rumble,0.0,Finals
 83718-1,83718,worlds,Worlds 2026 Main Event,SEMIFINALS,2026-11-08,16.20,26.20,Bilibili Gaming,1,Nautilus|Orianna|KSante|Naafiri|Corki,Lulu|Cassiopeia|Olaf|Alistar|Seraphine,0.0,Semifinals
 83718-1,83718,worlds,Worlds 2026 Main Event,SEMIFINALS,2026-11-08,16.20,26.20,T1,0,Nocturne|Locke|Rumble|Xayah|Rakan,Renata Glasc|Ezreal|Jax|Lee Sin|Jarvan IV,1.0,Semifinals
 83718-2,83718,worlds,Worlds 2026 Main Event,SEMIFINALS,2026-11-08,16.20,26.20,Bilibili Gaming,0,Qiyana|Camille|Kaisa|Alistar|LeBlanc,Lulu|Cassiopeia|Vi|Taliyah|Annie,0.0,Semifinals

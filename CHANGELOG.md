@@ -5,6 +5,9 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.15.3 · Nov 17: Calmer headings
+- Titles and headings now use **Inter**, the same font as the rest of the text, instead of the angular Chakra Petch. They stand out by size and weight, so the page reads as one style.
+
 ## v1.15.2 · Nov 17: More space above findings
 - On the Overview, each **What we found** section sits a little lower, so it no longer crowds the text explaining the page.
 

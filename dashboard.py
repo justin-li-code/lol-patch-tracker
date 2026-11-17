@@ -42,14 +42,14 @@ TOP_N = 10  # rows shown before "show all"
 # Calmer typography: fewer heavy headings, more air between blocks.
 st.markdown("""
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
-  /* Inter for reading text; Chakra Petch only for headings. Icon spans set their own font. */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  /* Inter everywhere, headings included, so titles stand out by size and weight, not a new face. Icon spans set their own font. */
   html, body, .stApp, p, li, label, input, textarea, select, button, td, th,
   div[data-testid="stMarkdownContainer"], div[data-testid="stMetricValue"], div[data-testid="stMetricLabel"] {
     font-family: 'Inter', 'Source Sans Pro', system-ui, sans-serif;
     font-feature-settings: 'tnum' 1;
   }
-  h1, h2, h3, h1 *, h2 *, h3 * { font-family: 'Chakra Petch', 'Inter', system-ui, sans-serif !important; letter-spacing: .01em; }
+  h1, h2, h3, h4, h1 *, h2 *, h3 *, h4 * { font-family: 'Inter', system-ui, sans-serif !important; font-weight: 600 !important; letter-spacing: -.01em; }
   .block-container { padding-top: 2.2rem; max-width: 1200px; }
   h1 { font-size: 2.0rem !important; margin-bottom: .2rem !important; }
   h2 { font-size: 1.45rem !important; margin-top: .4rem !important; }

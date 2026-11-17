@@ -1634,7 +1634,7 @@ elif page == "Champions & Patches":
 
 elif page == "Meta Shifts":
     st.title("Meta Shifts")
-    lead("When champions rise, someone else loses the slot. Pick a group and see who it pushed out.")
+    lead("When champions rise, someone else loses the slot. Pick one or more champions and see who they pushed out.")
     if rp is None:
         st.info("Run `python -m lolpatch meta` first.")
         st.stop()
@@ -1643,7 +1643,7 @@ elif page == "Meta Shifts":
     with t_group:
         all_champs = sorted(all_stats.champion.unique())
         g_sel, g_win = st.columns([3, 2])
-        members = g_sel.multiselect("Champions", all_champs, key="ripple_group",
+        members = g_sel.multiselect("Champions", all_champs, key="ripple_group", max_selections=len(SERIES) - 1,
                                     default=[c for c in ["Nocturne"] if c in all_champs])
         if not members:
             st.info("Pick at least one champion.")
@@ -1663,23 +1663,30 @@ elif page == "Meta Shifts":
                 fell = disp[disp.change <= -0.05]
                 headline = ", ".join(map(nice, (pushed if len(pushed) else fell).champion.head(3)))
                 verb = "pushed out" if len(pushed) else "fell over the same stretch (not clearly pushed out)"
-                st.markdown(f"<div class='takeaway'><b>{label}</b> went from <b>{gp[win[0]]:.0%}</b> to "
-                            f"<b>{gp[win[1]]:.0%}</b> of games ({win[0]} → {win[1]}). Biggest losers: "
+                # Each champion on its own line (and in the summary), not their combined rate.
+                pv = all_stats.pivot_table(index="champion", columns="patch", values="presence")
+                line = lambda c: (pv.loc[c].reindex(g_patches).fillna(0) if c in pv.index
+                                  else pd.Series(0.0, index=g_patches))
+                moves = [f"<b>{nice(c)}</b> went from <b>{line(c)[win[0]]:.0%}</b> to <b>{line(c)[win[1]]:.0%}</b>"
+                         for c in members]
+                moves = moves[0] if len(moves) == 1 else ", ".join(moves[:-1]) + " and " + moves[-1]
+                st.markdown(f"<div class='takeaway'>{moves} of games ({win[0]} → {win[1]}). Biggest losers: "
                             f"<b>{headline}</b>, {verb}.</div>", unsafe_allow_html=True)
 
-                fig = go.Figure(go.Scatter(x=g_patches, y=gp.values, name=label, mode="lines+markers",
-                                           line=dict(color="#0b0b0b", width=3), marker=dict(size=8),
-                                           hovertemplate=f"{label} %{{y:.0%}}<extra></extra>"))
-                pv = all_stats.pivot_table(index="champion", columns="patch", values="presence")
+                fig = go.Figure()
+                for i, c in enumerate(members):
+                    fig.add_trace(go.Scatter(x=g_patches, y=line(c).values, name=nice(c), mode="lines+markers",
+                                             line=dict(color=SERIES[i], width=3), marker=dict(size=8),
+                                             hovertemplate=f"{nice(c)} %{{y:.0%}}<extra></extra>"))
                 # Only what the reader adds goes on the chart; the biggest losers are listed first.
                 others = list(dict.fromkeys([*fell.champion, *(c for c in all_champs if c not in members)]))
-                compare = st.multiselect("Add champions to the chart", others, key="ripple_compare_" + label,
-                                         max_selections=len(SERIES), placeholder="Biggest losers are listed first")
-                for i, c in enumerate(compare):
-                    y = pv.loc[c].reindex(g_patches).fillna(0) if c in pv.index else pd.Series(0, index=g_patches)
-                    fig.add_trace(go.Scatter(x=g_patches, y=y.values, name=c, mode="lines",
-                                             line=dict(color=SERIES[i], width=1.8),
-                                             hovertemplate=f"{c} %{{y:.0%}}<extra></extra>"))
+                compare = st.multiselect("Add champions to compare", others, key="ripple_compare_" + label,
+                                         max_selections=len(SERIES) - len(members),
+                                         placeholder="Biggest losers are listed first")
+                for i, c in enumerate(compare, start=len(members)):
+                    fig.add_trace(go.Scatter(x=g_patches, y=line(c).values, name=nice(c), mode="lines",
+                                             line=dict(color=SERIES[i], width=2, dash="dot"),
+                                             hovertemplate=f"{nice(c)} %{{y:.0%}}<extra></extra>"))
                 fig.add_vrect(x0=g_patches.index(win[0]), x1=g_patches.index(win[1]), fillcolor="#2a78d6",
                               opacity=0.06, line_width=0)
                 st.plotly_chart(style(fig, 340, xaxis=dict(type="category", title=None),

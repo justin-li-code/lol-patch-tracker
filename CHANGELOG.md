@@ -5,6 +5,10 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.16.1 · Nov 17: One line per champion in Meta Shifts
+- When you pick more than one champion in **Rise & Fall**, each gets its own line on the chart instead of one combined line. The summary also gives each champion's own numbers, e.g. "Nocturne went from 31% to 80% and Qiyana went from 0% to 27% of games". Champions added to compare show as dotted lines, so they're easy to tell apart from your picks.
+- Who counts as pushed out is still measured against the picked champions together.
+
 ## v1.16 · Nov 17: Meta Shifts shows only what you pick
 - **Rise & Fall** starts with a single champion (Nocturne) instead of a pair, and its chart shows only that champion's line.
 - Other champions no longer appear on the chart automatically (it used to add Malphite, Neeko, Jayce and others). A new **Add champions to the chart** picker lets you add up to five, with the biggest losers listed first. The summary sentence and the Fell / Rose alongside tables still name who lost ground.

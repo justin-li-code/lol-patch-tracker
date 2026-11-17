@@ -56,6 +56,7 @@ st.markdown("""
   h3 { font-size: 1.15rem !important; }
   .lead { font-size: 1.08rem; color: var(--text-color); opacity: .85; margin: .1rem 0 1.1rem 0; }
   .takeaway { font-size: 1.02rem; line-height: 1.5; }
+  .found { padding-bottom: .9rem; }
   .muted { opacity: .7; font-size: .9rem; }
   div[data-testid="stMetricValue"] { font-size: 1.6rem; }
 </style>
@@ -1224,7 +1225,7 @@ if page == "Overview":
                 with st.expander("What we found"):
                     # Markdown isn't processed inside raw HTML, so **bold** would show its asterisks.
                     html_text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", found[target])
-                    st.markdown(f"<div class='takeaway'>{html_text}</div>", unsafe_allow_html=True)
+                    st.markdown(f"<div class='takeaway found'>{html_text}</div>", unsafe_allow_html=True)
 
 
 # --- Worlds 2026 -----------------------------------------------------------------------

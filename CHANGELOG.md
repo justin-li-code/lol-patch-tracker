@@ -5,6 +5,9 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.15.1 · Nov 17: Breathing room under findings
+- Each **What we found** section on the Overview has a little white space under its text, so it no longer sits tight against the bottom edge.
+
 ## v1.15 · Nov 17: Overview as a guide to the site
 - **The Overview is now a guide to every page.** Each page in the menu gets a full-width bar with its name, a short explanation of what's on it, and an **Open →** button. This replaces both the four boxes and the v1.14 quiz.
 - **Findings wait until you look.** Each bar's main finding sits folded under **What we found**. One example: Bilibili Gaming won Worlds 3–1 over Gen.G, an upset by our numbers.

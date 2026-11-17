@@ -5,6 +5,11 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.15 · Nov 17: Overview as a guide to the site
+- **The Overview is now a guide to every page.** Each page in the menu gets a full-width bar with its name, a short explanation of what's on it, and an **Open →** button. This replaces both the four boxes and the v1.14 quiz.
+- **Findings wait until you look.** Each bar's main finding sits folded under **What we found**. One example: Bilibili Gaming won Worlds 3–1 over Gen.G, an upset by our numbers.
+- **The sidebar is simpler:** just the site name, the menu and the version. The pick/ban rate explanation moved to the top of the Overview.
+
 ## v1.14 · Nov 17: An Overview you explore
 - **The Overview now asks instead of tells.** It shows six questions, each with a few possible answers, and the findings stay hidden until you guess. Then it says whether you were right, shows what the data says, and links to the page with the full story. "Just show me" skips the guess, and "Hide all answers" starts over.
 - **The questions:**

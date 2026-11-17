@@ -57,7 +57,6 @@ st.markdown("""
   .lead { font-size: 1.08rem; color: var(--text-color); opacity: .85; margin: .1rem 0 1.1rem 0; }
   .takeaway { font-size: 1.02rem; line-height: 1.5; }
   .muted { opacity: .7; font-size: .9rem; }
-  .kicker { font-size: .74rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: .6; }
   div[data-testid="stMetricValue"] { font-size: 1.6rem; }
 </style>
 """, unsafe_allow_html=True)
@@ -1093,6 +1092,23 @@ all_stats = stats[stats.league == "ALL"]
 
 PAGES = ["Overview", "Worlds 2026", "Worlds Players", "Champions & Patches", "Meta Shifts", "Draft Answers", "Teams & Regions",
          "Model Accuracy"]
+# What each page is for, shown on the Overview.
+PAGE_INFO = {
+    "Worlds 2026": "The knockout and Swiss brackets, every series and game, standings, match previews, and the "
+                   "champions that ruled the tournament.",
+    "Worlds Players": "Every player at Worlds rated out of 5: the best overall and by role, who beat or missed "
+                      "expectations, and a lookup to see where any player ranks.",
+    "Champions & Patches": "Follow any champion through the season, see what each patch changed (champions, items "
+                           "and runes), whether buffs and nerfs work, and what the next patch might do.",
+    "Meta Shifts": "When champions rise, others lose their spot. Pick a group of champions to see who they pushed "
+                   "out, and which champion took over after each big buff or nerf.",
+    "Draft Answers": "When a team locks in a champion, what the other team picks back in the same role, and who "
+                     "leads each pattern: everyone, one region, one team or one player.",
+    "Teams & Regions": "What each team and region prioritizes, their signature picks, what opponents ban against "
+                       "them, and whether drafting the meta actually wins.",
+    "Model Accuracy": "How well we predicted each international event's picks and bans from the patch notes, "
+                      "compared with assuming nothing changes.",
+}
 # The changelog itself lives in the repository (CHANGELOG.md); the site only shows the version.
 CHANGELOG = PROCESSED.parent.parent / "CHANGELOG.md"
 changelog_text = CHANGELOG.read_text() if CHANGELOG.exists() else ""
@@ -1100,11 +1116,7 @@ version_tag = next((line[3:].split("·")[0].strip() for line in changelog_text.s
                     if line.startswith("## v")), "")
 with st.sidebar:
     st.markdown("## Patch Impact")
-    st.caption("How balance changes move pro picks and bans · 2026 season")
     page = st.radio("Go to", PAGES, key="page", label_visibility="collapsed")
-    st.divider()
-    st.caption(f"{' · '.join(LEAGUES)} and international events.\n\n**Pick/ban rate** = the share of games where a "
-               "champion was picked or banned. Changes are shown in **points**: going from 40% to 44% is +4 points.")
     if version_tag:
         st.caption(f"Version {version_tag}")
 
@@ -1112,99 +1124,85 @@ with st.sidebar:
 # --- Overview --------------------------------------------------------------------------
 
 if page == "Overview":
-    import random
     from lolpatch.upcoming import knockout_results, series_prob
 
     st.title("Patch Impact")
-    # Each card: (key, topic, question, options, answer, reveal text, page to open, shuffle options?)
-    cards = []
+    lead(f"How Riot's balance changes moved pro League of Legends in 2026, across {', '.join(LEAGUES[:-1])} and "
+         f"{LEAGUES[-1]} plus the international events. Here's what each page covers.")
+    st.caption("**Pick/ban rate** = the share of games where a champion was picked or banned. Changes are shown in "
+               "**points**: going from 40% to 44% is +4 points.")
+
+    # One bar per page: what's there, and its main finding, kept folded until opened.
+    found = {}
     if mx is not None:
         wg = mx["games"][mx["games"].event == "worlds"]
         fin = wg[wg.stage == "FINALS"].sort_values("game_no")
         res = knockout_results(mx["games"]).get(frozenset(fin.iloc[0][["blue", "red"]])) if len(fin) else None
         if res and res.get("winner"):
             champ_, runner = res["winner"], next(t for t in res["score"] if t != res["winner"])
-            semis = wg[wg.stage == "SEMIFINALS"]
-            options = [champ_, runner] + sorted((set(semis.blue) | set(semis.red)) - {champ_, runner})
             ex_ = mx["expected"]
             p = ex_[(ex_.game_uid == fin.iloc[0].game_uid) & (ex_.team == champ_)].p_win
-            text = (f"**{champ_}**, beating **{runner}** {res['score'][champ_]}–{res['score'][runner]} in the final "
-                    f"on {pd.Timestamp(res['date']):%b %-d}.")
+            text = (f"**{champ_}** won Worlds, beating **{runner}** {res['score'][champ_]}–{res['score'][runner]} "
+                    f"in the final on {pd.Timestamp(res['date']):%b %-d}.")
             if len(p):
                 sp = series_prob(p.iloc[0], 5)
                 text += (f" By our numbers that was an upset: going in, {runner} had a **{1 - sp:.0%}** chance to win "
                          "the series." if sp < 0.5 else f" They went in as favorites, with a **{sp:.0%}** chance.")
-            cards.append(("worlds", "Worlds 2026", "Who won Worlds 2026?", options, champ_, text, "Worlds 2026", True))
+            found["Worlds 2026"] = text
         elif up is not None and up["standings"].p_title.max() > 0:
-            odds = up["standings"].nlargest(4, "p_title")
-            fav = odds.iloc[0]
-            cards.append(("worlds", "Worlds 2026", "Who's most likely to win Worlds 2026?", list(odds.team), fav.team,
-                          f"**{fav.team}**, with a **{fav.p_title:.0%}** chance to win the title, from playing out the "
-                          "rest of the tournament 20,000 times.", "Worlds 2026", True))
+            fav = up["standings"].nlargest(1, "p_title").iloc[0]
+            found["Worlds 2026"] = (f"**{fav.team}** is the favorite, with a **{fav.p_title:.0%}** chance to win the "
+                                    "title, from playing out the rest of the tournament 20,000 times.")
+        w = mx["ratings"][mx["ratings"].event == "worlds"]
+        lb = (w.groupby(["player", "team", "role"]).agg(n=("game_uid", "nunique"), r=("rating", "mean"))
+              .reset_index().query("n >= 3").sort_values("r", ascending=False))
+        if len(lb):
+            best = lb.iloc[0]
+            found["Worlds Players"] = (f"The best-rated player was **{best.player}** ({best.team}, "
+                                       f"{best.role.title()}), averaging **{best.r:.1f} out of 5** over {best.n} "
+                                       "games. A typical game is rated 3.0.")
     tr = transitions_for("ALL")
     eff = verdict_effects(tr)
     if {"buff", "nerf"} <= set(eff.index):
-        buff, nerf = eff.loc["buff", "mean_delta_presence"] * 100, -eff.loc["nerf", "mean_delta_presence"] * 100
         hi_nerf = tr[tr.changed & (tr.verdict == "nerf") & (tr.prev_presence > 0.6)]
-        answer = f"A few points (about {buff:.0f})"
-        cards.append(("buffs", "Buffs and nerfs", "After Riot buffs a champion, how much more often do pros pick or "
-                      "ban it?", ["Barely at all (under 1 point)", answer, "A lot (10 points or more)"], answer,
-                      f"Modestly. After a buff, pros pick or ban a champion about **{buff:.0f} points more often**; "
-                      f"after a nerf, about **{nerf:.0f} points less**. Nerfs hit the most popular champions hardest: "
-                      f"ones picked or banned in over 60% of games dropped **{-hi_nerf.delta_presence.mean() * 100:.0f} "
-                      "points** on average.", "Champions & Patches", False))
-    if "item_exposure" in tr:
-        # Same comparison as the Champions & Patches page: popular champions with no change of their own.
-        nc = tr[~tr.changed & (tr.prev_presence >= 0.2)]
-        untouched = nc[(nc.item_exposure.abs() < 0.05) & (nc.rune_exposure.abs() < 0.05)]
-        nerfed = nc[nc.item_exposure <= -0.3]
-        if len(nerfed) >= 5 and len(untouched) >= 5:
-            extra = (nerfed.delta_presence.mean() - untouched.delta_presence.mean()) * 100
-            answer = "Barely, as far as we can tell"
-            cards.append(("items", "Items and runes", "When Riot nerfs a champion's main item, do pros stop picking "
-                          "that champion?", ["Yes, as much as a champion nerf", "Somewhat, but less", answer], answer,
-                          (f"Barely. Popular champions whose main items were nerfed dropped **{-extra:.1f} points** "
-                           f"more than ones whose items weren't touched, but that's only {len(nerfed)} cases and "
-                           "could easily be chance." if extra < 0 else
-                           "Barely. Popular champions whose main items were nerfed did no worse than ones whose "
-                           f"items weren't touched ({len(nerfed)} cases).")
-                          + " Champion changes are what move the meta.",
-                          "Champions & Patches", False))
+        text = (f"Buffs and nerfs work, but modestly. After a buff, pros pick or ban a champion about "
+                f"**{eff.loc['buff', 'mean_delta_presence'] * 100:.0f} points more often**; after a nerf, about "
+                f"**{-eff.loc['nerf', 'mean_delta_presence'] * 100:.0f} points less**. Nerfs hit the most popular "
+                f"champions hardest: ones picked or banned in over 60% of games dropped "
+                f"**{-hi_nerf.delta_presence.mean() * 100:.0f} points** on average.")
+        if "item_exposure" in tr:
+            nc = tr[~tr.changed & (tr.prev_presence >= 0.2)]
+            if (nc.item_exposure <= -0.3).sum() >= 5:
+                text += " Item and rune changes barely move pro picks, as far as the data can tell."
+        found["Champions & Patches"] = text
+    if rp is not None and len(rp["pairs"]):
+        top = rp["pairs"].sort_values(["times", "avg_other_delta"], ascending=False).iloc[0]
+        moved = lambda d: f"{'rose' if d > 0 else 'fell'} **{abs(d) * 100:.0f} points**"
+        found["Meta Shifts"] = (f"When one champion falls, a specific rival often takes its slot. **{top.changed}** "
+                                f"{moved(top.avg_changed_delta)} on average after its changes on patches "
+                                f"{' and '.join(top.patches.rsplit(', ', 1))}, and each time **{top.other}** {moved(top.avg_other_delta)}. But on "
+                                "average, a rival's nerf doesn't reliably lift a champion: these ripples are case by "
+                                "case.")
     if dr is not None:
-        lanes = dr["lanes"]
-        solid = lanes[lanes.solid].sort_values("n", ascending=False)
+        solid = dr["lanes"][dr["lanes"].solid].sort_values("n", ascending=False)
         if len(solid):
             ex = solid.iloc[0]
-            # Wrong options: the champions most often picked in that role anyway.
-            others = (lanes[(lanes.role == ex.role) & ~lanes.answer.isin([ex.answer, ex.opener])]
-                      .drop_duplicates("answer").nlargest(2, "base_rate").answer)
-            role = ex.role.title()
-            cards.append(("draft", "Draft answers", f"When a team locks in {nice(ex.opener)} ({role}), which {role} "
-                          "champion does the other team answer with most?", [nice(c) for c in [ex.answer, *others]],
-                          nice(ex.answer),
-                          f"**{nice(ex.answer)}**, {ex.lift:.1f}× more often than usual ({ex.n} times this season). "
-                          f"Teams have go-to answers like this: we found **{len(solid)}** of them.",
-                          "Draft Answers", True))
-    if mx is not None:
-        w = mx["ratings"][mx["ratings"].event == "worlds"]
-        lb = (w.groupby(["player", "team", "role"]).agg(n=("game_uid", "nunique"), r=("rating", "mean"))
-              .reset_index().query("n >= 3").sort_values("r", ascending=False).head(4))
-        if len(lb) >= 2:
-            label = lambda r: f"{r.player} ({TEAM_SHORT.get(r.team, r.team)})"
-            best = lb.iloc[0]
-            cards.append(("player", "Worlds players", "Who was the best-rated player at Worlds 2026?",
-                          [label(r) for r in lb.itertuples()], label(best),
-                          f"**{best.player}** ({best.team}, {best.role.title()}), averaging **{best.r:.1f} out of 5** "
-                          f"over {best.n} games. A typical game is rated 3.0.", "Worlds Players", True))
+            found["Draft Answers"] = (f"Teams have go-to answers. When one team locks in **{nice(ex.opener)}** "
+                                      f"({ex.role.title()}), the other team answers with **{nice(ex.answer)}** "
+                                      f"{ex.lift:.1f}× more often than usual. We found **{len(solid)}** answers like "
+                                      "this.")
+    if rg is not None:
+        found["Teams & Regions"] = ("Drafting the meta doesn't win games. Better teams win more, of course, but once "
+                                    "you account for that, picking the most contested champions, a team's comfort "
+                                    "picks or a region's favorites gives **no extra edge**.")
     if ev:
         won = [m["title"].replace(" 2026", "") for m in ev["metrics"].values()
                if m["frozen"]["all"]["mae_model"] < m["frozen"]["all"]["mae_baseline"]]
         lost = [m["title"].replace(" 2026", "") for m in ev["metrics"].values()
                 if m["frozen"]["all"]["mae_model"] >= m["frozen"]["all"]["mae_baseline"]]
-        options = ["Yes, quite accurately", "A little better than assuming nothing changes",
-                   "No better than assuming nothing changes"]
-        text = (f"Only a little. Our prediction was closer than simply assuming “nothing changes” at "
-                f"**{len(won)} of {len(ev['metrics'])}** events ({', '.join(won)}), but only by small margins.")
+        text = (f"Reading the patch notes helps only a little. Our prediction was closer than simply assuming "
+                f"“nothing changes” at **{len(won)} of {len(ev['metrics'])}** events ({', '.join(won)}), but only by "
+                "small margins.")
         if lost:
             text += f" It did worse at {' and '.join(lost)}"
             wf = ev.get("worlds_frozen")
@@ -1214,44 +1212,19 @@ if page == "Overview":
                     text += (f", where pros kept picking champions that had just been nerfed, like "
                              f"**{nice(stubborn.iloc[0].champion)}** ({stubborn.iloc[0].actual_presence:.0%} of games)")
             text += "."
-        cards.append(("predict", "Predictions", "Can the patch notes predict what pros will pick at the next big "
-                      "event?", options, options[1] if len(won) > len(lost) else options[2], text,
-                      "Model Accuracy", False))
+        found["Model Accuracy"] = text
 
-    lead(f"{len(cards)} questions about the 2026 pro season. Take a guess, then see what the data says.")
-
-    def reveal_card(key, topic, question, options, answer, text, target, shuffle):
-        """The answer stays hidden until the reader guesses (or asks to just see it)."""
-        state = f"guess_{key}"
-        if shuffle:  # same order on every rerun, but the answer isn't always first
-            options = sorted(options, key=lambda o: random.Random(f"{key}{o}").random())
-        st.markdown(f"<div class='kicker'>{topic}</div>", unsafe_allow_html=True)
-        st.markdown(f"#### {question}")
-        guess = st.session_state.get(state)
-        if guess is None:
-            for i, opt in enumerate(options):
-                st.button(opt, key=f"{state}_{i}", on_click=st.session_state.__setitem__, args=(state, opt),
-                          use_container_width=True)
-            st.button("Just show me", key=f"{state}_skip", on_click=st.session_state.__setitem__, args=(state, ""))
-            return
-        if guess:
-            st.markdown(":green[**You got it.**]" if guess == answer else f":orange[**Not quite.**] You guessed {guess}.")
-        # Markdown isn't processed inside raw HTML, so **bold** would show its asterisks.
-        html_text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
-        st.markdown(f"<div class='takeaway'>{html_text}</div>", unsafe_allow_html=True)
-        st.button(f"Explore {target} →", key=f"go_{key}", on_click=go_to, args=(target,))
-
-    for row in range(0, len(cards), 2):
-        cols = st.columns(2, gap="medium")
-        for col, card in zip(cols, cards[row:row + 2]):
-            with col.container(border=True):
-                reveal_card(*card)
-
-    if any(st.session_state.get(f"guess_{c[0]}") is not None for c in cards):
-        st.button("Hide all answers", key="reset_guesses",
-                  on_click=lambda: [st.session_state.pop(f"guess_{c[0]}", None) for c in cards])
-    st.caption("Also: **Meta Shifts** shows who lost ground as a group of champions rose; **Teams & Regions** shows "
-               "what each team and region leans on, and whether that wins games.")
+    for target in PAGES[1:]:
+        with st.container(border=True):
+            left, right = st.columns([5, 1], vertical_alignment="center")
+            left.markdown(f"#### {target}")
+            left.markdown(f"<div class='muted'>{PAGE_INFO[target]}</div>", unsafe_allow_html=True)
+            right.button("Open →", key=f"go_{target}", on_click=go_to, args=(target,), use_container_width=True)
+            if target in found:
+                with st.expander("What we found"):
+                    # Markdown isn't processed inside raw HTML, so **bold** would show its asterisks.
+                    html_text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", found[target])
+                    st.markdown(f"<div class='takeaway'>{html_text}</div>", unsafe_allow_html=True)
 
 
 # --- Worlds 2026 -----------------------------------------------------------------------

@@ -5,6 +5,9 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.15.2 · Nov 17: More space above findings
+- On the Overview, each **What we found** section sits a little lower, so it no longer crowds the text explaining the page.
+
 ## v1.15.1 · Nov 17: Breathing room under findings
 - Each **What we found** section on the Overview has a little white space under its text, so it no longer sits tight against the bottom edge.
 

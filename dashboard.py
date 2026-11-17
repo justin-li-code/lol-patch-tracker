@@ -57,6 +57,7 @@ st.markdown("""
   .lead { font-size: 1.08rem; color: var(--text-color); opacity: .85; margin: .1rem 0 1.1rem 0; }
   .takeaway { font-size: 1.02rem; line-height: 1.5; }
   .found { padding-bottom: .9rem; }
+  .page-info { margin-bottom: .8rem; }
   .muted { opacity: .7; font-size: .9rem; }
   div[data-testid="stMetricValue"] { font-size: 1.6rem; }
 </style>
@@ -1219,7 +1220,7 @@ if page == "Overview":
         with st.container(border=True):
             left, right = st.columns([5, 1], vertical_alignment="center")
             left.markdown(f"#### {target}")
-            left.markdown(f"<div class='muted'>{PAGE_INFO[target]}</div>", unsafe_allow_html=True)
+            left.markdown(f"<div class='muted page-info'>{PAGE_INFO[target]}</div>", unsafe_allow_html=True)
             right.button("Open →", key=f"go_{target}", on_click=go_to, args=(target,), use_container_width=True)
             if target in found:
                 with st.expander("What we found"):

@@ -1644,7 +1644,7 @@ elif page == "Meta Shifts":
         all_champs = sorted(all_stats.champion.unique())
         g_sel, g_win = st.columns([3, 2])
         members = g_sel.multiselect("Champions", all_champs, key="ripple_group",
-                                    default=[c for c in ["Nocturne", "Qiyana"] if c in all_champs])
+                                    default=[c for c in ["Nocturne"] if c in all_champs])
         if not members:
             st.info("Pick at least one champion.")
         else:
@@ -1671,7 +1671,11 @@ elif page == "Meta Shifts":
                                            line=dict(color="#0b0b0b", width=3), marker=dict(size=8),
                                            hovertemplate=f"{label} %{{y:.0%}}<extra></extra>"))
                 pv = all_stats.pivot_table(index="champion", columns="patch", values="presence")
-                for i, c in enumerate(fell.champion.head(4)):
+                # Only what the reader adds goes on the chart; the biggest losers are listed first.
+                others = list(dict.fromkeys([*fell.champion, *(c for c in all_champs if c not in members)]))
+                compare = st.multiselect("Add champions to the chart", others, key="ripple_compare_" + label,
+                                         max_selections=len(SERIES), placeholder="Biggest losers are listed first")
+                for i, c in enumerate(compare):
                     y = pv.loc[c].reindex(g_patches).fillna(0) if c in pv.index else pd.Series(0, index=g_patches)
                     fig.add_trace(go.Scatter(x=g_patches, y=y.values, name=c, mode="lines",
                                              line=dict(color=SERIES[i], width=1.8),

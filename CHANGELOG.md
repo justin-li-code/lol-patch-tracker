@@ -5,6 +5,10 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.16 · Nov 17: Meta Shifts shows only what you pick
+- **Rise & Fall** starts with a single champion (Nocturne) instead of a pair, and its chart shows only that champion's line.
+- Other champions no longer appear on the chart automatically (it used to add Malphite, Neeko, Jayce and others). A new **Add champions to the chart** picker lets you add up to five, with the biggest losers listed first. The summary sentence and the Fell / Rose alongside tables still name who lost ground.
+
 ## v1.15.3 · Nov 17: Calmer headings
 - Titles and headings now use **Inter**, the same font as the rest of the text, instead of the angular Chakra Petch. They stand out by size and weight, so the page reads as one style.
 

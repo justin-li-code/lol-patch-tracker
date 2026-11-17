@@ -5,6 +5,17 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.14 · Nov 17: An Overview you explore
+- **The Overview now asks instead of tells.** It shows six questions, each with a few possible answers, and the findings stay hidden until you guess. Then it says whether you were right, shows what the data says, and links to the page with the full story. "Just show me" skips the guess, and "Hide all answers" starts over.
+- **The questions:**
+  - Who won Worlds 2026? (Bilibili Gaming, 3–1 over Gen.G, an upset by our numbers: Gen.G had a 60% chance going in.)
+  - How much do buffs move pro picks and bans?
+  - Do item nerfs push champions out?
+  - What's the go-to answer to a common pick?
+  - Who was the best-rated player at Worlds?
+  - Can patch notes predict the next event?
+- The answers update with the data, and the possible answers are shuffled so the right one isn't always in the same spot.
+
 ## v1.13.2 · Nov 1: Correct logos in the knockout bracket
 - **Fixed:** the knockout bracket showed the wrong team logos. Both brackets sit on the same page, and the Swiss bracket's logo settings overwrote the knockout bracket's. Each logo is now tied to its team's name, so the two can't clash.
 

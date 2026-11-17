@@ -10,6 +10,7 @@
     builds     final items and runes per player, from the cached game pages (needs players)
     draft      draft answers: which picks teams make in response to an opponent's pick
     matches    game details, expected results and player ratings for international games
+    history    player ratings for 2024 and 2025 (leagues + international events; slow first time, cached)
     upcoming   Worlds schedule, standings, chances to advance and matchup-preview data
     refresh    quick Worlds update: new international games only, then every Worlds view
                (what the scheduled GitHub Action runs; needs no page cache)
@@ -79,7 +80,7 @@ def refresh(force: bool = False):
 
 def main():
     p = argparse.ArgumentParser(prog="lolpatch", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "builds", "draft", "matches", "upcoming", "refresh", "assets", "all", "dashboard"])
+    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "builds", "draft", "matches", "upcoming", "refresh", "assets", "history", "all", "dashboard"])
     p.add_argument("--refresh", action="store_true", help="re-download index pages (new games / patches)")
     p.add_argument("--target", help="patch to predict, e.g. 26.22 (default: latest patch notes)")
     p.add_argument("--notes-url", help="patch notes URL for --target, if not on the usual Riot URL")
@@ -141,6 +142,9 @@ def main():
     if a.command in ("assets", "all"):
         from . import assets
         assets.run()
+    if a.command == "history":
+        from . import history
+        history.run()
     if a.command == "refresh":
         refresh(force=a.refresh)
     if a.command == "dashboard":

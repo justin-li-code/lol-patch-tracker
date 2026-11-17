@@ -113,14 +113,19 @@ def parse_fullstats(html: str) -> pd.DataFrame:
     return df
 
 
-def build(domestic: bool = True, incremental: bool = False, log=print) -> dict:
+def build(domestic: bool = True, incremental: bool = False, log=print, sources: list | None = None,
+          out_dir=PROCESSED) -> dict:
     """International events, plus every domestic league game when `domestic` (needed for player history).
 
     `incremental` keeps the games already in the match_*.csv files and only downloads new ones
-    (what the scheduled cloud refresh uses, since it has no page cache)."""
+    (what the scheduled cloud refresh uses, since it has no page cache). `sources` and `out_dir`
+    swap in another season's tournaments (history.py): (event key, league, title, tournaments)."""
     from .events import EVENTS
     from .scrape_matches import league_of, list_tournaments
-    sources = [(key, None, ev["title"], ev["tournaments"]) for key, ev in EVENTS.items()]
+    if sources is not None:
+        domestic = False
+    else:
+        sources = [(key, None, ev["title"], ev["tournaments"]) for key, ev in EVENTS.items()]
     if domestic:
         by_league = {}
         for t in list_tournaments():
@@ -129,8 +134,8 @@ def build(domestic: bool = True, incremental: bool = False, log=print) -> dict:
     games, teams, plist, timeline, gold = [], [], [], [], []
     names_out = ["games", "teams", "players", "timeline", "gold"]
     existing = {}
-    if incremental and (PROCESSED / "match_games.csv").exists():
-        existing = {n: pd.read_csv(PROCESSED / f"match_{n}.csv", dtype={"event": str, "league": str, "series_id": str})
+    if incremental and (out_dir / "match_games.csv").exists():
+        existing = {n: pd.read_csv(out_dir / f"match_{n}.csv", dtype={"event": str, "league": str, "series_id": str})
                     for n in names_out}
     known = set(existing["games"].game_uid) if existing else set()
     for key, league, title, tournaments in sources:
@@ -179,6 +184,6 @@ def build(domestic: bool = True, incremental: bool = False, log=print) -> dict:
                timeline=pd.DataFrame(timeline), gold=pd.DataFrame(gold))
     out = {n: pd.concat([existing[n], new[n]], ignore_index=True) if existing else new[n] for n in names_out}
     for name, df in out.items():
-        df.to_csv(PROCESSED / f"match_{name}.csv", index=False)
+        df.to_csv(out_dir / f"match_{name}.csv", index=False)
     log(f"  saved {len(out['games'])} games ({len(new['games'])} new), {len(out['players'])} player-games")
     return out

@@ -24,8 +24,9 @@ if getattr(sys.modules.get("lolpatch"), "_loaded_stamp", None) != _pkg_stamp:
     lolpatch._loaded_stamp = _pkg_stamp
 
 from lolpatch.analyze import build_transitions, load_changes, verdict_effects
-from lolpatch.config import LEAGUES, PROCESSED, patch_key
-from lolpatch.events import PRIOR_GAMES
+from lolpatch.config import LEAGUES, PROCESSED, YEAR, patch_key
+from lolpatch.events import EVENTS, PRIOR_GAMES
+from lolpatch.history import HISTORY, SEASONS
 from lolpatch.meta import ROLES, SUB_MIN_MOVE_A, SUB_MIN_MOVE_B, displacement, group_presence, rise_window
 from lolpatch.ui import TEAM_SHORT, CHART_FONT, champ_icon, pacific, image_column, nice, row_layout, team_logo, with_icons
 
@@ -74,7 +75,8 @@ def _cache_state() -> dict:
 def _files_version() -> float:
     """Latest change time across the data and code the cached loaders depend on."""
     root = PROCESSED.parent.parent
-    files = [*PROCESSED.glob("*"), *(root / "data" / "forecasts").glob("*"), *(root / "lolpatch").glob("*.py")]
+    files = [*PROCESSED.glob("*"), *(root / "data" / "forecasts").glob("*"), *HISTORY.glob("*/ratings.csv"),
+             *(root / "lolpatch").glob("*.py")]
     return max((p.stat().st_mtime for p in files if p.is_file()), default=0.0)
 
 
@@ -534,17 +536,32 @@ def game_detail(g, mx: dict):
         st.caption("Above the line = blue side ahead in gold. Dots are objectives (hover for which).")
 
 
-def players_page(mx: dict, scope: str):
-    """Rating boards and player lookup for Worlds 2026 or one league's season."""
-    rt = mx["ratings"]
-    at_worlds = scope == "Worlds 2026"
-    w = rt[rt.event == "worlds"] if at_worlds else rt[rt.event.isna() & (rt.league == scope)]
-    where = "at Worlds" if at_worlds else f"in the {scope}"
-    # The other half of each player's year, for comparison: league games for Worlds, international events for leagues.
-    other = (rt[rt.event.isna()] if at_worlds else rt[rt.event.notna()]).groupby("player").rating.mean()
-    other_label = "Rating in their league" if at_worlds else "Rating at international events"
-    min_games = st.slider(f"Minimum Games {where}", 1, 6 if at_worlds else 40, 3 if at_worlds else 20,
-                          key=f"min_games_{scope}")
+@st.cache_data
+def load_history(year: int) -> pd.DataFrame:
+    return pd.read_csv(HISTORY / str(year) / "ratings.csv", dtype={"event": str, "league": str})
+
+
+def competitions(rt: pd.DataFrame, year: int) -> list[tuple[str, str | None, str | None]]:
+    """(label, event key, league) for the year's international events (Worlds first) and leagues."""
+    titles = ({k: ev["title"] for k, ev in EVENTS.items()} if year == YEAR
+              else {k: title for k, (title, _) in SEASONS[year]["events"].items()})
+    leagues = LEAGUES if year == YEAR else SEASONS[year]["leagues"]
+    events = sorted((k for k in titles if (rt.event == k).any()), key=lambda k: k != "worlds")
+    return ([(titles[k].replace(f" {year}", ""), k, None) for k in events]
+            + [(lg, None, lg) for lg in leagues if (rt.event.isna() & (rt.league == lg)).any()])
+
+
+def players_page(rt: pd.DataFrame, year: int, label: str, event: str | None, league: str | None):
+    """Rating boards and player lookup for one international event or one league's season."""
+    at_event = event is not None
+    w = rt[rt.event == event] if at_event else rt[rt.event.isna() & (rt.league == league)]
+    where = (f"at {'the ' if label.startswith(('Esports', 'Demacia')) else ''}{label}" if at_event
+             else f"in the {league}")
+    # The other half of each player's year, for comparison: league games for events, international events for leagues.
+    other = (rt[rt.event.isna()] if at_event else rt[rt.event.notna()]).groupby("player").rating.mean()
+    other_label = "Rating in their league" if at_event else "Rating at international events"
+    min_games = st.slider(f"Minimum Games {where}", 1, 10 if at_event else 40, 3 if at_event else 20,
+                          key=f"min_games_{year}_{label}")
     agg = w.groupby(["player", "team", "role"]).agg(
         games=("game_uid", "nunique"), rating=("rating", "mean"), expected=("expected_rating", "mean"),
         wins=("result", "sum"), champs=("champion", lambda s: ", ".join(map(nice, s.value_counts().index[:3]))),
@@ -612,7 +629,7 @@ def players_page(mx: dict, scope: str):
         board(down, "vs_expected", "Below expected (per game)", "{:+.1f}")
     with t_look:
         who = st.selectbox("Player", sorted(agg.player + " (" + agg.team + ")", key=str.lower),
-                           key=f"player_pick_{scope}")
+                           key=f"player_pick_{year}_{label}")
         name = who.rsplit(" (", 1)[0]
         me = agg[agg.player == name].iloc[0]
         n_role = int((agg.role == me.role).sum())
@@ -1105,8 +1122,9 @@ PAGES = ["Overview", "Worlds 2026", "Players", "Champions & Patches", "Meta Shif
 PAGE_INFO = {
     "Worlds 2026": "The knockout and Swiss brackets, every series and game, standings, match previews, and the "
                    "champions that ruled the tournament.",
-    "Players": "Every pro player rated out of 5, at Worlds and in each of the five leagues: the best overall and by "
-               "role, who beat or missed expectations, and a lookup to see where any player ranks.",
+    "Players": "Every pro player rated out of 5 from 2024 to 2026, at Worlds, MSI, First Stand and the other "
+               "international events and in each league: the best overall and by role, who beat or missed "
+               "expectations, and a lookup to see where any player ranks.",
     "Champions & Patches": "Follow any champion through the season, see what each patch changed (champions, items "
                            "and runes), whether buffs and nerfs work, and what the next patch might do.",
     "Meta Shifts": "When champions rise, others lose their spot. Pick a group of champions to see who they pushed "
@@ -1422,13 +1440,18 @@ elif page == "Worlds 2026":
 
 elif page == "Players":
     st.title("Players")
-    lead("Every pro player rated out of 5, at Worlds and in each league: who's best, by position, and who beat or "
-         "missed what their form predicted.")
+    lead("Every pro player rated out of 5, at international events and in each league: who's best, by position, "
+         "and who beat or missed what their form predicted.")
     if mx is None:
         st.info("Run `python -m lolpatch matches` first.")
         st.stop()
-    scope = st.radio("Show players from", ["Worlds 2026", *LEAGUES], horizontal=True, key="players_scope")
-    players_page(mx, scope)
+    years = [YEAR] + [y for y in sorted(SEASONS, reverse=True) if (HISTORY / str(y) / "ratings.csv").exists()]
+    year = st.columns([1, 4])[0].selectbox("Year", years, key="players_year")
+    rt = mx["ratings"] if year == YEAR else load_history(year)
+    comps = competitions(rt, year)
+    pick = st.radio("Show players from", [c[0] for c in comps], horizontal=True, key=f"players_scope_{year}")
+    st.caption(f"Ratings compare every pro game of {year} with each other: 3.0 is a typical game that year.")
+    players_page(rt, year, *next(c for c in comps if c[0] == pick))
 
 
 # --- Champions & patches ----------------------------------------------------------------

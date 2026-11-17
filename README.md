@@ -148,6 +148,18 @@ Which picks teams make *in response* to an opponent's pick.
   Fit on games before Worlds, scored on Worlds: correlation with actual
   ratings 0.24 (0.20 without champion history).
 
+## Earlier seasons (`python -m lolpatch history`)
+
+- **2024 and 2025 player ratings** (`data/history/<year>/ratings.csv`) for the
+  Players page: every league game (2024: LCK, LPL, LEC, LCS, CBLOL; 2025: LCK,
+  LPL, LEC, LTA, after the LCS and CBLOL merged into the LTA) and every
+  international event (First Stand 2025, MSI, Esports World Cup, Worlds).
+- Same game pages and rating method as 2026, rated within each year (3.0 = a
+  typical game that year). Expected results reuse the 2026-tuned team-strength
+  settings, fit day by day on that season's games only.
+- First run downloads ~12,000 pages (~5 hours at the polite request pace);
+  cached after. Only the slim `ratings.csv` is committed.
+
 ## Upcoming matches (`python -m lolpatch upcoming`)
 
 - **Schedule:** Leaguepedia's MatchSchedule when it responds (it often rate-limits

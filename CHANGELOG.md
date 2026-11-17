@@ -5,6 +5,11 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.18 · Nov 17: Every international event on the Players page
+- The Players page now covers **every 2026 international event**: Worlds, First Stand, MSI, the Esports World Cup and the Demacia Cup, next to the five leagues. Each has the same boards and Player Lookup. Some of the best: Bin at First Stand (4.0), Peyz at MSI (3.8).
+- **New Year picker** for earlier seasons. 2024 and 2025 are being downloaded (every league game and international event, about 12,000 game pages) and appear in the picker as soon as they're rated.
+- New command: `python -m lolpatch history` rebuilds the 2024 and 2025 ratings.
+
 ## v1.17 · Nov 17: Players page for Worlds and every league
 - **Worlds Players is now Players**, with a picker at the top: Worlds 2026, LCK, LPL, LCS, LEC or CBLOL. Worlds works as before.
 - **Every league gets the same views:** Best, Top 10 by Role, Lowest Rated, Above and Below Expectations, and Player Lookup. Player Lookup shows the player's rank overall and in their position, the players just above and below them, their game-by-game ratings, and their strengths and weaknesses in that league.

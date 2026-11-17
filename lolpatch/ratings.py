@@ -288,9 +288,12 @@ def player_metrics(players: pd.DataFrame) -> pd.DataFrame:
     return p
 
 
-def player_ratings(expected: pd.DataFrame, log=print) -> pd.DataFrame:
-    players = pd.read_csv(PROCESSED / "match_players.csv")
-    games = pd.read_csv(PROCESSED / "match_games.csv")
+def player_ratings(expected: pd.DataFrame, log=print, src=PROCESSED, out=PROCESSED, regions: dict | None = None,
+                   cross: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Rate every player-game in src/match_*.csv. regions/cross default to 2026 (see history.py for
+    earlier seasons): each team's region, and every team-game with its region and result."""
+    players = pd.read_csv(src / "match_players.csv")
+    games = pd.read_csv(src / "match_games.csv")
     p = player_metrics(players)
     stats = sorted({s for w in ROLE_WEIGHTS.values() for s in w})
     # z-scores within role across every 2026 game (domestic + international), one common scale.
@@ -310,17 +313,17 @@ def player_ratings(expected: pd.DataFrame, log=print) -> pd.DataFrame:
     p["stat_rating"] = (1 + 4 * (rankdata(p.perf_std) - 0.5) / len(p)).round(1)
     p["mvp"] = p.rating == p.groupby("game_uid").rating.transform("max")
     p = p.merge(games[["game_uid", "event", "league", "series_id", "stage", "date"]], on="game_uid", how="left")
-    p = expected_player_ratings(p, log=log)
+    p = expected_player_ratings(p, log=log, regions=regions, cross=cross, out=out)
     keep = ["game_uid", "event", "league", "series_id", "stage", "date", "team", "opponent", "side", "role", "player", "champion", "result",
             "p_win", "vs_expected", "rating", "stat_rating", "mvp", "Kills", "Deaths", "Assists", "CSM", "GOLD%",
             "DMG%", "DPM", "VSPM", "KP%", "GD@15", "CSD@15", "XPD@15", "Golds", "Total damage to Champion",
             "Vision Score", "Solo kills", "duration", "gold_share", "dmg_game", "gold_game", "opp_dmg", "opp_gold",
             "dmg_per_gold", "expected_rating", "rating_vs_expected", "player_prior",
             "player_games", "champ_games", "champ_prior"] + [f"z_{s}" for s in stats]
-    out = p[keep]
-    out.to_csv(PROCESSED / "player_ratings.csv", index=False)
-    log(f"  rated {len(out)} player-games across {out.game_uid.nunique()} games")
-    return out
+    rated = p[keep]
+    rated.to_csv(out / "player_ratings.csv", index=False)
+    log(f"  rated {len(rated)} player-games across {rated.game_uid.nunique()} games")
+    return rated
 
 
 # --- expected player rating ------------------------------------------------------------------
@@ -337,9 +340,9 @@ def _prior_by(df: pd.DataFrame, keys: list[str]) -> pd.DataFrame:
     return daily[keys + ["date", "prior_sum", "prior_n"]]
 
 
-def region_strength_prior(games: pd.DataFrame) -> pd.DataFrame:
+def region_strength_prior(games: pd.DataFrame, g: pd.DataFrame | None = None) -> pd.DataFrame:
     """Each region's win rate in cross-region games before each date (shrunk toward 50%)."""
-    g = all_games()[["game_uid", "date", "team", "region", "result"]]
+    g = (all_games() if g is None else g)[["game_uid", "date", "team", "region", "result"]]
     pair = g.merge(g, on="game_uid", suffixes=("", "_opp"))
     pair = pair[(pair.team != pair.team_opp) & (pair.region != pair.region_opp)]
     rows = []
@@ -351,7 +354,8 @@ def region_strength_prior(games: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def expected_player_ratings(p: pd.DataFrame, log=print) -> pd.DataFrame:
+def expected_player_ratings(p: pd.DataFrame, log=print, regions: dict | None = None, cross: pd.DataFrame | None = None,
+                            out=PROCESSED) -> pd.DataFrame:
     """Pre-game expected rating from the player's earlier games, their record on this champion,
     the team's win chance, and (for international games) how strong their region has been.
 
@@ -366,9 +370,9 @@ def expected_player_ratings(p: pd.DataFrame, log=print) -> pd.DataFrame:
     p["champ_games"] = p.c_n.fillna(0).astype(int)
     p["player_prior"] = (p.prior_sum.fillna(0) + PLAYER_PRIOR_GAMES * 3.0) / (p.player_games + PLAYER_PRIOR_GAMES)
     p["champ_prior"] = (p.c_sum.fillna(0) + CHAMP_PRIOR_GAMES * p.player_prior) / (p.champ_games + CHAMP_PRIOR_GAMES)
-    regions = team_regions(load_games())
+    regions = team_regions(load_games()) if regions is None else regions
     p["region"] = p.team.map(regions).fillna("Other")
-    rs = region_strength_prior(p)
+    rs = region_strength_prior(p, cross)
     p = p.merge(rs, on=["date", "region"], how="left")
     p["region_strength"] = p.region_strength.fillna(0.5)
     p["intl"] = p.event.notna().astype(float)
@@ -397,7 +401,7 @@ def expected_player_ratings(p: pd.DataFrame, log=print) -> pd.DataFrame:
                  everyone_average=mae(np.full(len(test), train.rating.mean()))),
         correlation=dict(model=corr(pred_full), without_champion_history=corr(no_champ.predict(features(test, False)))),
     )
-    (PROCESSED / "expected_rating_eval.json").write_text(json.dumps(evaluation, indent=2))
+    (out / "expected_rating_eval.json").write_text(json.dumps(evaluation, indent=2))
     p["expected_rating"] = np.clip(full.predict(features(p)), 1, 5).round(1)
     p["rating_vs_expected"] = (p.rating - p.expected_rating).round(1)
     p["date"] = p.date.dt.strftime("%Y-%m-%d")

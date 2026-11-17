@@ -1163,12 +1163,12 @@ if page == "Overview":
             answer = "Barely, as far as we can tell"
             cards.append(("items", "Items and runes", "When Riot nerfs a champion's main item, do pros stop picking "
                           "that champion?", ["Yes, as much as a champion nerf", "Somewhat, but less", answer], answer,
-                          f"Barely. Popular champions whose main items were nerfed dropped **{-extra:.1f} points** "
-                          f"more than ones whose items weren't touched, but that's only {len(nerfed)} cases and "
-                          if extra < 0 else
-                          f"Barely. Popular champions whose main items were nerfed did no worse than ones whose items "
-                          f"weren't touched ({len(nerfed)} cases), and "
-                          "could easily be chance. Champion changes are what move the meta.",
+                          (f"Barely. Popular champions whose main items were nerfed dropped **{-extra:.1f} points** "
+                           f"more than ones whose items weren't touched, but that's only {len(nerfed)} cases and "
+                           "could easily be chance." if extra < 0 else
+                           "Barely. Popular champions whose main items were nerfed did no worse than ones whose "
+                           f"items weren't touched ({len(nerfed)} cases).")
+                          + " Champion changes are what move the meta.",
                           "Champions & Patches", False))
     if dr is not None:
         lanes = dr["lanes"]

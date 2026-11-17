@@ -5,6 +5,13 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.17 · Nov 17: Players page for Worlds and every league
+- **Worlds Players is now Players**, with a picker at the top: Worlds 2026, LCK, LPL, LCS, LEC or CBLOL. Worlds works as before.
+- **Every league gets the same views:** Best, Top 10 by Role, Lowest Rated, Above and Below Expectations, and Player Lookup. Player Lookup shows the player's rank overall and in their position, the players just above and below them, their game-by-game ratings, and their strengths and weaknesses in that league.
+- League boards show each player's **rating at international events** next to their league rating, so you can see who carried their form abroad. Worlds boards still show the rating in their league.
+- League boards count players with 20+ games by default (Worlds: 3+), so a substitute with a few big games doesn't top the list. You can change it with the slider.
+- The best in each league this season: Chovy (LCK, 3.7), Knight (LPL, 3.6), Berserker (LCS, 3.6), Caliste (LEC, 3.5) and Zest (CBLOL, 3.7). The Overview's Players bar names the highest-rated regular across all leagues.
+
 ## v1.16.1 · Nov 17: One line per champion in Meta Shifts
 - When you pick more than one champion in **Rise & Fall**, each gets its own line on the chart instead of one combined line. The summary also gives each champion's own numbers, e.g. "Nocturne went from 31% to 80% and Qiyana went from 0% to 27% of games". Champions added to compare show as dotted lines, so they're easy to tell apart from your picks.
 - Who counts as pushed out is still measured against the picked champions together.

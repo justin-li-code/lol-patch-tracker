@@ -534,20 +534,26 @@ def game_detail(g, mx: dict):
         st.caption("Above the line = blue side ahead in gold. Dots are objectives (hover for which).")
 
 
-def worlds_players_page(mx: dict):
+def players_page(mx: dict, scope: str):
+    """Rating boards and player lookup for Worlds 2026 or one league's season."""
     rt = mx["ratings"]
-    w = rt[rt.event == "worlds"]
-    domestic = rt[rt.event.isna()].groupby("player").rating.mean()
-    min_games = st.slider("Minimum Games at Worlds", 1, 6, 3, key="wp_min_games")
+    at_worlds = scope == "Worlds 2026"
+    w = rt[rt.event == "worlds"] if at_worlds else rt[rt.event.isna() & (rt.league == scope)]
+    where = "at Worlds" if at_worlds else f"in the {scope}"
+    # The other half of each player's year, for comparison: league games for Worlds, international events for leagues.
+    other = (rt[rt.event.isna()] if at_worlds else rt[rt.event.notna()]).groupby("player").rating.mean()
+    other_label = "Rating in their league" if at_worlds else "Rating at international events"
+    min_games = st.slider(f"Minimum Games {where}", 1, 6 if at_worlds else 40, 3 if at_worlds else 20,
+                          key=f"min_games_{scope}")
     agg = w.groupby(["player", "team", "role"]).agg(
         games=("game_uid", "nunique"), rating=("rating", "mean"), expected=("expected_rating", "mean"),
         wins=("result", "sum"), champs=("champion", lambda s: ", ".join(map(nice, s.value_counts().index[:3]))),
     ).reset_index()
     agg["vs_expected"] = agg.rating - agg.expected
-    agg["domestic"] = agg.player.map(domestic)
+    agg["other"] = agg.player.map(other)
     agg = agg[agg.games >= min_games]
     if agg.empty:
-        st.info("No players with that many Worlds games yet.")
+        st.info(f"No players with that many games {where}.")
         return
 
     # Overall and within-role ranks by average rating, among players shown at this minimum.
@@ -561,11 +567,11 @@ def worlds_players_page(mx: dict):
                 "Record": [f"{int(w_)}–{int(n - w_)}" for w_, n in zip(df.wins, df.games)]}
         if value_col != "rating":  # the ranking value first, then the rating it came from
             cols[value_label] = df[value_col]
-        cols |= {"Average rating": df.rating, "Expected rating": df.expected, "Rating in their league": df.domestic,
+        cols |= {"Average rating": df.rating, "Expected rating": df.expected, other_label: df.other,
                  "Champions": df.champs}
         t = pd.DataFrame(cols)
         styled = t.style.format({value_label: fmt, "Average rating": "{:.1f}", "Expected rating": "{:.1f}",
-                                 "Rating in their league": "{:.1f}"}, na_rep="—")
+                                 other_label: "{:.1f}"}, na_rep="—")
         if highlight is not None:
             styled = styled.apply(lambda row: ["background-color: rgba(42,120,214,.14); font-weight: 600"
                                                if row.Player == highlight else "" for _ in row], axis=1)
@@ -577,7 +583,7 @@ def worlds_players_page(mx: dict):
         ["Best", "Top 10 by Role", "Lowest Rated", "Above Expectations", "Below Expectations", "Player Lookup"])
     with t_best:
         top = agg.sort_values("rating", ascending=False).head(10)
-        st.markdown(f"<div class='takeaway'>Best so far: <b>{top.iloc[0].player}</b> ({top.iloc[0].team}), "
+        st.markdown(f"<div class='takeaway'>Best {where}: <b>{top.iloc[0].player}</b> ({top.iloc[0].team}), "
                     f"averaging <b>{top.iloc[0].rating:.1f}</b> over {top.iloc[0].games} games.</div>",
                     unsafe_allow_html=True)
         board(top, "rating", "Average rating", "{:.1f}")
@@ -590,7 +596,7 @@ def worlds_players_page(mx: dict):
                 board(agg[agg.role == role].head(10), "rating", "Average rating", "{:.1f}")
     with t_low:
         low = agg.sort_values("rating").head(10)
-        st.markdown("The lowest averages so far. Often a mix of tough opponents and losing games, "
+        st.markdown("The lowest averages. Often a mix of tough opponents and losing games, "
                     "since the result is part of the rating.")
         board(low, "rating", "Average rating", "{:.1f}")
     with t_up:
@@ -606,7 +612,7 @@ def worlds_players_page(mx: dict):
         board(down, "vs_expected", "Below expected (per game)", "{:+.1f}")
     with t_look:
         who = st.selectbox("Player", sorted(agg.player + " (" + agg.team + ")", key=str.lower),
-                           key="worlds_player_pick")
+                           key=f"player_pick_{scope}")
         name = who.rsplit(" (", 1)[0]
         me = agg[agg.player == name].iloc[0]
         n_role = int((agg.role == me.role).sum())
@@ -643,7 +649,7 @@ def worlds_players_page(mx: dict):
             role = pg.role.iloc[0]
             prof = pd.Series({STAT_LABELS[s]: pg[f"z_{s}"].mean() for s in ROLE_WEIGHTS[role]
                               if f"z_{s}" in pg}).sort_values()
-            st.markdown(f"**Strengths and weaknesses at Worlds**, compared with a typical pro {role}")
+            st.markdown(f"**Strengths and weaknesses {where}**, compared with a typical pro {role}")
             fig = go.Figure(go.Bar(x=prof.values, y=prof.index, orientation="h",
                                    marker=dict(color=[BUFF if v >= 0 else NERF for v in prof.values], cornerradius=3),
                                    hovertemplate="%{y}: %{customdata}<extra></extra>",
@@ -665,9 +671,10 @@ def worlds_players_page(mx: dict):
             "**Expected rating:** what we'd have guessed before the game, from how the player has been playing, "
             "how they usually do on that champion, how likely their team was to win, and (at international "
             "events) how strong their region has been against other regions.\n\n"
-            "**Rating in their league:** their average in league games this year. Players in weaker leagues face "
-            "weaker opponents, so a big league number doesn't always carry over; the expected rating accounts "
-            "for that.")
+            "**Rating in their league** (on Worlds) and **rating at international events** (on each league): the "
+            "player's average in the other half of their year. Players in weaker leagues face weaker opponents, "
+            "so a big league number doesn't always carry over to international events; the expected rating "
+            "accounts for that.")
 
 
 def likely_bans(up: dict, team: str, opponent: str) -> pd.Series:
@@ -1092,14 +1099,14 @@ all_stats = stats[stats.league == "ALL"]
 
 # --- navigation -------------------------------------------------------------------------
 
-PAGES = ["Overview", "Worlds 2026", "Worlds Players", "Champions & Patches", "Meta Shifts", "Draft Answers", "Teams & Regions",
+PAGES = ["Overview", "Worlds 2026", "Players", "Champions & Patches", "Meta Shifts", "Draft Answers", "Teams & Regions",
          "Model Accuracy"]
 # What each page is for, shown on the Overview.
 PAGE_INFO = {
     "Worlds 2026": "The knockout and Swiss brackets, every series and game, standings, match previews, and the "
                    "champions that ruled the tournament.",
-    "Worlds Players": "Every player at Worlds rated out of 5: the best overall and by role, who beat or missed "
-                      "expectations, and a lookup to see where any player ranks.",
+    "Players": "Every pro player rated out of 5, at Worlds and in each of the five leagues: the best overall and by "
+               "role, who beat or missed expectations, and a lookup to see where any player ranks.",
     "Champions & Patches": "Follow any champion through the season, see what each patch changed (champions, items "
                            "and runes), whether buffs and nerfs work, and what the next patch might do.",
     "Meta Shifts": "When champions rise, others lose their spot. Pick a group of champions to see who they pushed "
@@ -1118,6 +1125,8 @@ version_tag = next((line[3:].split("·")[0].strip() for line in changelog_text.s
                     if line.startswith("## v")), "")
 with st.sidebar:
     st.markdown("## Patch Impact")
+    if st.session_state.get("page") == "Worlds Players":  # renamed in v1.17
+        st.session_state.page = "Players"
     page = st.radio("Go to", PAGES, key="page", label_visibility="collapsed")
     if version_tag:
         st.caption(f"Version {version_tag}")
@@ -1160,9 +1169,16 @@ if page == "Overview":
               .reset_index().query("n >= 3").sort_values("r", ascending=False))
         if len(lb):
             best = lb.iloc[0]
-            found["Worlds Players"] = (f"The best-rated player was **{best.player}** ({best.team}, "
-                                       f"{best.role.title()}), averaging **{best.r:.1f} out of 5** over {best.n} "
-                                       "games. A typical game is rated 3.0.")
+            found["Players"] = (f"The best-rated player at Worlds was **{best.player}** ({best.team}, "
+                                f"{best.role.title()}), averaging **{best.r:.1f} out of 5** over {best.n} games. "
+                                "A typical game is rated 3.0.")
+            d_ = mx["ratings"][mx["ratings"].event.isna()]
+            lg = (d_.groupby(["player", "team", "league"]).agg(n=("game_uid", "nunique"), r=("rating", "mean"))
+                  .reset_index().query("n >= 20").sort_values("r", ascending=False))
+            if len(lg):
+                top_ = lg.iloc[0]
+                found["Players"] += (f" Across the leagues, the highest-rated regular (20+ games) was "
+                                     f"**{top_.player}** ({top_.team}, {top_.league}), at **{top_.r:.1f}**.")
     tr = transitions_for("ALL")
     eff = verdict_effects(tr)
     if {"buff", "nerf"} <= set(eff.index):
@@ -1402,15 +1418,17 @@ elif page == "Worlds 2026":
                          column_config=image_column(), hide_index=True, use_container_width=True)
 
 
-# --- Worlds Players ----------------------------------------------------------------------
+# --- Players ---------------------------------------------------------------------------
 
-elif page == "Worlds Players":
-    st.title("Worlds Players")
-    lead("Who's playing best at Worlds, and who's beating or missing what their form predicted.")
+elif page == "Players":
+    st.title("Players")
+    lead("Every pro player rated out of 5, at Worlds and in each league: who's best, by position, and who beat or "
+         "missed what their form predicted.")
     if mx is None:
         st.info("Run `python -m lolpatch matches` first.")
         st.stop()
-    worlds_players_page(mx)
+    scope = st.radio("Show players from", ["Worlds 2026", *LEAGUES], horizontal=True, key="players_scope")
+    players_page(mx, scope)
 
 
 # --- Champions & patches ----------------------------------------------------------------

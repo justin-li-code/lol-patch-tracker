@@ -1265,7 +1265,7 @@ if page == "Overview":
             left.markdown(f"<div class='muted page-info'>{PAGE_INFO[target]}</div>", unsafe_allow_html=True)
             right.button("Open →", key=f"go_{target}", on_click=go_to, args=(target,), use_container_width=True)
             if target in found:
-                with st.expander("What we found"):
+                with st.expander("Key Findings"):
                     # Markdown isn't processed inside raw HTML, so **bold** would show its asterisks.
                     html_text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", found[target])
                     st.markdown(f"<div class='takeaway found'>{html_text}</div>", unsafe_allow_html=True)

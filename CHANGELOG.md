@@ -5,6 +5,9 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.19.1 · Nov 17: "Key Findings"
+- On the Overview, each page's fold-out is now called **Key Findings** instead of "What we found".
+
 ## v1.19 · Nov 17: Meta Shifts by league
 - **Meta Shifts has a League picker:** All Leagues, LCK, LPL, LCS, LEC or CBLOL. Both tabs follow it:
   - **Rise & Fall** charts the picked champions within that league and finds who they pushed out there.

@@ -129,9 +129,17 @@ def load_events():
 
 
 @st.cache_data
-def group_presence_cached(members: tuple) -> pd.Series:
+def group_presence_cached(members: tuple, league: str = "ALL") -> pd.Series:
     from lolpatch.analyze import load_games
-    return group_presence(load_games(), list(members))
+    games = load_games()
+    return group_presence(games if league == "ALL" else games[games.league == league], list(members))
+
+
+@st.cache_data
+def league_substitutions(league: str) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Who Took the Slot within one league (the all-leagues version is precomputed by meta.py)."""
+    from lolpatch.meta import substitutions, with_roles
+    return substitutions(with_roles(transitions_for(league), load_ripple()["meta"]))
 
 
 @st.cache_data
@@ -1679,23 +1687,28 @@ elif page == "Meta Shifts":
     if rp is None:
         st.info("Run `python -m lolpatch meta` first.")
         st.stop()
+    league = st.radio("League", ["ALL", *LEAGUES], horizontal=True, key="ripple_league",
+                      format_func=lambda lg: "All Leagues" if lg == "ALL" else lg)
+    lg_stats = stats[stats.league == league]
+    if league != "ALL":
+        st.caption(f"{league} only: {lg_stats.patch.nunique()} patches had enough {league} games (20+) to measure.")
     t_group, t_slot = st.tabs(["Rise & Fall", "Who Took the Slot"])
 
     with t_group:
-        all_champs = sorted(all_stats.champion.unique())
+        all_champs = sorted(lg_stats.champion.unique())
         g_sel, g_win = st.columns([3, 2])
-        members = g_sel.multiselect("Champions", all_champs, key="ripple_group", max_selections=len(SERIES) - 1,
+        members = g_sel.multiselect("Champions", all_champs, key=f"ripple_group_{league}", max_selections=len(SERIES) - 1,
                                     default=[c for c in ["Nocturne"] if c in all_champs])
         if not members:
             st.info("Pick at least one champion.")
         else:
-            gp = group_presence_cached(tuple(members))
+            gp = group_presence_cached(tuple(members), league)
             g_patches = list(gp.index)
             lo, hi = rise_window(gp)
             # Keyed by group: a new group resets the window to its own rise.
             win = g_win.select_slider("Window", options=g_patches, value=(lo, hi),
-                                      key="ripple_window_" + "|".join(sorted(members)))
-            disp = displacement(all_stats, gp, members, win[0], win[1], rp["meta"])
+                                      key=f"ripple_window_{league}_" + "|".join(sorted(members)))
+            disp = displacement(lg_stats, gp, members, win[0], win[1], rp["meta"])
             label = " + ".join(members)
             if disp.empty:
                 st.info("Pick a window of at least three patches.")
@@ -1705,7 +1718,7 @@ elif page == "Meta Shifts":
                 headline = ", ".join(map(nice, (pushed if len(pushed) else fell).champion.head(3)))
                 verb = "pushed out" if len(pushed) else "fell over the same stretch (not clearly pushed out)"
                 # Each champion on its own line (and in the summary), not their combined rate.
-                pv = all_stats.pivot_table(index="champion", columns="patch", values="presence")
+                pv = lg_stats.pivot_table(index="champion", columns="patch", values="presence")
                 line = lambda c: (pv.loc[c].reindex(g_patches).fillna(0) if c in pv.index
                                   else pd.Series(0.0, index=g_patches))
                 moves = [f"<b>{nice(c)}</b> went from <b>{line(c)[win[0]]:.0%}</b> to <b>{line(c)[win[1]]:.0%}</b>"
@@ -1721,7 +1734,7 @@ elif page == "Meta Shifts":
                                              hovertemplate=f"{nice(c)} %{{y:.0%}}<extra></extra>"))
                 # Only what the reader adds goes on the chart; the biggest losers are listed first.
                 others = list(dict.fromkeys([*fell.champion, *(c for c in all_champs if c not in members)]))
-                compare = st.multiselect("Add champions to compare", others, key="ripple_compare_" + label,
+                compare = st.multiselect("Add champions to compare", others, key=f"ripple_compare_{league}_" + label,
                                          max_selections=len(SERIES) - len(members),
                                          placeholder="Biggest losers are listed first")
                 for i, c in enumerate(compare, start=len(members)):
@@ -1758,26 +1771,29 @@ elif page == "Meta Shifts":
 
     with t_slot:
         st.markdown("After a big buff or nerf, which untouched champion in the same role moved the other way?")
-        subs, pairs = rp["subs"], rp["pairs"]
-        role_f = st.radio("Role", ["all"] + ROLES, horizontal=True, key="ripple_role",
-                          format_func=lambda r: r.title() if r != "all" else "All Roles")
-        sv = subs if role_f == "all" else subs[subs.role == role_f]
-        sv = sv.reindex(sv.changed_delta.abs().sort_values(ascending=False).index)
-        t = pd.DataFrame({
-            "Patch": sv.to_patch.values, "Role": sv.role.str.title().values, "Changed": sv.changed.values,
-            "Its change": [f"{c}: {b:.0%} → {a:.0%}" for c, b, a in zip(sv.change, sv.changed_before, sv.changed_after)],
-            "Took the slot": sv.other.values,
-            "Their move": [f"{b:.0%} → {a:.0%}" for b, a in zip(sv.other_before, sv.other_after)],
-        })
-        t = with_icons(with_icons(t, "Changed", label=" "), "Took the slot", label="  ")
-        table(t, images=[" ", "  "])
-        rec = pairs[pairs.times >= 2]
-        if len(rec):
-            st.markdown("**Happened more than once:** " + "; ".join(
-                f"{r.other} replacing {r.changed} ({r.role}, {r.patches})" for r in rec.itertuples()))
-        st.caption(f"Shown when a changed champion's pick/ban rate moved by {SUB_MIN_MOVE_A * 100:.0f}+ points and "
-                   f"an unchanged champion in the same role moved {SUB_MIN_MOVE_B * 100:.0f}+ points the other way "
-                   "at the same time. The timing points to a swap, but doesn't prove it.")
+        subs, pairs = (rp["subs"], rp["pairs"]) if league == "ALL" else league_substitutions(league)
+        if subs.empty:
+            st.info(f"No clear swaps in the {league}: too few patches with enough games to compare.")
+        else:
+            role_f = st.radio("Role", ["all"] + ROLES, horizontal=True, key="ripple_role",
+                              format_func=lambda r: r.title() if r != "all" else "All Roles")
+            sv = subs if role_f == "all" else subs[subs.role == role_f]
+            sv = sv.reindex(sv.changed_delta.abs().sort_values(ascending=False).index)
+            t = pd.DataFrame({
+                "Patch": sv.to_patch.values, "Role": sv.role.str.title().values, "Changed": sv.changed.values,
+                "Its change": [f"{c}: {b:.0%} → {a:.0%}" for c, b, a in zip(sv.change, sv.changed_before, sv.changed_after)],
+                "Took the slot": sv.other.values,
+                "Their move": [f"{b:.0%} → {a:.0%}" for b, a in zip(sv.other_before, sv.other_after)],
+            })
+            t = with_icons(with_icons(t, "Changed", label=" "), "Took the slot", label="  ")
+            table(t, images=[" ", "  "])
+            rec = pairs[pairs.times >= 2]
+            if len(rec):
+                st.markdown("**Happened more than once:** " + "; ".join(
+                    f"{r.other} replacing {r.changed} ({r.role}, {r.patches})" for r in rec.itertuples()))
+            st.caption(f"Shown when a changed champion's pick/ban rate moved by {SUB_MIN_MOVE_A * 100:.0f}+ points and "
+                       f"an unchanged champion in the same role moved {SUB_MIN_MOVE_B * 100:.0f}+ points the other way "
+                       "at the same time. The timing points to a swap, but doesn't prove it.")
 
 
 # --- Draft answers ---------------------------------------------------------------------

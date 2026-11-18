@@ -5,6 +5,13 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.19 · Nov 17: Meta Shifts by league
+- **Meta Shifts has a League picker:** All Leagues, LCK, LPL, LCS, LEC or CBLOL. Both tabs follow it:
+  - **Rise & Fall** charts the picked champions within that league and finds who they pushed out there.
+  - **Who Took the Slot** finds the swaps within that league.
+- **Leagues differ.** Nocturne rose from 6% to 85% of LEC games, pushing out Varus, Azir and Rumble. In the LPL it went from 15% to 82%, pushing out Neeko, Poppy and Alistar.
+- A note shows how many patches each league had with enough games (20+) to measure. The LCS and CBLOL have only 5, so their results are rougher.
+
 ## v1.18 · Nov 17: Every international event on the Players page
 - The Players page now covers **every 2026 international event**: Worlds, First Stand, MSI, the Esports World Cup and the Demacia Cup, next to the five leagues. Each has the same boards and Player Lookup. Some of the best: Bin at First Stand (4.0), Peyz at MSI (3.8).
 - **New Year picker** for earlier seasons. 2024 and 2025 are being downloaded (every league game and international event, about 12,000 game pages) and appear in the picker as soon as they're rated.

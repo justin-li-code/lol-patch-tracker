@@ -142,7 +142,12 @@ def build(domestic: bool = True, incremental: bool = False, log=print, sources: 
         n_before = len(games)
         for t in tournaments:
             for s in list_series(t):
-                for game_no, gid in game_ids(s["series_id"], s["page"]):
+                try:
+                    ids = game_ids(s["series_id"], s["page"])
+                except RuntimeError as e:
+                    log(f"    skipped series {s['series_id']}: {e}")
+                    continue
+                for game_no, gid in ids:
                     uid = f"{s['series_id']}-{game_no}"
                     if uid in known:
                         continue

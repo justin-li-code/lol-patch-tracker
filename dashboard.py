@@ -24,6 +24,7 @@ if getattr(sys.modules.get("lolpatch"), "_loaded_stamp", None) != _pkg_stamp:
     lolpatch._loaded_stamp = _pkg_stamp
 
 from lolpatch.analyze import build_transitions, load_changes, verdict_effects
+from lolpatch.champions import champ_key
 from lolpatch.config import LEAGUES, PROCESSED, YEAR, patch_key
 from lolpatch.events import EVENTS, PRIOR_GAMES
 from lolpatch.history import HISTORY, SEASONS
@@ -140,6 +141,41 @@ def league_substitutions(league: str) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Who Took the Slot within one league (the all-leagues version is precomputed by meta.py)."""
     from lolpatch.meta import substitutions, with_roles
     return substitutions(with_roles(transitions_for(league), load_ripple()["meta"]))
+
+
+@st.cache_data
+def role_slots(league: str, patches: tuple) -> pd.DataFrame:
+    """Each champion's share of its role's picks, per patch: (role, champion) rows, patch columns."""
+    from lolpatch.analyze import load_games
+    games = load_games()
+    if league != "ALL":
+        games = games[games.league == league]
+    picks = pd.read_csv(PROCESSED / "pick_roles.csv").merge(games[["game_uid", "team", "patch"]],
+                                                            on=["game_uid", "team"])
+    n = picks[picks.patch.isin(patches)].groupby(["role", "patch", "champion"]).size().reset_index(name="n")
+    n["share"] = n.n / n.groupby(["role", "patch"]).n.transform("sum")
+    return n.pivot_table(index=["role", "champion"], columns="patch", values="share",
+                         fill_value=0).reindex(columns=list(patches), fill_value=0)
+
+
+def fall_window(s: pd.Series) -> tuple[str, str]:
+    """From the champion's peak to its low point after it."""
+    peak = s.idxmax()
+    return peak, s.loc[peak:].idxmin()
+
+
+@st.cache_data
+def biggest_falls(league: str, patches: tuple) -> pd.DataFrame:
+    """Every champion in its main role, ranked by how far it fell from its peak."""
+    slots = role_slots(league, patches)
+    rows = []
+    for (role, champ), s in slots.iterrows():
+        if s.max() < 0.1:
+            continue
+        hi, lo = fall_window(s)
+        rows.append(dict(role=role, champion=champ, peak=hi, low=lo, drop=s[hi] - s[lo]))
+    # A flex pick is listed once, in the role where it fell furthest.
+    return pd.DataFrame(rows).sort_values("drop", ascending=False).drop_duplicates("champion")
 
 
 @st.cache_data
@@ -1135,8 +1171,8 @@ PAGE_INFO = {
                "expectations, and a lookup to see where any player ranks.",
     "Champions & Patches": "Follow any champion through the season, see what each patch changed (champions, items "
                            "and runes), whether buffs and nerfs work, and what the next patch might do.",
-    "Meta Shifts": "When champions rise, others lose their spot. Pick a group of champions to see who they pushed "
-                   "out, and which champion took over after each big buff or nerf.",
+    "Meta Shifts": "When a champion falls out of favor, which champions take its spot. Pick any champion to see "
+                   "who replaced it, who it pushed out when it rose, and the swaps after each big buff or nerf.",
     "Draft Answers": "When a team locks in a champion, what the other team picks back in the same role, and who "
                      "leads each pattern: everyone, one region, one team or one player.",
     "Teams & Regions": "What each team and region prioritizes, their signature picks, what opponents ban against "
@@ -1683,7 +1719,8 @@ elif page == "Champions & Patches":
 
 elif page == "Meta Shifts":
     st.title("Meta Shifts")
-    lead("When champions rise, someone else loses the slot. Pick one or more champions and see who they pushed out.")
+    lead("When a champion falls out of favor, others take its spot in the draft. See who took over, and who each "
+         "rising champion pushed out.")
     if rp is None:
         st.info("Run `python -m lolpatch meta` first.")
         st.stop()
@@ -1692,7 +1729,102 @@ elif page == "Meta Shifts":
     lg_stats = stats[stats.league == league]
     if league != "ALL":
         st.caption(f"{league} only: {lg_stats.patch.nunique()} patches had enough {league} games (20+) to measure.")
-    t_group, t_slot = st.tabs(["Rise & Fall", "Who Took the Slot"])
+    t_over, t_group, t_slot = st.tabs(["Who Took Over", "Rise & Fall", "Swaps After Patches"])
+
+    with t_over:
+        st.markdown("Pick a champion that fell out of favor and see which champions filled its spot in the draft.")
+        patches_ = tuple(sorted(lg_stats.patch.unique(), key=patch_key))
+        falls = biggest_falls(league, patches_)
+        slots = role_slots(league, patches_)
+        ROLE_TEXT = {"top": "top lane", "jungle": "jungle", "mid": "mid lane", "bot": "bot lane",
+                     "support": "support"}
+        o_sel, o_win = st.columns([3, 2])
+        fallen = o_sel.selectbox(
+            "Champion (biggest falls first)", falls.champion, key=f"over_champ_{league}",
+            format_func=lambda c: f"{nice(c)}  ·  {falls.set_index('champion').loc[c, 'role'].title()}, "
+                                  f"down {falls.set_index('champion').loc[c, 'drop'] * 100:.0f} points")
+        f = falls.set_index("champion").loc[fallen]
+        share = slots.loc[f.role]
+        s = share.loc[fallen]
+        win = o_win.select_slider("From peak to low", options=list(patches_), value=(f.peak, f.low),
+                                  key=f"over_window_{league}_{fallen}")
+        span = [p for p in patches_ if patch_key(win[0]) <= patch_key(p) <= patch_key(win[1])]
+        if len(span) < 2:
+            st.info("Pick a window of at least two patches.")
+        else:
+            from scipy.stats import spearmanr
+            moves = share[span].diff(axis=1).iloc[:, 1:]
+            rows = []
+            for c, row in share[span].iterrows():
+                if c == fallen:
+                    continue
+                flat = moves.loc[c].nunique() < 2 or moves.loc[fallen].nunique() < 2
+                r = spearmanr(moves.loc[c], moves.loc[fallen])[0] if len(span) >= 5 and not flat else np.nan
+                rows.append(dict(champion=c, before=row[win[0]], after=row[win[1]], r=r))
+            others = pd.DataFrame(rows).assign(gain=lambda x: x.after - x.before).sort_values("gain", ascending=False)
+            # Risers that moved in step with the fall, or too briefly to tell; not ones on their own schedule.
+            takers = others[(others.gain >= 0.03) & ~(others.r >= 0.3)].head(4)
+            role_txt = ROLE_TEXT[f.role]
+
+            own = changes[changes.champ_key == champ_key(fallen)]
+            nerfs = own[own.patch.isin(span[1:])]
+            on = lambda v: " and ".join(nerfs[nerfs.verdict == v].patch)
+            why = ""
+            if on("nerf"):
+                why += f", after it was nerfed on {on('nerf')}"
+            if on("buff"):
+                why += f" (and buffed on {on('buff')})" if why else f", even though it was buffed on {on('buff')}"
+            gains = [f"<b>{nice(t.champion)}</b> (+{t.gain * 100:.0f} points)" for t in takers.itertuples()]
+            took = ("No single champion took over: the spot spread out across many picks." if not gains else
+                    f"Its spot went mostly to {gains[0]}." if len(gains) == 1 else
+                    f"Its spot went mostly to {', '.join(gains[:-1])} and {gains[-1]}.")
+            st.markdown(f"<div class='takeaway'><b>{nice(fallen)}</b> went from <b>{s[win[0]]:.0%}</b> of "
+                        f"{role_txt} picks on {win[0]} to <b>{s[win[1]]:.0%}</b> on {win[1]}{why}. {took}</div>",
+                        unsafe_allow_html=True)
+
+            # Stacked bands: the fallen champion's band thins as its takers' bands above it thicken.
+            fig = go.Figure()
+            shown = [fallen, *takers.champion]
+            for i, c in enumerate(shown):
+                fig.add_trace(go.Scatter(x=list(patches_), y=share.loc[c].values, name=nice(c), mode="lines",
+                                         stackgroup="slot", line=dict(color=SERIES[i], width=1.5),
+                                         hovertemplate=f"{nice(c)} %{{y:.0%}}<extra></extra>"))
+            fig.add_vrect(x0=patches_.index(win[0]), x1=patches_.index(win[1]), fillcolor="#2a78d6",
+                          opacity=0.07, line_width=0)
+            for p, v in own[own.patch.isin(patches_)].set_index("patch").verdict.items():
+                fig.add_vline(x=patches_.index(p), line=dict(color="#5b6472", width=1, dash="dot"))
+                fig.add_annotation(x=patches_.index(p), y=1.0, yref="paper", yanchor="bottom", showarrow=False,
+                                   text=f"{nice(fallen)} {v}", font=dict(size=11, color="#5b6472"))
+            st.plotly_chart(style(fig, 380, margin=dict(l=10, r=10, t=70, b=10),
+                                  legend=dict(orientation="h", y=1.12, yanchor="bottom", x=0, xanchor="left",
+                                              traceorder="normal"),
+                                  xaxis=dict(type="category", title=None),
+                                  yaxis=dict(title=f"Share of {role_txt} picks", rangemode="tozero", **PCT)),
+                            use_container_width=True)
+            st.caption(f"Each band is one champion's share of {role_txt} picks on that patch, stacked on top of "
+                       f"each other, so the top edge is their total. Dotted lines mark patches that changed "
+                       f"{nice(fallen)}; the shaded stretch is the window above.")
+
+            t = pd.DataFrame({
+                "Champion": others.champion.head(8).values,
+                f"Share of {role_txt} picks": [f"{b:.0%} → {a:.0%}" for b, a in
+                                               zip(others.before.head(8), others.after.head(8))],
+                "Change": [f"{g * 100:+.0f} points" for g in others.gain.head(8)],
+                "Rose as it fell?": ["yes, patch by patch" if r <= -0.3 else "no, on its own schedule"
+                                     if r >= 0.3 else "partly" if pd.notna(r) else "too few patches to tell"
+                                     for r in others.r.head(8)],
+            })
+            st.markdown(f"**Who gained the most {role_txt} picks**")
+            table(with_icons(t, "Champion"), images=[" "], n=8)
+            with st.expander("How this works"):
+                st.markdown(
+                    f"Every pick is counted in the role it was played in. For each patch we take the share of "
+                    f"{role_txt} picks each champion got, so when {nice(fallen)} drops, the champions that grow "
+                    "are the ones teams picked instead. **Rose as it fell?** checks the timing: *yes* means that, "
+                    "patch after patch, this champion went up when "
+                    f"{nice(fallen)} went down. *On its own schedule* means it rose, but not in step, so it "
+                    "probably got stronger for its own reasons. Bans aren't counted here, because a ban doesn't "
+                    "fill a spot on the team.")
 
     with t_group:
         all_champs = sorted(lg_stats.champion.unique())

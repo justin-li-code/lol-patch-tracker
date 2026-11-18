@@ -5,6 +5,14 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.20 · Nov 18: Who Took Over
+- **New first tab on Meta Shifts: Who Took Over.** Pick a champion and see which champions filled its spot. The list starts with the biggest falls, and it follows the League picker.
+- The chart stacks that role's picks to 100% for every patch. As the picked champion's band shrinks, you can see the bands that grow in its place. Dotted lines mark the patches that buffed or nerfed it.
+- One sentence sums it up, e.g. "K'Sante went from 31% of top lane picks on 26.2 to 4% on 26.16. Its spot went mostly to Ambessa (+12 points), Olaf, Gnar and Aatrox" (LEC).
+- A table lists who gained the most, and whether each one rose patch by patch as the champion fell or on its own schedule.
+- The old tabs are still there: **Rise & Fall** (who a rising champion pushed out) and **Swaps After Patches** (renamed from Who Took the Slot).
+- Also: one gol.gg page that won't load no longer stops a whole download.
+
 ## v1.19.1 · Nov 17: "Key Findings"
 - On the Overview, each page's fold-out is now called **Key Findings** instead of "What we found".
 

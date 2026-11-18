@@ -148,6 +148,16 @@ Which picks teams make *in response* to an opponent's pick.
   Fit on games before Worlds, scored on Worlds: correlation with actual
   ratings 0.24 (0.20 without champion history).
 
+## PBE forecast (`python -m lolpatch pbe`)
+
+Riot tests each patch on the PBE about two weeks before release. `lolpatch/pbe.py` compares
+Community Dragon's mirror of the PBE game files with the live ones (base stats, ability values,
+cooldowns, costs), scores each changed number like a patch-notes line, and runs the Next Patch
+model on the PBE patch. Outputs: `data/processed/pbe_lines.csv`, `pbe_changes.csv`,
+`pbe_predictions.csv`, `pbe_meta.json`. The scheduled job runs it every 3 hours and commits only
+when the PBE files change; it also downloads the official notes when a new patch goes live.
+Added or removed values (usually renames or reworks) are listed but not scored.
+
 ## Earlier seasons (`python -m lolpatch history`)
 
 - **2024 and 2025 player ratings** (`data/history/<year>/ratings.csv`) for the

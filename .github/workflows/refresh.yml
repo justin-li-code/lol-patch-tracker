@@ -34,8 +34,15 @@ jobs:
         id: refresh
         run: python -m lolpatch refresh
 
+      # New official patch notes and the PBE forecast. Community Dragon being down shouldn't
+      # block the Worlds data above, so a failure here only skips this step.
+      - name: Refresh PBE forecast
+        id: pbe
+        continue-on-error: true
+        run: python -m lolpatch pbe
+
       - name: Commit changes, if any
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.refresh.outputs.changed == 'true' || steps.pbe.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

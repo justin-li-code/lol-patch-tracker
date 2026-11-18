@@ -1,0 +1,5 @@
+patch,champion,champ_key,ability,stat,before,after,text,direction,magnitude,context
+26.24,Akshan,akshan,AkshanE,On Hit Damage Reduction,0.25,,On Hit Damage Reduction: removed,0.0,0.0,
+26.24,Akshan,akshan,AkshanE,On Hit Ratio,,0.25,On Hit Ratio: new (0.25),0.0,0.0,
+26.24,Akshan,akshan,AkshanQ,AD Ratio,0.7,0.8,AD Ratio: 0.7 ⇒ 0.8,1.0,0.142857142857143,
+26.24,Akshan,akshan,AkshanR,On Hit Ratio,,0.25,On Hit Ratio: new (0.25),0.0,0.0,

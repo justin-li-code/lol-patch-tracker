@@ -5,6 +5,14 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.21 · Nov 18: PBE Preview
+- **New tab on Champions & Patches: PBE Preview.** Riot tests each patch on the PBE about two weeks before release. The site now reads the PBE's game files, finds every champion number that's about to change, and forecasts where each champion would rank in pro play before the patch notes are out.
+- It shows each changed champion with what changed, e.g. "Q AD Ratio: 0.7 → 0.8" for Akshan on 26.24, plus its predicted pick/ban rate and rank before and after.
+- It also ranks every champion on the PBE patch and shows how far each one moves compared with the Next Patch forecast.
+- **Updates on its own:** the 3-hour job checks the PBE and commits only when the PBE files actually change. When a new patch goes live, it also downloads the official patch notes.
+- **Next Patch now includes patches 26.22 and 26.23.** The patch-notes download had saved "not found" for them before Riot posted them, and it now checks again.
+- New command: `python -m lolpatch pbe`.
+
 ## v1.20 · Nov 18: Who Took Over
 - **New first tab on Meta Shifts: Who Took Over.** Pick a champion and see which champions filled its spot. The list starts with the biggest falls, and it follows the League picker.
 - The chart stacks that role's picks to 100% for every patch. As the picked champion's band shrinks, you can see the bands that grow in its place. Dotted lines mark the patches that buffed or nerfed it.

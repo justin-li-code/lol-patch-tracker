@@ -3,6 +3,7 @@
     fetch      scrape pro games (gol.gg) and patch notes (Riot)
     analyze    build per-patch stats and change-effect tables
     predict    backtest the model and predict the next patch
+    pbe        forecast the patch being tested on the PBE, before its patch notes (Community Dragon)
     events     scrape international events and score the forecasts (re-run after each Worlds round)
     regions    region/team champion priorities and whether priority wins (runs after events)
     meta       ripple effects: pro roles, substitutions, champion groups
@@ -80,7 +81,7 @@ def refresh(force: bool = False):
 
 def main():
     p = argparse.ArgumentParser(prog="lolpatch", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "builds", "draft", "matches", "upcoming", "refresh", "assets", "history", "all", "dashboard"])
+    p.add_argument("command", choices=["fetch", "analyze", "predict", "events", "regions", "meta", "players", "builds", "draft", "matches", "upcoming", "refresh", "assets", "history", "pbe", "all", "dashboard"])
     p.add_argument("--refresh", action="store_true", help="re-download index pages (new games / patches)")
     p.add_argument("--target", help="patch to predict, e.g. 26.22 (default: latest patch notes)")
     p.add_argument("--notes-url", help="patch notes URL for --target, if not on the usual Riot URL")
@@ -113,6 +114,13 @@ def main():
                                    pro_targeted=False, base_stats=False)
             extra = manual if extra is None else pd.concat([extra, manual], ignore_index=True)
         model.run(target_patch=a.target, extra_changes=extra)
+    if a.command == "pbe":
+        import os
+        from . import pbe
+        changed = pbe.refresh()
+        if os.environ.get("GITHUB_OUTPUT"):  # tells the GitHub Action whether to commit
+            with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                f.write(f"changed={'true' if changed else 'false'}\n")
     if a.command in ("events", "all"):
         from . import events
         # Event match lists always refresh: Worlds is in progress.

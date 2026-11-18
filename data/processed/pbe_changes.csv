@@ -1,0 +1,2 @@
+patch,champion,champ_key,verdict,score,weighted,n_lines,n_buff_lines,n_nerf_lines,pro_targeted,base_stats,context,source
+26.24,Akshan,akshan,buff,0.75,0.643,1,1,0,False,False,,pbe

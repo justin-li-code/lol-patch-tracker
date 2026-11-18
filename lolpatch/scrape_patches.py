@@ -55,10 +55,12 @@ NUM = re.compile(r"-?\d+(?:\.\d+)?")
 
 def patch_url(patch: str) -> str | None:
     major, minor = patch.split(".")
-    for pattern in URL_PATTERNS:
-        url = pattern.format(major=major, minor=minor)
-        if http.get(url):
-            return url
+    urls = [pattern.format(major=major, minor=minor) for pattern in URL_PATTERNS]
+    # A cached "not found" may be from before the patch was released, so re-check if nothing's cached.
+    for refresh in (False, True):
+        for url in urls:
+            if http.get(url, refresh=refresh):
+                return url
     return None
 
 

@@ -224,6 +224,20 @@ def load_ripple():
 
 
 @st.cache_data
+def load_pbe():
+    path = PROCESSED / "pbe_meta.json"
+    if not path.exists():
+        return None
+    out = dict(meta=json.loads(path.read_text()), lines=pd.read_csv(PROCESSED / "pbe_lines.csv",
+                                                                 dtype={"patch": str, "before": str, "after": str}))
+    for name in ["changes", "predictions"]:
+        f = PROCESSED / f"pbe_{name}.csv"
+        if f.exists() and f.stat().st_size > 1:
+            out[name] = pd.read_csv(f, dtype={"patch": str})
+    return out
+
+
+@st.cache_data
 def load_regions():
     path = PROCESSED / "priority_effects.json"
     if not path.exists():
@@ -1170,7 +1184,8 @@ PAGE_INFO = {
                "international events and in each league: the best overall and by role, who beat or missed "
                "expectations, and a lookup to see where any player ranks.",
     "Champions & Patches": "Follow any champion through the season, see what each patch changed (champions, items "
-                           "and runes), whether buffs and nerfs work, and what the next patch might do.",
+                           "and runes), whether buffs and nerfs work, and what the next patch might do, "
+                           "including a forecast from the patch being tested on the PBE.",
     "Meta Shifts": "When a champion falls out of favor, which champions take its spot. Pick any champion to see "
                    "who replaced it, who it pushed out when it rose, and the swaps after each big buff or nerf.",
     "Draft Answers": "When a team locks in a champion, what the other team picks back in the same role, and who "
@@ -1509,7 +1524,8 @@ elif page == "Champions & Patches":
     trans = transitions_for(league)
     patches = sorted(scope.patch.unique(), key=patch_key)
 
-    t_champ, t_patch, t_effect, t_pred = st.tabs(["Champion", "Patch", "Do Buffs & Nerfs Work?", "Next Patch"])
+    t_champ, t_patch, t_effect, t_pred, t_pbe = st.tabs(
+        ["Champion", "Patch", "Do Buffs & Nerfs Work?", "Next Patch", "PBE Preview"])
 
     with t_champ:
         champs = scope.groupby("champion").presence.max().sort_values(ascending=False).index.tolist()
@@ -1713,6 +1729,98 @@ elif page == "Champions & Patches":
                 if len(hit):
                     st.markdown("Champions whose prediction moves because of them: " + ", ".join(
                         f"**{nice(c)}** ({e * 100:+.0f})" for c, e in zip(hit.champion, hit.pred_item_effect)) + " points.")
+
+
+    with t_pbe:
+        pb = load_pbe()
+        if pb is None:
+            st.info("Run `python -m lolpatch pbe` first.")
+        else:
+            pm = pb["meta"]
+            target = pm["pbe_patch"]
+            st.markdown(f"Riot tests each patch on the **PBE** (Public Beta Environment) about two weeks before it "
+                        "goes live. We compare the PBE's game files with the live game's to find every champion "
+                        f"number that's about to change, then forecast where each champion would rank in pro play on "
+                        f"**{target}**, before its patch notes are out.")
+            st.caption(f"PBE files last changed {pm['updated']} Pacific (we check every 3 hours). Changes on the PBE "
+                       "are still being tested: Riot often adjusts or drops them before release.")
+            if "predictions" not in pb or "predictions" not in d:
+                st.info(f"No champion changes on the PBE for {target} yet." if pm["pbe_version"] != pm["live_version"]
+                        else "The PBE is running the live patch right now. The next test patch usually arrives "
+                             "within a few days of a release.")
+            else:
+                live = d["meta"].get("target_patch")
+                fut = pb["predictions"].copy()
+                # "Now" is the forecast from the official notes so far, so the gap is the PBE changes alone.
+                now = d["predictions"].set_index("champ_key").pred_presence
+                fut["now"] = fut.champ_key.map(now).fillna(fut.prev_presence)
+                fut["rank_now"] = fut.now.rank(ascending=False, method="min").astype(int)
+                fut["rank_pbe"] = fut.pred_presence.rank(ascending=False, method="min").astype(int)
+                fut["pbe_effect"] = fut.pred_presence - fut.now
+                pch = pb["changes"].set_index("champ_key")
+                hit = fut[fut.champ_key.isin(pch.index)].sort_values("pbe_effect", ascending=False)
+                lines_ = pb["lines"]
+
+                def ability_name(champion: str, ability: str) -> str:
+                    """'AkshanQ' -> 'Q'; base stats keep their heading."""
+                    short = re.sub(r"[^a-z]", "", champion.lower())
+                    rest = ability[len(short):] if ability.lower().startswith(short) else ability
+                    return rest or ability
+
+                def what_changed(key: str, champion: str, n: int = 2) -> str:
+                    g = lines_[(lines_.champ_key == key) & (lines_.direction != 0)]
+                    txt = [f"{ability_name(champion, r.ability)} {r.stat}: {r.before} → {r.after}"
+                           for r in g.itertuples()]
+                    return "; ".join(txt[:n]) + (f" (+{len(txt) - n} more)" if len(txt) > n else "")
+
+                ups = hit[hit.pbe_effect > 0.005]
+                downs = hit[hit.pbe_effect < -0.005].sort_values("pbe_effect")
+                mover = lambda r: (f"<b>{nice(r.champion)}</b> (#{r.rank_now} → #{r.rank_pbe}, "
+                                   f"{r.now:.0%} → {r.pred_presence:.0%})")
+                summary = f"<b>{len(hit)}</b> champion{'s' if len(hit) != 1 else ''} changed on the PBE so far."
+                if len(ups):
+                    summary += " Biggest expected rise: " + mover(ups.iloc[0]) + "."
+                if len(downs):
+                    summary += " Biggest expected drop: " + mover(downs.iloc[0]) + "."
+                st.markdown(f"<div class='takeaway found'>{summary}</div>", unsafe_allow_html=True)
+
+                st.markdown("**Changed on the PBE**")
+                t = pd.DataFrame({
+                    "Champion": hit.champion.values,
+                    "Change": [pch.loc[k, "verdict"].title() for k in hit.champ_key],
+                    "What changed": [what_changed(k, c) for k, c in zip(hit.champ_key, hit.champion)],
+                    "Pick/ban rate": [f"{a:.0%} → {b:.0%}" for a, b in zip(hit.now, hit.pred_presence)],
+                    "Rank": [f"#{a} → #{b}" for a, b in zip(hit.rank_now, hit.rank_pbe)],
+                })
+                table(with_icons(t, "Champion"), images=[" "])
+                with st.expander(f"Every changed number on the PBE ({len(lines_)})"):
+                    st.dataframe(pd.DataFrame({
+                        "Champion": lines_.champion.values,
+                        "Ability": [ability_name(c, a) for c, a in zip(lines_.champion, lines_.ability)],
+                        "Value": lines_.stat.values, "Live": lines_.before.fillna("—").values,
+                        "PBE": lines_.after.fillna("—").values,
+                        "Reads as": ["buff" if x > 0 else "nerf" if x < 0 else "not scored" for x in lines_.direction],
+                    }), hide_index=True, use_container_width=True)
+                    st.caption("Names are Riot's own labels from the game files. Ranks run 1 to 5 (ultimates 1 to "
+                               "3). Values that were added or removed are usually renames or reworks, so they're "
+                               "listed but not scored.")
+
+                st.markdown(f"**Where champions would rank on {target}**")
+                top = fut.sort_values("rank_pbe")
+                move = lambda a, b: "—" if a == b else f"▲ {a - b}" if b < a else f"▼ {b - a}"
+                t = pd.DataFrame({
+                    "Rank": top.rank_pbe.values, "Champion": top.champion.values,
+                    "Pick/ban rate": [f"{x:.0%}" for x in top.pred_presence],
+                    f"vs {live}": [move(a, b) for a, b in zip(top.rank_now, top.rank_pbe)],
+                    "Changed on the PBE": [pch.loc[k, "verdict"].title() if k in pch.index else ""
+                                           for k in top.champ_key],
+                })
+                table(with_icons(t, "Champion"), images=[" "], n=10)
+                st.caption(f"Pick/ban rate predicted for pro play in all leagues combined, starting from the last league games "
+                           f"({pm.get('base_patch')}) and applying every official change through {live} plus the "
+                           f"PBE changes. “vs {live}” compares with the Next Patch forecast, so it shows what the PBE "
+                           "adds. Same model as Next Patch: for champions Riot changes, it gets the direction right "
+                           "about 7 times in 10.")
 
 
 # --- Meta shifts -----------------------------------------------------------------------

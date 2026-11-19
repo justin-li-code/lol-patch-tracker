@@ -5,6 +5,15 @@ Every version below came from one round of requests. Newest first.
 ## Up next
 - Ideas, not started: player ratings across the whole domestic season, not just international events.
 
+## v1.22 · Nov 19: 2024 and 2025 seasons on the Players page
+- **The Year picker on Players now has 2025 and 2024.** Each season has every league game and international event (2,335 games in 2025, 2,175 in 2024), rated the same way as 2026.
+  - 2025: Worlds, First Stand, MSI, the Esports World Cup, LCK, LPL, LEC and LTA.
+  - 2024: Worlds, MSI, the Esports World Cup, LCK, LPL, LEC, LCS and CBLOL.
+- Some of the best at Worlds: Cuzz (KT, 4.1) in 2025; Zika (LNG), Keria and Zeus (T1, all 3.7) in 2024.
+- **Team logos for teams that no longer exist,** such as RNG, EDG, Rogue and Immortals. KaBuM!'s stays blank because gol.gg's own copy is broken.
+- **Blank cells instead of "None"** on the player boards: for a team with no logo, and for "Rating in their league" when a player's league isn't tracked (e.g. GAM or Movistar R7 at Worlds).
+- One 2024 LPL game was skipped because gol.gg wouldn't load it.
+
 ## v1.21 · Nov 18: PBE Preview
 - **New tab on Champions & Patches: PBE Preview.** Riot tests each patch on the PBE about two weeks before release. The site now reads the PBE's game files, finds every champion number that's about to change, and forecasts where each champion would rank in pro play before the patch notes are out.
 - It shows each changed champion with what changed, e.g. "Q AD Ratio: 0.7 → 0.8" for Akshan on 26.24, plus its predicted pick/ban rate and rank before and after.

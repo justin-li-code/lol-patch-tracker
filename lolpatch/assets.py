@@ -56,9 +56,16 @@ def _team_ids(event_games: pd.DataFrame) -> dict[str, str]:
 
 
 def team_logos(log=print) -> dict[str, str]:
-    """Download logos for every team in the domestic and event data."""
+    """Download logos for every team in the domestic and event data, and in earlier seasons (history.py)."""
     teams = set(pd.read_csv(PROCESSED / "event_games.csv").team) | set(pd.read_csv(PROCESSED / "games.csv").team)
     ids = _team_ids(_series_pages())
+    for path in sorted((DATA / "history").glob("*/match_games.csv")):
+        old = pd.read_csv(path, dtype={"gol_id": str})
+        teams |= set(old.blue) | set(old.red)
+        # One game page per team is enough: each page links both teams' gol.gg ids.
+        per_team = pd.concat([old.drop_duplicates("blue"), old.drop_duplicates("red")]).drop_duplicates("gol_id")
+        for name, tid in _team_ids(pd.DataFrame({"series_id": per_team.gol_id, "page": "game"})).items():
+            ids.setdefault(name, tid)
     manifest_path = ASSETS / "team_logos.json"
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     LOGOS.mkdir(parents=True, exist_ok=True)

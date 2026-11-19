@@ -637,16 +637,17 @@ def players_page(rt: pd.DataFrame, year: int, label: str, event: str | None, lea
     agg["role_rank"] = agg.groupby("role").cumcount() + 1
 
     def board(df, value_col, value_label, fmt, ranks=None, highlight=None):
-        cols = {"#": range(1, len(df) + 1) if ranks is None else ranks, " ": df.team.map(team_logo), "Player": df.player, "Team": df.team,
-                "Role": df.role.str.title(), "Games": df.games,
+        # The table shows a missing value as "None" whatever na_rep says, so blanks are filled here: no logo
+        # for teams without one, "—" for players outside the tracked leagues (e.g. GAM at Worlds 2024).
+        cols = {"#": range(1, len(df) + 1) if ranks is None else ranks, " ": df.team.map(team_logo).fillna(""),
+                "Player": df.player, "Team": df.team, "Role": df.role.str.title(), "Games": df.games,
                 "Record": [f"{int(w_)}–{int(n - w_)}" for w_, n in zip(df.wins, df.games)]}
         if value_col != "rating":  # the ranking value first, then the rating it came from
             cols[value_label] = df[value_col]
-        cols |= {"Average rating": df.rating, "Expected rating": df.expected, other_label: df.other,
-                 "Champions": df.champs}
+        cols |= {"Average rating": df.rating, "Expected rating": df.expected,
+                 other_label: [f"{x:.1f}" if pd.notna(x) else "—" for x in df.other], "Champions": df.champs}
         t = pd.DataFrame(cols)
-        styled = t.style.format({value_label: fmt, "Average rating": "{:.1f}", "Expected rating": "{:.1f}",
-                                 other_label: "{:.1f}"}, na_rep="—")
+        styled = t.style.format({value_label: fmt, "Average rating": "{:.1f}", "Expected rating": "{:.1f}"})
         if highlight is not None:
             styled = styled.apply(lambda row: ["background-color: rgba(42,120,214,.14); font-weight: 600"
                                                if row.Player == highlight else "" for _ in row], axis=1)
